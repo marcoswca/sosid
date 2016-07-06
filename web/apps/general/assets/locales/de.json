@@ -1,0 +1,381 @@
+{
+  "Account Manager": "Account Manager",
+  "Account User": "Account Nutzer",
+  "Account Basic": "Basis Account",
+  "Pipeline Viewer": "Leitungsbeobachter",
+  "Pipeline Collector": "Leitungskollektor",
+  "Project Viewer": "Projektbeobachter",
+  "Project Collector": "Projektkollektor",
+  "Project Manager": "Projektmanager",
+  "LOGOUT_BUTTON": "Abmelden",
+  "INVITE_MEMBERS_BUTTON": "Mitarbeiter einladen",
+  "PROJECT": "Projekt",
+  "PROJECTS": "Projekte",
+  "PIPELINE": "Leitung",
+  "PIPELINES": "Leitungen",
+  "CANCEL": "Abbrechen",
+  "YES": "Ja",
+  "ALERT": "Warnung",
+  "404_TEXT": "Die gesuchten Inhalte sind nicht vorhanden.",
+  "STOCK_PIPE": "Lagerrohr",
+  "STOCK_PIPES": "Lagerrohre",
+  "SUB_PIPELINE": "Trasse",
+  "SUB_PIPELINES": "Trassen",
+  "SINGLE_PIPES": "Einzelrohre",
+  "SINGLE_PIPE": "Einzelrohr",
+  "CONNECTED_PIPE": "Schweißnaht",
+  "CONNECTED_PIPES": "Schweißnähte",
+  "TRENCHLESS": "Grabenlose Trasse",
+  "TRENCHLESS_PIPE": "Grabenloses Rohr",
+  "TRENCHLESS_PIPES": "Grabenlose Rohre",
+  "SESSION": {
+    "LOGOUT": {
+      "CONFIRM": {
+        "TITLE": "Abmelden",
+        "CONTENT": "Möchten Sie sich abmelden?"
+      }
+    }
+  },
+  "COMPONENT": {
+    "USER_PROJECT_INVITATION": {
+      "CURRENT_USERS_TITLE": "Aktuelle Benutzer",
+      "ADD_USER_BUTTON": "Nutzer hinzufügen",
+      "TITLE": "Nutzer in Projekt oder Leitung hinzufügen",
+      "NO_USERS_AS_ACCOUNT_MANAGER": "Es scheint, dass alle Mitglieder dieses Konto bereits in einem Projekt oder in einer Leitung sind. Bitte klicken Sie hier, um mehr Mitglieder zu diesem Konto einladen zu können.",
+      "NO_USERS_NOT_AS_ACCOUNT_MANAGER": "Es scheint, dass alle Mitglieder dieses Konto bereits in dem Projekt oder in der Leitung sind und Sie über keine Berechtigung verfügen, um mehr Mitglieder einzuladen. Nur ein Account Manager darf weitere Mitglieder zu dem Projekt einladen."
+    },
+    "USER_ACCOUNT_INVITATION": {
+      "CURRENT_USERS_TITLE": "Aktuelle Benutzer",
+      "INVITE_BUTTON": "Einladen",
+      "TITLE": "Nutzer zum Konto einladen",
+      "INVITATION_PENDING_TOOLTIP": "Einladung nicht bestätigt",
+      "USER_BLOCKED_TOOLTIP": "Der Nutzer ist gesperrt"
+    },
+    "MAP_CONTEXT_MENU": {
+      "CENTER_MAP": "Karte zentrieren",
+      "CREATE_COMPONENT": "Bauteil erstellen",
+      "CREATE_STOCK_PIPE": "Lagerrohr erstellen",
+      "CREATE_SINGLE_PIPE": "Einzelrohr erstellen",
+      "BUILD_TRENCHLESS": "Grabenlose Trasse erstellen"
+    },
+    "PIPE_INFORMATION": {
+      "UPDATE_BUTTON": "Aktualisieren"
+    },
+    "PIPE_TOOLBAR": {
+      "CLOSE_TOOLBAR_TOOLTIP": "Fenster schließen",
+      "PIPE_INFORMATION_TOOLTIP": "Rohr-Informationen",
+      "CUT_ACTION": {
+        "ACTION_CONFIRM": "Rohr-Schneiden bestätigen",
+        "ACTION_CANCEL": "Rohr-Schneiden abbrechen",
+        "ACTION_INFO": "Wählen Sie die Größe des neuen Rohres",
+        "TOOLTIP": "Rohr schneiden",
+        "SIZE": "Größe"
+      },
+      "CONNECTION_ACTION": {
+        "TOOLTIP": "Rohr verbinden",
+        "STEP_1_ACTION_INFO": "Bitte suchen Sie ein Rohr aus, um die Verbindung mit einem anderen Rohr zu erstellen.",
+        "STEP_2_ACTION_INFO": "Der Prozess ist fast fertig. Geben Sie einen Namen für die Schweißnaht ein.",
+        "STEP_3_ACTION_INFO": "Das ist in Ordnung. Bitte bestätigen Sie nun die Schweißnaht.",
+        "CANNOT_CONNECT_BETWEEN_SAME_SUB_PIPELINE": "Es kann keine Verbindung zwischen den Rohren auf der gleichen Trasse erstellt werden.",
+        "PIPE_HAS_ALREADY_TWO_CONNECTIONS": "Dieses Rohr hat bereits zwei Schweißnähte",
+        "SELECT_PIPE": "Rohr auswählen",
+        "WELD_PLACEHOLDER": "Geben Sie einen Schweißnahtnamen ein",
+        "ACTION_CONFIRM": "Schweißnahteinbindung bestätigen",
+        "ACTION_CANCEL": "Schweißnahteinbindung abbrechen"
+      }
+    },
+    "PIPELINE_MAP": {
+      "VIEWER_WARNING": "Sie können nicht die Trasse modifizieren."
+    },
+    "PIPELINE_RELATIONSHIP_BAR": {
+      "TOGGLE_SIDEBAR_TOOLTIP": "Toggle sidebar",
+      "ADD_USER_TOOLTIP": "Nutzer hinzufügen",
+      "VISIBILITY_TEXT": "Diese Trasse ist nur sichtbar für:"
+    },
+    "TRENCHLESS_ACTION": {
+      "ACTION_CANCEL": "Aktion abbrechen",
+      "ACTION_CONFIRM": "Grabenlose Trasse erstellen",
+      "ADD_PIPE_BUTTON": "Rohr hinzufügen",
+      "STEP_1_INFO": "Bitte klicken Sie auf die Karte und definieren Sie das Ende der grabenlosen Trasse.",
+      "STEP_2_INFO": "Nun fügen Sie bitte mindestens zwei Rohre hinzu."
+    },
+    "PIPE_LIST": {
+      "TOOLTIP": "Rohrliste",
+      "SEARCH": {
+        "PLACEHOLDER": "Suche nach 10stelligem Code"
+      },
+      "SUB_PIPELINES": {
+        "NOT_FOUND_TEXT": "keine <strong> Subtrasse </strong> gefunden."
+      },
+      "STOCK_PIPES": {
+        "NOT_FOUND_TEXT": "kein <strong>Lagerrohr</strong> gefunden."
+      },
+      "SINGLE_PIPES": {
+        "NOT_FOUND_TEXT": "kein <strong>Einzelrohr</strong> gefunden."
+      },
+      "TRENCHLESS": {
+        "NOT_FOUND_TEXT": "keine <strong>Grabenlose Trasse</strong> gefunden."
+      }
+    },
+    "PROJECT_FOLDER": {
+      "NONE_PIPELINE_FOUND": "keine Leitung gefunden"
+    },
+    "ADD_PROJECT": {
+      "TOOLTIP": "Projekt hinzufügen"
+    },
+    "ADD_PIPELINE": {
+      "TOOLTIP": "Leitung hinzufügen"
+    }
+  },
+  "PIPE_MODEL": {
+    "ATTRIBUTES": {
+      "CODE": {
+        "LABEL": "Rohrnummer",
+        "PLACEHOLDER": "Geben Sie bitte den 40stelligen Code ein",
+        "VALIDATION": {
+          "LENGTH": "Der eingegebene Code muss 40 Stellen haben",
+          "INVALID_TO_TRENCHLESS": "Dieses Rohr ist für diese grabenlose Trasse nicht gültig.",
+          "ALREADY_REGISTERED": "Das Rohr ist bereits registriert."
+        }
+      },
+      "WALL_THICKNESS_VALUE": {
+        "LABEL": "Wanddicke (mm)",
+        "PLACEHOLDER": "Geben Sie den Wert ein"
+      },
+      "PRODUCTION_YEAR": {
+        "LABEL": "Herstellungsjahr",
+        "PLACEHOLDER": "Geben Sie den Wert ein",
+        "VALIDATION": {
+          "REQUIRED": "Dieses Feld darf nicht leer bleiben"
+        }
+      },
+      "DIAMETER_VALUE": {
+        "LABEL": "Durchmesser (mm)",
+        "PLACEHOLDER": "Geben Sie den Wert ein",
+        "VALIDATION": {
+          "REQUIRED": "Dieses Feld darf nicht leer bleiben"
+        }
+      },
+      "ISOLATION": {
+        "LABEL": "Umhüllung",
+        "PLACEHOLDER": "Geben Sie den Wert ein"
+      },
+      "OBSERVATION": {
+        "LABEL": "Kommentar",
+        "PLACEHOLDER": "Geben Sie den Wert ein"
+      },
+      "PRODUCTION_LENGTH_VALUE": {
+        "LABEL": "Herstellungslänge (mm)",
+        "PLACEHOLDER": "Geben Sie den Wert ein",
+        "VALIDATION": {
+          "REQUIRED": "Dieses Feld darf nicht leer bleiben"
+        }
+      },
+      "MATERIAL": {
+        "LABEL": "Werkstoff",
+        "PLACEHOLDER": "Geben Sie den Wert ein"
+      },
+      "PRODUCER_STANDARD": {
+        "LABEL": "Herstellernorm",
+        "PLACEHOLDER": "Geben Sie den Wert ein",
+        "VALIDATION": {
+          "REQUIRED": "Dieses Feld darf nicht leer bleiben"
+        }
+      },
+      "FACTORY_CONTROL": {
+        "LABEL": "Abnahme",
+        "PLACEHOLDER": "Geben Sie den Wert ein",
+        "VALIDATION": {
+          "REQUIRED": "Dieses Feld darf nicht leer bleiben"
+        }
+      },
+      "CONNECTOR_TYPE": {
+        "LABEL": "Bauart",
+        "PLACEHOLDER": "Geben Sie den Wert ein",
+        "VALIDATION": {
+          "REQUIRED": "Dieses Feld darf nicht leer bleiben"
+        }
+      },
+      "PRODUCER": {
+        "LABEL": "Hersteller",
+        "PLACEHOLDER": "Geben Sie den Wert ein",
+        "VALIDATION": {
+          "REQUIRED": "Dieses Feld darf nicht leer bleiben"
+        }
+      },
+      "PIPE_TYPE": {
+        "LABEL": "Rohrstatus",
+        "PLACEHOLDER": "Geben Sie den Wert ein"
+      },
+      "COMPONENT_FAMILY": {
+        "LABEL": "Bauteilart",
+        "PLACEHOLDER": "Geben Sie den Wert ein",
+        "VALIDATION": {
+          "REQUIRED": "Dieses Feld darf nicht leer bleiben"
+        }
+      }
+    }
+  },
+  "PIPELINE_MODEL": {
+    "CREATE": {
+      "SUCCESS_TEXT": "Die Leitung wurde erfolgreich erstellt."
+    },
+    "UPDATE": {
+      "SUCCESS_TEXT": "Die Leitung wurde erfolgreich aktualisiert."
+    },
+    "DELETE": {
+      "CONFIRM": {
+        "TEXT": "Sind Sie sicher, dass Sie die komplette Trasse löschen möchten? Wenn Sie diese <strong> Trasse </strong> löschen, werden auch alle dazugehörigen <strong> Rohre </strong> mit gelöscht."
+      }
+    },
+    "ATTRIBUTES": {
+      "NAME": {
+        "LABEL": "Leitungsname",
+        "PLACEHOLDER": "Geben Sie den Leitungsnamen ein."
+      }
+    }
+  },
+  "PROJECT_MODEL": {
+    "ATTRIBUTES": {
+      "NAME": {
+        "LABEL": "Projektname",
+        "PLACEHOLDER": "Geben Sie den Projektnamen ein."
+      }
+    },
+    "CREATE": {
+      "SUCCESS_TEXT": "Das Projekt wurde erfolgreich hinzugefügt."
+    },
+    "UPDATE": {
+      "SUCCESS_TEXT": "Das Projekt wurde erfolgreich aktualisiert."
+    },
+    "DELETE": {
+      "CONFIRM": {
+        "CONTENT": "Sind Sie sicher, dass Sie die komplette Trasse löschen möchten? Wenn Sie diese <strong> Trasse </strong> löschen, werden auch alle dazugehörigen <strong> Rohre </strong> mit gelöscht."
+      }
+    }
+  },
+  "ACCOUNT_MODEL": {
+    "ATTRIBUTES": {
+      "NAME": {
+        "LABEL": "Firmenname",
+        "PLACEHOLDER": "Geben Sie bitte Ihren Firmennamen ein",
+        "VALIDATION": {
+          "REQUIRED": "Firmenname erforderlich",
+          "LENGTH": "Der Firmenname muss zwischen 3 bis 80 Zeichen lang sein"
+        }
+      },
+      "USERS": {
+        "LABEL": "Nutzer",
+        "PLACEHOLDER": "Geben Sie den Namen oder die Mailadresse ein."
+      },
+      "ACCOUNT_ROLES": {
+        "LABEL": "Konto-Berechtigung",
+        "PLACEHOLDER": "Wählen Sie die Berechtigung für das Konto des Nutzers aus."
+      },
+      "ROLES": {
+        "LABEL": "Berechtigung",
+        "PLACEHOLDER": "Berechtigung auswählen"
+      }
+    }
+  },
+  "USER": {
+    "ATTRIBUTES": {
+      "EMAIL": {
+        "LABEL": "Ihre E-Mail",
+        "PLACEHOLDER": "Geben Sie Ihre E-Mail ein",
+        "VALIDATION": {
+          "REQUIRED": "E-Mail ist erforderlich",
+          "VALID": "Bitte geben Sie eine gültige Email-Adresse ein",
+          "REGISTERED": "Diese Mailadresse ist schon im System registriert."
+        }
+      },
+      "NAME": {
+        "LABEL": "Ihr Name",
+        "PLACEHOLDER": "Geben Sie Ihren Namen ein",
+        "VALIDATION": {
+          "REQUIRED": "Ihr Name ist erforderlich",
+          "LENGTH": "Der Name muss zwischen 3 bis 80 Zeichen lang sein."
+        }
+      },
+      "PASSWORD": {
+        "LABEL": "Passwort",
+        "PLACEHOLDER": "Geben Sie Ihr Passwort ein",
+        "VALIDATION": {
+          "REQUIRED": "Passwort ist erforderlich",
+          "LENGTH": "Das Passwort darf nicht weniger als 8 oder mehr als 60 Zeichen enthalten",
+          "FORMAT": "Ihr Passwort muss Buchstaben und Zahlen enthalten."
+        }
+      }
+    }
+  },
+  "OFFLINE": {
+    "TITLE": "Es ist leider ein Fehler aufgetreten.",
+    "SUB_TITLE": "Keine Verbindung zu dem Server. Bitte überprüfen Sie Ihre Netzwerkeinstellungen.",
+    "FOOTER_TEXT": "Versuchen Sie es noch einmal."
+  },
+  "PUBLIC": {
+    "ATTRIBUTES": {
+      "CONFIRM_PASSWORD": {
+        "LABEL": "Bestätigen Sie bitte das Passwort",
+        "PLACEHOLDER": "Wiederholen Sie bitte das Passwort",
+        "VALIDATION": {
+          "REQUIRED": "Bitte bestätigen Sie Ihr Passwort.",
+          "MATCH": "Passwörter stimmen nicht überein."
+        }
+      }
+    },
+    "LOGIN": {
+      "TITLE": "Anmelden",
+      "SUB_TITLE": "Geben Sie Ihre Anmeldeinformationen ein",
+      "FORGOT_PASSWORD_LINK": "Haben Sie das Passwort vergessen?",
+      "FOOTER_TEXT": "Sie haben noch kein Konto?",
+      "CREATE_NEW_ACCOUNT_LINK": "Konto erstellen",
+      "SUBMIT_BUTTON": "Anmelden",
+      "INVALID_EMAIL_PASSWORD_TEXT": "Mailadresse oder Passwort sind nicht gültig.",
+      "SENT_REGISTRATION_LINK": "Ihre Mailadresse ist nicht in unserem System. Wir haben Ihnen eine Mail mit einem Registrierungslink geschickt."
+    },
+    "CREATE_ACCOUNT": {
+      "TITLE": "Willkommen zu <span class='light'> PMT-Lite </span>",
+      "SUB_TITLE": "Tragen Sie bitte den Namen Ihrer Firma, die Firmen-Mailadresse und das Passwort ein.",
+      "HAS_ACCOUNT_TEXT": "Haben Sie bereits ein Konto bei PMT-Lite?",
+      "LOGIN_HERE_LINK": "Melden Sie sich hier an",
+      "SUBMIT_BUTTON": "Registrieren",
+      "SUCCESS": {
+        "TITLE": "Vielen Dank für Ihre Anmeldung bei <span class='light'> PMT-Lite </span>!",
+        "SUB_TITLE": "Bitte nutzen Sie Ihre E-Mail-Adresse, um sich im System anzumelden:",
+        "FOOTER_TEXT": "Sie haben bereits ein Konto."
+      }
+    },
+    "FORGOT_PASSWORD": {
+      "TITLE": "Haben Sie Ihr Passwort vergessen?",
+      "SUB_TITLE": "Wir senden Ihnen Anweisungen, wie Sie Ihr Passwort zurücksetzen können",
+      "SUBMIT_BUTTON": "Passwort zurücksetzen",
+      "REMEMBER_PASSWORD_TEXT": "Haben Sie Ihr Passwort vergessen?",
+      "LOGIN_HERE_LINK": "Melden Sie sich hier an",
+      "SUCCESS_TEXT": "Wenn Ihre E-Mail-Adresse <strong>{{email}}</strong> bei uns im System existiert, erhalten Sie eine Bestätigungs-Mail."
+    },
+    "RESET_PASSWORD": {
+      "TITLE": "Passwort ändern",
+      "SUB_TITLE": "Bitte füllen Sie die Felder aus, um Ihr Passwort zu ändern.",
+      "SUBMIT_BUTTON": "Passwort ändern",
+      "FOOTER_TEXT": "Erinnern Sie sich an Ihr Passwort?",
+      "LOGIN_HERE_LINK": "Anmelden",
+      "SUCCESS": {
+        "TITLE": "Das Passwort wurde erfolgreich aktualisiert",
+        "SUB_TITLE": "Bitte klicken Sie hier, um sich anzumelden."
+      }
+    },
+    "INVITE_CONFIRMATION": {
+      "TITLE": "Willkommen zu <span class='light'> PMT-Lite </span>",
+      "SUB_TITLE": "Zur Bestätigung Ihrer Einladung geben Sie bitte Ihren Namen und das Passwort ein.",
+      "SUBMIT_BUTTON": "Bestätigen",
+      "FOOTER_TEXT": "Wenn Sie bereits Benutzer sind",
+      "LOGIN_HERE_LINK": "Anmelden",
+      "SUCCESS": {
+        "TITLE": "Vielen Dank für Ihre Anmeldung bei <span class='light'> PMT-Lite </span>",
+        "SUB_TITLE": "Bitte nutzen Sie Ihre E-Mail-Adresse, um sich anzumelden:",
+        "FOOTER_TEXT": "Sie haben bereits ein PMT-Lite-Konto. Bitte klicken Sie hier, um sich anzumelden."
+      }
+    }
+  }
+}

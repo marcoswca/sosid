@@ -1,0 +1,23 @@
+<md-dialog aria-label="Informação" class="info-alert">
+    <form>
+        <md-toolbar>
+            <div class="info-alert-header" layout="row" layout-align="start center">
+                <md-icon md-svg-icon="alert:warning"></md-icon>
+                <h2 class="info-alert-title">{{$InfoAlertController.title}}</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content class="info-alert-content">
+            <div>
+                <p ng-bind-html="$InfoAlertController.content"></p>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <md-button ng-click="$InfoAlertController.cancel()" class="cancel-button" hm-acl-no-action>
+                {{ 'CANCEL' | translate }}
+            </md-button>
+            <md-button ng-click="$InfoAlertController.confirm()" class="remove-button" hm-acl-no-action>
+                {{$InfoAlertController.confirmText}}
+            </md-button>
+        </div>
+    </form>
+</md-dialog>

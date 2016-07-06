@@ -1,0 +1,18 @@
+<md-chips ng-model="ngModel" md-on-remove="ctrl.onRemove($chip, $index)" md-on-append="ctrl.onAppend($chip, $index)">
+    <md-autocomplete
+            md-no-cache="ctrl.noCache"
+            md-selected-item="ctrl.selectedItem"
+            md-search-text="ctrl.searchText"
+            md-search-text-change="ctrl.search(ctrl.searchText)"
+            md-selected-item-change="ctrl.selectedItemChange(item)"
+            md-items="item in ctrl.filter(ctrl.searchText)"
+            md-min-length="0"
+            md-item-text="item.display"
+            placeholder="{{ctrl.placeholder}}">
+            <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+    </md-autocomplete>
+    <md-chip-template>
+        <span>{{$chip.display}}
+        </span>
+    </md-chip-template>
+</md-chips>

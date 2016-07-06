@@ -1,0 +1,117 @@
+{
+
+  "LOGOUT_BUTTON": "Logout",
+  "CANCEL": "cancel",
+  "YES": "yes",
+  "ALERT": "Alert",
+  "404_TEXT": "The content you were looking for doesn't exist.",
+
+  "SESSION": {
+    "LOGOUT": {
+      "CONFIRM": {
+        "TITLE": "Logout",
+        "CONTENT": "Are you sure you want to logout?"
+      }
+    }
+  },
+  "USER": {
+    "ATTRIBUTES": {
+      "EMAIL": {
+        "LABEL": "Your e-mail",
+        "PLACEHOLDER": "enter with your e-mail",
+        "VALIDATION": {
+          "REQUIRED": "E-mail is required",
+          "VALID": "Please, enter a valid e-mail",
+          "REGISTERED": "E-mail already registered"
+        }
+      },
+      "NAME": {
+        "LABEL": "Your Name'",
+        "PLACEHOLDER": "enter with your name",
+        "VALIDATION": {
+          "REQUIRED": "Your name is required",
+          "LENGTH": "Your name should have 3-80 characters"
+        }
+      },
+      "PASSWORD": {
+        "LABEL": "Password",
+        "PLACEHOLDER": "enter with your password",
+        "VALIDATION": {
+          "REQUIRED": "password is required",
+          "LENGTH": "Your password cannot contain less than 8 characters or more than 60",
+          "FORMAT": "Your password must contains letters and numbers"
+        }
+      }
+    }
+  },
+  "OFFLINE": {
+    "TITLE": "Something went wrong",
+    "SUB_TITLE": "No connection to the server; please check your network settings",
+    "FOOTER_TEXT": "To try again please click here"
+  },
+  "PUBLIC": {
+    "ATTRIBUTES": {
+      "CONFIRM_PASSWORD": {
+        "LABEL": "Confirm password*",
+        "PLACEHOLDER": "re-enter your password",
+        "VALIDATION": {
+          "REQUIRED": "Please, confirm your password.",
+          "MATCH": "Passwords do not match"
+        }
+      }
+    },
+    "LOGIN": {
+      "TITLE": "Log in",
+      "SUB_TITLE": "enter with your credentials",
+      "FORGOT_PASSWORD_LINK": "Forgot your password?",
+      "FOOTER_TEXT": "You don't have an account yet?",
+      "CREATE_NEW_ACCOUNT_LINK": "Create new account",
+      "SUBMIT_BUTTON": "LOGIN",
+      "INVALID_EMAIL_PASSWORD_TEXT": "Invalid email or password.",
+      "SENT_REGISTRATION_LINK": "We detected that your e-mail is not in our system. We sent a e-mail to you with a registration link."
+    },
+    "CREATE_ACCOUNT": {
+      "TITLE": "Welcome to <span class='light'> PMT-Lite </span>",
+      "SUB_TITLE": "Let's start by entering your company name below, e-mail and password.",
+      "HAS_ACCOUNT_TEXT": "If you already have an account?",
+      "LOGIN_HERE_LINK": "Log in here",
+      "SUBMIT_BUTTON": "SIGN UP",
+      "SUCCESS": {
+        "TITLE": "Thanks for signing up to <span class='light'> PMT-Lite </span>!",
+        "SUB_TITLE": "Please, log in using your email:",
+        "FOOTER_TEXT": "Now you have an account"
+      }
+    },
+    "FORGOT_PASSWORD": {
+      "TITLE": "Forgot your password?",
+      "SUB_TITLE": "We'll email you instructions on how to reset your password",
+      "SUBMIT_BUTTON": "Reset Password",
+      "REMEMBER_PASSWORD_TEXT": "If you remember your password.",
+      "LOGIN_HERE_LINK": "Log in here",
+      "SUCCESS_TEXT": "If we found an account with the email address <strong>{{email}}</strong> in the system, you will receive an email from us shortly"
+    },
+    "RESET_PASSWORD": {
+      "TITLE": "Change your password",
+      "SUB_TITLE": "Please fill the fields below to change your password.",
+      "SUBMIT_BUTTON": "Change Password",
+      "FOOTER_TEXT": "You remember your password?",
+      "LOGIN_HERE_LINK": "Log in here",
+      "SUCCESS": {
+        "TITLE": "Password Changed",
+        "SUB_TITLE": "Please, click here to log in."
+      }
+    },
+    "INVITE_CONFIRMATION": {
+      "TITLE": "Welcome to <span class='light'> PMT-Lite </span>",
+      "SUB_TITLE": "To confirm your invitation please enter with your name and password below.",
+      "SUBMIT_BUTTON": "Confirm",
+      "FOOTER_TEXT": "If you already have a user",
+      "LOGIN_HERE_LINK": "Log in here",
+      "SUCCESS": {
+        "TITLE": "Thanks for signing up to <span class='light'> PMT-Lite </span>",
+        "SUB_TITLE": "Please, log in using your email:",
+        "FOOTER_TEXT": "Now you have a account. Please, click here to log in."
+      }
+    }
+  }
+}

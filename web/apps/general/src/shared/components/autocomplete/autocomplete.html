@@ -1,0 +1,31 @@
+<md-autocomplete
+        ng-disabled="ctrl.disabled"
+        md-no-cache="ctrl.noCache"
+        md-selected-item="ctrl.selectedItem"
+        md-search-text="ctrl.searchText"
+        md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+        md-selected-item-change="ctrl.selectedItemChange(item)"
+        md-items="item in ctrl.filter(ctrl.searchText)"
+        md-min-length="0"
+        md-delay="300"
+        md-item-text="item.display"
+        md-floating-label="true">
+    <md-item-template>
+        <div ng-class="{'show-group': item.showGroup}">
+
+            <div class="group-item">
+                <div class="group-name">
+                    <span ng-bind="::item.groupName"></span>
+                </div>
+                <div class="group-content">
+                    <span class="option-text" md-highlight-text="ctrl.searchText">{{::item.display}}</span>
+                </div>
+            </div>
+
+            <span class="option-text single-result" md-highlight-text="ctrl.searchText">{{::item.display | translate}}</span>
+        </div>
+    </md-item-template>
+    <!--<md-not-found ng-if="!ctrl.createFunction">-->
+        <!--"{{ctrl.searchText}}" não encontrado(a). <button ng-click="ctrl.create($event);"> Adicionar? </button>-->
+    <!--</md-not-found>-->
+</md-autocomplete>

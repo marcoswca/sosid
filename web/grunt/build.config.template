@@ -1,0 +1,16 @@
+/**
+ * ARQUIVO GERADO AUTOMATICAMENTE PELO GRUNTFILE.JS
+ */
+
+var build_config = require('%CONFIG_PATH%');
+
+build_config.app_dir = '%APP_DIR%';
+
+module.exports = function(grunt) {
+    process.chdir(__dirname + '/../');
+    return require('./grunt-build-tasks.js')(grunt, build_config);
+};
+
+/**
+ * ARQUIVO GERADO AUTOMATICAMENTE PELO GRUNTFILE.JS
+ */

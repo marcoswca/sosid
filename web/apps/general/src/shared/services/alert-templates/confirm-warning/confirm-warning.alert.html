@@ -1,0 +1,23 @@
+<md-dialog aria-label="Confimar exclusão" class="confirm-remove-alert">
+    <form>
+        <md-toolbar>
+            <div class="confirm-remove-alert-header" layout="row" layout-align="start center">
+                <md-icon md-svg-icon="alert:warning"></md-icon>
+                <h2 class="confirm-remove-alert-title" ng-bind-html="$ConfirmWarningAlertController.title"></h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content class="confirm-remove-alert-content">
+            <div>
+                <p ng-bind-html="$ConfirmWarningAlertController.content"></p>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="$ConfirmWarningAlertController.cancel()" class="cancel-button" hm-acl-no-action>
+                {{ 'CANCEL' | translate }}
+            </md-button>
+            <md-button ng-click="$ConfirmWarningAlertController.remove()" class="remove-button" hm-acl-no-action>
+                {{ 'YES' | translate }}
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

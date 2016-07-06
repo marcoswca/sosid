@@ -1,0 +1,28 @@
+<md-content layout="column" layout-align="center center">
+    <div class="login-box" layout="column" layout-align="start center">
+        <h1 class="title" translate="PUBLIC.LOGIN.TITLE"></h1>
+        <h2 class="sub-title" translate="PUBLIC.LOGIN.SUB_TITLE"> </h2>
+        <form name="loginForm">
+            <div layout="column" class="form">
+                <hm-input-container for-model="User" and-attribute="emailForLogin">
+                    <input type="email" ng-model="LoginCtrl.credentials.email" name="your-email" ng-required="true">
+                </hm-input-container>
+                <hm-input-container for-model="User" and-attribute="password">
+                    <input type="password" ng-model="LoginCtrl.credentials.password" name="your-password" ng-required="true">
+                </hm-input-container>
+                <a ui-sref="forgotPassword()" class="forgot-link" translate="PUBLIC.LOGIN.FORGOT_PASSWORD_LINK"></a>
+
+                <md-button type="submit" class="md-raised md-primary submit-button" ng-click="LoginCtrl.submit()" ng-disabled="loginForm.$invalid || LoginCtrl.isLoading" translate="PUBLIC.LOGIN.SUBMIT_BUTTON" aria-label="login">
+                </md-button>
+
+                <p class="error" ng-show="LoginCtrl.invalidEmailOrPassword">{{ 'PUBLIC.LOGIN.INVALID_EMAIL_PASSWORD_TEXT' | translate }}</p>
+                <p class="error" ng-show="LoginCtrl.sendEmail">{{ 'PUBLIC.LOGIN.SENT_REGISTRATION_LINK' | translate }}</p>
+            </div>
+        </form>
+        <div style="width: 100%;max-width: 400px" layout="column">
+            <md-divider></md-divider>
+
+            <p class="normal-text" > {{ 'PUBLIC.LOGIN.FOOTER_TEXT' | translate }} <a ui-sref="createAccount()" class="normal-link"> {{ 'PUBLIC.LOGIN.CREATE_NEW_ACCOUNT_LINK' | translate }} </a> </p>
+        </div>
+    </div>
+</md-content>

@@ -1,0 +1,51 @@
+.info-alert {
+
+  md-toolbar {
+    min-height: 50px;
+    height: 50px;
+    max-height: 50px;
+
+    .info-alert-header {
+      height: 50px;
+      background-color: #2479e0;
+      max-height: 50px;
+
+      md-icon {
+        margin: 0 5px 0 24px;
+        color: #fff;
+        opacity: 0.8;
+      }
+
+      .info-alert-title {
+        font-size: 18px;
+        color: #fff;
+        opacity: 0.8;
+        font-weight: 500;
+        height: 19px;
+      }
+    }
+  }
+
+  .info-alert-content {
+    width: 400px;
+    max-width: 400px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 25px;
+    padding: 3px 24px 0 24px;
+  }
+
+  .md-actions {
+    padding-left: 25px;
+    padding-right: 25px;
+
+    .cancel-button {
+      color: #494e56;
+    }
+
+    .remove-button {
+      color: #2479e0;
+    }
+  }
+
+}
