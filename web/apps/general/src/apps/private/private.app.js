@@ -6,7 +6,13 @@
         'ui.utils.masks',
 
         // Routes
-        'private.routes.profile',
+        'private.routes.settings',
+
+        // Profile Routes
+        'private.routes.organDonation',
+        'private.routes.personalData',
+        'private.routes.medications',
+        'private.routes.livingWill',
 
         // Views
         'private.views.master'
@@ -19,7 +25,8 @@
         .run(run);
 
     /** @ngInject */
-    function config($mdIconProvider, $mdThemingProvider) {
+    function config($mdIconProvider, $mdThemingProvider, $urlRouterProvider) {
+        $urlRouterProvider.when('/', '/profile/');
 
         $mdThemingProvider.theme('default')
             .primaryPalette('orange', {
@@ -55,12 +62,13 @@
     }
 
     /** @ngInject **/
-    function run(NxtRouterHelper, Session) {
+    function run(NxtRouterHelper) {
         var states = [
             {
                 state: 'private',
                 config: {
                     url: '/',
+                    abstract: true,
                     views: {
                         layout: {
                             controller: 'MasterViewController',
@@ -73,6 +81,7 @@
         ];
 
         NxtRouterHelper.configureStates(states, '/profile');
+
 
     }
 

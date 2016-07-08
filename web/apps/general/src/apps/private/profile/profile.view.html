@@ -1,3 +1,17 @@
 <div class="profile-view">
     <span>Profile View Aqui</span>
+
+    <div layout="row" class="content">
+        <ul class="menu">
+            <li ui-sref-active="active"><a ui-sref="profile.personalData">Personal Data</a></li>
+            <li ui-sref-active="active"><a ui-sref="profile.organDonation">Organ Donation</a></li>
+            <li ui-sref-active="active"><a ui-sref="profile.medications">Medications</a></li>
+            <li ui-sref-active="active"><a ui-sref="profile.livingWill">Living Will</a></li>
+        </ul>
+
+
+        <ui-view class="partial-content" layout="column" layout-align="center center">
+        </ui-view>
+
+    </div>
 </div>

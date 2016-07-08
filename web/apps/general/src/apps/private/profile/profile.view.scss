@@ -1,3 +1,27 @@
 .profile-view {
+  .active {
+    a {
+      color: red;
+    }
+  }
+
+  a {
+    color: blue;
+  }
+
+  .content {
+    width: 100%;
+
+    .menu {
+      li {
+        white-space: nowrap;
+      }
+    }
+
+    .partial-content {
+      width: 100%;
+      font-size: 30px;
+    }
+  }
 
 }

@@ -7,7 +7,12 @@
 
     angular
         .module('private.routes.profile', dependencies)
+        .config(config)
         .run(configureRoute);
+
+    function config($urlRouterProvider) {
+        $urlRouterProvider.when('/profile', '/profile/');
+    }
 
     /** @ngInject */
     function configureRoute(NxtRouterHelper) {
