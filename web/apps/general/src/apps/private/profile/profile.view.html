@@ -1,17 +1,79 @@
 <div class="profile-view">
-    <span>Profile View Aqui</span>
+    <div layout="row" layout-align="center stretch" class="topbar">
+        <div layout="row" layout-align="space-between start" class="topbar__container">
+            <div layout="row" layout-align="start center" class="topbar__profile-resume">
+                <div layout="row" class="profile-resume__avatar">
+                    <img src="http://placehold.it/90x90" alt="">
+                </div>
+                <div layout="column" layout-align="center stretch" class="profile-resume__data">
+                    <div class="profile-resume__data__name">
+                        <span class="profile-resume__data__name_first-name">Paulo Régis</span>
+                        <span class="profile-resume__data__name--last-name">de Medeiros Cavalcante</span>
+                    </div>
+                    <div class="profile-resume__data-list" layout="row">
+                        <div class="profile-resume__data-item" layout="column">
+                            <div class="profile-resume__data-field">Age</div>
+                            <div class="profile-resume__data-value">27</div>
+                        </div>
+                        <div class="profile-resume__data-item" layout="column">
+                            <div class="profile-resume__data-field">Sex</div>
+                            <div class="profile-resume__data-value">Male</div>
+                        </div>
+                        <div class="profile-resume__data-item" layout="column">
+                            <div class="profile-resume__data-field">Adress</div>
+                            <div class="profile-resume__data-value">Münster, UK</div>
+                        </div>
+                        <div class="profile-resume__data-item" layout="column">
+                            <div class="profile-resume__data-field">Blood Type</div>
+                            <div class="profile-resume__data-value">Group AB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div layout="row" layout-align="start center" class="topbar__profile-nav">
+                <div class="topbar__profile-nav__link" layout="column" layout-align="center center">
+                    <md-button aria-label="Eat cake" class="md-icon-button">
+                        <md-icon md-svg-icon="action:lock_outline" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
+                    </md-button>
+                    <div class="topbar__profile-nav__link__text">Privacy Settings</div>
+                </div>
+                <div class="topbar__profile-nav__link" layout="column" layout-align="center center">
+                    <md-button aria-label="Eat cake" class="md-icon-button">
+                        <md-icon md-svg-icon="action:lock_outline" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
+                    </md-button>
+                    <div class="topbar__profile-nav__link__text">Privacy Settings</div>
+                </div>
+                <div class="topbar__profile-nav__link" layout="column" layout-align="center center">
+                    <md-button aria-label="Eat cake" class="md-icon-button">
+                        <md-icon md-svg-icon="action:lock_outline" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
+                    </md-button>
+                    <div class="topbar__profile-nav__link__text">Privacy Settings</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div layout="row" class="content">
-        <ul class="menu">
-            <li ui-sref-active="active"><a ui-sref="profile.personalData">Personal Data</a></li>
-            <li ui-sref-active="active"><a ui-sref="profile.organDonation">Organ Donation</a></li>
-            <li ui-sref-active="active"><a ui-sref="profile.medications">Medications</a></li>
-            <li ui-sref-active="active"><a ui-sref="profile.livingWill">Living Will</a></li>
-        </ul>
+    <div layout="row" layout-align="center stretch" class="content profile-content">
+        <div layout="row" layout-align="space-between start" class="profile-content__container">
+            <div layout="column" class="profile__menu md-whiteframe-1dp">
+                <ul>
+                    <li ui-sref-active="active">
+                        <a ui-sref="profile.personalData">
+                            <md-icon md-svg-icon="social:person_outline" style="color: #00A2D3;width:24px;height:24px;" aria-label="Cake Icon"></md-icon>
+                            <span>Personal Data</span>
+                        </a></li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="profile.organDonation">
+                            <md-icon md-svg-icon="action:credit_card" style="color: #00A2D3;width:24px;height:24px;" aria-label="Cake Icon"></md-icon>
+                            <span>Organ Donation</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-
-        <ui-view class="partial-content" layout="column" layout-align="center center">
-        </ui-view>
+            <ui-view class="partial-content" layout="row" layout-align="center center">
+            </ui-view>
+        </div>
 
     </div>
 </div>

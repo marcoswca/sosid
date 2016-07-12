@@ -1,3 +1,179 @@
-<div class="personal-data-view">
-    <span>{{PersonalDataViewCtrl.viewName}}</span>
+<div class="personal-data-view" layout="column" flex="100" layout-align="space-between stretch">
+    <div class="profile-content__header" flex="100" layout="row" layout-align="space-between center">
+        <div>
+            <span>My Records</span>
+            <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            <span class="profile-content__header__title">{{PersonalDataViewCtrl.viewName}}</span>
+        </div>
+    </div>
+
+    <div class="personal-data__basic-informations profile-content__box">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+            <div>
+                <h3>Basic Informations</h3>
+            </div>
+            <div>
+                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            </div>
+        </div>
+        <div layout="row">
+            <div layout="column" flex="70">
+                <div layout="row">
+                    <md-input-container flex="100" class="md-block">
+                        <label>Name</label>
+                        <input ng-model="PersonalDataViewCtrl.userFullname">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <div layout="row" flex="33">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Age</label>
+                            <input ng-model="PersonalDataViewCtrl.user.age">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex="33">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Sex</label>
+                            <input ng-model="PersonalDataViewCtrl.user.sex">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex="33">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Blood Type</label>
+                            <input ng-model="PersonalDataViewCtrl.user.bloodType">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <md-input-container flex="100" class="md-block">
+                        <label>Address</label>
+                        <input ng-model="PersonalDataViewCtrl.user.address">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container flex="100">
+                        <label>Plan</label>
+                        <input ng-model="PersonalDataViewCtrl.user.plan">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container flex="100" class="md-block">
+                        <label>Period</label>
+                        <input ng-model="PersonalDataViewCtrl.user.period">
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="column" flex="30"layout-align="center center">
+                <!--<div class="row">-->
+                    <!--<img src="http://placehold.it/125x125" alt="">-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<p>Complete your profile</p>-->
+                    <!--<p>it's at 75%</p>-->
+                <!--</div>-->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="personal-data__basic-informations profile-content__box">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+            <div>
+                <h3>Family Doctor</h3>
+            </div>
+            <div>
+                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            </div>
+        </div>
+        <div layout="row">
+            <div layout="column" flex="100">
+                <div layout="row">
+                    <div layout="row" flex="30">
+                        <md-input-container flex="100" class="md-block">
+                            <label>First Name</label>
+                            <input ng-model="PersonalDataViewCtrl.user.firstName">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex="30">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Last Name</label>
+                            <input ng-model="PersonalDataViewCtrl.user.lastName">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex="20">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Mobile Phone</label>
+                            <input ng-model="PersonalDataViewCtrl.user.bloodType">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex="20">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Clinic Phone</label>
+                            <input ng-model="PersonalDataViewCtrl.user.bloodType">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <md-input-container flex="100" class="md-block">
+                        <label>Email</label>
+                        <input ng-model="PersonalDataViewCtrl.user.address">
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="personal-data__basic-informations profile-content__box">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+            <div>
+                <h3>Plan</h3>
+            </div>
+            <div>
+                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            </div>
+        </div>
+        <div layout="row">
+            <div layout="column" flex="70">
+                <div layout="row">
+                    <md-input-container flex="100" class="md-block">
+                        <label>Current Plan</label>
+                        <input ng-model="PersonalDataViewCtrl.userFullname">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <div layout="row" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Start</label>
+                            <input ng-model="PersonalDataViewCtrl.user.age">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>End</label>
+                            <input ng-model="PersonalDataViewCtrl.user.sex">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div layout="row" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Months Used</label>
+                            <input ng-model="PersonalDataViewCtrl.user.age">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Remaining Months</label>
+                            <input ng-model="PersonalDataViewCtrl.user.sex">
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+            <div layout="column" flex="30"layout-align="center center">
+
+            </div>
+        </div>
+
+    </div>
 </div>

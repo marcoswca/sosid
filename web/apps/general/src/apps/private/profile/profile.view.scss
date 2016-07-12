@@ -1,4 +1,6 @@
 .profile-view {
+  background-color: #F2F2F2;
+  padding-bottom: 50px;
   .active {
     a {
       color: red;
@@ -22,6 +24,155 @@
       width: 100%;
       font-size: 30px;
     }
+  }
+
+}
+
+.profile-content {
+  margin-top: -65px;
+  .profile-content__container{
+    max-width: 1180px;
+    width: 1180px;
+  }
+  .profile__menu {
+    background-color: white;
+    min-width: 290px;
+    margin-right: 20px;
+    ul {
+      padding: 0;
+      li {
+        display: block;
+      }
+    }
+    .active a {
+      color: white;
+      background-color: #00A2D3;
+      font-weight: 500;
+      md-icon {
+        color: white!important;
+      }
+    }
+    a {
+      text-decoration: none;
+      font-weight: 300;
+      color: rgba(0,0,0,0.75);
+      display: block;
+      height: 44px;
+      padding-left: 15px;
+      overflow: hidden;
+      md-icon {
+        float: left;
+        margin-top: 10px;
+        margin-right: 13px;
+      }
+      span {
+        line-height: 48px;
+        float: left;
+      }
+    }
+  }
+}
+
+.profile-content__header {
+  font-size: 18px;
+  color: #fff;
+  height: 65px;
+  background-color: #1ABADE;
+  padding: 20px;
+  .profile-content__header__title {
+    font-weight: 500;
+  }
+}
+
+.profile-content__box {
+  margin-top: 10px;
+  padding: 0 20px 20px;
+  .profile-content__box__title {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ededed;
+    h3 {
+      color: #666;
+      font-size: 20px;
+      font-weight: 300;
+      margin: 15px 0;
+    }
+  }
+  label {
+    font-size: 15px;
+  }
+  md-input-container:not(.md-input-invalid).md-input-has-value label {
+    color: #00A2D3;
+  }
+  input {
+    font-size: 17px;
+    font-weight: 400;
+    color: #888;
+    border: 0;
+  }
+  .md-errors-spacer {
+    min-height: 0;
+  }
+}
+
+.topbar {
+  background-color: #00A2D3;
+  .topbar__container {
+    max-width: 1180px;
+    width: 1180px;
+    height: 245px;
+  }
+  .topbar__profile-resume {
+    height: 182px;
+  }
+  .profile-resume__avatar{
+    margin-right: 10px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  .profile-resume__data {
+    color: #fff;
+  }
+  .profile-resume__data__name {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  .profile-resume__data__name--last-name {
+    font-weight: 300;
+    color: rgba(255,255,255, 0.55);
+  }
+  .profile-resume__data-item {
+    margin-right: 30px;
+  }
+  .profile-resume__data-field {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: rgba(255,255,255, 0.55);
+    margin-bottom: 5px;
+  }
+  .topbar__profile-nav {
+    height: 182px;
+  }
+  .topbar__profile-nav__link {
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .topbar__profile-nav {
+    button {
+      width: 72px;
+      height: 72px;
+      background-color: #C4E8F4;
+      margin-bottom: 5px;
+      &:hover {
+        background-color: #C4E8F4!important;
+      }
+    }
+  }
+  .topbar__profile-nav__link__text {
+    color: #fff;
   }
 
 }
