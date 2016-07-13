@@ -3,6 +3,39 @@
 }
 
 .personal-data__basic-informations {
-
   background-color: #fff;
+}
+
+.products-list {
+  .products-list__item {
+    padding: 15px 10px;
+    border-bottom: 1px solid #f6f6f6;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  .products-list__image-container {
+    margin-right: 10px;
+  }
+  .products-list__title {
+    font-size: 15px;
+    color: rgba(0, 22, 33, 0.55);
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .products-list__more-info {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.35);
+    font-weight: 300;
+    font-style: italic;
+  }
+  .products-list__toggle-privacy {
+    background-color: transparent;
+    border-radius: 2px;
+    border: 1px solid #00A2D3;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    color: #00A2D3;
+  }
 }

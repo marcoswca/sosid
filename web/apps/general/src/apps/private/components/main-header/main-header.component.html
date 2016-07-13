@@ -1,9 +1,45 @@
-<div class="main-header-container" layout="row" layout-align="space-around center">
+<div class="main-header-container" layout="row" layout-align="space-between center">
+    <div layout="row" layout-align="start center">
+        <div>
+            <img src="./assets/images/logo.png" alt="">
+        </div>
+        <nav class="main-header__menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Record</a></li>
+                <li><a href="#">Shop</a></li>
+            </ul>
+        </nav>
+    </div>
 
-    <span>LOGO AQUI</span>
-
-    <span> MENU AQUI </span>
-
-    <a href="" ng-click="MainHeaderCtrl.logout()"> logout </a>
+    <md-menu md-position-mode="target-right target">
+        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="MainHeaderCtrl.openMenu($mdOpenMenu, $event)">
+            <div layout="row" layout-align="end center" class="main-header__menu-buttom">
+                <img src="http://placehold.it/38x38" alt="">
+                <md-icon md-svg-icon="hardware:keyboard_arrow_down" style="color: #00A2D3;width:8px;height:8px;" aria-label="Cake Icon"></md-icon>
+            </div>
+        </md-button>
+        <md-menu-content width="4">
+            <md-menu-item>
+                <md-button>
+                    <md-icon md-svg-icon="hardware:keyboard_arrow_down" style="color: #00A2D3;width:8px;height:8px;" aria-label="Cake Icon"></md-icon>
+                    Redial
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button disabled="disabled">
+                    <md-icon md-svg-icon="call:voicemail"></md-icon>
+                    Check voicemail
+                </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+                <md-button>
+                    <md-icon md-svg-icon="social:notifications-on"></md-icon>
+                    <a href="" ng-click="MainHeaderCtrl.logout()"> logout </a>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
 
 </div>

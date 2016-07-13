@@ -21,10 +21,16 @@
 
         function MainHeaderCtrl(Session) {
             var self = this;
+            var originatorEv;
 
             // public variables
 
             // public methods
+            self.openMenu = function($mdOpenMenu, ev) {
+                originatorEv = ev;
+                $mdOpenMenu(ev);
+            };
+
             self.logout = Session.destroy;
 
             return init();

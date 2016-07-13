@@ -14,6 +14,7 @@
 
         // Public variables
         self.viewName = 'Personal Data View';
+        self.isPrivate = false;
 
         self.user = {
             firstName: 'Paulo Régis',
@@ -29,6 +30,11 @@
         self.userFullname = self.user.firstName + " " + self.user.lastName;
 
         // Public methods
+
+        self.togglePrivacy = function() {
+            self.isPrivate = !self.isPrivate;
+            console.log(self.isPrivate);
+        };
 
         // Private methods
         return (function init() {

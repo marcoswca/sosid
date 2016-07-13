@@ -1,0 +1,66 @@
+// Colors
+$barColor: #00E300;
+$overlayColor: #00A2D3;
+$backColor: #83D1EA;
+
+/* -------------------------------------
+ * Bar container
+ * ------------------------------------- */
+.progress-radial {
+  float: left;
+  margin-right: 10px;
+  position: relative;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background-color: $barColor;
+}
+
+/* -------------------------------------
+ * Optional centered circle w/text
+ * ------------------------------------- */
+.progress-radial .overlay {
+  position: relative;
+  width: 94px;
+  height: 94px;
+  background-color: $overlayColor;
+  border-radius: 50%;
+  margin-left: 12px;
+  margin-top: 12px;
+  text-align: center;
+  line-height: 94px;
+  font-size: 16px;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+/* -------------------------------------
+ * Mixin for progress-% class
+ * ------------------------------------- */
+
+$step: 5;
+
+$loops: round(100 / $step);
+$increment: 360 / $loops;
+$half: round($loops / 2);
+
+@for $i from 0 through $loops {
+  .progress-#{$i * $step} {
+    @if $i < $half {
+      $nextdeg: 90deg + $increment * $i;
+
+      background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $barColor 50%, $backColor 50%, $backColor);
+    }
+    @else {
+      $nextdeg: -90deg + $increment * ($i - $half);
+
+      background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+    }
+  }
+}

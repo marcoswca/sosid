@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var dependencies = [];
+    var dependencies = ['private.components.progressCircle'];
 
     angular
         .module('private.views.profile', dependencies)

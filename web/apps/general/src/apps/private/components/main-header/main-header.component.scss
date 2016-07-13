@@ -1,6 +1,32 @@
 main-header {
-  height: 65px;
+  min-height: 65px;
+  max-height: 65px;
   background-color: #001621;
   .main-header-container {
+    max-width: 1180px;
+    width: 1180px;
+  }
+  .md-button.md-icon-button {
+    height: 62px;
+    width: 78px;
+  }
+  .main-header__menu {
+    ul {
+      list-style: none;
+    }
+    li {
+      display: inline;
+      margin-right: 30px;
+    }
+    a {
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+  .main-header__menu-buttom {
+    img {
+      border-radius: 50%;
+    }
   }
 }

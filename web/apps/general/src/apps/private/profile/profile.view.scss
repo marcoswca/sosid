@@ -1,3 +1,7 @@
+body {
+  overflow-y: scroll;
+}
+
 .profile-view {
   background-color: #F2F2F2;
   padding-bottom: 50px;
@@ -79,6 +83,7 @@
   height: 65px;
   background-color: #1ABADE;
   padding: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
   .profile-content__header__title {
     font-weight: 500;
   }
@@ -87,13 +92,14 @@
 .profile-content__box {
   margin-top: 10px;
   padding: 0 20px 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
   .profile-content__box__title {
     margin-bottom: 20px;
     border-bottom: 1px solid #ededed;
     h3 {
-      color: #666;
-      font-size: 20px;
-      font-weight: 300;
+      color: rgba(0, 22, 33, 0.65);
+      font-size: 18px;
+      font-weight: 400;
       margin: 15px 0;
     }
   }
