@@ -496,6 +496,7 @@ module.exports = function (grunt, build_config) {
                     src : [
                         '<%= build_dir %>/assets/locales/**/*.json',
                         '<%= build_dir %>/assets/*.css',
+                        '<%= build_dir %>/assets/style.css',
                         '<%= build_dir %>/**/*.js'
                     ]
                 },
@@ -504,7 +505,7 @@ module.exports = function (grunt, build_config) {
                     watchTask: true,
                     middleware: [
                         modRewrite([
-                            '!\\.\\w+$ /index.html [L]'
+                            '^[^\\.]*$ /index.html [L]'
                         ])
                     ]
                 }
