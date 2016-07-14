@@ -13,6 +13,7 @@
         'private.routes.personalData',
         'private.routes.medications',
         'private.routes.livingWill',
+        'private.routes.doctors',
 
         // Views
         'private.views.master'
@@ -58,7 +59,8 @@
             .iconSet('navigation', 'assets/material-icons/navigation-icons.svg', 24)
             .iconSet('notification', 'assets/material-icons/notification-icons.svg', 24)
             .iconSet('social', 'assets/material-icons/social-icons.svg', 24)
-            .iconSet('toggle', 'assets/material-icons/toggle-icons.svg', 24);
+            .iconSet('toggle', 'assets/material-icons/toggle-icons.svg', 24)
+            .iconSet('sosid', 'assets/material-icons/sosid-icons.svg', 24);
     }
 
     /** @ngInject **/

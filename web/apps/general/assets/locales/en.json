@@ -9,7 +9,7 @@
   "SESSION": {
     "LOGOUT": {
       "CONFIRM": {
-        "TITLE": "Logout",
+        "TITLE": "We'll miss you",
         "CONTENT": "Are you sure you want to logout?"
       }
     }
@@ -61,7 +61,7 @@
       }
     },
     "LOGIN": {
-      "TITLE": "Log in",
+      "TITLE": "Edit Your SOS-ID Account",
       "SUB_TITLE": "enter with your credentials",
       "FORGOT_PASSWORD_LINK": "Forgot your password?",
       "FOOTER_TEXT": "You don't have an account yet?",

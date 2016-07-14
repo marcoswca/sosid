@@ -1,5 +1,6 @@
-<md-content layout="column" layout-align="center center">
-    <div class="create-account-container" layout="column" layout-align="start center" ng-hide="CreateAccountCtrl.registrationFinished">
+<md-content layout="column" layout-align="center center" class="login__container">
+    <div layout="column" class="login-box__container">
+        <div class="create-account-container" layout="column" layout-align="start center" ng-hide="CreateAccountCtrl.registrationFinished">
         <h1 class="title" translate="PUBLIC.CREATE_ACCOUNT.TITLE"></h1>
         <h2 class="sub-title" translate="PUBLIC.CREATE_ACCOUNT.SUB_TITLE"></h2>
         <form name="accountCreateForm" hm-form-config="CreateAccountCtrl.config" autocomplete="false">
@@ -39,7 +40,7 @@
         </div>
     </div>
 
-    <div class="create-account-container" layout="column" layout-align="start center" ng-show="CreateAccountCtrl.registrationFinished">
+        <div class="create-account-container" layout="column" layout-align="start center" ng-show="CreateAccountCtrl.registrationFinished">
         <h1 class="title" translate="PUBLIC.CREATE_ACCOUNT.SUCCESS.TITLE"></h1>
         <h2 class="sub-title" translate="PUBLIC.CREATE_ACCOUNT.SUCCESS.SUB_TITLE"></h2>
         <h2 style="margin: 0 0 10px 0"> {{ CreateAccountCtrl.user.email }} </h2>
@@ -51,5 +52,5 @@
             <p class="normal-text"> {{ "PUBLIC.CREATE_ACCOUNT.SUCCESS.FOOTER_TEXT" | translate }} <a ui-sref="login()" class="normal-link"> {{ 'PUBLIC.CREATE_ACCOUNT.LOGIN_HERE_LINK' | translate }} </a> </p>
         </div>
     </div>
-
+    </div>
 </md-content>
