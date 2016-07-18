@@ -6,6 +6,66 @@
   background-color: #fff;
 }
 
+.personal-data__avatar {
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  .personal-data__avatar__img-container {
+    .progress-radial {
+      width: 160px;
+      height: 160px;
+      margin-right: 0;
+    }
+    .overlay {
+      width: 122px;
+      height: 122px;
+      margin-top: 16px;
+      margin-left: 16px;
+      border: 3px solid white;
+      background-color: #E0E3E3;
+      img {
+        border-radius: 50%;
+        width: 122px;
+        height: 122px;
+      }
+      .progress-circle__change--avatar {
+        em {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .personal-data__avatar__text {
+    font-size: 17px;
+    color: #666;
+    text-align: center;
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  $step: 5;
+
+  $loops: round(100 / $step);
+  $increment: 360 / $loops;
+  $half: round($loops / 2);
+
+  @for $i from 0 through $loops {
+    .progress-#{$i * $step} {
+      @if $i < $half {
+        $nextdeg: 90deg + $increment * $i;
+
+        background-image: linear-gradient(90deg, #E0E3E3 50%, transparent 50%, transparent), linear-gradient($nextdeg, $barColor 50%, #E0E3E3 50%, #E0E3E3);
+      }
+      @else {
+        $nextdeg: -90deg + $increment * ($i - $half);
+
+        background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, #E0E3E3 50%, #E0E3E3);
+      }
+    }
+  }
+}
+
 .products-list {
   .products-list__item {
     padding: 15px 10px;

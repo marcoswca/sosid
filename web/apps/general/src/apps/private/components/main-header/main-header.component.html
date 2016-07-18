@@ -20,23 +20,27 @@
             </div>
         </md-button>
         <md-menu-content width="4">
-            <md-menu-item>
-                <md-button>
-                    <md-icon md-svg-icon="hardware:keyboard_arrow_down" style="color: #00A2D3;width:8px;height:8px;" aria-label="Cake Icon"></md-icon>
-                    Redial
-                </md-button>
-            </md-menu-item>
-            <md-menu-item>
-                <md-button disabled="disabled">
-                    <md-icon md-svg-icon="call:voicemail"></md-icon>
-                    Check voicemail
-                </md-button>
-            </md-menu-item>
+            <a ui-sref="settings.changePassword">
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-svg-icon="sosid:key" aria-label="Key"></md-icon>
+                        Change Password
+                    </md-button>
+                </md-menu-item>
+            </a>
+            <a ui-sref="settings.paymentHistory">
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-svg-icon="sosid:euro" aria-label="Euro Simbol"></md-icon>
+                        Payment History
+                    </md-button>
+                </md-menu-item>
+            </a>
             <md-menu-divider></md-menu-divider>
             <md-menu-item>
-                <md-button>
-                    <md-icon md-svg-icon="social:notifications-on"></md-icon>
-                    <a href="" ng-click="MainHeaderCtrl.logout()"> logout </a>
+                <md-button ng-click="MainHeaderCtrl.logout()">
+                    <md-icon md-svg-icon="navigation:cancel"></md-icon>
+                    logout
                 </md-button>
             </md-menu-item>
         </md-menu-content>

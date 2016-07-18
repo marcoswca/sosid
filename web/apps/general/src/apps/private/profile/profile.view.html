@@ -56,99 +56,118 @@
     <div layout="row" layout-align="center stretch" class="content profile-content">
         <div layout="row" layout-align="space-between start" class="profile-content__container">
 
-            <div layout="column" class="profile__menu md-whiteframe-1dp">
-                <div layout="row" layout-align="start center" class="categories-resume">
-                    <div layout="row" class="categories-resume__icon">
-                        <md-icon md-svg-icon="action:done_all" style="width:32px;height:32px;" aria-label="User"></md-icon>
-                    </div>
-                    <div layout="column" flex="75">
-                        <div class="categories-resume__detailed">
-                            <span>5 of 10 completed</span>
+            <div layout="column" class="profile-sidebar">
+                <div class="profile__menu md-whiteframe-1dp">
+                    <div layout="row" layout-align="start center" class="categories-resume">
+                        <div layout="row" class="categories-resume__icon">
+                            <md-icon md-svg-icon="action:done_all" style="width:32px;height:32px;" aria-label="User"></md-icon>
                         </div>
-                        <div>
-                            <div class="categories-resume__bar">
-                                <div class="categories-resume__bar__percent" style="width: 50%;"></div>
+                        <div layout="column" flex="75">
+                            <div class="categories-resume__detailed">
+                                <span>5 of 10 completed</span>
+                            </div>
+                            <div>
+                                <div class="categories-resume__bar">
+                                    <div class="categories-resume__bar__percent" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div layout="row">
+                            <span class="categories-resume__percent">50%</span>
+                        </div>
+                    </div>
+                    <div layout="column">
+                        <ul>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                                <a ui-sref="profile.personalData">
+                                    <md-icon md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
+                                    <span>Personal Data</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                                <a ui-sref="profile.doctors">
+                                    <md-icon md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                    <span>Doctors</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                                <a ui-sref="profile.medications">
+                                    <md-icon md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                    <span>Medications</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                                <a ui-sref="profile.medications">
+                                    <md-icon md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                    <span>Allergies</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                                <a ui-sref="profile.medications">
+                                    <md-icon md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                    <span>Emergency Contacts</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                                <a ui-sref="profile.medications">
+                                    <md-icon md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                    <span>Glasses Pass</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                                <a ui-sref="profile.medications">
+                                    <md-icon md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                    <span>Health Conditions</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                                <a ui-sref="profile.organDonation">
+                                    <md-icon md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                                    <span>Organ Donon Card</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                                <a ui-sref="profile.livingWill">
+                                    <md-icon md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                                    <span>Health Insurance</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                                <a ui-sref="profile.livingWill">
+                                    <md-icon md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                                    <span>Living Will</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="data-storage__container" layout="column">
+                    <div class="data-storage__header" layout="row" layout-align="space-between center">
+                        <span class="data-storage__title">Data Storage</span>
+                        <span class="data-storage__button">
+                        </span>
+                    </div>
+                    <div layout="column" class="data-storage__content">
+                        <div layout="row"><span class="data-storage__data-text">2GB of 2.5GB Used</span></div>
+                        <div class="data-storage__data-chart">
+                            <div class="data-storage__bar">
+                                <div class="data-storage__bar__percent" style="width: 50%;"></div>
                             </div>
                         </div>
                     </div>
-                    <div layout="row">
-                        <span class="categories-resume__percent">50%</span>
-                    </div>
                 </div>
-                <div layout="column">
-                    <ul>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.personalData">
-                                <md-icon md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
-                                <span>Personal Data</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.doctors">
-                                <md-icon md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Doctors</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.medications">
-                                <md-icon md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Medications</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.medications">
-                                <md-icon md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Allergies</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.medications">
-                                <md-icon md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Emergency Contacts</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.medications">
-                                <md-icon md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Glasses Pass</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.medications">
-                                <md-icon md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Health Conditions</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.organDonation">
-                                <md-icon md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                <span>Organ Donon Card</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.livingWill">
-                                <md-icon md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                <span>Health Insurance</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.livingWill">
-                                <md-icon md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                <span>Living Will</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+
             </div>
 
             <ui-view class="partial-content" layout="row" layout-align="center center">

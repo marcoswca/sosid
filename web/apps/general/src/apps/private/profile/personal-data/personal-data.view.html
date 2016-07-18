@@ -21,56 +21,57 @@
                 <div layout="row">
                     <md-input-container flex="100" class="md-block">
                         <label>Name</label>
-                        <input ng-model="PersonalDataViewCtrl.userFullname">
+                        <input ng-model="PersonalDataViewCtrl.userFullname" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
                     <div layout="row" flex="33">
                         <md-input-container flex="100" class="md-block">
                             <label>Age</label>
-                            <input ng-model="PersonalDataViewCtrl.user.age">
+                            <input ng-model="PersonalDataViewCtrl.user.age" disabled>
                         </md-input-container>
                     </div>
                     <div layout="row" flex="33">
                         <md-input-container flex="100" class="md-block">
                             <label>Sex</label>
-                            <input ng-model="PersonalDataViewCtrl.user.sex">
+                            <input ng-model="PersonalDataViewCtrl.user.sex" disabled>
                         </md-input-container>
                     </div>
                     <div layout="row" flex="33">
                         <md-input-container flex="100" class="md-block">
                             <label>Blood Type</label>
-                            <input ng-model="PersonalDataViewCtrl.user.bloodType">
+                            <input ng-model="PersonalDataViewCtrl.user.bloodType" disabled>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row">
                     <md-input-container flex="100" class="md-block">
                         <label>Address</label>
-                        <input ng-model="PersonalDataViewCtrl.user.address">
+                        <input ng-model="PersonalDataViewCtrl.user.address" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
                     <md-input-container flex="100">
                         <label>Plan</label>
-                        <input ng-model="PersonalDataViewCtrl.user.plan">
+                        <input ng-model="PersonalDataViewCtrl.user.plan" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
                     <md-input-container flex="100" class="md-block">
                         <label>Period</label>
-                        <input ng-model="PersonalDataViewCtrl.user.period">
+                        <input ng-model="PersonalDataViewCtrl.user.period" disabled>
                     </md-input-container>
                 </div>
             </div>
-            <div layout="column" flex="30"layout-align="center center">
-                <!--<div class="row">-->
-                    <!--<img src="http://placehold.it/125x125" alt="">-->
-                <!--</div>-->
-                <!--<div class="row">-->
-                    <!--<p>Complete your profile</p>-->
-                    <!--<p>it's at 75%</p>-->
-                <!--</div>-->
+            <div class="personal-data__avatar" layout="column" flex="30" layout-align="center center">
+                <div layout="column">
+                    <div class="personal-data__avatar__img-container">
+                        <progress-circle></progress-circle>
+                    </div>
+                    <div class="personal-data__avatar__text">
+                        <p>Complete your profile<br>it's at 75%</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -91,32 +92,32 @@
                     <div layout="row" flex="30">
                         <md-input-container flex="100" class="md-block">
                             <label>First Name</label>
-                            <input ng-model="PersonalDataViewCtrl.user.firstName">
+                            <input ng-model="PersonalDataViewCtrl.user.firstName" disabled>
                         </md-input-container>
                     </div>
                     <div layout="row" flex="30">
                         <md-input-container flex="100" class="md-block">
                             <label>Last Name</label>
-                            <input ng-model="PersonalDataViewCtrl.user.lastName">
+                            <input ng-model="PersonalDataViewCtrl.user.lastName" disabled>
                         </md-input-container>
                     </div>
                     <div layout="row" flex="20">
                         <md-input-container flex="100" class="md-block">
                             <label>Mobile Phone</label>
-                            <input ng-model="PersonalDataViewCtrl.user.bloodType">
+                            <input ng-model="PersonalDataViewCtrl.user.bloodType" disabled>
                         </md-input-container>
                     </div>
                     <div layout="row" flex="20">
                         <md-input-container flex="100" class="md-block">
                             <label>Clinic Phone</label>
-                            <input ng-model="PersonalDataViewCtrl.user.bloodType">
+                            <input ng-model="PersonalDataViewCtrl.user.bloodType" disabled>
                         </md-input-container>
                     </div>
                 </div>
                 <div layout="row">
                     <md-input-container flex="100" class="md-block">
                         <label>Email</label>
-                        <input ng-model="PersonalDataViewCtrl.user.address">
+                        <input ng-model="PersonalDataViewCtrl.user.address" disabled>
                     </md-input-container>
                 </div>
             </div>
@@ -138,20 +139,20 @@
                 <div layout="row">
                     <md-input-container flex="100" class="md-block">
                         <label>Current Plan</label>
-                        <input ng-model="PersonalDataViewCtrl.userFullname">
+                        <input ng-model="PersonalDataViewCtrl.userFullname" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
                     <div layout="row" flex="50">
                         <md-input-container flex="100" class="md-block">
                             <label>Start</label>
-                            <input ng-model="PersonalDataViewCtrl.user.age">
+                            <input ng-model="PersonalDataViewCtrl.user.age" disabled>
                         </md-input-container>
                     </div>
                     <div layout="row" flex="50">
                         <md-input-container flex="100" class="md-block">
                             <label>End</label>
-                            <input ng-model="PersonalDataViewCtrl.user.sex">
+                            <input ng-model="PersonalDataViewCtrl.user.sex" disabled>
                         </md-input-container>
                     </div>
                 </div>
@@ -159,13 +160,13 @@
                     <div layout="row" flex="50">
                         <md-input-container flex="100" class="md-block">
                             <label>Months Used</label>
-                            <input ng-model="PersonalDataViewCtrl.user.age">
+                            <input ng-model="PersonalDataViewCtrl.user.age" disabled>
                         </md-input-container>
                     </div>
                     <div layout="row" flex="50">
                         <md-input-container flex="100" class="md-block">
                             <label>Remaining Months</label>
-                            <input ng-model="PersonalDataViewCtrl.user.sex">
+                            <input ng-model="PersonalDataViewCtrl.user.sex" disabled>
                         </md-input-container>
                     </div>
                 </div>
@@ -301,5 +302,32 @@
             </div>
         </div>
 
+    </div>
+
+    <div layout="row" class="hot-button__container">
+        <div layout="row" flex="50" layout-align="space-between center" class="hot-button">
+            <div layout="row" layout-align="start center">
+                <div class="hot-button__icon-left">
+                    <md-icon md-svg-icon="sosid:print_card" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
+                </div>
+                <div layout="column" layout-align="center start">
+                    <div class="hot-button__title__container"><span class="hot-button__title">Print Your Card</span></div>
+                    <div class="hot-button__description__container"><span class="hot-button__description">Lorem ipsum sit dolor amet consectuor beneties</span></div>
+                </div>
+            </div>
+            <div class="hot-button__icon-right"><md-icon md-svg-icon="hardware:keyboard_arrow_right" aria-label="Arrow Right"></md-icon></div>
+        </div>
+        <div layout="row" flex="50" layout-align="space-between center" class="hot-button">
+            <div layout="row" layout-align="start center">
+                <div class="hot-button__icon-left">
+                    <md-icon md-svg-icon="sosid:buy_products" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
+                </div>
+                <div layout="column" layout-align="center start">
+                    <div class="hot-button__title__container"><span class="hot-button__title">Buy SOS-ID Products</span></div>
+                    <div class="hot-button__description__container"><span class="hot-button__description">Lorem ipsum sit dolor amet consectuor beneties</span></div>
+                </div>
+            </div>
+            <div class="hot-button__icon-right"><md-icon md-svg-icon="hardware:keyboard_arrow_right" aria-label="Arrow Right"></md-icon></div>
+        </div>
     </div>
 </div>

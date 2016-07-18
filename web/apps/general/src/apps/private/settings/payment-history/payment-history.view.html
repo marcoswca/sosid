@@ -1,0 +1,42 @@
+<div class="personal-data-view" layout="column" flex="100" layout-align="space-between stretch">
+    <div class="profile-content__header" flex="100" layout="row" layout-align="space-between center">
+        <div>
+            <span>My Settings</span>
+            <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            <span class="profile-content__header__title">{{PaymentHistoryViewCtrl.viewName}}</span>
+        </div>
+    </div>
+    <div layout="column" layout-align="start center" class="history-payment__container">
+        <div layout="column" flex="100" class="history-payment__list">
+            <div layout="row" flex="100" layout-align="space-between center" class="history-payment__list__item">
+                <div layout="row" flex="85">
+                    <div layout="row" flex="20">
+                        Date
+                    </div>
+                    <div layout="column" flex="80" layout-align="center start">
+                        Description
+                    </div>
+                </div>
+                <div layout="row">
+                    Charges
+                </div>
+            </div>
+
+            <div layout="row" flex="100" layout-align="space-between center" ng-repeat="i in [0,1,2,3,4]" class="history-payment__list__item">
+                <div layout="row" flex="85">
+                    <div layout="row" flex="20">
+                        06/07/1989
+                    </div>
+                    <div layout="column" flex="80" layout-align="center start">
+                        2 x Anual Basic Plan
+                    </div>
+                </div>
+                <div layout="column" layout-align="center center">
+                    <div>Charged $5</div>
+                    <div>Credit Card</div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

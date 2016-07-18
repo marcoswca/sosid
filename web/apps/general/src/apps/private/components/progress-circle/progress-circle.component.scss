@@ -38,6 +38,41 @@ $backColor: #83D1EA;
     bottom: 0;
     margin: auto;
   }
+  &:hover {
+    .progress-circle__change--avatar {
+      opacity: 1;
+      transition: opacity .3s ease-in-out;
+    }
+  }
+  .progress-circle__change--avatar {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.55);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    md-icon {
+      margin-top: 35px;
+    }
+    em {
+      font-size: 12px;
+      line-height: 1.4;
+      text-transform: uppercase;
+      font-style: normal;
+      font-weight: 500;
+      margin-top: 5px;
+      color: #ccc;
+      display: none;
+    }
+  }
 }
 
 /* -------------------------------------

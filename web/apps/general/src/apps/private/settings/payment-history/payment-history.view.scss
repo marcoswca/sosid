@@ -1,0 +1,27 @@
+.history-payment__list {
+  width: 800px;
+  max-width: 800px;
+  margin-top: 50px;
+  .history-payment__list__item {
+    color: #666;
+    height: 70px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    transition: all .3s ease-in-out;
+    &:hover {
+      background: rgba(255,255,255,0.55);
+      transition: all .3s ease-in-out;
+    }
+    &:first-of-type {
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #333;
+      border-bottom: 1px solid #bbb;
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+}

@@ -4,9 +4,11 @@
     var dependencies = [
         // Vendors
         'ui.utils.masks',
+        'model.user',
 
-        // Routes
-        'private.routes.settings',
+        // Settings Routes
+        'private.routes.changePassword',
+        'private.routes.paymentHistory',
 
         // Profile Routes
         'private.routes.organDonation',
@@ -27,21 +29,7 @@
 
     /** @ngInject */
     function config($mdIconProvider, $mdThemingProvider, $urlRouterProvider) {
-        $urlRouterProvider.when('/', '/profile/');
-
-        $mdThemingProvider.theme('default')
-            .primaryPalette('orange', {
-                'default': '800', // by default use shade 400 from the pink palette for primary intentions
-                'hue-1': '600', // use shade 100 for the <code>md-hue-1</code> class
-                'hue-2': '500', // use shade 600 for the <code>md-hue-2</code> class
-                'hue-3': '400' // use shade A100 for the <code>md-hue-3</code> class
-            })
-            .accentPalette('blue', {
-                'default': 'A700', // by default use shade 400 from the pink palette for primary intentions
-                'hue-1': '800', // use shade 100 for the <code>md-hue-1</code> class
-                'hue-2': '700', // use shade 600 for the <code>md-hue-2</code> class
-                'hue-3': '600' // use shade A100 for the <code>md-hue-3</code> class
-            });
+        //$urlRouterProvider.when('/', '/profile/');
 
         $mdIconProvider
             .iconSet('action', 'assets/material-icons/action-icons.svg', 24)
