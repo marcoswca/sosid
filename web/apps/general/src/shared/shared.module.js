@@ -5,7 +5,7 @@
         'ngMaterial',
 
         /* COMPONENTS */
-        'app.shared.components.input',
+        'app.shared.components.modelAttribute',
         'app.shared.components.autocomplete',
 
         /** SERVICES **/

@@ -16,7 +16,20 @@
     angular
         .module('public', dependencies)
         .config(config)
-        .run(run);
+        .run(run)
+        .directive('pwCheck', [function () {
+            return {
+                require: 'ngModel',
+                scope: {
+                    pwCheck: '='
+                },
+                link: function (scope, elem, attrs, ctrl) {
+                    ctrl.$validators.match = function(modelValue) {
+                        return modelValue === scope.$parent.$eval(attrs.pwCheck);
+                    };
+                }
+            };
+        }]);
 
     /** @ngInject */
     function config($mdThemingProvider) {

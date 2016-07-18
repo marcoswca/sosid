@@ -21,22 +21,6 @@
             password: undefined
         };
 
-        self.confirmPassword = {
-            label: 'PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.LABEL',
-            placeholder: 'PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.PLACEHOLDER',
-            validate: {
-                required: {
-                    message: 'PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATION.REQUIRED'
-                }
-            }
-        };
-
-        self.matchPasswordError = {
-            match: {
-                message: 'PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATION.MATCH'
-            }
-        };
-
         UserTokenApi
             .exists($stateParams.token)
             .catch(function() {

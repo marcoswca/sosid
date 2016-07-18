@@ -1,7 +1,9 @@
 (function () {
     'use strict';
 
-    var dependencies = [];
+    var dependencies = [
+        'model.doctor'
+    ];
 
     angular
         .module('private.views.doctors', dependencies)

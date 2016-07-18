@@ -1,5 +1,47 @@
 {
 
+  "MODELS": {
+    "DOCTOR": {
+      "ATTRIBUTES": {
+        "FIRST NAME": {
+          "LABEL": "First name",
+          "VALIDATE": {
+            "REQUIRED": "First name is required"
+          }
+        }
+      }
+    },
+    "USER": {
+      "ATTRIBUTES": {
+        "EMAIL": {
+          "LABEL": "Your e-mail",
+          "PLACEHOLDER": "enter with your e-mail",
+          "VALIDATE": {
+            "REQUIRED": "E-mail is required",
+            "VALID": "Please, enter a valid e-mail",
+            "REGISTERED": "E-mail already registered"
+          }
+        },
+        "NAME": {
+          "LABEL": "Your Name'",
+          "PLACEHOLDER": "enter with your name",
+          "VALIDATE": {
+            "REQUIRED": "Your name is required",
+            "LENGTH": "Your name should have 3-80 characters"
+          }
+        },
+        "PASSWORD": {
+          "LABEL": "Password",
+          "PLACEHOLDER": "enter with your password",
+          "VALIDATE": {
+            "REQUIRED": "Password is required",
+            "LENGTH": "Your password cannot contain less than 8 characters or more than 60",
+            "FORMAT": "Your password must contains letters and numbers"
+          }
+        }
+      }
+    }
+  },
   "LOGOUT_BUTTON": "Logout",
   "CANCEL": "cancel",
   "YES": "yes",
@@ -14,36 +56,7 @@
       }
     }
   },
-  "USER": {
-    "ATTRIBUTES": {
-      "EMAIL": {
-        "LABEL": "Your e-mail",
-        "PLACEHOLDER": "enter with your e-mail",
-        "VALIDATION": {
-          "REQUIRED": "E-mail is required",
-          "VALID": "Please, enter a valid e-mail",
-          "REGISTERED": "E-mail already registered"
-        }
-      },
-      "NAME": {
-        "LABEL": "Your Name'",
-        "PLACEHOLDER": "enter with your name",
-        "VALIDATION": {
-          "REQUIRED": "Your name is required",
-          "LENGTH": "Your name should have 3-80 characters"
-        }
-      },
-      "PASSWORD": {
-        "LABEL": "Password",
-        "PLACEHOLDER": "enter with your password",
-        "VALIDATION": {
-          "REQUIRED": "password is required",
-          "LENGTH": "Your password cannot contain less than 8 characters or more than 60",
-          "FORMAT": "Your password must contains letters and numbers"
-        }
-      }
-    }
-  },
+
   "OFFLINE": {
     "TITLE": "Something went wrong",
     "SUB_TITLE": "No connection to the server; please check your network settings",
@@ -54,7 +67,7 @@
       "CONFIRM_PASSWORD": {
         "LABEL": "Confirm password*",
         "PLACEHOLDER": "re-enter your password",
-        "VALIDATION": {
+        "VALIDATE": {
           "REQUIRED": "Please, confirm your password.",
           "MATCH": "Passwords do not match"
         }

@@ -24,20 +24,6 @@
         self.isLoading = false;
         self.registrationFinished = false;
 
-        self.confirmPassword = {
-            label: 'PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.LABEL',
-            placeholder: 'PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.PLACEHOLDER',
-            required: {
-                message: 'PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATION.REQUIRED'
-            }
-        };
-
-        self.matchPasswordError = {
-            match: {
-                message: 'PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATION.MATCH'
-            }
-        };
-
         // Private methods
         function submit() {
 

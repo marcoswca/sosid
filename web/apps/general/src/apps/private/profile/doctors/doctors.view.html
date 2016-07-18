@@ -17,9 +17,8 @@
             <div layout="column" flex="100">
                 <form name="newDoctor">
                     <div layout="row">
-                        <md-input-container flex="33" class="md-block">
-                            <label>First Name</label>
-                            <input ng-model="doctor.firstName" required>
+                        <md-input-container nx-model-attribute="Doctor:firstName" flex="33" class="md-block">
+                            <input ng-model="doctor.firstName">
                         </md-input-container>
 
                         <md-input-container flex="33" class="md-block">

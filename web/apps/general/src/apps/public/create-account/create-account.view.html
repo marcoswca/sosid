@@ -7,25 +7,30 @@
 
             <div layout="column" class="form">
 
-                <hm-input-container for-model="User" and-attribute="name">
+                <md-input-container nx-model-attribute="User:name">
                     <input type="text" ng-model="CreateAccountCtrl.user.name" name="your-name">
-                </hm-input-container>
+                </md-input-container>
                 <!--<md-input-container>-->
                     <!--<label>Company name</label>-->
                     <!--<input type="text" ng-model="CreateAccountCtrl.account.name" name="your-company-name">-->
                 <!--</md-input-container>-->
 
-                <hm-input-container for-model="User" and-attribute="email">
+                <md-input-container nx-model-attribute="User:email">
                     <input type="email" ng-model="CreateAccountCtrl.user.email" name="your-email">
-                </hm-input-container>
+                </md-input-container>
 
-                <hm-input-container for-model="User" and-attribute="password">
+                <md-input-container nx-model-attribute="User:password">
                     <input type="password" ng-model="CreateAccountCtrl.user.password" name="your-password">
-                </hm-input-container>
+                </md-input-container>
 
-                <hm-input-container custom-attributes="CreateAccountCtrl.confirmPassword">
-                    <input type="password" ng-model="CreateAccountCtrl.user.password2" name="your-password2" pw-check="CreateAccountCtrl.user.password" custom-validation-messages="CreateAccountCtrl.matchPasswordError" ng-required="true">
-                </hm-input-container>
+                <md-input-container>
+                    <label translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.LABEL"></label>
+                    <input type="password" ng-model="CreateAccountCtrl.user.password2" name="matchPassword" pw-check="CreateAccountCtrl.user.password" ng-required="true">
+                    <div ng-messages="accountCreateForm.matchPassword.$error" multiple md-auto-hide="true">
+                        <div ng-message="required" translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATE.REQUIRED"></div>
+                        <div ng-message="match" translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATE.MATCH"></div>
+                    </div>
+                </md-input-container>
 
                 <md-button type="submit" class="md-raised md-primary submit-button" ng-disabled="accountCreateForm.$invalid || CreateAccountCtrl.isLoading"
                            ng-click="CreateAccountCtrl.config.submit($event)" translate="PUBLIC.CREATE_ACCOUNT.SUBMIT_BUTTON" aria-label="signup">

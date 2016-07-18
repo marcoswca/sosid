@@ -5,12 +5,12 @@
             <!--<h2 class="sub-title" translate="PUBLIC.LOGIN.SUB_TITLE"> </h2>-->
             <form name="loginForm">
                 <div layout="column" class="form">
-                    <hm-input-container for-model="User" and-attribute="emailForLogin">
-                        <input type="email" ng-model="LoginCtrl.credentials.email" name="your-email" ng-required="true">
-                    </hm-input-container>
-                    <hm-input-container for-model="User" and-attribute="password">
-                        <input type="password" ng-model="LoginCtrl.credentials.password" name="your-password" ng-required="true">
-                    </hm-input-container>
+                    <md-input-container nx-model-attribute="User:email">
+                        <input type="text" ng-model="LoginCtrl.credentials.email" name="your-email" nx-ignore-validations="unique">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="User:password">
+                        <input type="password" ng-model="LoginCtrl.credentials.password" name="your-password" nx-ignore-validations="len,password">
+                    </md-input-container>
                     <div layout="row" layout-align="end center">
                         <a ui-sref="forgotPassword()" class="forgot-link" translate="PUBLIC.LOGIN.FORGOT_PASSWORD_LINK"></a>
                     </div>

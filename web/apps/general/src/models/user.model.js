@@ -15,31 +15,19 @@
         return BaseModel.make({
             api: UserApi,
             attributes: {
-                emailForLogin: {
-                    label: 'USER.ATTRIBUTES.EMAIL.LABEL',
-                    placeholder: 'USER.ATTRIBUTES.EMAIL.PLACEHOLDER',
-                    validate: {
-                        required: {
-                            message: 'USER.ATTRIBUTES.EMAIL.VALIDATION.REQUIRED'
-                        },
-                        email: {
-                            message: 'USER.ATTRIBUTES.EMAIL.VALIDATION.VALID'
-                        }
-                    }
-                },
                 email: {
-                    label: 'USER.ATTRIBUTES.EMAIL.LABEL',
-                    placeholder: 'USER.ATTRIBUTES.EMAIL.PLACEHOLDER',
+                    label: true,
+                    placeholder: true,
                     validate: {
                         required: {
-                            message: 'USER.ATTRIBUTES.EMAIL.VALIDATION.REQUIRED'
+                            message: true
                         },
                         email: {
-                            message: 'USER.ATTRIBUTES.EMAIL.VALIDATION.VALID'
+                            message: true
                         },
                         unique: {
                             isAsync: true,
-                            message: 'USER.ATTRIBUTES.EMAIL.VALIDATION.REGISTERED',
+                            message: true,
                             validate: function (value, id) {
                                 var deferred = $q.defer();
 
@@ -59,31 +47,31 @@
                     }
                 },
                 name: {
-                    label: 'USER.ATTRIBUTES.NAME.LABEL',
-                    placeholder: 'USER.ATTRIBUTES.NAME.PLACEHOLDER',
+                    label: true,
+                    placeholder: true,
                     validate: {
                         required: {
-                            message: 'USER.ATTRIBUTES.NAME.VALIDATION.REQUIRED'
+                            message: true
                         },
                         len: {
                             args: [3, 80],
-                            message: 'USER.ATTRIBUTES.NAME.VALIDATION.LENGTH'
+                            message: true
                         }
                     }
                 },
                 password: {
-                    label: 'USER.ATTRIBUTES.PASSWORD.LABEL',
-                    placeholder: 'USER.ATTRIBUTES.PASSWORD.PLACEHOLDER',
+                    label: true,
+                    placeholder: true,
                     validate: {
                         required: {
-                            message: 'USER.ATTRIBUTES.PASSWORD.VALIDATION.REQUIRED'
+                            message: true
                         },
                         len: {
                             args: [8, 60],
-                            message: 'USER.ATTRIBUTES.PASSWORD.VALIDATION.LENGTH'
+                            message: true
                         },
                         password: {
-                            message: 'USER.ATTRIBUTES.PASSWORD.VALIDATION.FORMAT'
+                            message: true
                         }
                     }
                 }
