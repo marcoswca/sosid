@@ -239,6 +239,16 @@ body {
   .profile-content__header__title {
     font-weight: 500;
   }
+  .profile-content__header__button {
+    .md-button {
+      box-shadow: none;
+      color: #00A2D3;
+      padding: 0 22px 0 15px;
+      md-icon {
+        color: #00A2D3;
+      }
+    }
+  }
 }
 
 .profile-content__box {
