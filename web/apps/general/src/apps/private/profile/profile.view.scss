@@ -27,7 +27,6 @@ body {
 
     .partial-content {
       width: 100%;
-      font-size: 30px;
     }
   }
 
@@ -157,7 +156,47 @@ body {
       font-weight: 400;
     }
   }
+}
 
+.profile-content__upload-files {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .profile-content__upload-files__header {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.55);
+    margin-bottom: 15px;
+  }
+  .profile-content__upload-files__hint {
+    font-weight: 300;
+    font-style: italic;
+    margin-left: 5px;
+    color: rgba(0,0,0,0.55);
+  }
+  .profile-content__upload-files__dnd-area {
+    background-color: #F2F2F2;
+    border-top: 1px solid rgba(0,0,0,0.15);
+    padding: 30px 0;
+  }
+  .profile-content__upload-dnd-area__icon md-icon {
+    width: 56px;
+    height: 56px;
+    color: rgba(0,0,0,0.3);
+  }
+  .profile-content__upload-files__dnd-area__title {
+    color: rgba(0,22,33,0.75);
+    font-size: 26px;
+  }
+  .profile-content__upload-files__dnd-area__hint {
+    font-weight: 300;
+    color: rgba(0,0,0,0.55);
+    margin-top: 5px;
+    span {
+      color: #00A2D3;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
 }
 
 .categories-resume {

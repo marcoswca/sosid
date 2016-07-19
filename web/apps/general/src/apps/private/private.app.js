@@ -17,6 +17,7 @@
         'private.routes.livingWill',
         'private.routes.doctors',
         'private.routes.emergencyContacts',
+        'private.routes.healthConditions',
 
         // Views
         'private.views.master'

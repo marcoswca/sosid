@@ -93,6 +93,19 @@
         }
       }
     },
+    "HEALTH CONDITION": {
+      "ATTRIBUTES": {
+        "CONDITION": {
+          "LABEL": "Condition",
+          "VALIDATE": {
+            "REQUIRED": "Condition is required"
+          }
+        },
+        "SEVERITY": {
+          "LABEL": "Severity"
+        }
+      }
+    },
     "USER": {
       "ATTRIBUTES": {
         "EMAIL": {
@@ -223,6 +236,10 @@
       "EMERGENCY CONTACTS": {
         "PAGE_TITLE": "Emergency Contacts",
         "ADD_NEW": "Add New Emergency Contact"
+      },
+      "HEALTH CONDITIONS": {
+        "PAGE_TITLE": "Health Conditions",
+        "ADD_NEW": "Add New Condition"
       }
     }
   }

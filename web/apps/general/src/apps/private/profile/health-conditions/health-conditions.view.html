@@ -1,0 +1,72 @@
+<div class="medications-view" flex="100">
+    <div class="profile-content__header" flex="100" layout="row" layout-align="space-between center">
+        <div>
+            <span>{{ 'PRIVATE.PROFILE.MY_RECORDS' | translate }}</span>
+            <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            <span class="profile-content__header__title">{{ 'PRIVATE.PROFILE.HEALTH CONDITIONS.PAGE_TITLE' | translate }}</span>
+        </div>
+    </div>
+
+    <div flex="100" class="personal-data__basic-informations profile-content__box profile-content__box-edit">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+            <div>
+                <h3>{{ 'PRIVATE.PROFILE.HEALTH CONDITIONS.ADD_NEW' | translate }}</h3>
+            </div>
+        </div>
+        <div layout="row" flex="100">
+            <div layout="column" flex="100">
+                <form name="newHealthCondition">
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="HealthCondition:condition" flex="33">
+                            <input ng-model="healthConditions.condition">
+                        </md-input-container>
+                        <md-input-container nx-model-attribute="HealthCondition:severity" flex="33">
+                            <input ng-model="mhealthConditions.severity">
+                        </md-input-container>
+                    </div>
+                    <div layout="column" class="profile-content__upload-files">
+                        <div layout="row" class="profile-content__upload-files__header">
+                            <!--Todo: Mapear tradução-->
+                            <div class="profile-content__upload-files__title">Resources</div>
+                            <div class="profile-content__upload-files__hint">(Example: X-Ray, Biopsy, Medical Exam...)</div>
+                        </div>
+                        <div class="profile-content__upload-files__dnd-area" layout="column" layout-align="center center">
+                            <div class="profile-content__upload-dnd-area__icon">
+                                <md-icon md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
+                            </div>
+                            <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
+                            <div class="profile-content__upload-files__dnd-area__hint">Your files here or <span>browse</span></div>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <md-button ng-disabled="newHealthCondition.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.HEALTH CONDITIONS.ADD_NEW' | translate }}</md-button>
+                        <md-button class="me-raised">{{ 'CANCEL' | translate }}</md-button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div flex="100" class="personal-data__basic-informations profile-content__box" ng-repeat="condition in HealthConditionsViewCtrl.healthConditions">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+            <div>
+                <h3>{{ condition.condition }} - <span>{{ condition.severity }}</span></h3>
+            </div>
+        </div>
+        <div layout="row" flex="100">
+            <div layout="column" flex="100">
+                <div layout="row">
+                    <md-input-container nx-model-attribute="HealthCondition:condition" flex="33">
+                        <input ng-model="condition.condition" disabled>
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="HealthCondition:severity" flex="33">
+                        <input ng-model="condition.severity" disabled>
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
