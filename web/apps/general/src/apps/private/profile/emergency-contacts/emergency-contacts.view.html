@@ -1,54 +1,54 @@
-<div class="doctors-view" flex="100">
+<div class="emergency-contatcs-view" flex="100">
     <div class="profile-content__header" flex="100" layout="row" layout-align="space-between center">
         <div>
             <span>{{ 'PRIVATE.PROFILE.MY_RECORDS' | translate }}</span>
             <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            <span class="profile-content__header__title">{{ 'PRIVATE.PROFILE.DOCTORS.PAGE_TITLE' | translate}}</span>
+            <span class="profile-content__header__title">{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE' | translate}}</span>
         </div>
     </div>
 
     <div flex="100" class="personal-data__basic-informations profile-content__box profile-content__box-edit">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
-                <h3>{{ 'PRIVATE.PROFILE.DOCTORS.ADD_NEW' | translate}}</h3>
+                <h3>{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate}}</h3>
             </div>
         </div>
         <div layout="row" flex="100">
             <div layout="column" flex="100">
-                <form name="newDoctor">
+                <form name="newContactEmergeny">
                     <div layout="row">
-                        <md-input-container nx-model-attribute="Doctor:firstName" flex="33" class="md-block">
+                        <md-input-container nx-model-attribute="EmergencyContact:firstName" flex="33" class="md-block">
                             <input ng-model="doctor.firstName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="Doctor:lastName" flex="33" class="md-block">
+                        <md-input-container nx-model-attribute="EmergencyContact:lastName" flex="33" class="md-block">
                             <input ng-model="doctor.lastName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="Doctor:medicalSpeciality" flex="33">
+                        <md-input-container nx-model-attribute="EmergencyContact:relationship" flex="33">
                             <input ng-model="doctor.medicalSpeciality">
                         </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container nx-model-attribute="Doctor:mobilePhone" flex="33">
+                        <md-input-container nx-model-attribute="EmergencyContact:mobilePhone" flex="33">
                             <input ng-model="doctor.mobilePhone">
                         </md-input-container>
-                        <md-input-container nx-model-attribute="Doctor:phone" flex="33">
+                        <md-input-container nx-model-attribute="EmergencyContact:phone" flex="33">
                             <input ng-model="doctor.telefonPhone">
                         </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container nx-model-attribute="Doctor:email" flex="50" class="md-block">
+                        <md-input-container nx-model-attribute="EmergencyContact:email" flex="50" class="md-block">
                         <input ng-model="doctor.email">
                     </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container nx-model-attribute="Doctor:clinicAddress" flex="100" class="md-block">
+                        <md-input-container nx-model-attribute="EmergencyContact:address" flex="100" class="md-block">
                         <textarea ng-model="doctor.clinicAddress"></textarea>
                     </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-button ng-disabled="newDoctor.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.DOCTORS.ADD_NEW' | translate}}</md-button>
+                        <md-button ng-disabled="newMedication.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate}}</md-button>
                         <md-button class="me-raised">{{ 'CANCEL' | translate}}</md-button>
                     </div>
                 </form>
@@ -57,10 +57,10 @@
 
     </div>
 
-    <div flex="100" class="personal-data__basic-informations profile-content__box" ng-repeat="doctor in DoctorsViewCtrl.doctors">
+    <div flex="100" class="personal-data__basic-informations profile-content__box" ng-repeat="emergencyContacts in EmergencyContactsViewCtrl.emergencyContacts">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
-                <h3>{{doctor.firstName + ' ' + doctor.lastName}} - <span>{{doctor.medicalSpeciality}}</span></h3>
+                <h3>{{emergencyContacts.firstName + ' ' + emergencyContacts.lastName}} - <span>{{emergencyContacts.relationship}}</span></h3>
             </div>
             <div>
                 <md-menu md-offset="-50 50">
@@ -78,49 +78,34 @@
         <div layout="row" flex="100">
             <div layout="column" flex="100">
                 <div layout="row">
-                    <div layout="row" flex="33">
-                        <md-input-container flex="100" class="md-block">
-                            <label>First Name</label>
-                            <input ng-model="doctor.firstName" disabled>
-                        </md-input-container>
-                    </div>
-                    <div layout="row" flex="33">
-                        <md-input-container flex="100" class="md-block">
-                            <label>Last Name</label>
-                            <input ng-model="doctor.lastName" disabled>
-                        </md-input-container>
-                    </div>
-                    <div layout="row" flex="33">
-                        <md-input-container>
-                            <label>Medical Speciality</label>
-                            <md-select ng-model="doctor.medicalSpeciality" disabled="">
-                                <md-option ng-repeat="state in DoctorsViewCtrl.states" value="{{state.abbrev}}">
-                                    {{state.abbrev}}
-                                </md-option>
-                            </md-select>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row">
-                    <md-input-container flex="33">
-                        <label>Mobile Phone</label>
-                        <input ng-model="doctor.mobilePhone" disabled>
+                    <md-input-container nx-model-attribute="EmergencyContact:firstName" flex="33" class="md-block">
+                        <input ng-model="emergencyContacts.firstName" disabled>
                     </md-input-container>
-                    <md-input-container flex="33">
-                        <label>Telefon Phone</label>
-                        <input ng-model="doctor.telefonPhone" disabled>
+
+                    <md-input-container nx-model-attribute="EmergencyContact:lastName" flex="33" class="md-block">
+                        <input ng-model="emergencyContacts.lastName" disabled>
+                    </md-input-container>
+
+                    <md-input-container nx-model-attribute="EmergencyContact:relationship" flex="33">
+                        <input ng-model="emergencyContacts.relationship" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
-                    <md-input-container flex="100" class="md-block">
-                        <label>Email</label>
-                        <input ng-model="doctor.email" disabled>
+                    <md-input-container nx-model-attribute="EmergencyContact:mobilePhone" flex="33">
+                        <input ng-model="emergencyContacts.mobilePhone" disabled>
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="EmergencyContact:phone" flex="33">
+                        <input ng-model="emergencyContacts.telefonPhone" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
-                    <md-input-container flex="100" class="md-block">
-                        <label>Clinic Address</label>
-                        <textarea ng-model="doctor.clinicAddress" disabled></textarea>
+                    <md-input-container nx-model-attribute="EmergencyContact:email" flex="50" class="md-block">
+                        <input ng-model="emergencyContacts.email" disabled>
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="EmergencyContact:address" flex="100" class="md-block">
+                        <textarea ng-model="emergencyContacts.address" disabled></textarea>
                     </md-input-container>
                 </div>
             </div>

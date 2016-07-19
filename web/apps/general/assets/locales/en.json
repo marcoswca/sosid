@@ -1,13 +1,95 @@
 {
-
   "MODELS": {
     "DOCTOR": {
       "ATTRIBUTES": {
         "FIRST NAME": {
-          "LABEL": "First name",
+          "LABEL": "First Name",
           "VALIDATE": {
             "REQUIRED": "First name is required"
           }
+        },
+        "LAST NAME": {
+          "LABEL": "Last Name",
+          "VALIDATE": {
+            "REQUIRED": "Last Name is required"
+          }
+        },
+        "MEDICAL SPECIALITY": {
+          "LABEL": "Medical Speciality",
+          "VALIDATE": {
+            "REQUIRED": "Medical Speciality is required"
+          }
+        },
+        "MOBILE PHONE": {
+          "LABEL": "Mobile Phone"
+        },
+        "PHONE": {
+          "LABEL": "Telefon Phone"
+        },
+        "EMAIL": {
+          "LABEL": "Email"
+        },
+        "CLINIC ADDRESS": {
+          "LABEL": "Clinic Address"
+        }
+      }
+    },
+    "MEDICATION": {
+      "ATTRIBUTES": {
+        "NAME": {
+          "LABEL": "Name",
+          "VALIDATE": {
+            "REQUIRED": "Name is required"
+          }
+        },
+        "DOSAGE": {
+          "LABEL": "Dosage"
+        },
+        "UNIT": {
+          "LABEL": "Unit of Measurement"
+        },
+        "FREQUENCY": {
+          "LABEL": "Frequency"
+        },
+        "REASON FOR TAKING": {
+          "LABEL": "Reason for Taking"
+        },
+        "NOTES": {
+          "LABEL": "Notes"
+        }
+      }
+    },
+    "EMERGENCY CONTACT": {
+      "ATTRIBUTES": {
+        "FIRST NAME": {
+          "LABEL": "Name",
+          "VALIDATE": {
+            "REQUIRED": "Name is required"
+          }
+        },
+        "LAST NAME": {
+          "LABEL": "Last Name",
+          "VALIDATE": {
+            "REQUIRED": "Last Name is required"
+          }
+        },
+        "RELATIONSHIP": {
+          "LABEL": "Relationship",
+          "VALIDATE": {
+            "REQUIRED": "Relationship is required"
+          }
+        },
+        "MOBILE PHONE": {
+          "LABEL": "Mobile Phone"
+        },
+        "PHONE": {
+          "LABEL": "Telefon Phone"
+        },
+        "EMAIL": {
+          "LABEL": "Email"
+        },
+        "ADDRESS": {
+          "LABEL": "Address"
         }
       }
     },
@@ -124,6 +206,23 @@
         "TITLE": "Thanks for signing up to <span class='light'> PMT-Lite </span>",
         "SUB_TITLE": "Please, log in using your email:",
         "FOOTER_TEXT": "Now you have a account. Please, click here to log in."
+      }
+    }
+  },
+  "PRIVATE": {
+    "PROFILE": {
+      "MY_RECORDS": "My Records",
+      "DOCTORS": {
+        "PAGE_TITLE": "Doctors",
+        "ADD_NEW": "Add New doctor"
+      },
+      "MEDICATIONS": {
+        "PAGE_TITLE": "Medications",
+        "ADD_NEW": "Add New Medication"
+      },
+      "EMERGENCY CONTACTS": {
+        "PAGE_TITLE": "Emergency Contacts",
+        "ADD_NEW": "Add New Emergency Contact"
       }
     }
   }

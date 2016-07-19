@@ -2,37 +2,37 @@
     'use strict';
 
     var dependencies = [
-        'model.doctor'
+        'model.emergencyContact'
     ];
 
     angular
-        .module('private.views.doctors', dependencies)
-        .controller('DoctorsViewController', DoctorsViewController);
+        .module('private.views.emergencyContacts', dependencies)
+        .controller('EmergencyContactsViewController', EmergencyContactsViewController);
 
     /** @ngInject */
-    function DoctorsViewController(DoctorApi) {
+    function EmergencyContactsViewController() {
         // Private variables
         var self = this;
 
         // Public variables
-        self.doctors = [
+        self.emergencyContacts = [
             {
                 firstName: 'Paulo Regis',
                 lastName: 'de Medeiros Cavalcante',
-                medicalSpeciality: 'Emergency Medicine',
+                relationship: 'Father',
                 email: 'pauloregismc@gmail.com',
                 mobilePhone: '+49 251 - 74849741',
                 telefonPhone: '+49 251 - 74849741',
-                clinicAddress: 'Düsbergweg 10, 48153 Münster'
+                address: 'Düsbergweg 10, 48153 Münster'
             },
             {
-                firstName: 'Marcio Tanure',
-                lastName: 'Fernandes da Silva',
-                medicalSpeciality: 'Emergency Medicine',
-                email: 'marciotanure@gmail.com',
+                firstName: 'Paulo Regis',
+                lastName: 'de Medeiros Cavalcante',
+                relationship: 'Father',
+                email: 'pauloregismc@gmail.com',
                 mobilePhone: '+49 251 - 74849741',
                 telefonPhone: '+49 251 - 74849741',
-                clinicAddress: 'Düsbergweg 10, 48153 Münster'
+                address: 'Düsbergweg 10, 48153 Münster'
             }
         ];
 

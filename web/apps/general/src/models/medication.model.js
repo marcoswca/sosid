@@ -3,32 +3,32 @@
 
     var dependencies = [
         'Nxt.baseModel',
-        'api.doctor'
+        'api.medication'
     ];
 
     angular
-        .module('model.doctor', dependencies)
-        .factory('Doctor', DoctorModel);
+        .module('model.medication', dependencies)
+        .factory('Medication', MedicationModel);
 
     /** @ngInject */
-    function DoctorModel(BaseModel, $q, DoctorApi) {
+    function MedicationModel(BaseModel, $q, MedicationApi) {
         return BaseModel.make({
-            api: DoctorApi,
+            api: MedicationApi,
             attributes: getAttributes(),
             classMethods: {},
             instanceMethods: {
                 create: function () {
-                    return DoctorApi.create(this);
+                    return MedicationApi.create(this);
                 },
                 update: function () {
-                    return DoctorApi.update(this);
+                    return MedicationApi.update(this);
                 }
             }
         });
 
         function getAttributes() {
             return {
-                firstName: {
+                name: {
                     label: true,
                     validate: {
                         required: {
@@ -36,32 +36,19 @@
                         }
                     }
                 },
-                lastName: {
-                    label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
-                },
-                medicalSpeciality: {
-                    label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
-                },
-                mobilePhone: {
+                dosage: {
                     label: true
                 },
-                phone: {
+                unit: {
                     label: true
                 },
-                email: {
+                frequency: {
                     label: true
                 },
-                clinicAddress: {
+                reasonForTaking: {
+                    label: true
+                },
+                notes: {
                     label: true
                 }
             };

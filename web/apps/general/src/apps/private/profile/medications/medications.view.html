@@ -1,3 +1,94 @@
-<div class="medications-view">
-    <span>{{MedicationsViewCtrl.viewName}}</span>
+<div class="medications-view" flex="100">
+    <div class="profile-content__header" flex="100" layout="row" layout-align="space-between center">
+        <div>
+            <span>My Records</span>
+            <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            <span class="profile-content__header__title">{{MedicationsViewCtrl.viewName}}</span>
+        </div>
+    </div>
+
+    <div flex="100" class="personal-data__basic-informations profile-content__box profile-content__box-edit">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+            <div>
+                <h3>{{ 'PRIVATE.PROFILE.MEDICATIONS.ADD_NEW' | translate }}</h3>
+            </div>
+        </div>
+        <div layout="row" flex="100">
+            <div layout="column" flex="100">
+                <form name="newMedication">
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="Medication:name" flex="50" class="md-block">
+                            <input ng-model="medication.name">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="Medication:dosage" flex="33">
+                            <input ng-model="medication.dosage">
+                        </md-input-container>
+                        <md-input-container nx-model-attribute="Medication:unit" flex="33">
+                            <input ng-model="medication.unit">
+                        </md-input-container>
+                        <md-input-container nx-model-attribute="Medication:frequency" flex="33">
+                            <input ng-model="medication.Frequency">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="Medication:reasonForTaking" flex="100" class="md-block">
+                            <input ng-model="medication.reasonForTaking">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="Medication:notes" flex="100" class="md-block">
+                            <textarea ng-model="medications.notes"></textarea>
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-button ng-disabled="newMedication.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.MEDICATIONS.ADD_NEW' | translate }}</md-button>
+                        <md-button class="me-raised">Cancel</md-button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div flex="100" class="personal-data__basic-informations profile-content__box" ng-repeat="medication in MedicationsViewCtrl.medications">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+            <div>
+                <h3>{{ medication.name}} - <span>{{medication.dosage + " " + medication.unit + " " + medication.frequency}}</span></h3>
+            </div>
+        </div>
+        <div layout="row" flex="100">
+            <div layout="column" flex="100">
+                <div layout="row">
+                    <md-input-container nx-model-attribute="Medication:name" flex="50" class="md-block">
+                        <input ng-model="medication.name">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="Medication:dosage" flex="33">
+                        <input ng-model="medication.dosage">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="Medication:unit" flex="33">
+                        <input ng-model="medication.unit">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="Medication:frequency" flex="33">
+                        <input ng-model="medication.frequency">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="Medication:reasonForTaking" flex="100" class="md-block">
+                        <input ng-model="medication.reasonForTaking">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="Medication:notes" flex="100" class="md-block">
+                        <textarea ng-model="medications.notes"></textarea>
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>

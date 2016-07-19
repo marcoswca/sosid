@@ -3,25 +3,25 @@
 
     var dependencies = [
         'Nxt.baseModel',
-        'api.doctor'
+        'api.emergencyContact'
     ];
 
     angular
-        .module('model.doctor', dependencies)
-        .factory('Doctor', DoctorModel);
+        .module('model.emergencyContact', dependencies)
+        .factory('EmergencyContact', EmergencyContactModel);
 
     /** @ngInject */
-    function DoctorModel(BaseModel, $q, DoctorApi) {
+    function EmergencyContactModel(BaseModel, $q, EmergencyContactApi) {
         return BaseModel.make({
-            api: DoctorApi,
+            api: EmergencyContactApi,
             attributes: getAttributes(),
             classMethods: {},
             instanceMethods: {
                 create: function () {
-                    return DoctorApi.create(this);
+                    return EmergencyContactApi.create(this);
                 },
                 update: function () {
-                    return DoctorApi.update(this);
+                    return EmergencyContactApi.update(this);
                 }
             }
         });
@@ -44,13 +44,8 @@
                         }
                     }
                 },
-                medicalSpeciality: {
-                    label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
+                relationship: {
+                    label: true
                 },
                 mobilePhone: {
                     label: true
@@ -61,7 +56,7 @@
                 email: {
                     label: true
                 },
-                clinicAddress: {
+                address: {
                     label: true
                 }
             };
