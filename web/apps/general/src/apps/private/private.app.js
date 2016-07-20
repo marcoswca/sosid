@@ -18,6 +18,9 @@
         'private.routes.doctors',
         'private.routes.emergencyContacts',
         'private.routes.healthConditions',
+        'private.routes.healthInsurance',
+        'private.routes.allergies',
+        'private.routes.glassesPass',
 
         // Views
         'private.views.master'

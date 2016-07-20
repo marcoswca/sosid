@@ -1,3 +1,8 @@
 .organ-donation-view {
-
+  .md-chips {
+    margin-bottom: 20px;
+    ._md-chip-input-container, ._md-chip-input-container input:not([type]) {
+      //width: 100%;
+    }
+  }
 }

@@ -82,28 +82,28 @@
             <div layout="column" flex="100">
                 <div layout="row">
                     <md-input-container nx-model-attribute="Medication:name" flex="50" class="md-block">
-                        <input ng-model="medication.name">
+                        <input ng-model="medication.name" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
                     <md-input-container nx-model-attribute="Medication:dosage" flex="33">
-                        <input ng-model="medication.dosage">
+                        <input ng-model="medication.dosage" disabled>
                     </md-input-container>
                     <md-input-container nx-model-attribute="Medication:unit" flex="33">
-                        <input ng-model="medication.unit">
+                        <input ng-model="medication.unit" disabled>
                     </md-input-container>
                     <md-input-container nx-model-attribute="Medication:frequency" flex="33">
-                        <input ng-model="medication.frequency">
+                        <input ng-model="medication.frequency" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
                     <md-input-container nx-model-attribute="Medication:reasonForTaking" flex="100" class="md-block">
-                        <input ng-model="medication.reasonForTaking">
+                        <input ng-model="medication.reasonForTaking" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
                     <md-input-container nx-model-attribute="Medication:notes" flex="100" class="md-block">
-                        <textarea ng-model="medications.notes"></textarea>
+                        <textarea ng-model="medication.notes" disabled></textarea>
                     </md-input-container>
                 </div>
             </div>

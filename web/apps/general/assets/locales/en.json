@@ -106,6 +106,25 @@
         }
       }
     },
+    "HEALTH INSURANCE": {
+      "ATTRIBUTES": {
+        "COMPANY NAME": {
+          "LABEL": "Condition",
+          "VALIDATE": {
+            "REQUIRED": "Condition is required"
+          }
+        },
+        "ID INSURANCE": {
+          "LABEL": "Policy Number / ID Number"
+        },
+        "PHONE": {
+          "LABEL": "Insurance Telephone"
+        },
+        "PLAN TYPE": {
+          "LABEL": "Medical Plan Type"
+        }
+      }
+    },
     "USER": {
       "ATTRIBUTES": {
         "EMAIL": {

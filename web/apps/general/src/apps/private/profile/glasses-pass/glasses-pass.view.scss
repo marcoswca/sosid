@@ -1,0 +1,22 @@
+.personal-data-view {
+
+}
+
+.glasses-pass__form-eyes {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  &:first-of-type {
+    margin-bottom: 0;
+    background-color: red;
+  }
+  .glasses-pass__form-eyes__icon {
+    width: 190px;
+    background-color: #F2F2F2;
+    color: rgba(0,0,0,0.75);
+  }
+  .glasses-pass__form-eyes__inputs {
+    padding: 5px 20px;
+  }
+}
+
+
