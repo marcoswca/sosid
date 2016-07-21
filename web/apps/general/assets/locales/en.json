@@ -93,12 +93,59 @@
         }
       }
     },
+    "LIVING WILL": {
+      "ATTRIBUTES": {
+        "FIRST NAME": {
+          "LABEL": "First Name",
+          "VALIDATE": {
+            "REQUIRED": "First Name is required"
+          }
+        },
+        "LAST NAME": {
+          "LABEL": "Last Name",
+          "VALIDATE": {
+            "REQUIRED": "Last Name is required"
+          }
+        },
+        "RELATIONSHIP": {
+          "LABEL": "Relationship",
+          "VALIDATE": {
+            "REQUIRED": "Relationship is required"
+          }
+        },
+        "MOBILE PHONE": {
+          "LABEL": "Mobile Phone"
+        },
+        "PHONE": {
+          "LABEL": "Telefon Phone"
+        },
+        "EMAIL": {
+          "LABEL": "Email"
+        },
+        "ADDRESS": {
+          "LABEL": "Address"
+        }
+      }
+    },
     "HEALTH CONDITION": {
       "ATTRIBUTES": {
         "CONDITION": {
           "LABEL": "Condition",
           "VALIDATE": {
             "REQUIRED": "Condition is required"
+          }
+        },
+        "SEVERITY": {
+          "LABEL": "Severity"
+        }
+      }
+    },
+    "ALLERGIE": {
+      "ATTRIBUTES": {
+        "ALLERGIE": {
+          "LABEL": "Allergie",
+          "VALIDATE": {
+            "REQUIRED": "Allergie is required"
           }
         },
         "SEVERITY": {
@@ -125,6 +172,58 @@
         }
       }
     },
+    "GLASSES PASS": {
+      "ATTRIBUTES": {
+        "NDL": {
+          "LABEL": "NL / NDL - Optikerkennung"
+        },
+        "RIGHT F": {
+          "LABEL": "Fernbrille"
+        },
+        "RIGHT SPH": {
+          "LABEL": "Sph"
+        },
+        "RIGHT CYL": {
+          "LABEL": "Cyl"
+        },
+        "RIGHT A": {
+          "LABEL": "A"
+        },
+        "RIGHT ADD": {
+          "LABEL": "Add"
+        },
+        "LEFT F": {
+          "LABEL": "Fernbrille"
+        },
+        "LEFT SPH": {
+          "LABEL": "Sph"
+        },
+        "LEFT CYL": {
+          "LABEL": "Cyl"
+        },
+        "LEFT A": {
+          "LABEL": "A"
+        },
+        "LEFT ADD": {
+          "LABEL": "Add"
+        },
+        "GLASS": {
+          "LABEL": "Glass"
+        },
+        "VERSION": {
+          "LABEL": "Fassung"
+        },
+        "PD": {
+          "LABEL": "PD = Pupillendistanz"
+        },
+        "DATE": {
+          "LABEL": "Datum"
+        },
+        "ORDER": {
+          "LABEL": "Auftrag"
+        }
+      }
+    },
     "USER": {
       "ATTRIBUTES": {
         "EMAIL": {
@@ -137,7 +236,7 @@
           }
         },
         "NAME": {
-          "LABEL": "Your Name'",
+          "LABEL": "Your Name",
           "PLACEHOLDER": "enter with your name",
           "VALIDATE": {
             "REQUIRED": "Your name is required",
@@ -152,12 +251,31 @@
             "LENGTH": "Your password cannot contain less than 8 characters or more than 60",
             "FORMAT": "Your password must contains letters and numbers"
           }
+        },
+        "AGE": {
+          "LABEL": "Age"
+        },
+        "SEX": {
+          "LABEL": "Sex"
+        },
+        "BLOOD TYPE": {
+          "LABEL": "Blood Type"
+        },
+        "ADDRESS": {
+          "LABEL": "Address"
+        },
+        "PLAN": {
+          "LABEL": "Plan"
+        },
+        "PERIOD": {
+          "LABEL": "Period"
         }
       }
     }
   },
   "LOGOUT_BUTTON": "Logout",
   "CANCEL": "cancel",
+  "SAVE": "save",
   "YES": "yes",
   "ALERT": "Alert",
   "404_TEXT": "The content you were looking for doesn't exist.",
@@ -259,7 +377,28 @@
       "HEALTH CONDITIONS": {
         "PAGE_TITLE": "Health Conditions",
         "ADD_NEW": "Add New Condition"
+      },
+      "HEALTH INSURANCES": {
+        "PAGE_TITLE": "Health Insurances",
+        "ADD_NEW": "Add New Insurance"
+      },
+      "ALLERGIES": {
+        "PAGE_TITLE": "Allergies",
+        "ADD_NEW_ALLERGIE": "Add New Allergie",
+        "ADD_ALLERGIE": "Add Allergie"
+      },
+      "GLASSES PASS": {
+        "PAGE_TITLE": "Glasses Pass",
+        "LEFT EYE": "L - Left Eye",
+        "RIGHT EYE": "R - Right Eye"
+      },
+      "LIVING WILL": {
+        "PAGE_TITLE": "Living Will"
+      },
+      "ORGAN DONON CARD": {
+        "PAGE_TITLE": "Organ Donon Card"
       }
+
     }
   }
 }

@@ -38,6 +38,23 @@ $backColor: #83D1EA;
     bottom: 0;
     margin: auto;
   }
+  .progress-circle__avatar {
+    width: 88px;
+    height: 88px;
+    background-color: #C4E8F4;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    md-icon {
+      color: #00A2D3;
+      width: 72px;
+      height: 72px;
+    }
+  }
   &:hover {
     .progress-circle__change--avatar {
       opacity: 1;

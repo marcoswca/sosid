@@ -1,7 +1,9 @@
 (function () {
     'use strict';
 
-    var dependencies = [];
+    var dependencies = [
+        'model.livingWill'
+    ];
 
     angular
         .module('private.views.livingWill', dependencies)

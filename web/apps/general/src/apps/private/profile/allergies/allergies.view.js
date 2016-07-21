@@ -2,7 +2,7 @@
     'use strict';
 
     var dependencies = [
-        'model.medication'
+        'model.allergie'
     ];
 
     angular

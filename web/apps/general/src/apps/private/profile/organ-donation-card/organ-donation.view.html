@@ -3,19 +3,19 @@
         <div>
             <span>{{ 'PRIVATE.PROFILE.MY_RECORDS' | translate }}</span>
             <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            <span class="profile-content__header__title">{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE' | translate}}</span>
+            <span class="profile-content__header__title">{{ 'PRIVATE.PROFILE.ORGAN DONON CARD.PAGE_TITLE' | translate }}</span>
         </div>
     </div>
 
     <div flex="100" class="personal-data__basic-informations profile-content__box profile-content__box-edit">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
-                <h3>{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate }}</h3>
+                <h3>{{ 'PRIVATE.PROFILE.ORGAN DONON CARD.PAGE_TITLE' | translate }}</h3>
             </div>
         </div>
         <div layout="row" flex="100">
             <div layout="column" flex="100">
-                <form name="newContactEmergeny">
+                <form name="saveOrganDononCard">
                     <div layout="row" flex="100">
                         <md-radio-group ng-model="doctor.option" flex="100">
                             <md-radio-button value="1" class="md-primary">Yes, I allow after medical finding my death my body organs and tissues are removed</md-radio-button>
@@ -80,8 +80,8 @@
                         </div>
                     </div>
                     <div layout="row">
-                        <md-button ng-disabled="newMedication.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate }}</md-button>
-                        <md-button class="me-raised">{{ 'CANCEL' | translate }}</md-button>
+                        <md-button ng-disabled="saveOrganDononCard.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate }}</md-button>
+                        <md-button class="me-raised">{{ 'SAVE' | translate }}</md-button>
                     </div>
                 </form>
             </div>

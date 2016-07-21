@@ -17,7 +17,6 @@
             attributes: {
                 email: {
                     label: true,
-                    placeholder: true,
                     validate: {
                         required: {
                             message: true
@@ -48,7 +47,6 @@
                 },
                 name: {
                     label: true,
-                    placeholder: true,
                     validate: {
                         required: {
                             message: true
@@ -61,7 +59,6 @@
                 },
                 password: {
                     label: true,
-                    placeholder: true,
                     validate: {
                         required: {
                             message: true
@@ -73,6 +70,29 @@
                         password: {
                             message: true
                         }
+                    }
+                },
+                age: {
+                    label: true
+                },
+                sex: {
+                    label: true
+                },
+                bloodType: {
+                    label: true
+                },
+                address: {
+                    label: true
+                },
+                plan: {
+                    label: true
+                },
+                period: {
+                    label: true
+                },
+                familyDoctor: {
+                    firstName: {
+                        label: true
                     }
                 }
             },

@@ -27,6 +27,15 @@
         width: 122px;
         height: 122px;
       }
+      .progress-circle__avatar {
+        width: 122px;
+        height: 122px;
+        background-color: #E0E3E3;
+        md-icon {
+          width: 92px;
+          height: 92px;
+        }
+      }
       .progress-circle__change--avatar {
         em {
           display: block;

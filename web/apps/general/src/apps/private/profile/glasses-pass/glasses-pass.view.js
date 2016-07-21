@@ -1,7 +1,9 @@
 (function () {
     'use strict';
 
-    var dependencies = [];
+    var dependencies = [
+        'model.glassesPass'
+    ];
 
     angular
         .module('private.views.glassesPass', dependencies)

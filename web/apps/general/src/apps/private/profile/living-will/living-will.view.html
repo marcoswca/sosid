@@ -3,47 +3,47 @@
         <div>
             <span>{{ 'PRIVATE.PROFILE.MY_RECORDS' | translate }}</span>
             <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            <span class="profile-content__header__title">{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE' | translate}}</span>
+            <span class="profile-content__header__title">{{ 'PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE' | translate}}</span>
         </div>
     </div>
 
     <div flex="100" class="personal-data__basic-informations profile-content__box profile-content__box-edit">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
-                <h3>{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate }}</h3>
+                <h3>{{ 'PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE' | translate}}</h3>
             </div>
         </div>
         <div layout="row" flex="100">
             <div layout="column" flex="100">
                 <form name="newContactEmergeny">
                     <div layout="row">
-                        <md-input-container nx-model-attribute="EmergencyContact:firstName" flex="33" class="md-block">
+                        <md-input-container nx-model-attribute="LivingWill:firstName" flex="33" class="md-block">
                             <input ng-model="doctor.firstName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="EmergencyContact:lastName" flex="33" class="md-block">
+                        <md-input-container nx-model-attribute="LivingWill:lastName" flex="33" class="md-block">
                             <input ng-model="doctor.lastName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="EmergencyContact:relationship" flex="33">
+                        <md-input-container nx-model-attribute="LivingWill:relationship" flex="33">
                             <input ng-model="doctor.medicalSpeciality">
                         </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container nx-model-attribute="EmergencyContact:mobilePhone" flex="33">
+                        <md-input-container nx-model-attribute="LivingWill:mobilePhone" flex="33">
                             <input ng-model="doctor.mobilePhone">
                         </md-input-container>
-                        <md-input-container nx-model-attribute="EmergencyContact:phone" flex="33">
+                        <md-input-container nx-model-attribute="LivingWill:phone" flex="33">
                             <input ng-model="doctor.telefonPhone">
                         </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container nx-model-attribute="EmergencyContact:email" flex="50" class="md-block">
+                        <md-input-container nx-model-attribute="LivingWill:email" flex="50" class="md-block">
                             <input ng-model="doctor.email">
                         </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container nx-model-attribute="EmergencyContact:address" flex="100" class="md-block">
+                        <md-input-container nx-model-attribute="LivingWill:address" flex="100" class="md-block">
                             <textarea ng-model="doctor.clinicAddress"></textarea>
                         </md-input-container>
                     </div>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div layout="row">
-                        <md-button ng-disabled="newMedication.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate }}</md-button>
+                        <md-button ng-disabled="newMedication.$invalid " class="md-raised md-primary">{{ 'SAVE' | translate }}</md-button>
                         <md-button class="me-raised">{{ 'CANCEL' | translate }}</md-button>
                     </div>
                 </form>
