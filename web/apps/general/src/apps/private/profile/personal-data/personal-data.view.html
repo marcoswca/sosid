@@ -16,8 +16,8 @@
                 <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
             </div>
         </div>
-        <div layout="row">
-            <div layout="column" flex="70">
+        <div layout="row" layout-xs="column">
+            <div layout="column" flex-xs="100" flex="70">
                 <div layout="row">
                     <md-input-container nx-model-attribute="User:name" flex="100" class="md-block">
                         <input ng-model="PersonalDataViewCtrl.userFullname" disabled>
@@ -57,7 +57,7 @@
                     </md-input-container>
                 </div>
             </div>
-            <div class="personal-data__avatar" layout="column" flex="30" layout-align="center center">
+            <div class="personal-data__avatar" layout="column" flex="30" flex-xs="100" layout-align="center center">
                 <div layout="column">
                     <div class="personal-data__avatar__img-container">
                         <progress-circle></progress-circle>
@@ -71,8 +71,8 @@
 
     </div>
 
-    <div class="personal-data__basic-informations profile-content__box">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+    <div class="personal-data__doctor-family profile-content__box">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title" flex="100">
             <div>
                 <h3>Family Doctor</h3>
             </div>
@@ -80,28 +80,28 @@
                 <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
             </div>
         </div>
-        <div layout="row">
+        <div layout="row" flex="100">
             <div layout="column" flex="100">
-                <div layout="row">
-                    <div layout="row" flex="30">
+                <div layout="row" layout-xs="column">
+                    <div layout="row" flex="30" flex-xs="100">
                         <md-input-container flex="100" class="md-block">
                             <label>First Name</label>
                             <input ng-model="PersonalDataViewCtrl.user.firstName" disabled>
                         </md-input-container>
                     </div>
-                    <div layout="row" flex="30">
+                    <div layout="row" flex="30" flex-xs="100">
                         <md-input-container flex="100" class="md-block">
                             <label>Last Name</label>
                             <input ng-model="PersonalDataViewCtrl.user.lastName" disabled>
                         </md-input-container>
                     </div>
-                    <div layout="row" flex="20">
+                    <div layout="row" flex="20" flex-xs="100">
                         <md-input-container flex="100" class="md-block">
                             <label>Mobile Phone</label>
                             <input ng-model="PersonalDataViewCtrl.user.bloodType" disabled>
                         </md-input-container>
                     </div>
-                    <div layout="row" flex="20">
+                    <div layout="row" flex="20" flex-xs="100">
                         <md-input-container flex="100" class="md-block">
                             <label>Clinic Phone</label>
                             <input ng-model="PersonalDataViewCtrl.user.bloodType" disabled>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div layout="row">
-                    <md-input-container flex="100" class="md-block">
+                    <md-input-container flex="100">
                         <label>Email</label>
                         <input ng-model="PersonalDataViewCtrl.user.address" disabled>
                     </md-input-container>
@@ -119,7 +119,7 @@
 
     </div>
 
-    <div class="personal-data__basic-informations profile-content__box">
+    <div class="personal-data__plan profile-content__box">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
                 <h3>Plan</h3>
@@ -172,7 +172,7 @@
 
     </div>
 
-    <div class="personal-data__basic-informations profile-content__box">
+    <div class="personal-data__products profile-content__box">
 
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
@@ -185,7 +185,7 @@
 
         <div layout="row">
             <div layout="column" flex="100" class="products-list">
-                <div layout="row" flex="100" layout-align="space-between center" class="products-list__item">
+                <div layout="row" flex="100" layout-align="space-between center" class="products-list__item" ng-repeat="i in [0,1]">
                     <div layout="row">
                         <div layout="row" class="products-list__image-container"><img src="http://placehold.it/96x65" alt=""></div>
                         <div layout="column" layout-align="center start">
@@ -196,22 +196,7 @@
                     <div layout="row">
                         <button class="products-list__toggle-privacy" ng-click="PersonalDataViewCtrl.togglePrivacy()">
                             <md-icon md-svg-icon="action:lock_{{PersonalDataViewCtrl.isPrivate ? 'outline' : 'open'}}" style="color: #00A2D3;width:8px;height:8px; min-width: 18px; min-height: 18px;" aria-label="Cake Icon"></md-icon>
-                            {{PersonalDataViewCtrl.isPrivate ? 'Block PIN' : 'Unblock PIN'}}
-                        </button>
-                    </div>
-                </div>
-                <div layout="row" flex="100" layout-align="space-between center" class="products-list__item">
-                    <div layout="row">
-                        <div layout="row" class="products-list__image-container"><img src="http://placehold.it/96x65" alt=""></div>
-                        <div layout="column" layout-align="center start">
-                            <div layout="row" class="products-list__title">SOS CARD Id</div>
-                            <div layout="row" class="products-list__more-info">Mar 15 at 8:02am</div>
-                        </div>
-                    </div>
-                    <div layout="row">
-                        <button class="products-list__toggle-privacy" ng-click="PersonalDataViewCtrl.togglePrivacy()">
-                            <md-icon md-svg-icon="action:lock_{{PersonalDataViewCtrl.isPrivate ? 'outline' : 'open'}}" style="color: #00A2D3;width:8px;height:8px; min-width: 18px; min-height: 18px;" aria-label="Cake Icon"></md-icon>
-                            {{PersonalDataViewCtrl.isPrivate ? 'Block PIN' : 'Unblock PIN'}}
+                            <span hide-xs="true">{{PersonalDataViewCtrl.isPrivate ? 'Block PIN' : 'Unblock PIN'}}</span>
                         </button>
                     </div>
                 </div>
@@ -220,7 +205,7 @@
 
     </div>
 
-    <div class="personal-data__basic-informations profile-content__box">
+    <div class="personal-data__resources profile-content__box">
 
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
@@ -298,8 +283,8 @@
 
     </div>
 
-    <div layout="row" class="hot-button__container">
-        <div layout="row" flex="50" layout-align="space-between center" class="hot-button">
+    <div layout="row" layout-xs="column" class="hot-button__container">
+        <div layout="row" flex="50" flex-xs="100" layout-align="space-between center" class="hot-button">
             <div layout="row" layout-align="start center">
                 <div class="hot-button__icon-left">
                     <md-icon md-svg-icon="sosid:print_card" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
@@ -311,7 +296,7 @@
             </div>
             <div class="hot-button__icon-right"><md-icon md-svg-icon="hardware:keyboard_arrow_right" aria-label="Arrow Right"></md-icon></div>
         </div>
-        <div layout="row" flex="50" layout-align="space-between center" class="hot-button">
+        <div layout="row" flex="50" flex-xs="100" layout-align="space-between center" class="hot-button">
             <div layout="row" layout-align="start center">
                 <div class="hot-button__icon-left">
                     <md-icon md-svg-icon="sosid:buy_products" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>

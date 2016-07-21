@@ -34,6 +34,9 @@ body {
 
 .profile-content {
   margin-top: -65px;
+  @media screen and (max-width: 600px) {
+    margin-top: 0;
+  }
   .profile-content__container{
     max-width: 1180px;
     width: 1180px;
@@ -244,8 +247,18 @@ body {
       box-shadow: none;
       color: #00A2D3;
       padding: 0 22px 0 15px;
+      margin: 0;
       md-icon {
         color: #00A2D3;
+      }
+      @media screen and (max-width: 600px) {
+        padding: 0;
+        min-width: 36px;
+      }
+      span {
+        @media screen and (max-width: 600px) {
+          display: none;
+        }
       }
     }
   }
@@ -255,6 +268,17 @@ body {
   margin-top: 10px;
   padding: 0 20px 20px;
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
+  background-color: white;
+  box-sizing: border-box;
+  @media screen and (max-width: 600px) {
+    flex: 1 1 95%;
+    max-width: 95%;
+    max-height: 95%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
   &.profile-content__box-edit {
     box-shadow: 0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12);
     .profile-content__box__title {
@@ -389,6 +413,10 @@ body {
   .hot-button {
     &:first-of-type {
       margin-right: 20px;
+      @media screen and (max-width: 600px) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
   }
 }

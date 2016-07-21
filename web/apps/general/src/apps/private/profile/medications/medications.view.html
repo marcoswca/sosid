@@ -1,4 +1,4 @@
-<div class="medications-view" flex="100">
+<div class="medications-view" flex="100" layout-align="start center">
     <div class="profile-content__header" flex="100" layout="row" layout-align="space-between center">
         <div>
             <span>{{ 'PRIVATE.PROFILE.MY_RECORDS' | translate }}</span>
@@ -23,18 +23,18 @@
             <div layout="column" flex="100">
                 <form name="newMedication">
                     <div layout="row">
-                        <md-input-container nx-model-attribute="Medication:name" flex="50" class="md-block">
+                        <md-input-container nx-model-attribute="Medication:name" flex="50" flex-xs="100" class="md-block">
                             <input ng-model="medication.name">
                         </md-input-container>
                     </div>
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="Medication:dosage" flex="33">
+                    <div layout="row" layout-xs="column">
+                        <md-input-container nx-model-attribute="Medication:dosage" flex="33" flex-xs="100">
                             <input ng-model="medication.dosage">
                         </md-input-container>
-                        <md-input-container nx-model-attribute="Medication:unit" flex="33">
+                        <md-input-container nx-model-attribute="Medication:unit" flex="33" flex-xs="100">
                             <input ng-model="medication.unit">
                         </md-input-container>
-                        <md-input-container nx-model-attribute="Medication:frequency" flex="33">
+                        <md-input-container nx-model-attribute="Medication:frequency" flex="33" flex-xs="100">
                             <input ng-model="medication.Frequency">
                         </md-input-container>
                     </div>
@@ -62,7 +62,7 @@
                             <div class="profile-content__upload-files__dnd-area__hint">Your files here or <span>browse</span></div>
                         </div>
                     </div>
-                    <div layout="row">
+                    <div layout="row" layout-xs="column">
                         <md-button ng-disabled="newMedication.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.MEDICATIONS.ADD_NEW' | translate }}</md-button>
                         <md-button class="me-raised">Cancel</md-button>
                     </div>
@@ -85,14 +85,14 @@
                         <input ng-model="medication.name" disabled>
                     </md-input-container>
                 </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="Medication:dosage" flex="33">
+                <div layout="row" layout-xs="column">
+                    <md-input-container nx-model-attribute="Medication:dosage" flex="33" flex-xs="100">
                         <input ng-model="medication.dosage" disabled>
                     </md-input-container>
-                    <md-input-container nx-model-attribute="Medication:unit" flex="33">
+                    <md-input-container nx-model-attribute="Medication:unit" flex="33" flex-xs="100">
                         <input ng-model="medication.unit" disabled>
                     </md-input-container>
-                    <md-input-container nx-model-attribute="Medication:frequency" flex="33">
+                    <md-input-container nx-model-attribute="Medication:frequency" flex="33" flex-xs="100">
                         <input ng-model="medication.frequency" disabled>
                     </md-input-container>
                 </div>

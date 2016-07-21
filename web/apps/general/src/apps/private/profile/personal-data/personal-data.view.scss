@@ -91,12 +91,18 @@
     color: rgba(0, 22, 33, 0.55);
     font-weight: 500;
     margin-bottom: 5px;
+    @media screen and (max-width: 600px) {
+      font-size: 13px;
+    }
   }
   .products-list__more-info {
     font-size: 14px;
-    color: rgba(0, 0, 0, 0.35);
+    color: rgba(0, 0, 0, 0.55);
     font-weight: 300;
     font-style: italic;
+    @media screen and (max-width: 600px) {
+      font-size: 12px;
+    }
   }
   .products-list__toggle-privacy {
     background-color: transparent;
@@ -106,5 +112,8 @@
     text-transform: uppercase;
     padding: 10px 20px;
     color: #00A2D3;
+    @media screen and (max-width: 600px) {
+      border: 0;
+    }
   }
 }
