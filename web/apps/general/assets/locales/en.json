@@ -316,13 +316,13 @@
       "SENT_REGISTRATION_LINK": "We detected that your e-mail is not in our system. We sent a e-mail to you with a registration link."
     },
     "CREATE_ACCOUNT": {
-      "TITLE": "Welcome to <span class='light'> PMT-Lite </span>",
+      "TITLE": "Welcome to <span class='light'> SOS-ID </span>",
       "SUB_TITLE": "Let's start by entering your company name below, e-mail and password.",
       "HAS_ACCOUNT_TEXT": "If you already have an account?",
       "LOGIN_HERE_LINK": "Log in here",
       "SUBMIT_BUTTON": "SIGN UP",
       "SUCCESS": {
-        "TITLE": "Thanks for signing up to <span class='light'> PMT-Lite </span>!",
+        "TITLE": "Thanks for signing up to <span class='light'> SOS-ID </span>!",
         "SUB_TITLE": "Please, log in using your email:",
         "FOOTER_TEXT": "Now you have an account"
       }
@@ -344,18 +344,6 @@
       "SUCCESS": {
         "TITLE": "Password Changed",
         "SUB_TITLE": "Please, click here to log in."
-      }
-    },
-    "INVITE_CONFIRMATION": {
-      "TITLE": "Welcome to <span class='light'> PMT-Lite </span>",
-      "SUB_TITLE": "To confirm your invitation please enter with your name and password below.",
-      "SUBMIT_BUTTON": "Confirm",
-      "FOOTER_TEXT": "If you already have a user",
-      "LOGIN_HERE_LINK": "Log in here",
-      "SUCCESS": {
-        "TITLE": "Thanks for signing up to <span class='light'> PMT-Lite </span>",
-        "SUB_TITLE": "Please, log in using your email:",
-        "FOOTER_TEXT": "Now you have a account. Please, click here to log in."
       }
     }
   },
