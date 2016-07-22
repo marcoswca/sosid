@@ -19,29 +19,29 @@
         <div layout="row" flex="100">
             <div layout="column" flex="100">
                 <form name="newContactEmergeny">
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="LivingWill:firstName" flex="33" class="md-block">
+                    <div layout="row" layout-xs="column">
+                        <md-input-container nx-model-attribute="LivingWill:firstName" flex="33" flex-xs="100" class="md-block">
                             <input ng-model="doctor.firstName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="LivingWill:lastName" flex="33" class="md-block">
+                        <md-input-container nx-model-attribute="LivingWill:lastName" flex="33" flex-xs="100" class="md-block">
                             <input ng-model="doctor.lastName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="LivingWill:relationship" flex="33">
+                        <md-input-container nx-model-attribute="LivingWill:relationship" flex="33" flex-xs="100">
                             <input ng-model="doctor.medicalSpeciality">
                         </md-input-container>
                     </div>
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="LivingWill:mobilePhone" flex="33">
+                    <div layout="row" layout-xs="column">
+                        <md-input-container nx-model-attribute="LivingWill:mobilePhone" flex="33" flex-xs="100">
                             <input ng-model="doctor.mobilePhone">
                         </md-input-container>
-                        <md-input-container nx-model-attribute="LivingWill:phone" flex="33">
+                        <md-input-container nx-model-attribute="LivingWill:phone" flex="33" flex-xs="100">
                             <input ng-model="doctor.telefonPhone">
                         </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container nx-model-attribute="LivingWill:email" flex="50" class="md-block">
+                        <md-input-container nx-model-attribute="LivingWill:email" flex="50" flex-xs="100" class="md-block">
                             <input ng-model="doctor.email">
                         </md-input-container>
                     </div>

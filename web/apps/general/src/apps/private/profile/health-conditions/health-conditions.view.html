@@ -25,11 +25,11 @@
         <div layout="row" flex="100">
             <div layout="column" flex="100">
                 <form name="newHealthCondition">
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="HealthCondition:condition" flex="33">
+                    <div layout="row" layout-xs="column">
+                        <md-input-container nx-model-attribute="HealthCondition:condition" flex="33" flex-xs="100">
                             <input ng-model="healthConditions.condition">
                         </md-input-container>
-                        <md-input-container nx-model-attribute="HealthCondition:severity" flex="33">
+                        <md-input-container nx-model-attribute="HealthCondition:severity" flex="33" flex-xs="100">
                             <input ng-model="mhealthConditions.severity">
                         </md-input-container>
                     </div>
@@ -65,11 +65,11 @@
         </div>
         <div layout="row" flex="100">
             <div layout="column" flex="100">
-                <div layout="row">
-                    <md-input-container nx-model-attribute="HealthCondition:condition" flex="33">
+                <div layout="row" layout-xs="column">
+                    <md-input-container nx-model-attribute="HealthCondition:condition" flex="33" flex-xs="100">
                         <input ng-model="condition.condition" disabled>
                     </md-input-container>
-                    <md-input-container nx-model-attribute="HealthCondition:severity" flex="33">
+                    <md-input-container nx-model-attribute="HealthCondition:severity" flex="33" flex-xs="100">
                         <input ng-model="condition.severity" disabled>
                     </md-input-container>
                 </div>

@@ -37,29 +37,29 @@
                             <md-radio-button value="5" class="md-primary">About Yes or No then the following person should decide:</md-radio-button>
                         </md-radio-group>
                     </div>
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="EmergencyContact:firstName" flex="33" class="md-block">
+                    <div layout="row" layout-xs="column">
+                        <md-input-container nx-model-attribute="EmergencyContact:firstName" flex="33" flex-xs="100" class="md-block">
                             <input ng-model="doctor.firstName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="EmergencyContact:lastName" flex="33" class="md-block">
+                        <md-input-container nx-model-attribute="EmergencyContact:lastName" flex="33" flex-xs="100" class="md-block">
                             <input ng-model="doctor.lastName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="EmergencyContact:relationship" flex="33">
+                        <md-input-container nx-model-attribute="EmergencyContact:relationship" flex="33" flex-xs="100">
                             <input ng-model="doctor.medicalSpeciality">
                         </md-input-container>
                     </div>
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="EmergencyContact:mobilePhone" flex="33">
+                    <div layout="row" layout-xs="column">
+                        <md-input-container nx-model-attribute="EmergencyContact:mobilePhone" flex="33" flex-xs="100">
                             <input ng-model="doctor.mobilePhone">
                         </md-input-container>
-                        <md-input-container nx-model-attribute="EmergencyContact:phone" flex="33">
+                        <md-input-container nx-model-attribute="EmergencyContact:phone" flex="33" flex-xs="100">
                             <input ng-model="doctor.telefonPhone">
                         </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container nx-model-attribute="EmergencyContact:email" flex="50" class="md-block">
+                        <md-input-container nx-model-attribute="EmergencyContact:email" flex="50" flex-xs="100" class="md-block">
                             <input ng-model="doctor.email">
                         </md-input-container>
                     </div>
@@ -82,7 +82,7 @@
                             <div class="profile-content__upload-files__dnd-area__hint">Your files here or <span>browse</span></div>
                         </div>
                     </div>
-                    <div layout="row">
+                    <div layout="row" layout-xs="column">
                         <md-button ng-disabled="saveOrganDononCard.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate }}</md-button>
                         <md-button class="me-raised">{{ 'SAVE' | translate }}</md-button>
                     </div>
