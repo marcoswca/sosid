@@ -313,6 +313,10 @@ body {
       font-size: 18px;
       font-weight: 400;
       margin: 15px 0;
+      span {
+        color: rgba(0,0,0,0.45);
+        font-weight: 300;
+      }
     }
   }
   label {
