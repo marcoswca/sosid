@@ -1,6 +1,6 @@
 .history-payment__list {
-  width: 800px;
-  max-width: 800px;
+  width: 100%;
+  max-width: 680px !important;
   margin-top: 50px;
   .history-payment__list__item {
     color: #666;
@@ -10,6 +10,9 @@
     font-size: 13px;
     line-height: 1.6;
     transition: all .3s ease-in-out;
+    @media screen and (max-width: 600px) {
+      height: auto;
+    }
     &:hover {
       background: rgba(255,255,255,0.55);
       transition: all .3s ease-in-out;
