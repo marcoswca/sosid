@@ -7,6 +7,7 @@
         /* COMPONENTS */
         'app.shared.components.modelAttribute',
         'app.shared.components.autocomplete',
+        'app.shared.components.disableAll',
 
         /** SERVICES **/
         'app.shared.services.session',
