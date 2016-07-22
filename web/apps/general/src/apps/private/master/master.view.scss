@@ -5,10 +5,12 @@
 
   }
 
-  //.md-sidenav-right {
-  //  @media screen and (max-width: 600px) {
-  //    display: none;
-  //  }
-  //}
+  .md-sidenav-left {
+    margin-top: 65px;
+    background-color: #F2F2F2;
+    .profile__menu {
+      background-color: transparent;
+    }
+  }
 
 }

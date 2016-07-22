@@ -15,11 +15,13 @@
     <md-menu md-position-mode="target-right target">
         <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="MainHeaderCtrl.openMenu($mdOpenMenu, $event)">
             <div layout="row" layout-align="end center" class="main-header__menu-buttom">
-                <img src="http://placehold.it/38x38" alt="">
+                <div class="main-header__avatar">
+                    <md-icon md-svg-icon="sosid:personal_data" aria-label="Avatar"></md-icon>
+                </div>
                 <md-icon md-svg-icon="hardware:keyboard_arrow_down" style="color: #00A2D3;width:8px;height:8px;" aria-label="Cake Icon"></md-icon>
             </div>
         </md-button>
-        <md-menu-content width="4">
+        <md-menu-content width="4" class="main-header__menu-user">
             <a ui-sref="settings.changePassword">
                 <md-menu-item>
                     <md-button>

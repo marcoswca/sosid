@@ -12,6 +12,7 @@
 
     /** @ngInject */
     function configureRoute(NxtRouterHelper) {
+
         var states = [
             {
                 state: 'profile.personalData',
@@ -19,7 +20,10 @@
                     url: '/',
                     controller: 'PersonalDataViewController',
                     controllerAs: 'PersonalDataViewCtrl',
-                    templateUrl: 'templates/personal-data.view.html'
+                    templateUrl: 'templates/personal-data.view.html',
+                    data: {
+                        pageTitle: 'PRIVATE.PROFILE.PERSONAL DATA.PAGE_TITLE'
+                    }
                 }
             }
         ];

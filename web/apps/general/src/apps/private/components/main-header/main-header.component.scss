@@ -29,4 +29,44 @@ main-header {
       border-radius: 50%;
     }
   }
+  .main-header__avatar {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    background-color: #C4E8F4;
+    border-radius: 50%;
+    md-icon {
+      position: absolute;
+      color: #00A2D3;
+      width: 32px;
+      height: 32px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+}
+
+.main-header__menu-user {
+  button {
+    font-size: 13px;
+    color: rgba(0,0,0,0.55);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .md-button {
+    md-icon {
+      margin-right: 10px;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      min-height: 22px;
+      color: #00A2D3;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
 }

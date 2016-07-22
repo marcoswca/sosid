@@ -1,7 +1,10 @@
 (function () {
     'use strict';
 
-    var dependencies = ['private.components.progressCircle'];
+    var dependencies = [
+        'private.components.progressCircle',
+        'private.components.toggleMenuMobile'
+    ];
 
     angular
         .module('private.views.profile', dependencies)

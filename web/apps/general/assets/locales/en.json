@@ -350,6 +350,9 @@
   "PRIVATE": {
     "PROFILE": {
       "MY_RECORDS": "My Records",
+      "PERSONAL DATA": {
+        "PAGE_TITLE": "Personal Data"
+      },
       "DOCTORS": {
         "PAGE_TITLE": "Doctors",
         "ADD_NEW": "Add New doctor"
