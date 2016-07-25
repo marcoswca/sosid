@@ -1,4 +1,80 @@
-<div class="profile-view">
+<md-content class="profile-view">
+    <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+        <div layout="column" class="profile__menu">
+            <ul>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                    <a ui-sref="profile.personalData">
+                        <md-icon md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
+                        <span>Personal Data</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                    <a ui-sref="profile.doctors">
+                        <md-icon md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                        <span>Doctors</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                    <a ui-sref="profile.emergencyContacts">
+                        <md-icon md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                        <span>Emergency Contacts</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                    <a ui-sref="profile.medications">
+                        <md-icon md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                        <span>Medications</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                    <a ui-sref="profile.allergies">
+                        <md-icon md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                        <span>Allergies</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                    <a ui-sref="profile.glassesPass">
+                        <md-icon md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                        <span>Glasses Pass</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                    <a ui-sref="profile.healthConditions">
+                        <md-icon md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                        <span>Health Conditions</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                    <a ui-sref="profile.organDonation">
+                        <md-icon md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                        <span>Organ Donon Card</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                    <a ui-sref="profile.healthInsurance">
+                        <md-icon md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                        <span>Health Insurance</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                    <a ui-sref="profile.livingWill">
+                        <md-icon md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                        <span>Living Will</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </md-sidenav>
     <div layout="row" layout-align="center stretch" class="topbar" hide-xs="true">
         <div layout="row" layout-align="space-between start" class="topbar__container">
             <div layout="row" layout-align="start center" class="topbar__profile-resume">
@@ -175,4 +251,4 @@
         </div>
 
     </div>
-</div>
+</md-content>
