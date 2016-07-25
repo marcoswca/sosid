@@ -47,17 +47,6 @@ module.exports = function (grunt) {
                 tasks: ['build:production']
             },
 
-
-            mimic_production: {
-                src: appsConfigs,
-                tasks: ['build:mimic_production']
-            },
-
-            test: {
-                src: appsConfigs,
-                tasks: ['build:test']
-            },
-
             development: {
                 src: appsConfigs
             },
@@ -83,14 +72,9 @@ module.exports = function (grunt) {
 
     });
 
-
-    grunt.registerTask('mimic:production', ['bower:install', 'hub:mimic_production', 'notify:hub']);
-
     grunt.registerTask('default', ['bower:install', 'hub:development', 'notify:hub']);
 
     grunt.registerTask('production', ['bower:install', 'hub:production', 'notify:hub']);
-
-    grunt.registerTask('build:test', ['bower:install', 'hub:test', 'notify:hub']);
 
     grunt.registerTask('watch', ['bower:install', 'hub:watch', 'notify:hub']);
 

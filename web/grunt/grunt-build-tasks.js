@@ -271,27 +271,9 @@ module.exports = function (grunt, build_config) {
                 ]
             },
 
-            config_development: {
+            config_file: {
                 files: [{
-                    src: ['core/config/config.development.js'],
-                    dest: '<%= build_dir %>/js/core/',
-                    cwd: libs_directory,
-                    expand: true,
-                    flatten: true
-                }]
-            },
-            config_production: {
-                files: [{
-                    src: ['core/config/config.production.js'],
-                    dest: '<%= build_dir %>/js/core/',
-                    cwd: libs_directory,
-                    expand: true,
-                    flatten: true
-                }]
-            },
-            config_test: {
-                files: [{
-                    src: ['core/config/config.test.js'],
+                    src: ['core/config.js'],
                     dest: '<%= build_dir %>/js/core/',
                     cwd: libs_directory,
                     expand: true,
@@ -417,7 +399,7 @@ module.exports = function (grunt, build_config) {
                     'js/libs/angular.js',
                     'js/libs/angular-translate.js',
                     'js/libs/*.js',
-                    'js/core/config.*.js',
+                    'js/core/config.js',
                     'js/core/*.js',
                     'js/app/*.module.js',
                     'js/app/*.js',
@@ -576,7 +558,7 @@ module.exports = function (grunt, build_config) {
         'copy:build_vendorjs_production',
         'copy:build_vendorcss',
         'copy:build_vendor_fonts',
-        'copy:config_production',
+        'copy:config_file',
         'copy:build_maps_production',
         'clean:bin',
         'concat:libs_min',
@@ -604,44 +586,13 @@ module.exports = function (grunt, build_config) {
         'copy:build_vendorjs_development',
         'copy:build_vendorcss',
         'copy:build_vendor_fonts',
-        'copy:config_development',
+        'copy:config_file',
         'clean:bin',
         'ngAnnotate:app',
         'ngAnnotate:core',
         //'uglify:app_files',
         //'uglify:core_files',
         'index:development'
-    ]);
-
-    var build_mimic_production = build_production_tasks.slice();
-    build_mimic_production[build_mimic_production.indexOf('copy:config_production')] = 'copy:config_development';
-
-    grunt.registerTask('build:mimic_production', build_mimic_production);
-
-    grunt.registerTask('build:test', [
-        'clean:build',
-        'html2js',
-        'jshint:app',
-        'jshint:core',
-        'concat:build_sass',
-        'sass:build',
-        'concat:build_css',
-        'copy:build_app_assets',
-        'copy:build_vendor_assets',
-        'copy:build_appjs',
-        'copy:build_corejs',
-        'copy:build_vendorjs_production',
-        'copy:build_vendorcss',
-        'copy:build_vendor_fonts',
-        'copy:config_test',
-        'copy:build_maps_production',
-        'clean:bin',
-        'concat:libs_min',
-        'ngAnnotate:app',
-        'ngAnnotate:core',
-        'uglify:app_files',
-        'uglify:core_files',
-        'index:test'
     ]);
 
     grunt.registerMultiTask('index', 'Process index.html template', function () {

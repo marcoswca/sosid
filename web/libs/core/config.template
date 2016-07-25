@@ -11,8 +11,8 @@
         .module('core.config', dependencies)
         .constant('APP_CONFIG', {
             URL: {
-                APP_URL: 'https://sosid.de',
-                API_URL: 'https://api.sosid.de'
+                APP_URL: 'http://localhost:3000',
+                API_URL: 'http://192.168.99.100:4000'
             }
         })
         .config(config);
@@ -26,7 +26,7 @@
                 suffix: '.json'
             })
             .fallbackLanguage('en')
-            .preferredLanguage('de');
+            .preferredLanguage('en');
     }
 
 })();

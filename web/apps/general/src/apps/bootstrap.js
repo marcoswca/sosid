@@ -33,7 +33,7 @@
     });
 
     var ErrorStatusEnum = {
-        NOT_LOGGED: 404,
+        NOT_LOGGED: 401,
         NO_CONNECTION: 0
     };
 
