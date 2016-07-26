@@ -39,8 +39,8 @@
 
     var BootstrapApps = {
         MAIN: 'private',
-        NOT_LOGGED: 'public',
-        OFFLINE: 'noAccess'
+        NOT_LOGGED: 'private', // private
+        OFFLINE: 'private'
     };
 
     // Bootstrap Class
