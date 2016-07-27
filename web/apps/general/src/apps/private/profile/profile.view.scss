@@ -39,7 +39,7 @@ body {
   }
   .profile-content__container{
     max-width: 1180px;
-    width: 1180px;
+    width: 100%;
   }
 
   .profile-sidebar {
@@ -287,9 +287,6 @@ body {
   background-color: white;
   box-sizing: border-box;
   @media screen and (max-width: 600px) {
-    flex: 1 1 95%;
-    max-width: 95%;
-    max-height: 95%;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
@@ -367,7 +364,7 @@ body {
   background-color: #00A2D3;
   .topbar__container {
     max-width: 1180px;
-    width: 1180px;
+    width: 100%;
     height: 245px;
   }
   .topbar__profile-resume {

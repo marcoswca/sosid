@@ -21,8 +21,8 @@
                 <form name="saveOrganDononCard">
                     <div layout="row" flex="100">
                         <md-radio-group ng-model="doctor.option" flex="100">
-                            <md-radio-button value="1" class="md-primary">Yes, I allow after medical finding my death my body organs and tissues are removed</md-radio-button>
-                            <md-radio-button value="2" class="md-primary">Yes, I authorise this, except for following organs/tissues:</md-radio-button>
+                            <md-radio-button value="1" class="md-primary" layout="row" layout-align="start center"><span>Yes, I allow after medical finding my death my body organs and tissues are removed</span></md-radio-button>
+                            <md-radio-button value="2" class="md-primary"><span>Yes, I authorise this, except for following organs/tissues:</span></md-radio-button>
                             <div flex="100">
                                 <md-chips flex="100"
                                           ng-model="OrganDonationViewCtrl.tags"
@@ -32,9 +32,9 @@
                                           delete-hint="Press delete to remove tag"
                                           secondary-placeholder="+Organ/tissue &#x23ce;"></md-chips>
                             </div>
-                            <md-radio-button value="3" class="md-primary">Yes, Iallow this, but only for the following organs/tissues:</md-radio-button>
-                            <md-radio-button value="4" class="md-primary">No, I contradict a removal of organs or tissues.</md-radio-button>
-                            <md-radio-button value="5" class="md-primary">About Yes or No then the following person should decide:</md-radio-button>
+                            <md-radio-button value="3" class="md-primary"><span>Yes, Iallow this, but only for the following organs/tissues:</span></md-radio-button>
+                            <md-radio-button value="4" class="md-primary"><span>No, I contradict a removal of organs or tissues.</span></md-radio-button>
+                            <md-radio-button value="5" class="md-primary"><span>About Yes or No then the following person should decide:</span></md-radio-button>
                         </md-radio-group>
                     </div>
                     <div layout="row" layout-xs="column">

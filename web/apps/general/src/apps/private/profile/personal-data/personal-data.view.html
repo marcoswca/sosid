@@ -20,7 +20,7 @@
             </div>
         </div>
         <div layout="row" layout-xs="column">
-            <div layout="column" flex-xs="100" flex="70" nx-disable-all="true">
+            <div layout="column" flex="none" flex-gt-xs="70" nx-disable-all="true">
                 <div layout="row">
                     <md-input-container nx-model-attribute="User:name" flex="100" class="md-block">
                         <input ng-model="PersonalDataViewCtrl.userFullname">
@@ -60,7 +60,7 @@
                     </md-input-container>
                 </div>
             </div>
-            <div class="personal-data__avatar" layout="column" flex="30" flex-xs="100" layout-align="center center">
+            <div class="personal-data__avatar" layout="column" flex-gt-xs="30" flex="none" layout-align="center center">
                 <div layout="column">
                     <div class="personal-data__avatar__img-container">
                         <progress-circle></progress-circle>
@@ -86,25 +86,25 @@
         <div layout="row" flex="100">
             <div layout="column" flex="100">
                 <div layout="row" layout-xs="column">
-                    <div layout="row" flex="30" flex-xs="100">
+                    <div layout="row" flex-gt-xs="30" flex="none">
                         <md-input-container flex="100" class="md-block">
                             <label>First Name</label>
                             <input ng-model="PersonalDataViewCtrl.user.firstName" disabled>
                         </md-input-container>
                     </div>
-                    <div layout="row" flex="30" flex-xs="100">
+                    <div layout="row" flex-gt-xs="30" flex="none">
                         <md-input-container flex="100" class="md-block">
                             <label>Last Name</label>
                             <input ng-model="PersonalDataViewCtrl.user.lastName" disabled>
                         </md-input-container>
                     </div>
-                    <div layout="row" flex="20" flex-xs="100">
+                    <div layout="row" flex-gt-xs="20" flex="none">
                         <md-input-container flex="100" class="md-block">
                             <label>Mobile Phone</label>
                             <input ng-model="PersonalDataViewCtrl.user.bloodType" disabled>
                         </md-input-container>
                     </div>
-                    <div layout="row" flex="20" flex-xs="100">
+                    <div layout="row" flex-gt-xs="20" flex="none">
                         <md-input-container flex="100" class="md-block">
                             <label>Clinic Phone</label>
                             <input ng-model="PersonalDataViewCtrl.user.bloodType" disabled>
@@ -242,7 +242,7 @@
     </div>
 
     <div layout="row" layout-xs="column" class="hot-button__container">
-        <div layout="row" flex="50" flex-xs="100" layout-align="space-between center" class="hot-button">
+        <div layout="row" flex="none" flex-gt-xs="50" layout-align="space-between center" class="hot-button">
             <div layout="row" layout-align="start center">
                 <div class="hot-button__icon-left">
                     <md-icon md-svg-icon="sosid:print_card" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
@@ -254,7 +254,7 @@
             </div>
             <div class="hot-button__icon-right"><md-icon md-svg-icon="hardware:keyboard_arrow_right" aria-label="Arrow Right"></md-icon></div>
         </div>
-        <div layout="row" flex="50" flex-xs="100" layout-align="space-between center" class="hot-button">
+        <div layout="row" flex="none" flex-gt-xs="50" layout-align="space-between center" class="hot-button">
             <div layout="row" layout-align="start center">
                 <div class="hot-button__icon-left">
                     <md-icon md-svg-icon="sosid:buy_products" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>

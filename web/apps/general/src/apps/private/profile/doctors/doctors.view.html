@@ -26,28 +26,28 @@
             <div layout="column" flex="100">
                 <form name="newDoctor">
                     <div layout="row" layout-xs="column">
-                        <md-input-container nx-model-attribute="Doctor:firstName" flex="33" flex-xs="100" class="md-block">
+                        <md-input-container nx-model-attribute="Doctor:firstName" flex-gt-xs="33" flex="none" class="md-block">
                             <input ng-model="doctor.firstName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="Doctor:lastName" flex="33" flex-xs="100" class="md-block">
+                        <md-input-container nx-model-attribute="Doctor:lastName" flex-gt-xs="33" flex="none" class="md-block">
                             <input ng-model="doctor.lastName">
                         </md-input-container>
 
-                        <md-input-container nx-model-attribute="Doctor:medicalSpeciality" flex="33" flex-xs="100">
+                        <md-input-container nx-model-attribute="Doctor:medicalSpeciality" flex-gt-xs="33" flex="none">
                             <input ng-model="doctor.medicalSpeciality">
                         </md-input-container>
                     </div>
                     <div layout="row" layout-xs="column">
-                        <md-input-container nx-model-attribute="Doctor:mobilePhone" flex="33" flex-xs="100">
+                        <md-input-container nx-model-attribute="Doctor:mobilePhone" flex-gt-xs="33" flex="none">
                             <input ng-model="doctor.mobilePhone">
                         </md-input-container>
-                        <md-input-container nx-model-attribute="Doctor:phone" flex="33" flex-xs="100">
+                        <md-input-container nx-model-attribute="Doctor:phone" flex-gt-xs="33" flex="none">
                             <input ng-model="doctor.telefonPhone">
                         </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container nx-model-attribute="Doctor:email" flex="50" flex-xs="100" class="md-block">
+                        <md-input-container nx-model-attribute="Doctor:email" flex-gt-xs="50" flex="100" class="md-block">
                         <input ng-model="doctor.email">
                     </md-input-container>
                     </div>
@@ -68,7 +68,7 @@
 
     <div flex="100" class="personal-data__basic-informations profile-content__box" ng-repeat="doctor in DoctorsViewCtrl.doctors">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
-            <div>
+            <div flex-xs="90">
                 <h3>{{doctor.firstName + ' ' + doctor.lastName}} - <span>{{doctor.medicalSpeciality}}</span></h3>
             </div>
             <div>
@@ -87,19 +87,19 @@
         <div layout="row" flex="100">
             <div layout="column" flex="100">
                 <div layout="row" layout-xs="column">
-                    <div layout="row" flex="33" flex-xs="100">
+                    <div layout="row" flex-gt-xs="33" flex="none">
                         <md-input-container flex="100" class="md-block">
                             <label>First Name</label>
                             <input ng-model="doctor.firstName" disabled>
                         </md-input-container>
                     </div>
-                    <div layout="row" flex="33" flex-xs="100">
+                    <div layout="row" flex-gt-xs="33" flex="none">
                         <md-input-container flex="100" class="md-block">
                             <label>Last Name</label>
                             <input ng-model="doctor.lastName" disabled>
                         </md-input-container>
                     </div>
-                    <div layout="row" flex="33" flex-xs="100">
+                    <div layout="row" flex-gt-xs="33" flex="none">
                         <md-input-container>
                             <label>Medical Speciality</label>
                             <md-select ng-model="doctor.medicalSpeciality" disabled="">
@@ -110,12 +110,12 @@
                         </md-input-container>
                     </div>
                 </div>
-                <div layout="row" layout-xs="column">
-                    <md-input-container flex="33" flex-xs="50">
+                <div layout-gt-xs="row" layout="none">
+                    <md-input-container flex-gt-xs="33" flex="50">
                         <label>Mobile Phone</label>
                         <input ng-model="doctor.mobilePhone" disabled>
                     </md-input-container>
-                    <md-input-container flex="33" flex-xs="50">
+                    <md-input-container flex-gt-xs="33" flex="50">
                         <label>Telefon Phone</label>
                         <input ng-model="doctor.telefonPhone" disabled>
                     </md-input-container>
