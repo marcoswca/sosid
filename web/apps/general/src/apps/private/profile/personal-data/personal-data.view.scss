@@ -9,6 +9,10 @@
 .personal-data__avatar {
   background-color: #F2F2F2;
   border-radius: 4px;
+  @media screen and (max-width: 600px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
   .personal-data__avatar__img-container {
     .progress-radial {
       width: 160px;

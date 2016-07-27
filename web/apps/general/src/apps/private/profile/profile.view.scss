@@ -441,6 +441,12 @@ body {
 .hot-button {
   background-color: #00A2D3;
   padding: 20px 15px;
+  @media screen and (max-width: 600px) {
+    width: 95%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto!important;
+  }
   .hot-button__icon-left {
     border-radius: 50%;
     background-color: rgba(255,255,255,0.85);
