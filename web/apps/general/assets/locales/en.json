@@ -388,6 +388,13 @@
       },
       "ORGAN DONON CARD": {
         "PAGE_TITLE": "Organ Donon Card"
+      },
+      "PRIVACY": {
+        "PAGE_TITLE": "Edit the privace of your data",
+        "PAGE_SUBTITLE": "Not all things need to be exposed to the public. Manage privacy bellow",
+        "BLOCK_ALL": "Block All",
+        "UNBLOCK_ALL": "Unblock All",
+        "RESET": "Reset"
       }
 
     }
