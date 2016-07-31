@@ -9,6 +9,7 @@
         // Settings Routes
         'private.routes.changePassword',
         'private.routes.paymentHistory',
+        'private.routes.subscriptionUpgrade',
 
         // Profile Routes
         'private.routes.organDonation',
