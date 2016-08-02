@@ -4,7 +4,8 @@
     var dependencies = [
         'private.components.progressCircle',
         'private.components.toggleMenuMobile',
-        'private.views.privacy'
+        'private.views.privacy',
+        'printCard.views.privacy'
     ];
 
     angular
@@ -20,6 +21,7 @@
 
         // Public methods
         self.showPrivacySettings = showPrivacySettings;
+        self.showPrintCard = showPrintCard;
 
         // Private methods
         return (function init() {
@@ -31,6 +33,17 @@
                 controller: 'PrivacyController',
                 controllerAs: '$PrivacyController',
                 templateUrl: 'templates/privacy.view.html',
+                parent: angular.element(document.body),
+                targetEvent: $event,
+                clickOutsideToClose: true
+            });
+        }
+
+        function showPrintCard($event) {
+            return $mdDialog.show({
+                controller: 'PrintCardController',
+                controllerAs: '$PrintCardController',
+                templateUrl: 'templates/print-card.view.html',
                 parent: angular.element(document.body),
                 targetEvent: $event,
                 clickOutsideToClose: true

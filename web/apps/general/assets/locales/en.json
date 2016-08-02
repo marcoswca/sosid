@@ -395,6 +395,10 @@
         "BLOCK_ALL": "Block All",
         "UNBLOCK_ALL": "Unblock All",
         "RESET": "Reset"
+      },
+      "PRINT CARD": {
+        "PAGE_TITLE": "We are almost there! We will print your card!",
+        "PAGE_SUBTITLE": "First, please check your data so that it is all rigth, if you find an error, return to your record and correct what is wrong."
       }
 
     }

@@ -24,7 +24,12 @@
             bloodType: 'Group AB',
             address: 'Düesbergweg 10, 48153 Münster',
             plan: 'Lorem Ipsum sit dolor amet plan',
-            period: 'Good from 25 July, 2016 to 31 March, 2017'
+            period: 'Good from 25 July, 2016 to 31 March, 2017',
+            messages: [
+                { text: 'lorem ipsum sit dolor amet consectuor, lorem ipsum sit dolor amet consectuor arrent meqnet ralen, lorem ipsum sit dolor amet consectuor'},
+                { text: 'lorem ipsum sit dolor amet consectuor, lorem ipsum sit dolor amet consectuor arrent meqnet ralen, lorem ipsum sit dolor amet consectuor'},
+                { text: 'lorem ipsum sit dolor amet consectuor, lorem ipsum sit dolor amet consectuor arrent meqnet ralen, lorem ipsum sit dolor amet consectuor'}
+            ]
         };
 
         self.userFullname = self.user.firstName + " " + self.user.lastName;

@@ -47,6 +47,23 @@
                 </md-menu-item>
             </a>
             <md-menu-divider></md-menu-divider>
+            <a ng-click="MainHeaderCtrl.showPrivacySettings($event)">
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-svg-icon="sosid:settings_privacy" aria-label="Euro Simbol"></md-icon>
+                        Privacy Settings
+                    </md-button>
+                </md-menu-item>
+            </a>
+            <a ng-click="MainHeaderCtrl.showPrintCard($event)">
+                <md-menu-item>
+                    <md-button>
+                        <md-icon md-svg-icon="sosid:print_card" aria-label="Euro Simbol"></md-icon>
+                        Print Your Card
+                    </md-button>
+                </md-menu-item>
+            </a>
+            <md-menu-divider></md-menu-divider>
             <md-menu-item>
                 <md-button ng-click="MainHeaderCtrl.logout()">
                     <md-icon md-svg-icon="navigation:cancel"></md-icon>

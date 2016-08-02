@@ -1,0 +1,94 @@
+.print-card {
+  background: white url("/assets/images/bg-print-card.png") no-repeat center center;
+  .modal__content {
+    min-height: 400px;
+    display: table;
+    width: 100%;
+  }
+}
+
+.print-card__container {
+  padding-top: 60px;
+  @media screen and (max-width: 600px) {
+    padding-top: 0;
+  }
+}
+
+.print-card__front, .print-card__back {
+  background-color: #001621;
+  border-radius: 12px;
+  max-width: 410px;
+  width: 100%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  padding: 25px;
+  min-height: 240px;
+  @media screen and (max-width: 600px) {
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.print-card__front__right {
+  height: 160px;
+  padding-top: 65px;
+  box-sizing: border-box;
+}
+
+.print-card__front__left {
+  .print-card__label {
+    padding-top: 15px;
+  }
+}
+
+.print-card__front__logo {
+  position: relative;
+  img {
+    width: 90%;
+    height: auto;
+  }
+}
+
+.print-card__back__left {
+  padding-top: 45px;
+  padding-bottom: 15px;
+}
+
+.print-card__label {
+  color: #00A2D3;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.print-card__data {
+  color: rgba(white, 0.75);
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.print-card__info {
+  color: rgba(white, 0.55);
+  font-style: italic;
+  font-weight: 400;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  margin: 20px 0 10px 0;
+  width: 100%;
+}
+
+.modal__footer {
+  > div {
+    margin-top: 10px;
+    color: rgba(black, 0.55);
+  }
+  a {
+    color: #00A2D3;
+    margin-left: 3px;
+  }
+}

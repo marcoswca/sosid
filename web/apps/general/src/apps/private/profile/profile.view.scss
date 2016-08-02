@@ -483,3 +483,21 @@ body {
     }
   }
 }
+
+.md-button.upgrade-button {
+  background-color: #EDB142;
+  box-shadow: none !important;
+  color: rgba(black, 0.35);
+  height: 20px;
+  min-height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  min-width: 74px;
+  &:hover {
+    background-color: lighten(#EDB142,10%);
+  }
+  &:focus {
+    background-color: #EDB142;
+  }
+}

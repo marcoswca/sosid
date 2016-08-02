@@ -113,7 +113,7 @@
                     </md-button>
                     <div class="topbar__profile-nav__link__text">Privacy Settings</div>
                 </div>
-                <div class="topbar__profile-nav__link" layout="column" layout-align="center center">
+                <div class="topbar__profile-nav__link" layout="column" layout-align="center center" ng-click="ProfileViewCtrl.showPrintCard($event)">
                     <md-button aria-label="Eat cake" class="md-icon-button">
                         <md-icon md-svg-icon="sosid:print_card" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
                     </md-button>
@@ -231,8 +231,7 @@
                 <div class="data-storage__container" layout="column">
                     <div class="data-storage__header" layout="row" layout-align="space-between center">
                         <span class="data-storage__title">Data Storage</span>
-                        <span class="data-storage__button">
-                        </span>
+                        <md-button ui-sref="settings.subscriptionUpgrade" class="upgrade-button">Upgrade</md-button>
                     </div>
                     <div layout="column" class="data-storage__content">
                         <div layout="row"><span class="data-storage__data-text">2GB of 2.5GB Used</span></div>

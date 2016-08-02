@@ -74,6 +74,27 @@
 
     </div>
 
+    <div class="personal-data__messages profile-content__box">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title" flex="100">
+            <div>
+                <h3>Emergency Messages</h3>
+            </div>
+            <div>
+                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            </div>
+        </div>
+        <div class="emergency-messages__list">
+            <div class="emergency-messages__list__item" ng-repeat="message in PersonalDataViewCtrl.user.messages">
+                <md-input-container flex="100">
+                    <textarea ng-model="message.text" disabled></textarea>
+                </md-input-container>
+                <md-icon md-svg-icon="editor:mode_edit" aria-label="edit"></md-icon>
+            </div>
+            <md-icon md-svg-icon="content:add" aria-label="edit"></md-icon>
+        </div>
+
+    </div>
+
     <div class="personal-data__doctor-family profile-content__box">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title" flex="100">
             <div>
@@ -132,7 +153,7 @@
             </div>
         </div>
         <div layout="row">
-            <div layout="column" flex="70">
+            <div layout="column" flex-gt-xs="60" flex="100">
                 <div layout="row">
                     <md-input-container flex="100" class="md-block">
                         <label>Current Plan</label>
@@ -168,8 +189,15 @@
                     </div>
                 </div>
             </div>
-            <div layout="column" flex="30"layout-align="center center">
-
+            <div layout="row" hide-xs="true" flex="40" class="widget__upgrade" layout-align="center center">
+                <div class="widget__upgrade__icon">
+                    <md-icon md-svg-icon="action:trending_up" aria-label="Trending up"></md-icon>
+                </div>
+                <div class="widget__upgrade__text">
+                    <div class="widget__upgrade__title">Upgrade your Plan</div>
+                    <div class="widget__upgrade__subtitle">Upgrade now and save <b>$8</b></div>
+                    <md-button ui-sref="settings.subscriptionUpgrade" class="md-primary md-raised">Upgrade Plan</md-button>
+                </div>
             </div>
         </div>
 
