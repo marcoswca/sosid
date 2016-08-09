@@ -399,6 +399,10 @@
       "PRINT CARD": {
         "PAGE_TITLE": "We are almost there! We will print your card!",
         "PAGE_SUBTITLE": "First, please check your data so that it is all rigth, if you find an error, return to your record and correct what is wrong."
+      },
+      "WELCOME": {
+        "PAGE_TITLE": "Welcome to SOS-ID Edit Profile",
+        "PAGE_SUBTITLE": "It does not have a plan and is on trial version. Choose between the two options below to proceed:"
       }
 
     }
