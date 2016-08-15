@@ -45,7 +45,19 @@
                         }
                     }
                 },
-                name: {
+                firstName: {
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        },
+                        len: {
+                            args: [3, 80],
+                            message: true
+                        }
+                    }
+                },
+                lastName: {
                     label: true,
                     validate: {
                         required: {

@@ -14,35 +14,34 @@
 
         var url = APP_CONFIG.URL.API_URL + '/user';
 
-        this.all = function (params, options) {
+        this.get = function(options) {
             options = options || {};
-            options.url = url + '/all';
-            options.params = params || {};
-
+            options.url = url;
             return ApiService.Get(options);
+        };
+
+        this.login = function(credentials, options) {
+            options = options || {};
+            options.url = url + '/login';
+            options.data = {
+                email: credentials.email,
+                password: credentials.password
+            };
+
+            return ApiService.Post(options);
         };
 
         this.emailExists = function(email, options) {
             options = options || {};
-            options.url = url + '/email/exists';
-            options.params = {
-                email: email
-            };
+            options.url = url + '/email-exists/' + email;
             return ApiService.Get(options);
         };
 
-        this.invite = function(data, options) {
+        this.create = function(data, options) {
             options = options || {};
-            options.url = url + '/invite';
+            options.url = url;
             options.data = data;
             return ApiService.Post(options);
-        };
-
-        this.inviteConfirmation = function(data, options) {
-            options = options || {};
-            options.url = url + '/invite-confirmation/' + data.token;
-            options.data = data;
-            return ApiService.Put(options);
         };
 
         this.passwordChange = function(data, options) {

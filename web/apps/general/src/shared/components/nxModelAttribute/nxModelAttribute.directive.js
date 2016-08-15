@@ -82,7 +82,7 @@
                 angular.forEach(validations, function (validatorConfig, validatorName) {
 
                     if (_.indexOf(blackList, validatorName) !== -1) {
-                        //return console.log('ignoring: ', validatorName);
+                        return true;
                     }
 
                     if (validatorConfig.isAsync) {

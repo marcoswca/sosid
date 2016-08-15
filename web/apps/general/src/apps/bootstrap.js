@@ -39,8 +39,8 @@
 
     var BootstrapApps = {
         MAIN: 'private',
-        NOT_LOGGED: 'private', // private
-        OFFLINE: 'private'
+        NOT_LOGGED: 'public', // private
+        OFFLINE: 'noAccess'
     };
 
     // Bootstrap Class
@@ -87,9 +87,7 @@
 
                 if (status === ErrorStatusEnum.NO_CONNECTION || status === -1) {
                     self.bootstrapAppName = BootstrapApps.OFFLINE;
-                }
-
-                else if (status === ErrorStatusEnum.NOT_LOGGED) {
+                } else if (status === ErrorStatusEnum.NOT_LOGGED) {
                     self.bootstrapAppName = BootstrapApps.NOT_LOGGED;
                 }
 

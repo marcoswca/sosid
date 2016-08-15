@@ -24,8 +24,8 @@
                     pwCheck: '='
                 },
                 link: function (scope, elem, attrs, ctrl) {
-                    ctrl.$validators.match = function(modelValue) {
-                        return modelValue === scope.$parent.$eval(attrs.pwCheck);
+                    ctrl.$validators.match = function(modelValue, a) {
+                        return modelValue === scope.pwCheck;
                     };
                 }
             };

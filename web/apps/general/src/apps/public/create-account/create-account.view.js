@@ -20,7 +20,6 @@
         };
 
         self.user = {};
-        self.account = {};
         self.isLoading = false;
         self.registrationFinished = false;
 
@@ -30,10 +29,7 @@
             self.isLoading = true;
 
             User
-                .create({
-                    account: self.account,
-                    user: self.user
-                })
+                .create(self.user)
                 .then(function() {
                     self.registrationFinished = true;
                 })

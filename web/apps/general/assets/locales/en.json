@@ -231,16 +231,24 @@
           "PLACEHOLDER": "enter with your e-mail",
           "VALIDATE": {
             "REQUIRED": "E-mail is required",
-            "VALID": "Please, enter a valid e-mail",
+            "EMAIL": "Please, enter a valid e-mail",
             "REGISTERED": "E-mail already registered"
           }
         },
-        "NAME": {
-          "LABEL": "Your Name",
-          "PLACEHOLDER": "enter with your name",
+        "FIRST NAME": {
+          "LABEL": "First Name",
+          "PLACEHOLDER": "enter with your first name",
           "VALIDATE": {
-            "REQUIRED": "Your name is required",
-            "LENGTH": "Your name should have 3-80 characters"
+            "REQUIRED": "Your first name is required",
+            "LEN": "Your first name should have 3-80 characters"
+          }
+        },
+        "LAST NAME": {
+          "LABEL": "Last Name",
+          "PLACEHOLDER": "enter with your last name",
+          "VALIDATE": {
+            "REQUIRED": "Your last name is required",
+            "LEN": "Your last name should have 3-80 characters"
           }
         },
         "PASSWORD": {
@@ -248,8 +256,8 @@
           "PLACEHOLDER": "enter with your password",
           "VALIDATE": {
             "REQUIRED": "Password is required",
-            "LENGTH": "Your password cannot contain less than 8 characters or more than 60",
-            "FORMAT": "Your password must contains letters and numbers"
+            "LEN": "Your password cannot contain less than 8 characters or more than 60",
+            "PASSWORD": "Your password must contains letters and numbers"
           }
         },
         "AGE": {

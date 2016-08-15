@@ -7,13 +7,13 @@
 
             <div layout="column" class="form">
 
-                <md-input-container nx-model-attribute="User:name">
-                    <input type="text" ng-model="CreateAccountCtrl.user.name" name="your-name">
+                <md-input-container nx-model-attribute="User:firstName">
+                    <input type="text" ng-model="CreateAccountCtrl.user.firstName" name="first-name">
                 </md-input-container>
-                <!--<md-input-container>-->
-                    <!--<label>Company name</label>-->
-                    <!--<input type="text" ng-model="CreateAccountCtrl.account.name" name="your-company-name">-->
-                <!--</md-input-container>-->
+
+                <md-input-container nx-model-attribute="User:lastName">
+                    <input type="text" ng-model="CreateAccountCtrl.user.lastName" name="last-name">
+                </md-input-container>
 
                 <md-input-container nx-model-attribute="User:email">
                     <input type="email" ng-model="CreateAccountCtrl.user.email" name="your-email">
@@ -25,7 +25,7 @@
 
                 <md-input-container>
                     <label translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.LABEL"></label>
-                    <input type="password" ng-model="CreateAccountCtrl.user.password2" name="matchPassword" pw-check="CreateAccountCtrl.user.password" ng-required="true">
+                    <input type="password" ng-model="password2" name="matchPassword" pw-check="CreateAccountCtrl.user.password" ng-required="true">
                     <div ng-messages="accountCreateForm.matchPassword.$error" multiple md-auto-hide="true">
                         <div ng-message="required" translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATE.REQUIRED"></div>
                         <div ng-message="match" translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATE.MATCH"></div>

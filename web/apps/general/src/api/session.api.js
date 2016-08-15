@@ -2,7 +2,8 @@
     'use strict';
 
     var dependencies = [
-        'core.api.ApiService'
+        'core.api.ApiService',
+        'api.user'
     ];
 
     angular
@@ -10,30 +11,26 @@
         .service('SessionApi', SessionApi);
 
     /** @ngInject */
-    function SessionApi(APP_CONFIG, ApiService, $q, $cookieStore) {
+    function SessionApi(APP_CONFIG, ApiService, $q, UserApi, $cookies) {
 
         var url = APP_CONFIG.URL.API_URL + '/session';
 
-        this.get = function(options) {
-            options = options || {};
-            options.url = url + '/';
-            return ApiService.Get(options);
+        this.get = UserApi.get;
 
+        this.login = function(credentials) {
+         return UserApi
+             .login(credentials)
+             .then(function(result) {
+                 $cookies.put('sessionToken', result.token);
+             });
         };
 
-        this.login = function(credentials, options) {
-            options = options || {};
-            options.url = url + '/';
-            options.data = credentials;
-            return ApiService.Post(options);
-
-
-        };
-
-        this.destroy = function(options){
-            options = options || {};
-            options.url = url + '/';
-            return ApiService.Delete(options);
+        this.destroy = function() {
+            return $q
+                .resolve()
+                .then(function() {
+                    $cookies.remove('sessionToken');
+                });
         };
     }
 

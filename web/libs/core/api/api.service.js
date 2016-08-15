@@ -7,7 +7,7 @@
         HTTP_STATUS_FORBIDDEN = 403,
         NO_HTTP_STATUS = 0;
 
-    var dependencies = ['core.config'];
+    var dependencies = ['core.config','ngCookies'];
 
     angular
         .module('core.api.ApiService', dependencies)
@@ -22,9 +22,17 @@
     }
 
     /** @ngInject */
-    function NegativeStatusHandler($q, $window, APP_CONFIG) {
+    function NegativeStatusHandler($q, $window, APP_CONFIG, $cookies) {
 
         return {
+            request: function(config) {
+                var token = $cookies.get('sessionToken');
+                if (token) {
+                    config.headers.Authorization = 'Bearer ' + token;
+                }
+
+                return config;
+            },
             responseError: function (response) {
 
                 if (response.status === HTTP_STATUS_NOT_FOUND) {

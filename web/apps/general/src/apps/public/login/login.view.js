@@ -31,7 +31,8 @@
 
             SessionApi
                 .login(self.credentials)
-                .then(function() {
+                .then(function(result) {
+                    console.log(result);
                     $window.location = APP_CONFIG.APP_URL;
                 })
                 .catch(function(e) {
