@@ -50,6 +50,7 @@
         disableElements(element.getElementsByTagName('button'));
         disableElements(element.getElementsByTagName('textarea'));
         disableElements(element.getElementsByTagName('select'));
+        disableElements(element.getElementsByTagName('md-select'));
         element.addEventListener('click', preventDefault, true);
     };
 
@@ -65,6 +66,7 @@
         enableElements(element.getElementsByTagName('button'));
         enableElements(element.getElementsByTagName('textarea'));
         enableElements(element.getElementsByTagName('select'));
+        enableElements(element.getElementsByTagName('md-select'));
         element.removeEventListener('click', preventDefault, true);
     };
 
@@ -102,7 +104,8 @@
                     continue;
                 }
             }
-            if (shouldDisable && elements[i].disabled === false) {
+            if (shouldDisable) {
+                angular.element(elements[i]).attr('disabled', true);
                 elements[i].disabled = true;
                 elements[i].disabledIf = true;
             }
@@ -118,6 +121,7 @@
         var len = elements.length;
         for (var i = 0; i < len; i++) {
             if (elements[i].disabled === true && elements[i].disabledIf === true) {
+                angular.element(elements[i]).attr('disabled', false);
                 elements[i].disabled = false;
                 elements[i].disabledIf = null;
             }

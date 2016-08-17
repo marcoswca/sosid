@@ -1,4 +1,12 @@
 {
+  "OPTIONS": {
+    "UNINFORMED": "Uninformed"
+  },
+  "ACTIONS": {
+    "EDIT": "Edit",
+    "SAVE": "Save",
+    "CANCEL": "Cancel"
+  },
   "MODELS": {
     "DOCTOR": {
       "ATTRIBUTES": {
@@ -21,10 +29,10 @@
           }
         },
         "MOBILE PHONE": {
-          "LABEL": "Mobile Phone"
+          "LABEL": "Mobile Number"
         },
         "PHONE": {
-          "LABEL": "Telefon Phone"
+          "LABEL": "Phone Number"
         },
         "EMAIL": {
           "LABEL": "Email"
@@ -80,10 +88,10 @@
           }
         },
         "MOBILE PHONE": {
-          "LABEL": "Mobile Phone"
+          "LABEL": "Mobile Number"
         },
         "PHONE": {
-          "LABEL": "Telefon Phone"
+          "LABEL": "Phone Number"
         },
         "EMAIL": {
           "LABEL": "Email"
@@ -114,10 +122,10 @@
           }
         },
         "MOBILE PHONE": {
-          "LABEL": "Mobile Phone"
+          "LABEL": "Mobile Number"
         },
         "PHONE": {
-          "LABEL": "Telefon Phone"
+          "LABEL": "Phone Number"
         },
         "EMAIL": {
           "LABEL": "Email"
@@ -224,17 +232,8 @@
         }
       }
     },
-    "USER": {
+    "USER PROFILE": {
       "ATTRIBUTES": {
-        "EMAIL": {
-          "LABEL": "Your e-mail",
-          "PLACEHOLDER": "enter with your e-mail",
-          "VALIDATE": {
-            "REQUIRED": "E-mail is required",
-            "EMAIL": "Please, enter a valid e-mail",
-            "REGISTERED": "E-mail already registered"
-          }
-        },
         "FIRST NAME": {
           "LABEL": "First Name",
           "PLACEHOLDER": "enter with your first name",
@@ -251,6 +250,35 @@
             "LEN": "Your last name should have 3-80 characters"
           }
         },
+        "AGE": {
+          "LABEL": "Age"
+        },
+        "BIRTH DATE": {
+          "LABEL": "Birth Date"
+        },
+        "GENDER": {
+          "LABEL": "Gender"
+        },
+        "BLOOD TYPE": {
+          "LABEL": "Blood Type"
+        },
+        "ADDRESS": {
+          "LABEL": "Address"
+        }
+      }
+    },
+    "USER": {
+      "ATTRIBUTES": {
+        "EMAIL": {
+          "LABEL": "Your e-mail",
+          "PLACEHOLDER": "enter with your e-mail",
+          "VALIDATE": {
+            "REQUIRED": "E-mail is required",
+            "EMAIL": "Please, enter a valid e-mail",
+            "REGISTERED": "E-mail already registered"
+          }
+        },
+
         "PASSWORD": {
           "LABEL": "Password",
           "PLACEHOLDER": "enter with your password",
@@ -260,18 +288,7 @@
             "PASSWORD": "Your password must contains letters and numbers"
           }
         },
-        "AGE": {
-          "LABEL": "Age"
-        },
-        "SEX": {
-          "LABEL": "Sex"
-        },
-        "BLOOD TYPE": {
-          "LABEL": "Blood Type"
-        },
-        "ADDRESS": {
-          "LABEL": "Address"
-        },
+
         "PLAN": {
           "LABEL": "Plan"
         },
@@ -358,8 +375,9 @@
   "PRIVATE": {
     "PROFILE": {
       "MY_RECORDS": "My Records",
-      "PERSONAL DATA": {
-        "PAGE_TITLE": "Personal Data"
+      "PERSONAL_DATA": {
+        "PAGE_TITLE": "Personal Data",
+        "BASIC_INFO": "Basic Informations"
       },
       "DOCTORS": {
         "PAGE_TITLE": "Doctors",

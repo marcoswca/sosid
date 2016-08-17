@@ -1,4 +1,4 @@
-(function(){
+(function () {
     'use strict';
 
     var BaseModelModule = angular.module('Nxt.baseModel', []);
@@ -17,7 +17,7 @@
                     modelConfig.onInstance.call(this);
                 }
 
-                this.syncValues();
+                this._syncCommitValues();
             }
 
             //Adicionando metodos da API como metodos de classe
@@ -34,31 +34,41 @@
                 NxtModel.prototype = modelConfig.instanceMethods;
             }
 
-            NxtModel.prototype._updateViewValues = function(values) {
+            NxtModel.prototype._syncCommitValues = function () {
                 var self = this;
-                _.each(values, function(value, key) {
-                    if (_.indexOf(modelConfig.enabledUpdateAttributes, key) > -1) {
-                        self[key] = value;
-                    }
+                self.__commitedValues = {};
+                _.each(modelConfig.enabledUpdateAttributes, function (value) {
+                    self.__commitedValues[value] = self[value];
                 });
             };
 
-            NxtModel.prototype.syncValues = function() {
-                this.__values = _.pickBy(this, function(value, key) {
-                   return (_.indexOf(modelConfig.enabledUpdateAttributes, key) > -1);
+            NxtModel.prototype._commitValues = function () {
+                var self = this;
+                var changedKeys = _.keys(self._getChangedValues());
+
+                self._syncCommitValues();
+
+                if (typeof modelConfig.onCommitValues === 'function') {
+                    modelConfig.onCommitValues.call(this, changedKeys);
+                }
+            };
+
+            NxtModel.prototype._rollbackValues = function () {
+                var self = this;
+                _.each(modelConfig.enabledUpdateAttributes, function (value) {
+                    self[value] = self.__commitedValues[value];
                 });
             };
 
-            NxtModel.prototype.changedValues = function() {
+            NxtModel.prototype._getChangedValues = function () {
                 var self = this;
-
-                return _.omitBy(self, function(value, key) {
-                    if (_.indexOf(modelConfig.enabledUpdateAttributes, key) > -1) {
-                        return _.isEqual(value, self.__values[key]);
-                    } else {
-                        return true;
+                var changed = {};
+                _.each(modelConfig.enabledUpdateAttributes, function (key) {
+                    if (!_.isEqual(self[key], self.__commitedValues[key])) {
+                        changed[key] = self[key];
                     }
                 });
+                return changed;
             };
 
             return NxtModel;

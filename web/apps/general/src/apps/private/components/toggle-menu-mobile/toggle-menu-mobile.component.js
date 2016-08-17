@@ -30,7 +30,6 @@
             return init();
 
             function init() {
-                console.log($mdSidenav);
             }
 
             function buildToggler(navID) {

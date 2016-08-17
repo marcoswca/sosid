@@ -47,7 +47,7 @@
     function inputDirective(NxValidator) {
         return {
             restrict: 'E',
-            require: ['?^mdInputContainer', 'ngModel', '?^nxModelAttribute'],
+            require: ['?^mdInputContainer', '?ngModel', '?^nxModelAttribute'],
             link: postLink
         };
 

@@ -10,69 +10,7 @@
         </div>
     </div>
 
-    <div class="personal-data__basic-informations profile-content__box">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
-            <div>
-                <h3>Basic Informations</h3>
-            </div>
-            <div>
-                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            </div>
-        </div>
-        <div layout="row" layout-xs="column">
-            <div layout="column" flex="none" flex-gt-xs="70" nx-disable-all="true">
-                <div layout="row">
-                    <md-input-container nx-model-attribute="User:name" flex="100" class="md-block">
-                        <input ng-model="PersonalDataViewCtrl.userFullname">
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <div layout="row" flex="33">
-                        <md-input-container nx-model-attribute="User:age" flex="100" class="md-block">
-                            <input ng-model="PersonalDataViewCtrl.user.age">
-                        </md-input-container>
-                    </div>
-                    <div layout="row" flex="33">
-                        <md-input-container nx-model-attribute="User:sex" flex="100" class="md-block">
-                            <input ng-model="PersonalDataViewCtrl.user.sex">
-                        </md-input-container>
-                    </div>
-                    <div layout="row" flex="33">
-                        <md-input-container nx-model-attribute="User:bloodType" flex="100" class="md-block">
-                            <input ng-model="PersonalDataViewCtrl.user.bloodType">
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="User:address" flex="100" class="md-block">
-                        <input ng-model="PersonalDataViewCtrl.user.address">
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="User:plan" flex="100">
-                        <input ng-model="PersonalDataViewCtrl.user.plan">
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="User:period" flex="100" class="md-block">
-
-                        <input ng-model="PersonalDataViewCtrl.user.period">
-                    </md-input-container>
-                </div>
-            </div>
-            <div class="personal-data__avatar" layout="column" flex-gt-xs="30" flex="none" layout-align="center center">
-                <div layout="column">
-                    <div class="personal-data__avatar__img-container">
-                        <progress-circle></progress-circle>
-                    </div>
-                    <div class="personal-data__avatar__text">
-                        <p>Complete your profile<br>it's at 75%</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    <user-basic-info></user-basic-info>
 
     <div class="personal-data__messages profile-content__box">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title" flex="100">
@@ -86,7 +24,7 @@
         <div class="emergency-messages__list">
             <div class="emergency-messages__list__item" ng-repeat="message in PersonalDataViewCtrl.user.messages">
                 <md-input-container flex="100">
-                    <textarea ng-model="message.text" disabled></textarea>
+                    <textarea ng-model="message.text" disabled aria-label="t"></textarea>
                 </md-input-container>
                 <md-icon md-svg-icon="editor:mode_edit" aria-label="edit"></md-icon>
             </div>

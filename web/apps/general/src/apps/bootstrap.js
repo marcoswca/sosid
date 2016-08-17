@@ -12,7 +12,8 @@
             'Nxt.RouterHelper',
             'templates-app',
             'core.config',
-            'api.session'
+            'api.session',
+            'api.userProfile'
         ];
 
         try {
@@ -51,16 +52,20 @@
 
     // Requisita a sessão ao servidor e se não encontrar encaminha para tela de login
     Application.prototype.getSession = function () {
-
         var
             SessionApi = $injector.get('SessionApi'),
+            UserProfileApi = $injector.get('UserProfileApi'),
             self = this;
 
         // verificando sessão
         return SessionApi
             .get()
             .then(function (session) {
-                self.session = session;
+                self.session.user = session;
+                return UserProfileApi.get();
+            })
+            .then(function(result) {
+                self.session.user.profile = result;
             });
 
     };
@@ -71,7 +76,6 @@
     };
 
     Application.prototype.prepare = function () {
-
         var
             deferred = $q.defer(),
             self = this;
@@ -85,10 +89,10 @@
             .catch(function (e) {
                 var status = e.status;
 
-                if (status === ErrorStatusEnum.NO_CONNECTION || status === -1) {
-                    self.bootstrapAppName = BootstrapApps.OFFLINE;
-                } else if (status === ErrorStatusEnum.NOT_LOGGED) {
+                if (status === ErrorStatusEnum.NOT_LOGGED) {
                     self.bootstrapAppName = BootstrapApps.NOT_LOGGED;
+                } else {
+                    self.bootstrapAppName = BootstrapApps.OFFLINE;
                 }
 
                 deferred.resolve();
@@ -97,7 +101,6 @@
         return deferred.promise;
 
         function setMainModuleConfiguration() {
-
             if (!self.session) {
                 throw new Error('Não é possivel iniciar a aplicação sem uma sessão');
             }

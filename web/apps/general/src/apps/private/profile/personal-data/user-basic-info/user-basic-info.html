@@ -1,0 +1,96 @@
+<form class="personal-data__basic-informations profile-content__box" name="userProfileForm">
+    <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column" layout-align-xs="center stretch">
+        <div >
+            <h3>{{ 'PRIVATE.PROFILE.PERSONAL_DATA.BASIC_INFO' | translate }}</h3>
+        </div>
+        <div ng-show="!UserBasicInfoCtrl.allowEdit" layout-xs="row" layout-align-xs="center center">
+            <md-button class="md-raised" ng-click="UserBasicInfoCtrl.enableEdit()"> {{ 'ACTIONS.EDIT' | translate }} </md-button>
+        </div>
+        <div ng-show="UserBasicInfoCtrl.allowEdit" layout-xs="row" layout-align-xs="center center">
+            <md-button class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()" ng-disabled="userProfileForm.$invalid"> {{ 'ACTIONS.SAVE' | translate }} </md-button>
+            <md-button class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate }} </md-button>
+        </div>
+    </div>
+    <div layout="row" layout-align="space-around none" layout-xs="column">
+        <div layout="column" flex="none" flex-gt-xs="70" nx-disable-all="!UserBasicInfoCtrl.allowEdit">
+            <div layout="row">
+                <div layout="row" flex="50">
+                    <md-input-container nx-model-attribute="UserProfile:firstName" flex="100" class="md-block">
+                        <input ng-model="UserBasicInfoCtrl.user.profile.firstName">
+                    </md-input-container>
+                </div>
+
+                <div layout="row" flex="50">
+                    <md-input-container nx-model-attribute="UserProfile:lastName" flex="100" class="md-block">
+                        <input ng-model="UserBasicInfoCtrl.user.profile.lastName">
+                    </md-input-container>
+                </div>
+            </div>
+
+            <div layout="row">
+                <div layout="row" flex="grow">
+                    <md-input-container nx-model-attribute="UserProfile:gender" flex="100" class="md-block">
+                        <md-select ng-model="UserBasicInfoCtrl.user.profile.gender">
+                            <md-option value="{{null}}"><em>{{ 'OPTIONS.UNINFORMED' | translate }}</em></md-option>
+                            <md-option value="F">F</md-option>
+                            <md-option value="M">M</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div layout="row" flex="grow">
+                    <md-input-container nx-model-attribute="UserProfile:bloodType" flex="100" class="md-block">
+                        <md-select ng-model="UserBasicInfoCtrl.user.profile.bloodType">
+                            <md-option value="{{null}}"><em>{{ 'OPTIONS.UNINFORMED' | translate }}</em></md-option>
+                            <md-option value="O+">O+</md-option>
+                            <md-option value="O-">O-</md-option>
+                            <md-option value="A+">A+</md-option>
+                            <md-option value="A-">A-</md-option>
+                            <md-option value="B+">B+</md-option>
+                            <md-option value="B-">B-</md-option>
+                            <md-option value="AB+">AB+</md-option>
+                            <md-option value="AB-">AB-</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div layout="row" flex="noshrink" ng-show="UserBasicInfoCtrl.allowEdit">
+                    <md-input-container nx-model-attribute="UserProfile:birthDate">
+                        <md-datepicker ng-model="UserBasicInfoCtrl.user.profile.birthDate"></md-datepicker>
+                    </md-input-container>
+                </div>
+                <div layout="row" flex="grow" ng-show="UserBasicInfoCtrl.user.profile.age" ng-hide="UserBasicInfoCtrl.allowEdit">
+                    <md-input-container nx-model-attribute="UserProfile:age" flex="100" class="md-block">
+                        <input ng-model="UserBasicInfoCtrl.user.profile.age" disabled>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <md-input-container nx-model-attribute="UserProfile:address" flex="100" class="md-block">
+                    <input ng-model="UserBasicInfoCtrl.user.profile.address">
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container nx-model-attribute="User:plan" flex="100">
+                    <input ng-model="UserBasicInfoCtrl.user.plan" disabled>
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container nx-model-attribute="User:period" flex="100" class="md-block">
+                    <input ng-model="UserBasicInfoCtrl.user.period" disabled>
+                </md-input-container>
+            </div>
+        </div>
+        <div class="personal-data__avatar" layout="column" flex-gt-xs="30" flex="none" layout-align="center center">
+            <div layout="column">
+                <div class="personal-data__avatar__img-container">
+                    <progress-circle></progress-circle>
+                </div>
+                <div class="personal-data__avatar__text">
+                    <p>Complete your profile<br>it's at 75%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

@@ -1,9 +1,10 @@
-(function(){
+(function () {
     'use strict';
 
     var dependencies = [
         'Nxt.baseModel',
-        'api.user'
+        'api.user',
+        'model.userProfile'
     ];
 
     angular
@@ -11,10 +12,28 @@
         .factory('User', UserModel);
 
     /** @ngInject */
-    function UserModel(BaseModel, $q, UserApi) {
+    function UserModel(BaseModel, $q, UserApi, UserProfile) {
         return BaseModel.make({
             api: UserApi,
-            attributes: {
+            attributes: getAttributes(),
+            classMethods: {},
+            onInstance: function() {
+                if (!_.isEmpty(this.profile)) {
+                    this.profile = new UserProfile(this.profile);
+                }
+            },
+            instanceMethods: {
+                create: function () {
+                    return UserApi.create(this);
+                },
+                updateProfile: function () {
+                    return this.profile.update();
+                }
+            }
+        });
+
+        function getAttributes() {
+            return {
                 email: {
                     label: true,
                     validate: {
@@ -35,37 +54,13 @@
                                     .then(function (result) {
                                         deferred.reject();
                                     })
-                                    .catch(function() {
+                                    .catch(function () {
                                         deferred.resolve();
 
                                     });
 
                                 return deferred.promise;
                             }
-                        }
-                    }
-                },
-                firstName: {
-                    label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        },
-                        len: {
-                            args: [3, 80],
-                            message: true
-                        }
-                    }
-                },
-                lastName: {
-                    label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        },
-                        len: {
-                            args: [3, 80],
-                            message: true
                         }
                     }
                 },
@@ -84,18 +79,6 @@
                         }
                     }
                 },
-                age: {
-                    label: true
-                },
-                sex: {
-                    label: true
-                },
-                bloodType: {
-                    label: true
-                },
-                address: {
-                    label: true
-                },
                 plan: {
                     label: true
                 },
@@ -107,14 +90,8 @@
                         label: true
                     }
                 }
-            },
-            classMethods: {},
-            instanceMethods: {
-                create: function () {
-                    return UserApi.create(this);
-                }
-            }
-        });
+            };
+        }
     }
 
 })();

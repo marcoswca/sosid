@@ -1,7 +1,9 @@
 (function () {
     'use strict';
 
-    var dependencies = [];
+    var dependencies = [
+        'private.components.userBasicInfo'
+    ];
 
     angular
         .module('private.views.personalData', dependencies)
