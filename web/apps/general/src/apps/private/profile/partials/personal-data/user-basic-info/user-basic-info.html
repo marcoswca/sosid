@@ -1,14 +1,20 @@
 <form class="personal-data__basic-informations profile-content__box" name="userProfileForm">
-    <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column" layout-align-xs="center stretch">
-        <div >
+    <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column"
+         layout-align-xs="center stretch">
+        <div>
             <h3>{{ 'PRIVATE.PROFILE.PERSONAL_DATA.BASIC_INFO' | translate }}</h3>
         </div>
         <div ng-show="!UserBasicInfoCtrl.allowEdit" layout-xs="row" layout-align-xs="center center">
-            <md-button class="md-raised" ng-click="UserBasicInfoCtrl.enableEdit()"> {{ 'ACTIONS.EDIT' | translate }} </md-button>
+            <md-button class="md-raised" ng-click="UserBasicInfoCtrl.enableEdit()"> {{ 'ACTIONS.EDIT' | translate }}
+            </md-button>
         </div>
         <div ng-show="UserBasicInfoCtrl.allowEdit" layout-xs="row" layout-align-xs="center center">
-            <md-button class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()" ng-disabled="userProfileForm.$invalid"> {{ 'ACTIONS.SAVE' | translate }} </md-button>
-            <md-button class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate }} </md-button>
+            <md-button class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()"
+                       ng-disabled="userProfileForm.$invalid"> {{ 'ACTIONS.SAVE' | translate }}
+            </md-button>
+            <md-button class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate
+                }}
+            </md-button>
         </div>
     </div>
     <div layout="row" layout-align="space-around none" layout-xs="column">
@@ -30,27 +36,32 @@
             <div layout="row">
                 <div layout="row" flex="grow">
                     <md-input-container nx-model-attribute="UserProfile:gender" flex="100" class="md-block">
-                        <md-select ng-model="UserBasicInfoCtrl.user.profile.gender">
-                            <md-option value="{{null}}"><em>{{ 'OPTIONS.UNINFORMED' | translate }}</em></md-option>
-                            <md-option value="F">F</md-option>
-                            <md-option value="M">M</md-option>
+                        <md-select ng-model="UserBasicInfoCtrl.user.profile.gender" aria-label="gender">
+                            <md-option ng-value="''"><em>{{ 'OPTIONS.UNDEFINED' | translate }}</em></md-option>
+                            <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.LABEL' | translate }}">
+                                <md-option value="F">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.OPTIONS.F' | translate }}</md-option>
+                                <md-option value="M">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.OPTIONS.M' | translate }}</md-option>
+                            </md-optgroup>
                         </md-select>
                     </md-input-container>
                 </div>
 
                 <div layout="row" flex="grow">
                     <md-input-container nx-model-attribute="UserProfile:bloodType" flex="100" class="md-block">
-                        <md-select ng-model="UserBasicInfoCtrl.user.profile.bloodType">
-                            <md-option value="{{null}}"><em>{{ 'OPTIONS.UNINFORMED' | translate }}</em></md-option>
-                            <md-option value="O+">O+</md-option>
-                            <md-option value="O-">O-</md-option>
-                            <md-option value="A+">A+</md-option>
-                            <md-option value="A-">A-</md-option>
-                            <md-option value="B+">B+</md-option>
-                            <md-option value="B-">B-</md-option>
-                            <md-option value="AB+">AB+</md-option>
-                            <md-option value="AB-">AB-</md-option>
+                        <md-select ng-model="UserBasicInfoCtrl.user.profile.bloodType" aria-label="blood type">
+                            <md-option ng-value="''"><em>{{ 'OPTIONS.UNDEFINED' | translate }}</em></md-option>
+                            <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.BLOOD TYPE.LABEL' | translate }}">
+                                <md-option value="O+">O+</md-option>
+                                <md-option value="O-">O-</md-option>
+                                <md-option value="A+">A+</md-option>
+                                <md-option value="A-">A-</md-option>
+                                <md-option value="B+">B+</md-option>
+                                <md-option value="B-">B-</md-option>
+                                <md-option value="AB+">AB+</md-option>
+                                <md-option value="AB-">AB-</md-option>
+                            </md-optgroup>
                         </md-select>
+
                     </md-input-container>
                 </div>
 
@@ -59,7 +70,8 @@
                         <md-datepicker ng-model="UserBasicInfoCtrl.user.profile.birthDate"></md-datepicker>
                     </md-input-container>
                 </div>
-                <div layout="row" flex="grow" ng-show="UserBasicInfoCtrl.user.profile.age" ng-hide="UserBasicInfoCtrl.allowEdit">
+                <div layout="row" flex="grow" ng-show="UserBasicInfoCtrl.user.profile.age"
+                     ng-hide="UserBasicInfoCtrl.allowEdit">
                     <md-input-container nx-model-attribute="UserProfile:age" flex="100" class="md-block">
                         <input ng-model="UserBasicInfoCtrl.user.profile.age" disabled>
                     </md-input-container>
@@ -72,12 +84,12 @@
             </div>
             <div layout="row">
                 <md-input-container nx-model-attribute="User:plan" flex="100">
-                    <input ng-model="UserBasicInfoCtrl.user.plan" disabled>
+                    <input ng-model="UserBasicInfoCtrl.user.plan" skip-disable="true" disabled>
                 </md-input-container>
             </div>
             <div layout="row">
                 <md-input-container nx-model-attribute="User:period" flex="100" class="md-block">
-                    <input ng-model="UserBasicInfoCtrl.user.period" disabled>
+                    <input ng-model="UserBasicInfoCtrl.user.period" skip-disable="true" disabled>
                 </md-input-container>
             </div>
         </div>

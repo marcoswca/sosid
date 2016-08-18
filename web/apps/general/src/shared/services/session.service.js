@@ -3,7 +3,8 @@
     'use strict';
 
     var dependencies = [
-        'api.session'
+        'api.session',
+        'model.user'
     ];
 
     angular
@@ -23,9 +24,21 @@
         };
 
         /** @ngInject */
-        function $get($rootScope, SessionApi, $window, APP_CONFIG, AlertService, $translate) {
+        function $get($rootScope, SessionApi, $window, APP_CONFIG, AlertService, $translate, User) {
 
-            var sessionMethods = {
+            var instantiatedUser;
+
+            if (!instantiatedUser) {
+                instantiatedUser = new User(session.user);
+            }
+
+            //TODO: ver se isso ainda é necessario
+            $rootScope.$on('ApiServiceEvent:session-expired', function () {
+                $window.location = APP_CONFIG.APP_URL;
+            });
+
+            return {
+                user: instantiatedUser,
                 destroy: function ($event) {
                     var title, content;
 
@@ -49,14 +62,6 @@
 
                 }
             };
-
-            angular.extend(session, sessionMethods);
-
-            $rootScope.$on('ApiServiceEvent:session-expired', function () {
-                $window.location = APP_CONFIG.APP_URL;
-            });
-
-            return session;
         }
 
     }

@@ -60,6 +60,8 @@
                 return;
             }
 
+            //element.attr('placeholder', 'uninformed');
+
             nxModelAttribute.ngModel = ngModel;
 
             var validations, ignoraAllValidations, blackList = [];
@@ -130,7 +132,6 @@
             require: '?mdInputContainer',
             controller: NxModelAttrCtrl,
             controllerAs: 'nxModelAttrCtrl',
-            scope: true,
             compile: function (tEl, tAttrs) {
 
                 var modelName, attributeName;
@@ -166,8 +167,9 @@
                 }
 
                 // todo: adicionar placeholder caso esteja definido
-                if (attribute.placeholder) {
-                    // tEl.find('input')
+                if (!attribute.placeholder) {
+                    // todo: usar traducao para o uninformed
+                    tEl.find('input').attr('placeholder', 'uninformed');
                 }
 
                 // define aos atributos do elemento as validacoes para serem usadas no controller dessa directiva

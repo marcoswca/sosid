@@ -4,5 +4,6 @@ body, html {
 }
 
 md-select.md-default-theme[disabled] .md-select-value, md-select[disabled] .md-select-value {
+  color: gray;
   background-image: none !important;
 }

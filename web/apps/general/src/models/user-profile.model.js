@@ -22,7 +22,8 @@
                 'birthDate',
                 'gender',
                 'address',
-                'bloodType'
+                'bloodType',
+                'age'
             ],
             onInstance: function() {
                 var self = this;

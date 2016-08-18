@@ -20,13 +20,12 @@
             templateUrl: 'templates/user-basic-info.html'
         };
 
-        function UserBasicInfoCtrl($scope, User, Session) {
+        function UserBasicInfoCtrl($scope, Session, $timeout) {
             // Private variables
             var self = this;
 
             // Public variables
-            $scope.a = new Date();
-            self.user = {};
+            self.user = Session.user;
             self.allowEdit = false;
 
             // Public methods
@@ -37,8 +36,6 @@
 
             // Private methods
             return (function init() {
-                self.user = new User(Session.user);
-                console.log(self.user);
             })();
 
             function enableEdit() {
@@ -50,7 +47,9 @@
                 return self.user
                     .updateProfile()
                     .then(function () {
-                        self.allowEdit = false;
+                        $timeout(function() {
+                            self.allowEdit = false;
+                        });
                     });
             }
 

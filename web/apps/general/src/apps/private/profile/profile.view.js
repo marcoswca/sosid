@@ -14,13 +14,14 @@
         .controller('ProfileViewController', ProfileViewController);
 
     /** @ngInject */
-    function ProfileViewController($mdDialog) {
+    function ProfileViewController($mdDialog, Session) {
         // Private variables
         var self = this;
 
         // Public variables
 
         // Public methods
+        self.Session = Session;
         self.showPrivacySettings = showPrivacySettings;
         self.showPrintCard = showPrintCard;
         self.showWelcome = showWelcome;

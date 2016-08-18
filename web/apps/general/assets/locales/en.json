@@ -1,6 +1,6 @@
 {
   "OPTIONS": {
-    "UNINFORMED": "Uninformed"
+    "UNDEFINED": "uninformed"
   },
   "ACTIONS": {
     "EDIT": "Edit",
@@ -257,7 +257,11 @@
           "LABEL": "Birth Date"
         },
         "GENDER": {
-          "LABEL": "Gender"
+          "LABEL": "Gender",
+          "OPTIONS": {
+            "F": "Female",
+            "M": "Male"
+          }
         },
         "BLOOD TYPE": {
           "LABEL": "Blood Type"

@@ -83,25 +83,25 @@
                 </div>
                 <div layout="column" layout-align="center stretch" class="profile-resume__data">
                     <div class="profile-resume__data__name">
-                        <span class="profile-resume__data__name_first-name">Paulo Régis</span>
-                        <span class="profile-resume__data__name--last-name">de Medeiros Cavalcante</span>
+                        <span class="profile-resume__data__name_first-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('firstName')}}</span>
+                        <span class="profile-resume__data__name--last-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('lastName')}}</span>
                     </div>
                     <div class="profile-resume__data-list" layout="row">
-                        <div class="profile-resume__data-item" layout="column">
+                        <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('age')">
                             <div class="profile-resume__data-field">Age</div>
-                            <div class="profile-resume__data-value">27</div>
+                            <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('age')}}</div>
                         </div>
-                        <div class="profile-resume__data-item" layout="column">
-                            <div class="profile-resume__data-field">Sex</div>
-                            <div class="profile-resume__data-value">Male</div>
+                        <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('gender')">
+                            <div class="profile-resume__data-field">Gender</div>
+                            <div class="profile-resume__data-value">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.OPTIONS.' + ProfileViewCtrl.Session.user.profile._getCommittedField('gender') | translate }}</div>
                         </div>
-                        <div class="profile-resume__data-item" layout="column">
-                            <div class="profile-resume__data-field">Adress</div>
-                            <div class="profile-resume__data-value">Münster, UK</div>
+                        <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('address')">
+                            <div class="profile-resume__data-field">address</div>
+                            <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}</div>
                         </div>
-                        <div class="profile-resume__data-item" layout="column">
+                        <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')">
                             <div class="profile-resume__data-field">Blood Type</div>
-                            <div class="profile-resume__data-value">Group AB</div>
+                            <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')}}</div>
                         </div>
                     </div>
                 </div>

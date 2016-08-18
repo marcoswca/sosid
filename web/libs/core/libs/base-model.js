@@ -34,6 +34,10 @@
                 NxtModel.prototype = modelConfig.instanceMethods;
             }
 
+            NxtModel.prototype._getCommittedField = function(field) {
+                return this.__commitedValues[field];
+            };
+
             NxtModel.prototype._syncCommitValues = function () {
                 var self = this;
                 self.__commitedValues = {};
