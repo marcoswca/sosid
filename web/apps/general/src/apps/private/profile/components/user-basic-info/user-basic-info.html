@@ -10,7 +10,7 @@
         </div>
         <div ng-show="UserBasicInfoCtrl.allowEdit" layout-xs="row" layout-align-xs="center center">
             <md-button class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()"
-                       ng-disabled="userProfileForm.$invalid"> {{ 'ACTIONS.SAVE' | translate }}
+                       ng-disabled="userProfileForm.$invalid || userProfileForm.$pristine"> {{ 'ACTIONS.SAVE' | translate }}
             </md-button>
             <md-button class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate
                 }}
@@ -73,7 +73,7 @@
                 <div layout="row" flex="grow" ng-show="UserBasicInfoCtrl.user.profile.age"
                      ng-hide="UserBasicInfoCtrl.allowEdit">
                     <md-input-container nx-model-attribute="UserProfile:age" flex="100" class="md-block">
-                        <input ng-model="UserBasicInfoCtrl.user.profile.age" disabled>
+                        <input ng-model="UserBasicInfoCtrl.user.profile.age">
                     </md-input-container>
                 </div>
             </div>

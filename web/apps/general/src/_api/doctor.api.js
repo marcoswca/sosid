@@ -12,13 +12,11 @@
     /** @ngInject */
     function DoctorApi(APP_CONFIG, ApiService) {
 
-        var url = APP_CONFIG.URL.API_URL + '/doctor';
+        var url = APP_CONFIG.URL.API_URL + '/user-doctor';
 
         this.getAll = function (params, options) {
             options = options || {};
-            options.url = url + '/';
-            options.params = params || {};
-
+            options.url = url;
             return ApiService.Get(options);
         };
 
@@ -29,9 +27,9 @@
             return ApiService.Post(options);
         };
 
-        this.update = function(data, options) {
+        this.update = function(id, data, options) {
             options = options || {};
-            options.url = url;
+            options.url = url + '/' + id;
             options.data = data;
             return ApiService.Put(options);
         };

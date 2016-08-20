@@ -132,6 +132,7 @@
             require: '?mdInputContainer',
             controller: NxModelAttrCtrl,
             controllerAs: 'nxModelAttrCtrl',
+            scope: true,
             compile: function (tEl, tAttrs) {
 
                 var modelName, attributeName;
@@ -169,7 +170,7 @@
                 // todo: adicionar placeholder caso esteja definido
                 if (!attribute.placeholder) {
                     // todo: usar traducao para o uninformed
-                    tEl.find('input').attr('placeholder', 'uninformed');
+                    //tEl.find('input').attr('placeholder', 'uninformed');
                 }
 
                 // define aos atributos do elemento as validacoes para serem usadas no controller dessa directiva
@@ -177,7 +178,6 @@
 
                 // criando elemento de mensagens de validação
                 var messages = angular.element('<div ng-messages="nxModelAttrCtrl.ngModel.$error" multiple md-auto-hide="auto"></div>');
-
                 // verificando todas as validações e adicionando ao elemento de mensagens
                 angular.forEach(attribute.validate, function (value, key) {
                     if (typeof value === 'object') {

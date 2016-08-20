@@ -14,22 +14,54 @@
         .controller('ProfileViewController', ProfileViewController);
 
     /** @ngInject */
-    function ProfileViewController($mdDialog, Session) {
+    function ProfileViewController($rootScope, $mdDialog, Session, $state, $timeout) {
         // Private variables
-        var self = this;
+        var __loadingDebouce,
+            self = this;
 
         // Public variables
+        self.contentHeader = {
+            button: {
+                show: angular.noop,
+                name: '',
+                fn: angular.noop
+            }
+        };
+        self.isLoading = false;
 
         // Public methods
+        self.pageTitle = $state.current.data.pageTitle;
         self.Session = Session;
+        self.setLoading = setLoading;
+
+        // temp
         self.showPrivacySettings = showPrivacySettings;
         self.showPrintCard = showPrintCard;
         self.showWelcome = showWelcome;
 
+
         // Private methods
         return (function init() {
-
+            $rootScope.$on('$stateChangeStart', function() {
+                self.contentHeader.button.show = angular.noop;
+            });
+            $rootScope.$on('$stateChangeSuccess', function() {
+                self.pageTitle = $state.current.data.pageTitle;
+            });
         })();
+
+        function setLoading(status) {
+            if (__loadingDebouce) {
+                $timeout.cancel(__loadingDebouce);
+            }
+
+            __loadingDebouce = $timeout(angular.noop, 300);
+
+            return __loadingDebouce
+                .then(function () {
+                    self.isLoading = status;
+                });
+        }
 
         function showPrivacySettings($event) {
             return $mdDialog.show({

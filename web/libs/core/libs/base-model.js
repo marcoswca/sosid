@@ -11,7 +11,38 @@
 
             function NxtModel(data) {
                 data = data || {};
-                angular.extend(this, angular.copy(data));
+
+                var self = this;
+
+                _.each(modelConfig.attributes, function (attrOptions, attrName) {
+                    var value = angular.copy(data[attrName]);
+
+                    if (attrOptions.isDate) {
+                        value = new Date(value);
+                    }
+
+                    Object.defineProperty(self, attrName, {
+                        enumerable: true,
+                        configurable: true,
+                        writable: true,
+                        value: value || attrOptions.defaultValue
+                    });
+
+                    if (attrOptions.set) {
+                        Object.defineProperty(self, attrName, {
+                            set: attrOptions.set
+                        });
+                    }
+
+                    if (attrOptions.get) {
+                        Object.defineProperty(self, attrName, {
+                            get: attrOptions.get
+                        });
+                    }
+                });
+
+                // todo: criar relationships
+                angular.extend(this, angular.copy(_.omit(data, _.keysIn(modelConfig.attributes))));
 
                 if (typeof modelConfig.onInstance === 'function') {
                     modelConfig.onInstance.call(this);
@@ -28,20 +59,26 @@
 
             // adicionando os atributos
             NxtModel.attributes = modelConfig.attributes;
+            NxtModel.attributesNames = _.keysIn(modelConfig.attributes);
+            NxtModel.attributesNamesUpdatable = _.keysIn(_.omitBy(modelConfig.attributes, { updateDisabled: true }));
 
             // definindo metodos de instancia
             if (modelConfig.instanceMethods) {
                 NxtModel.prototype = modelConfig.instanceMethods;
             }
 
-            NxtModel.prototype._getCommittedField = function(field) {
+            NxtModel.prototype.toJSON = function () {
+                return _.omit(this, ['__commitedValues', '__enabledUpdateAttributes']);
+            };
+
+            NxtModel.prototype._getCommittedField = function (field) {
                 return this.__commitedValues[field];
             };
 
             NxtModel.prototype._syncCommitValues = function () {
                 var self = this;
                 self.__commitedValues = {};
-                _.each(modelConfig.enabledUpdateAttributes, function (value) {
+                _.each(NxtModel.attributesNamesUpdatable, function (value) {
                     self.__commitedValues[value] = self[value];
                 });
             };
@@ -59,7 +96,7 @@
 
             NxtModel.prototype._rollbackValues = function () {
                 var self = this;
-                _.each(modelConfig.enabledUpdateAttributes, function (value) {
+                _.each(NxtModel.attributesNamesUpdatable, function (value) {
                     self[value] = self.__commitedValues[value];
                 });
             };
@@ -67,7 +104,7 @@
             NxtModel.prototype._getChangedValues = function () {
                 var self = this;
                 var changed = {};
-                _.each(modelConfig.enabledUpdateAttributes, function (key) {
+                _.each(NxtModel.attributesNamesUpdatable, function (key) {
                     if (!_.isEqual(self[key], self.__commitedValues[key])) {
                         changed[key] = self[key];
                     }

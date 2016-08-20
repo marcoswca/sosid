@@ -15,7 +15,6 @@
         var self = this;
 
         // Public variables
-        self.viewName = 'Personal Data View';
         self.isPrivate = false;
 
         self.user = {

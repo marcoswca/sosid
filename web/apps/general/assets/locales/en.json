@@ -3,6 +3,7 @@
     "UNDEFINED": "uninformed"
   },
   "ACTIONS": {
+    "DELETE": "Delete",
     "EDIT": "Edit",
     "SAVE": "Save",
     "CANCEL": "Cancel"
@@ -22,20 +23,23 @@
             "REQUIRED": "Last Name is required"
           }
         },
-        "MEDICAL SPECIALITY": {
-          "LABEL": "Medical Speciality",
+        "SPECIALITY": {
+          "LABEL": "Speciality",
           "VALIDATE": {
-            "REQUIRED": "Medical Speciality is required"
+            "REQUIRED": "Speciality is required"
           }
         },
-        "MOBILE PHONE": {
+        "MOBILE NUMBER": {
           "LABEL": "Mobile Number"
         },
-        "PHONE": {
+        "PHONE NUMBER": {
           "LABEL": "Phone Number"
         },
         "EMAIL": {
-          "LABEL": "Email"
+          "LABEL": "E-Mail",
+          "VALIDATE": {
+            "EMAIL": "Please, inform a valid e-mail."
+          }
         },
         "CLINIC ADDRESS": {
           "LABEL": "Clinic Address"

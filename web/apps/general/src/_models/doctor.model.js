@@ -11,17 +11,33 @@
         .factory('Doctor', DoctorModel);
 
     /** @ngInject */
-    function DoctorModel(BaseModel, $q, DoctorApi) {
+    function DoctorModel(BaseModel, DoctorApi) {
         return BaseModel.make({
             api: DoctorApi,
             attributes: getAttributes(),
             classMethods: {},
             instanceMethods: {
-                create: function () {
-                    return DoctorApi.create(this);
+                create: function() {
+                    var self = this;
+                    return DoctorApi
+                        .create(this)
+                        .then(function(createdDoctor) {
+                            self.id = createdDoctor.id;
+                        });
                 },
-                update: function () {
-                    return DoctorApi.update(this);
+                update: function() {
+                    var self = this;
+
+                    var changedValues = self._getChangedValues();
+
+                    return DoctorApi
+                        .update(self.id, changedValues)
+                        .then(function() {
+                            self._commitValues();
+                        });
+                },
+                save: function () {
+                    return (!this.id) ? this.create() : this.update();
                 }
             }
         });
@@ -44,7 +60,7 @@
                         }
                     }
                 },
-                medicalSpeciality: {
+                speciality: {
                     label: true,
                     validate: {
                         required: {
@@ -52,14 +68,19 @@
                         }
                     }
                 },
-                mobilePhone: {
+                mobileNumber: {
                     label: true
                 },
-                phone: {
+                phoneNumber: {
                     label: true
                 },
                 email: {
-                    label: true
+                    label: true,
+                    validate: {
+                        email: {
+                            message: true
+                        }
+                    }
                 },
                 clinicAddress: {
                     label: true

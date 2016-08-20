@@ -8,11 +8,12 @@
         .controller('SettingsViewController', SettingsViewController);
 
     /** @ngInject */
-    function SettingsViewController() {
+    function SettingsViewController(Session) {
         // Private variables
         var self = this;
 
         // Public variables
+        self.Session = Session;
 
         // Public methods
 

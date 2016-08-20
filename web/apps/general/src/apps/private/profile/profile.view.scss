@@ -42,6 +42,10 @@ body {
     width: 100%;
   }
 
+  .profile-content__loader {
+    margin: 20px 0;
+  }
+
   .profile-sidebar {
     margin-right: 20px;
     width: 393px;
@@ -281,6 +285,7 @@ body {
 }
 
 .profile-content__box {
+  position: relative;
   margin-top: 10px;
   padding: 0 20px 20px;
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
@@ -291,6 +296,15 @@ body {
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+  }
+  .profile-content__box-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(255,255,255,0.5);
   }
   &.profile-content__box-edit {
     box-shadow: 0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12);

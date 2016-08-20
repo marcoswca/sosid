@@ -19,7 +19,10 @@
                     url: '/doctors',
                     controller: 'DoctorsViewController',
                     controllerAs: 'DoctorsViewCtrl',
-                    templateUrl: 'templates/doctors.view.html'
+                    templateUrl: 'templates/doctors.view.html',
+                    data: {
+                        pageTitle: 'PRIVATE.PROFILE.DOCTORS.PAGE_TITLE'
+                    }
                 }
             }
         ];

@@ -22,7 +22,7 @@
                     controllerAs: 'PersonalDataViewCtrl',
                     templateUrl: 'templates/personal-data.view.html',
                     data: {
-                        pageTitle: 'PRIVATE.PROFILE.PERSONAL DATA.PAGE_TITLE'
+                        pageTitle: 'PRIVATE.PROFILE.PERSONAL_DATA.PAGE_TITLE'
                     }
                 }
             }

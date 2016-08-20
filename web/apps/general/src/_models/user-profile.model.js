@@ -11,27 +11,13 @@
         .factory('UserProfile', UserProfile);
 
     /** @ngInject */
-    function UserProfile(BaseModel, $filter, UserProfileApi) {
+    function UserProfile(BaseModel, UserProfileApi) {
         return BaseModel.make({
             api: UserProfileApi,
             attributes: getAttributes(),
             classMethods: {},
-            enabledUpdateAttributes: [
-                'firstName',
-                'lastName',
-                'birthDate',
-                'gender',
-                'address',
-                'bloodType',
-                'age'
-            ],
             onInstance: function() {
                 var self = this;
-
-                if (self.birthDate) {
-                    self.birthDate = new Date(self.birthDate);
-                }
-
             },
             onCommitValues: function(fields) {
                 var self = this;
@@ -82,7 +68,8 @@
                     }
                 },
                 birthDate: {
-                    label: true
+                    label: true,
+                    isDate: true
                 },
                 age: {
                     label: true
