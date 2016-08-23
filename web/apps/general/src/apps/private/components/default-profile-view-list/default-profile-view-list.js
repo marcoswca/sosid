@@ -47,6 +47,12 @@
                         fn: enableCreate
                     }
                 };
+
+                $scope.$on('$destroy', function() {
+                    $scope.ProfileViewCtrl.contentHeader = {
+                        button: {}
+                    };
+                });
             };
 
             function getItems() {
