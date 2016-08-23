@@ -1,1 +1,3 @@
-<doctor-box doctor="doctor" ng-repeat="doctor in DoctorsViewCtrl.doctors" on-create-cancel="DoctorsViewCtrl.cancelCreate" on-create-success="DoctorsViewCtrl.createSuccess"></doctor-box>
+<content-item-box ng-repeat="doctor in DoctorsViewCtrl.doctors">
+    <doctor-item doctor="doctor" on-create-cancel="DoctorsViewCtrl.cancelCreate" on-create-success="DoctorsViewCtrl.createSuccess"></doctor-item>
+</content-item-box>

@@ -1,36 +1,36 @@
 (function () {
     'use strict';
 
-    var dependencies = [];
+    var dependencies = [
+        'private.components.contentItemBox'
+    ];
 
     angular
-        .module('private.components.doctorBox', dependencies)
-        .directive('doctorBox', doctorBoxDirective);
+        .module('private.components.doctorItem', dependencies)
+        .directive('doctorItem', doctorBoxDirective);
 
     /** @ngInject */
     function doctorBoxDirective() {
         return {
-            scope: true,
             bindToController: {
                 doctor: '=',
                 onCreateCancel: '=',
                 onCreateSuccess: '='
             },
             restrict: 'E',
-            controller: DoctorBoxCtrl,
-            controllerAs: 'DoctorBoxCtrl',
-            templateUrl: 'templates/doctor-box.html'
+            controller: DoctorItemCtrl,
+            controllerAs: 'DoctorItemCtrl',
+            templateUrl: 'templates/doctor-item.html'
         };
 
-        function DoctorBoxCtrl($scope, Doctor, $timeout) {
+        /** @ngInject */
+        function DoctorItemCtrl($scope, Doctor, $timeout) {
             // Private variables
-            var __loadingDebouce,
-                self = this;
+            var self = this;
 
             // Public variables
             self.isCreate = false;
             self.disableFields = true;
-            self.isLoading = false;
 
             // Public methods
             self.save = save;
@@ -48,16 +48,8 @@
             };
 
             function setLoading(status) {
-                if (__loadingDebouce) {
-                    $timeout.cancel(__loadingDebouce);
-                }
-
-                __loadingDebouce = $timeout(angular.noop, 300);
-
-                return __loadingDebouce
-                    .then(function () {
-                        self.isLoading = status;
-                    });
+                console.log($scope);
+                $scope.$parent.ContentItemBoxCtrl.setLoading(status);
             }
 
             function save() {

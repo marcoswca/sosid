@@ -3,7 +3,7 @@
 
     var dependencies = [
         'model.doctor',
-        'private.components.doctorBox'
+        'private.components.doctorItem'
     ];
 
     angular
