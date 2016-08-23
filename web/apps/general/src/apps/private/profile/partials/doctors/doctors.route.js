@@ -2,8 +2,9 @@
     'use strict';
 
     var dependencies = [
-        'private.views.doctors',
-        'private.routes.profile'
+        'model.doctor',
+        'private.routes.profile',
+        'private.components.defaultProfileViewList'
     ];
 
     angular
@@ -17,11 +18,12 @@
                 state: 'profile.doctors',
                 config: {
                     url: '/doctors',
-                    controller: 'DoctorsViewController',
-                    controllerAs: 'DoctorsViewCtrl',
-                    templateUrl: 'templates/doctors.view.html',
+                    template: '<default-profile-view-list></default-profile-view-list>',
                     data: {
-                        pageTitle: 'PRIVATE.PROFILE.DOCTORS.PAGE_TITLE'
+                        pageTitle: 'PRIVATE.PROFILE.DOCTORS.PAGE_TITLE',
+                        itemTemplate: 'doctor-item.html',
+                        modelName: 'Doctor',
+                        addButtonText: 'PRIVATE.PROFILE.DOCTORS.ADD_NEW'
                     }
                 }
             }

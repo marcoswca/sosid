@@ -62,11 +62,6 @@
             NxtModel.attributesNames = _.keysIn(modelConfig.attributes);
             NxtModel.attributesNamesUpdatable = _.keysIn(_.omitBy(modelConfig.attributes, { updateDisabled: true }));
 
-            // definindo metodos de instancia
-            if (modelConfig.instanceMethods) {
-                NxtModel.prototype = modelConfig.instanceMethods;
-            }
-
             NxtModel.prototype.toJSON = function () {
                 return _.omit(this, ['__commitedValues', '__enabledUpdateAttributes']);
             };
@@ -111,6 +106,35 @@
                 });
                 return changed;
             };
+
+            NxtModel.prototype.create = function() {
+                var self = this;
+                return modelConfig.api
+                    .create(this)
+                    .then(function(createdDoctor) {
+                        self.id = createdDoctor.id;
+                    });
+            };
+
+            NxtModel.prototype.update = function() {
+                var self = this;
+
+                var changedValues = self._getChangedValues();
+
+                return modelConfig.api
+                    .update(self.id, changedValues)
+                    .then(function() {
+                        self._commitValues();
+                    });
+            };
+
+            NxtModel.prototype.save = function () {
+                return (!this.id) ? this.create() : this.update();
+            };
+
+            if (_.isObject(modelConfig.instanceMethods)) {
+                angular.extend(NxtModel.prototype, modelConfig.instanceMethods);
+            }
 
             return NxtModel;
         };

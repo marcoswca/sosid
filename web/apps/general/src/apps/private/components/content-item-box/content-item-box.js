@@ -11,14 +11,13 @@
     function contentItemBoxDirective() {
         return {
             transclude: true,
-            scope: true,
             restrict: 'E',
             controller: ContentItemBoxCtrl,
             controllerAs: 'ContentItemBoxCtrl',
             templateUrl: 'templates/content-item-box.html'
         };
 
-        function ContentItemBoxCtrl($timeout) {
+        function ContentItemBoxCtrl($scope, $timeout) {
             // Private variables
             var __loadingDebouce,
                 self = this;
@@ -30,7 +29,11 @@
             self.setLoading = setLoading;
 
             // Private methods
-            self.$onInit = function() {};
+            self.$onInit = function() {
+                $scope.$on('contentItemBox:Loading', function($event, status) {
+                    setLoading(status);
+                });
+            };
 
             function setLoading(status) {
                 if (__loadingDebouce) {

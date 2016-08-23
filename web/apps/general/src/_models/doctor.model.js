@@ -15,31 +15,7 @@
         return BaseModel.make({
             api: DoctorApi,
             attributes: getAttributes(),
-            classMethods: {},
-            instanceMethods: {
-                create: function() {
-                    var self = this;
-                    return DoctorApi
-                        .create(this)
-                        .then(function(createdDoctor) {
-                            self.id = createdDoctor.id;
-                        });
-                },
-                update: function() {
-                    var self = this;
-
-                    var changedValues = self._getChangedValues();
-
-                    return DoctorApi
-                        .update(self.id, changedValues)
-                        .then(function() {
-                            self._commitValues();
-                        });
-                },
-                save: function () {
-                    return (!this.id) ? this.create() : this.update();
-                }
-            }
+            classMethods: {}
         });
 
         function getAttributes() {

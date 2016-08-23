@@ -6,27 +6,33 @@
     ];
 
     angular
-        .module('private.components.doctorItem', dependencies)
-        .directive('doctorItem', doctorBoxDirective);
+        .module('private.components.defaultItem', dependencies)
+        .directive('defaultItem', Directive);
 
     /** @ngInject */
-    function doctorBoxDirective() {
+    function Directive($templateCache, $state) {
         return {
+            scope: true,
             bindToController: {
-                doctor: '=',
+                item: '=',
+                modelName: '@',
                 onCreateCancel: '=',
                 onCreateSuccess: '='
             },
             restrict: 'E',
-            controller: DoctorItemCtrl,
-            controllerAs: 'DoctorItemCtrl',
-            templateUrl: 'templates/doctor-item.html'
+            controller: Controller,
+            controllerAs: 'DefaultItemCtrl',
+            template: function(tEl, tAttrs) {
+                var itemTemplate = (tAttrs.itemTemplate) ? tAttrs.itemTemplate: $state.current.data.itemTemplate;
+                return $templateCache.get('templates/' + itemTemplate);
+            }
         };
 
         /** @ngInject */
-        function DoctorItemCtrl($scope, Doctor, $timeout) {
+        function Controller($scope, $injector) {
             // Private variables
-            var self = this;
+            var Model,
+                self = this;
 
             // Public variables
             self.isCreate = false;
@@ -39,8 +45,13 @@
 
             // Private methods
             self.$onInit = function() {
-                self.doctor = new Doctor(self.doctor);
-                self.isCreate = !self.doctor.id;
+                if (!self.modelName) {
+                    self.modelName = $state.current.data.modelName;
+                }
+
+                Model = $injector.get(self.modelName);
+                self.item = new Model(self.item);
+                self.isCreate = !self.item.id;
 
                 if (self.isCreate) {
                     enableFields();
@@ -48,13 +59,12 @@
             };
 
             function setLoading(status) {
-                console.log($scope);
-                $scope.$parent.ContentItemBoxCtrl.setLoading(status);
+                $scope.$emit('contentItemBox:Loading', status);
             }
 
             function save() {
                 setLoading(true);
-                return self.doctor
+                return self.item
                     .save()
                     .then(function () {
                         self.disableFields = true;

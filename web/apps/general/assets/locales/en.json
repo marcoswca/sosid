@@ -91,10 +91,10 @@
             "REQUIRED": "Relationship is required"
           }
         },
-        "MOBILE PHONE": {
+        "MOBILE NUMBER": {
           "LABEL": "Mobile Number"
         },
-        "PHONE": {
+        "PHONE NUMBER": {
           "LABEL": "Phone Number"
         },
         "EMAIL": {

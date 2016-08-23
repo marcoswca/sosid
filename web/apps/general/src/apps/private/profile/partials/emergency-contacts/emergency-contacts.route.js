@@ -2,7 +2,8 @@
     'use strict';
 
     var dependencies = [
-        'private.views.emergencyContacts',
+        'model.EmergencyContact',
+        'private.components.defaultProfileViewList',
         'private.routes.profile'
     ];
 
@@ -17,9 +18,13 @@
                 state: 'profile.emergencyContacts',
                 config: {
                     url: '/emergency-contacts',
-                    controller: 'EmergencyContactsViewController',
-                    controllerAs: 'EmergencyContactsViewCtrl',
-                    templateUrl: 'templates/emergency-contacts.view.html'
+                    template: '<default-profile-view-list></default-profile-view-list>',
+                    data: {
+                        pageTitle: 'PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE',
+                        itemTemplate: 'emergency-contact-item.html',
+                        modelName: 'EmergencyContact',
+                        addButtonText: 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW'
+                    }
                 }
             }
         ];

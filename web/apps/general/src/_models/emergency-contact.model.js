@@ -7,7 +7,7 @@
     ];
 
     angular
-        .module('model.emergencyContact', dependencies)
+        .module('model.EmergencyContact', dependencies)
         .factory('EmergencyContact', EmergencyContactModel);
 
     /** @ngInject */
@@ -15,15 +15,7 @@
         return BaseModel.make({
             api: EmergencyContactApi,
             attributes: getAttributes(),
-            classMethods: {},
-            instanceMethods: {
-                create: function () {
-                    return EmergencyContactApi.create(this);
-                },
-                update: function () {
-                    return EmergencyContactApi.update(this);
-                }
-            }
+            classMethods: {}
         });
 
         function getAttributes() {
@@ -47,10 +39,10 @@
                 relationship: {
                     label: true
                 },
-                mobilePhone: {
+                mobileNumber: {
                     label: true
                 },
-                phone: {
+                phoneNumber: {
                     label: true
                 },
                 email: {
