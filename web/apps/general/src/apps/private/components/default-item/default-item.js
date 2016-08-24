@@ -15,9 +15,11 @@
             scope: true,
             bindToController: {
                 item: '=',
+                index: '@',
                 modelName: '@',
                 onCreateCancel: '=',
-                onCreateSuccess: '='
+                onCreateSuccess: '=',
+                onRemoveSuccess: '='
             },
             restrict: 'E',
             controller: Controller,
@@ -41,6 +43,7 @@
             // Public methods
             self.save = save;
             self.cancel = cancel;
+            self.remove = remove;
             self.enableFields = enableFields;
 
             // Private methods
@@ -68,10 +71,25 @@
                     .save()
                     .then(function () {
                         self.disableFields = true;
-
                         if (self.isCreate) {
-                            self.onCreateSuccess();
+                            if (_.isFunction(self.onCreateSuccess)) {
+                                return self.onCreateSuccess();
+                            }
                             self.isCreate = false;
+                        }
+                    })
+                    .finally(function() {
+                        setLoading(false);
+                    });
+            }
+
+            function remove() {
+                setLoading(true);
+                return self.item
+                    .remove()
+                    .then(function() {
+                        if (_.isFunction(self.onRemoveSuccess)) {
+                            return self.onRemoveSuccess(self.item, self.index);
                         }
                     })
                     .finally(function() {
@@ -81,7 +99,9 @@
 
             function cancel() {
                 if (self.isCreate) {
-                    return self.onCreateCancel();
+                    if (_.isFunction(self.onCreateCancel)) {
+                        return self.onCreateCancel();
+                    }
                 } else {
                     self.disableFields = true;
                 }

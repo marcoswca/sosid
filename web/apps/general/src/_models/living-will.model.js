@@ -15,15 +15,7 @@
         return BaseModel.make({
             api: LivingWillApi,
             attributes: getAttributes(),
-            classMethods: {},
-            instanceMethods: {
-                create: function () {
-                    return LivingWillApi.create(this);
-                },
-                update: function () {
-                    return LivingWillApi.update(this);
-                }
-            }
+            classMethods: {}
         });
 
         function getAttributes() {

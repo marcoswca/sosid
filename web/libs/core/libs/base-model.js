@@ -132,6 +132,11 @@
                 return (!this.id) ? this.create() : this.update();
             };
 
+            NxtModel.prototype.remove = function() {
+                return modelConfig.api
+                    .remove(this.id);
+            };
+
             if (_.isObject(modelConfig.instanceMethods)) {
                 angular.extend(NxtModel.prototype, modelConfig.instanceMethods);
             }

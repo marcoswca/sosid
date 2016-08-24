@@ -15,15 +15,7 @@
         return BaseModel.make({
             api: HealthInsuranceApi,
             attributes: getAttributes(),
-            classMethods: {},
-            instanceMethods: {
-                create: function () {
-                    return HealthInsuranceApi.create(this);
-                },
-                update: function () {
-                    return HealthInsuranceApi.update(this);
-                }
-            }
+            classMethods: {}
         });
 
         function getAttributes() {

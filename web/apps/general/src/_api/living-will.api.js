@@ -12,11 +12,11 @@
     /** @ngInject */
     function LivingWillApi(APP_CONFIG, ApiService) {
 
-        var url = APP_CONFIG.URL.API_URL + '/living-will';
+        var url = APP_CONFIG.URL.API_URL + '/user-living-will';
 
-        this.getByUserID = function (params, options) {
+        this.getAll = function (params, options) {
             options = options || {};
-            options.url = url + '/';
+            options.url = url;
             options.params = params || {};
 
             return ApiService.Get(options);
@@ -29,9 +29,9 @@
             return ApiService.Post(options);
         };
 
-        this.update = function(data, options) {
+        this.update = function(id, data, options) {
             options = options || {};
-            options.url = url;
+            options.url = url + '/' + id;
             options.data = data;
             return ApiService.Put(options);
         };

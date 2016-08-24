@@ -15,15 +15,7 @@
         return BaseModel.make({
             api: GlassesPassApi,
             attributes: getAttributes(),
-            classMethods: {},
-            instanceMethods: {
-                create: function () {
-                    return GlassesPassApi.create(this);
-                },
-                update: function () {
-                    return GlassesPassApi.update(this);
-                }
-            }
+            classMethods: {}
         });
 
         function getAttributes() {

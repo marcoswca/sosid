@@ -6,17 +6,17 @@
     ];
 
     angular
-        .module('api.allergie', dependencies)
-        .service('AllergieApi', AllergieApi);
+        .module('api.allergy', dependencies)
+        .service('AllergyApi', Api);
 
     /** @ngInject */
-    function AllergieApi(APP_CONFIG, ApiService) {
+    function Api(APP_CONFIG, ApiService) {
 
-        var url = APP_CONFIG.URL.API_URL + '/allergie';
+        var url = APP_CONFIG.URL.API_URL + '/user-allergie';
 
         this.getAll = function (params, options) {
             options = options || {};
-            options.url = url + '/';
+            options.url = url;
             options.params = params || {};
 
             return ApiService.Get(options);
@@ -29,16 +29,16 @@
             return ApiService.Post(options);
         };
 
-        this.update = function(data, options) {
+        this.update = function(id, data, options) {
             options = options || {};
-            options.url = url;
+            options.url = url + '/' + id;
             options.data = data;
             return ApiService.Put(options);
         };
-        this.delete = function(data, options) {
+
+        this.remove = function(id, options) {
             options = options || {};
-            options.url = url;
-            options.data = data;
+            options.url = url + '/' + id;
             return ApiService.Delete(options);
         };
     }

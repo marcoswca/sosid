@@ -1,3 +1,7 @@
-<default-item item="item" ng-repeat="item in DefaultProfileViewListCtrl.items"
+<default-item item="item" ng-repeat="item in DefaultProfileViewListCtrl.items | filter:filter"
+              ng-hide="item.___removed"
+              index="{{$index}}"
               on-create-cancel="DefaultProfileViewListCtrl.cancelCreate"
-              on-create-success="DefaultProfileViewListCtrl.createSuccess"></default-item>
+              on-create-success="DefaultProfileViewListCtrl.createSuccess"
+              on-remove-success="DefaultProfileViewListCtrl.removeSuccess">
+</default-item>

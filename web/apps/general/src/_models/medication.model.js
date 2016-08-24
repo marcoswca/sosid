@@ -15,15 +15,7 @@
         return BaseModel.make({
             api: MedicationApi,
             attributes: getAttributes(),
-            classMethods: {},
-            instanceMethods: {
-                create: function () {
-                    return MedicationApi.create(this);
-                },
-                update: function () {
-                    return MedicationApi.update(this);
-                }
-            }
+            classMethods: {}
         });
 
         function getAttributes() {

@@ -35,6 +35,12 @@
             options.data = data;
             return ApiService.Put(options);
         };
+
+        this.remove = function(id, options) {
+            options = options || {};
+            options.url = url + '/' + id;
+            return ApiService.Delete(options);
+        };
     }
 
 })();

@@ -2,7 +2,8 @@
     'use strict';
 
     var dependencies = [
-        'private.views.medications',
+        'model.medication',
+        'private.components.defaultProfileViewList',
         'private.routes.profile'
     ];
 
@@ -17,9 +18,13 @@
                 state: 'profile.medications',
                 config: {
                     url: '/medications',
-                    controller: 'MedicationsViewController',
-                    controllerAs: 'MedicationsViewCtrl',
-                    templateUrl: 'templates/medications.view.html'
+                    template: '<default-profile-view-list></default-profile-view-list>',
+                    data: {
+                        pageTitle: 'PRIVATE.PROFILE.MEDICATIONS.PAGE_TITLE',
+                        itemTemplate: 'medication-item.html',
+                        modelName: 'Medication',
+                        addButtonText: 'PRIVATE.PROFILE.MEDICATIONS.ADD_NEW'
+                    }
                 }
             }
         ];

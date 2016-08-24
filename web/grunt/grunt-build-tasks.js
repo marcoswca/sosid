@@ -483,6 +483,7 @@ module.exports = function (grunt, build_config) {
                     ]
                 },
                 options: {
+                    open: false,
                     server: "../.bin",
                     watchTask: true,
                     middleware: [

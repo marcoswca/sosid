@@ -15,15 +15,7 @@
         return BaseModel.make({
             api: HealthConditionApi,
             attributes: getAttributes(),
-            classMethods: {},
-            instanceMethods: {
-                create: function () {
-                    return HealthConditionApi.create(this);
-                },
-                update: function () {
-                    return HealthConditionApi.update(this);
-                }
-            }
+            classMethods: {}
         });
 
         function getAttributes() {

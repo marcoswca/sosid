@@ -1,4 +1,6 @@
 <content-item-box>
+    {{DefaultItemCtrl.item.___removed}}
+
     <div layout="row" layout-align="space-between center" class="profile-content__box__title">
         <div flex-xs="90" ng-hide="DefaultItemCtrl.isCreate" flex>
             <h3>{{DefaultItemCtrl.item.firstName + ' ' + item.lastName}} <span ng-show="DefaultItemCtrl.item.speciality"> - {{DefaultItemCtrl.item.speciality}}</span></h3>
@@ -19,7 +21,7 @@
                     </md-menu-item>
                     <md-divider></md-divider>
                     <md-menu-item>
-                        <md-button><span md-menu-align-target>{{ "ACTIONS.DELETE" | translate}}</span></md-button>
+                        <md-button ng-click="DefaultItemCtrl.remove()"><span md-menu-align-target>{{ "ACTIONS.DELETE" | translate}}</span></md-button>
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>

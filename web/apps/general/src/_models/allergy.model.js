@@ -3,32 +3,24 @@
 
     var dependencies = [
         'Nxt.baseModel',
-        'api.allergie'
+        'api.allergy'
     ];
 
     angular
-        .module('model.allergie', dependencies)
-        .factory('Allergie', AllergieModel);
+        .module('model.allergy', dependencies)
+        .factory('Allergy', AllergieModel);
 
     /** @ngInject */
-    function AllergieModel(BaseModel, $q, AllergieApi) {
+    function AllergieModel(BaseModel, $q, AllergyApi) {
         return BaseModel.make({
-            api: AllergieApi,
+            api: AllergyApi,
             attributes: getAttributes(),
-            classMethods: {},
-            instanceMethods: {
-                create: function () {
-                    return AllergieApi.create(this);
-                },
-                update: function () {
-                    return AllergieApi.update(this);
-                }
-            }
+            classMethods: {}
         });
 
         function getAttributes() {
             return {
-                allergie: {
+                allergy: {
                     label: true,
                     validate: {
                         required: {

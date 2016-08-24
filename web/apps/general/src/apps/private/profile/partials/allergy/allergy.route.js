@@ -2,7 +2,6 @@
     'use strict';
 
     var dependencies = [
-        'private.views.allergies',
         'private.routes.profile'
     ];
 
@@ -17,9 +16,6 @@
                 state: 'profile.allergies',
                 config: {
                     url: '/allergies',
-                    controller: 'AllergiesViewController',
-                    controllerAs: 'AllergiesViewCtrl',
-                    templateUrl: 'templates/allergies.view.html'
                 }
             }
         ];

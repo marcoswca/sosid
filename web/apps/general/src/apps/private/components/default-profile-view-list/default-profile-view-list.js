@@ -21,7 +21,7 @@
 
         /** @ngInject */
         function Controller($scope, $injector, $state) {
-            // Private variables
+
             var Model,
                 self = this;
 
@@ -33,6 +33,7 @@
             self.enableCreate = enableCreate;
             self.cancelCreate = cancelCreate;
             self.createSuccess = createSuccess;
+            self.removeSuccess = removeSuccess;
 
             // Private methods
             self.$onInit = function() {
@@ -70,6 +71,10 @@
             function enableCreate() {
                 self.allowCreate = true;
                 self.items.unshift({});
+            }
+
+            function removeSuccess(item, index) {
+                item.___removed = true;
             }
 
             function createSuccess() {
