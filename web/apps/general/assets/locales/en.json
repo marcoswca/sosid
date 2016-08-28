@@ -152,12 +152,15 @@
         }
       }
     },
-    "ALLERGIE": {
+    "ALLERGY": {
       "ATTRIBUTES": {
-        "ALLERGIE": {
-          "LABEL": "Allergie",
+        "NAME": {
+          "LABEL": "Allergy Name"
+        },
+        "DESCRIPTION": {
+          "LABEL": "Notes",
           "VALIDATE": {
-            "REQUIRED": "Allergie is required"
+            "REQUIRED": "Notes is required"
           }
         },
         "SEVERITY": {
@@ -409,8 +412,26 @@
       },
       "ALLERGIES": {
         "PAGE_TITLE": "Allergies",
-        "ADD_NEW_ALLERGIE": "Add New Allergie",
-        "ADD_ALLERGIE": "Add Allergie"
+        "DRUG": {
+          "TYPE": "Drug",
+          "TITLE": "Do you have any known <strong>Drug</strong> Allergies?",
+          "ADD_NEW_TEXT": "Add Drug Allergy"
+        },
+        "FOOD": {
+          "TYPE": "Food",
+          "TITLE": "Do you have any known <strong>Food</strong> Allergies?",
+          "ADD_NEW_TEXT": "Add Food Allergy"
+        },
+        "INSECT": {
+          "TYPE": "Insect",
+          "TITLE": "Do you have any known <strong>Insect</strong> Allergies?",
+          "ADD_NEW_TEXT": "Add Insect Allergy"
+        },
+        "OTHER": {
+          "TYPE": "Other",
+          "TITLE": "Do you have any known <strong>Other</strong> Allergies?",
+          "ADD_NEW_TEXT": "Add Other Allergy"
+        }
       },
       "GLASSES PASS": {
         "PAGE_TITLE": "Glasses Pass",

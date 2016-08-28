@@ -16,7 +16,6 @@
             bindToController: {
                 item: '=',
                 index: '@',
-                modelName: '@',
                 onCreateCancel: '=',
                 onCreateSuccess: '=',
                 onRemoveSuccess: '='
@@ -33,8 +32,7 @@
         /** @ngInject */
         function Controller($scope, $injector) {
             // Private variables
-            var Model,
-                self = this;
+            var self = this;
 
             // Public variables
             self.isCreate = false;
@@ -48,14 +46,7 @@
 
             // Private methods
             self.$onInit = function() {
-                if (!self.modelName) {
-                    self.modelName = $state.current.data.modelName;
-                }
-
-                Model = $injector.get(self.modelName);
-                self.item = new Model(self.item);
                 self.isCreate = !self.item.id;
-
                 if (self.isCreate) {
                     enableFields();
                 }
@@ -71,11 +62,12 @@
                     .save()
                     .then(function () {
                         self.disableFields = true;
+
                         if (self.isCreate) {
-                            if (_.isFunction(self.onCreateSuccess)) {
-                                return self.onCreateSuccess();
-                            }
                             self.isCreate = false;
+                            if (_.isFunction(self.onCreateSuccess)) {
+                                self.onCreateSuccess(self.item);
+                            }
                         }
                     })
                     .finally(function() {

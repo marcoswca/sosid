@@ -1,181 +1,74 @@
-<div class="medications-view" flex="100">
-    <div class="profile-content__header" flex="100" layout="row" layout-align="space-between center">
-        <div>
-            <span>
-                <toggle-menu-mobile></toggle-menu-mobile>
-            </span>
-            <span>{{ 'PRIVATE.PROFILE.MY_RECORDS' | translate }}</span>
-            <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            <span class="profile-content__header__title">{{ 'PRIVATE.PROFILE.ALLERGIES.PAGE_TITLE' | translate }}</span>
+<content-item-box>
+    {{DefaultItemCtrl.item.___removed}}
+    <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+        <div flex-xs="90" ng-hide="DefaultItemCtrl.isCreate" flex>
+            <h3>{{'PRIVATE.PROFILE.ALLERGIES.' + allergyType.key + '.TYPE' | translate}} <span ng-show="DefaultItemCtrl.item.description"></span></h3>
+        </div>
+
+        <div flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
+            <h3>{{ 'PRIVATE.PROFILE.ALLERGIES.'  + allergyType.key +  '.ADD_NEW_TEXT' | translate }}</h3>
+        </div>
+        <div ng-hide="DefaultItemCtrl.isCreate">
+            <md-menu md-offset="-50 50">
+                <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;"
+                             aria-label="Cake Icon"></md-icon>
+                </md-button>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <md-button ng-click="DefaultItemCtrl.enableFields()"><span md-menu-align-target>{{ "ACTIONS.EDIT" | translate}}</span></md-button>
+                    </md-menu-item>
+                    <md-divider></md-divider>
+                    <md-menu-item>
+                        <md-button ng-click="DefaultItemCtrl.remove()"><span md-menu-align-target>{{ "ACTIONS.DELETE" | translate}}</span></md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
         </div>
     </div>
+    <div layout="row" flex="100">
+        <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
 
-    <div layout="column" class="allergie-group" flex="100">
-        <div class="allergie-group__header" layout="row" layout-xs="column" layout-align="space-between center">
-            <div layout="row" layout-xs="column">
-                <div class="allergie-group__header__title">
-                    <span>Do you have any known Drug Allergies?</span>
-                </div>
-                <div class="allergie-group__header__answer" layout="row" layout-align="center center">
-                    <md-radio-group ng-model="doctor.option" flex="100" layout="row">
-                        <md-radio-button value="true" class="md-primary">Yes</md-radio-button>
-                        <md-radio-button value="false" class="md-primary">No</md-radio-button>
-                    </md-radio-group>
-                </div>
+            <div layout="row">
+                <md-input-container nx-model-attribute="Allergy:name" flex="33">
+                    <input ng-model="DefaultItemCtrl.item.name">
+                </md-input-container>
+                <md-input-container nx-model-attribute="Allergy:severity" flex="33">
+                    <input ng-model="DefaultItemCtrl.item.severity">
+                </md-input-container>
             </div>
 
             <div layout="row">
-                <div class="allergie-group__header__button">
-                    <md-button class="md-raised">{{ 'PRIVATE.PROFILE.ALLERGIES.ADD_ALLERGIE' | translate }}</md-button>
-                </div>
+                <md-input-container nx-model-attribute="Allergy:description">
+                    <input ng-model="DefaultItemCtrl.item.description">
+                </md-input-container>
             </div>
-        </div>
-    </div>
 
-    <div flex="100" class="personal-data__basic-informations profile-content__box profile-content__box-edit">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
-            <div>
-                <h3>{{ 'PRIVATE.PROFILE.ALLERGIES.ADD_NEW_ALLERGIE' | translate }}</h3>
-            </div>
-        </div>
-        <div layout="row" flex="100">
-            <div layout="column" flex="100">
-                <form name="newHealthCondition">
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="Allergie:allergie" flex="33">
-                            <input ng-model="healthConditions.condition">
-                        </md-input-container>
-                        <md-input-container nx-model-attribute="Allergie:severity" flex="33">
-                            <input ng-model="mhealthConditions.severity">
-                        </md-input-container>
+            <div layout="column" class="profile-content__upload-files">
+                <div layout="row" class="profile-content__upload-files__header">
+                    <!--Todo: Mapear tradução-->
+                    <div class="profile-content__upload-files__title">Resources</div>
+                    <div class="profile-content__upload-files__hint">(Example: X-Ray, Biopsy, Medical Exam...)</div>
+                </div>
+                <div class="profile-content__upload-files__dnd-area" layout="column" layout-align="center center">
+                    <div class="profile-content__upload-dnd-area__icon">
+                        <md-icon md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
                     </div>
-                    <div layout="column" class="profile-content__upload-files">
-                        <div layout="row" class="profile-content__upload-files__header">
-                            <!--Todo: Mapear tradução-->
-                            <div class="profile-content__upload-files__title">Resources</div>
-                            <div class="profile-content__upload-files__hint">(Example: X-Ray, Biopsy, Medical Exam...)</div>
-                        </div>
-                        <div class="profile-content__upload-files__dnd-area" layout="column" layout-align="center center">
-                            <div class="profile-content__upload-dnd-area__icon">
-                                <md-icon md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
-                            </div>
-                            <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
-                            <div class="profile-content__upload-files__dnd-area__hint">Your files here or <span>browse</span></div>
-                        </div>
-                    </div>
-                    <div layout="row">
-                        <md-button ng-disabled="newHealthCondition.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.ALLERGIES.ADD_NEW_ALLERGIE' | translate }}</md-button>
-                        <md-button class="me-raised">{{ 'CANCEL' | translate }}</md-button>
-                    </div>
-                </form>
+                    <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
+                    <div class="profile-content__upload-files__dnd-area__hint">Your files here or
+                        <span>browse</span></div>
+                </div>
             </div>
-        </div>
 
+            <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
+                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid "
+                           class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+                </md-button>
+                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' |
+                    translate}}
+                </md-button>
+            </div>
+        </form>
     </div>
+</content-item-box>
 
-    <div layout="column" class="allergie-group" flex="100">
-        <div class="allergie-group__header" layout="row" layout-xs="column"  layout-align="space-between center">
-            <div layout="row">
-                <div class="allergie-group__header__title">
-                    <span>Do you have any known Food Allergies?</span>
-                </div>
-                <div class="allergie-group__header__answer" layout="row" layout-align="center center">
-                    <md-radio-group ng-model="doctor.option" flex="100" layout="row">
-                        <md-radio-button value="true" class="md-primary">Yes</md-radio-button>
-                        <md-radio-button value="false" class="md-primary">No</md-radio-button>
-                    </md-radio-group>
-                </div>
-            </div>
-
-            <div layout="row">
-                <div class="allergie-group__header__button">
-                    <md-button class="md-raised">{{ 'PRIVATE.PROFILE.ALLERGIES.ADD_ALLERGIE' | translate }}</md-button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div layout="column" class="allergie-group" flex="100">
-        <div class="allergie-group__header" layout="row" layout-xs="column"  layout-align="space-between center">
-            <div layout="row">
-                <div class="allergie-group__header__title">
-                    <span>Do you have any known Insect Allergies?</span>
-                </div>
-                <div class="allergie-group__header__answer" layout="row" layout-align="center center">
-                    <md-radio-group ng-model="doctor.option" flex="100" layout="row">
-                        <md-radio-button value="true" class="md-primary">Yes</md-radio-button>
-                        <md-radio-button value="false" class="md-primary">No</md-radio-button>
-                    </md-radio-group>
-                </div>
-            </div>
-
-            <div layout="row">
-                <div class="allergie-group__header__button">
-                    <md-button class="md-raised">{{ 'PRIVATE.PROFILE.ALLERGIES.ADD_ALLERGIE' | translate }}</md-button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div layout="column" class="allergie-group" flex="100">
-        <div class="allergie-group__header" layout="row" layout-xs="column"  layout-align="space-between center">
-            <div layout="row">
-                <div class="allergie-group__header__title">
-                    <span>Do you have any known Other Allergies?</span>
-                </div>
-                <div class="allergie-group__header__answer" layout="row" layout-align="center center">
-                    <md-radio-group ng-model="doctor.option" flex="100" layout="row">
-                        <md-radio-button value="true" class="md-primary">Yes</md-radio-button>
-                        <md-radio-button value="false" class="md-primary">No</md-radio-button>
-                    </md-radio-group>
-                </div>
-            </div>
-
-            <div layout="row">
-                <div class="allergie-group__header__button" layout-xs="row" flex-xs="100" layout-align-xs="end center">
-                    <md-button class="md-raised">{{ 'PRIVATE.PROFILE.ALLERGIES.ADD_ALLERGIE' | translate }}</md-button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div flex="100" class="personal-data__basic-informations profile-content__box" ng-repeat="medication in MedicationsViewCtrl.medications">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
-            <div>
-                <h3>{{ medication.name}} - <span>{{medication.dosage + " " + medication.unit + " " + medication.frequency}}</span></h3>
-            </div>
-        </div>
-        <div layout="row" flex="100">
-            <div layout="column" flex="100">
-                <div layout="row">
-                    <md-input-container nx-model-attribute="Medication:name" flex="50" class="md-block">
-                        <input ng-model="medication.name" disabled>
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="Medication:dosage" flex="33">
-                        <input ng-model="medication.dosage" disabled>
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="Medication:unit" flex="33">
-                        <input ng-model="medication.unit" disabled>
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="Medication:frequency" flex="33">
-                        <input ng-model="medication.frequency" disabled>
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="Medication:reasonForTaking" flex="100" class="md-block">
-                        <input ng-model="medication.reasonForTaking" disabled>
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="Medication:notes" flex="100" class="md-block">
-                        <textarea ng-model="medication.notes" disabled></textarea>
-                    </md-input-container>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</div>

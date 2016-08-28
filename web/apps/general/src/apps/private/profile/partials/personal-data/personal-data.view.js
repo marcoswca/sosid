@@ -44,7 +44,6 @@
 
         // Private methods
         return (function init() {
-            console.log(self.user);
         })();
     }
 })();

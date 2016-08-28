@@ -2,7 +2,9 @@
     'use strict';
 
     var dependencies = [
-        'private.routes.profile'
+        'private.routes.profile',
+        'model.allergy',
+        'private.views.allergyView'
     ];
 
     angular
@@ -16,6 +18,16 @@
                 state: 'profile.allergies',
                 config: {
                     url: '/allergies',
+                    controller: 'AllergyViewCtrl',
+                    controllerAs: 'AllergyViewCtrl',
+                    templateUrl: 'templates/allergy.view.html',
+                    //template: '<default-profile-view-list></default-profile-view-list>',
+                    data: {
+                        pageTitle: 'PRIVATE.PROFILE.ALLERGIES.PAGE_TITLE'
+                        //itemTemplate: 'allergy-item.html',
+                        //modelName: 'Allergy',
+                        //addButtonText: 'PRIVATE.PROFILE.ALLERGIES.ADD_ALLERGY'
+                    }
                 }
             }
         ];

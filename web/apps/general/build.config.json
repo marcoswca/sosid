@@ -19,8 +19,8 @@
     "html": [
       "src/index.html"
     ],
-    "sassVariables": "src/commons/styles/variables.scss",
-    "baseSass": "src/commons/styles/*.scss",
+    "sassVariables": "src/shared/styles/variables.scss",
+    "baseSass": "src/shared/styles/*.scss",
     "sass": [
       "src/**/*.scss"
     ]

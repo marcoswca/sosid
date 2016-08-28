@@ -1,4 +1,4 @@
-(function(){
+(function () {
     'use strict';
 
     var dependencies = [
@@ -12,24 +12,41 @@
 
     /** @ngInject */
     function AllergieModel(BaseModel, $q, AllergyApi) {
+        var ALLERGY_TYPES = {
+            DRUG: 'Drug',
+            FOOD: 'Food',
+            INSECT: 'Insect',
+            OTHER: 'Other'
+        };
+
         return BaseModel.make({
             api: AllergyApi,
             attributes: getAttributes(),
-            classMethods: {}
+            classMethods: {
+                getTypes: function() {
+                    return ALLERGY_TYPES;
+                }
+            }
         });
 
         function getAttributes() {
             return {
-                allergy: {
+                name: {
+                    label: true
+                },
+                description: {
                     label: true,
                     validate: {
-                        required: {
-                            message: true
-                        }
+                        required: true
                     }
                 },
                 severity: {
                     label: true
+                },
+                allergyType: {
+                    validate: {
+                        required: true
+                    }
                 }
             };
         }

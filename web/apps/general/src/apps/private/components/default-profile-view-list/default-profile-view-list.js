@@ -20,9 +20,11 @@
         };
 
         /** @ngInject */
-        function Controller($scope, $injector, $state) {
+        function Controller($scope, $injector, $state, NxtUtility) {
 
-            var Model,
+            var ModelName = $state.current.data.modelName,
+                ProfileViewCtrl = $scope.$parent.ProfileViewCtrl,
+                Model,
                 self = this;
 
             // Public variables
@@ -37,9 +39,9 @@
 
             // Private methods
             self.$onInit = function() {
-                Model = $injector.get($state.current.data.modelName);
+                Model = $injector.get(ModelName);
                 getItems();
-                $scope.ProfileViewCtrl.contentHeader = {
+                ProfileViewCtrl.contentHeader = {
                     button: {
                         show: function() {
                             return !self.allowCreate;
@@ -50,31 +52,32 @@
                 };
 
                 $scope.$on('$destroy', function() {
-                    $scope.ProfileViewCtrl.contentHeader = {
+                    ProfileViewCtrl.contentHeader = {
                         button: {}
                     };
                 });
             };
 
             function getItems() {
-                $scope.ProfileViewCtrl.setLoading(true);
+                ProfileViewCtrl.setLoading(true);
                 return Model
                     .getAll()
                     .then(function(result) {
-                        self.items = result.rows;
+                        self.items = NxtUtility.bulkInstantiate(ModelName, result.rows);
                     })
                     .finally(function() {
-                        $scope.ProfileViewCtrl.setLoading(false);
+                        ProfileViewCtrl.setLoading(false);
                     });
             }
 
             function enableCreate() {
                 self.allowCreate = true;
-                self.items.unshift({});
+                self.items.unshift(new Model({}));
             }
 
             function removeSuccess(item, index) {
-                item.___removed = true;
+                //item.___removed = true;
+                self.items.splice(index, 1);
             }
 
             function createSuccess() {
