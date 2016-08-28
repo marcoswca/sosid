@@ -23,7 +23,7 @@
         $translateProvider
             .useStaticFilesLoader({
                 prefix: './assets/locales/',
-                suffix: '.json'
+                suffix: '.json?v=' + APP_VERSION
             })
             .fallbackLanguage('en')
             .preferredLanguage('en');
