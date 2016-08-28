@@ -63,7 +63,12 @@
                 return Model
                     .getAll()
                     .then(function(result) {
-                        self.items = NxtUtility.bulkInstantiate(ModelName, result.rows);
+                        if (result.count) {
+                            self.items = NxtUtility.bulkInstantiate(ModelName, result.rows);
+                        } else {
+                            enableCreate();
+                        }
+
                     })
                     .finally(function() {
                         ProfileViewCtrl.setLoading(false);
