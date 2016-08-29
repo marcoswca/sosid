@@ -28,7 +28,7 @@
 
         function configureTypes() {
             self.allergyTypes = _.map(ALLERGY_TYPES, function (value, key) {
-                var items = angular.copy($filter('filter')(_loadedItems, {allergieType: value}));
+                var items = angular.copy($filter('filter')(_loadedItems, {allergyType: value}));
                 var total = _.size(items);
                 var hideCreateButton = false;
 
@@ -40,7 +40,7 @@
                     items: items,
                     enableCreate: function enableCreate() {
                         hideCreateButton = true;
-                        items.unshift(new Allergy({ allergieType: value }));
+                        items.unshift(new Allergy({ allergyType: value }));
                     },
                     cancelCreate: function cancelCreate() {
                         hideCreateButton = false;
