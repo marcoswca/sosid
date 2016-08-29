@@ -12,7 +12,7 @@
     /** @ngInject */
     function Api(APP_CONFIG, ApiService) {
 
-        var url = APP_CONFIG.URL.API_URL + '/user-allergie';
+        var url = APP_CONFIG.URL.API_URL + '/user-allergy';
 
         this.getAll = function (params, options) {
             options = options || {};
