@@ -19,7 +19,10 @@
                     url: '/glasses-pass',
                     controller: 'GlassesPassViewController',
                     controllerAs: 'GlassesPassViewCtrl',
-                    templateUrl: 'templates/glasses-pass.view.html'
+                    templateUrl: 'templates/glasses-pass.view.html',
+                    data: {
+                        pageTitle: 'PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE'
+                    }
                 }
             }
         ];

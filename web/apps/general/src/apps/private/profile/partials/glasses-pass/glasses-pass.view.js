@@ -10,18 +10,31 @@
         .controller('GlassesPassViewController', GlassesPassViewController);
 
     /** @ngInject */
-    function GlassesPassViewController() {
+    function GlassesPassViewController($scope, GlassesPass) {
         // Private variables
-        var self = this;
+        var ProfileViewCtrl = $scope.$parent.ProfileViewCtrl,
+            self = this;
 
         // Public variables
-        self.viewName = 'Living Will View';
+        self.item = undefined;
 
         // Public methods
 
         // Private methods
         return (function init() {
-
+            getItem();
         })();
+
+        function getItem() {
+            ProfileViewCtrl.setLoading(true);
+            return GlassesPass
+                .get()
+                .then(function (data) {
+                    self.item = new GlassesPass(data.rows[0]);
+                })
+                .finally(function () {
+                    ProfileViewCtrl.setLoading(false);
+                });
+        }
     }
 })();

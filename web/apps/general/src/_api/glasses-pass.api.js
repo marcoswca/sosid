@@ -17,7 +17,6 @@
         this.get = function (params, options) {
             options = options || {};
             options.url = url;
-
             return ApiService.Get(options);
         };
 

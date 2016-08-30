@@ -189,10 +189,10 @@
     },
     "GLASSES PASS": {
       "ATTRIBUTES": {
-        "NDL": {
+        "OPTIKER": {
           "LABEL": "NL / NDL - Optikerkennung"
         },
-        "RIGHT F": {
+        "RIGHT FERNBRILLE": {
           "LABEL": "Fernbrille"
         },
         "RIGHT SPH": {
@@ -207,7 +207,7 @@
         "RIGHT ADD": {
           "LABEL": "Add"
         },
-        "LEFT F": {
+        "LEFT FERNBRILLE": {
           "LABEL": "Fernbrille"
         },
         "LEFT SPH": {
@@ -225,7 +225,7 @@
         "GLASS": {
           "LABEL": "Glass"
         },
-        "VERSION": {
+        "FASSUNG": {
           "LABEL": "Fassung"
         },
         "PD": {

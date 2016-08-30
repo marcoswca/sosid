@@ -1,0 +1,119 @@
+<content-item-box>
+    <form name="form">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column"
+             layout-align-xs="center stretch">
+            <div>
+                <h3>{{ 'PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE' | translate }}</h3>
+            </div>
+            <div ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
+                <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate }}</md-button>
+            </div>
+            <div ng-hide="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
+                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine"
+                           class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+                </md-button>
+                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()"  skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
+                </md-button>
+            </div>
+        </div>
+        <div layout="row" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading">
+            <div layout="column" flex="100">
+                <div layout="row">
+                    <md-input-container nx-model-attribute="GlassesPass:optiker" flex="100" class="md-block">
+                        <input ng-model="DefaultItemCtrl.item.optiker">
+                    </md-input-container>
+                </div>
+                <div layout="row" class="glasses-pass__form-eyes">
+                    <div layout="column" flex="80" class="glasses-pass__form-eyes__inputs">
+                        <div layout="row">
+                            <md-input-container nx-model-attribute="GlassesPass:rightFernbrille" flex="100" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.rightFernbrille">
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <md-input-container nx-model-attribute="GlassesPass:rightSph" flex="25" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.rightSph">
+                            </md-input-container>
+                            <md-input-container nx-model-attribute="GlassesPass:rightCyl" flex="25" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.rightCyl">
+                            </md-input-container>
+                            <md-input-container nx-model-attribute="GlassesPass:rightA" flex="25" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.rightA">
+                            </md-input-container>
+                            <md-input-container nx-model-attribute="GlassesPass:rightAdd" flex="25" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.rightAdd">
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="glasses-pass__form-eyes__icon" layout="row" layout-align="center center">
+                        <span>{{ 'PRIVATE.PROFILE.GLASSES PASS.RIGHT EYE' | translate }}</span>
+                    </div>
+                </div>
+                <div layout="row" class="glasses-pass__form-eyes">
+                    <div class="glasses-pass__form-eyes__icon" layout="row" layout-align="center center">
+                        <span>{{ 'PRIVATE.PROFILE.GLASSES PASS.LEFT EYE' | translate }}</span>
+                    </div>
+                    <div layout="column" flex="80" class="glasses-pass__form-eyes__inputs">
+                        <div layout="row">
+                            <md-input-container nx-model-attribute="GlassesPass:leftFernbrille" flex="100" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.leftFernbrille">
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <md-input-container nx-model-attribute="GlassesPass:leftSph" flex="25" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.leftSph">
+                            </md-input-container>
+                            <md-input-container nx-model-attribute="GlassesPass:leftCyl" flex="25" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.leftCyl">
+                            </md-input-container>
+                            <md-input-container nx-model-attribute="GlassesPass:leftA" flex="25" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.leftA">
+                            </md-input-container>
+                            <md-input-container nx-model-attribute="GlassesPass:leftAdd" flex="25" class="md-block">
+                                <input ng-model="DefaultItemCtrl.item.leftAdd">
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="GlassesPass:glass" flex="100" class="md-block">
+                        <input ng-model="DefaultItemCtrl.item.glass">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="GlassesPass:fassung" flex="100" class="md-block">
+                        <input ng-model="DefaultItemCtrl.item.fassung">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="GlassesPass:pd" flex="100" class="md-block">
+                        <input ng-model="DefaultItemCtrl.item.pd">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="GlassesPass:order" flex="50" class="md-block">
+                        <input ng-model="DefaultItemCtrl.item.order">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="GlassesPass:date" flex="noshrink" class="md-block">
+                        <md-datepicker ng-model="DefaultItemCtrl.item.date" flex="100"></md-datepicker>
+                    </md-input-container>
+                </div>
+                <div layout="column" class="profile-content__upload-files">
+                    <div layout="row" class="profile-content__upload-files__header">
+                        <!--Todo: Mapear tradução-->
+                        <div class="profile-content__upload-files__title">Resource</div>
+                        <div class="profile-content__upload-files__hint">(Upload your living will card)</div>
+                    </div>
+                    <div class="profile-content__upload-files__dnd-area" layout="column" layout-align="center center">
+                        <div class="profile-content__upload-dnd-area__icon">
+                            <md-icon md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
+                        </div>
+                        <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
+                        <div class="profile-content__upload-files__dnd-area__hint">Your files here or
+                            <span>browse</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</content-item-box>

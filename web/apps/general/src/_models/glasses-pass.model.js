@@ -20,10 +20,10 @@
 
         function getAttributes() {
             return {
-                ndl: {
+                optiker: {
                     label: true
                 },
-                rightF: {
+                rightFernbrille: {
                     label: true
                 },
                 rightSph: {
@@ -38,7 +38,7 @@
                 rightAdd: {
                     label: true
                 },
-                leftF: {
+                leftFernbrille: {
                     label: true
                 },
                 leftSph: {
@@ -56,13 +56,14 @@
                 glass: {
                     label: true
                 },
-                version: {
+                fassung: {
                     label: true
                 },
                 pd: {
                     label: true
                 },
                 date: {
+                    isDate: true,
                     label: true
                 },
                 order: {
