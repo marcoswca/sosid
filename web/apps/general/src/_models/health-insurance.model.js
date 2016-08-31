@@ -28,13 +28,13 @@
                         }
                     }
                 },
-                idInsurance: {
+                policyNumber: {
                     label: true
                 },
-                phone: {
+                phoneInsurance: {
                     label: true
                 },
-                planType: {
+                medicalPlanType: {
                     label: true
                 }
 

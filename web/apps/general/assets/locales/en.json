@@ -171,18 +171,18 @@
     "HEALTH INSURANCE": {
       "ATTRIBUTES": {
         "COMPANY NAME": {
-          "LABEL": "Condition",
+          "LABEL": "Company Name",
           "VALIDATE": {
-            "REQUIRED": "Condition is required"
+            "REQUIRED": "Company name is required"
           }
         },
-        "ID INSURANCE": {
+        "POLICY NUMBER": {
           "LABEL": "Policy Number / ID Number"
         },
-        "PHONE": {
+        "PHONE INSURANCE": {
           "LABEL": "Insurance Telephone"
         },
-        "PLAN TYPE": {
+        "MEDICAL PLAN TYPE": {
           "LABEL": "Medical Plan Type"
         }
       }
