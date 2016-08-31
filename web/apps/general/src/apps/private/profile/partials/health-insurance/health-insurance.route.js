@@ -2,8 +2,9 @@
     'use strict';
 
     var dependencies = [
-        'private.views.healthInsurance',
-        'private.routes.profile'
+        'private.routes.profile',
+        'private.components.defaultProfileViewList',
+        'model.healthCondition'
     ];
 
     angular
@@ -17,9 +18,12 @@
                 state: 'profile.healthInsurance',
                 config: {
                     url: '/health-insurance',
-                    controller: 'HealthInsuranceViewController',
-                    controllerAs: 'HealthInsuranceViewCtrl',
-                    templateUrl: 'templates/health-insurance.view.html'
+                    data: {
+                        pageTitle: 'PRIVATE.PROFILE.HEALTH INSURANCES.PAGE_TITLE',
+                        itemTemplate: 'health-conditions-item.html',
+                        modelName: 'HealthInsurance',
+                        addButtonText: 'PRIVATE.PROFILE.HEALTH INSURANCES.ADD_NEW'
+                    }
                 }
             }
         ];

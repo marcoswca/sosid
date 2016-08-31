@@ -1,11 +1,11 @@
 <content-item-box>
     <div layout="row" layout-align="space-between center" class="profile-content__box__title">
         <div flex-xs="90" ng-hide="DefaultItemCtrl.isCreate" flex>
-            <h3>{{DefaultItemCtrl.item.condition}} <span ng-show="DefaultItemCtrl.item.severity"> - {{DefaultItemCtrl.item.severity}}</span></h3>
+            <h3>{{DefaultItemCtrl.item.companyName}} <span ng-show="DefaultItemCtrl.item.idInsurance"> - {{DefaultItemCtrl.item.idInsurance}}</span></h3>
         </div>
 
         <div flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
-            <h3>{{ 'PRIVATE.PROFILE.HEALTH CONDITIONS.ADD_NEW' | translate }}</h3>
+            <h3>{{ 'PRIVATE.PROFILE.HEALTH INSURANCES.ADD_NEW' | translate }}</h3>
         </div>
         <div ng-hide="DefaultItemCtrl.isCreate">
             <md-menu md-offset="-50 50">
@@ -28,11 +28,19 @@
     <div layout="row" flex="100">
         <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
             <div layout="row" layout-xs="column">
-                <md-input-container nx-model-attribute="HealthCondition:condition" flex-gt-xs="33" flex="none">
-                    <input ng-model="DefaultItemCtrl.item.condition">
+                <md-input-container nx-model-attribute="HealthInsurance:companyName" flex-gt-xs="50" flex="none">
+                    <input ng-model="DefaultItemCtrl.item.companyName">
                 </md-input-container>
-                <md-input-container nx-model-attribute="HealthCondition:severity" flex-gt-xs="33" flex="none">
-                    <input ng-model="DefaultItemCtrl.item.severity">
+                <md-input-container nx-model-attribute="HealthInsurance:idInsurance" flex-gt-xs="50" flex="none">
+                    <input ng-model="DefaultItemCtrl.item.idInsurance">
+                </md-input-container>
+            </div>
+            <div layout="row" layout-xs="column">
+                <md-input-container nx-model-attribute="HealthInsurance:phone" flex-gt-xs="50" flex="none">
+                    <input ng-model="DefaultItemCtrl.item.phone">
+                </md-input-container>
+                <md-input-container nx-model-attribute="HealthInsurance:planType" flex-gt-xs="50" flex="none">
+                    <input ng-model="DefaultItemCtrl.item.planType">
                 </md-input-container>
             </div>
             <div layout="column" class="profile-content__upload-files">
