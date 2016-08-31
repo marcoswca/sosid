@@ -113,6 +113,7 @@
                     .create(this)
                     .then(function(createdDoctor) {
                         self.id = createdDoctor.id;
+                        self._syncCommitValues();
                     });
             };
 

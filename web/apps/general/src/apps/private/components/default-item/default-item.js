@@ -95,6 +95,7 @@
                         return self.onCreateCancel();
                     }
                 } else {
+                    self.item._rollbackValues();
                     self.disableFields = true;
                 }
             }
