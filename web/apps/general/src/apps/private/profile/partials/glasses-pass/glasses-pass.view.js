@@ -30,7 +30,12 @@
             return GlassesPass
                 .get()
                 .then(function (data) {
-                    self.item = new GlassesPass(data.rows[0]);
+                    self.item = new GlassesPass(data);
+                })
+                .catch(function(result) {
+                    if (result.status === 404) {
+                        self.item = new GlassesPass();
+                    }
                 })
                 .finally(function () {
                     ProfileViewCtrl.setLoading(false);

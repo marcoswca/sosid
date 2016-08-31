@@ -17,7 +17,7 @@
                 _.each(modelConfig.attributes, function (attrOptions, attrName) {
                     var value = angular.copy(data[attrName]);
 
-                    if (attrOptions.isDate) {
+                    if (attrOptions.isDate && value) {
                         value = new Date(value);
                     }
 

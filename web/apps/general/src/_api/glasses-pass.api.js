@@ -29,7 +29,7 @@
 
         this.update = function(id, data, options) {
             options = options || {};
-            options.url = url + '/' + id;
+            options.url = url;
             options.data = data;
             return ApiService.Put(options);
         };

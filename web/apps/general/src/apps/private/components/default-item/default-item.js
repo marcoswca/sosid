@@ -46,7 +46,7 @@
 
             // Private methods
             self.$onInit = function() {
-                self.isCreate = !self.item.id;
+                self.isCreate = (self.item.id === undefined);
                 if (self.isCreate) {
                     enableFields();
                 }
