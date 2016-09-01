@@ -14,7 +14,7 @@
 
         var url = APP_CONFIG.URL.API_URL + '/user-living-will';
 
-        this.getAll = function (params, options) {
+        this.get = function (params, options) {
             options = options || {};
             options.url = url;
             options.params = params || {};
@@ -31,7 +31,7 @@
 
         this.update = function(id, data, options) {
             options = options || {};
-            options.url = url + '/' + id;
+            options.url = url;
             options.data = data;
             return ApiService.Put(options);
         };

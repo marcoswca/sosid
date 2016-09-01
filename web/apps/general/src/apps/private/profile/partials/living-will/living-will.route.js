@@ -19,7 +19,10 @@
                     url: '/living-will',
                     controller: 'LivingWillViewController',
                     controllerAs: 'LivingWillViewCtrl',
-                    templateUrl: 'templates/living-will.view.html'
+                    templateUrl: 'templates/living-will.view.html',
+                    data: {
+                        pageTitle: 'PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE'
+                    }
                 }
             }
         ];

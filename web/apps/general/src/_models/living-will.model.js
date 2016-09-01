@@ -39,14 +39,19 @@
                 relationship: {
                     label: true
                 },
-                mobilePhone: {
+                mobileNumber: {
                     label: true
                 },
-                phone: {
+                phoneNumber: {
                     label: true
                 },
                 email: {
-                    label: true
+                    label: true,
+                    validate: {
+                        email: {
+                            message: true
+                        }
+                    }
                 },
                 address: {
                     label: true

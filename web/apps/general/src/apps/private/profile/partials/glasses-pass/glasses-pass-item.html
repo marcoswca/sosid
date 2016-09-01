@@ -12,7 +12,7 @@
                 <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine"
                            class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
                 </md-button>
-                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()"  skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
+                <md-button ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()"  skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
                 </md-button>
             </div>
         </div>
