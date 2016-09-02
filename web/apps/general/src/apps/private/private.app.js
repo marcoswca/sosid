@@ -2,6 +2,8 @@
     'use strict';
 
     var dependencies = [
+        'Nxt.RouterHelper',
+
         // Vendors
         'ui.utils.masks',
         'model.user',
@@ -12,7 +14,7 @@
         'private.routes.subscriptionUpgrade',
 
         // Profile Routes
-        'private.routes.organDonation',
+        'private.routes.organCard',
         'private.routes.personalData',
         'private.routes.medications',
         'private.routes.livingWill',

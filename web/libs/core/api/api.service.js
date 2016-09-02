@@ -40,8 +40,8 @@
                 }
 
                 if (response.status === HTTP_STATUS_UNAUTHORIZED) {
-                    if (response.data.code === 'not-logged') {
-                        $window.location = APP_CONFIG.APP_URL;
+                    if ($window.location.pathname !== '/login') {
+                        //$window.location = APP_CONFIG.APP_URL + '/login';
                     }
                 }
 

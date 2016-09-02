@@ -98,7 +98,10 @@
           "LABEL": "Phone Number"
         },
         "EMAIL": {
-          "LABEL": "Email"
+          "LABEL": "Email",
+          "VALIDATE": {
+            "EMAIL": "Please, enter with a valid e-mail"
+          }
         },
         "ADDRESS": {
           "LABEL": "Address"
@@ -239,6 +242,59 @@
         },
         "ORDER": {
           "LABEL": "Auftrag"
+        }
+      }
+    },
+    "ORGAN CARD": {
+      "ATTRIBUTES": {
+        "ALLOW ONLY FOLLOWING QUESTION": {
+          "LABEL": "The organs that are allowed are:",
+          "VALIDATE": {
+            "REQUIRED": "Please, enter with at least one organ"
+          }
+        },
+        "ALLOW EXCEPT QUESTION": {
+          "LABEL": "The organs that are exception are:",
+          "VALIDATE": {
+            "REQUIRED": "Please, enter with at least one organ"
+          }
+        },
+        "FIRST NAME": {
+          "LABEL": "First Name",
+          "PLACEHOLDER": "enter with your first name",
+          "VALIDATE": {
+            "REQUIRED": "Your first name is required",
+            "LEN": "Your first name should have 3-80 characters"
+          }
+        },
+        "LAST NAME": {
+          "LABEL": "Last Name",
+          "PLACEHOLDER": "enter with your last name",
+          "VALIDATE": {
+            "REQUIRED": "Your last name is required",
+            "LEN": "Your last name should have 3-80 characters"
+          }
+        },
+        "RELATIONSHIP": {
+          "LABEL": "Relationship",
+          "VALIDATE": {
+            "REQUIRED": "Relationship is required"
+          }
+        },
+        "MOBILE NUMBER": {
+          "LABEL": "Mobile Number"
+        },
+        "PHONE NUMBER": {
+          "LABEL": "Phone Number"
+        },
+        "EMAIL": {
+          "LABEL": "Email",
+          "VALIDATE": {
+            "EMAIL": "Please, enter with a valid e-mail"
+          }
+        },
+        "ADDRESS": {
+          "LABEL": "Address"
         }
       }
     },
@@ -444,11 +500,19 @@
       "LIVING WILL": {
         "PAGE_TITLE": "Living Will"
       },
-      "ORGAN DONON CARD": {
-        "PAGE_TITLE": "Organ Donon Card"
+      "ORGAN DONOR CARD": {
+        "PAGE_TITLE": "Organ Donor Card",
+        "UPLOAD_TIP": "Upload your organ donor card",
+        "QUESTIONS": {
+          "ALLOW_AFTER_DEATH": "Yes, I allow after medical finding my death my body organs and tissues are removed",
+          "ALLOW_EXCEPT": "Yes, I authorise this, except for following organs/tissues:",
+          "ALLOW_ONLY_FOLLOWING": "Yes, I allow this, but only for the following organs/tissues:",
+          "NOT_ALLOW": "No, I contradict a removal of organs or tissues.",
+          "PERSON_SHOULD_DECIDE": "About Yes or No then the following person should decide:"
+        }
       },
       "PRIVACY": {
-        "PAGE_TITLE": "Edit the privace of your data",
+        "PAGE_TITLE": "Edit the privacy of your data",
         "PAGE_SUBTITLE": "Not all things need to be exposed to the public. Manage privacy bellow",
         "BLOCK_ALL": "Block All",
         "UNBLOCK_ALL": "Unblock All",

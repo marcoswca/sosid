@@ -24,18 +24,13 @@
         };
 
         /** @ngInject */
-        function $get($rootScope, SessionApi, $window, APP_CONFIG, AlertService, $translate, User) {
+        function $get(SessionApi, APP_CONFIG, AlertService, $translate, User, $window) {
 
             var instantiatedUser;
 
             if (!instantiatedUser) {
                 instantiatedUser = new User(session.user);
             }
-
-            //TODO: ver se isso ainda é necessario
-            $rootScope.$on('ApiServiceEvent:session-expired', function () {
-                $window.location = APP_CONFIG.APP_URL;
-            });
 
             return {
                 user: instantiatedUser,
@@ -52,7 +47,7 @@
                             return AlertService
                                 .confirmWarning(title, content, $event)
                                 .then(function() {
-                                    SessionApi
+                                    return SessionApi
                                         .destroy()
                                         .finally(function() {
                                             $window.location = APP_CONFIG.APP_URL;

@@ -9,7 +9,6 @@
             'ngAnimate',
             'ngCookies',
             'app.shared',
-            'Nxt.RouterHelper',
             'templates-app',
             'core.config',
             'api.session',

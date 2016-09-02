@@ -2,6 +2,7 @@
     'use strict';
 
     var dependencies = [
+        'Nxt.RouterHelper',
 
         /** MODELS **/
         'model.user',
@@ -54,6 +55,7 @@
             {
                 state: 'public',
                 config: {
+                    url: null,
                     abstract: true,
                     views: {
                         'layout': {
