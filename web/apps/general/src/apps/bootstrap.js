@@ -61,6 +61,7 @@
             .get()
             .then(function (session) {
                 self.session.user = session;
+                self.session.user.userCurrentPlan = session.userCurrentPlan;
                 return UserProfileApi.get();
             })
             .then(function(result) {

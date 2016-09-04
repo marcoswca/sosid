@@ -60,7 +60,7 @@
     }
 
     /** @ngInject **/
-    function run(NxtRouterHelper) {
+    function run(NxtRouterHelper, $rootScope, Session, $state, $mdDialog) {
         var states = [
             {
                 state: 'private',
@@ -80,7 +80,23 @@
 
         NxtRouterHelper.configureStates(states, '/profile');
 
+        $rootScope.$watch('$stateChangeStart', function(event) {
+            console.log(event, Session);
+            if (!Session.user.hasPlan()) {
+                showWelcome();
+            }
+        });
 
+        function showWelcome($event) {
+            return $mdDialog.show({
+                controller: 'WelcomeController',
+                controllerAs: '$WelcomeController',
+                templateUrl: 'templates/welcome.view.html',
+                parent: angular.element(document.body),
+                targetEvent: $event,
+                clickOutsideToClose: false
+            });
+        }
     }
 
 })();

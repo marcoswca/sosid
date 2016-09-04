@@ -11,11 +11,27 @@
         .controller('WelcomeController', WelcomeController);
 
     /** @ngInject */
-    function WelcomeController($mdDialog) {
+    function WelcomeController($mdDialog, Session, $window) {
 
+        // private variables
         var self = this;
 
+        // public variables
+
+        // Public methods
         self.showShoppingModal = showShoppingModal;
+        self.startTrial = startTrial;
+
+        // private methods
+
+        function startTrial() {
+            return Session
+                .user
+                .startTrial()
+                .then(function() {
+                    return $window.location.reload();
+                });
+        }
 
         function showShoppingModal($event, tab) {
             return $mdDialog.show({

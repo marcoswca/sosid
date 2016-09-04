@@ -50,6 +50,12 @@
             options.data = data;
             return ApiService.Put(options);
         };
+
+        this.startTrial = function(options) {
+            options = options || {};
+            options.url = APP_CONFIG.URL.API_URL + '/user-plan/start-trial';
+            return ApiService.Get(options);
+        };
     }
 
 })();

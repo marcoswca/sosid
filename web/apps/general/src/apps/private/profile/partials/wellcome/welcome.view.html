@@ -12,7 +12,7 @@
                     <img src="./assets/images/sosid-products.png" alt="">
                 </div>
                 <div class="welcome__options__item__description">lorem ipsum dolor sit amet consectuor</div>
-                <md-button ng-click="$WelcomeController.showShoppingModal($event, 1)">Get Discount</md-button>
+                <md-button disabled ng-click="$WelcomeController.showShoppingModal($event, 1)">Buy Products</md-button>
             </div>
             <div class="welcome__options__item">
                 <div class="welcome__options__item__title">Buy products and get discounts on our plans</div>
@@ -20,13 +20,13 @@
                     <img src="./assets/images/sosid-plans.png" alt="">
                 </div>
                 <div class="welcome__options__item__description">lorem ipsum dolor sit amet consectuor</div>
-                <md-button ng-click="$WelcomeController.showShoppingModal($event, 2)">Get Discount</md-button>
+                <md-button disabled ng-click="$WelcomeController.showShoppingModal($event, 2)">Buy Subscription</md-button>
             </div>
         </div>
     </div>
 
     <div class="modal__footer">
-        <div class="modal__footer__test-link" layout="row" layout-align="center start"><a ui-sref="profile">Test trial version per 30 days</a></div>
+        <div class="modal__footer__test-link" layout="row" layout-align="center start"><a href="" ng-click="$WelcomeController.startTrial()">Test trial version for 30 days</a></div>
     </div>
 
 </md-dialog>

@@ -28,6 +28,13 @@
                 },
                 updateProfile: function () {
                     return this.profile.update();
+                },
+                hasPlan: function() {
+                    return !!this.userCurrentPlan;
+                },
+                startTrial: function() {
+                    return UserApi
+                        .startTrial();
                 }
             }
         });

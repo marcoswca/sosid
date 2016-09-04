@@ -104,6 +104,8 @@ body {
     }
   }
   .profile-menu__is-completed {
+    visibility: hidden;
+
     position: absolute;
     left: -35px;
     top: 0;

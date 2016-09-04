@@ -22,6 +22,7 @@
                 config: {
                     url: 'profile',
                     parent: 'private',
+                    abstract: true,
                     controller: 'ProfileViewController',
                     controllerAs: 'ProfileViewCtrl',
                     templateUrl: 'templates/profile.view.html'
