@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -19,7 +19,6 @@
         var __loadingDebouce,
             self = this;
 
-        // Public variables
         self.contentHeader = {
             button: {
                 show: angular.noop,
@@ -29,16 +28,19 @@
         };
         self.isLoading = false;
 
-        // Public methods
+
         self.pageTitle = $state.current.data.pageTitle;
         self.Session = Session;
         self.setLoading = setLoading;
+        self.usedStorage = self.Session.user.profile.useDataStorage;
+        if (self.Session.user.profile.plan) {
+            self.planStorageSpace = self.Session.user.profile.plan.plans.storageSpace;
+        }
 
-        // temp
         self.showPrivacySettings = showPrivacySettings;
         self.showPrintCard = showPrintCard;
         self.showWelcome = showWelcome;
-
+        self.percentUsedStorage = (self.usedStorage / self.planStorageSpace) * 100;
 
         // Private methods
         return (function init() {
@@ -58,7 +60,7 @@
             __loadingDebouce = $timeout(angular.noop, 300);
 
             return __loadingDebouce
-                .then(function () {
+                .then(function() {
                     self.isLoading = status;
                 });
         }

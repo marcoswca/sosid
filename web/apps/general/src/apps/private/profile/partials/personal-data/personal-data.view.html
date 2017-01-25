@@ -1,138 +1,10 @@
 <div class="personal-data-view" layout="column" flex="100" layout-align="space-between stretch">
-
     <user-basic-info></user-basic-info>
-
-    <div class="personal-data__messages profile-content__box">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title" flex="100">
-            <div>
-                <h3>Emergency Messages</h3>
-            </div>
-            <div>
-                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            </div>
-        </div>
-        <div class="emergency-messages__list">
-            <div class="emergency-messages__list__item" ng-repeat="message in PersonalDataViewCtrl.user.messages">
-                <md-input-container flex="100">
-                    <textarea ng-model="message.text" disabled aria-label="t"></textarea>
-                </md-input-container>
-                <md-icon md-svg-icon="editor:mode_edit" aria-label="edit"></md-icon>
-            </div>
-            <md-icon md-svg-icon="content:add" aria-label="edit"></md-icon>
-        </div>
-
-    </div>
-
-    <div class="personal-data__doctor-family profile-content__box">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title" flex="100">
-            <div>
-                <h3>Family Doctor</h3>
-            </div>
-            <div>
-                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            </div>
-        </div>
-        <div layout="row" flex="100">
-            <div layout="column" flex="100">
-                <div layout="row" layout-xs="column">
-                    <div layout="row" flex-gt-xs="30" flex="none">
-                        <md-input-container flex="100" class="md-block">
-                            <label>First Name</label>
-                            <input ng-model="PersonalDataViewCtrl.user.firstName" disabled>
-                        </md-input-container>
-                    </div>
-                    <div layout="row" flex-gt-xs="30" flex="none">
-                        <md-input-container flex="100" class="md-block">
-                            <label>Last Name</label>
-                            <input ng-model="PersonalDataViewCtrl.user.lastName" disabled>
-                        </md-input-container>
-                    </div>
-                    <div layout="row" flex-gt-xs="20" flex="none">
-                        <md-input-container flex="100" class="md-block">
-                            <label>Mobile Phone</label>
-                            <input ng-model="PersonalDataViewCtrl.user.bloodType" disabled>
-                        </md-input-container>
-                    </div>
-                    <div layout="row" flex-gt-xs="20" flex="none">
-                        <md-input-container flex="100" class="md-block">
-                            <label>Clinic Phone</label>
-                            <input ng-model="PersonalDataViewCtrl.user.bloodType" disabled>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row">
-                    <md-input-container flex="100">
-                        <label>Email</label>
-                        <input ng-model="PersonalDataViewCtrl.user.address" disabled>
-                    </md-input-container>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="personal-data__plan profile-content__box">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
-            <div>
-                <h3>Plan</h3>
-            </div>
-            <div>
-                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            </div>
-        </div>
-        <div layout="row">
-            <div layout="column" flex-gt-xs="60" flex="100">
-                <div layout="row">
-                    <md-input-container flex="100" class="md-block">
-                        <label>Current Plan</label>
-                        <input ng-model="PersonalDataViewCtrl.userFullname" disabled>
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <div layout="row" flex="50">
-                        <md-input-container flex="100" class="md-block">
-                            <label>Start</label>
-                            <input ng-model="PersonalDataViewCtrl.user.age" disabled>
-                        </md-input-container>
-                    </div>
-                    <div layout="row" flex="50">
-                        <md-input-container flex="100" class="md-block">
-                            <label>End</label>
-                            <input ng-model="PersonalDataViewCtrl.user.sex" disabled>
-                        </md-input-container>
-                    </div>
-                </div>
-                <div layout="row">
-                    <div layout="row" flex="50">
-                        <md-input-container flex="100" class="md-block">
-                            <label>Months Used</label>
-                            <input ng-model="PersonalDataViewCtrl.user.age" disabled>
-                        </md-input-container>
-                    </div>
-                    <div layout="row" flex="50">
-                        <md-input-container flex="100" class="md-block">
-                            <label>Remaining Months</label>
-                            <input ng-model="PersonalDataViewCtrl.user.sex" disabled>
-                        </md-input-container>
-                    </div>
-                </div>
-            </div>
-            <div layout="row" hide-xs="true" flex="40" class="widget__upgrade" layout-align="center center">
-                <div class="widget__upgrade__icon">
-                    <md-icon md-svg-icon="action:trending_up" aria-label="Trending up"></md-icon>
-                </div>
-                <div class="widget__upgrade__text">
-                    <div class="widget__upgrade__title">Upgrade your Plan</div>
-                    <div class="widget__upgrade__subtitle">Upgrade now and save <b>$8</b></div>
-                    <md-button ui-sref="settings.subscriptionUpgrade" class="md-primary md-raised">Upgrade Plan</md-button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+    <emergency-messages></emergency-messages>
+    <family-doctor></family-doctor>
+    <user-plan></user-plan>
+    
     <div class="personal-data__products profile-content__box">
-
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
                 <h3>Products</h3>
@@ -141,7 +13,6 @@
                 <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
             </div>
         </div>
-
         <div layout="row">
             <div layout="column" flex="100" class="products-list">
                 <div layout="row" layout-align="space-between center" class="products-list__item" ng-repeat="i in [0,1]">
@@ -161,42 +32,8 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-    <div class="personal-data__resources profile-content__box">
-
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
-            <div>
-                <h3>Resources</h3>
-            </div>
-            <div>
-                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            </div>
-        </div>
-
-        <div layout="row">
-            <div layout="column" flex="100" class="products-list">
-                <div layout="row" layout-align="space-between center" class="products-list__item" ng-repeat="i in [0,1,2,3]">
-                    <div layout="row">
-                        <div layout="row" class="products-list__image-container">
-                            <md-icon md-svg-icon="editor:attach_file" style="color: rgba(0, 22, 33, 0.75);width:44px;height:44px;" aria-label="Cake Icon"></md-icon>
-                        </div>
-                        <div layout="column" layout-align="center start">
-                            <div layout="row" class="products-list__title">X-Ray-03-12-2015.pdf</div>
-                            <div layout="row" class="products-list__more-info">15MB</div>
-                        </div>
-                    </div>
-                    <div layout="row">
-                        <md-icon md-svg-icon="editor:mode_edit" style="color: #999;width:20px;height:20px;min-height: 20px; min-width: 20px; margin-right: 20px;" aria-label="Cake Icon"></md-icon>
-                        <md-icon md-svg-icon="action:delete" style="color: #999;width:20px;height:20px;min-height: 20px; min-width: 20px;" aria-label="Cake Icon"></md-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
+    <user-resources></user-resources>
     <div layout="row" layout-xs="column" class="hot-button__container">
         <div layout="row" flex="none" flex-gt-xs="50" layout-align="space-between center" class="hot-button">
             <div layout="row" layout-align="start center">
@@ -208,7 +45,9 @@
                     <div class="hot-button__description__container"><span class="hot-button__description">Lorem ipsum sit dolor amet consectuor beneties</span></div>
                 </div>
             </div>
-            <div class="hot-button__icon-right"><md-icon md-svg-icon="hardware:keyboard_arrow_right" aria-label="Arrow Right"></md-icon></div>
+            <div class="hot-button__icon-right">
+                <md-icon md-svg-icon="hardware:keyboard_arrow_right" aria-label="Arrow Right"></md-icon>
+            </div>
         </div>
         <div layout="row" flex="none" flex-gt-xs="50" layout-align="space-between center" class="hot-button">
             <div layout="row" layout-align="start center">
@@ -220,7 +59,9 @@
                     <div class="hot-button__description__container"><span class="hot-button__description">Lorem ipsum sit dolor amet consectuor beneties</span></div>
                 </div>
             </div>
-            <div class="hot-button__icon-right"><md-icon md-svg-icon="hardware:keyboard_arrow_right" aria-label="Arrow Right"></md-icon></div>
+            <div class="hot-button__icon-right">
+                <md-icon md-svg-icon="hardware:keyboard_arrow_right" aria-label="Arrow Right"></md-icon>
+            </div>
         </div>
     </div>
 </div>

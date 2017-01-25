@@ -234,10 +234,10 @@
                         <md-button ui-sref="settings.subscriptionUpgrade" class="upgrade-button">Upgrade</md-button>
                     </div>
                     <div layout="column" class="data-storage__content">
-                        <div layout="row"><span class="data-storage__data-text">2GB of 2.5GB Used</span></div>
+                        <div layout="row"><span class="data-storage__data-text">{{ProfileViewCtrl.usedStorage}}MB of {{ProfileViewCtrl.planStorageSpace}}MB Used</span></div>
                         <div class="data-storage__data-chart">
                             <div class="data-storage__bar">
-                                <div class="data-storage__bar__percent" style="width: 50%;"></div>
+                                <div class="data-storage__bar__percent" style="width: {{ProfileViewCtrl.percentUsedStorage}}%;"></div>
                             </div>
                         </div>
                     </div>

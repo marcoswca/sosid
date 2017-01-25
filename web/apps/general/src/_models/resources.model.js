@@ -3,24 +3,24 @@
 
     var dependencies = [
         'Nxt.baseModel',
-        'api.doctor'
+        'api.userResources'
     ];
 
     angular
-        .module('model.doctor', dependencies)
-        .factory('Doctor', DoctorModel);
+        .module('model.userResources', dependencies)
+        .factory('UserResources', UserResourcesModel);
 
     /** @ngInject */
-    function DoctorModel(BaseModel, DoctorApi) {
+    function UserResourcesModel(BaseModel, $q, UserResourceApi) {
         return BaseModel.make({
-            api: DoctorApi,
+            api: UserResourceApi,
             attributes: getAttributes(),
             classMethods: {}
         });
 
         function getAttributes() {
             return {
-                firstName: {
+                fileName: {
                     label: true,
                     validate: {
                         required: {
@@ -28,7 +28,7 @@
                         }
                     }
                 },
-                lastName: {
+                filePath: {
                     label: true,
                     validate: {
                         required: {
@@ -36,7 +36,7 @@
                         }
                     }
                 },
-                speciality: {
+                sizeInBytes: {
                     label: true,
                     validate: {
                         required: {
@@ -44,25 +44,13 @@
                         }
                     }
                 },
-                mobileNumber: {
-                    label: true
-                },
-                phoneNumber: {
-                    label: true
-                },
-                email: {
+                url: {
                     label: true,
                     validate: {
-                        email: {
+                        required: {
                             message: true
                         }
                     }
-                },
-                clinicAddress: {
-                    label: true
-                },
-                isFamilyDoctor: {
-                    label: true
                 }
             };
         }

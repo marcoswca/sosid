@@ -1,0 +1,58 @@
+<div class="personal-data__plan profile-content__box">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+            <div>
+                <h3>Plan</h3>
+            </div>
+            <div>
+                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            </div>
+        </div>
+        <div layout="row">
+            <div layout="column" flex-gt-xs="60" flex="100">
+                <div layout="row">
+                    <md-input-container flex="100" class="md-block">
+                        <label>Current Plan</label>
+                        <input ng-model="UserPlanCtrl.plan.name" disabled>
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <div layout="row" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Start</label>
+                            <input ng-model="UserPlanCtrl.plan.moreInformations.registration" disabled>
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>End</label>
+                            <input ng-model="UserPlanCtrl.plan.moreInformations.expiration" disabled>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div layout="row" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Months Used</label>
+                            <input ng-model="UserPlanCtrl.plan.moreInformations.monthsUsed" disabled>
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Remaining Months</label>
+                            <input ng-model="UserPlanCtrl.plan.moreInformations.remainingMonths" disabled>
+                        </md-input-container>
+                    </div>
+                </div>
+            </div>
+            <div layout="row" hide-xs="true" flex="40" class="widget__upgrade" layout-align="center center">
+                <div class="widget__upgrade__icon">
+                    <md-icon md-svg-icon="action:trending_up" aria-label="Trending up"></md-icon>
+                </div>
+                <div class="widget__upgrade__text">
+                    <div class="widget__upgrade__title">Upgrade your Plan</div>
+                    <div class="widget__upgrade__subtitle">Upgrade now and save <b>$8</b></div>
+                    <md-button ui-sref="settings.subscriptionUpgrade" class="md-primary md-raised">Upgrade Plan</md-button>
+                </div>
+            </div>
+        </div>
+    </div>

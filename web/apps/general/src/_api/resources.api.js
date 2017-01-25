@@ -6,25 +6,17 @@
     ];
 
     angular
-        .module('api.doctor', dependencies)
-        .service('DoctorApi', DoctorApi);
+        .module('api.userResources', dependencies)
+        .service('UserResourceApi', UserResourceApi);
 
     /** @ngInject */
-    function DoctorApi(APP_CONFIG, ApiService) {
+    function UserResourceApi(APP_CONFIG, ApiService) {
 
-        var url = APP_CONFIG.URL.API_URL + '/user-doctor';
+        var url = APP_CONFIG.URL.API_URL + '/file';
 
         this.getAll = function(params, options) {
             options = options || {};
             options.url = url;
-            options.params = params || {};
-
-            return ApiService.Get(options);
-        };
-
-        this.getFamilyDoctors = function(params, options) {
-            options = options || {};
-            options.url = url + '/family-doctors';
             options.params = params || {};
 
             return ApiService.Get(options);
@@ -35,13 +27,6 @@
             options.url = url;
             options.data = data;
             return ApiService.Post(options);
-        };
-
-        this.update = function(id, data, options) {
-            options = options || {};
-            options.url = url + '/' + id;
-            options.data = data;
-            return ApiService.Put(options);
         };
 
         this.remove = function(id, options) {

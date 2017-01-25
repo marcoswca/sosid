@@ -30,7 +30,7 @@
                     return this.profile.update();
                 },
                 hasPlan: function() {
-                    return !!this.userCurrentPlan;
+                    return !!this.profile.plan;
                 },
                 startTrial: function() {
                     return UserApi

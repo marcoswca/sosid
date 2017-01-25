@@ -81,7 +81,7 @@
         NxtRouterHelper.configureStates(states, '/profile');
 
         $rootScope.$watch('$stateChangeStart', function(event) {
-            console.log(event, Session);
+            console.log(Session);
             if (!Session.user.hasPlan()) {
                 showWelcome();
             }

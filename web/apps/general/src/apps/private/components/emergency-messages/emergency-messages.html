@@ -1,0 +1,21 @@
+<div class="personal-data__messages profile-content__box">
+    <div layout="row" layout-align="space-between center" class="profile-content__box__title" flex="100">
+        <div>
+            <h3>Emergency Messages</h3>
+        </div>
+    </div>
+    <div class="emergency-messages__list">
+        <div class="emergency-messages__list__item" ng-repeat="message in EmergencyMessagesCtrl.user.messages">
+            <md-input-container flex="100">
+                <textarea ng-disabled="!message.toSend && message.id" ng-model="message.message" aria-label="t"></textarea>
+            </md-input-container>
+           
+            <md-icon style="margin-right: 25px" ng-if="!message.toSend && message.message" md-svg-icon="editor:mode_edit" aria-label="edit" ng-click="EmergencyMessagesCtrl.changeStatus(message)"></md-icon>
+           
+            <md-icon ng-if="message.id" md-svg-icon="action:delete" aria-label="delete" ng-click="EmergencyMessagesCtrl.deleteMessage(message)"></md-icon>
+
+            <md-icon style="margin-right: 25px" ng-if="message.toSend || !message.id" class="toSend" md-svg-icon="content:send" aria-label="update" ng-click="EmergencyMessagesCtrl.sendMessage(message)"></md-icon>
+        </div>
+        <md-icon ng-click="EmergencyMessagesCtrl.addEmergencyMessage()" md-svg-icon="content:add" aria-label="add"></md-icon>
+    </div>
+</div>

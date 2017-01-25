@@ -1,0 +1,31 @@
+<div class="personal-data__resources profile-content__box">
+    <div layout="row" layout-align="space-between center" class="profile-content__box__title">
+        <div>
+            <h3>Resources</h3>
+        </div>
+        <div>
+            <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+        </div>
+    </div>
+    <div layout="row">
+        <div layout="column" flex="100" class="products-list">
+            <div layout="row" layout-align="space-between center" class="products-list__item" ng-repeat="file in UserResourcesCtrl.files">
+                <div layout="row">
+                    <div layout="row" class="products-list__image-container">
+                        <md-icon md-svg-icon="editor:attach_file" style="color: rgba(0, 22, 33, 0.75);width:44px;height:44px;" aria-label="Cake Icon"></md-icon>
+                    </div>
+                    <div layout="column" layout-align="center start">
+                        <a href="{{file.url}}">
+                            <div layout="row" class="products-list__title">{{file.fileName}}</div>
+                            <div layout="row" class="products-list__more-info">{{UserResourcesCtrl.byteToMbyte(file.sizeInBytes)}}MB</div>
+                        </a>
+                    </div>
+                </div>
+                <div layout="row">
+                    <!-- <md-icon md-svg-icon="editor:mode_edit" style="color: #999;width:20px;height:20px;min-height: 20px; min-width: 20px; margin-right: 20px;" aria-label="Cake Icon"></md-icon> -->
+                    <md-icon ng-click="UserResourcesCtrl.removeFile(file)" md-svg-icon="action:delete" style="color: #999;width:20px;height:20px;min-height: 20px; min-width: 20px;" aria-label="Cake Icon"></md-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
