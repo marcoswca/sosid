@@ -33,7 +33,7 @@
         self.Session = Session;
         self.setLoading = setLoading;
         self.usedStorage = self.Session.user.profile.useDataStorage;
-        if (self.Session.user.profile.plan) {
+        if (self.Session.user.profile.plan.plans) {
             self.planStorageSpace = self.Session.user.profile.plan.plans.storageSpace;
         }
 

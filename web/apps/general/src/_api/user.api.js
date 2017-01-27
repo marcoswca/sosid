@@ -46,7 +46,7 @@
 
         this.passwordChange = function(data, options) {
             options = options || {};
-            options.url = url + '/change-password/' + data.token;
+            options.url = url + '/change-password';
             options.data = data;
             return ApiService.Put(options);
         };

@@ -1,4 +1,4 @@
-<div class="personal-data-view" layout="column" layout-align="space-between stretch">
+<div ng-init="PaymentHistoryViewCtrl.initData()" class="personal-data-view" layout="column" layout-align="space-between stretch">
     <div class="profile-content__header" layout="row" layout-align="space-between center">
         <div>
             <a ui-sref="profile.personalData">
@@ -19,29 +19,31 @@
                         Date
                     </div>
                     <div layout="column" flex="75" flex-xs="60" layout-align="center start">
-                        Description
+                        Amount
+                    </div>
+                    <div layout="column" flex="75" flex-xs="60" layout-align="center start">
+                        Products
                     </div>
                 </div>
                 <div layout="row">
                     Charges
                 </div>
             </div>
-
-            <div layout="row" layout-align="space-between center" ng-repeat="i in [0,1,2,3,4]" class="history-payment__list__item">
+            <div layout="row" layout-align="space-between center" ng-repeat="payment in PaymentHistoryViewCtrl.payments" class="history-payment__list__item">
                 <div layout="row" flex="85">
                     <div layout="row" flex="25" flex-xs="40">
-                        06/07/1989
+                        {{payment.createdAt}}
                     </div>
                     <div layout="column" flex="75" flex-xs="60" layout-align="center start">
-                        2 x Anual Basic Plan
+                        {{payment.amount}}
                     </div>
                 </div>
                 <div layout="column" layout-align="center center">
-                    <div>Charged $5</div>
-                    <div>Credit Card</div>
+                    <div>Status</div>
+                    <div ng-repeat="status in payment.statusHistory">{{status.status}}</div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
+</div>
 </div>
