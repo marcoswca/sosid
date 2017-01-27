@@ -3,7 +3,6 @@
         <h1 class="modal__title">{{ 'PRIVATE.PROFILE.WELCOME.PAGE_TITLE' | translate }}</h1>
         <h2 class="modal__subtitle">{{ 'PRIVATE.PROFILE.WELCOME.PAGE_SUBTITLE' | translate }}</h2>
     </div>
-
     <div class="modal__content">
         <div class="welcome__options__container" layout="row" layout-xs="column" flex-gt-xs="80" flex="none" layout-align="space-around center">
             <div class="welcome__options__item">
@@ -12,7 +11,9 @@
                     <img src="./assets/images/sosid-products.png" alt="">
                 </div>
                 <div class="welcome__options__item__description">lorem ipsum dolor sit amet consectuor</div>
-                <md-button disabled ng-click="$WelcomeController.showShoppingModal($event, 1)">Buy Products</md-button>
+                <a style="color: white; text-decoration:none" href="http://35.156.40.94/store">
+                    <md-button disabled ng-click="$WelcomeController.showShoppingModal($event, 1)">Buy Products</md-button>
+                </a>
             </div>
             <div class="welcome__options__item">
                 <div class="welcome__options__item__title">Buy products and get discounts on our plans</div>
@@ -24,9 +25,7 @@
             </div>
         </div>
     </div>
-
     <div class="modal__footer">
         <div class="modal__footer__test-link" layout="row" layout-align="center start"><a href="" ng-click="$WelcomeController.startTrial()">Test trial version for 30 days</a></div>
     </div>
-
 </md-dialog>

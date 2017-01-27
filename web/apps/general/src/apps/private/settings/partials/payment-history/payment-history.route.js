@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -12,17 +12,18 @@
 
     /** @ngInject */
     function configureRoute(NxtRouterHelper) {
-        var states = [
-            {
-                state: 'settings.paymentHistory',
-                config: {
-                    url: '/payment-history',
-                    controller: 'PaymentHistoryViewController',
-                    controllerAs: 'PaymentHistoryViewCtrl',
-                    templateUrl: 'templates/payment-history.view.html'
+        var states = [{
+            state: 'settings.paymentHistory',
+            config: {
+                url: '/payment-history',
+                controller: 'PaymentHistoryViewController',
+                controllerAs: 'PaymentHistoryViewCtrl',
+                templateUrl: 'templates/payment-history.view.html',
+                data: {
+                    pageTitle: 'Payment History'
                 }
             }
-        ];
+        }];
 
         NxtRouterHelper.configureStates(states);
     }

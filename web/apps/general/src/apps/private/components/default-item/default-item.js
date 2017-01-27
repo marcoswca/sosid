@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -24,7 +24,7 @@
             controller: Controller,
             controllerAs: 'DefaultItemCtrl',
             template: function(tEl, tAttrs) {
-                var itemTemplate = (tAttrs.itemTemplate) ? tAttrs.itemTemplate: $state.current.data.itemTemplate;
+                var itemTemplate = (tAttrs.itemTemplate) ? tAttrs.itemTemplate : $state.current.data.itemTemplate;
                 return $templateCache.get('templates/' + itemTemplate);
             }
         };
@@ -60,7 +60,7 @@
                 setLoading(true);
                 return self.item
                     .save()
-                    .then(function () {
+                    .then(function(data) {
                         self.disableFields = true;
 
                         if (self.isCreate) {
@@ -69,6 +69,8 @@
                                 self.onCreateSuccess(self.item);
                             }
                         }
+                    }, function(reason) {
+                        console.log(reason);
                     })
                     .finally(function() {
                         setLoading(false);

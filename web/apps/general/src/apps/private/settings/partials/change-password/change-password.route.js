@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -12,17 +12,19 @@
 
     /** @ngInject */
     function configureRoute(NxtRouterHelper) {
-        var states = [
-            {
-                state: 'settings.changePassword',
-                config: {
-                    url: '/change-password',
-                    controller: 'ChangePasswordViewController',
-                    controllerAs: 'ChangePasswordViewCtrl',
-                    templateUrl: 'templates/change-password.view.html'
+        var states = [{
+            state: 'settings.changePassword',
+            config: {
+                url: '/change-password',
+                controller: 'ChangePasswordViewController',
+                controllerAs: 'ChangePasswordViewCtrl',
+                templateUrl: 'templates/change-password.view.html',
+                data: {
+                    pageTitle: 'Change Password'
                 }
             }
-        ];
+
+        }];
 
         NxtRouterHelper.configureStates(states);
     }

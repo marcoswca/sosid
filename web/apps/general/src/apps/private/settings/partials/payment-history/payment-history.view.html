@@ -1,49 +1,50 @@
-<div ng-init="PaymentHistoryViewCtrl.initData()" class="personal-data-view" layout="column" layout-align="space-between stretch">
-    <div class="profile-content__header" layout="row" layout-align="space-between center">
-        <div>
-            <a ui-sref="profile.personalData">
-                <md-button class="settings__header__toggle-menu-mobile">
-                    <md-icon md-svg-icon="navigation:arrow_back" aria-label="Arrow Back"></md-icon>
-                </md-button>
-            </a>
-            <span>My Settings</span>
-            <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            <span class="profile-content__header__title">{{PaymentHistoryViewCtrl.viewName}}</span>
+    <div ng-init="PaymentHistoryViewCtrl.initData()" class="personal-data-view" layout="column" layout-align="space-between stretch">
+    
+        <div class="profile-content__header" layout="row" layout-align="space-between center">
+            <div>
+                <a ui-sref="profile.personalData">
+                    <md-button class="settings__header__toggle-menu-mobile">
+                        <md-icon md-svg-icon="navigation:arrow_back" aria-label="Arrow Back"></md-icon>
+                    </md-button>
+                </a>
+                <span>My Settings</span>
+                <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+                <span class="profile-content__header__title">{{PaymentHistoryViewCtrl.viewName}}</span>
+            </div>
         </div>
-    </div>
-    <div layout="column" layout-align="start center" class="history-payment__container">
-        <div layout="column" flex="100" class="history-payment__list">
-            <div layout="row" layout-align="space-between center" class="history-payment__list__item">
-                <div layout="row" flex="85">
-                    <div layout="column" flex="25" flex-xs="40">
-                        Date
+        <div layout="column" layout-align="start center" class="history-payment__container">
+            <div layout="column" flex="100" class="history-payment__list">
+                <div layout="row" layout-align="space-between center" class="history-payment__list__item">
+                    <div layout="row" flex="85">
+                        <div layout="column" flex="25" flex-xs="40">
+                            Date
+                        </div>
+                        <div layout="column" flex="25" flex-xs="60" layout-align="center start">
+                            Amount
+                        </div>
+                        <div layout="column" flex="25" flex-xs="60" layout-align="center start">
+                            Products
+                        </div>
+                        <div layout="column" flex="25" flex-xs="60" layout-align="center start">
+                            Status
+                        </div>
                     </div>
-                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
-                        Amount
-                    </div>
-                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
-                        Products
-                    </div>
-                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
-                        Status
+                </div>
+                <div layout="row" layout-align="space-between center" ng-repeat="payment in PaymentHistoryViewCtrl.payments" class="history-payment__list__item">
+                    <div layout="row" flex="85">
+                        <div layout="column" flex="25" flex-xs="40">
+                            {{PaymentHistoryViewCtrl.getLocaleDate(payment.createdAt)}}
+                        </div>
+                        <div layout="column" flex="25" flex-xs="60" layout-align="center start">
+                            {{payment.amount}}
+                        </div>
+                        <div layout="column" flex="25" layout-align="center start">
+                        </div>
+                        <div layout="column" flex="25" layout-align="center start">
+                            <div ng-repeat="status in payment.statusHistory">{{status.status | uppercase}}</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div layout="row" layout-align="space-between center" ng-repeat="payment in PaymentHistoryViewCtrl.payments" class="history-payment__list__item">
-                <div layout="row" flex="85">
-                    <div layout="column" flex="25" flex-xs="40">
-                        {{PaymentHistoryViewCtrl.getLocaleDate(payment.createdAt)}}
-                    </div>
-                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
-                        {{payment.amount}}
-                    </div>
-                    <div layout="column" flex="25" layout-align="center start">
-                    </div>
-                    <div layout="column" flex="25" layout-align="center start">
-                        <div ng-repeat="status in payment.statusHistory">{{status.status | uppercase}}</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-</div>
