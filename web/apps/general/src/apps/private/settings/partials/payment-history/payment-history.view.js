@@ -14,15 +14,22 @@
 
         // Public variables
         self.viewName = 'Payment History';
+        self.isLoading = true;
         // Public methods
+
+
         self.initData = function() {
-            console.log('test');
             PaymentApi.get().then(function successCallback(data) {
                 console.log(data);
+                self.isLoading = false;
                 self.payments = data;
             }, function errorCallback(reason) {
-
+                console.log(reason);
             });
+        };
+
+        self.getLocaleDate = function(date) {
+            return new Date(date).toLocaleString();
         };
 
         // Private methods

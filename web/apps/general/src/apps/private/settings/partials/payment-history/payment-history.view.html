@@ -15,35 +15,35 @@
         <div layout="column" flex="100" class="history-payment__list">
             <div layout="row" layout-align="space-between center" class="history-payment__list__item">
                 <div layout="row" flex="85">
-                    <div layout="row" flex="25" flex-xs="40">
+                    <div layout="column" flex="25" flex-xs="40">
                         Date
                     </div>
-                    <div layout="column" flex="75" flex-xs="60" layout-align="center start">
+                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
                         Amount
                     </div>
-                    <div layout="column" flex="75" flex-xs="60" layout-align="center start">
+                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
                         Products
                     </div>
-                </div>
-                <div layout="row">
-                    Charges
+                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
+                        Status
+                    </div>
                 </div>
             </div>
             <div layout="row" layout-align="space-between center" ng-repeat="payment in PaymentHistoryViewCtrl.payments" class="history-payment__list__item">
                 <div layout="row" flex="85">
-                    <div layout="row" flex="25" flex-xs="40">
-                        {{payment.createdAt}}
+                    <div layout="column" flex="25" flex-xs="40">
+                        {{PaymentHistoryViewCtrl.getLocaleDate(payment.createdAt)}}
                     </div>
-                    <div layout="column" flex="75" flex-xs="60" layout-align="center start">
+                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
                         {{payment.amount}}
                     </div>
-                </div>
-                <div layout="column" layout-align="center center">
-                    <div>Status</div>
-                    <div ng-repeat="status in payment.statusHistory">{{status.status}}</div>
+                    <div layout="column" flex="25" layout-align="center start">
+                    </div>
+                    <div layout="column" flex="25" layout-align="center start">
+                        <div ng-repeat="status in payment.statusHistory">{{status.status | uppercase}}</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
