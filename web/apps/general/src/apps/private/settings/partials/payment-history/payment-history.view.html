@@ -18,13 +18,13 @@
                     <div layout="column" flex="25" flex-xs="40">
                         Date
                     </div>
-                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
-                        Amount
+                    <div layout="column" flex="25" flex-xs="60" layout-align="center end">
+                        Amount (€)
                     </div>
-                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
+                    <div layout="column" flex="25" flex-xs="60" layout-align="center end">
                         Products
                     </div>
-                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
+                    <div layout="column" flex="25" flex-xs="60" layout-align="center end">
                         Status
                     </div>
                 </div>
@@ -34,12 +34,12 @@
                     <div layout="column" flex="25" flex-xs="40">
                         {{PaymentHistoryViewCtrl.getLocaleDate(payment.createdAt)}}
                     </div>
-                    <div layout="column" flex="25" flex-xs="60" layout-align="center start">
+                    <div layout="column" flex="25" flex-xs="60" layout-align="center end" layout-align-xs="center start">
                         {{payment.amount}}
                     </div>
-                    <div layout="column" flex="25" layout-align="center start">
+                    <div layout="column" flex="25" layout-align="center end">
                     </div>
-                    <div layout="column" flex="25" layout-align="center start">
+                    <div layout="column" ng-class="{red : payment.processorResponseCode > 1000, green : payment.processorResponseCode==1000 && payment.statusHistory[payment.statusHistory.length -1].status === 'settled'}" flex="25" layout-align="center end" layout-align-xs="start start">
                         <div>{{payment.statusHistory[payment.statusHistory.length -1].status | uppercase}}</div>
                     </div>
                 </div>

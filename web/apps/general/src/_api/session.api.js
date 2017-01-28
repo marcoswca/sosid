@@ -18,11 +18,11 @@
         this.get = UserApi.get;
 
         this.login = function(credentials) {
-         return UserApi
-             .login(credentials)
-             .then(function(result) {
-                 $cookies.put('sessionToken', result.token);
-             });
+            return UserApi
+                .login(credentials)
+                .then(function(result) {
+                    $cookies.put('sessionToken', result.token);
+                });
         };
 
         this.destroy = function() {
