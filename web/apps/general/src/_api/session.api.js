@@ -18,18 +18,18 @@
         this.get = UserApi.get;
 
         this.login = function(credentials) {
-         return UserApi
-             .login(credentials)
-             .then(function(result) {
-                 $cookies.put('sessionToken', result.token);
-             });
+            return UserApi
+                .login(credentials)
+                .then(function(result) {
+                    $cookies.put('sessionToken', result.token);
+                });
         };
 
         this.destroy = function() {
-                                $cookies.remove('sessionToken');
+                    $cookies.remove('sessionToken');
 
-                return $q
-                    .when()
+            return $q
+                .when()
                 .then(function() {
                 });
         };

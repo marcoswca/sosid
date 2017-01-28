@@ -19,9 +19,9 @@
                     </div>
                 </div>
                 <div layout="row">
-                    <button class="products-list__toggle-privacy" ng-click="ProductCtrl.togglePrivacy(product)">
-                        <md-icon md-svg-icon="action:lock_{{product.active ? 'outline' : 'open'}}" style="color: #00A2D3;width:8px;height:8px; min-width: 18px; min-height: 18px;" aria-label="Cake Icon"></md-icon>
-                        <span hide-xs="true">{{product.active ? 'Block PIN' : 'Unblock PIN'}}</span>
+                    <button  ng-class="{'products-list__toggle-privacy-block': !product.active, 'products-list__toggle-privacy-unblock': product.active}"  ng-click="ProductCtrl.togglePrivacy(product)">
+                        <md-icon  ng-class="{red: !product.active, green: product.active}"  md-svg-icon="action:lock_{{!product.active ? 'outline' : 'open'}}" style="color: #00A2D3;width:8px;height:8px; min-width: 18px; min-height: 18px;" aria-label="Cake Icon"></md-icon>
+                        <span hide-xs="true">{{product.active ? 'Unblock PIN' : 'Block PIN'}}</span>
                     </button>
                 </div>
             </div>
