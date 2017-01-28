@@ -130,7 +130,7 @@
             .then(function () {
 
                 dependencies.push(self.bootstrapAppName);
-                angular.bootstrap(document, dependencies, { strictDi: true });
+                angular.bootstrap(document, dependencies, { strictDi: false });
 
             });
     };
