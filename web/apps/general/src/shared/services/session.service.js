@@ -50,7 +50,7 @@
                                     return SessionApi
                                         .destroy()
                                         .finally(function() {
-                                            $window.location = APP_CONFIG.APP_URL;
+                                            $window.location = APP_CONFIG.URL.APP_URL;
                                         });
                                 });
                         });
