@@ -3,35 +3,7 @@
     <emergency-messages></emergency-messages>
     <family-doctor></family-doctor>
     <user-plan></user-plan>
-    <div class="personal-data__products profile-content__box">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title">
-            <div>
-                <h3>Products</h3>
-            </div>
-            <div>
-                <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-            </div>
-        </div>
-        <div layout="row">
-            <div layout="column" flex="100" class="products-list">
-                <div layout="row" layout-align="space-between center" class="products-list__item" ng-repeat="i in [0,1]">
-                    <div layout="row">
-                        <div layout="row" class="products-list__image-container"><img src="http://placehold.it/96x65" alt=""></div>
-                        <div layout="column" layout-align="center start">
-                            <div layout="row" class="products-list__title">SOS CARD Id</div>
-                            <div layout="row" class="products-list__more-info">Mar 15 at 8:02am</div>
-                        </div>
-                    </div>
-                    <div layout="row">
-                        <button class="products-list__toggle-privacy" ng-click="PersonalDataViewCtrl.togglePrivacy()">
-                            <md-icon md-svg-icon="action:lock_{{PersonalDataViewCtrl.isPrivate ? 'outline' : 'open'}}" style="color: #00A2D3;width:8px;height:8px; min-width: 18px; min-height: 18px;" aria-label="Cake Icon"></md-icon>
-                            <span hide-xs="true">{{PersonalDataViewCtrl.isPrivate ? 'Block PIN' : 'Unblock PIN'}}</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <product></product>
     <user-resources></user-resources>
     <div layout="row" layout-xs="column" class="hot-button__container">
         <div layout="row" flex="none" flex-gt-xs="50" layout-align="space-between center" class="hot-button">

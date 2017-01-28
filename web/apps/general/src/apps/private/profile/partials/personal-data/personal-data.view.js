@@ -2,7 +2,7 @@
     'use strict';
 
     var dependencies = [
-        'private.components.userBasicInfo', 'private.components.emergencyMessages', 'private.components.familyDoctor','private.components.userPlan', 'private.components.userResources'
+        'private.components.userBasicInfo', 'private.components.emergencyMessages', 'private.components.familyDoctor','private.components.userPlan', 'private.components.userResources', 'private.components.product'
     ];
 
     angular
