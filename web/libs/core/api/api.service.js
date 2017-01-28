@@ -41,7 +41,7 @@
 
                 if (response.status === HTTP_STATUS_UNAUTHORIZED) {
                     if ($window.location.pathname !== '/login') {
-                        //$window.location = APP_CONFIG.APP_URL + '/login';
+                        $window.location = APP_CONFIG.URL.APP_URL + '/login';
                     }
                 }
 

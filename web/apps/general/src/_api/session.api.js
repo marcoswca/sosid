@@ -26,10 +26,11 @@
         };
 
         this.destroy = function() {
-            return $q
-                .resolve()
+                                $cookies.remove('sessionToken');
+
+                return $q
+                    .when()
                 .then(function() {
-                    $cookies.remove('sessionToken');
                 });
         };
     }

@@ -33,7 +33,7 @@
                 .login(self.credentials)
                 .then(function(result) {
                     console.log(result);
-                    $window.location = APP_CONFIG.APP_URL;
+                    $window.location = APP_CONFIG.URL.APP_URL;
                 })
                 .catch(function(e) {
                     console.log(e);
