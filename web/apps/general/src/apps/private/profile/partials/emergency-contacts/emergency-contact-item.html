@@ -3,15 +3,13 @@
         <div flex-xs="90" ng-hide="DefaultItemCtrl.isCreate" flex>
             <h3>{{DefaultItemCtrl.item.firstName + ' ' + item.lastName}} <span ng-show="DefaultItemCtrl.item.speciality"> - {{DefaultItemCtrl.item.speciality}}</span></h3>
         </div>
-
         <div flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
             <h3>{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate }}</h3>
         </div>
         <div ng-hide="DefaultItemCtrl.isCreate">
             <md-menu md-offset="-50 50">
                 <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-                    <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;"
-                             aria-label="Cake Icon"></md-icon>
+                    <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
                 </md-button>
                 <md-menu-content width="2">
                     <md-menu-item>
@@ -28,19 +26,27 @@
     <div layout="row" flex="100">
         <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
             <div layout="row" layout-xs="column">
-                <md-input-container nx-model-attribute="EmergencyContact:firstName" flex-gt-xs="33" flex="none"
-                                    class="md-block">
+                <md-input-container nx-model-attribute="EmergencyContact:firstName" flex-gt-xs="33" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.firstName">
                 </md-input-container>
-
-                <md-input-container nx-model-attribute="EmergencyContact:lastName" flex-gt-xs="33" flex="none"
-                                    class="md-block">
+                <md-input-container nx-model-attribute="EmergencyContact:lastName" flex-gt-xs="33" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.lastName">
                 </md-input-container>
-
-                <md-input-container nx-model-attribute="EmergencyContact:relationship" flex-gt-xs="33" flex="none">
+                <!-- <md-input-container nx-model-attribute="EmergencyContact:relationship" flex-gt-xs="33" flex="none">
                     <input ng-model="DefaultItemCtrl.item.relationship">
-                </md-input-container>
+                </md-input-container> -->
+                <md-menu>
+                    <md-button aria-label="Open phone interactions menu" ng-click="$mdOpenMenu($event)">
+                        {{DefaultItemCtrl.item.relationShip || 'Relationship'}}
+                    </md-button>
+                    <md-menu-content width="4">
+                        <md-menu-item ng-repeat="rel in DefaultItemCtrl.attributes.relationship.values">
+                            <md-button  ng-click="DefaultItemCtrl.set(rel)">
+                                {{rel}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
             </div>
             <div layout="row" layout-xs="column">
                 <md-input-container nx-model-attribute="EmergencyContact:mobileNumber" flex-gt-xs="33" flex="none">
@@ -61,14 +67,11 @@
                 </md-input-container>
             </div>
             <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid "
-                           class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
                 </md-button>
-                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' |
-                    translate}}
+                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
                 </md-button>
             </div>
         </form>
     </div>
 </content-item-box>
-

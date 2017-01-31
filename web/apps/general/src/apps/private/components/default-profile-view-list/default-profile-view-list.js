@@ -36,7 +36,8 @@
             self.cancelCreate = cancelCreate;
             self.createSuccess = createSuccess;
             self.removeSuccess = removeSuccess;
-
+            self.getAttributes = getAttributes;
+            
             // Private methods
             self.$onInit = function() {
                 Model = $injector.get(ModelName);
@@ -92,6 +93,10 @@
             function cancelCreate() {
                 self.allowCreate = false;
                 self.items.shift();
+            }
+
+            function getAttributes(){
+                return Model.attributes;
             }
         }
 
