@@ -4,58 +4,75 @@
             <h3>Family Doctor</h3>
         </div>
         <div>
-            <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            <md-menu md-offset="-50 50">
+                <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+                </md-button>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <md-button ng-click="FamilyDoctorCtrl.enableFields()"><span md-menu-align-target>{{ "ACTIONS.EDIT" | translate}}</span></md-button>
+                    </md-menu-item>
+                    <md-divider></md-divider>
+                </md-menu-content>
+            </md-menu>
         </div>
     </div>
     <div ng-repeat="fmDoctor in FamilyDoctorCtrl.user.familyDoctors " layout="row" flex="100">
-        <div layout="column" flex="100">
-            <div layout="row" layout-xs="column">
-                <div layout="row" flex-gt-xs="30" flex="30">
-                    <md-input-container flex="100" class="md-block">
-                        <label>First Name</label>
-                        <input ng-model="fmDoctor.firstName" disabled>
-                    </md-input-container>
+        <form layout="column" flex="100" nx-disable-all="FamilyDoctorCtrl.disabledFields || FamilyDoctorCtrl.isLoading" name="form">
+            <div layout="column" flex="100">
+                <div layout="row" layout-xs="column">
+                    <div layout="row" flex-gt-xs="30" flex="30">
+                        <md-input-container flex="100" class="md-block">
+                            <label>First Name</label>
+                            <input ng-model="fmDoctor.firstName" placeholder="{{fmDoctor.firstName}}" ng-disabled="FamilyDoctorCtrl.disabledFields">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex-gt-xs="30" flex="30">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Last Name</label>
+                            <input ng-model="fmDoctor.lastName" placeholder="{{fmDoctor.lastName}}" ng-disabled="FamilyDoctorCtrl.disabledFields">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex-gt-xs="40" flex="40">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Speciality</label>
+                            <input ng-model="fmDoctor.speciality" placeholder="{{fmDoctor.speciality}}" ng-disabled="FamilyDoctorCtrl.disabledFields">
+                        </md-input-container>
+                    </div>
                 </div>
-                <div layout="row" flex-gt-xs="30" flex="30">
-                    <md-input-container flex="100" class="md-block">
-                        <label>Last Name</label>
-                        <input ng-model="fmDoctor.lastName" disabled>
-                    </md-input-container>
+                <div layout="row">
+                    <div layout="row" flex-gt-xs="50" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Mobile Phone</label>
+                            <input ng-model="fmDoctor.mobileNumber" placeholder="{{fmDoctor.mobileNumber}}" ng-disabled="FamilyDoctorCtrl.disabledFields">
+                        </md-input-container>
+                    </div>
+                    <div layout="row" flex-gt-xs="50" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Clinic Phone</label>
+                            <input ng-model="fmDoctor.phoneNumber" placeholder="{{fmDoctor.phoneNumber}}" ng-disabled="FamilyDoctorCtrl.disabledFields">
+                        </md-input-container>
+                    </div>
                 </div>
-                <div layout="row" flex-gt-xs="40" flex="40">
-                    <md-input-container flex="100" class="md-block">
-                        <label>Speciality</label>
-                        <input ng-model="fmDoctor.speciality" disabled>
+                <div layout="row">
+                    <md-input-container flex-gt-xs="50" flex="50">
+                        <label>Email</label>
+                        <input ng-model="fmDoctor.email" placeholder="{{fmDoctor.email}}" ng-disabled="FamilyDoctorCtrl.disabledFields">
                     </md-input-container>
+                    <div layout="row" flex-gt-xs="50" flex="50">
+                        <md-input-container flex="100" class="md-block">
+                            <label>Clinic Address</label>
+                            <input ng-model="fmDoctor.clinicAddress" placeholder="{{fmDoctor.clinicAddress}}" ng-disabled="FamilyDoctorCtrl.disabledFields">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row" ng-hide="FamilyDoctorCtrl.disabledFields">
+                    <md-button ng-click="FamilyDoctorCtrl.save(fmDoctor)" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+                    </md-button>
+                    <md-button class="me-raised" ng-click="FamilyDoctorCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
+                    </md-button>
                 </div>
             </div>
-            <div layout="row">
-                <div layout="row" flex-gt-xs="50" flex="50">
-                    <md-input-container flex="100" class="md-block">
-                        <label>Mobile Phone</label>
-                        <input ng-model="fmDoctor.mobileNumber" disabled>
-                    </md-input-container>
-                </div>
-                 <div layout="row" flex-gt-xs="50" flex="50">
-                    <md-input-container flex="100" class="md-block">
-                        <label>Clinic Phone</label>
-                        <input ng-model="fmDoctor.phoneNumber" disabled>
-                    </md-input-container>
-                </div>
-            </div>
-            <div layout="row">
-                <md-input-container flex-gt-xs="50" flex="50">
-                    <label>Email</label>
-                    <input ng-model="fmDoctor.email" disabled>
-                </md-input-container>
-               
-                <div layout="row" flex-gt-xs="50" flex="50">
-                    <md-input-container flex="100" class="md-block">
-                        <label>Clinic Address</label>
-                        <input ng-model="fmDoctor.clinicAddress" disabled>
-                    </md-input-container>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
