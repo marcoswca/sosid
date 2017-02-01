@@ -1,8 +1,10 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
-        'private.components.mainHeader'
+        'private.components.mainHeader',
+        'private.components.mainFooter'
+
     ];
 
     angular
@@ -33,7 +35,7 @@
         function close() {
             // Component lookup should always be available since we are not using `ng-if`
             $mdSidenav('left').close()
-                .then(function () {
+                .then(function() {
                     $log.debug("close RIGHT is done");
                 });
         }
