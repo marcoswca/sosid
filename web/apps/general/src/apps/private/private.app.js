@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -61,29 +61,40 @@
 
     /** @ngInject **/
     function run(NxtRouterHelper, $rootScope, Session, $state, $mdDialog) {
-        var states = [
-            {
-                state: 'private',
-                config: {
-                    url: '/',
-                    abstract: true,
-                    views: {
-                        layout: {
-                            controller: 'MasterViewController',
-                            controllerAs: 'MasterViewCtrl',
-                            templateUrl: 'templates/master.view.html'
-                        }
+
+        var states = [{
+            state: 'private',
+            config: {
+                url: '/',
+                abstract: true,
+                views: {
+                    layout: {
+                        controller: 'MasterViewController',
+                        controllerAs: 'MasterViewCtrl',
+                        templateUrl: 'templates/master.view.html'
                     }
                 }
             }
-        ];
-
+        }];
         NxtRouterHelper.configureStates(states, '/profile');
 
-        $rootScope.$watch('$stateChangeStart', function(event) {
-            console.log(Session);
-            if (!Session.user.hasPlan()) {
+        console.log(Session);
+
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+
+            if (!Session.user.profile.plan) {
                 showWelcome();
+            } else {
+                var planName = Session.user.profile.plan.name;
+                if (toState.data.rolePlans) {
+                    var statePlanRoles = toState.data.rolePlans;
+                    var hasPermission = statePlanRoles.indexOf(planName.toLowerCase().trim()) > -1;
+                    if (!hasPermission) {
+                        event.preventDefault();
+                        $state.go('settings.subscriptionUpgrade');
+                    }
+                }
+
             }
         });
 
@@ -94,9 +105,10 @@
                 templateUrl: 'templates/welcome.view.html',
                 parent: angular.element(document.body),
                 targetEvent: $event,
-                clickOutsideToClose: false
+                clickOutsideToClose: false,
+                fullscreen: true,
+                escapeToClose: false
             });
         }
     }
-
 })();

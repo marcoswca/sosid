@@ -45,7 +45,6 @@
                 bindToController: true
             });
         }
-
     }
 
 })();

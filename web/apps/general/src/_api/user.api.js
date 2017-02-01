@@ -53,7 +53,7 @@
 
         this.startTrial = function(options) {
             options = options || {};
-            options.url = APP_CONFIG.URL.API_URL + '/user-plan/start-trial?plan_id=3';
+            options.url = APP_CONFIG.URL.API_URL + '/user-plan/start-trial?plan_id=1';
             return ApiService.Get(options);
         };
     }
