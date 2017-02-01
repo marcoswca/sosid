@@ -111,6 +111,13 @@
     margin: 20px 0;
 }
 
+.plans__button_basic:hover{
+    background-color: #f6b520 !important;
+}
+
+.plans__button_premium:hover{
+    background-color: #04da7e !important;
+}
 .plans__includes__header {
     background-color: white;
     position: relative;
@@ -154,6 +161,7 @@
     md-icon {
         color: rgba(0, 0, 0, 0.35);
     }
+    
 }
 
 md-tooltip.plans__tooltip {
@@ -240,4 +248,14 @@ md-tooltip.plans__tooltip {
             background-color: #00A2D3;
         }
     }
+}
+
+.footer {
+    text-align: center !important;
+    font-family: italic;
+    font-size: 14px;
+    color: white !important;
+    max-width: 1180px;
+    width: 100%
+    
 }

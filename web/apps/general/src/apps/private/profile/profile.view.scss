@@ -400,17 +400,19 @@ body {
     color: #fff;
   }
   .profile-resume__data__name {
+    color: #fff;
     font-size: 25px;
     margin-bottom: 10px;
   }
   .profile-resume__data__name_first-name {
     text-transform: capitalize;
+    color: #fff;
   }
-  .profile-resume__data__name--last-name {
+/*   .profile-resume__data__name--last-name {
     text-transform: capitalize;
     font-weight: 300;
-    color: rgba(255,255,255, 0.55);
-  }
+    color: #fff;
+  } */
   .profile-resume__data-item {
     margin-right: 30px;
   }
