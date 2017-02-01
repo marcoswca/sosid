@@ -37,6 +37,7 @@
                     }
                 },
                 relationship: {
+                    values: ['teste', 'teste2'],
                     label: true
                 },
                 mobileNumber: {
