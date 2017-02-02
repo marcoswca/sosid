@@ -30,6 +30,9 @@
                 },
                 severity: {
                     label: true
+                }, 
+                file: {
+                    label:true
                 }
             };
         }

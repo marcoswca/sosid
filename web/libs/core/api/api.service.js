@@ -1,4 +1,4 @@
-(function () {
+(function() {
 
     'use strict';
 
@@ -7,7 +7,7 @@
         HTTP_STATUS_FORBIDDEN = 403,
         NO_HTTP_STATUS = 0;
 
-    var dependencies = ['core.config','ngCookies'];
+    var dependencies = ['core.config', 'ngCookies','ngFileUpload'];
 
     angular
         .module('core.api.ApiService', dependencies)
@@ -33,7 +33,7 @@
 
                 return config;
             },
-            responseError: function (response) {
+            responseError: function(response) {
 
                 if (response.status === HTTP_STATUS_NOT_FOUND) {
                     // do something
@@ -41,7 +41,7 @@
 
                 if (response.status === HTTP_STATUS_UNAUTHORIZED) {
                     if ($window.location.pathname !== '/login') {
-                       // $window.location = APP_CONFIG.URL.APP_URL + '/login';
+                        // $window.location = APP_CONFIG.URL.APP_URL + '/login';
                     }
                 }
 
@@ -109,16 +109,16 @@
             url = options.url;
 
             $http({
-                method: methodName,
-                url: url,
-                data: data,
-                params: params,
-                cache: cache
-            })
-                .then(function (response) {
+                    method: methodName,
+                    url: url,
+                    data: data,
+                    params: params,
+                    cache: cache
+                })
+                .then(function(response) {
                     deferred.resolve(response.data);
                 })
-                .catch(function (response) {
+                .catch(function(response) {
                     deferred.reject(response);
                 });
 
@@ -136,7 +136,7 @@
              * @param {Object} options.filters
              * @param {Boolean} options.cache
              */
-            Get: function (options) {
+            Get: function(options) {
                 return _http('get', options);
             },
 
@@ -149,8 +149,15 @@
              * @param {Object} options.filters
              * @param {Boolean} options.cache
              */
-            Post: function (options) {
+            Post: function(options) {
                 return _http('post', options);
+            },
+
+            PostMultiformData: function(options, Upload) {
+                return Upload.upload({
+                    url: options.url,
+                    data: options.data
+                });
             },
 
             /**
@@ -162,7 +169,7 @@
              * @param {Object} options.filters
              * @param {Boolean} options.cache
              */
-            Delete: function (options) {
+            Delete: function(options) {
                 return _http('delete', options);
             },
 
@@ -175,7 +182,7 @@
              * @param {Object} options.filters
              * @param {Boolean} options.cache
              */
-            Put: function (options) {
+            Put: function(options) {
                 return _http('put', options);
             }
         };

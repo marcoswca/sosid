@@ -155,6 +155,9 @@
         },
         "SEVERITY": {
           "LABEL": "Severity"
+        },
+        "FILE": {
+          "LABEL": "FILE"
         }
       }
     },
