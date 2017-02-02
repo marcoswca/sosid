@@ -81,12 +81,13 @@
         console.log(Session);
 
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+            console.log(toState.name);
 
-            if (!Session.user.profile.plan) {
-                showWelcome();
-            } else {
-                var planName = Session.user.profile.plan.name;
-                if (toState.data.rolePlans) {
+            if (toState.name !== 'settings.subscriptionUpgrade' && toState.data.rolePlans) {
+                if (!Session.user.profile.plan) {
+                    showWelcome();
+                } else {
+                    var planName = Session.user.profile.plan.name;
                     var statePlanRoles = toState.data.rolePlans;
                     var hasPermission = statePlanRoles.indexOf(planName.toLowerCase().trim()) > -1;
                     if (!hasPermission) {
@@ -94,7 +95,8 @@
                         $state.go('settings.subscriptionUpgrade');
                     }
                 }
-
+            } else {
+                $mdDialog.hide();
             }
         });
 
