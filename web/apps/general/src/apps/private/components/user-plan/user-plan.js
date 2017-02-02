@@ -39,6 +39,7 @@
             self.getLocaleDate = getLocaleDate;
             self.user = Session.user;
             self.plan = self.user.profile.plan;
+            //self.plan.name = 'Premium';
 
             if (self.plan) {
                 var used = Date.dateDiff('d', new Date(self.plan.moreInformations.registration), new Date());
