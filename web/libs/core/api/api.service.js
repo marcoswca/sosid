@@ -7,7 +7,7 @@
         HTTP_STATUS_FORBIDDEN = 403,
         NO_HTTP_STATUS = 0;
 
-    var dependencies = ['core.config', 'ngCookies','ngFileUpload'];
+    var dependencies = ['core.config', 'ngCookies'];
 
     angular
         .module('core.api.ApiService', dependencies)
@@ -17,7 +17,7 @@
 
     /** @ngInject */
     function config($httpProvider) {
-        $httpProvider.defaults.withCredentials = true;
+        $httpProvider.defaults.withCredentials = false;
         $httpProvider.interceptors.push('NegativeStatusHandler');
     }
 
@@ -156,6 +156,14 @@
             PostMultiformData: function(options, Upload) {
                 return Upload.upload({
                     url: options.url,
+                    data: options.data
+                });
+            },
+
+            PutMultiformData: function(options, Upload) {
+               return Upload.upload({
+                    url: options.url,
+                    method: 'PUT',
                     data: options.data
                 });
             },
