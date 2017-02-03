@@ -85,13 +85,13 @@
             console.log(Session);
 
             if (toState.name !== 'settings.subscriptionUpgrade' && toState.data.rolePlans) {
-                if (!Session.user.profile.plan) {
+                if (!Session.user.profile.plan || Session.user.plan.moreInformatios.isExpired) {
                     showWelcome();
                 } else {
                     var planName = Session.user.profile.plan.name;
                     var statePlanRoles = toState.data.rolePlans;
                     var hasPermission = statePlanRoles.indexOf(planName.toLowerCase().trim()) > -1;
-                    if (!hasPermission || Session.user.profile.plan.moreInformations.isExpired) {
+                    if (!hasPermission) {
                         event.preventDefault();
                         $state.go('settings.subscriptionUpgrade');
                     }
