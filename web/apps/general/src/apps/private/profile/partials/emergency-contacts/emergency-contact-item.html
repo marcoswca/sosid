@@ -26,7 +26,7 @@
     <div layout="row" flex="100">
         <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
             <div layout="row" layout-xs="column">
-                <md-input-container nx-model-attribute="EmergencyContact:firstName" flex-gt-xs="33" flex="none" class="md-block">
+                <md-input-container nx-model-attribute="EmergencyContact:firstName  " flex-gt-xs="33" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.firstName">
                 </md-input-container>
                 <md-input-container nx-model-attribute="EmergencyContact:lastName" flex-gt-xs="33" flex="none" class="md-block">
@@ -35,11 +35,12 @@
                 <!-- <md-input-container nx-model-attribute="EmergencyContact:relationship" flex-gt-xs="33" flex="none">
                     <input ng-model="DefaultItemCtrl.item.relationship">
                 </md-input-container> -->
+
                 <md-menu>
-                    <md-button aria-label="Open phone interactions menu" ng-click="$mdOpenMenu($event)">
-                        {{DefaultItemCtrl.item.relationShip || 'Relationship'}}
+                    <md-button style="text-transform: capitalize; opacity: 0.4;" class="md-raised md-block md-button md-ink-ripple" ng-click="$mdOpenMenu($event)">
+                        {{DefaultItemCtrl.item.relationship || 'Relationship'}}
                     </md-button>
-                    <md-menu-content width="4">
+                    <md-menu-content width="4" ng-show="!DefaultItemCtrl.item.relationship">
                         <md-menu-item ng-repeat="rel in DefaultItemCtrl.attributes.relationship.values">
                             <md-button  ng-click="DefaultItemCtrl.set(rel)">
                                 {{rel}}
@@ -49,10 +50,11 @@
                 </md-menu>
             </div>
             <div layout="row" layout-xs="column">
-                <md-input-container nx-model-attribute="EmergencyContact:mobileNumber" flex-gt-xs="33" flex="none">
+                <md-input-container nx-model-attribute="EmergencyContact:mobileNumber  " flex-gt-xs="33" flex="none" class="md-block">
+                <!-- <md-input-container nx-model-attribute="EmergencyContact:mobileNumber" flex-gt-xs="33" flex="none" class="md-block"> -->
                     <input ng-model="DefaultItemCtrl.item.mobileNumber">
                 </md-input-container>
-                <md-input-container nx-model-attribute="EmergencyContact:phoneNumber" flex-gt-xs="33" flex="none">
+                <md-input-container nx-model-attribute="EmergencyContact:phoneNumber" flex-gt-xs="33" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.phoneNumber">
                 </md-input-container>
             </div>
@@ -67,7 +69,7 @@
                 </md-input-container>
             </div>
             <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary md-block">{{ 'ACTIONS.SAVE' | translate}}
                 </md-button>
                 <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
                 </md-button>

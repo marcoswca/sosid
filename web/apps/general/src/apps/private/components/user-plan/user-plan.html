@@ -12,7 +12,10 @@
                 <div layout="row">
                     <md-input-container flex="100" class="md-block">
                         <label>Current Plan</label>
-                        <input ng-model="UserPlanCtrl.plan.name" disabled>
+                        <input ng-class="{ basic : UserPlanCtrl.plan.name.toLowerCase() === 'basic',
+                        standard : UserPlanCtrl.plan.name.toLowerCase() === 'standard',
+                        premium : UserPlanCtrl.plan.name.toLowerCase() === 'premium' }"
+                        class="md-ink-ripple" ng-model="UserPlanCtrl.plan.name" disabled>
                     </md-input-container>
                 </div>
                 <div layout="row">
