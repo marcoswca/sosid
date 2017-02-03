@@ -81,7 +81,8 @@
         console.log(Session);
 
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-            console.log(toState.name);
+
+            console.log(Session);
 
             if (toState.name !== 'settings.subscriptionUpgrade' && toState.data.rolePlans) {
                 if (!Session.user.profile.plan) {
@@ -90,7 +91,7 @@
                     var planName = Session.user.profile.plan.name;
                     var statePlanRoles = toState.data.rolePlans;
                     var hasPermission = statePlanRoles.indexOf(planName.toLowerCase().trim()) > -1;
-                    if (!hasPermission) {
+                    if (!hasPermission || Session.user.profile.plan.moreInformations.isExpired) {
                         event.preventDefault();
                         $state.go('settings.subscriptionUpgrade');
                     }

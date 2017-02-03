@@ -39,17 +39,19 @@
             self.getLocaleDate = getLocaleDate;
             self.user = Session.user;
             self.plan = self.user.profile.plan;
+            self.loading = true;
 
             if (self.plan) {
                 var used = Date.dateDiff('d', new Date(self.plan.moreInformations.registration), new Date());
-                self.plan.moreInformations.monthsUsed = Math.floor(used / 30);
+                self.plan.moreInformations.monthsUsed = Math.floor(used / 31);
 
                 var remaining = Date.dateDiff('d', new Date(self.plan.moreInformations.expiration), new Date());
                 remaining = Math.abs(remaining);
-                self.plan.moreInformations.remainingMonths = Math.ceil(remaining / 31);
+                self.plan.moreInformations.remainingMonths = Math.floor(remaining / 31);
 
-                self.plan.moreInformations.registration = self.getLocaleDate(self.plan.moreInformations.registration);
+                self.registration = self.getLocaleDate(self.plan.moreInformations.registration);
                 self.plan.moreInformations.expiration = self.getLocaleDate(self.plan.moreInformations.expiration);
+                self.loading = false;
             }
             return (function init() {})();
 

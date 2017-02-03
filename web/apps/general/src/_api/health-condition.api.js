@@ -23,6 +23,7 @@
         };
 
         this.create = function(data, options) {
+            delete data['$$hashKey'];
             options = options || {};
             options.url = url;
             options.data = data;
@@ -33,7 +34,7 @@
             options = options || {};
             options.url = url + '/' + id;
             options.data = data;
-            return ApiService.Put(options);
+            return ApiService.PutMultiformData(options, Upload);
         };
 
         this.remove = function(id, options) {
