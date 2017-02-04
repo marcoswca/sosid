@@ -85,7 +85,8 @@
             console.log(Session);
 
             if (toState.name !== 'settings.subscriptionUpgrade' && toState.data.rolePlans) {
-                if (!Session.user.profile.plan || Session.user.plan.moreInformatios.isExpired) {
+                 // || Session.user.profile.plan.moreInformations.isExpired
+                if (!Session.user.profile.plan) {
                     showWelcome();
                 } else {
                     var planName = Session.user.profile.plan.name;

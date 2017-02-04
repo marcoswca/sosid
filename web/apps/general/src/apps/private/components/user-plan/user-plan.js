@@ -50,7 +50,7 @@
                 self.plan.moreInformations.remainingMonths = Math.floor(remaining / 31);
 
                 self.registration = self.getLocaleDate(self.plan.moreInformations.registration);
-                self.plan.moreInformations.expiration = self.getLocaleDate(self.plan.moreInformations.expiration);
+                self.expiration = self.getLocaleDate(self.plan.moreInformations.expiration);
                 self.loading = false;
             }
             return (function init() {})();
