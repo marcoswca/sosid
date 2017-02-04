@@ -63,6 +63,7 @@
                 return Model
                     .getAll()
                     .then(function(result) {
+                        console.log(result);
                         if (result.count) {
                             self.items = NxtUtility.bulkInstantiate(ModelName, result.rows);
                         } else {
