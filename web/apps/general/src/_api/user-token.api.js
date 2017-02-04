@@ -14,15 +14,15 @@
 
         var url = APP_CONFIG.URL.API_URL + '/user-token';
 
-        this.exists = function (token, options) {
+        this.exists = function(token, options) {
             options = options || {};
             options.url = url + '/' + token;
             return ApiService.Get(options);
         };
 
-        this.forgotPassword = function (email, options) {
+        this.forgotPassword = function(email, options) {
             options = options || {};
-            options.url = url + '/';
+            options.url = APP_CONFIG.URL.API_URL + '/user/forgot-password';
             options.data = {
                 email: email
             };
