@@ -52,6 +52,6 @@
             }, function errorCallback(reason) {
                 console.log(reason);
             });
-        }
+        };
     }
 })();
