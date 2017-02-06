@@ -24,11 +24,11 @@
             self.hasAvatar = function() {
                 return !!Session.user.profile.File;
             };
-          
+
             self.UpdateImageProfile = function(file) {
                 var object = {
                     file: file
-                }
+                };
                 LivingWill.UpdateImageProfile(object).then(function successCallback(data) {
                     Session.user.profile.File = data.data.File;
                 }, function errorCallback(reason) {
@@ -36,10 +36,9 @@
                 });
             };
 
-
             self.getFilePath = function() {
                 return Session.user.profile.File.filePath;
-            }
+            };
 
             return init();
 

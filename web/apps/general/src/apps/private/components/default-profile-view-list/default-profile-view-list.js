@@ -35,6 +35,7 @@
             self.cancelCreate = cancelCreate;
             self.createSuccess = createSuccess;
             self.removeSuccess = removeSuccess;
+            self.getAttributes = getAttributes;
 
             // Private methods
             self.$onInit = function() {
@@ -87,14 +88,19 @@
             }
 
             function createSuccess() {
-                if (self.items.length === 1)
+                if (self.items.length === 1) {
                     Session.user.profile.categoriesFilled++;
+                }
                 self.allowCreate = false;
             }
 
             function cancelCreate() {
                 self.allowCreate = false;
                 self.items.shift();
+            }
+
+            function getAttributes() {
+                return Model.attributes || {};
             }
         }
 

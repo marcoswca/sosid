@@ -20,8 +20,10 @@
                     <md-input-container flex="100" class="md-block">
                         <label>Start</label>
                         <input ng-model="UserPlanCtrl.registration" disabled>
+
                     </md-input-container>
                 </div>
+
                 <div layout="row" flex="50">
                     <md-input-container flex="100" class="md-block">
                         <label>End</label>
@@ -29,14 +31,24 @@
                     </md-input-container>
                 </div>
             </div>
+
             <div layout="row">
-                <div layout="row" flex="50">
+                <div layout="row" flex="33">
+                    <md-input-container flex="100" class="md-block">
+
+                        <label>Current Plan</label>
+                        <input ng-class="{ basic : UserPlanCtrl.plan.name.toLowerCase() === 'basic',
+                standard : UserPlanCtrl.plan.name.toLowerCase() === 'standard',
+                premium : UserPlanCtrl.plan.name.toLowerCase() === 'premium' }" class="md-ink-ripple" ng-model="UserPlanCtrl.plan.name" disabled>
+                    </md-input-container>
+                </div>
+                <div layout="row" flex="33">
                     <md-input-container flex="100" class="md-block">
                         <label>Months Used</label>
                         <input ng-model="UserPlanCtrl.plan.moreInformations.monthsUsed" disabled>
                     </md-input-container>
                 </div>
-                <div layout="row" flex="50">
+                <div layout="row" flex="33">
                     <md-input-container flex="100" class="md-block">
                         <label>Remaining Months</label>
                         <input ng-model="UserPlanCtrl.plan.moreInformations.remainingMonths" disabled>

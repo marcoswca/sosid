@@ -37,19 +37,48 @@
                     }
                 },
                 relationship: {
-                    label: true
+                    values: ['Single parent','Spouse','Husband','Wife','Parent','Father','Mother','Child','Son','Daughter','Sibling','Brother','Sister','Extended family','Grandparent','Grandfather','Grandmother','Grandson','Granddaughter','Uncle','Aunt','Cousin','Nephew','Niece','Boyfriend','Girlfriend','Friend','know','Working colleague'],
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 mobileNumber: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 phoneNumber: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 email: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        },
+                        email: {
+                            message: true
+                        }
+                    }
                 },
                 address: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 }
             };
         }

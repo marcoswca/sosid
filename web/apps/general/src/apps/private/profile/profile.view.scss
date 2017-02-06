@@ -379,6 +379,7 @@ body {
 }
 
 .topbar {
+
     background-color: #00A2D3;
     .topbar__container {
         max-width: 1180px;
@@ -457,6 +458,10 @@ body {
             }
         }
     }
+}
+
+.hot-button:hover{
+  background-color: #00E300;
 }
 
 .hot-button {

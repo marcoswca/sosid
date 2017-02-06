@@ -38,7 +38,7 @@
 
         this.UpdateImageProfile = function (data) {
           var options = {};
-          options.url = APP_CONFIG.URL.API_URL +  '/user-profile/avatar'
+          options.url = APP_CONFIG.URL.API_URL +  '/user-profile/avatar';
           console.log(options);
           options.data = data;
           return ApiService.PostMultiformData(options, Upload);

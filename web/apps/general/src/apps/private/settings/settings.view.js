@@ -8,9 +8,20 @@
         .controller('SettingsViewController', SettingsViewController);
 
     /** @ngInject */
-    function SettingsViewController(Session) {
+    function SettingsViewController(Session, APP_CONFIG, $window, $state, $scope) {
         // Private variables
         var self = this;
+        self.url_cp = false;
+        self.url_ph = false;
+        self.url_up = false;
+        console.log($state);
+
+        $scope.$on('$viewContentLoaded', function(event, args) {
+            console.log('ok');
+            self.url_cp = ($state.current.name == 'settings.changePassword');
+            self.url_ph = ($state.current.name == 'settings.paymentHistory');
+            self.url_up = ($state.current.name == 'settings.subscriptionUpgrade');
+        });
 
         // Public variables
         self.Session = Session;

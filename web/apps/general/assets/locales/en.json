@@ -76,7 +76,7 @@
         "FIRST NAME": {
           "LABEL": "Name",
           "VALIDATE": {
-            "REQUIRED": "Name is required"
+            "REQUIRED": "Nome is required"
           }
         },
         "LAST NAME": {
@@ -92,19 +92,29 @@
           }
         },
         "MOBILE NUMBER": {
-          "LABEL": "Mobile Number"
+          "LABEL": "Mobile Number",
+          "VALIDATE": {
+            "REQUIRED": "Mobile Number is required"
+          }
         },
         "PHONE NUMBER": {
-          "LABEL": "Phone Number"
+          "LABEL": "Phone Number",
+          "VALIDATE": {
+            "REQUIRED": "Phone Number is required"
+          }
         },
         "EMAIL": {
           "LABEL": "Email",
           "VALIDATE": {
+            "REQUIRED": "Email is required",
             "EMAIL": "Please, enter with a valid e-mail"
           }
         },
         "ADDRESS": {
-          "LABEL": "Address"
+          "LABEL": "Address",
+          "VALIDATE": {
+            "REQUIRED": "Address is required"
+          }
         }
       }
     },

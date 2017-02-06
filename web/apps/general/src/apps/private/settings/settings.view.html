@@ -8,7 +8,7 @@
                 <div layout="column" layout-align="center stretch" class="profile-resume__data">
                     <div class="profile-resume__data__name">
                         <span class="profile-resume__data__name_first-name">{{SettingsViewCtrl.Session.user.profile._getCommittedField('firstName')}}</span>
-                        <span class="profile-resume__data__name--last-name">{{SettingsViewCtrl.Session.user.profile._getCommittedField('lastName')}}</span>
+                        <span class="profile-resume__data__name_first-name">{{SettingsViewCtrl.Session.user.profile._getCommittedField('lastName')}}</span>
                     </div>
                     <div class="profile-resume__data__email">
                         <span>{{SettingsViewCtrl.Session.user.email}}</span>
@@ -22,19 +22,19 @@
                     </md-button>
                     <div class="topbar__profile-nav__link__text" layout="column" layout-align="center center">My Records</div>
                 </a>
-                <a ui-sref="settings.changePassword" class="topbar__profile-nav__link" layout="column" layout-align="center center">
+                <a ng-show="SettingsViewCtrl.url_cp" ui-sref="settings.changePassword" class="topbar__profile-nav__link" layout="column" layout-align="center center">
                     <md-button aria-label="Eat cake" class="md-icon-button">
                         <md-icon md-svg-icon="sosid:key" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
                     </md-button>
                     <div class="topbar__profile-nav__link__text">Change<br>Password</div>
                 </a>
-                <a ui-sref="settings.paymentHistory" class="topbar__profile-nav__link" layout="column" layout-align="center center">
+                <a ng-show="SettingsViewCtrl.url_ph" ui-sref="settings.paymentHistory" class="topbar__profile-nav__link" layout="column" layout-align="center center">
                     <md-button aria-label="Eat cake" class="md-icon-button">
                         <md-icon md-svg-icon="sosid:euro" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
                     </md-button>
                     <div class="topbar__profile-nav__link__text">Payment History</div>
                 </a>
-                <a ui-sref="settings.subscriptionUpgrade" class="topbar__profile-nav__link" layout="column" layout-align="center center">
+                <a ng-show="SettingsViewCtrl.url_up" ui-sref="settings.subscriptionUpgrade" class="topbar__profile-nav__link" layout="column" layout-align="center center">
                     <md-button aria-label="Eat cake" class="md-icon-button">
                         <md-icon md-svg-icon="sosid:upgrade" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
                     </md-button>

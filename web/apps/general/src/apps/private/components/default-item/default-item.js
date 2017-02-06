@@ -18,7 +18,8 @@
                 index: '@',
                 onCreateCancel: '=',
                 onCreateSuccess: '=',
-                onRemoveSuccess: '='
+                onRemoveSuccess: '=',
+                getAttributes: '='
             },
             restrict: 'E',
             controller: Controller,
@@ -44,10 +45,14 @@
             self.remove = remove;
             self.enableFields = enableFields;
 
+            var originatorEv = originatorEv;
+
             // Private methods
             self.$onInit = function() {
                 self.isCreate = (self.item.id === undefined);
                 if (self.isCreate) {
+                    self.attributes = self.getAttributes();
+                    console.log(self.item);
                     enableFields();
                 }
             };
@@ -108,6 +113,18 @@
                 }
                 self.disableFields = false;
             }
+
+            this.openMenu = function($mdMenu, ev) {
+                originatorEv = ev;
+                $mdMenu.open(ev);
+            };
+
+            this.set = function(rel){
+                self.item.relationship = rel;
+
+                console.log(self.item.relationship);
+                console.log(rel);
+            };
         }
     }
 })();

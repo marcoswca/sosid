@@ -2,7 +2,9 @@
     'use strict';
 
     var dependencies = [
-        'private.components.mainHeader'
+        'private.components.mainHeader',
+        'private.components.mainFooter'
+
     ];
 
     angular
