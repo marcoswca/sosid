@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -27,7 +27,7 @@
                 }
             },
             instanceMethods: {
-                update: function () {
+                update: function() {
                     var self = this;
 
                     var changedValues = self._getChangedValues();
@@ -35,7 +35,7 @@
                     return UserProfileApi
                         .update(changedValues)
                         .then(function() {
-                           self._commitValues();
+                            self._commitValues();
                         });
                 }
             }
@@ -87,6 +87,9 @@
                     }
                 },
                 address: {
+                    label: true
+                },
+                file: {
                     label: true
                 }
             };

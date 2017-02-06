@@ -1,13 +1,13 @@
-(function(){
+(function() {
     'use strict';
 
-//*** STATE_MACHINE ***/
+    //*** STATE_MACHINE ***/
 
     /**
      * Máquina de estados capaz de reconhecer cadeias com tolerância a erros.
      * @constructor
      */
-    var StateMachine = function () {
+    var StateMachine = function() {
         this.initialState = new State();
         this.currentSituation = new MachineSituation();
         this.currentSituation.registerSituation(this.initialState, 0);
@@ -23,7 +23,8 @@
         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
         'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
         'u', 'v', 'w', 'x', 'y', 'z', ':', '-', '/',
-        '0']; // ' ' espaço não é char válido! ele separa tokens assim como quebras de linha e tabs.
+        '0'
+    ]; // ' ' espaço não é char válido! ele separa tokens assim como quebras de linha e tabs.
 
     StateMachine.consts.CHAR_REPLACEMENTS = {
         'a': ['á', 'à', 'â', 'ã', 'ä'],
@@ -39,7 +40,7 @@
     /**
      * Reseta a máquina para nova execução. Não precisa ser invocado.
      */
-    StateMachine.prototype.reset = function () {
+    StateMachine.prototype.reset = function() {
         this.currentSituation = new MachineSituation();
         this.currentSituation.registerSituation(this.initialState, 0);
     };
@@ -48,15 +49,18 @@
      * Busca um texto por palavras conhecidas.
      * @param fulltext
      */
-    StateMachine.prototype.parse = function (fulltext) {
+    StateMachine.prototype.parse = function(fulltext) {
         fulltext = Utils.normalizeWhitespaces(fulltext);
         var words = fulltext.split(' ');
         var _self = this;
 
         var tokensSequence = [];
-        words.forEach(function (word) {
+        words.forEach(function(word) {
             var foundToken = _self.findTokens(word);
-            var newResult = { raw: word, token: foundToken };
+            var newResult = {
+                raw: word,
+                token: foundToken
+            };
             tokensSequence.push(newResult);
         });
         return tokensSequence;
@@ -70,7 +74,7 @@
      * @param {number} options.autocompleteChars - Número de caracteres que devem ser autocompletados ao fim de cada string para serem aceitos.
      * @returns {Array}
      */
-    StateMachine.prototype.findTokens = function (wordStr, options) {
+    StateMachine.prototype.findTokens = function(wordStr, options) {
 
         options = options || {};
         options.outputMode = options.outputMode || 'SINGLE_TOKEN';
@@ -101,13 +105,13 @@
         }
 
         //Autocompletando caracteres
-        for(var k = 0; k<options.autocompleteChars;k++){
+        for (var k = 0; k < options.autocompleteChars; k++) {
             var nextSuggestedSituation = new MachineSituation();
             for (var l = 0; l < this.currentSituation.statesList.length; l++) {
                 var stateToAnalyzeSuggestion = this.currentSituation.statesList[l];
                 //Só entra no autocomplete se tem NO MÁXIMO 1 erro.
                 var suggestionMisspellingCount = this.currentSituation.getSituation(stateToAnalyzeSuggestion);
-                if (suggestionMisspellingCount <=2 ) {
+                if (suggestionMisspellingCount <= 2) {
                     this.emptyStep(stateToAnalyzeSuggestion, nextSuggestedSituation);
                 }
 
@@ -120,9 +124,9 @@
             //Se for um estado que reconhece algum token, retornando-o
             var bestToken = null;
             var bestTokenScore = -1;
-            this.currentSituation.statesList.forEach(function (state) {
+            this.currentSituation.statesList.forEach(function(state) {
                 var foundTokens = state.acceptedTokens;
-                foundTokens.forEach(function (foundToken) {
+                foundTokens.forEach(function(foundToken) {
                     if (_self.currentSituation.getSituation(state) <= foundToken.errorTolerance) {
                         var tokenScore = StateMachine._maximumErrorTolerance - _self.currentSituation.getSituation(state) + 1;
                         if ((!bestToken) || (tokenScore > bestTokenScore)) {
@@ -136,13 +140,13 @@
             return bestToken;
         } else { //'MULTI_TOKEN'
             var tokensArray = [];
-            this.currentSituation.statesList.forEach(function (state) {
+            this.currentSituation.statesList.forEach(function(state) {
                 var foundTokens = state.acceptedTokens;
-                foundTokens.forEach(function (foundToken) {
+                foundTokens.forEach(function(foundToken) {
                     var misspellingCount = _self.currentSituation.getSituation(state);
 
                     //misspellingCount DEVE ser menor que o numero de caracteres digitados para contar.
-                    if (misspellingCount >= wordLen){
+                    if (misspellingCount >= wordLen) {
                         return;
                     }
 
@@ -168,7 +172,7 @@
      * @param inputChar
      * @param {MachineSituation} situationToUpdate
      */
-    StateMachine.prototype.fuzzyStep = function (state, inputChar, situationToUpdate) {
+    StateMachine.prototype.fuzzyStep = function(state, inputChar, situationToUpdate) {
 
         if (!StateMachine.isValidChar(inputChar)) { //ignorando caracteres inválidos
             return;
@@ -177,8 +181,8 @@
         var currentMisspellingCount = this.currentSituation.getSituation(state);
 
         // Step normal sem erros:
-        var straightState = this.singleStep(state,inputChar);
-        if (straightState){
+        var straightState = this.singleStep(state, inputChar);
+        if (straightState) {
             situationToUpdate.registerSituation(straightState, currentMisspellingCount);
         }
 
@@ -218,13 +222,13 @@
     };
 
     function checkStatesAhead(statesAhead, continueExploring, situationToUpdate, nextStatesToVisit) {
-        statesAhead.forEach(function (visitingState) {
+        statesAhead.forEach(function(visitingState) {
             var visitingStateMistypingCount = situationToUpdate.getSituation(visitingState);
 
             if (visitingStateMistypingCount < StateMachine._maximumErrorTolerance) {
                 continueExploring = true;
                 Array.prototype.push.apply(nextStatesToVisit, visitingState.followingStates);
-                visitingState.followingStates.forEach(function (futureState) {
+                visitingState.followingStates.forEach(function(futureState) {
                     situationToUpdate.registerSituation(futureState, visitingStateMistypingCount + 1);
                 });
             }
@@ -241,10 +245,10 @@
      * @param {State} state
      * @param {MachineSituation} situationToUpdate
      */
-    StateMachine.prototype.emptyStep = function (state, situationToUpdate) {
+    StateMachine.prototype.emptyStep = function(state, situationToUpdate) {
         var currentMisspellingCount = this.currentSituation.getSituation(state);
 
-        state.followingStates.forEach(function (nextState) {
+        state.followingStates.forEach(function(nextState) {
             situationToUpdate.registerSituation(nextState, currentMisspellingCount);
         });
     };
@@ -255,7 +259,7 @@
      * @param {State} state
      * @param {string} inputChar
      */
-    StateMachine.prototype.singleStep = function (state, inputChar) {
+    StateMachine.prototype.singleStep = function(state, inputChar) {
 
         //Todo: Steps precisam realmente diferenciar números?! acho que não.... pode ser uma simplificação.
         if (StateMachine.isValidChar(inputChar)) {
@@ -270,7 +274,7 @@
      * @param errorTolerance
      * @param userData
      */
-    StateMachine.prototype.addTokenString = function (tokenStr, errorTolerance, userData){
+    StateMachine.prototype.addTokenString = function(tokenStr, errorTolerance, userData) {
         var token = new LexicalToken(tokenStr, errorTolerance);
         this.addToken(token);
     };
@@ -279,7 +283,7 @@
      * Adapta a máquina de estados para reconhecer um novo token.
      * @param {LexicalToken} token
      */
-    StateMachine.prototype.addToken = function (token) {
+    StateMachine.prototype.addToken = function(token) {
 
 
         var tokenStr = token.name = Utils.normalizeWhitespaces(token.name);
@@ -315,7 +319,7 @@
      * Checa se um Caractere é válido
      * @param {string} char
      */
-    StateMachine.isValidChar = function (char) {
+    StateMachine.isValidChar = function(char) {
         return (Utils.contains(StateMachine.consts.VALID_CHARS, char));
     };
 
@@ -324,7 +328,7 @@
      * para caracteres aceitos na maquina ou null;
      * @param {string} char
      */
-    StateMachine.sanitizeChar = function (char) {
+    StateMachine.sanitizeChar = function(char) {
         char = char.toLowerCase();
         var replacementArray;
 
@@ -344,12 +348,12 @@
         return StateMachine._unknownChar;
     };
 
-//*** STATE ***********/
+    //*** STATE ***********/
     /**
      * Estado da máquina de estados.
      * @constructor
      */
-    var State = function () {
+    var State = function() {
         this.transitions = {};
         this.acceptedTokens = [];
         this.label = '';
@@ -362,7 +366,7 @@
      * @param {string} inputChar
      * @param {State} nextState
      */
-    State.prototype.addTransition = function (inputChar, nextState) {
+    State.prototype.addTransition = function(inputChar, nextState) {
 
         //Evitando mais de uma transição para o mesmo input
         if (this.transitions[inputChar]) {
@@ -378,14 +382,14 @@
         this.followingStates.push(nextState);
     };
 
-//*** SITUATION *******/
+    //*** SITUATION *******/
     /**
      * Descreve a situação da máquina em uma determinada rodada.
      * é, na verdade, uma coleção de estados com suas contagens de erros acumulados.
      *
      * @constructor
      */
-    var MachineSituation = function () {
+    var MachineSituation = function() {
         this.misspellingCountPerState = {};
         this.statesList = [];
     };
@@ -396,7 +400,7 @@
      * @param state
      * @param misspellingErrorCount
      */
-    MachineSituation.prototype.registerSituation = function (state, misspellingErrorCount) {
+    MachineSituation.prototype.registerSituation = function(state, misspellingErrorCount) {
 
         if (misspellingErrorCount > StateMachine._maximumErrorTolerance) {
             throw new Error('Tentando superar a tolerância configurada para a máquina. valor desejado: ' + misspellingErrorCount + ' state: ' + state.label);
@@ -417,15 +421,15 @@
      *
      * @param {MachineSituation} otherSituation
      */
-    MachineSituation.prototype.merge = function (otherSituation) {
+    MachineSituation.prototype.merge = function(otherSituation) {
         var _self = this;
 
-        otherSituation.statesList.forEach(function (state) {
+        otherSituation.statesList.forEach(function(state) {
             _self.registerSituation(state, otherSituation.getSituation(state));
         });
     };
 
-    MachineSituation.prototype.toString = function () {
+    MachineSituation.prototype.toString = function() {
         return JSON.stringify(this.misspellingCountPerState);
     };
 
@@ -434,7 +438,7 @@
      * Recupera a contagens de erros de ortografia de um state específico.
      * @param state
      */
-    MachineSituation.prototype.getSituation = function (state) {
+    MachineSituation.prototype.getSituation = function(state) {
         var currentSituation = this.misspellingCountPerState[state.label];
         if ((typeof(currentSituation) == 'undefined')) {
             currentSituation = 9999;
@@ -442,7 +446,7 @@
         return currentSituation;
     };
 
-//*** LEXICAL TOKEN *******/
+    //*** LEXICAL TOKEN *******/
     /**
      * Cria um token com um id atribuído automáticamente.
      * @param {string} tokenStr string que define o token.
@@ -450,7 +454,7 @@
      * @param {object} [userData] dados a serem vinculados ao token.
      * @constructor
      */
-    var LexicalToken = function (tokenStr, errorTolerance, userData) {
+    var LexicalToken = function(tokenStr, errorTolerance, userData) {
         this.id = LexicalToken.nextId();
         this.name = tokenStr;
         this.errorTolerance = errorTolerance || 0;
@@ -459,12 +463,12 @@
 
     LexicalToken._currentId = 0;
 
-    LexicalToken.nextId = function () {
+    LexicalToken.nextId = function() {
         LexicalToken._currentId += 1;
         return LexicalToken._currentId;
     };
 
-//*** UTILS **********/
+    //*** UTILS **********/
 
     var Utils = {};
     /**
@@ -474,17 +478,17 @@
      * @param element
      * @returns {boolean}
      */
-    Utils.contains = function(array, element){
-        for (var i=0;i<array.length; i++){
-            if(array[i]===element){
+    Utils.contains = function(array, element) {
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] === element) {
                 return true;
             }
         }
         return false;
     };
 
-    Utils.isString = function(obj){
-        if (typeof obj == 'string' || obj instanceof String){
+    Utils.isString = function(obj) {
+        if (typeof obj == 'string' || obj instanceof String) {
             return true;
         }
         return false;
@@ -497,7 +501,7 @@
      * @param {string} str
      * @returns {string}
      */
-    Utils.normalizeWhitespaces = function(str){
+    Utils.normalizeWhitespaces = function(str) {
         str = str.replace(/\s+/g, ' '); //removendo espaços duplicados
         str = str.replace(/((^\s)|(\s$))/g, ''); //aplicanto trim
         return str;
@@ -508,9 +512,9 @@
     var DEFAULT_AUTOCOMPLETED_CHARS = 7;
     var MIN_WORD_SIZE = 3;
 
-//TODO: Melhorar desempenho em plurais e gêneros
+    //TODO: Melhorar desempenho em plurais e gêneros
 
-    var AutoCompleteDictionary = function () {
+    var AutoCompleteDictionary = function() {
         this.lexicalAnalyzer = new StateMachine();
 
         this.__SERIAL_DATA_ID = 0;
@@ -519,7 +523,7 @@
 
         var self = this;
 
-        this.addItem = function(key, value){
+        this.addItem = function(key, value) {
 
             this.__SERIAL_DATA_ID += 1;
 
@@ -530,9 +534,9 @@
 
             var _self = this;
             var allWords = key.split(' ');
-            allWords.forEach(function(word){
+            allWords.forEach(function(word) {
                 //registrando apenas palavras com mais de 2 letras no autocomplete.
-                if (word.length < 3){
+                if (word.length < 3) {
                     return;
                 }
                 var lToken = new LexicalToken(word, _suggestedTolerance(word), value);
@@ -540,17 +544,17 @@
             });
         };
 
-        this.bulkAddItems = function(itemsArray, keyName){
-            itemsArray.forEach(function(item){
+        this.bulkAddItems = function(itemsArray, keyName) {
+            itemsArray.forEach(function(item) {
                 self.addItem(item[keyName], item);
             });
         };
 
-        this.findWord = function(inputString){
+        this.findWord = function(inputString) {
             return this.lexicalAnalyzer.findTokens(inputString);
         };
 
-        this.suggestItems = function(inputString, options){
+        this.suggestItems = function(inputString, options) {
 
             options = options || {};
             var minWordSize = options.minWordSize || MIN_WORD_SIZE;
@@ -563,8 +567,8 @@
 
             //só consideramos palavras com mais de 2 letras no autocomplete.
             var validWords = [];
-            for(var i=0;i<allWords.length;i++){
-                if (allWords[i].length >= minWordSize){
+            for (var i = 0; i < allWords.length; i++) {
+                if (allWords[i].length >= minWordSize) {
                     validWords.push(allWords[i]);
                 }
             }
@@ -580,7 +584,7 @@
             //Buscando resultados pela primeira palavra
             var resultCandidates = this.lexicalAnalyzer.findTokens(currentWord, findOptions);
             var scoreMap = _generateScoreMap(resultCandidates);
-            resultCandidates = resultCandidates.map(function(resultItem){
+            resultCandidates = resultCandidates.map(function(resultItem) {
                 return resultItem.token.userData;
             });
 
@@ -589,13 +593,13 @@
             resultCandidates = _sanitizeResultCandidate(resultCandidates);
 
             //Filtrando resultados para cada nova palavra
-            for (var j=1; j< allWords.length; j++){
+            for (var j = 1; j < allWords.length; j++) {
                 currentWord = allWords[j];
                 //Buscando palavras e mapeando scores
                 var newResults = this.lexicalAnalyzer.findTokens(currentWord, findOptions);
                 var oldScoreMap = scoreMap;
                 var newScoreMap = _generateScoreMap(newResults);
-                var newCandidates = newResults.map(function(resultItem){
+                var newCandidates = newResults.map(function(resultItem) {
                     return resultItem.token.userData;
                 });
                 newCandidates = _sanitizeResultCandidate(newCandidates);
@@ -621,15 +625,15 @@
         };
     };
 
-    function _suggestedTolerance(acceptedString){
+    function _suggestedTolerance(acceptedString) {
         var strLen = acceptedString.length;
-        if (strLen<3){
+        if (strLen < 3) {
             return 0;
         }
-        if (strLen<6){
+        if (strLen < 6) {
             return 1;
         }
-        if (strLen<9){
+        if (strLen < 9) {
             return 2;
         }
         return 3;
@@ -639,17 +643,17 @@
         return userData1.__dictionaryDataId - userData2.__dictionaryDataId;
     }
 
-    function _sanitizeResultCandidate(candidatesArray){
+    function _sanitizeResultCandidate(candidatesArray) {
         //Ordenando
         candidatesArray = candidatesArray.sort(_compareUserDataObjectsForSort);
         var resultWithoutDuplicates = [];
 
         //Removendo valores duplicados
         var arrayLen = candidatesArray.length;
-        var currentId=-1;
-        for (var i=0;i<arrayLen;i++){
+        var currentId = -1;
+        for (var i = 0; i < arrayLen; i++) {
             var userData = candidatesArray[i];
-            if (userData.__dictionaryDataId != currentId){
+            if (userData.__dictionaryDataId != currentId) {
                 resultWithoutDuplicates.push(userData);
                 currentId = userData.__dictionaryDataId;
             }
@@ -658,18 +662,18 @@
         return resultWithoutDuplicates;
     }
 
-    function _intersectionInSanitizedCandidates(candidateArray1, candidateArray2){
+    function _intersectionInSanitizedCandidates(candidateArray1, candidateArray2) {
         var allCandidates = candidateArray1.concat(candidateArray2);
         allCandidates = allCandidates.sort(_compareUserDataObjectsForSort);
 
         var intersection = [];
 
         var arrayLen = allCandidates.length;
-        var currentId=-1;
-        for (var i=0;i<arrayLen;i++){
+        var currentId = -1;
+        for (var i = 0; i < arrayLen; i++) {
 
             var userData = allCandidates[i];
-            if (userData.__dictionaryDataId == currentId){
+            if (userData.__dictionaryDataId == currentId) {
                 intersection.push(userData);
             }
             currentId = userData.__dictionaryDataId;
@@ -678,20 +682,20 @@
         return intersection;
     }
 
-    function _generateScoreMap(resultArray){
+    function _generateScoreMap(resultArray) {
         var scoreMap = {};
 
         var arrayLen = resultArray.length;
-        for (var i=0;i<arrayLen;i++){
+        for (var i = 0; i < arrayLen; i++) {
             var result = resultArray[i];
 
             var dataId = result.token.userData.__dictionaryDataId;
 
             var currentScore = scoreMap[dataId];
-            if (!currentScore){
+            if (!currentScore) {
                 scoreMap[dataId] = result.score;
             } else {
-                if (currentScore > result.score){
+                if (currentScore > result.score) {
                     scoreMap[dataId] = result.score;
                 }
             }
@@ -700,21 +704,21 @@
         return scoreMap;
     }
 
-    function _updateScoreMap(resultArray, oldScoreMap, newScoreMap){
+    function _updateScoreMap(resultArray, oldScoreMap, newScoreMap) {
         var scoreMap = {};
 
         var arrayLen = resultArray.length;
-        for (var i=0;i<arrayLen;i++){
+        for (var i = 0; i < arrayLen; i++) {
             var resultId = resultArray[i].__dictionaryDataId;
             scoreMap[resultId] = oldScoreMap[resultId] + newScoreMap[resultId];
         }
         return scoreMap;
     }
 
-    function _sortByScoremap(resultArray, scoreMap){
+    function _sortByScoremap(resultArray, scoreMap) {
 
         var arrayLen = resultArray.length;
-        for (var i=0;i<arrayLen;i++){
+        for (var i = 0; i < arrayLen; i++) {
             var result = resultArray[i];
             var resultId = result.__dictionaryDataId;
 
@@ -722,7 +726,7 @@
         }
 
         return resultArray.sort(function sortByScoreDesc(result1, result2) {
-            if (result2.__dictionaryTempScore == result1.__dictionaryTempScore){
+            if (result2.__dictionaryTempScore == result1.__dictionaryTempScore) {
                 return result1.__dictionaryDataId - result2.__dictionaryDataId;
             }
             return result2.__dictionaryTempScore - result1.__dictionaryTempScore;
@@ -731,25 +735,25 @@
 
     }
 
-    function _includeMissingValues(resultList, allData){
+    function _includeMissingValues(resultList, allData) {
 
         //Usar o indexOf seria o(n2). Vamos usar um hash para acelerar!
         var missingItems = {};
 
         //Calculando todos os itens que não fazem parte do resultList
-        for(var itemId in allData){
+        for (var itemId in allData) {
             missingItems[itemId] = allData[itemId];
         }
 
         var resultsLen = resultList.length;
-        for (var j=0; j<resultsLen;j++){
+        for (var j = 0; j < resultsLen; j++) {
             var resultItem = resultList[j];
             missingItems[resultItem.__dictionaryDataId] = null;
             delete missingItems[resultItem.__dictionaryDataId];
         }
 
         //Adicionando os itens faltantes ao resultList com score 0
-        for(var missingItemId in missingItems){
+        for (var missingItemId in missingItems) {
             var missingItem = missingItems[missingItemId];
             missingItem.__dictionaryTempScore = 0;
             resultList.push(missingItem);

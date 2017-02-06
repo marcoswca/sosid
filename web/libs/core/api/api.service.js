@@ -161,7 +161,7 @@
             },
 
             PutMultiformData: function(options, Upload) {
-               return Upload.upload({
+                return Upload.upload({
                     url: options.url,
                     method: 'PUT',
                     data: options.data

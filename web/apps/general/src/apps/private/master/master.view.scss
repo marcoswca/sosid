@@ -1,15 +1,13 @@
 .master-view {
-  background-color: #F2F2F2;
-
-  .master-loader {
-
-  }
-
-  .md-sidenav-left {
     background-color: #F2F2F2;
-    .profile__menu {
-      background-color: transparent;
-    }
-  }
 
+    .master-loader {}
+
+    .md-sidenav-left {
+        background-color: #F2F2F2;
+
+        .profile__menu {
+            background-color: transparent;
+        }
+    }
 }

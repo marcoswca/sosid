@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -33,7 +33,7 @@
         function close() {
             // Component lookup should always be available since we are not using `ng-if`
             $mdSidenav('left').close()
-                .then(function () {
+                .then(function() {
                     $log.debug("close RIGHT is done");
                 });
         }

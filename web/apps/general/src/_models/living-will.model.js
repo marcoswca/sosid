@@ -55,6 +55,9 @@
                 },
                 address: {
                     label: true
+                },
+                file: {
+                  label: true
                 }
             };
         }

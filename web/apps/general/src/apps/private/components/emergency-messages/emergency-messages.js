@@ -32,7 +32,9 @@
             });
 
             self.addEmergencyMessage = function() {
-                self.user.messages.push({ toSend: true });
+                self.user.messages.push({
+                    toSend: true
+                });
             };
 
             self.deleteMessage = function(emergencyMessage) {
@@ -49,7 +51,9 @@
             };
 
             self.sendMessage = function(emergencyMessage) {
-                var payload = { message: emergencyMessage.message };
+                var payload = {
+                    message: emergencyMessage.message
+                };
                 var id = emergencyMessage.id;
                 if (emergencyMessage.id) {
                     EmergencyMessages.update(id, payload).then(function successCallback(data) {

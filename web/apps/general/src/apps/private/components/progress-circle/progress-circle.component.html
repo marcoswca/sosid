@@ -1,14 +1,9 @@
 <div class="progress-circle-container">
-    <div class="progress-radial progress-25">
-        <div class="overlay">
+    <div class="progress-radial progress-{{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}">
+        <div ngf-pattern="'image/*'" ngf-max-size="20MB" ngf-change="ProgressCircleCtrl.UpdateImageProfile($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="overlay">
             <div class="progress-circle__avatar" layout="row" layout-align="center center">
-                <md-icon md-svg-icon="sosid:personal_data" aria-label="Avatar"></md-icon>
-            </div>
-            <div class="progress-circle__change--avatar">
-                <div>
-                    <md-icon md-svg-icon="image:photo_camera" style="color: #ccc;width:12px;height:12px;" aria-label="Camera"></md-icon>
-                </div>
-                <em>Change Profile Photo</em>
+                <md-icon ng-show="!ProgressCircleCtrl.hasAvatar()" md-svg-icon="sosid:personal_data" aria-label="Avatar"></md-icon>
+                <img ng-show="ProgressCircleCtrl.hasAvatar()" ng-src="https://s3.eu-central-1.amazonaws.com/sosid/{{ProgressCircleCtrl.getFilePath()}}" />
             </div>
         </div>
     </div>

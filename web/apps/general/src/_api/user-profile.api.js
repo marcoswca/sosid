@@ -11,9 +11,7 @@
 
     /** @ngInject */
     function UserApi(APP_CONFIG, ApiService) {
-
         var url = APP_CONFIG.URL.API_URL + '/user-profile';
-
         this.get = function(options) {
             options = options || {};
             options.url = url;
@@ -24,8 +22,7 @@
             options = options || {};
             options.url = url;
             options.data = data;
-            return ApiService.Put(options);
+            return ApiService.PutMultiformData(options);
         };
     }
-
 })();

@@ -47,13 +47,7 @@
                             <div class="profile-content__upload-files__title">Resources</div>
                             <div class="profile-content__upload-files__hint">(Example: X-Ray, Biopsy, Medical Exam...)</div>
                         </div>
-                        <div class="profile-content__upload-files__dnd-area" layout="column" layout-align="center center">
-                            <div class="profile-content__upload-dnd-area__icon">
-                                <md-icon md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
-                            </div>
-                            <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
-                            <div class="profile-content__upload-files__dnd-area__hint">Your files here or <span>browse</span></div>
-                        </div>
+                      
                     </div>
                     <div layout="row">
                         <md-button ng-disabled="newHealthInsurance.$invalid " class="md-raised md-primary">{{ 'PRIVATE.PROFILE.HEALTH INSURANCES.ADD_NEW' | translate }}</md-button>
@@ -62,10 +56,9 @@
                 </form>
             </div>
         </div>
-
     </div>
 
-    <div flex="100" class="personal-data__basic-informations profile-content__box" ng-repeat="condition in HealthConditionsViewCtrl.healthConditions">
+    <!-- <div flex="100" class="personal-data__basic-informations profile-content__box" ng-repeat="condition in HealthConditionsViewCtrl.healthConditions">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
                 <h3>{{ condition.condition }} - <span>{{ condition.severity }}</span></h3>
@@ -84,6 +77,6 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
 </div>

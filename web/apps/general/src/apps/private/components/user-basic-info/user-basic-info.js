@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -33,10 +33,8 @@
             self.cancelUpdate = cancelUpdate;
             self.updateProfile = updateProfile;
 
-
             // Private methods
-            return (function init() {
-            })();
+            return (function init() {})();
 
             function enableEdit() {
                 $scope.userProfileForm.$setUntouched();
@@ -46,7 +44,7 @@
             function updateProfile() {
                 return self.user
                     .updateProfile()
-                    .then(function () {
+                    .then(function() {
                         $timeout(function() {
                             self.allowEdit = false;
                         });

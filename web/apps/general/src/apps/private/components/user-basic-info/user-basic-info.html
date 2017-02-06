@@ -1,6 +1,5 @@
 <form class="personal-data__basic-informations profile-content__box" name="userProfileForm">
-    <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column"
-         layout-align-xs="center stretch">
+    <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column" layout-align-xs="center stretch">
         <div>
             <h3>{{ 'PRIVATE.PROFILE.PERSONAL_DATA.BASIC_INFO' | translate }}</h3>
         </div>
@@ -9,11 +8,9 @@
             </md-button>
         </div>
         <div ng-show="UserBasicInfoCtrl.allowEdit" layout-xs="row" layout-align-xs="center center">
-            <md-button class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()"
-                       ng-disabled="userProfileForm.$invalid || userProfileForm.$pristine"> {{ 'ACTIONS.SAVE' | translate }}
+            <md-button class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()" ng-disabled="userProfileForm.$invalid || userProfileForm.$pristine"> {{ 'ACTIONS.SAVE' | translate }}
             </md-button>
-            <md-button class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate
-                }}
+            <md-button class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate }}
             </md-button>
         </div>
     </div>
@@ -70,8 +67,7 @@
                         <md-datepicker ng-model="UserBasicInfoCtrl.user.profile.birthDate"></md-datepicker>
                     </md-input-container>
                 </div>
-                <div layout="row" flex="grow" ng-show="UserBasicInfoCtrl.user.profile.age"
-                     ng-hide="UserBasicInfoCtrl.allowEdit">
+                <div layout="row" flex="grow" ng-show="UserBasicInfoCtrl.user.profile.age" ng-hide="UserBasicInfoCtrl.allowEdit">
                     <md-input-container nx-model-attribute="UserProfile:age" flex="100" class="md-block">
                         <input ng-model="UserBasicInfoCtrl.user.profile.age">
                     </md-input-container>
@@ -94,12 +90,12 @@
             </div>
         </div>
         <div class="personal-data__avatar" layout="column" flex-gt-xs="30" flex="none" layout-align="center center">
-            <div layout="column">
-                <div class="personal-data__avatar__img-container">
+            <div layout="column" >
+                <div style="margin:auto" class="personal-data__avatar__img-container">
                     <progress-circle></progress-circle>
                 </div>
                 <div class="personal-data__avatar__text">
-                    <p>Complete your profile<br>it's at 75%</p>
+                    <p>Complete your profile<br>it's at {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</p>
                 </div>
             </div>
         </div>

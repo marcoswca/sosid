@@ -9,9 +9,9 @@
             <md-input-container flex="100">
                 <textarea ng-disabled="!message.toSend && message.id" ng-model="message.message" aria-label="t"></textarea>
             </md-input-container>
-           
+
             <md-icon class="blue" style="margin-right: 25px" ng-if="!message.toSend && message.message" md-svg-icon="editor:mode_edit" aria-label="edit" ng-click="EmergencyMessagesCtrl.changeStatus(message)"></md-icon>
-           
+
             <md-icon class="red" ng-if="message.id" md-svg-icon="action:delete" aria-label="delete" ng-click="EmergencyMessagesCtrl.deleteMessage(message)"></md-icon>
 
             <md-icon class="green" style="margin-right: 25px" ng-if="message.toSend || !message.id" class="toSend" md-svg-icon="content:send" aria-label="update" ng-click="EmergencyMessagesCtrl.sendMessage(message)"></md-icon>
