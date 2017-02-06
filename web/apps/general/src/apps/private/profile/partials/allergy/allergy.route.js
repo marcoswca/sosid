@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -13,24 +13,23 @@
 
     /** @ngInject */
     function configureRoute(NxtRouterHelper) {
-        var states = [
-            {
-                state: 'profile.allergies',
-                config: {
-                    url: '/allergies',
-                    controller: 'AllergyViewCtrl',
-                    controllerAs: 'AllergyViewCtrl',
-                    templateUrl: 'templates/allergy.view.html',
-                    //template: '<default-profile-view-list></default-profile-view-list>',
-                    data: {
-                        pageTitle: 'PRIVATE.PROFILE.ALLERGIES.PAGE_TITLE'
-                        //itemTemplate: 'allergy-item.html',
-                        //modelName: 'Allergy',
-                        //addButtonText: 'PRIVATE.PROFILE.ALLERGIES.ADD_ALLERGY'
-                    }
+        var states = [{
+            state: 'profile.allergies',
+            config: {
+                url: '/allergies',
+                controller: 'AllergyViewCtrl',
+                controllerAs: 'AllergyViewCtrl',
+                templateUrl: 'templates/allergy.view.html',
+                //template: '<default-profile-view-list></default-profile-view-list>',
+                data: {
+                    pageTitle: 'PRIVATE.PROFILE.ALLERGIES.PAGE_TITLE',
+                    rolePlans: ['premium']
+                    //itemTemplate: 'allergy-item.html',
+                    //modelName: 'Allergy',
+                    //addButtonText: 'PRIVATE.PROFILE.ALLERGIES.ADD_ALLERGY'
                 }
             }
-        ];
+        }];
 
         NxtRouterHelper.configureStates(states);
     }

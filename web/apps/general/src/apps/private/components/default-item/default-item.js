@@ -124,7 +124,7 @@
 
                 console.log(self.item.relationship);
                 console.log(rel);
-            }
+            };
         }
     }
 })();

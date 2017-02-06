@@ -25,8 +25,6 @@
 
             return service;
 
-            ///////////////
-
             function configureStates(states, otherwisePath) {
                 states.forEach(function(state) {
                     $stateProvider.state(state.state, state.config);

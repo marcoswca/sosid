@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -12,20 +12,20 @@
 
     /** @ngInject */
     function configureRoute(NxtRouterHelper) {
-        var states = [
-            {
-                state: 'profile.organCard',
-                config: {
-                    url: '/organ-card',
-                    controller: 'OrganCardViewController',
-                    controllerAs: 'OrganCardViewCtrl',
-                    templateUrl: 'templates/organ-card.view.html',
-                    data: {
-                        pageTitle: 'PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE'
-                    }
+        var states = [{
+            state: 'profile.organCard',
+            config: {
+                url: '/organ-card',
+                controller: 'OrganCardViewController',
+                controllerAs: 'OrganCardViewCtrl',
+                templateUrl: 'templates/organ-card.view.html',
+                data: {
+                    pageTitle: 'PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE',
+                    rolePlans: ['premium']
+
                 }
             }
-        ];
+        }];
 
         NxtRouterHelper.configureStates(states);
     }

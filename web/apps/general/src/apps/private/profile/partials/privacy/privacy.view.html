@@ -4,65 +4,19 @@
         <h2 class="modal__subtitle">{{ 'PRIVATE.PROFILE.PRIVACY.PAGE_SUBTITLE' | translate }}</h2>
     </div>
     <div class="modal__actions">
-        <span class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.BLOCK_ALL' | translate }}</span>
-        <span class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.UNBLOCK_ALL' | translate }}</span>
-        <span class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.RESET' | translate }}</span>
+        <span ng-click="$PrivacyController.blockAll()" class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.BLOCK_ALL' | translate }}</span>
+        <span ng-click="$PrivacyController.unBlockAll()" class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.UNBLOCK_ALL' | translate }}</span>
+        <span ng-click="$PrivacyController.unBlockAll()" class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.RESET' | translate }}</span>
     </div>
     <ul class="privacy-list">
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
+        <li class="privacy-list__item" ng-click="$PrivacyController.updatePrivacy(instance)" ng-repeat="instance in $PrivacyController.categories">
+            <md-icon ng-class="{'privacy-list__item__toggle-privacy_lock' : instance.private, 'privacy-list__item__toggle-privacy_unlock' : !instance.private}" md-svg-icon="action:lock_{{ instance.private ? 'outline' : 'open'}}"></md-icon>
             <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:personal_data"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.PERSONAL DATA.PAGE_TITLE' | translate }}</div>
-        </li>
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
-            <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:doctors"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.DOCTORS.PAGE_TITLE' | translate }}</div>
-        </li>
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
-            <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:emergency_contacts"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE' | translate }}</div>
-        </li>
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
-            <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:medications"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.MEDICATIONS.PAGE_TITLE' | translate }}</div>
-        </li>
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
-            <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:allergies"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.ALLERGIES.PAGE_TITLE' | translate }}</div>
-        </li>
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
-            <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:glasses_pass"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE' | translate }}</div>
-        </li>
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
-            <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:health_conditions"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.HEALTH CONDITIONS.PAGE_TITLE' | translate }}</div>
-        </li>
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
-            <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:organ_donon_card"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.ORGAN DONON CARD.PAGE_TITLE' | translate }}</div>
-        </li>
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
-            <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:health_insurance"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.HEALTH INSURANCES.PAGE_TITLE' | translate }}</div>
-        </li>
-        <li class="privacy-list__item">
-            <md-icon class="privacy-list__item__toggle-privacy" md-svg-icon="action:lock_{{ true ? 'outline' : 'open'}}"></md-icon>
-            <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:living_will"></md-icon>
-            <div class="privacy-list__item__category-title">{{ 'PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE' | translate }}</div>
+            <div class="privacy-list__item__category-title">{{ instance.Category.name | translate }}</div>
         </li>
     </ul>
     <div class="modal__footer">
-        <md-button class="md-primary md-raised">{{ 'SAVE' | translate }}</md-button>
-        <md-button class="me-raised">{{ 'CANCEL' | translate }}</md-button>
+        <md-button ng-click="$PrivacyController.hide()" class="md-primary md-raised">{{ 'SAVE' | translate }}</md-button>
+        <md-button ng-click="$PrivacyController.hide()" class="me-raised">{{ 'CANCEL' | translate }}</md-button>
     </div>
-
 </md-dialog>

@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -13,21 +13,21 @@
 
     /** @ngInject */
     function configureRoute(NxtRouterHelper) {
-        var states = [
-            {
-                state: 'profile.emergencyContacts',
-                config: {
-                    url: '/emergency-contacts',
-                    template: '<default-profile-view-list></default-profile-view-list>',
-                    data: {
-                        pageTitle: 'PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE',
-                        itemTemplate: 'emergency-contact-item.html',
-                        modelName: 'EmergencyContact',
-                        addButtonText: 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW'
-                    }
+        var states = [{
+            state: 'profile.emergencyContacts',
+            config: {
+                url: '/emergency-contacts',
+                template: '<default-profile-view-list></default-profile-view-list>',
+                data: {
+                    pageTitle: 'PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE',
+                    itemTemplate: 'emergency-contact-item.html',
+                    modelName: 'EmergencyContact',
+                    addButtonText: 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW',
+                    rolePlans: ['basic','standard', 'premium']
+
                 }
             }
-        ];
+        }];
 
         NxtRouterHelper.configureStates(states);
     }

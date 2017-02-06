@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     var dependencies = [
@@ -79,6 +79,9 @@
                     }
                 },
                 address: {
+                    label: true
+                },
+                file: {
                     label: true
                 }
             };

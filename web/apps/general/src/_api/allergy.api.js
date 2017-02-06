@@ -2,7 +2,7 @@
     'use strict';
 
     var dependencies = [
-        'core.api.ApiService'
+        'core.api.ApiService', 'ngFileUpload'
     ];
 
     angular
@@ -10,11 +10,11 @@
         .service('AllergyApi', Api);
 
     /** @ngInject */
-    function Api(APP_CONFIG, ApiService) {
+    function Api(APP_CONFIG, ApiService, Upload) {
 
         var url = APP_CONFIG.URL.API_URL + '/user-allergy';
 
-        this.getAll = function (params, options) {
+        this.getAll = function(params, options) {
             options = options || {};
             options.url = url;
             options.params = params || {};
@@ -23,17 +23,19 @@
         };
 
         this.create = function(data, options) {
+            delete data['$$hashKey'];
             options = options || {};
             options.url = url;
             options.data = data;
-            return ApiService.Post(options);
+            return ApiService.PostMultiformData(options, Upload);
         };
 
         this.update = function(id, data, options) {
             options = options || {};
             options.url = url + '/' + id;
             options.data = data;
-            return ApiService.Put(options);
+            console.log(data);
+            return ApiService.PutMultiformData(options, Upload);
         };
 
         this.remove = function(id, options) {
