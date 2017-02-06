@@ -1,21 +1,17 @@
 <content-item-box>
     <form name="form">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column"
-             layout-align-xs="center stretch">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column" layout-align-xs="center stretch">
             <div>
                 <h3>{{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE' | translate }}</h3>
             </div>
             <div ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
-                <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate
-                    }}
+                <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate }}
                 </md-button>
             </div>
             <div ng-hide="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine"
-                           class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
                 </md-button>
-                <md-button ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()"
-                           skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
+                <md-button ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()" skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
                 </md-button>
             </div>
         </div>
@@ -23,25 +19,20 @@
             <div layout="column" flex="100">
                 <div layout="column">
                     <md-radio-group ng-model="DefaultItemCtrl.item.allowType">
-
                         <!-- allowAfterDeath -->
                         <md-radio-button value="allowAfterDeath" class="md-primary" layout="row" layout-align="start center"><span> {{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.QUESTIONS.ALLOW_AFTER_DEATH' | translate }} </span></md-radio-button>
-
                         <!-- allowExcept -->
                         <md-radio-button value="allowExcept" class="md-primary"><span> {{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.QUESTIONS.ALLOW_EXCEPT' | translate }}  </span></md-radio-button>
                         <md-input-container nx-model-attribute="OrganCard:allowExceptQuestion" flex-gt-xs="33" flex="none" class="md-block" ng-if="DefaultItemCtrl.item.allowType === 'allowExcept'">
                             <input ng-model="DefaultItemCtrl.item.allowExceptQuestion">
                         </md-input-container>
-
                         <!-- allowOnlyFollowing -->
                         <md-radio-button value="allowOnlyFollowing" class="md-primary"><span> {{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.QUESTIONS.ALLOW_ONLY_FOLLOWING' | translate }} </span></md-radio-button>
                         <md-input-container nx-model-attribute="OrganCard:allowOnlyFollowingQuestion" flex-gt-xs="33" flex="none" class="md-block" ng-if="DefaultItemCtrl.item.allowType === 'allowOnlyFollowing'">
                             <input ng-model="DefaultItemCtrl.item.allowOnlyFollowingQuestion">
                         </md-input-container>
-
                         <!-- notAllow -->
                         <md-radio-button value="notAllow" class="md-primary"><span> {{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.QUESTIONS.NOT_ALLOW' | translate }} </span></md-radio-button>
-
                         <!-- personShouldDecide -->
                         <md-radio-button value="personShouldDecide" class="md-primary"><span> {{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.QUESTIONS.PERSON_SHOULD_DECIDE' | translate }} </span></md-radio-button>
                     </md-radio-group>
@@ -51,11 +42,9 @@
                         <md-input-container nx-model-attribute="OrganCard:firstName" flex-gt-xs="33" flex="none" class="md-block">
                             <input ng-model="DefaultItemCtrl.item.firstName">
                         </md-input-container>
-
                         <md-input-container nx-model-attribute="OrganCard:lastName" flex-gt-xs="33" flex="none" class="md-block">
                             <input ng-model="DefaultItemCtrl.item.lastName">
                         </md-input-container>
-
                         <md-input-container nx-model-attribute="OrganCard:relationship" flex-gt-xs="33" flex="none">
                             <input ng-model="DefaultItemCtrl.item.relationship">
                         </md-input-container>
@@ -85,13 +74,18 @@
                         <div class="profile-content__upload-files__title">Resource</div>
                         <div class="profile-content__upload-files__hint">({{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.UPLOAD_TIP' | translate }})</div>
                     </div>
-                    <div class="profile-content__upload-files__dnd-area" layout="column" layout-align="center center">
+                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" ngf-change="DefaultItemCtrl.change($file)" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                         <div class="profile-content__upload-dnd-area__icon">
-                            <md-icon md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
+                            <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
+                            <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
                         </div>
                         <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
-                        <div class="profile-content__upload-files__dnd-area__hint">Your files here or
-                            <span>browse</span></div>
+                        <div ng-if="!DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">Your files here or
+                            <span>browse</span>
+                        </div>
+                        <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
+                            {{DefaultItemCtrl.item.file.name}}
+                        </div>
                     </div>
                 </div>
             </div>

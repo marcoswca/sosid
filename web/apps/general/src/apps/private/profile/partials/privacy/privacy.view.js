@@ -19,6 +19,7 @@
 
         PrivacyApi.get().then(function successCallback(data) {
             self.categories = data;
+            console.log(data);
         }, function errorCallback(reason) {
             console.log(reason);
         });
@@ -40,10 +41,11 @@
         };
 
         self.updatePrivacy = function(category, allCategories) {
+            var data = {};
             if (allCategories) {
-                var data = allCategories;
+                data = allCategories;
             } else {
-                var data = { private: !category.private };
+                data = { private: !category.private };
             }
             PrivacyApi.update(category.id, data).then(function successCallback(success) {
                 category.private = data.private;
