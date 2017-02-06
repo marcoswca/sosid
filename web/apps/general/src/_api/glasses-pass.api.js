@@ -2,7 +2,7 @@
     'use strict';
 
     var dependencies = [
-        'core.api.ApiService'
+        'core.api.ApiService', 'ngFileUpload'
     ];
 
     angular
@@ -10,7 +10,7 @@
         .service('GlassesPassApi', GlassesPassApi);
 
     /** @ngInject */
-    function GlassesPassApi(APP_CONFIG, ApiService) {
+    function GlassesPassApi(APP_CONFIG, ApiService, Upload) {
 
         var url = APP_CONFIG.URL.API_URL + '/user-glasses-pass';
 
@@ -24,14 +24,16 @@
             options = options || {};
             options.url = url;
             options.data = data;
-            return ApiService.Post(options);
+            return ApiService.PostMultiformData(options, Upload);
         };
 
         this.update = function(id, data, options) {
             options = options || {};
-            options.url = url;
+            options.url = url + '/' + id;
+            console.log(id);
+            console.log(data);
             options.data = data;
-            return ApiService.Put(options);
+            return ApiService.PutMultiformData(options, Upload);
         };
 
         this.remove = function(id, options) {

@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     var dependencies = [
@@ -67,6 +67,9 @@
                     label: true
                 },
                 order: {
+                    label: true
+                },
+                file: {
                     label: true
                 }
             };
