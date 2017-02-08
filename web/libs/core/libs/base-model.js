@@ -63,6 +63,8 @@
             NxtModel.attributesNamesUpdatable = _.keysIn(_.omitBy(modelConfig.attributes, {
                 updateDisabled: true
             }));
+            console.log(NxtModel.attributesNamesUpdatable);
+
 
             NxtModel.prototype.toJSON = function() {
                 return _.omit(this, ['__commitedValues', '__enabledUpdateAttributes']);
@@ -83,6 +85,7 @@
             NxtModel.prototype._commitValues = function() {
                 var self = this;
                 var changedKeys = _.keys(self._getChangedValues());
+
 
                 self._syncCommitValues();
 
@@ -124,6 +127,7 @@
 
             NxtModel.prototype.update = function() {
                 var self = this;
+
 
                 var changedValues = self._getChangedValues();
 

@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     var dependencies = [
@@ -53,11 +53,26 @@
                         }
                     }
                 },
-                address: {
+                street: {
+                    label: true
+                },
+                city: {
+                    label: true
+                },
+                provincy: {
+                    label: true
+                },
+                country: {
+                    label: true
+                },
+                postalCode: {
+                    label: true
+                },
+                type: {
                     label: true
                 },
                 file: {
-                  label: true
+                    label: true
                 }
             };
         }

@@ -1,37 +1,29 @@
 <content-item-box>
     <form name="form">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column"
-             layout-align-xs="center stretch">
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column" layout-align-xs="center stretch">
             <div>
                 <h3>{{ 'PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE' | translate }}</h3>
             </div>
             <div ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
-                <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate
-                    }}
+                <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate }}
                 </md-button>
             </div>
             <div ng-hide="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine"
-                           class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
                 </md-button>
-                <md-button ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()"
-                           skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
+                <md-button ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()" skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
                 </md-button>
             </div>
         </div>
         <div layout="row" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading">
             <div layout="column" flex="100">
                 <div layout="row" layout-xs="column">
-                    <md-input-container nx-model-attribute="LivingWill:firstName" flex-gt-xs="33" flex="none"
-                                        class="md-block">
+                    <md-input-container nx-model-attribute="LivingWill:firstName" flex-gt-xs="33" flex="none" class="md-block">
                         <input ng-model="DefaultItemCtrl.item.firstName">
                     </md-input-container>
-
-                    <md-input-container nx-model-attribute="LivingWill:lastName" flex-gt-xs="33" flex="none"
-                                        class="md-block">
+                    <md-input-container nx-model-attribute="LivingWill:lastName" flex-gt-xs="33" flex="none" class="md-block">
                         <input ng-model="DefaultItemCtrl.item.lastName">
                     </md-input-container>
-
                     <md-input-container nx-model-attribute="LivingWill:relationship" flex-gt-xs="33" flex="none">
                         <input ng-model="DefaultItemCtrl.item.relationship">
                     </md-input-container>
@@ -49,11 +41,42 @@
                         <input ng-model="DefaultItemCtrl.item.email">
                     </md-input-container>
                 </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="LivingWill:address" flex="100" class="md-block">
-                        <textarea ng-model="DefaultItemCtrl.item.address"></textarea>
-                    </md-input-container>
-                </div>
+               <!--  <div layout="row" ng-repeat="address in LivingWillViewController.user.profile.address">
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="LivingWill:street" flex="50" class="md-block">
+                            <input ng-model="address.street">
+                        </md-input-container>
+                        <md-input-container nx-model-attribute="LivingWill:city" flex="50" class="md-block">
+                            <input ng-model="address.city">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="LivingWill:country" flex="50" class="md-block">
+                            <input ng-model="address.country">
+                        </md-input-container>
+                        <md-input-container nx-model-attribute="LivingWill:provincy" flex="50" class="md-block">
+                            <input ng-model="address.provincy">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="LivingWill:type" flex="50" class="md-block">
+                            <input ng-model="address.type">
+                        </md-input-container>
+                        <md-input-container nx-model-attribute="LivingWill:postalCode" flex="50" class="md-block">
+                            <input ng-model="address.postalCode">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="User:plan" flex="100">
+                            <input ng-model="UserBasicInfoCtrl.user.profile.plan.name" skip-disable="true" disabled>
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="User:period" flex="100" class="md-block">
+                            <input ng-model="UserBasicInfoCtrl.user.period" skip-disable="true" disabled>
+                        </md-input-container>
+                    </div>
+                </div> -->
                 <div layout="column" class="profile-content__upload-files">
                     <div layout="row" class="profile-content__upload-files__header">
                         <!--Todo: Mapear tradução-->
@@ -61,18 +84,18 @@
                         <div class="profile-content__upload-files__hint">(Upload your living will card)</div>
                     </div>
                     <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
-                    <div class="profile-content__upload-dnd-area__icon">
-                        <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
-                        <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
+                        <div class="profile-content__upload-dnd-area__icon">
+                            <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
+                            <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
+                        </div>
+                        <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
+                        <div ng-if="!DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">Your files here or
+                            <span>browse</span>
+                        </div>
+                        <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
+                            {{DefaultItemCtrl.item.file.name}}
+                        </div>
                     </div>
-                    <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
-                    <div ng-if="!DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">Your files here or
-                        <span>browse</span>
-                    </div>
-                    <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
-                        {{DefaultItemCtrl.item.file.name}}
-                    </div>
-                </div>
                 </div>
             </div>
         </div>

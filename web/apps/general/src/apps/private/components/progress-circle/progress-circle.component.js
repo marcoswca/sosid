@@ -37,7 +37,11 @@
             };
 
             self.getFilePath = function() {
-                return Session.user.profile.File.filePath;
+                if (Session.user.profile.File) {
+                    return Session.user.profile.File.filePath;
+                } else {
+                    return undefined;
+                }
             };
 
             return init();

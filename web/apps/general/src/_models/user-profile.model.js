@@ -29,12 +29,13 @@
             instanceMethods: {
                 update: function() {
                     var self = this;
-
                     var changedValues = self._getChangedValues();
-
+                    console.log(self);
+                    console.log(changedValues);
                     return UserProfileApi
                         .update(changedValues)
                         .then(function() {
+                            console.log(self._getChangedValues());
                             self._commitValues();
                         });
                 }
@@ -86,11 +87,34 @@
                         required: true
                     }
                 },
-                address: {
+                street: {
+                    label: true
+                },
+                city: {
+                    label: true
+                },
+                provincy: {
+                    label: true
+                },
+                country: {
+                    label: true
+                },
+                postalCode: {
+                    label: true
+                },
+                type: {
                     label: true
                 },
                 file: {
                     label: true
+                },
+                plan: {
+                    label: true
+                },
+                familyDoctor: {
+                    firstName: {
+                        label: true
+                    }
                 }
             };
         }

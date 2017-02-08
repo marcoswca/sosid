@@ -1,545 +1,607 @@
 {
-  "OPTIONS": {
-    "UNDEFINED": "uninformed"
-  },
-  "ACTIONS": {
-    "DELETE": "Delete",
-    "EDIT": "Edit",
-    "SAVE": "Save",
-    "CANCEL": "Cancel"
-  },
-  "MODELS": {
-    "DOCTOR": {
-      "ATTRIBUTES": {
-        "FIRST NAME": {
-          "LABEL": "First Name",
-          "VALIDATE": {
-            "REQUIRED": "First name is required"
-          }
-        },
-        "LAST NAME": {
-          "LABEL": "Last Name",
-          "VALIDATE": {
-            "REQUIRED": "Last Name is required"
-          }
-        },
-        "SPECIALITY": {
-          "LABEL": "Speciality",
-          "VALIDATE": {
-            "REQUIRED": "Speciality is required"
-          }
-        },
-        "MOBILE NUMBER": {
-          "LABEL": "Mobile Number"
-        },
-        "PHONE NUMBER": {
-          "LABEL": "Phone Number"
-        },
-        "EMAIL": {
-          "LABEL": "E-Mail",
-          "VALIDATE": {
-            "EMAIL": "Please, inform a valid e-mail."
-          }
-        },
-        "CLINIC ADDRESS": {
-          "LABEL": "Clinic Address"
-        }
-      }
+    "OPTIONS": {
+        "UNDEFINED": "uninformed"
     },
-    "MEDICATION": {
-      "ATTRIBUTES": {
-        "NAME": {
-          "LABEL": "Name",
-          "VALIDATE": {
-            "REQUIRED": "Name is required"
-          }
-        },
-        "DOSAGE": {
-          "LABEL": "Dosage"
-        },
-        "UNIT": {
-          "LABEL": "Unit of Measurement"
-        },
-        "FREQUENCY": {
-          "LABEL": "Frequency"
-        },
-        "REASON FOR TAKING": {
-          "LABEL": "Reason for Taking"
-        },
-        "NOTES": {
-          "LABEL": "Notes"
-        }
-      }
+    "ACTIONS": {
+        "DELETE": "Delete",
+        "EDIT": "Edit",
+        "SAVE": "Save",
+        "CANCEL": "Cancel"
     },
-    "EMERGENCY CONTACT": {
-      "ATTRIBUTES": {
-        "FIRST NAME": {
-          "LABEL": "Name",
-          "VALIDATE": {
-            "REQUIRED": "Nome is required"
-          }
+    "MODELS": {
+        "DOCTOR": {
+            "ATTRIBUTES": {
+                "FIRST NAME": {
+                    "LABEL": "First Name",
+                    "VALIDATE": {
+                        "REQUIRED": "First name is required"
+                    }
+                },
+                "LAST NAME": {
+                    "LABEL": "Last Name",
+                    "VALIDATE": {
+                        "REQUIRED": "Last Name is required"
+                    }
+                },
+                "SPECIALITY": {
+                    "LABEL": "Speciality",
+                    "VALIDATE": {
+                        "REQUIRED": "Speciality is required"
+                    }
+                },
+                "MOBILE NUMBER": {
+                    "LABEL": "Mobile Number"
+                },
+                "PHONE NUMBER": {
+                    "LABEL": "Phone Number"
+                },
+                "EMAIL": {
+                    "LABEL": "E-Mail",
+                    "VALIDATE": {
+                        "EMAIL": "Please, inform a valid e-mail."
+                    }
+                },
+                "CLINIC ADDRESS": {
+                    "LABEL": "Clinic Address"
+                }
+            }
         },
-        "LAST NAME": {
-          "LABEL": "Last Name",
-          "VALIDATE": {
-            "REQUIRED": "Last Name is required"
-          }
+        "MEDICATION": {
+            "ATTRIBUTES": {
+                "NAME": {
+                    "LABEL": "Name",
+                    "VALIDATE": {
+                        "REQUIRED": "Name is required"
+                    }
+                },
+                "DOSAGE": {
+                    "LABEL": "Dosage"
+                },
+                "UNIT OF MEASUREMENT": {
+                    "LABEL": "Unit of Measurement"
+                },
+                "FREQUENCY": {
+                    "LABEL": "Frequency"
+                },
+                "REASON FOR TAKING": {
+                    "LABEL": "Reason for Taking"
+                },
+                "NOTES": {
+                    "LABEL": "Notes"
+                }
+            }
         },
-        "RELATIONSHIP": {
-          "LABEL": "Relationship",
-          "VALIDATE": {
-            "REQUIRED": "Relationship is required"
-          }
+        "EMERGENCY CONTACT": {
+            "ATTRIBUTES": {
+                "FIRST NAME": {
+                    "LABEL": "Name",
+                    "VALIDATE": {
+                        "REQUIRED": "Nome is required"
+                    }
+                },
+                "LAST NAME": {
+                    "LABEL": "Last Name",
+                    "VALIDATE": {
+                        "REQUIRED": "Last Name is required"
+                    }
+                },
+                "RELATIONSHIP": {
+                    "LABEL": "Relationship",
+                    "VALIDATE": {
+                        "REQUIRED": "Relationship is required"
+                    }
+                },
+                "MOBILE NUMBER": {
+                    "LABEL": "Mobile Number",
+                    "VALIDATE": {
+                        "REQUIRED": "Mobile Number is required"
+                    }
+                },
+                "PHONE NUMBER": {
+                    "LABEL": "Phone Number",
+                    "VALIDATE": {
+                        "REQUIRED": "Phone Number is required"
+                    }
+                },
+                "EMAIL": {
+                    "LABEL": "Email",
+                    "VALIDATE": {
+                        "REQUIRED": "Email is required",
+                        "EMAIL": "Please, enter with a valid e-mail"
+                    }
+                },
+                "ADDRESS": {
+                    "LABEL": "Address",
+                    "VALIDATE": {
+                        "REQUIRED": "Address is required"
+                    }
+                }
+            }
         },
-        "MOBILE NUMBER": {
-          "LABEL": "Mobile Number",
-          "VALIDATE": {
-            "REQUIRED": "Mobile Number is required"
-          }
+        "LIVING WILL": {
+            "ATTRIBUTES": {
+                "FIRST NAME": {
+                    "LABEL": "First Name",
+                    "VALIDATE": {
+                        "REQUIRED": "First Name is required"
+                    }
+                },
+                "LAST NAME": {
+                    "LABEL": "Last Name",
+                    "VALIDATE": {
+                        "REQUIRED": "Last Name is required"
+                    }
+                },
+                "RELATIONSHIP": {
+                    "LABEL": "Relationship",
+                    "VALIDATE": {
+                        "REQUIRED": "Relationship is required"
+                    }
+                },
+                "MOBILE NUMBER": {
+                    "LABEL": "Mobile Number"
+                },
+                "PHONE NUMBER": {
+                    "LABEL": "Phone Number"
+                },
+                "EMAIL": {
+                    "LABEL": "Email",
+                    "VALIDATE": {
+                        "EMAIL": "Please, enter with a valid e-mail"
+                    }
+                },
+                "STREET": {
+                    "LABEL": "Street",
+                    "VALIDATE": {
+                        "REQUIRED": "Street is required"
+                    }
+                },
+                "CITY": {
+                    "LABEL": "City",
+                    "VALIDATE": {
+                        "REQUIRED": "City is required"
+                    }
+                },
+                "PROVINCY": {
+                    "LABEL": "Provincy",
+                    "VALIDATE": {
+                        "REQUIRED": "Provincy is required"
+                    }
+                },
+                "COUNTRY": {
+                    "LABEL": "Country",
+                    "VALIDATE": {
+                        "REQUIRED": "Country is required"
+                    }
+                },
+                "POSTAL CODE": {
+                    "LABEL": "Postal Code",
+                    "VALIDATE": {
+                        "REQUIRED": "Postal Code is required"
+                    }
+                },
+                "TYPE": {
+                    "LABEL": "Type",
+                    "VALIDATE": {
+                        "REQUIRED": "type is required"
+                    }
+                }
+            }
         },
-        "PHONE NUMBER": {
-          "LABEL": "Phone Number",
-          "VALIDATE": {
-            "REQUIRED": "Phone Number is required"
-          }
+        "HEALTH CONDITION": {
+            "ATTRIBUTES": {
+                "CONDITION": {
+                    "LABEL": "Condition",
+                    "VALIDATE": {
+                        "REQUIRED": "Condition is required"
+                    }
+                },
+                "SEVERITY": {
+                    "LABEL": "Severity"
+                },
+                "FILE": {
+                    "LABEL": "FILE"
+                }
+            }
         },
-        "EMAIL": {
-          "LABEL": "Email",
-          "VALIDATE": {
-            "REQUIRED": "Email is required",
-            "EMAIL": "Please, enter with a valid e-mail"
-          }
+        "ALLERGY": {
+            "ATTRIBUTES": {
+                "NAME": {
+                    "LABEL": "Allergy Name"
+                },
+                "DESCRIPTION": {
+                    "LABEL": "Notes",
+                    "VALIDATE": {
+                        "REQUIRED": "Notes is required"
+                    }
+                },
+                "SEVERITY": {
+                    "LABEL": "Severity"
+                }
+            }
         },
-        "ADDRESS": {
-          "LABEL": "Address",
-          "VALIDATE": {
-            "REQUIRED": "Address is required"
-          }
-        }
-      }
-    },
-    "LIVING WILL": {
-      "ATTRIBUTES": {
-        "FIRST NAME": {
-          "LABEL": "First Name",
-          "VALIDATE": {
-            "REQUIRED": "First Name is required"
-          }
+        "HEALTH INSURANCE": {
+            "ATTRIBUTES": {
+                "COMPANY NAME": {
+                    "LABEL": "Company Name",
+                    "VALIDATE": {
+                        "REQUIRED": "Company name is required"
+                    }
+                },
+                "POLICY NUMBER": {
+                    "LABEL": "Policy Number / ID Number"
+                },
+                "PHONE INSURANCE": {
+                    "LABEL": "Insurance Telephone"
+                },
+                "MEDICAL PLAN TYPE": {
+                    "LABEL": "Medical Plan Type"
+                }
+            }
         },
-        "LAST NAME": {
-          "LABEL": "Last Name",
-          "VALIDATE": {
-            "REQUIRED": "Last Name is required"
-          }
+        "GLASSES PASS": {
+            "ATTRIBUTES": {
+                "OPTIKER": {
+                    "LABEL": "NL / NDL - Optikerkennung"
+                },
+                "RIGHT FERNBRILLE": {
+                    "LABEL": "Fernbrille"
+                },
+                "RIGHT SPH": {
+                    "LABEL": "Sph"
+                },
+                "RIGHT CYL": {
+                    "LABEL": "Cyl"
+                },
+                "RIGHT A": {
+                    "LABEL": "A"
+                },
+                "RIGHT ADD": {
+                    "LABEL": "Add"
+                },
+                "LEFT FERNBRILLE": {
+                    "LABEL": "Fernbrille"
+                },
+                "LEFT SPH": {
+                    "LABEL": "Sph"
+                },
+                "LEFT CYL": {
+                    "LABEL": "Cyl"
+                },
+                "LEFT A": {
+                    "LABEL": "A"
+                },
+                "LEFT ADD": {
+                    "LABEL": "Add"
+                },
+                "GLASS": {
+                    "LABEL": "Glass"
+                },
+                "FASSUNG": {
+                    "LABEL": "Fassung"
+                },
+                "PD": {
+                    "LABEL": "PD = Pupillendistanz"
+                },
+                "DATE": {
+                    "LABEL": "Datum"
+                },
+                "ORDER": {
+                    "LABEL": "Auftrag"
+                }
+            }
         },
-        "RELATIONSHIP": {
-          "LABEL": "Relationship",
-          "VALIDATE": {
-            "REQUIRED": "Relationship is required"
-          }
+        "ORGAN CARD": {
+            "ATTRIBUTES": {
+                "ALLOW ONLY FOLLOWING QUESTION": {
+                    "LABEL": "The organs that are allowed are:",
+                    "VALIDATE": {
+                        "REQUIRED": "Please, enter with at least one organ"
+                    }
+                },
+                "ALLOW EXCEPT QUESTION": {
+                    "LABEL": "The organs that are exception are:",
+                    "VALIDATE": {
+                        "REQUIRED": "Please, enter with at least one organ"
+                    }
+                },
+                "FIRST NAME": {
+                    "LABEL": "First Name",
+                    "PLACEHOLDER": "enter with your first name",
+                    "VALIDATE": {
+                        "REQUIRED": "Your first name is required",
+                        "LEN": "Your first name should have 3-80 characters"
+                    }
+                },
+                "LAST NAME": {
+                    "LABEL": "Last Name",
+                    "PLACEHOLDER": "enter with your last name",
+                    "VALIDATE": {
+                        "REQUIRED": "Your last name is required",
+                        "LEN": "Your last name should have 3-80 characters"
+                    }
+                },
+                "RELATIONSHIP": {
+                    "LABEL": "Relationship",
+                    "VALIDATE": {
+                        "REQUIRED": "Relationship is required"
+                    }
+                },
+                "MOBILE NUMBER": {
+                    "LABEL": "Mobile Number"
+                },
+                "PHONE NUMBER": {
+                    "LABEL": "Phone Number"
+                },
+                "EMAIL": {
+                    "LABEL": "Email",
+                    "VALIDATE": {
+                        "EMAIL": "Please, enter with a valid e-mail"
+                    }
+                },
+                "ADDRESS": {
+                    "LABEL": "Address"
+                }
+            }
         },
-        "MOBILE NUMBER": {
-          "LABEL": "Mobile Number"
+        "USER PROFILE": {
+            "ATTRIBUTES": {
+                "FIRST NAME": {
+                    "LABEL": "First Name",
+                    "PLACEHOLDER": "enter with your first name",
+                    "VALIDATE": {
+                        "REQUIRED": "Your first name is required",
+                        "LEN": "Your first name should have 3-80 characters"
+                    }
+                },
+                "LAST NAME": {
+                    "LABEL": "Last Name",
+                    "PLACEHOLDER": "enter with your last name",
+                    "VALIDATE": {
+                        "REQUIRED": "Your last name is required",
+                        "LEN": "Your last name should have 3-80 characters"
+                    }
+                },
+                "AGE": {
+                    "LABEL": "Age"
+                },
+                "BIRTH DATE": {
+                    "LABEL": "Birth Date"
+                },
+                "GENDER": {
+                    "LABEL": "Gender",
+                    "OPTIONS": {
+                        "F": "Female",
+                        "M": "Male"
+                    }
+                },
+                "BLOOD TYPE": {
+                    "LABEL": "Blood Type"
+                },
+                "STREET": {
+                    "LABEL": "Street",
+                    "VALIDATE": {
+                        "REQUIRED": "Street is required"
+                    }
+                },
+                "CITY": {
+                    "LABEL": "City",
+                    "VALIDATE": {
+                        "REQUIRED": "City is required"
+                    }
+                },
+                "PROVINCY": {
+                    "LABEL": "Provincy",
+                    "VALIDATE": {
+                        "REQUIRED": "Provincy is required"
+                    }
+                },
+                "COUNTRY": {
+                    "LABEL": "Country",
+                    "VALIDATE": {
+                        "REQUIRED": "Country is required"
+                    }
+                },
+                "POSTAL CODE": {
+                    "LABEL": "Postal Code",
+                    "VALIDATE": {
+                        "REQUIRED": "Postal Code is required"
+                    }
+                },
+                "TYPE": {
+                    "LABEL": "Type",
+                    "VALIDATE": {
+                        "REQUIRED": "Type is required"
+                    }
+                },
+                "PLAN": {
+                    "LABEL": "Plan"
+                }
+            }
         },
-        "PHONE NUMBER": {
-          "LABEL": "Phone Number"
-        },
-        "EMAIL": {
-          "LABEL": "Email",
-          "VALIDATE": {
-            "EMAIL": "Please, enter with a valid e-mail"
-          }
-        },
-        "ADDRESS": {
-          "LABEL": "Address"
-        }
-      }
-    },
-    "HEALTH CONDITION": {
-      "ATTRIBUTES": {
-        "CONDITION": {
-          "LABEL": "Condition",
-          "VALIDATE": {
-            "REQUIRED": "Condition is required"
-          }
-        },
-        "SEVERITY": {
-          "LABEL": "Severity"
-        },
-        "FILE": {
-          "LABEL": "FILE"
-        }
-      }
-    },
-    "ALLERGY": {
-      "ATTRIBUTES": {
-        "NAME": {
-          "LABEL": "Allergy Name"
-        },
-        "DESCRIPTION": {
-          "LABEL": "Notes",
-          "VALIDATE": {
-            "REQUIRED": "Notes is required"
-          }
-        },
-        "SEVERITY": {
-          "LABEL": "Severity"
-        }
-      }
-    },
-    "HEALTH INSURANCE": {
-      "ATTRIBUTES": {
-        "COMPANY NAME": {
-          "LABEL": "Company Name",
-          "VALIDATE": {
-            "REQUIRED": "Company name is required"
-          }
-        },
-        "POLICY NUMBER": {
-          "LABEL": "Policy Number / ID Number"
-        },
-        "PHONE INSURANCE": {
-          "LABEL": "Insurance Telephone"
-        },
-        "MEDICAL PLAN TYPE": {
-          "LABEL": "Medical Plan Type"
-        }
-      }
-    },
-    "GLASSES PASS": {
-      "ATTRIBUTES": {
-        "OPTIKER": {
-          "LABEL": "NL / NDL - Optikerkennung"
-        },
-        "RIGHT FERNBRILLE": {
-          "LABEL": "Fernbrille"
-        },
-        "RIGHT SPH": {
-          "LABEL": "Sph"
-        },
-        "RIGHT CYL": {
-          "LABEL": "Cyl"
-        },
-        "RIGHT A": {
-          "LABEL": "A"
-        },
-        "RIGHT ADD": {
-          "LABEL": "Add"
-        },
-        "LEFT FERNBRILLE": {
-          "LABEL": "Fernbrille"
-        },
-        "LEFT SPH": {
-          "LABEL": "Sph"
-        },
-        "LEFT CYL": {
-          "LABEL": "Cyl"
-        },
-        "LEFT A": {
-          "LABEL": "A"
-        },
-        "LEFT ADD": {
-          "LABEL": "Add"
-        },
-        "GLASS": {
-          "LABEL": "Glass"
-        },
-        "FASSUNG": {
-          "LABEL": "Fassung"
-        },
-        "PD": {
-          "LABEL": "PD = Pupillendistanz"
-        },
-        "DATE": {
-          "LABEL": "Datum"
-        },
-        "ORDER": {
-          "LABEL": "Auftrag"
-        }
-      }
-    },
-    "ORGAN CARD": {
-      "ATTRIBUTES": {
-        "ALLOW ONLY FOLLOWING QUESTION": {
-          "LABEL": "The organs that are allowed are:",
-          "VALIDATE": {
-            "REQUIRED": "Please, enter with at least one organ"
-          }
-        },
-        "ALLOW EXCEPT QUESTION": {
-          "LABEL": "The organs that are exception are:",
-          "VALIDATE": {
-            "REQUIRED": "Please, enter with at least one organ"
-          }
-        },
-        "FIRST NAME": {
-          "LABEL": "First Name",
-          "PLACEHOLDER": "enter with your first name",
-          "VALIDATE": {
-            "REQUIRED": "Your first name is required",
-            "LEN": "Your first name should have 3-80 characters"
-          }
-        },
-        "LAST NAME": {
-          "LABEL": "Last Name",
-          "PLACEHOLDER": "enter with your last name",
-          "VALIDATE": {
-            "REQUIRED": "Your last name is required",
-            "LEN": "Your last name should have 3-80 characters"
-          }
-        },
-        "RELATIONSHIP": {
-          "LABEL": "Relationship",
-          "VALIDATE": {
-            "REQUIRED": "Relationship is required"
-          }
-        },
-        "MOBILE NUMBER": {
-          "LABEL": "Mobile Number"
-        },
-        "PHONE NUMBER": {
-          "LABEL": "Phone Number"
-        },
-        "EMAIL": {
-          "LABEL": "Email",
-          "VALIDATE": {
-            "EMAIL": "Please, enter with a valid e-mail"
-          }
-        },
-        "ADDRESS": {
-          "LABEL": "Address"
-        }
-      }
-    },
-    "USER PROFILE": {
-      "ATTRIBUTES": {
-        "FIRST NAME": {
-          "LABEL": "First Name",
-          "PLACEHOLDER": "enter with your first name",
-          "VALIDATE": {
-            "REQUIRED": "Your first name is required",
-            "LEN": "Your first name should have 3-80 characters"
-          }
-        },
-        "LAST NAME": {
-          "LABEL": "Last Name",
-          "PLACEHOLDER": "enter with your last name",
-          "VALIDATE": {
-            "REQUIRED": "Your last name is required",
-            "LEN": "Your last name should have 3-80 characters"
-          }
-        },
-        "AGE": {
-          "LABEL": "Age"
-        },
-        "BIRTH DATE": {
-          "LABEL": "Birth Date"
-        },
-        "GENDER": {
-          "LABEL": "Gender",
-          "OPTIONS": {
-            "F": "Female",
-            "M": "Male"
-          }
-        },
-        "BLOOD TYPE": {
-          "LABEL": "Blood Type"
-        },
-        "ADDRESS": {
-          "LABEL": "Address"
-        }
-      }
-    },
-    "USER": {
-      "ATTRIBUTES": {
-        "EMAIL": {
-          "LABEL": "Your e-mail",
-          "PLACEHOLDER": "enter with your e-mail",
-          "VALIDATE": {
-            "REQUIRED": "E-mail is required",
-            "EMAIL": "Please, enter a valid e-mail",
-            "REGISTERED": "E-mail already registered"
-          }
-        },
+        "USER": {
+            "ATTRIBUTES": {
+                "EMAIL": {
+                    "LABEL": "Your e-mail",
+                    "PLACEHOLDER": "enter with your e-mail",
+                    "VALIDATE": {
+                        "REQUIRED": "E-mail is required",
+                        "EMAIL": "Please, enter a valid e-mail",
+                        "REGISTERED": "E-mail already registered"
+                    }
+                },
 
-        "PASSWORD": {
-          "LABEL": "Password",
-          "PLACEHOLDER": "enter with your password",
-          "VALIDATE": {
-            "REQUIRED": "Password is required",
-            "LEN": "Your password cannot contain less than 8 characters or more than 60",
-            "PASSWORD": "Your password must contains letters and numbers"
-          }
-        },
-
-        "PLAN": {
-          "LABEL": "Plan"
-        },
-        "PERIOD": {
-          "LABEL": "Period"
+                "PASSWORD": {
+                    "LABEL": "Password",
+                    "PLACEHOLDER": "enter with your password",
+                    "VALIDATE": {
+                        "REQUIRED": "Password is required",
+                        "LEN": "Your password cannot contain less than 8 characters or more than 60",
+                        "PASSWORD": "Your password must contains letters and numbers"
+                    }
+                }
+            }
         }
-      }
+    },
+    "LOGOUT_BUTTON": "Logout",
+    "CANCEL": "cancel",
+    "SAVE": "save",
+    "YES": "yes",
+    "ALERT": "Alert",
+    "404_TEXT": "The content you were looking for doesn't exist.",
+
+    "SESSION": {
+        "LOGOUT": {
+            "CONFIRM": {
+                "TITLE": "We'll miss you",
+                "CONTENT": "Are you sure you want to logout?"
+            }
+        }
+    },
+
+    "OFFLINE": {
+        "TITLE": "Something went wrong",
+        "SUB_TITLE": "No connection to the server; please check your network settings",
+        "FOOTER_TEXT": "To try again please click here"
+    },
+    "PUBLIC": {
+        "ATTRIBUTES": {
+            "CONFIRM_PASSWORD": {
+                "LABEL": "Confirm password*",
+                "PLACEHOLDER": "re-enter your password",
+                "VALIDATE": {
+                    "REQUIRED": "Please, confirm your password.",
+                    "MATCH": "Passwords do not match"
+                }
+            }
+        },
+        "LOGIN": {
+            "TITLE": "Edit Your SOS-ID Account",
+            "SUB_TITLE": "enter with your credentials",
+            "FORGOT_PASSWORD_LINK": "Forgot your password?",
+            "FOOTER_TEXT": "You don't have an account yet?",
+            "CREATE_NEW_ACCOUNT_LINK": "Create new account",
+            "SUBMIT_BUTTON": "LOGIN",
+            "INVALID_EMAIL_PASSWORD_TEXT": "Invalid email or password.",
+            "SENT_REGISTRATION_LINK": "We detected that your e-mail is not in our system. We sent a e-mail to you with a registration link."
+        },
+        "CREATE_ACCOUNT": {
+            "TITLE": "Welcome to <span class='light'> SOS-ID </span>",
+            "SUB_TITLE": "Let's start by entering your company name below, e-mail and password.",
+            "HAS_ACCOUNT_TEXT": "If you already have an account?",
+            "LOGIN_HERE_LINK": "Log in here",
+            "SUBMIT_BUTTON": "SIGN UP",
+            "SUCCESS": {
+                "TITLE": "Thanks for signing up to <span class='light'> SOS-ID </span>!",
+                "SUB_TITLE": "Please, log in using your email:",
+                "FOOTER_TEXT": "Now you have an account"
+            }
+        },
+        "FORGOT_PASSWORD": {
+            "TITLE": "Forgot your password?",
+            "SUB_TITLE": "We'll email you instructions on how to reset your password",
+            "SUBMIT_BUTTON": "Reset Password",
+            "REMEMBER_PASSWORD_TEXT": "If you remember your password.",
+            "LOGIN_HERE_LINK": "Log in here",
+            "SUCCESS_TEXT": "If we found an account with the email address <strong>{{email}}</strong> in the system, you will receive an email from us shortly"
+        },
+        "RESET_PASSWORD": {
+            "TITLE": "Change your password",
+            "SUB_TITLE": "Please fill the fields below to change your password.",
+            "SUBMIT_BUTTON": "Change Password",
+            "FOOTER_TEXT": "You remember your password?",
+            "LOGIN_HERE_LINK": "Log in here",
+            "SUCCESS": {
+                "TITLE": "Password Changed",
+                "SUB_TITLE": "Please, click here to log in."
+            }
+        }
+    },
+    "PRIVATE": {
+        "PROFILE": {
+            "MY_RECORDS": "My Records",
+            "PERSONAL_DATA": {
+                "PAGE_TITLE": "Personal Data",
+                "BASIC_INFO": "Basic Informations"
+            },
+            "DOCTORS": {
+                "PAGE_TITLE": "Doctors",
+                "ADD_NEW": "Add New doctor"
+            },
+            "MEDICATIONS": {
+                "PAGE_TITLE": "Medications",
+                "ADD_NEW": "Add New Medication"
+            },
+            "EMERGENCY CONTACTS": {
+                "PAGE_TITLE": "Emergency Contacts",
+                "ADD_NEW": "Add New Emergency Contact"
+            },
+            "HEALTH CONDITIONS": {
+                "PAGE_TITLE": "Health Conditions",
+                "ADD_NEW": "Add New Condition"
+            },
+            "HEALTH INSURANCES": {
+                "PAGE_TITLE": "Health Insurances",
+                "ADD_NEW": "Add New Insurance"
+            },
+            "ALLERGIES": {
+                "PAGE_TITLE": "Allergies",
+                "DRUG": {
+                    "TYPE": "Drug",
+                    "TITLE": "Do you have any known <strong>Drug</strong> Allergies?",
+                    "ADD_NEW_TEXT": "Add Drug Allergy"
+                },
+                "FOOD": {
+                    "TYPE": "Food",
+                    "TITLE": "Do you have any known <strong>Food</strong> Allergies?",
+                    "ADD_NEW_TEXT": "Add Food Allergy"
+                },
+                "INSECT": {
+                    "TYPE": "Insect",
+                    "TITLE": "Do you have any known <strong>Insect</strong> Allergies?",
+                    "ADD_NEW_TEXT": "Add Insect Allergy"
+                },
+                "OTHER": {
+                    "TYPE": "Other",
+                    "TITLE": "Do you have any known <strong>Other</strong> Allergies?",
+                    "ADD_NEW_TEXT": "Add Other Allergy"
+                }
+            },
+            "GLASSES PASS": {
+                "PAGE_TITLE": "Glasses Pass",
+                "LEFT EYE": "L - Left Eye",
+                "RIGHT EYE": "R - Right Eye"
+            },
+            "LIVING WILL": {
+                "PAGE_TITLE": "Living Will"
+            },
+            "ORGAN DONOR CARD": {
+                "PAGE_TITLE": "Organ Donor Card",
+                "UPLOAD_TIP": "Upload your organ donor card",
+                "QUESTIONS": {
+                    "ALLOW_AFTER_DEATH": "Yes, I allow after medical finding my death my body organs and tissues are removed",
+                    "ALLOW_EXCEPT": "Yes, I authorise this, except for following organs/tissues:",
+                    "ALLOW_ONLY_FOLLOWING": "Yes, I allow this, but only for the following organs/tissues:",
+                    "NOT_ALLOW": "No, I contradict a removal of organs or tissues.",
+                    "PERSON_SHOULD_DECIDE": "About Yes or No then the following person should decide:"
+                }
+            },
+            "PRIVACY": {
+                "PAGE_TITLE": "Edit the privacy of your data",
+                "PAGE_SUBTITLE": "Not all things need to be exposed to the public. Manage privacy bellow",
+                "BLOCK_ALL": "Block All",
+                "UNBLOCK_ALL": "Unblock All",
+                "RESET": "Reset"
+            },
+            "PRINT CARD": {
+                "PAGE_TITLE": "We are almost there! We will print your card!",
+                "PAGE_SUBTITLE": "First, please check your data so that it is all rigth, if you find an error, return to your record and correct what is wrong."
+            },
+            "WELCOME": {
+                "PAGE_TITLE": "Welcome to SOS-ID Edit Profile",
+                "PAGE_SUBTITLE": "It does not have a plan and is on trial version. Choose between the two options below to proceed:"
+            }
+
+        }
     }
-  },
-  "LOGOUT_BUTTON": "Logout",
-  "CANCEL": "cancel",
-  "SAVE": "save",
-  "YES": "yes",
-  "ALERT": "Alert",
-  "404_TEXT": "The content you were looking for doesn't exist.",
-
-  "SESSION": {
-    "LOGOUT": {
-      "CONFIRM": {
-        "TITLE": "We'll miss you",
-        "CONTENT": "Are you sure you want to logout?"
-      }
-    }
-  },
-
-  "OFFLINE": {
-    "TITLE": "Something went wrong",
-    "SUB_TITLE": "No connection to the server; please check your network settings",
-    "FOOTER_TEXT": "To try again please click here"
-  },
-  "PUBLIC": {
-    "ATTRIBUTES": {
-      "CONFIRM_PASSWORD": {
-        "LABEL": "Confirm password*",
-        "PLACEHOLDER": "re-enter your password",
-        "VALIDATE": {
-          "REQUIRED": "Please, confirm your password.",
-          "MATCH": "Passwords do not match"
-        }
-      }
-    },
-    "LOGIN": {
-      "TITLE": "Edit Your SOS-ID Account",
-      "SUB_TITLE": "enter with your credentials",
-      "FORGOT_PASSWORD_LINK": "Forgot your password?",
-      "FOOTER_TEXT": "You don't have an account yet?",
-      "CREATE_NEW_ACCOUNT_LINK": "Create new account",
-      "SUBMIT_BUTTON": "LOGIN",
-      "INVALID_EMAIL_PASSWORD_TEXT": "Invalid email or password.",
-      "SENT_REGISTRATION_LINK": "We detected that your e-mail is not in our system. We sent a e-mail to you with a registration link."
-    },
-    "CREATE_ACCOUNT": {
-      "TITLE": "Welcome to <span class='light'> SOS-ID </span>",
-      "SUB_TITLE": "Let's start by entering your company name below, e-mail and password.",
-      "HAS_ACCOUNT_TEXT": "If you already have an account?",
-      "LOGIN_HERE_LINK": "Log in here",
-      "SUBMIT_BUTTON": "SIGN UP",
-      "SUCCESS": {
-        "TITLE": "Thanks for signing up to <span class='light'> SOS-ID </span>!",
-        "SUB_TITLE": "Please, log in using your email:",
-        "FOOTER_TEXT": "Now you have an account"
-      }
-    },
-    "FORGOT_PASSWORD": {
-      "TITLE": "Forgot your password?",
-      "SUB_TITLE": "We'll email you instructions on how to reset your password",
-      "SUBMIT_BUTTON": "Reset Password",
-      "REMEMBER_PASSWORD_TEXT": "If you remember your password.",
-      "LOGIN_HERE_LINK": "Log in here",
-      "SUCCESS_TEXT": "If we found an account with the email address <strong>{{email}}</strong> in the system, you will receive an email from us shortly"
-    },
-    "RESET_PASSWORD": {
-      "TITLE": "Change your password",
-      "SUB_TITLE": "Please fill the fields below to change your password.",
-      "SUBMIT_BUTTON": "Change Password",
-      "FOOTER_TEXT": "You remember your password?",
-      "LOGIN_HERE_LINK": "Log in here",
-      "SUCCESS": {
-        "TITLE": "Password Changed",
-        "SUB_TITLE": "Please, click here to log in."
-      }
-    }
-  },
-  "PRIVATE": {
-    "PROFILE": {
-      "MY_RECORDS": "My Records",
-      "PERSONAL_DATA": {
-        "PAGE_TITLE": "Personal Data",
-        "BASIC_INFO": "Basic Informations"
-      },
-      "DOCTORS": {
-        "PAGE_TITLE": "Doctors",
-        "ADD_NEW": "Add New doctor"
-      },
-      "MEDICATIONS": {
-        "PAGE_TITLE": "Medications",
-        "ADD_NEW": "Add New Medication"
-      },
-      "EMERGENCY CONTACTS": {
-        "PAGE_TITLE": "Emergency Contacts",
-        "ADD_NEW": "Add New Emergency Contact"
-      },
-      "HEALTH CONDITIONS": {
-        "PAGE_TITLE": "Health Conditions",
-        "ADD_NEW": "Add New Condition"
-      },
-      "HEALTH INSURANCES": {
-        "PAGE_TITLE": "Health Insurances",
-        "ADD_NEW": "Add New Insurance"
-      },
-      "ALLERGIES": {
-        "PAGE_TITLE": "Allergies",
-        "DRUG": {
-          "TYPE": "Drug",
-          "TITLE": "Do you have any known <strong>Drug</strong> Allergies?",
-          "ADD_NEW_TEXT": "Add Drug Allergy"
-        },
-        "FOOD": {
-          "TYPE": "Food",
-          "TITLE": "Do you have any known <strong>Food</strong> Allergies?",
-          "ADD_NEW_TEXT": "Add Food Allergy"
-        },
-        "INSECT": {
-          "TYPE": "Insect",
-          "TITLE": "Do you have any known <strong>Insect</strong> Allergies?",
-          "ADD_NEW_TEXT": "Add Insect Allergy"
-        },
-        "OTHER": {
-          "TYPE": "Other",
-          "TITLE": "Do you have any known <strong>Other</strong> Allergies?",
-          "ADD_NEW_TEXT": "Add Other Allergy"
-        }
-      },
-      "GLASSES PASS": {
-        "PAGE_TITLE": "Glasses Pass",
-        "LEFT EYE": "L - Left Eye",
-        "RIGHT EYE": "R - Right Eye"
-      },
-      "LIVING WILL": {
-        "PAGE_TITLE": "Living Will"
-      },
-      "ORGAN DONOR CARD": {
-        "PAGE_TITLE": "Organ Donor Card",
-        "UPLOAD_TIP": "Upload your organ donor card",
-        "QUESTIONS": {
-          "ALLOW_AFTER_DEATH": "Yes, I allow after medical finding my death my body organs and tissues are removed",
-          "ALLOW_EXCEPT": "Yes, I authorise this, except for following organs/tissues:",
-          "ALLOW_ONLY_FOLLOWING": "Yes, I allow this, but only for the following organs/tissues:",
-          "NOT_ALLOW": "No, I contradict a removal of organs or tissues.",
-          "PERSON_SHOULD_DECIDE": "About Yes or No then the following person should decide:"
-        }
-      },
-      "PRIVACY": {
-        "PAGE_TITLE": "Edit the privacy of your data",
-        "PAGE_SUBTITLE": "Not all things need to be exposed to the public. Manage privacy bellow",
-        "BLOCK_ALL": "Block All",
-        "UNBLOCK_ALL": "Unblock All",
-        "RESET": "Reset"
-      },
-      "PRINT CARD": {
-        "PAGE_TITLE": "We are almost there! We will print your card!",
-        "PAGE_SUBTITLE": "First, please check your data so that it is all rigth, if you find an error, return to your record and correct what is wrong."
-      },
-      "WELCOME": {
-        "PAGE_TITLE": "Welcome to SOS-ID Edit Profile",
-        "PAGE_SUBTITLE": "It does not have a plan and is on trial version. Choose between the two options below to proceed:"
-      }
-
-    }
-  }
 }

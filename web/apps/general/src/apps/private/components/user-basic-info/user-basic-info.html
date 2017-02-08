@@ -22,14 +22,12 @@
                         <input ng-model="UserBasicInfoCtrl.user.profile.firstName">
                     </md-input-container>
                 </div>
-
                 <div layout="row" flex="50">
                     <md-input-container nx-model-attribute="UserProfile:lastName" flex="100" class="md-block">
                         <input ng-model="UserBasicInfoCtrl.user.profile.lastName">
                     </md-input-container>
                 </div>
             </div>
-
             <div layout="row">
                 <div layout="row" flex="grow">
                     <md-input-container nx-model-attribute="UserProfile:gender" flex="100" class="md-block">
@@ -42,7 +40,6 @@
                         </md-select>
                     </md-input-container>
                 </div>
-
                 <div layout="row" flex="grow">
                     <md-input-container nx-model-attribute="UserProfile:bloodType" flex="100" class="md-block">
                         <md-select ng-model="UserBasicInfoCtrl.user.profile.bloodType" aria-label="blood type">
@@ -58,10 +55,8 @@
                                 <md-option value="AB-">AB-</md-option>
                             </md-optgroup>
                         </md-select>
-
                     </md-input-container>
                 </div>
-
                 <div layout="row" flex="noshrink" ng-show="UserBasicInfoCtrl.allowEdit">
                     <md-input-container nx-model-attribute="UserProfile:birthDate">
                         <md-datepicker ng-model="UserBasicInfoCtrl.user.profile.birthDate"></md-datepicker>
@@ -73,32 +68,48 @@
                     </md-input-container>
                 </div>
             </div>
-            <div layout="row">
-                <md-input-container nx-model-attribute="UserProfile:address" flex="100" class="md-block">
-                    <input ng-model="UserBasicInfoCtrl.user.profile.address">
-                </md-input-container>
-            </div>
-            <div layout="row">
-                <md-input-container nx-model-attribute="User:plan" flex="100">
-                    <input ng-model="UserBasicInfoCtrl.user.profile.plan.name" skip-disable="true" disabled>
-                </md-input-container>
-            </div>
-            <div layout="row">
-                <md-input-container nx-model-attribute="User:period" flex="100" class="md-block">
-                    <input ng-model="UserBasicInfoCtrl.user.period" skip-disable="true" disabled>
-                </md-input-container>
+            <div ng-repeat="address in UserBasicInfoCtrl.user.profile.address track by $index">
+                <div layout="row">
+                    <md-input-container nx-model-attribute="UserProfile:street" flex="50" class="md-block">
+                        <input aria-label="Street" placeholder="{{address.street}}" ng-model="UserBasicInfoCtrl.user.profile.street">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="UserProfile:city" flex="50" class="md-block">
+                        <input aria-label="City" placeholder="{{address.city}}" ng-model="UserBasicInfoCtrl.user.profile.city">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="UserProfile:country" flex="50" class="md-block">
+                        <input aria-label="Country" placeholder="{{address.country}}" ng-model="UserBasicInfoCtrl.user.profile.country">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="UserProfile:provincy" flex="50" class="md-block">
+                        <input aria-label="Provincy" placeholder="{{address.provincy}}" ng-model="UserBasicInfoCtrl.user.profile.provincy">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="UserProfile:type" flex="50" class="md-block">
+                        <input aria-label="Type" placeholder="{{address.type}}" ng-model="UserBasicInfoCtrl.user.profile.type">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="UserProfile:postalCode" flex="50" class="md-block">
+                        <input placeholder="{{address.postalCode}}" aria-label="Postal Code" ng-model="UserBasicInfoCtrl.user.profile.postalCode">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="UserProfile:plan" flex="100">
+                        <input ng-model="UserBasicInfoCtrl.user.profile.plan.name" skip-disable="true" disabled>
+                    </md-input-container>
+                </div>
             </div>
         </div>
         <div class="personal-data__avatar" layout="column" flex-gt-xs="30" flex="none" layout-align="center center">
-            <div layout="column" >
+            <div layout="column">
                 <div style="margin:auto" class="personal-data__avatar__img-container">
                     <progress-circle></progress-circle>
                 </div>
                 <div class="personal-data__avatar__text">
-                    <p>Complete your profile<br>it's at {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</p>
+                    <p>Complete your profile
+                        <br>it's at {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</p>
                 </div>
             </div>
         </div>
     </div>
-
 </form>

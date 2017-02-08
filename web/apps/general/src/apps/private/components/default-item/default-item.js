@@ -45,13 +45,16 @@
             self.remove = remove;
             self.enableFields = enableFields;
 
+
             var originatorEv = originatorEv;
 
             // Private methods
             self.$onInit = function() {
                 self.isCreate = (self.item.id === undefined);
                 if (self.isCreate) {
-                    self.attributes = self.getAttributes();
+                    if (self.getAttributes) {
+                        self.attributes = self.getAttributes();
+                    }
                     console.log(self.item);
                     enableFields();
                 }
@@ -119,7 +122,7 @@
                 $mdMenu.open(ev);
             };
 
-            this.set = function(rel){
+            this.set = function(rel) {
                 self.item.relationship = rel;
 
                 console.log(self.item.relationship);

@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -23,10 +23,10 @@
                 }
             },
             instanceMethods: {
-                create: function () {
+                create: function() {
                     return UserApi.create(this);
                 },
-                updateProfile: function () {
+                updateProfile: function() {
                     return this.profile.update();
                 },
                 hasPlan: function() {
@@ -53,15 +53,15 @@
                         unique: {
                             isAsync: true,
                             message: true,
-                            validate: function (value, id) {
+                            validate: function(value, id) {
                                 var deferred = $q.defer();
 
                                 UserApi
                                     .emailExists(value, id)
-                                    .then(function (result) {
+                                    .then(function(result) {
                                         deferred.reject();
                                     })
-                                    .catch(function () {
+                                    .catch(function() {
                                         deferred.resolve();
 
                                     });
@@ -84,17 +84,6 @@
                         password: {
                             message: true
                         }
-                    }
-                },
-                plan: {
-                    label: true
-                },
-                period: {
-                    label: true
-                },
-                familyDoctor: {
-                    firstName: {
-                        label: true
                     }
                 }
             };

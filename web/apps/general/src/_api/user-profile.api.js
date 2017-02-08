@@ -22,7 +22,7 @@
             options = options || {};
             options.url = url;
             options.data = data;
-            return ApiService.PutMultiformData(options);
+            return ApiService.Put(options);
         };
     }
 })();
