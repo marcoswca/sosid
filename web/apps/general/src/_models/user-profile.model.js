@@ -30,8 +30,8 @@
                 update: function() {
                     var self = this;
                     var changedValues = self._getChangedValues();
+                    changedValues.address = self.address;
                     console.log(self);
-                    console.log(changedValues);
                     return UserProfileApi
                         .update(changedValues)
                         .then(function() {
@@ -109,6 +109,9 @@
                     label: true
                 },
                 plan: {
+                    label: true
+                },
+                number: {
                     label: true
                 },
                 familyDoctor: {

@@ -183,7 +183,13 @@
                 "TYPE": {
                     "LABEL": "Type",
                     "VALIDATE": {
-                        "REQUIRED": "type is required"
+                        "REQUIRED": "Type is required"
+                    }
+                },
+                "NUMBER": {
+                    "LABEL": "Number",
+                    "VALIDATE": {
+                        "REQUIRED": "Number is required"
                     }
                 }
             }
@@ -416,6 +422,12 @@
                 },
                 "PLAN": {
                     "LABEL": "Plan"
+                },
+                "NUMBER": {
+                    "LABEL": "Number",
+                    "VALIDATE": {
+                        "REQUIRED": "Number is required"
+                    }
                 }
             }
         },

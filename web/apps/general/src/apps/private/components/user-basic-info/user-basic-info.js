@@ -2,7 +2,7 @@
     'use strict';
 
     var dependencies = [
-        'model.user'
+        'model.userProfile'
     ];
 
     angular
@@ -20,7 +20,7 @@
             templateUrl: 'templates/user-basic-info.html'
         };
 
-        function UserBasicInfoCtrl($scope, Session, $timeout) {
+        function UserBasicInfoCtrl($scope, Session, $timeout, UserProfileApi) {
             // Private variables
             var self = this;
 
@@ -33,6 +33,9 @@
             self.cancelUpdate = cancelUpdate;
             self.updateProfile = updateProfile;
 
+            self.addAddress = addAddress;
+            self.removeAddress = removeAddress;
+
             // Private methods
             return (function init() {})();
 
@@ -42,13 +45,36 @@
             }
 
             function updateProfile() {
+              console.log(self.user);
                 return self.user
-                    .updateProfile()
+                    .updateProfile(self.user)
                     .then(function() {
                         $timeout(function() {
                             self.allowEdit = false;
                         });
                     });
+            }
+
+            function removeAddress(address) {
+                var query = "?street=" + address.street + "&number=" + address.number;
+                return UserProfileApi.deleteAddress(query).then(function successCallback(data) {
+                    var index = self.user.profile.address.indexOf(address);
+                    console.log(index);
+                    self.user.profile.address.splice(index, 1);
+                }, function errorCallback(reason) {
+
+                });
+            }
+
+            function addAddress() {
+                return self.user.profile.address.push({
+                    street: undefined,
+                    city: undefined,
+                    country: undefined,
+                    postalCode: undefined,
+                    type: undefined,
+                    provincy: undefined
+                });
             }
 
             function cancelUpdate() {
