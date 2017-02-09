@@ -36,7 +36,17 @@
                     <input ng-model="DefaultItemCtrl.item.relationship">
                 </md-input-container> -->
 
-                <md-menu>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>{{DefaultItemCtrl.item.relationship || 'Relationship'}}</label>
+                    <md-select ng-model="DefaultItemCtrl.attributes.relationship.type">
+                      <md-option ng-repeat="rel in DefaultItemCtrl.attributes.relationship.values" value="{{rel}}" 
+                                    ng-click="DefaultItemCtrl.set(rel)">
+                        {{rel}}
+                      </md-option>
+                    </md-select>
+                </md-input-container>
+                <!-- <md-menu>
                     <md-button style="text-transform: capitalize; opacity: 0.4;" class="md-raised md-block md-button md-ink-ripple" ng-click="$mdOpenMenu($event)">
                         {{DefaultItemCtrl.item.relationship || 'Relationship'}}
                     </md-button>
@@ -47,7 +57,7 @@
                             </md-button>
                         </md-menu-item>
                     </md-menu-content>
-                </md-menu>
+                </md-menu> -->
             </div>
             <div layout="row" layout-xs="column">
                 <md-input-container nx-model-attribute="EmergencyContact:mobileNumber  " flex-gt-xs="33" flex="none" class="md-block">

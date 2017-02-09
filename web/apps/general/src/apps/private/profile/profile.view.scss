@@ -35,7 +35,10 @@ body {
 
 .profile-content {
     margin-top: -65px;
+    min-height: calc(100vh - 308px);
+
     @media screen and (max-width: 600px) {
+        min-height: calc(100vh - 134px);
         margin-top: 0;
     }
     .profile-content__container {
