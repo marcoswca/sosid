@@ -45,7 +45,7 @@
             }
 
             function updateProfile() {
-              console.log(self.user);
+                console.log(self.user);
                 return self.user
                     .updateProfile(self.user)
                     .then(function() {
@@ -56,14 +56,22 @@
             }
 
             function removeAddress(address) {
-                var query = "?street=" + address.street + "&number=" + address.number;
-                return UserProfileApi.deleteAddress(query).then(function successCallback(data) {
-                    var index = self.user.profile.address.indexOf(address);
-                    console.log(index);
-                    self.user.profile.address.splice(index, 1);
-                }, function errorCallback(reason) {
+                if (address.street && address.number) {
+                    var query = "?street=" + address.street + "&number=" + address.number;
+                    return UserProfileApi.deleteAddress(query).then(function successCallback(data) {
+                        spliceAddress(address);
+                    }, function errorCallback(reason) {
 
-                });
+                    });
+                } else {
+                    spliceAddress(address);
+                }
+            }
+
+
+            function spliceAddress(address) {
+                var index = self.user.profile.address.indexOf(address);
+                self.user.profile.address.splice(index, 1);
             }
 
             function addAddress() {

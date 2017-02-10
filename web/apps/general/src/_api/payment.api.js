@@ -22,6 +22,15 @@
             return ApiService.Get(options);
         };
 
+        this.getInvoice = function(id, options) {
+            options = options || {};
+            options.url = APP_CONFIG.URL.API_URL + '/payments/invoice/' + id;
+            options.params = {};
+            options.responseType = "arraybuffer";
+
+            return ApiService.Get(options);
+        };
+
         this.create = function(data, options) {
             options = options || {};
             options.url = url;

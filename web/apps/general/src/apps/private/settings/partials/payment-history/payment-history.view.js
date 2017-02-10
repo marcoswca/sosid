@@ -15,7 +15,18 @@
         // Public variables
         self.viewName = 'Payment History';
         self.isLoading = true;
- 
+
+        self.getInvoice = function(id) {
+            PaymentApi.getInvoice(id).then(function successCallback(data) {
+                var file = new Blob([data], {
+                    type: 'application/pdf'
+                });
+                var fileURL = URL.createObjectURL(file);
+                window.open(fileURL);
+            }, function errorCallback(reason) {
+                console.log(reason);
+            });
+        };
 
         self.initData = function() {
 

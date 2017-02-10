@@ -29,11 +29,12 @@
                     </md-input-container>
                 </div>
                 <div layout="row" layout-xs="column">
-                    <md-input-container nx-model-attribute="LivingWill:mobileNumber" flex-gt-xs="33" flex="none">
-                        <input ng-model="DefaultItemCtrl.item.mobileNumber">
+                    <md-input-container class="md-input-focused" nx-model-attribute="LivingWill:mobileNumber" flex-gt-xs="33" flex="none">
+                        <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
                     </md-input-container>
-                    <md-input-container nx-model-attribute="LivingWill:phoneNumber" flex-gt-xs="33" flex="none">
-                        <input ng-model="DefaultItemCtrl.item.phoneNumber">
+
+                    <md-input-container class="md-input-focused" nx-model-attribute="LivingWill:phoneNumber" flex-gt-xs="33" flex="none">
+                        <input intl-tel-input ng-model="DefaultItemCtrl.item.phoneNumber">
                     </md-input-container>
                 </div>
                 <div layout="row">
@@ -41,7 +42,7 @@
                         <input ng-model="DefaultItemCtrl.item.email">
                     </md-input-container>
                 </div>
-               <!--  <div layout="row" ng-repeat="address in LivingWillViewController.user.profile.address">
+                <!--  <div layout="row" ng-repeat="address in LivingWillViewController.user.profile.address">
                     <div layout="row">
                         <md-input-container nx-model-attribute="LivingWill:street" flex="50" class="md-block">
                             <input ng-model="address.street">
@@ -83,7 +84,8 @@
                         <div class="profile-content__upload-files__title">Resource</div>
                         <div class="profile-content__upload-files__hint">(Upload your living will card)</div>
                     </div>
-                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
+                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
+                        class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                         <div class="profile-content__upload-dnd-area__icon">
                             <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
                             <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
@@ -95,9 +97,9 @@
                         <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
                             {{DefaultItemCtrl.item.file.name}}
                         </div>
-                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </form>
 </content-item-box>

@@ -74,6 +74,8 @@
 
             var methodsAllowed = ['get', 'post', 'put', 'delete'];
 
+            var responseType = undefined;
+
             if (methodsAllowed.indexOf(methodName) === -1) {
                 deferred.reject(new Error('ApiService: not a valid http method'));
             }
@@ -106,6 +108,10 @@
                 cache = true;
             }
 
+            if (options.responseType) {
+                responseType = angular.copy(options.responseType);
+            }
+
             url = options.url;
 
             $http({
@@ -113,7 +119,8 @@
                     url: url,
                     data: data,
                     params: params,
-                    cache: cache
+                    cache: cache,
+                    responseType: responseType
                 })
                 .then(function(response) {
                     deferred.resolve(response.data);

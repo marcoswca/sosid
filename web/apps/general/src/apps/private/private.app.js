@@ -7,6 +7,7 @@
         // Vendors
         'ui.utils.masks',
         'model.user',
+        'betsol.intlTelInput',
 
         // Settings Routes
         'private.routes.changePassword',
@@ -36,8 +37,16 @@
         .run(run);
 
     /** @ngInject */
-    function config($mdIconProvider, $mdThemingProvider, $urlRouterProvider) {
+    function config($mdIconProvider, $mdThemingProvider, $urlRouterProvider, intlTelInputOptions) {
         //$urlRouterProvider.when('/', '/profile/');
+        angular.extend(intlTelInputOptions, {
+            nationalMode: false,
+            utilsScript: './js/libs/utils.js',
+            defaultCountry: 'auto',
+            preferredCountries: ['de', 'pt'],
+            autoFormat: true,
+            autoPlaceholder: true
+        });
 
         $mdIconProvider
             .iconSet('action', 'assets/material-icons/action-icons.svg', 24)
