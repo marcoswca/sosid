@@ -8,12 +8,16 @@
         .controller('SubscriptionUpgradeViewController', SubscriptionUpgradeViewController);
 
     /** @ngInject */
-    function SubscriptionUpgradeViewController() {
+    function SubscriptionUpgradeViewController(Session) {
         // Private variables
         var self = this;
 
         // Public variables
         self.viewName = 'Subscription Upgrade';
+        console.log(Session);
+        self.actual = Session.user.profile.plan.name;
+
+
 
         //BASIC
         self.personalData = false;

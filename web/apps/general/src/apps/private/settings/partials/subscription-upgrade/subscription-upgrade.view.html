@@ -17,7 +17,7 @@
             <div class="plans__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias distinctio ducimus, enim eum libero odit quae quia reiciendis saepe. Accusamus assumenda autem consequatur ex exercitationem explicabo hic nostrum tempore vel!</div>
         </div>
         <div layout="row" layout-xs="column" flex class="plans__list">
-            <div class="plans__item plans__item__basic" flex-gt-xs="auto" flex-gt-md="33">
+            <div class="plans__item plans__item__basic" ng-class="{'plans__actual': SubUpCtrl.actual.toLowerCase() === 'basic' }" flex-gt-xs="auto" flex-gt-md="33">
                 <div class="plans__highlight">
                     <div class="plans__highlight__header">
                         <div class="plans__highlight__header__title">Basic</div>
@@ -46,7 +46,7 @@
                     <div class="plans__includes__list">
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.personalData }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.personalData }" layout="row" layout-align="space-between center">
-                                <span >Personal Data*</span>
+                                <span>Personal Data*</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('basic','1')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -57,7 +57,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.emergencyContact }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.emergencyContact }" layout="row" layout-align="space-between center">
-                                <span >Emergency Contacts**</span>
+                                <span>Emergency Contacts**</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('basic','2')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -80,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <div class="plans__item plans__item__intermediary" flex-gt-xs="auto" flex-gt-md="33">
+            <div class="plans__item plans__item__intermediary"  ng-class="{'plans__actual': SubUpCtrl.actual.toLowerCase() === 'standard' }" flex-gt-xs="auto" flex-gt-md="33">
                 <div class="plans__highlight">
                     <div class="plans__highlight__header">
                         <div class="plans__highlight__header__title">Standard</div>
@@ -109,7 +109,7 @@
                     <div class="plans__includes__list">
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.personalDataS }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.personalDataS }" layout="row" layout-align="space-between center">
-                                <span >Personal Data*</span>
+                                <span>Personal Data*</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('standard','1')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -120,7 +120,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.emergencyContactS }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.emergencyContactS }" layout="row" layout-align="space-between center">
-                                <span >Emergency Contacts**</span>
+                                <span>Emergency Contacts**</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('standard','2')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -131,7 +131,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.doctorsS }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.doctorsS }" layout="row" layout-align="space-between center">
-                                <span >Doctors</span>
+                                <span>Doctors</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('standard','3')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -142,7 +142,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.healthConditionS }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.healthConditionS }" layout="row" layout-align="space-between center">
-                                <span >Health Conditions</span>
+                                <span>Health Conditions</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('standard','3')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -154,7 +154,7 @@
                     </div>
                 </div>
             </div>
-            <div class="plans__item plans__item__premium" flex-gt-xs="auto" flex-gt-md="33">
+            <div class="plans__item plans__item__premium" ng-class="{'plans__actual': SubUpCtrl.actual.toLowerCase() === 'premium' }" flex-gt-xs="auto" flex-gt-md="33">
                 <div class="plans__highlight">
                     <div class="plans__highlight__header">
                         <div class="plans__highlight__header__title">Premium</div>
@@ -183,7 +183,7 @@
                     <div class="plans__includes__list">
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.personalDataP }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.personalDataP }" layout="row" layout-align="space-between center">
-                                <span >Personal Data*</span>
+                                <span>Personal Data*</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','1')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -194,7 +194,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.emergencyContactP }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.emergencyContactP }" layout="row" layout-align="space-between center">
-                                <span >Emergency Contacts**</span>
+                                <span>Emergency Contacts**</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','2')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -205,7 +205,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.doctorsP }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.doctorsP }" layout="row" layout-align="space-between center">
-                                <span >Doctors</span>
+                                <span>Doctors</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','3')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -216,7 +216,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.allergies }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.allergies }" layout="row" layout-align="space-between center">
-                                <span >Allergies</span>
+                                <span>Allergies</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','4')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -227,7 +227,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.medications }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.medications }" layout="row" layout-align="space-between center">
-                                <span >Medications</span>
+                                <span>Medications</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','5')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -238,7 +238,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.healthInsurance }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.healthInsurance }" layout="row" layout-align="space-between center">
-                                <span >Health Insurance</span>
+                                <span>Health Insurance</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','6')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -249,7 +249,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.healthConditionP }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.healthConditionP }" layout="row" layout-align="space-between center">
-                                <span >Health Condition</span>
+                                <span>Health Condition</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','7')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -260,7 +260,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.livingWill }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.livingWill }" layout="row" layout-align="space-between center">
-                                <span >Living Will</span>
+                                <span>Living Will</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','8')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -271,7 +271,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.organDononCard }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.organDononCard }" layout="row" layout-align="space-between center">
-                                <span >Organ Donon Card</span>
+                                <span>Organ Donon Card</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','9')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
@@ -282,7 +282,7 @@
                         </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.glassesPass }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.glassesPass }" layout="row" layout-align="space-between center">
-                                <span >Glasses Pass</span>
+                                <span>Glasses Pass</span>
                                 <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','10')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
