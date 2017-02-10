@@ -1,126 +1,113 @@
 {
-  "version": "0.10",
-  "build_dir": "../.bin",
-  "html5Location": {
-    "test": "/web/",
-    "production": "/",
-    "development": "/"
-  },
-  "app_files": {
-    "js": [
-      "src/**/*.js",
-      "!src/**/*.test.js",
-      "!src/**/*.spec.js",
-      "!src/**/*.spec.wip",
-      "!src/**/*.md",
-      "!src/assets/**/*.js"
+    "version": "0.10",
+    "build_dir": "../.bin",
+    "html5Location": {
+        "test": "/web/",
+        "production": "/",
+        "development": "/"
+    },
+    "app_files": {
+        "js": [
+            "src/**/*.js",
+            "!src/**/*.test.js",
+            "!src/**/*.spec.js",
+            "!src/**/*.spec.wip",
+            "!src/**/*.md",
+            "!src/assets/**/*.js"
+        ],
+        "atpl": "src/**/*.html",
+        "html": [
+            "src/index.html"
+        ],
+        "sassVariables": "src/shared/styles/variables.scss",
+        "baseSass": "src/shared/styles/*.scss",
+        "sass": [
+            "src/**/*.scss"
+        ]
+    },
+    "core_api": [
+        "*"
     ],
-    "atpl": "src/**/*.html",
-    "html": [
-      "src/index.html"
+    "core_libs": [
+        "utility",
+        "validation",
+        "validators",
+        "base-model",
+        "router-helper",
+        "dictionary"
     ],
-    "sassVariables": "src/shared/styles/variables.scss",
-    "baseSass": "src/shared/styles/*.scss",
-    "sass": [
-      "src/**/*.scss"
-    ]
-  },
-  "core_api": [
-    "*"
-  ],
-  "core_libs": [
-    "utility",
-    "validation",
-    "validators",
-    "base-model",
-    "router-helper",
-    "dictionary"
-  ],
-  "lib_files": {
-    "js": [
-      {
-        "development": "vendor/angular/angular.js",
-        "production": "vendor/angular/angular.min.js"
-      },
-      {
-        "development": "vendor/jquery/dist/jquery.js",
-        "production": "vendor/jquery/dist/jquery.min.js"
-      },
-      {
-        "development": "vendor/angular-material/angular-material.js",
-        "production": "vendor/angular-material/angular-material.min.js"
-      },
-      {
-        "development": "vendor/angular-animate/angular-animate.js",
-        "production": "vendor/angular-animate/angular-animate.min.js"
-      },
-      {
-        "development": "vendor/angular-touch/angular-touch.js",
-        "production": "vendor/angular-touch/angular-touch.min.js"
-      },
-      {
-        "development": "vendor/angular-messages/angular-messages.js",
-        "production": "vendor/angular-messages/angular-messages.min.js"
-      },
-      {
-        "development": "vendor/angular-messages/angular-messages.js",
-        "production": "vendor/angular-messages/angular-messages.min.js"
-      },
-      {
-        "development": "vendor/angular-sanitize/angular-sanitize.js",
-        "production": "vendor/angular-sanitize/angular-sanitize.min.js"
-      },
-      {
-        "development": "vendor/angular-cookies/angular-cookies.js",
-        "production": "vendor/angular-cookies/angular-cookies.min.js"
-      },
-      {
-        "development": "vendor/angular-ui-router/release/angular-ui-router.js",
-        "production": "vendor/angular-ui-router/release/angular-ui-router.min.js"
-      },
-      {
-        "development": "vendor/angular-aria/angular-aria.js",
-        "production": "vendor/angular-aria/angular-aria.min.js"
-      },
-      {
-        "development": "vendor/angular-input-masks/angular-input-masks-standalone.js",
-        "production": "vendor/angular-input-masks/angular-input-masks-standalone.min.js"
-      },
-      {
-        "development": "vendor/underscore/underscore.js",
-        "production": "vendor/underscore/underscore.js"
-      },
-      {
-        "development": "vendor/moment/min/moment-with-locales.min.js",
-        "production": "vendor/moment/min/moment-with-locales.min.js"
-      },
-      {
-        "development": "vendor/angular-i18n/angular-locale_de-de.js",
-        "production": "vendor/angular-i18n/angular-locale_de-de.js"
-      },
-      {
-        "development": "vendor/lodash/dist/lodash.js",
-        "production": "vendor/lodash/dist/lodash.min.js"
-      },
-      {
-        "development": "vendor/angular-translate/angular-translate.js",
-        "production": "vendor/angular-translate/angular-translate.min.js"
-      },
-      {
-        "development": "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
-        "production": "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
-      }
-    ],
-    "maps": [
-      "vendor/angular-sanitize/angular-sanitize.min.js.map"
-    ],
-    "css": [
-      "vendor/angular-material/angular-material.min.css"
-    ],
-    "assets": [
-      "vendor/"
-    ],
-    "fonts": [
-    ]
-  }
+    "lib_files": {
+        "js": [{
+            "development": "vendor/angular/angular.js",
+            "production": "vendor/angular/angular.min.js"
+        }, {
+            "development": "vendor/jquery/dist/jquery.js",
+            "production": "vendor/jquery/dist/jquery.min.js"
+        }, {
+            "development": "vendor/angular-material/angular-material.js",
+            "production": "vendor/angular-material/angular-material.min.js"
+        }, {
+            "development": "vendor/angular-animate/angular-animate.js",
+            "production": "vendor/angular-animate/angular-animate.min.js"
+        }, {
+            "development": "vendor/angular-touch/angular-touch.js",
+            "production": "vendor/angular-touch/angular-touch.min.js"
+        }, {
+            "development": "vendor/angular-messages/angular-messages.js",
+            "production": "vendor/angular-messages/angular-messages.min.js"
+        }, {
+            "development": "vendor/angular-messages/angular-messages.js",
+            "production": "vendor/angular-messages/angular-messages.min.js"
+        }, {
+            "development": "vendor/angular-sanitize/angular-sanitize.js",
+            "production": "vendor/angular-sanitize/angular-sanitize.min.js"
+        }, {
+            "development": "vendor/angular-cookies/angular-cookies.js",
+            "production": "vendor/angular-cookies/angular-cookies.min.js"
+        }, {
+            "development": "vendor/angular-ui-router/release/angular-ui-router.js",
+            "production": "vendor/angular-ui-router/release/angular-ui-router.min.js"
+        }, {
+            "development": "vendor/angular-aria/angular-aria.js",
+            "production": "vendor/angular-aria/angular-aria.min.js"
+        }, {
+            "development": "vendor/angular-input-masks/angular-input-masks-standalone.js",
+            "production": "vendor/angular-input-masks/angular-input-masks-standalone.min.js"
+        }, {
+            "development": "vendor/underscore/underscore.js",
+            "production": "vendor/underscore/underscore.js"
+        }, {
+            "development": "vendor/moment/min/moment-with-locales.min.js",
+            "production": "vendor/moment/min/moment-with-locales.min.js"
+        }, {
+            "development": "vendor/angular-i18n/angular-locale_de-de.js",
+            "production": "vendor/angular-i18n/angular-locale_de-de.js"
+        }, {
+            "development": "vendor/lodash/dist/lodash.js",
+            "production": "vendor/lodash/dist/lodash.min.js"
+        }, {
+            "development": "vendor/ng-file-upload/ng-file-upload.js",
+            "production": "vendor/ng-file-upload/ng-file-upload.min.js"
+        },
+        {
+            "development": "vendor/ng-file-upload-shim/ng-file-upload-shim.js",
+            "production": "vendor/ng-file-upload-shim/ng-file-upload-shim.min.js"
+        }, {
+            "development": "vendor/angular-translate/angular-translate.js",
+            "production": "vendor/angular-translate/angular-translate.min.js"
+        }, {
+            "development": "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
+            "production": "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
+        }],
+        "maps": [
+            "vendor/angular-sanitize/angular-sanitize.min.js.map"
+        ],
+        "css": [
+            "vendor/angular-material/angular-material.min.css"
+        ],
+        "assets": [
+            "vendor/"
+        ],
+        "fonts": []
+    }
 }

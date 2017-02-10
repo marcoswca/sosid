@@ -6,7 +6,9 @@
                     <md-icon md-svg-icon="navigation:arrow_back" aria-label="Arrow Back"></md-icon>
                 </md-button>
             </a>
-            <span>My Settings</span>
+            <a href="profile.personalData" style="color: #fff;">
+                <span class="profile-content__header__title" ui-sref="profile.personalData">Home</span>
+            </a>
             <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
             <span class="profile-content__header__title">Upgrade Plan</span>
         </div>
@@ -41,7 +43,7 @@
                 <div class="plans__includes">
                     <div class="plans__includes__header">
                         <div class="plans__includes__header__title">Basic Includes</div>
-                        <div class="plans__includes__header__subtitle">All of these <span>great</span> features</div>
+                        <div class="plans__includes__header__subtitle">25MB of Data storage</div>
                     </div>
                     <div class="plans__includes__list">
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.personalData }">
@@ -104,7 +106,7 @@
                 <div class="plans__includes">
                     <div class="plans__includes__header">
                         <div class="plans__includes__header__title">Standard Includes</div>
-                        <div class="plans__includes__header__subtitle">Everything in <span>Basic</span>, and:</div>
+                        <div class="plans__includes__header__subtitle">500MB of Data storage</div>
                     </div>
                     <div class="plans__includes__list">
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.personalDataS }">
@@ -143,7 +145,7 @@
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.healthConditionS }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.healthConditionS }" layout="row" layout-align="space-between center">
                                 <span >Health Conditions</span>
-                                <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('standard','3')">
+                                <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('standard','4')">
                                     <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
                                 </md-button>
                             </div>
@@ -178,7 +180,7 @@
                 <div class="plans__includes">
                     <div class="plans__includes__header">
                         <div class="plans__includes__header__title">Premium Includes</div>
-                        <div class="plans__includes__header__subtitle">Everything in <span>Standard</span>, and:</div>
+                        <div class="plans__includes__header__subtitle">2GB of Data storagE</div>
                     </div>
                     <div class="plans__includes__list">
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.personalDataP }">

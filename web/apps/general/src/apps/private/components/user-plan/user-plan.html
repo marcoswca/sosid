@@ -1,4 +1,4 @@
-<div class="personal-data__plan profile-content__box">
+<div ng-if="!UserPlanCtrl.loading" class="personal-data__plan profile-content__box">
         <div layout="row" layout-align="space-between center" class="profile-content__box__title">
             <div>
                 <h3>Plan</h3>
@@ -12,7 +12,7 @@
                 <div layout="row">
                     <md-input-container flex="100" class="md-block">
                         <label>Current Plan</label>
-                        <input ng-class="{ basic : UserPlanCtrl.plan.name.toLowerCase() === 'basic',
+                        <input style="margin-top: 6px;" ng-class="{ basic : UserPlanCtrl.plan.name.toLowerCase() === 'basic',
                         standard : UserPlanCtrl.plan.name.toLowerCase() === 'standard',
                         premium : UserPlanCtrl.plan.name.toLowerCase() === 'premium' }"
                         class="md-ink-ripple" ng-model="UserPlanCtrl.plan.name" disabled>
@@ -22,13 +22,13 @@
                     <div layout="row" flex="50">
                         <md-input-container flex="100" class="md-block">
                             <label>Start</label>
-                            <input ng-model="UserPlanCtrl.plan.moreInformations.registration" disabled>
+                            <input ng-model="UserPlanCtrl.registration" disabled>
                         </md-input-container>
                     </div>
                     <div layout="row" flex="50">
                         <md-input-container flex="100" class="md-block">
                             <label>End</label>
-                            <input ng-model="UserPlanCtrl.plan.moreInformations.expiration" disabled>
+                            <input ng-model="UserPlanCtrl.expiration" disabled>
                         </md-input-container>
                     </div>
                 </div>

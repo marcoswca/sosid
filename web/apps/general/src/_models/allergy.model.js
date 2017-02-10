@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -47,6 +47,9 @@
                     validate: {
                         required: true
                     }
+                },
+                file: {
+                    label: true
                 }
             };
         }

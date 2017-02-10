@@ -104,14 +104,19 @@
                         <div class="profile-content__upload-files__title">Resource</div>
                         <div class="profile-content__upload-files__hint">(Upload your living will card)</div>
                     </div>
-                    <div class="profile-content__upload-files__dnd-area" layout="column" layout-align="center center">
-                        <div class="profile-content__upload-dnd-area__icon">
-                            <md-icon md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
-                        </div>
-                        <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
-                        <div class="profile-content__upload-files__dnd-area__hint">Your files here or
-                            <span>browse</span></div>
+                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" ngf-change="DefaultItemCtrl.change($file)" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
+                    <div class="profile-content__upload-dnd-area__icon">
+                        <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
+                        <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
                     </div>
+                    <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
+                    <div ng-if="!DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">Your files here or
+                        <span>browse</span>
+                    </div>
+                    <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
+                        {{DefaultItemCtrl.item.file.name}}
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

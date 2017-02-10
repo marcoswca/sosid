@@ -2,7 +2,7 @@
     'use strict';
 
     var dependencies = [
-        'core.api.ApiService'
+        'core.api.ApiService', 'ngFileUpload'
     ];
 
     angular
@@ -10,11 +10,11 @@
         .service('OrganCardApi', OrganCardApi);
 
     /** @ngInject */
-    function OrganCardApi(APP_CONFIG, ApiService) {
+    function OrganCardApi(APP_CONFIG, ApiService, Upload) {
 
         var url = APP_CONFIG.URL.API_URL + '/user-organ-donator-card';
 
-        this.get = function (params, options) {
+        this.get = function(params, options) {
             options = options || {};
             options.url = url;
             options.params = params || {};
@@ -26,14 +26,14 @@
             options = options || {};
             options.url = url;
             options.data = data;
-            return ApiService.Post(options);
+            return ApiService.PostMultiformData(options, Upload);
         };
 
         this.update = function(id, data, options) {
             options = options || {};
-            options.url = url;
+            options.url = url + '/' + id;
             options.data = data;
-            return ApiService.Put(options);
+            return ApiService.PutMultiformData(options, Upload);
         };
     }
 

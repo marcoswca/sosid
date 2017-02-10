@@ -2,7 +2,7 @@
     'use strict';
 
     var dependencies = [
-        'core.api.ApiService'
+        'core.api.ApiService', 'ngFileUpload'
     ];
 
     angular
@@ -10,7 +10,7 @@
         .service('HealthConditionApi', HealthConditionApi);
 
     /** @ngInject */
-    function HealthConditionApi(APP_CONFIG, ApiService) {
+    function HealthConditionApi(APP_CONFIG, ApiService, Upload) {
 
         var url = APP_CONFIG.URL.API_URL + '/user-health-conditions';
 
@@ -23,17 +23,18 @@
         };
 
         this.create = function(data, options) {
+            delete data['$$hashKey'];
             options = options || {};
             options.url = url;
             options.data = data;
-            return ApiService.Post(options);
+            return ApiService.PostMultiformData(options, Upload);
         };
 
         this.update = function(id, data, options) {
             options = options || {};
             options.url = url + '/' + id;
             options.data = data;
-            return ApiService.Put(options);
+            return ApiService.PutMultiformData(options, Upload);
         };
 
         this.remove = function(id, options) {

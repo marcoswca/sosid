@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     var dependencies = [
@@ -41,6 +41,9 @@
                     label: true
                 },
                 notes: {
+                    label: true
+                },
+                file: {
                     label: true
                 }
             };
