@@ -45,7 +45,7 @@
             defaultCountry: 'auto',
             preferredCountries: ['de', 'pt'],
             autoFormat: true,
-            autoPlaceholder: true
+            autoPlaceholder: false
         });
 
         $mdIconProvider

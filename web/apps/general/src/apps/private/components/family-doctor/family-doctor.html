@@ -4,18 +4,13 @@
             <h3>Family Doctor</h3>
         </div>
         <div>
-            <md-menu md-offset="-50 50">
-                <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-                    <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-                </md-button>
-                <md-menu-content width="2">
-                    <md-menu-item>
-                        <md-button ng-click="FamilyDoctorCtrl.enableFields()"><span md-menu-align-target>{{ "ACTIONS.EDIT" | translate}}</span></md-button>
-                    </md-menu-item>
-                    <md-divider></md-divider>
-                </md-menu-content>
-            </md-menu>
+            <md-icon ui-sref="profile.doctors" class="buttonAdd" md-svg-icon="content:add" aria-label="add"></md-icon>
         </div>
+    </div>
+    <div ng-if="FamilyDoctorCtrl.user.familyDoctors.length === 0">
+        <p style="font-style:italic">
+            Please insert your family doctors.
+        </p>
     </div>
     <div ng-repeat="fmDoctor in FamilyDoctorCtrl.user.familyDoctors " layout="row" flex="100">
         <form layout="column" flex="100" nx-disable-all="FamilyDoctorCtrl.disabledFields || FamilyDoctorCtrl.isLoading" name="form">

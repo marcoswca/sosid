@@ -7,17 +7,21 @@
     @media screen and (max-width: 960px) {
         width: 90%;
     }
+    background-color: #FFFFFF;
+    opacity: 0.95;
 }
+
 
 .modal__header {
     text-align: center;
-    padding: 0 0 30px 0;
+    padding: 0 0 30px;
     display: table;
     margin: 0 auto;
 }
 
 .modal__footer {
     text-align: center;
+
     button {
         &.md-primary {
             padding: 5px 50px;
@@ -30,13 +34,13 @@
 .modal__title {
     font-size: 34px;
     font-weight: 300;
-    color: #001621;
+    color: black;
     margin-bottom: 10px;
     margin-top: 0;
 }
 
 .modal__subtitle {
-    color: rgba(#001621, 0.35);
+    color: rgb(23, 59,69);
     font-weight: 300;
     font-size: 18px;
     max-width: 500px;
@@ -46,8 +50,7 @@
 .modal__actions {
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;
-    margin-bottom: 80px;
+    margin: 0 auto 80px;
     text-align: center;
     display: table;
 }
@@ -81,6 +84,7 @@
     max-width: 96px;
     margin-left: 50px;
     margin-bottom: 80px;
+
     &:nth-child(5n + 1) {
         margin-left: 0;
     }
@@ -94,7 +98,8 @@
     }
 }
 
-.privacy-list__item__toggle-privacy_lock, .privacy-list__item__toggle-privacy_unlock  {
+.privacy-list__item__toggle-privacy_lock,
+.privacy-list__item__toggle-privacy_unlock {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -110,6 +115,7 @@
         top: -5px;
         right: 0;
     }
+
     svg {
         width: 50%;
         height: 50%;
@@ -143,6 +149,7 @@
         width: 64px;
         height: 64px;
     }
+
     svg {
         width: 60%;
         height: 60%;

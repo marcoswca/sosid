@@ -1,5 +1,5 @@
-<md-content layout="column" layout-align="center center" class="login__container">
-    <div layout="column" class="login-box__container">
+<md-content layout="row" flex="100" layout-align="center center" class="login__container">
+    <div layout="column" flex="60" flex-xs="100" flex-gt-md="50" class="login-box__container">
         <div class="login-box" layout="column" layout-align="start center">
             <h1 class="title" translate="PUBLIC.LOGIN.TITLE"></h1>
             <!--<h2 class="sub-title" translate="PUBLIC.LOGIN.SUB_TITLE"> </h2>-->
@@ -22,11 +22,8 @@
                     <p class="error" ng-show="LoginCtrl.sendEmail">{{ 'PUBLIC.LOGIN.SENT_REGISTRATION_LINK' | translate }}</p>
                 </div>
             </form>
-            <div style="width: 100%;max-width: 400px" layout="column">
-                <md-divider></md-divider>
-
-                <p class="normal-text" > {{ 'PUBLIC.LOGIN.FOOTER_TEXT' | translate }} <a ui-sref="createAccount()" class="normal-link"> {{ 'PUBLIC.LOGIN.CREATE_NEW_ACCOUNT_LINK' | translate }} </a> </p>
-            </div>
+            <md-divider style="width:100%"></md-divider>
+            <p class="normal-text"> {{ 'PUBLIC.LOGIN.FOOTER_TEXT' | translate }} <a ui-sref="createAccount()" class="normal-link"> {{ 'PUBLIC.LOGIN.CREATE_NEW_ACCOUNT_LINK' | translate }} </a> </p>
         </div>
     </div>
 </md-content>

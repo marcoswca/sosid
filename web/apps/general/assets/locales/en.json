@@ -41,8 +41,54 @@
                         "EMAIL": "Please, inform a valid e-mail."
                     }
                 },
-                "CLINIC ADDRESS": {
-                    "LABEL": "Clinic Address"
+                "STREET": {
+                    "LABEL": "Street",
+                    "VALIDATE": {
+                        "REQUIRED": "Street is required"
+                    }
+                },
+                "CITY": {
+                    "LABEL": "City",
+                    "VALIDATE": {
+                        "REQUIRED": "City is required"
+                    }
+                },
+                "PROVINCY": {
+                    "LABEL": "Provincy",
+                    "VALIDATE": {
+                        "REQUIRED": "Provincy is required"
+                    }
+                },
+                "COUNTRY": {
+                    "LABEL": "Country",
+                    "VALIDATE": {
+                        "REQUIRED": "Country is required"
+                    }
+                },
+                "POSTAL CODE": {
+                    "LABEL": "Postal Code",
+                    "VALIDATE": {
+                        "REQUIRED": "Postal Code is required"
+                    }
+                },
+                "TYPE": {
+                    "LABEL": "Type",
+                    "VALIDATE": {
+                        "REQUIRED": "Type is required"
+                    },
+                    "OPTIONS": {
+                        "HOME": "Home",
+                        "OFFICE": "Office"
+                    }
+                },
+                "NUMBER": {
+                    "LABEL": "Number",
+                    "VALIDATE": {
+                        "REQUIRED": "Number is required"
+                    }
+                },
+                "COMPLEMENT": {
+                    "LABEL": "Complement"
                 }
             }
         },
@@ -110,11 +156,55 @@
                         "EMAIL": "Please, enter with a valid e-mail"
                     }
                 },
-                "ADDRESS": {
-                    "LABEL": "Address",
+                "STREET": {
+                    "LABEL": "Street",
                     "VALIDATE": {
-                        "REQUIRED": "Address is required"
+                        "REQUIRED": "Street is required"
                     }
+                },
+                "CITY": {
+                    "LABEL": "City",
+                    "VALIDATE": {
+                        "REQUIRED": "City is required"
+                    }
+                },
+                "PROVINCY": {
+                    "LABEL": "Provincy",
+                    "VALIDATE": {
+                        "REQUIRED": "Provincy is required"
+                    }
+                },
+                "COUNTRY": {
+                    "LABEL": "Country",
+                    "VALIDATE": {
+                        "REQUIRED": "Country is required"
+                    }
+                },
+                "POSTAL CODE": {
+                    "LABEL": "Postal Code",
+                    "VALIDATE": {
+                        "REQUIRED": "Postal Code is required"
+                    }
+                },
+                "TYPE": {
+                    "LABEL": "Type",
+                    "VALIDATE": {
+                        "REQUIRED": "Type is required"
+                    },
+                    "OPTIONS": {
+                        "HOME": "Home",
+                        "OFFICE": "Office"
+                    }
+                },
+
+                "NUMBER": {
+                    "LABEL": "Number",
+                    "VALIDATE": {
+                        "REQUIRED": "Number is required"
+                    }
+                },
+                "COMPLEMENT": {
+                    "LABEL": "Complement"
                 }
             }
         },
@@ -191,6 +281,9 @@
                     "VALIDATE": {
                         "REQUIRED": "Number is required"
                     }
+                },
+                "COMPLEMENT": {
+                    "LABEL": "Complement"
                 }
             }
         },
@@ -345,8 +438,54 @@
                         "EMAIL": "Please, enter with a valid e-mail"
                     }
                 },
-                "ADDRESS": {
-                    "LABEL": "Address"
+                "STREET": {
+                    "LABEL": "Street",
+                    "VALIDATE": {
+                        "REQUIRED": "Street is required"
+                    }
+                },
+                "CITY": {
+                    "LABEL": "City",
+                    "VALIDATE": {
+                        "REQUIRED": "City is required"
+                    }
+                },
+                "PROVINCY": {
+                    "LABEL": "Provincy",
+                    "VALIDATE": {
+                        "REQUIRED": "Provincy is required"
+                    }
+                },
+                "COUNTRY": {
+                    "LABEL": "Country",
+                    "VALIDATE": {
+                        "REQUIRED": "Country is required"
+                    }
+                },
+                "POSTAL CODE": {
+                    "LABEL": "Postal Code",
+                    "VALIDATE": {
+                        "REQUIRED": "Postal Code is required"
+                    }
+                },
+                "TYPE": {
+                    "LABEL": "Type",
+                    "VALIDATE": {
+                        "REQUIRED": "Type is required"
+                    },
+                    "OPTIONS": {
+                        "HOME": "Home",
+                        "OFFICE": "Office"
+                    }
+                },
+                "NUMBER": {
+                    "LABEL": "Number",
+                    "VALIDATE": {
+                        "REQUIRED": "Number is required"
+                    }
+                },
+                "COMPLEMENT": {
+                    "LABEL": "Complement"
                 }
             }
         },
@@ -418,6 +557,10 @@
                     "LABEL": "Type",
                     "VALIDATE": {
                         "REQUIRED": "Type is required"
+                    },
+                    "OPTIONS": {
+                        "HOME": "Home",
+                        "OFFICE": "Office"
                     }
                 },
                 "PLAN": {
@@ -428,6 +571,9 @@
                     "VALIDATE": {
                         "REQUIRED": "Number is required"
                     }
+                },
+                "COMPLEMENT": {
+                    "LABEL": "Complement"
                 }
             }
         },

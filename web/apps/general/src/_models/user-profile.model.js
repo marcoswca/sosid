@@ -114,6 +114,9 @@
                 number: {
                     label: true
                 },
+                complement: {
+                    label: true
+                },
                 familyDoctor: {
                     firstName: {
                         label: true

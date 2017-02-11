@@ -90,6 +90,5 @@
                 self.user.profile._rollbackValues();
             }
         }
-
     }
 })();

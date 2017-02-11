@@ -3,8 +3,16 @@
         <div>
             <h3>Emergency Messages</h3>
         </div>
+        <div>
+            <md-icon class="buttonAdd" ng-click="EmergencyMessagesCtrl.addEmergencyMessage()" md-svg-icon="content:add" aria-label="add"></md-icon>
+        </div>
     </div>
     <div class="emergency-messages__list">
+        <div ng-if="EmergencyMessagesCtrl.user.messages.length === 0">
+            <p style="font-style:italic">
+                Please insert your emergency messages.
+            </p>
+        </div>
         <div class="emergency-messages__list__item" ng-repeat="message in EmergencyMessagesCtrl.user.messages">
             <md-input-container flex="100">
                 <textarea ng-disabled="!message.toSend && message.id" ng-model="message.message" aria-label="t"></textarea>
@@ -16,6 +24,5 @@
 
             <md-icon class="green" style="margin-right: 25px" ng-if="message.toSend || !message.id" class="toSend" md-svg-icon="content:send" aria-label="update" ng-click="EmergencyMessagesCtrl.sendMessage(message)"></md-icon>
         </div>
-        <md-icon ng-click="EmergencyMessagesCtrl.addEmergencyMessage()" md-svg-icon="content:add" aria-label="add"></md-icon>
     </div>
 </div>

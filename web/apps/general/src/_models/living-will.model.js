@@ -40,10 +40,12 @@
                     label: true
                 },
                 mobileNumber: {
-                    label: true
+                    label: true,
+                    phoneNumber: true
                 },
                 phoneNumber: {
-                    label: true
+                    label: true,
+                    phoneNumber: true
                 },
                 email: {
                     label: true,
@@ -53,24 +55,27 @@
                         }
                     }
                 },
-                street: {
-                    label: true
-                },
-                city: {
-                    label: true
-                },
-                provincy: {
-                    label: true
-                },
-                country: {
-                    label: true
-                },
-                postalCode: {
-                    label: true
-                },
-                type: {
-                    label: true
-                },
+                // street: {
+                //     label: true
+                // },
+                // city: {
+                //     label: true
+                // },
+                // provincy: {
+                //     label: true
+                // },
+                // country: {
+                //     label: true
+                // },
+                // postalCode: {
+                //     label: true
+                // },
+                // type: {
+                //     label: true
+                // },
+                // complement: {
+                //     label: true
+                // },
                 file: {
                     label: true
                 }

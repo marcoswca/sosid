@@ -1,61 +1,51 @@
-<md-content layout="column" layout-align="center center" class="login__container">
-    <div layout="column" class="login-box__container">
+<md-content layout="row" flex="100" layout-align="center center" class="login__container">
+    <div layout="column" flex="60" flex-xs="100" flex-gt-md="50" class="login-box__container">
         <div class="create-account-container" layout="column" layout-align="start center" ng-hide="CreateAccountCtrl.registrationFinished">
-        <h1 class="title" translate="PUBLIC.CREATE_ACCOUNT.TITLE"></h1>
-        <h2 class="sub-title" translate="PUBLIC.CREATE_ACCOUNT.SUB_TITLE"></h2>
-        <form name="accountCreateForm" hm-form-config="CreateAccountCtrl.config" autocomplete="false">
+            <h1 class="title" translate="PUBLIC.CREATE_ACCOUNT.TITLE"></h1>
+            <form name="accountCreateForm" hm-form-config="CreateAccountCtrl.config" autocomplete="false">
+                <h2 class="sub-title" translate="PUBLIC.CREATE_ACCOUNT.SUB_TITLE"></h2>
+                <div layout="column" class="form">
+                    <md-input-container nx-model-attribute="UserProfile:firstName">
+                        <input type="text" ng-model="CreateAccountCtrl.user.firstName" name="first-name">
+                    </md-input-container>
 
-            <div layout="column" class="form">
+                    <md-input-container nx-model-attribute="UserProfile:lastName">
+                        <input type="text" ng-model="CreateAccountCtrl.user.lastName" name="last-name">
+                    </md-input-container>
 
-                <md-input-container nx-model-attribute="UserProfile:firstName">
-                    <input type="text" ng-model="CreateAccountCtrl.user.firstName" name="first-name">
-                </md-input-container>
+                    <md-input-container nx-model-attribute="User:email">
+                        <input type="email" ng-model="CreateAccountCtrl.user.email" name="your-email">
+                    </md-input-container>
 
-                <md-input-container nx-model-attribute="UserProfile:lastName">
-                    <input type="text" ng-model="CreateAccountCtrl.user.lastName" name="last-name">
-                </md-input-container>
+                    <md-input-container nx-model-attribute="User:password">
+                        <input type="password" ng-model="CreateAccountCtrl.user.password" name="your-password">
+                    </md-input-container>
 
-                <md-input-container nx-model-attribute="User:email">
-                    <input type="email" ng-model="CreateAccountCtrl.user.email" name="your-email">
-                </md-input-container>
+                    <md-input-container>
+                        <label translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.LABEL"></label>
+                        <input type="password" ng-model="password2" name="matchPassword" pw-check="CreateAccountCtrl.user.password" ng-required="true">
+                        <div ng-messages="accountCreateForm.matchPassword.$error" multiple md-auto-hide="true">
+                            <div ng-message="required" translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATE.REQUIRED"></div>
+                            <div ng-message="match" translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATE.MATCH"></div>
+                        </div>
+                    </md-input-container>
 
-                <md-input-container nx-model-attribute="User:password">
-                    <input type="password" ng-model="CreateAccountCtrl.user.password" name="your-password">
-                </md-input-container>
-
-                <md-input-container>
-                    <label translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.LABEL"></label>
-                    <input type="password" ng-model="password2" name="matchPassword" pw-check="CreateAccountCtrl.user.password" ng-required="true">
-                    <div ng-messages="accountCreateForm.matchPassword.$error" multiple md-auto-hide="true">
-                        <div ng-message="required" translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATE.REQUIRED"></div>
-                        <div ng-message="match" translate="PUBLIC.ATTRIBUTES.CONFIRM_PASSWORD.VALIDATE.MATCH"></div>
-                    </div>
-                </md-input-container>
-
-                <md-button type="submit" class="md-raised md-primary submit-button" ng-disabled="accountCreateForm.$invalid || CreateAccountCtrl.isLoading"
-                           ng-click="CreateAccountCtrl.config.submit($event)" translate="PUBLIC.CREATE_ACCOUNT.SUBMIT_BUTTON" aria-label="signup">
-                </md-button>
-            </div>
-
-        </form>
-        <div style="width: 600px" layout="column">
-            <md-divider></md-divider>
-
+                    <md-button type="submit" class="md-raised md-primary submit-button" ng-disabled="accountCreateForm.$invalid || CreateAccountCtrl.isLoading" ng-click="CreateAccountCtrl.config.submit($event)" translate="PUBLIC.CREATE_ACCOUNT.SUBMIT_BUTTON" aria-label="signup">
+                    </md-button>
+                </div>
+            </form>
+            <md-divider style="width:100%"></md-divider>
             <p class="normal-text"> {{ 'PUBLIC.CREATE_ACCOUNT.HAS_ACCOUNT_TEXT' | translate }} <a ui-sref="login()" class="normal-link"> {{ 'PUBLIC.CREATE_ACCOUNT.LOGIN_HERE_LINK' | translate }} </a> </p>
         </div>
-    </div>
 
-        <div class="create-account-container" layout="column" layout-align="start center" ng-show="CreateAccountCtrl.registrationFinished">
-        <h1 class="title" translate="PUBLIC.CREATE_ACCOUNT.SUCCESS.TITLE"></h1>
-        <h2 class="sub-title" translate="PUBLIC.CREATE_ACCOUNT.SUCCESS.SUB_TITLE"></h2>
-        <h2 style="margin: 0 0 10px 0"> {{ CreateAccountCtrl.user.email }} </h2>
-
-        </form>
-        <div style="width: 600px" layout="column">
-            <md-divider></md-divider>
-
+        <div style="padding:20px" class="create-account-container" layout="column" flex="60" flex-xs="100" flex-gt-md="50" layout-align="start center" ng-show="CreateAccountCtrl.registrationFinished">
+            <h1 class="title" translate="PUBLIC.CREATE_ACCOUNT.SUCCESS.TITLE" style="font-size:22px"></h1>
+            <h2 class="sub-title" translate="PUBLIC.CREATE_ACCOUNT.SUCCESS.SUB_TITLE"></h2>
+            <h2 style="margin: 0 0 10px 0; color:#0097C3"> {{ CreateAccountCtrl.user.email }} </h2>
+            </form>
+            <md-divider style="width:100%"></md-divider>
             <p class="normal-text"> {{ "PUBLIC.CREATE_ACCOUNT.SUCCESS.FOOTER_TEXT" | translate }} <a ui-sref="login()" class="normal-link"> {{ 'PUBLIC.CREATE_ACCOUNT.LOGIN_HERE_LINK' | translate }} </a> </p>
         </div>
-    </div>
+
     </div>
 </md-content>
