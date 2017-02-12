@@ -38,72 +38,83 @@
     ],
     "lib_files": {
         "js": [{
-            "development": "vendor/angular/angular.js",
-            "production": "vendor/angular/angular.min.js"
-        }, {
-            "development": "vendor/jquery/dist/jquery.js",
-            "production": "vendor/jquery/dist/jquery.min.js"
-        }, {
-            "development": "vendor/angular-material/angular-material.js",
-            "production": "vendor/angular-material/angular-material.min.js"
-        }, {
-            "development": "vendor/angular-animate/angular-animate.js",
-            "production": "vendor/angular-animate/angular-animate.min.js"
-        }, {
-            "development": "vendor/angular-touch/angular-touch.js",
-            "production": "vendor/angular-touch/angular-touch.min.js"
-        }, {
-            "development": "vendor/angular-messages/angular-messages.js",
-            "production": "vendor/angular-messages/angular-messages.min.js"
-        }, {
-            "development": "vendor/angular-messages/angular-messages.js",
-            "production": "vendor/angular-messages/angular-messages.min.js"
-        }, {
-            "development": "vendor/angular-sanitize/angular-sanitize.js",
-            "production": "vendor/angular-sanitize/angular-sanitize.min.js"
-        }, {
-            "development": "vendor/angular-cookies/angular-cookies.js",
-            "production": "vendor/angular-cookies/angular-cookies.min.js"
-        }, {
-            "development": "vendor/angular-ui-router/release/angular-ui-router.js",
-            "production": "vendor/angular-ui-router/release/angular-ui-router.min.js"
-        }, {
-            "development": "vendor/angular-aria/angular-aria.js",
-            "production": "vendor/angular-aria/angular-aria.min.js"
-        }, {
-            "development": "vendor/angular-input-masks/angular-input-masks-standalone.js",
-            "production": "vendor/angular-input-masks/angular-input-masks-standalone.min.js"
-        }, {
-            "development": "vendor/underscore/underscore.js",
-            "production": "vendor/underscore/underscore.js"
-        }, {
-            "development": "vendor/moment/min/moment-with-locales.min.js",
-            "production": "vendor/moment/min/moment-with-locales.min.js"
-        }, {
-            "development": "vendor/angular-i18n/angular-locale_de-de.js",
-            "production": "vendor/angular-i18n/angular-locale_de-de.js"
-        }, {
-            "development": "vendor/lodash/dist/lodash.js",
-            "production": "vendor/lodash/dist/lodash.min.js"
-        }, {
-            "development": "vendor/ng-file-upload/ng-file-upload.js",
-            "production": "vendor/ng-file-upload/ng-file-upload.min.js"
-        },
-        {
-            "development": "vendor/ng-file-upload-shim/ng-file-upload-shim.js",
-            "production": "vendor/ng-file-upload-shim/ng-file-upload-shim.min.js"
-        }, {
-            "development": "vendor/angular-translate/angular-translate.js",
-            "production": "vendor/angular-translate/angular-translate.min.js"
-        }, {
-            "development": "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
-            "production": "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
-        }],
+                "development": "vendor/angular/angular.js",
+                "production": "vendor/angular/angular.min.js"
+            }, {
+                "development": "vendor/jquery/dist/jquery.js",
+                "production": "vendor/jquery/dist/jquery.min.js"
+            }, {
+                "development": "vendor/angular-material/angular-material.js",
+                "production": "vendor/angular-material/angular-material.min.js"
+            }, {
+                "development": "vendor/angular-animate/angular-animate.js",
+                "production": "vendor/angular-animate/angular-animate.min.js"
+            }, {
+                "development": "vendor/angular-touch/angular-touch.js",
+                "production": "vendor/angular-touch/angular-touch.min.js"
+            }, {
+                "development": "vendor/angular-messages/angular-messages.js",
+                "production": "vendor/angular-messages/angular-messages.min.js"
+            }, {
+                "development": "vendor/angular-messages/angular-messages.js",
+                "production": "vendor/angular-messages/angular-messages.min.js"
+            }, {
+                "development": "vendor/angular-sanitize/angular-sanitize.js",
+                "production": "vendor/angular-sanitize/angular-sanitize.min.js"
+            }, {
+                "development": "vendor/angular-cookies/angular-cookies.js",
+                "production": "vendor/angular-cookies/angular-cookies.min.js"
+            }, {
+                "development": "vendor/angular-ui-router/release/angular-ui-router.js",
+                "production": "vendor/angular-ui-router/release/angular-ui-router.min.js"
+            }, {
+                "development": "vendor/angular-aria/angular-aria.js",
+                "production": "vendor/angular-aria/angular-aria.min.js"
+            }, {
+                "development": "vendor/angular-input-masks/angular-input-masks-standalone.js",
+                "production": "vendor/angular-input-masks/angular-input-masks-standalone.min.js"
+            }, {
+                "development": "vendor/underscore/underscore.js",
+                "production": "vendor/underscore/underscore.js"
+            }, {
+                "development": "vendor/moment/min/moment-with-locales.min.js",
+                "production": "vendor/moment/min/moment-with-locales.min.js"
+            }, {
+                "development": "vendor/angular-i18n/angular-locale_de-de.js",
+                "production": "vendor/angular-i18n/angular-locale_de-de.js"
+            }, {
+                "development": "vendor/lodash/dist/lodash.js",
+                "production": "vendor/lodash/dist/lodash.min.js"
+            }, {
+                "development": "vendor/ng-file-upload/ng-file-upload.js",
+                "production": "vendor/ng-file-upload/ng-file-upload.min.js"
+            },
+            {
+                "development": "vendor/ng-file-upload-shim/ng-file-upload-shim.js",
+                "production": "vendor/ng-file-upload-shim/ng-file-upload-shim.min.js"
+            }, {
+                "development": "vendor/angular-translate/angular-translate.js",
+                "production": "vendor/angular-translate/angular-translate.min.js"
+            }, {
+                "development": "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js",
+                "production": "vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"
+            }, {
+                "development": "vendor/betsol-ng-intl-tel-input/dist/scripts/betsol-ng-intl-tel-input.js",
+                "production": "vendor/betsol-ng-intl-tel-input/dist/scripts/betsol-ng-intl-tel-input.min.js"
+            }, {
+                "development": "vendor/intl-tel-input/build/js/intlTelInput.js",
+                "production": "vendor/intl-tel-input/build/js/intlTelInput.min.js"
+            }, {
+                "development": "vendor/intl-tel-input/build/js/utils.js",
+                "production": "vendor/intl-tel-input/build/js/utils.js"
+            }
+        ],
         "maps": [
             "vendor/angular-sanitize/angular-sanitize.min.js.map"
         ],
         "css": [
-            "vendor/angular-material/angular-material.min.css"
+            "vendor/angular-material/angular-material.min.css",
+            "vendor/intl-tel-input/build/css/intlTelInput.css"
         ],
         "assets": [
             "vendor/"

@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var BaseModelModule = angular.module('Nxt.baseModel', []);
@@ -7,14 +7,14 @@
 
     function BaseModel() {
 
-        this.make = function (modelConfig) {
+        this.make = function(modelConfig) {
 
             function NxtModel(data) {
                 data = data || {};
 
                 var self = this;
 
-                _.each(modelConfig.attributes, function (attrOptions, attrName) {
+                _.each(modelConfig.attributes, function(attrOptions, attrName) {
                     var value = angular.copy(data[attrName]);
 
                     if (attrOptions.isDate && value) {
@@ -60,27 +60,32 @@
             // adicionando os atributos
             NxtModel.attributes = modelConfig.attributes;
             NxtModel.attributesNames = _.keysIn(modelConfig.attributes);
-            NxtModel.attributesNamesUpdatable = _.keysIn(_.omitBy(modelConfig.attributes, { updateDisabled: true }));
+            NxtModel.attributesNamesUpdatable = _.keysIn(_.omitBy(modelConfig.attributes, {
+                updateDisabled: true
+            }));
+            console.log(NxtModel.attributesNamesUpdatable);
 
-            NxtModel.prototype.toJSON = function () {
+
+            NxtModel.prototype.toJSON = function() {
                 return _.omit(this, ['__commitedValues', '__enabledUpdateAttributes']);
             };
 
-            NxtModel.prototype._getCommittedField = function (field) {
+            NxtModel.prototype._getCommittedField = function(field) {
                 return this.__commitedValues[field];
             };
 
-            NxtModel.prototype._syncCommitValues = function () {
+            NxtModel.prototype._syncCommitValues = function() {
                 var self = this;
                 self.__commitedValues = {};
-                _.each(NxtModel.attributesNamesUpdatable, function (value) {
+                _.each(NxtModel.attributesNamesUpdatable, function(value) {
                     self.__commitedValues[value] = self[value];
                 });
             };
 
-            NxtModel.prototype._commitValues = function () {
+            NxtModel.prototype._commitValues = function() {
                 var self = this;
                 var changedKeys = _.keys(self._getChangedValues());
+
 
                 self._syncCommitValues();
 
@@ -89,17 +94,17 @@
                 }
             };
 
-            NxtModel.prototype._rollbackValues = function () {
+            NxtModel.prototype._rollbackValues = function() {
                 var self = this;
-                _.each(NxtModel.attributesNamesUpdatable, function (value) {
+                _.each(NxtModel.attributesNamesUpdatable, function(value) {
                     self[value] = self.__commitedValues[value];
                 });
             };
 
-            NxtModel.prototype._getChangedValues = function () {
+            NxtModel.prototype._getChangedValues = function() {
                 var self = this;
                 var changed = {};
-                _.each(NxtModel.attributesNamesUpdatable, function (key) {
+                _.each(NxtModel.attributesNamesUpdatable, function(key) {
                     if (!_.isEqual(self[key], self.__commitedValues[key])) {
                         changed[key] = self[key];
                     }
@@ -109,16 +114,20 @@
 
             NxtModel.prototype.create = function() {
                 var self = this;
+                console.log(this);
+                console.log(modelConfig);
                 return modelConfig.api
                     .create(this)
                     .then(function(createdDoctor) {
-                        self.id = createdDoctor.id;
+                      console.log(createdDoctor);
+                        self.id = createdDoctor.id || createdDoctor.data.id;
                         self._syncCommitValues();
                     });
             };
 
             NxtModel.prototype.update = function() {
                 var self = this;
+
 
                 var changedValues = self._getChangedValues();
 
@@ -129,7 +138,7 @@
                     });
             };
 
-            NxtModel.prototype.save = function () {
+            NxtModel.prototype.save = function() {
                 return (!this.id) ? this.create() : this.update();
             };
 

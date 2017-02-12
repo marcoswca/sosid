@@ -1,9 +1,9 @@
-(function () {
+(function() {
     'use strict';
 
     var $injector, $q, dependencies, application;
 
-    angular.element(document).ready(function () {
+    angular.element(document).ready(function() {
         dependencies = [
             'ng',
             'ngAnimate',
@@ -21,15 +21,12 @@
             $q = $injector.get('$q');
 
             moment.locale('de_DE');
-
             application = new Application();
-
             application.boot();
 
-        } catch(e) {
+        } catch (e) {
             console.log(e);
         }
-
     });
 
     var ErrorStatusEnum = {
@@ -50,7 +47,7 @@
     }
 
     // Requisita a sessão ao servidor e se não encontrar encaminha para tela de login
-    Application.prototype.getSession = function () {
+    Application.prototype.getSession = function() {
         var
             SessionApi = $injector.get('SessionApi'),
             UserProfileApi = $injector.get('UserProfileApi'),
@@ -59,7 +56,7 @@
         // verificando sessão
         return SessionApi
             .get()
-            .then(function (session) {
+            .then(function(session) {
                 self.session.user = session.user;
                 return UserProfileApi.get();
             })
@@ -70,22 +67,22 @@
     };
 
     // Rotas de carregamentos
-    Application.prototype.load = function () {
+    Application.prototype.load = function() {
         return this.getSession();
     };
 
-    Application.prototype.prepare = function () {
+    Application.prototype.prepare = function() {
         var
             deferred = $q.defer(),
             self = this;
 
         this.load()
-            .then(function () {
+            .then(function() {
                 self.bootstrapAppName = BootstrapApps.MAIN;
                 setMainModuleConfiguration();
                 deferred.resolve();
             })
-            .catch(function (e) {
+            .catch(function(e) {
                 var status = e.status;
 
                 if (status === ErrorStatusEnum.NOT_LOGGED) {
@@ -119,20 +116,19 @@
                 //
             }
         }
-
     };
 
     //
-    Application.prototype.boot = function () {
+    Application.prototype.boot = function() {
         var self = this;
 
         this.prepare()
-            .then(function () {
+            .then(function() {
 
                 dependencies.push(self.bootstrapAppName);
-                angular.bootstrap(document, dependencies, { strictDi: false });
-
+                angular.bootstrap(document, dependencies, {
+                    strictDi: false
+                });
             });
     };
-
 })();

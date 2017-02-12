@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [];
@@ -29,15 +29,14 @@
 
             return init();
 
-            function init() {
-            }
+            function init() {}
 
             function buildToggler(navID) {
 
                 return function() {
                     $mdSidenav(navID)
                         .toggle()
-                        .then(function () {
+                        .then(function() {
                             $log.debug("toggle " + navID + " is done");
                             console.log("teste");
                         });

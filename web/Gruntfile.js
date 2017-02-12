@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
     var _appsPath = __dirname + '/apps/',
         _uid = parseInt(process.env.SUDO_UID);
@@ -91,7 +91,7 @@ module.exports = function (grunt) {
 
         fs
             .readdirSync(_appsPath)
-            .filter(function (dirName) {
+            .filter(function(dirName) {
 
                 // se dirName for arquivo (contém .), pula para o proximo.
                 if (dirName.indexOf('.') >= 0) {
@@ -106,7 +106,7 @@ module.exports = function (grunt) {
                 // Verifica se a pasta tem arquivo de configuração (build.config.json)
                 fs
                     .readdirSync(appDirPath)
-                    .filter(function (file) {
+                    .filter(function(file) {
                         if (file.indexOf('build.config.js') === 0) {
                             hasConfigFile = true;
                         }
@@ -115,7 +115,9 @@ module.exports = function (grunt) {
                 if (hasConfigFile) {
 
                     // recuperar o arquivo de template
-                    var template = fs.readFileSync('./grunt/build.config.template', { encoding: 'utf8' });
+                    var template = fs.readFileSync('./grunt/build.config.template', {
+                        encoding: 'utf8'
+                    });
 
                     // configura o que vai ser alterado no template
                     var replaces = {
@@ -151,7 +153,7 @@ module.exports = function (grunt) {
     function clearTempConfigs() {
         fs
             .readdirSync(__dirname)
-            .filter(function(file){
+            .filter(function(file) {
                 if (file.indexOf('temp-') > -1) {
                     fs.unlinkSync(file);
                 }

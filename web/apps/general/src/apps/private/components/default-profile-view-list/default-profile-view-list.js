@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -20,7 +20,7 @@
         };
 
         /** @ngInject */
-        function Controller($scope, $injector, $state, NxtUtility) {
+        function Controller($scope, $injector, $state, NxtUtility, Session) {
 
             var ModelName = $state.current.data.modelName,
                 ProfileViewCtrl = $scope.$parent.ProfileViewCtrl,
@@ -30,14 +30,13 @@
             // Public variables
             self.allowCreate = false;
             self.items = [];
-
             // Public methods
             self.enableCreate = enableCreate;
             self.cancelCreate = cancelCreate;
             self.createSuccess = createSuccess;
             self.removeSuccess = removeSuccess;
             self.getAttributes = getAttributes;
-            
+
             // Private methods
             self.$onInit = function() {
                 Model = $injector.get(ModelName);
@@ -64,9 +63,9 @@
                 return Model
                     .getAll()
                     .then(function(result) {
-                        console.log(result);
                         if (result.count) {
                             self.items = NxtUtility.bulkInstantiate(ModelName, result.rows);
+                            console.log(self.items);
                         } else {
                             enableCreate();
                         }
@@ -83,11 +82,16 @@
             }
 
             function removeSuccess(item, index) {
-                //item.___removed = true;
                 self.items.splice(index, 1);
+                if (self.items.length === 0) {
+                    Session.user.profile.categoriesFilled--;
+                }
             }
 
             function createSuccess() {
+                if (self.items.length === 1) {
+                    Session.user.profile.categoriesFilled++;
+                }
                 self.allowCreate = false;
             }
 
@@ -96,8 +100,8 @@
                 self.items.shift();
             }
 
-            function getAttributes(){
-                return Model.attributes;
+            function getAttributes() {
+                return Model.attributes || {};
             }
         }
 

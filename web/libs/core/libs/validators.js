@@ -2,7 +2,7 @@ var dependencies = ['Nxt.utility'];
 
 var module = angular.module('Nxt.validators', dependencies);
 
-module.factory('emailValidator', function (NxtUtility) {
+module.factory('emailValidator', function(NxtUtility) {
 
     // the e-mail pattern used in angular.js
     var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
@@ -16,17 +16,17 @@ module.factory('emailValidator', function (NxtUtility) {
          * @param value the value to validate
          * @returns {boolean} true if valid
          */
-        validate: function (value) {
+        validate: function(value) {
             return NxtUtility.isEmpty(value) || EMAIL_REGEXP.test(value);
         }
     };
 });
 
-module.factory('lenValidator', function () {
+module.factory('lenValidator', function() {
 
     return {
         name: 'len',
-        validate: function (value, validatorObj) {
+        validate: function(value, validatorObj) {
             var minLength = validatorObj.args[0],
                 maxLength = validatorObj.args[1] || 200;
 
@@ -38,18 +38,18 @@ module.factory('lenValidator', function () {
 
 });
 
-module.factory('requiredValidator', function (NxtUtility) {
+module.factory('requiredValidator', function(NxtUtility) {
 
     return {
         name: 'required',
-        validate: function (value) {
+        validate: function(value) {
             return NxtUtility.notEmpty(value);
         }
     };
 
 });
 
-module.factory('passwordValidator', function(){
+module.factory('passwordValidator', function() {
 
     var passwordRegex = /(?=[\s\S]*[a-z][\s\S]*)(?=[\s\S]*[0-9][\s\S]*)/i;
 

@@ -36,8 +36,10 @@
                 },
                 medicalPlanType: {
                     label: true
+                },
+                file: {
+                  label: true
                 }
-
             };
         }
     }

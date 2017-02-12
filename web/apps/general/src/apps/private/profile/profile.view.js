@@ -18,7 +18,6 @@
         // Private variables
         var __loadingDebouce,
             self = this;
-
         self.contentHeader = {
             button: {
                 show: angular.noop,
@@ -28,20 +27,21 @@
         };
         self.isLoading = false;
 
+        self.planStorageSpace = 0;
+        self.percentUsedStorage = 0;
 
         self.pageTitle = $state.current.data.pageTitle;
         self.Session = Session;
         self.setLoading = setLoading;
         self.usedStorage = self.Session.user.profile.useDataStorage;
-        if (self.Session.user.profile.plan && self.Session.user.profile.plan.plans ) {
+        if (self.Session.user.profile.plan && self.Session.user.profile.plan.plans) {
             self.planStorageSpace = self.Session.user.profile.plan.plans.storageSpace;
+            self.percentUsedStorage = (self.usedStorage / self.planStorageSpace) * 100;
         }
 
         self.showPrivacySettings = showPrivacySettings;
         self.showPrintCard = showPrintCard;
         self.showWelcome = showWelcome;
-        self.percentUsedStorage = (self.usedStorage / self.planStorageSpace) * 100;
-
         // Private methods
         return (function init() {
             $rootScope.$on('$stateChangeStart', function() {

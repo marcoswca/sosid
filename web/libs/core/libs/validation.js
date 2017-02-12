@@ -1,9 +1,8 @@
-
 var dependencies = ['Nxt.validators'];
 
 var module = angular.module('Nxt.validation', dependencies);
 
-module.service('NxtValidation', function ($injector, $log) {
+module.service('NxtValidation', function($injector, $log) {
 
     var validatorPostfix = 'Validator';
 
@@ -27,7 +26,7 @@ module.service('NxtValidation', function ($injector, $log) {
 
     this.getValidator = getValidator;
 
-    this.bulkValidate = function (validations, value, fieldName) {
+    this.bulkValidate = function(validations, value, fieldName) {
 
         var validationResults = [];
 
@@ -35,12 +34,12 @@ module.service('NxtValidation', function ($injector, $log) {
         var fieldIsValid = true;
 
         // para cada atributo de validate
-        angular.forEach(validations, function (validatorObj, validatorName) {
+        angular.forEach(validations, function(validatorObj, validatorName) {
             var validator = getValidator(validatorName);
 
             if (angular.isUndefined(validator)) {
                 $log.warn('No validator defined for \'' + validatorName +
-                '\'. Can not validate field \'' + fieldName + '\'');
+                    '\'. Can not validate field \'' + fieldName + '\'');
                 return;
             }
 

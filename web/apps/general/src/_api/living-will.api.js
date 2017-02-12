@@ -2,7 +2,7 @@
     'use strict';
 
     var dependencies = [
-        'core.api.ApiService'
+      'core.api.ApiService', 'ngFileUpload'
     ];
 
     angular
@@ -10,7 +10,7 @@
         .service('LivingWillApi', LivingWillApi);
 
     /** @ngInject */
-    function LivingWillApi(APP_CONFIG, ApiService) {
+    function LivingWillApi(APP_CONFIG, ApiService, Upload) {
 
         var url = APP_CONFIG.URL.API_URL + '/user-living-will';
 
@@ -26,14 +26,22 @@
             options = options || {};
             options.url = url;
             options.data = data;
-            return ApiService.Post(options);
+            return ApiService.PostMultiformData(options, Upload);
         };
 
         this.update = function(id, data, options) {
             options = options || {};
             options.url = url;
             options.data = data;
-            return ApiService.Put(options);
+            return ApiService.PutMultiformData(options, Upload);
+        };
+
+        this.UpdateImageProfile = function (data) {
+          var options = {};
+          options.url = APP_CONFIG.URL.API_URL +  '/user-profile/avatar';
+          console.log(options);
+          options.data = data;
+          return ApiService.PostMultiformData(options, Upload);
         };
     }
 

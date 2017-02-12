@@ -1,7 +1,14 @@
 default-item {
-  .profile-content__box__title {
-    h3 {
-      color: $sosid-blue !important;
+    .profile-content__box__title {
+        h3 {
+            color: $sosid-blue !important;
+        }
     }
-  }
+}
+
+.buttonAdd {
+    background-color: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    color: #aaa;
 }

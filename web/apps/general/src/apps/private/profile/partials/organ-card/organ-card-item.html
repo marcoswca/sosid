@@ -51,10 +51,10 @@
                     </div>
                     <div layout="row" layout-xs="column">
                         <md-input-container nx-model-attribute="OrganCard:mobileNumber" flex-gt-xs="33" flex="none">
-                            <input ng-model="DefaultItemCtrl.item.mobileNumber">
+                            <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
                         </md-input-container>
                         <md-input-container nx-model-attribute="OrganCard:phoneNumber" flex-gt-xs="33" flex="none">
-                            <input ng-model="DefaultItemCtrl.item.phoneNumber">
+                            <input intl-tel-input ng-model="DefaultItemCtrl.item.phoneNumber">
                         </md-input-container>
                     </div>
                     <div layout="row">
@@ -62,11 +62,56 @@
                             <input ng-model="DefaultItemCtrl.item.email">
                         </md-input-container>
                     </div>
-                    <div layout="row">
+                    <div layout="column">
+
+                        <div layout="row">
+                            <md-input-container nx-model-attribute="OrganCard:street" flex="75" class="md-block">
+                                <input aria-label="Street" placeholder="{{DefaultItemCtrl.item.address.street}}" ng-model="DefaultItemCtrl.item.address.street">
+                            </md-input-container>
+                            <md-input-container nx-model-attribute="OrganCard:number" flex="25" class="md-block">
+                                <input aria-label="number" type="number" placeholder="{{DefaultItemCtrl.item.address.number}}" ng-model="DefaultItemCtrl.item.address.number">
+                            </md-input-container>
+
+                        </div>
+                        <div layout="row">
+                            <md-input-container nx-model-attribute="OrganCard:complement" flex="50" class="md-block">
+                                <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.complement}}" ng-model="DefaultItemCtrl.item.address.complement">
+                            </md-input-container>
+                            <!-- <md-input-container nx-model-attribute="OrganCard:type" flex="20" class="md-block">
+                              <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.type}}" ng-model="DefaultItemCtrl.item.address.type">
+                          </md-input-container> -->
+                            <md-input-container nx-model-attribute="OrganCard:postalCode" flex="30" class="md-block">
+                                <input placeholder="{{DefaultItemCtrl.item.address.postalCode}}" aria-label="Postal Code" ng-model="DefaultItemCtrl.item.address.postalCode">
+                            </md-input-container>
+                            <md-input-container nx-model-attribute="OrganCard:type" flex="20" class="md-block">
+                                <md-select ng-model="DefaultItemCtrl.item.address.type" aria-label="type">
+                                    <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.LABEL' | translate }}">
+                                        <md-option value="HOME">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.HOME' | translate }}</md-option>
+                                        <md-option value="OFFICE">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.OFFICE' | translate }}</md-option>
+                                    </md-optgroup>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <md-input-container nx-model-attribute="OrganCard:city" flex="40" class="md-block">
+                                <input aria-label="City" placeholder="{{DefaultItemCtrl.item.address.city}}" ng-model="DefaultItemCtrl.item.address.city">
+                            </md-input-container>
+
+                            <md-input-container nx-model-attribute="OrganCard:provincy" flex="30" class="md-block">
+                                <input aria-label="Provincy" placeholder="{{DefaultItemCtrl.item.address.provincy}}" ng-model="DefaultItemCtrl.item.address.provincy">
+                            </md-input-container>
+                            <md-input-container nx-model-attribute="OrganCard:country" flex="30" class="md-block">
+                                <input aria-label="Country" placeholder="{{DefaultItemCtrl.item.address.country}}" ng-model="DefaultItemCtrl.item.address.country">
+                            </md-input-container>
+
+                        </div>
+
+                    </div>
+                    <!-- <div layout="row">
                         <md-input-container nx-model-attribute="OrganCard:address" flex="100" class="md-block">
                             <textarea ng-model="DefaultItemCtrl.item.address"></textarea>
                         </md-input-container>
-                    </div>
+                    </div> -->
                 </div>
                 <div layout="column" class="profile-content__upload-files">
                     <div layout="row" class="profile-content__upload-files__header">
@@ -74,7 +119,8 @@
                         <div class="profile-content__upload-files__title">Resource</div>
                         <div class="profile-content__upload-files__hint">({{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.UPLOAD_TIP' | translate }})</div>
                     </div>
-                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" ngf-change="DefaultItemCtrl.change($file)" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
+                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
+                        class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                         <div class="profile-content__upload-dnd-area__icon">
                             <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
                             <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
@@ -86,9 +132,9 @@
                         <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
                             {{DefaultItemCtrl.item.file.name}}
                         </div>
-                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </form>
 </content-item-box>

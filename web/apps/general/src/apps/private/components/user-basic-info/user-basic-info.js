@@ -1,8 +1,8 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
-        'model.user'
+        'model.userProfile'
     ];
 
     angular
@@ -20,7 +20,7 @@
             templateUrl: 'templates/user-basic-info.html'
         };
 
-        function UserBasicInfoCtrl($scope, Session, $timeout) {
+        function UserBasicInfoCtrl($scope, Session, $timeout, UserProfileApi) {
             // Private variables
             var self = this;
 
@@ -33,10 +33,11 @@
             self.cancelUpdate = cancelUpdate;
             self.updateProfile = updateProfile;
 
+            self.addAddress = addAddress;
+            self.removeAddress = removeAddress;
 
             // Private methods
-            return (function init() {
-            })();
+            return (function init() {})();
 
             function enableEdit() {
                 $scope.userProfileForm.$setUntouched();
@@ -44,13 +45,46 @@
             }
 
             function updateProfile() {
+                console.log(self.user);
                 return self.user
-                    .updateProfile()
-                    .then(function () {
+                    .updateProfile(self.user)
+                    .then(function() {
                         $timeout(function() {
                             self.allowEdit = false;
                         });
+                    }, function(reason){
+                        console.log(reason);
                     });
+            }
+
+            function removeAddress(address) {
+                if (address.street && address.number) {
+                    var query = "?street=" + address.street + "&number=" + address.number;
+                    return UserProfileApi.deleteAddress(query).then(function successCallback(data) {
+                        spliceAddress(address);
+                    }, function errorCallback(reason) {
+
+                    });
+                } else {
+                    spliceAddress(address);
+                }
+            }
+
+
+            function spliceAddress(address) {
+                var index = self.user.profile.address.indexOf(address);
+                self.user.profile.address.splice(index, 1);
+            }
+
+            function addAddress() {
+                return self.user.profile.address.push({
+                    street: undefined,
+                    city: undefined,
+                    country: undefined,
+                    postalCode: undefined,
+                    type: undefined,
+                    provincy: undefined
+                });
             }
 
             function cancelUpdate() {
@@ -58,6 +92,5 @@
                 self.user.profile._rollbackValues();
             }
         }
-
     }
 })();

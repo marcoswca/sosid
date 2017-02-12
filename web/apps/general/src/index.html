@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:ng="http://angularjs.org">
+
 <head>
 
     <script>
         APP_VERSION = <%= version %>;
     </script>
-<!--     <base href="<%= html5Location %>" />
+    <!--     <base href="<%= html5Location %>" />
  -->
     <title>SOS-ID.de</title>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta http-equiv="language" content="de"/>
-    <meta http-equiv="content-language" content="de"/>
-    <meta name="dc.language" content="de"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="language" content="de" />
+    <meta http-equiv="content-language" content="de" />
+    <meta name="dc.language" content="de" />
 
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
@@ -34,7 +35,7 @@
 
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100' rel='stylesheet' type='text/css">
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>?v=<%= version %>" /><% }); %>
@@ -47,5 +48,6 @@
 <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
 <script type="text/javascript" src="./<%= file %>?v=<%= version %>"></script><% }); %>
 </body>
+
 
 </html>

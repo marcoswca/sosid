@@ -72,17 +72,21 @@
                         <span>Glasses Pass</span>
                     </a>
                 </li>
-                
+
             </ul>
         </div>
     </md-sidenav>
-    <div layout="row" layout-align="center stretch" class="topbar" hide-xs="true">
+    <div layout="row" layout-align="center stretch" class="topbar" hide-sm="true" hide-xs="true">
         <div layout="row" layout-align="space-between start" class="topbar__container">
             <div layout="row" layout-align="start center" class="topbar__profile-resume">
-                <div layout="row" class="profile-resume__avatar">
-                    <progress-circle></progress-circle>
+                <div class="personal-data__avatar" style="background-color:transparent" layout="column" flex="none" layout-align="center center">
+                    <div layout="column">
+                        <div class="personal-data__avatar__img-container">
+                            <progress-circle></progress-circle>
+                        </div>
+                    </div>
                 </div>
-                <div layout="column" layout-align="center stretch" class="profile-resume__data">
+                <div style="padding:15px" layout="column" layout-align="center stretch" class="profile-resume__data">
                     <div class="profile-resume__data__name">
                         <span class="profile-resume__data__name_first-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('firstName')}}</span>
                         <span class="profile-resume__data__name_first-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('lastName')}}</span>
@@ -98,7 +102,8 @@
                         </div>
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('address')">
                             <div class="profile-resume__data-field">address</div>
-                            <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}</div>
+                            <div class="profile-resume__data-value">
+                            {{{{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}</div>
                         </div>
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')">
                             <div class="profile-resume__data-field">Blood Type</div>
@@ -132,7 +137,7 @@
     </div>
     <div layout="row" layout-align="center stretch" class="content profile-content">
         <div layout="row" layout-align="space-between start" class="profile-content__container">
-            <div layout="column" class="profile-sidebar" hide-xs="true">
+            <div layout="column" class="profile-sidebar" hide-xs="true" hide-sm="true">
                 <div class="profile__menu md-whiteframe-1dp">
                     <div layout="row" layout-align="start center" class="categories-resume">
                         <div layout="row" class="categories-resume__icon">
@@ -140,16 +145,16 @@
                         </div>
                         <div layout="column" flex="75">
                             <div class="categories-resume__detailed">
-                                <span>5 of 10 completed</span>
+                                <span>{{ProfileViewCtrl.Session.user.profile.categoriesFilled}} of {{ProfileViewCtrl.Session.user.profile.plan.plans.categories.length}} completed</span>
                             </div>
                             <div>
                                 <div class="categories-resume__bar">
-                                    <div class="categories-resume__bar__percent" style="width: 50%;"></div>
+                                    <div class="categories-resume__bar__percent" style="width: {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%;"></div>
                                 </div>
                             </div>
                         </div>
                         <div layout="row">
-                            <span class="categories-resume__percent">50%</span>
+                            <span class="categories-resume__percent">{{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</span>
                         </div>
                     </div>
                     <div layout="column">

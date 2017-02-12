@@ -1,7 +1,7 @@
-(function () {
+(function() {
     'use strict';
 
-    var dependencies = [];
+    var dependencies = ['model.livingWill'];
 
     angular
         .module('private.components.progressCircle', dependencies)
@@ -19,17 +19,34 @@
             templateUrl: 'templates/progress-circle.component.html'
         };
 
-        function ProgressCircleCtrl() {
+        function ProgressCircleCtrl(LivingWill, Session) {
             var self = this;
+            self.hasAvatar = function() {
+                return !!Session.user.profile.File;
+            };
 
-            // public variables
+            self.UpdateImageProfile = function(file) {
+                var object = {
+                    file: file
+                };
+                LivingWill.UpdateImageProfile(object).then(function successCallback(data) {
+                    Session.user.profile.File = data.data.File;
+                }, function errorCallback(reason) {
+                    console.log(reason);
+                });
+            };
 
-            // public methods
+            self.getFilePath = function() {
+                if (Session.user.profile.File) {
+                    return Session.user.profile.File.filePath;
+                } else {
+                    return undefined;
+                }
+            };
 
             return init();
 
             function init() {}
-
         }
     }
 })();

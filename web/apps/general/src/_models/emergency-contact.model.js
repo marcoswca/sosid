@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     var dependencies = [
@@ -48,6 +48,7 @@
                 },
                 mobileNumber: {
                     label: true,
+                    phoneNumber: true,
                     validate: {
                         required: {
                             message: true
@@ -56,6 +57,7 @@
                 },
                 phoneNumber: {
                     label: true,
+                    phoneNumber: true,
                     validate: {
                         required: {
                             message: true
@@ -73,14 +75,33 @@
                         }
                     }
                 },
-                address: {
-                    label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
-                }
+                street: {
+                    label: true
+                },
+                city: {
+                    label: true
+                },
+                provincy: {
+                    label: true
+                },
+                country: {
+                    label: true
+                },
+                postalCode: {
+                    label: true
+                },
+                type: {
+                    label: true
+                },
+                file: {
+                    label: true
+                },
+                number: {
+                    label: true
+                },
+                complement: {
+                    label: true
+                },
             };
         }
     }

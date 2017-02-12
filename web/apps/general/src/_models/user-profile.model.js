@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -27,15 +27,16 @@
                 }
             },
             instanceMethods: {
-                update: function () {
+                update: function() {
                     var self = this;
-
                     var changedValues = self._getChangedValues();
-
+                    changedValues.address = self.address;
+                    console.log(self);
                     return UserProfileApi
                         .update(changedValues)
                         .then(function() {
-                           self._commitValues();
+                            console.log(self._getChangedValues());
+                            self._commitValues();
                         });
                 }
             }
@@ -86,8 +87,40 @@
                         required: true
                     }
                 },
-                address: {
+                street: {
                     label: true
+                },
+                city: {
+                    label: true
+                },
+                provincy: {
+                    label: true
+                },
+                country: {
+                    label: true
+                },
+                postalCode: {
+                    label: true
+                },
+                type: {
+                    label: true
+                },
+                file: {
+                    label: true
+                },
+                plan: {
+                    label: true
+                },
+                number: {
+                    label: true
+                },
+                complement: {
+                    label: true
+                },
+                familyDoctor: {
+                    firstName: {
+                        label: true
+                    }
                 }
             };
         }

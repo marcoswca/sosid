@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -74,14 +74,14 @@
                 if (attrs['nxIgnoreValidations'] === 'true') {
                     ignoraAllValidations = true;
                 } else {
-                    _.forEach(_.split(attrs['nxIgnoreValidations'], ','), function (value) {
+                    _.forEach(_.split(attrs['nxIgnoreValidations'], ','), function(value) {
                         blackList.push(_.trim(value));
                     });
                 }
             }
 
             if (!ignoraAllValidations) {
-                angular.forEach(validations, function (validatorConfig, validatorName) {
+                angular.forEach(validations, function(validatorConfig, validatorName) {
 
                     if (_.indexOf(blackList, validatorName) !== -1) {
                         return true;
@@ -89,7 +89,7 @@
 
                     if (validatorConfig.isAsync) {
                         setDebounceDefault();
-                        ngModel.$asyncValidators[validatorName] = function (modelValue, viewValue) {
+                        ngModel.$asyncValidators[validatorName] = function(modelValue, viewValue) {
                             var id;
 
                             // todo: identificar o id da instancia que esta tendo update
@@ -119,7 +119,9 @@
                     };
                 } else {
                     ngModel.$options.updateOnDefault = ngModel.$options.updateOnDefault || true;
-                    ngModel.$options.debounce = angular.extend((ngModel.$options.debounce || {}), { 'default': debounceTimeMs });
+                    ngModel.$options.debounce = angular.extend((ngModel.$options.debounce || {}), {
+                        'default': debounceTimeMs
+                    });
                 }
             }
         }
@@ -133,7 +135,7 @@
             controller: NxModelAttrCtrl,
             controllerAs: 'nxModelAttrCtrl',
             scope: true,
-            compile: function (tEl, tAttrs) {
+            compile: function(tEl, tAttrs) {
 
                 var modelName, attributeName;
 
@@ -160,7 +162,9 @@
 
                 // inclui label caso esteja definido
                 if (attribute.label) {
-                    if (typeof attribute.label === 'string') {
+                    if (attribute.phoneNumber) {
+                        tEl.prepend('<label style="margin-left:50px" translate="' + getLabelTranslation() + '"></label>');
+                    } else if (typeof attribute.label === 'string') {
                         tEl.prepend('<label> ' + attribute.label + ' </label>');
                     } else {
                         tEl.prepend('<label translate="' + getLabelTranslation() + '"></label>');
@@ -179,7 +183,7 @@
                 // criando elemento de mensagens de validação
                 var messages = angular.element('<div ng-messages="nxModelAttrCtrl.ngModel.$error" multiple md-auto-hide="auto"></div>');
                 // verificando todas as validações e adicionando ao elemento de mensagens
-                angular.forEach(attribute.validate, function (value, key) {
+                angular.forEach(attribute.validate, function(value, key) {
                     if (typeof value === 'object') {
                         if (value.message) {
                             if (typeof value.message === 'string') {

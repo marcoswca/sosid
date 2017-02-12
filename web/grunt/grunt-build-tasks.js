@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (grunt, build_config) {
+module.exports = function(grunt, build_config) {
 
     var
         path = require('path'),
@@ -42,7 +42,7 @@ module.exports = function (grunt, build_config) {
         build_config.core_files.js.push(api_service_path);
 
         // incluir o caminho de cada api informada
-        apis.forEach(function (api) {
+        apis.forEach(function(api) {
 
             var api_path = core_api_path + api + '.api.js';
             build_config.core_files.js.push(api_path);
@@ -55,7 +55,7 @@ module.exports = function (grunt, build_config) {
     var core_libs = build_config.core_libs;
     var core_libs_path = path.join(core_folder, 'libs');
     if (core_libs instanceof Array) {
-        core_libs.forEach(function (core_lib) {
+        core_libs.forEach(function(core_lib) {
 
             var this_folder = core_lib;
 
@@ -75,13 +75,13 @@ module.exports = function (grunt, build_config) {
     }
 
     // Separar libs de desenvolvimento e producao
-    build_config.lib_files.jsDevelopment = build_config.lib_files.js.filter(function (lib) {
+    build_config.lib_files.jsDevelopment = build_config.lib_files.js.filter(function(lib) {
         return !!lib.development;
     }).map(function(lib) {
         return lib.development;
     });
 
-    build_config.lib_files.jsProduction = build_config.lib_files.js.filter(function (lib) {
+    build_config.lib_files.jsProduction = build_config.lib_files.js.filter(function(lib) {
         return !!lib.production;
     }).map(function(lib) {
         return lib.production;
@@ -116,7 +116,7 @@ module.exports = function (grunt, build_config) {
             app: {
                 options: {
                     base: '<%= app_dir %>',
-                    rename: function (name) {
+                    rename: function(name) {
                         var filename = name.substr(name.lastIndexOf('/'));
                         return "templates" + filename;
                     }
@@ -194,81 +194,69 @@ module.exports = function (grunt, build_config) {
 
             // APP
             build_app_assets: {
-                files: [
-                    {
-                        src: ['**','/bin/compiledSass.css.map'],
-                        dest: '<%= build_dir %>/assets/',
-                        cwd: '<%= app_dir %>/assets',
-                        expand: true
-                    }, {
-                        src: ['compiledSass.css.map'],
-                        dest: '<%= build_dir %>/assets/',
-                        cwd: '<%= build_dir %>/bin/',
-                        expand: true
-                    }
-                ]
+                files: [{
+                    src: ['**', '/bin/compiledSass.css.map'],
+                    dest: '<%= build_dir %>/assets/',
+                    cwd: '<%= app_dir %>/assets',
+                    expand: true
+                }, {
+                    src: ['compiledSass.css.map'],
+                    dest: '<%= build_dir %>/assets/',
+                    cwd: '<%= build_dir %>/bin/',
+                    expand: true
+                }]
             },
             build_appjs: {
-                files: [
-                    {
-                        src: ['<%= app_files.js %>'],
-                        dest: '<%= build_dir %>/js/app',
-                        cwd: '<%= app_dir %>',
-                        expand: true,
-                        flatten: true
+                files: [{
+                    src: ['<%= app_files.js %>'],
+                    dest: '<%= build_dir %>/js/app',
+                    cwd: '<%= app_dir %>',
+                    expand: true,
+                    flatten: true
 
-                    }
-                ]
+                }]
             },
 
             build_corejs: {
-                files: [
-                    {
-                        src: ['<%= core_files.js %>'],
-                        dest: '<%= build_dir %>/js/core/',
-                        cwd: libs_directory,
-                        expand: true,
-                        flatten: true
-                    }
-                ]
+                files: [{
+                    src: ['<%= core_files.js %>'],
+                    dest: '<%= build_dir %>/js/core/',
+                    cwd: libs_directory,
+                    expand: true,
+                    flatten: true
+                }]
             },
 
             // VENDORS
 
             build_vendorjs_development: {
-                files: [
-                    {
-                        src: '<%= lib_files.jsDevelopment %>',
-                        dest: '<%= build_dir %>/js/libs',
-                        cwd: libs_directory,
-                        expand: true,
-                        flatten: true
-                    }
-                ]
+                files: [{
+                    src: '<%= lib_files.jsDevelopment %>',
+                    dest: '<%= build_dir %>/js/libs',
+                    cwd: libs_directory,
+                    expand: true,
+                    flatten: true
+                }]
             },
 
             build_vendorjs_production: {
-                files: [
-                    {
-                        src: '<%= lib_files.jsProduction %>',
-                        dest: '<%= build_dir %>/js/libs',
-                        cwd: libs_directory,
-                        expand: true,
-                        flatten: true
-                    }
-                ]
+                files: [{
+                    src: '<%= lib_files.jsProduction %>',
+                    dest: '<%= build_dir %>/js/libs',
+                    cwd: libs_directory,
+                    expand: true,
+                    flatten: true
+                }]
             },
 
             build_maps_production: {
-                files: [
-                    {
-                        src: '<%= lib_files.maps %>',
-                        dest: '<%= build_dir %>/js/min',
-                        cwd: libs_directory,
-                        expand: true,
-                        flatten: true
-                    }
-                ]
+                files: [{
+                    src: '<%= lib_files.maps %>',
+                    dest: '<%= build_dir %>/js/min',
+                    cwd: libs_directory,
+                    expand: true,
+                    flatten: true
+                }]
             },
 
             config_file: {
@@ -282,51 +270,43 @@ module.exports = function (grunt, build_config) {
             },
 
             build_vendor_testjs: {
-                files: [
-                    {
-                        src: ['<%= test_files.js %>'],
-                        dest: '<%= build_dir %>/',
-                        cwd: libs_directory,
-                        expand: true
-                    }
-                ]
+                files: [{
+                    src: ['<%= test_files.js %>'],
+                    dest: '<%= build_dir %>/',
+                    cwd: libs_directory,
+                    expand: true
+                }]
             },
 
             build_vendorcss: {
-                files: [
-                    {
-                        src: ['<%= lib_files.css %>'],
-                        dest: '<%= build_dir %>/assets/',
-                        cwd: libs_directory,
-                        expand: true,
-                        flatten: true
-                    }
-                ]
+                files: [{
+                    src: ['<%= lib_files.css %>'],
+                    dest: '<%= build_dir %>/assets/css/',
+                    cwd: libs_directory,
+                    expand: true,
+                    flatten: true
+                }]
             },
 
             build_vendor_assets: {
-                files: [
-                    {
-                        src: ['<%= lib_files.assets %>'],
-                        dest: '<%= build_dir %>/assets/',
-                        cwd: libs_directory,
-                        expand: true,
-                        flatten: true
-                    }
-                ]
+                files: [{
+                    src: ['<%= lib_files.assets %>'],
+                    dest: '<%= build_dir %>/assets/',
+                    cwd: libs_directory,
+                    expand: true,
+                    flatten: true
+                }]
             },
 
             build_vendor_fonts: {
-                files: [
-                    {
-                        src: ['<%= lib_files.fonts %>'],
-                        dest: '<%= build_dir %>/fonts',
-                        cwd: libs_directory,
-                        expand: true,
-                        flatten: true,
-                        filter: 'isFile'
-                    }
-                ]
+                files: [{
+                    src: ['<%= lib_files.fonts %>'],
+                    dest: '<%= build_dir %>/fonts',
+                    cwd: libs_directory,
+                    expand: true,
+                    flatten: true,
+                    filter: 'isFile'
+                }]
             }
         },
 
@@ -387,7 +367,10 @@ module.exports = function (grunt, build_config) {
                     'js/min/core.min.js',
                     'js/min/app.min.js',
                     'templates-app.js',
-                    'assets/*.css'
+                    'assets/*.css',
+                    'assets/css/*.css',
+
+
                 ]
             },
 
@@ -404,7 +387,8 @@ module.exports = function (grunt, build_config) {
                     'js/app/*.module.js',
                     'js/app/*.js',
                     'templates-app.js',
-                    'assets/*.css'
+                    'assets/*.css',
+                    'assets/css/*.css'
                 ]
             },
 
@@ -419,7 +403,8 @@ module.exports = function (grunt, build_config) {
                     'js/min/core.min.js',
                     'js/min/app.min.js',
                     'templates-app.js',
-                    'assets/*.css'
+                    'assets/*.css',
+                    'assets/css/*.css'
                 ]
             }
         },
@@ -475,7 +460,7 @@ module.exports = function (grunt, build_config) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : [
+                    src: [
                         '<%= build_dir %>/assets/locales/**/*.json',
                         '<%= build_dir %>/assets/*.css',
                         '<%= build_dir %>/assets/style.css',
@@ -596,7 +581,7 @@ module.exports = function (grunt, build_config) {
         'index:development'
     ]);
 
-    grunt.registerMultiTask('index', 'Process index.html template', function () {
+    grunt.registerMultiTask('index', 'Process index.html template', function() {
 
         var build_dir = grunt.config('build_dir');
         var app_dir = grunt.config('app_dir');
@@ -609,7 +594,7 @@ module.exports = function (grunt, build_config) {
          * A utility function to get all app JavaScript sources.
          */
         function filterForJS(files) {
-            return files.filter(function (file) {
+            return files.filter(function(file) {
                 return file.match(/\.js$/);
             });
         }
@@ -618,17 +603,17 @@ module.exports = function (grunt, build_config) {
          * A utility function to get all app CSS sources.
          */
         function filterForCSS(files) {
-            return files.filter(function (file) {
+            return files.filter(function(file) {
                 return file.match(/\.css$/);
             });
         }
 
         var dirRE = new RegExp('^(' + build_dir + ')\/', 'g');
-        var jsFiles = filterForJS(this.filesSrc).map(function (file) {
+        var jsFiles = filterForJS(this.filesSrc).map(function(file) {
             return file.replace(dirRE, '');
         });
 
-        var cssFiles = filterForCSS(this.filesSrc).map(function (file) {
+        var cssFiles = filterForCSS(this.filesSrc).map(function(file) {
             return file.replace(dirRE, '');
         });
 
@@ -640,7 +625,7 @@ module.exports = function (grunt, build_config) {
         };
 
         grunt.file.copy(app_dir + '/src/index.html', this.data.dir + '/index.html', {
-            process: function (contents) {
+            process: function(contents) {
                 return grunt.template.process(contents, {
                     data: dataToIndex
                 });

@@ -10,8 +10,7 @@
         <div ng-hide="DefaultItemCtrl.isCreate">
             <md-menu md-offset="-50 50">
                 <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-                    <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;"
-                             aria-label="Cake Icon"></md-icon>
+                    <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
                 </md-button>
                 <md-menu-content width="2">
                     <md-menu-item>
@@ -28,13 +27,11 @@
     <div layout="row" flex="100">
         <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
             <div layout="row" layout-xs="column">
-                <md-input-container nx-model-attribute="Doctor:firstName" flex-gt-xs="33" flex="none"
-                                    class="md-block">
+                <md-input-container nx-model-attribute="Doctor:firstName" flex-gt-xs="33" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.firstName">
                 </md-input-container>
 
-                <md-input-container nx-model-attribute="Doctor:lastName" flex-gt-xs="33" flex="none"
-                                    class="md-block">
+                <md-input-container nx-model-attribute="Doctor:lastName" flex-gt-xs="33" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.lastName">
                 </md-input-container>
 
@@ -44,10 +41,10 @@
             </div>
             <div layout="row" layout-xs="column">
                 <md-input-container nx-model-attribute="Doctor:mobileNumber" flex-gt-xs="33" flex="none">
-                    <input ng-model="DefaultItemCtrl.item.mobileNumber">
+                    <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
                 </md-input-container>
                 <md-input-container nx-model-attribute="Doctor:phoneNumber" flex-gt-xs="33" flex="none">
-                    <input ng-model="DefaultItemCtrl.item.phoneNumber">
+                    <input intl-tel-input ng-model="DefaultItemCtrl.item.phoneNumber">
                 </md-input-container>
             </div>
             <div layout="row">
@@ -55,21 +52,57 @@
                     <input ng-model="DefaultItemCtrl.item.email">
                 </md-input-container>
             </div>
-            <div layout="row">
-                <md-input-container nx-model-attribute="Doctor:clinicAddress" flex="100" class="md-block">
-                    <input ng-model="DefaultItemCtrl.item.clinicAddress">
-                </md-input-container>
+            <div layout="column">
+
+                <div layout="row">
+                    <md-input-container nx-model-attribute="Doctor:street" flex="75" class="md-block">
+                        <input aria-label="Street" placeholder="{{DefaultItemCtrl.item.address.street}}" ng-model="DefaultItemCtrl.item.address.street">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="Doctor:number" flex="25" class="md-block">
+                        <input aria-label="number" type="number" placeholder="{{DefaultItemCtrl.item.address.number}}" ng-model="DefaultItemCtrl.item.address.number">
+                    </md-input-container>
+
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="Doctor:complement" flex="50" class="md-block">
+                        <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.complement}}" ng-model="DefaultItemCtrl.item.address.complement">
+                    </md-input-container>
+                    <!-- <md-input-container nx-model-attribute="Doctor:type" flex="20" class="md-block">
+                      <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.type}}" ng-model="DefaultItemCtrl.item.address.type">
+                  </md-input-container> -->
+                    <md-input-container nx-model-attribute="Doctor:postalCode" flex="30" class="md-block">
+                        <input placeholder="{{DefaultItemCtrl.item.address.postalCode}}" aria-label="Postal Code" ng-model="DefaultItemCtrl.item.address.postalCode">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="Doctor:type" flex="20" class="md-block">
+                        <md-select ng-model="DefaultItemCtrl.item.address.type" aria-label="type">
+                            <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.LABEL' | translate }}">
+                                <md-option value="HOME">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.HOME' | translate }}</md-option>
+                                <md-option value="OFFICE">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.OFFICE' | translate }}</md-option>
+                            </md-optgroup>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="Doctor:city" flex="40" class="md-block">
+                        <input aria-label="City" placeholder="{{DefaultItemCtrl.item.address.city}}" ng-model="DefaultItemCtrl.item.address.city">
+                    </md-input-container>
+
+                    <md-input-container nx-model-attribute="Doctor:provincy" flex="30" class="md-block">
+                        <input aria-label="Provincy" placeholder="{{DefaultItemCtrl.item.address.provincy}}" ng-model="DefaultItemCtrl.item.address.provincy">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="Doctor:country" flex="30" class="md-block">
+                        <input aria-label="Country" placeholder="{{DefaultItemCtrl.item.address.country}}" ng-model="DefaultItemCtrl.item.address.country">
+                    </md-input-container>
+
+                </div>
+
             </div>
-            
             <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid "
-                           class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
                 </md-button>
-                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' |
-                    translate}}
+                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
                 </md-button>
             </div>
         </form>
     </div>
 </content-item-box>
-

@@ -1,14 +1,14 @@
-<md-dialog class="sosid-modal privacy-view">
+<md-dialog class="sosid-modal privacy-view" style="padding-bottom:50px;border-top-width:50px;padding-top:50px">
     <div class="modal__header">
         <h1 class="modal__title">{{ 'PRIVATE.PROFILE.PRIVACY.PAGE_TITLE' | translate }}</h1>
         <h2 class="modal__subtitle">{{ 'PRIVATE.PROFILE.PRIVACY.PAGE_SUBTITLE' | translate }}</h2>
     </div>
-    <div class="modal__actions">
-        <span ng-click="$PrivacyController.blockAll()" class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.BLOCK_ALL' | translate }}</span>
-        <span ng-click="$PrivacyController.unBlockAll()" class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.UNBLOCK_ALL' | translate }}</span>
-        <span ng-click="$PrivacyController.unBlockAll()" class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.RESET' | translate }}</span>
+    <div class="modal__actions" layout="row" flex>
+        <span flex ng-click="$PrivacyController.blockAll()" class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.BLOCK_ALL' | translate }}</span>
+        <span flex ng-click="$PrivacyController.unBlockAll()" class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.UNBLOCK_ALL' | translate }}</span>
+        <span flex ng-click="$PrivacyController.unBlockAll()" class="modal__actions__item">{{ 'PRIVATE.PROFILE.PRIVACY.RESET' | translate }}</span>
     </div>
-    <ul class="privacy-list">
+    <ul class="privacy-list" >
         <li class="privacy-list__item" ng-click="$PrivacyController.updatePrivacy(instance)" ng-repeat="instance in $PrivacyController.categories">
             <md-icon ng-class="{'privacy-list__item__toggle-privacy_lock' : instance.private, 'privacy-list__item__toggle-privacy_unlock' : !instance.private}" md-svg-icon="action:lock_{{ instance.private ? 'outline' : 'open'}}"></md-icon>
             <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:personal_data"></md-icon>

@@ -34,8 +34,14 @@
                 <md-input-container nx-model-attribute="Medication:dosage" flex-gt-xs="33" flex="none">
                     <input ng-model="DefaultItemCtrl.item.dosage">
                 </md-input-container>
-                <md-input-container nx-model-attribute="Medication:unit" flex-gt-xs="33" flex="none">
-                    <input ng-model="DefaultItemCtrl.item.unitOfMeasurement">
+                
+                <md-input-container  flex-gt-xs="33" flex="none" nx-model-attribute="Medication:unitOfMeasurement" flex="100" class="md-block">
+                    <md-select ng-model="DefaultItemCtrl.item.unitOfMeasurement">
+                        <md-option ng-value="''"><em>{{ 'OPTIONS.UNDEFINED' | translate }}</em></md-option>
+                        <md-optgroup label="Unit of Measurement">
+                            <md-option ng-repeat="unit in DefaultItemCtrl.getAttributes().units" value="{{unit}}">{{unit}}</md-option>
+                        </md-optgroup>
+                    </md-select>
                 </md-input-container>
                 <md-input-container nx-model-attribute="Medication:frequency" flex-gt-xs="33" flex="none">
                     <input ng-model="DefaultItemCtrl.item.frequency">
@@ -57,7 +63,7 @@
                     <div class="profile-content__upload-files__title">Resources</div>
                     <div class="profile-content__upload-files__hint">(Example: X-Ray, Biopsy, Medical Exam...)</div>
                 </div>
-                <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" ngf-change="DefaultItemCtrl.change($file)" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
+                <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                     <div class="profile-content__upload-dnd-area__icon">
                         <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
                         <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>

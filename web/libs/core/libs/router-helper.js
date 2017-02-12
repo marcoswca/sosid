@@ -35,7 +35,9 @@
                 }
             }
 
-            function getStates() { return $state.get(); }
+            function getStates() {
+                return $state.get();
+            }
         }
     }
 
