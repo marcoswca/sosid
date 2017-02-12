@@ -79,7 +79,6 @@
                     <md-input-container nx-model-attribute="UserProfile:number" flex="25" class="md-block">
                         <input aria-label="number" type="number" placeholder="{{address.number}}" ng-model="address.number">
                     </md-input-container>
-
                 </div>
                 <div layout="row">
                     <md-input-container nx-model-attribute="UserProfile:complement" flex="50" class="md-block">
@@ -104,26 +103,20 @@
                     <md-input-container nx-model-attribute="UserProfile:city" flex="40" class="md-block">
                         <input aria-label="City" placeholder="{{address.city}}" ng-model="address.city">
                     </md-input-container>
-
                     <md-input-container nx-model-attribute="UserProfile:provincy" flex="30" class="md-block">
                         <input aria-label="Provincy" placeholder="{{address.provincy}}" ng-model="address.provincy">
                     </md-input-container>
                     <md-input-container nx-model-attribute="UserProfile:country" flex="30" class="md-block">
                         <input aria-label="Country" placeholder="{{address.country}}" ng-model="address.country">
                     </md-input-container>
-
                 </div>
                 <div layout="row">
-                    <md-input-container nx-model-attribute="UserProfile:plan" flex="50">
-                        <input ng-model="UserBasicInfoCtrl.user.profile.plan.name" skip-disable="true" disabled>
-                    </md-input-container>
                     <md-input-container flex="50">
                         <md-button ng-click="UserBasicInfoCtrl.removeAddress(address)" class="md-raised">Remove Address</md-button>
                     </md-input-container>
                 </div>
             </div>
         </div>
-
         <div class="personal-data__avatar" layout="column" flex-gt-xs="30" flex="none" layout-align="center center">
             <div layout="column">
                 <div style="margin:auto" class="personal-data__avatar__img-container">

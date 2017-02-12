@@ -162,7 +162,6 @@
 
                 // inclui label caso esteja definido
                 if (attribute.label) {
-                    console.log(attribute);
                     if (attribute.phoneNumber) {
                         tEl.prepend('<label style="margin-left:50px" translate="' + getLabelTranslation() + '"></label>');
                     } else if (typeof attribute.label === 'string') {

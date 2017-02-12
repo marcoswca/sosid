@@ -38,6 +38,7 @@
         };
 
         this.update = function(id, data, options) {
+            console.log(data);
             options = options || {};
             options.url = url + '/' + id;
             options.data = data;

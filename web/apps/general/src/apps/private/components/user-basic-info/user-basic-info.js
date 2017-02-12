@@ -52,6 +52,8 @@
                         $timeout(function() {
                             self.allowEdit = false;
                         });
+                    }, function(reason){
+                        console.log(reason);
                     });
             }
 
