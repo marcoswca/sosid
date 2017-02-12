@@ -132,12 +132,12 @@ module.exports = function (grunt) {
                     var tmpConfigFile = './grunt/temp-' + dirName + '.build.config.js';
 
                     // caso o arquivo temporario de configuração ja existe, deleta.
-                    if (fs.exists(tmpConfigFile)) {
-                        fs.unlinkSync(tmpConfigFile);
-                    }
+                    //if (fs.exists(tmpConfigFile)) {
+                       // fs.unlinkSync(tmpConfigFile);
+                    //}
 
                     // cria um arquivo de configuracao para o app na pasta grunt
-                    fs.writeFileSync(tmpConfigFile, template);
+                    //fs.writeFileSync(tmpConfigFile, template);
 
                     // adiciona o arquivo de configuracao do app na lista de arquivos que o grunt-hub vai executar
                     apps.push(tmpConfigFile);
