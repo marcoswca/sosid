@@ -135,6 +135,39 @@
                     "LABEL": "Relationship",
                     "VALIDATE": {
                         "REQUIRED": "Relationship is required"
+                    },
+                    "OPTIONS": {
+                        
+                        "SINGLE PARENT": "Single parent",
+                        "SPOUSE": "Spouse",
+                        "HUSBAND":"Husband",
+                        "WIFE":"Wife",
+                        "PARENT":"Parent",
+                        "FATHER":"Father",
+                        "MOTHER":"Mother",
+                        "CHILD":"Child",
+                        "SON":"Son",
+                        "DAUGTHER":"Daughter",
+                        "SIBLING":"Sibling",
+                        "BROTHER":"Brother",
+                        "SISTER":"Sister",
+                        "EXTENDED FAMILY":"Extended family",
+                        "GRANDPARENT":"Grandparent",
+                        "GRANDFATHER":"Grandfather",
+                        "GRANDMOTHER":"Grandmother",
+                        "GRANDSON":"Grandson",
+                        "GRANDDAUGHTER":"Granddaughter",
+                        "UNCLE":"Uncle",
+                        "AUNT":"Aunt",
+                        "COUSIN":"Cousin",
+                        "NEPHEW":"Nephew",
+                        "NIECE":"Niece",
+                        "BOYFRIEND":"Boyfriend",
+                        "GIRLFRIEND":"Girlfriend",
+                        "FRIEND":"Friend",
+                        "KNOW":"know",
+                        "WORKING COLLEAGUE":"Working colleague"
+
                     }
                 },
                 "MOBILE NUMBER": {

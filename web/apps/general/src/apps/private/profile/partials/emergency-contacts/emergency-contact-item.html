@@ -32,36 +32,43 @@
                 <md-input-container nx-model-attribute="EmergencyContact:lastName" flex-gt-xs="33" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.lastName">
                 </md-input-container>
-                <!-- <md-input-container nx-model-attribute="EmergencyContact:relationship" flex-gt-xs="33" flex="none">
-                    <input ng-model="DefaultItemCtrl.item.relationship">
-                </md-input-container> -->
-
-
-                <md-input-container class="md-block" flex-gt-sm>
-                    <label>Relationship</label>
-                    <md-select ng-model="DefaultItemCtrl.attributes.relationship.type">
-                      <md-option ng-repeat="rel in DefaultItemCtrl.attributes.relationship.values" value="{{rel}}"
-                                    ng-click="DefaultItemCtrl.set(rel)">
-                        {{rel}}
-                      </md-option>
+                <md-input-container nx-model-attribute="EmergencyContact:relationship" flex="20" class="md-block">
+                    <md-select ng-model="DefaultItemCtrl.item.relationship" aria-label="type">
+                        <md-optgroup label="{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.LABEL' | translate }}">
+                            <md-option value="SINGLE PARENT">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SINGLE PARENT' | translate }}</md-option>
+                            <md-option value="SPOUSE">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SPOUSE' | translate }}</md-option>
+                            <md-option value="HUSBAND">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.HUSBAND' | translate }}</md-option>
+                            <md-option value="WIFE">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.WIFE' | translate }}</md-option>
+                            <md-option value="PARENT">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.PARENT' | translate }}</md-option>
+                            <md-option value="FATHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.FATHER' | translate }}</md-option>
+                            <md-option value="MOTHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.MOTHER' | translate }}</md-option>
+                            <md-option value="CHILD">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.CHILD' | translate }}</md-option>
+                            <md-option value="SON">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SON' | translate }}</md-option>
+                            <md-option value="DAUGTHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.DAUGTHER' | translate }}</md-option>
+                            <md-option value="SIBLING">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SIBLING' | translate }}</md-option>
+                            <md-option value="BROTHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.BROTHER' | translate }}</md-option>
+                            <md-option value="SISTER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SISTER' | translate }}</md-option>
+                            <md-option value="EXTENDED FAMILY">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.EXTENDED FAMILY' | translate }}</md-option>
+                            <md-option value="GRANDPARENT">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDPARENT' | translate }}</md-option>
+                            <md-option value="GRANDFATHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDFATHER' | translate }}</md-option>
+                            <md-option value="GRANDMOTHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDMOTHER' | translate }}</md-option>
+                            <md-option value="GRANDSON">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDSON' | translate }}</md-option>
+                            <md-option value="GRANDDAUGHTER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDDAUGHTER' | translate }}</md-option>
+                            <md-option value="UNCLE">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.UNCLE' | translate }}</md-option>
+                            <md-option value="AUNT">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.AUNT' | translate }}</md-option>
+                            <md-option value="COUSIN">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.COUSIN' | translate }}</md-option>
+                            <md-option value="NEPHEW">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.NEPHEW' | translate }}</md-option>
+                            <md-option value="BOYFRIEND">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.BOYFRIEND' | translate }}</md-option>
+                            <md-option value="GIRLFRIEND">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GIRLFRIEND' | translate }}</md-option>
+                            <md-option value="FRIEND">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.FRIEND' | translate }}</md-option>
+                            <md-option value="KNOW">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.KNOW' | translate }}</md-option>
+                            <md-option value="WORKING COLLEAGUE">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.WORKING COLLEAGUE' | translate }}</md-option>
+                        </md-optgroup>
                     </md-select>
                 </md-input-container>
-                <!-- <md-menu>
-                    <md-button style="text-transform: capitalize; opacity: 0.4;" class="md-raised md-block md-button md-ink-ripple" ng-click="$mdOpenMenu($event)">
-                        {{DefaultItemCtrl.item.relationship || 'Relationship'}}
-                    </md-button>
-                    <md-menu-content width="4" ng-show="!DefaultItemCtrl.item.relationship">
-                        <md-menu-item ng-repeat="rel in DefaultItemCtrl.attributes.relationship.values">
-                            <md-button ng-click="DefaultItemCtrl.set(rel)">
-                                {{rel}}
-                            </md-button>
-                        </md-menu-item>
-                    </md-menu-content>
-                </md-menu> -->
             </div>
             <div layout="row" layout-xs="column">
                 <md-input-container nx-model-attribute="EmergencyContact:mobileNumber  " flex-gt-xs="33" flex="none" class="md-block">
-                    <!-- <md-input-container nx-model-attribute="EmergencyContact:mobileNumber" flex-gt-xs="33" flex="none" class="md-block"> -->
                     <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
                 </md-input-container>
                 <md-input-container nx-model-attribute="EmergencyContact:phoneNumber" flex-gt-xs="33" flex="none" class="md-block">
@@ -74,7 +81,6 @@
                 </md-input-container>
             </div>
             <div layout="column">
-
                 <div layout="row">
                     <md-input-container nx-model-attribute="EmergencyContact:street" flex="75" class="md-block">
                         <input aria-label="Street" placeholder="{{DefaultItemCtrl.item.address.street}}" ng-model="DefaultItemCtrl.item.address.street">
@@ -87,9 +93,6 @@
                     <md-input-container nx-model-attribute="EmergencyContact:complement" flex="50" class="md-block">
                         <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.complement}}" ng-model="DefaultItemCtrl.item.address.complement">
                     </md-input-container>
-                    <!-- <md-input-container nx-model-attribute="EmergencyContact:type" flex="20" class="md-block">
-                      <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.type}}" ng-model="DefaultItemCtrl.item.address.type">
-                  </md-input-container> -->
                     <md-input-container nx-model-attribute="EmergencyContact:postalCode" flex="30" class="md-block">
                         <input placeholder="{{DefaultItemCtrl.item.address.postalCode}}" aria-label="Postal Code" ng-model="DefaultItemCtrl.item.address.postalCode">
                     </md-input-container>
@@ -106,16 +109,13 @@
                     <md-input-container nx-model-attribute="EmergencyContact:city" flex="40" class="md-block">
                         <input aria-label="City" placeholder="{{DefaultItemCtrl.item.address.city}}" ng-model="DefaultItemCtrl.item.address.city">
                     </md-input-container>
-
                     <md-input-container nx-model-attribute="EmergencyContact:provincy" flex="30" class="md-block">
                         <input aria-label="Provincy" placeholder="{{DefaultItemCtrl.item.address.provincy}}" ng-model="DefaultItemCtrl.item.address.provincy">
                     </md-input-container>
                     <md-input-container nx-model-attribute="EmergencyContact:country" flex="30" class="md-block">
                         <input aria-label="Country" placeholder="{{DefaultItemCtrl.item.address.country}}" ng-model="DefaultItemCtrl.item.address.country">
                     </md-input-container>
-
                 </div>
-
             </div>
             <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
                 <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary md-block">{{ 'ACTIONS.SAVE' | translate}}
