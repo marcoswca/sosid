@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [
@@ -29,15 +29,17 @@
             ProfileViewCtrl.setLoading(true);
             return OrganCard
                 .get()
-                .then(function (data) {
+                .then(function(data) {
                     self.item = new OrganCard(data);
+                    console.log(self.item);
+
                 })
                 .catch(function(result) {
                     if (result.status === 404) {
                         self.item = new OrganCard();
                     }
                 })
-                .finally(function () {
+                .finally(function() {
                     ProfileViewCtrl.setLoading(false);
                 });
         }

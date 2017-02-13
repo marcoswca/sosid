@@ -40,7 +40,7 @@
                 <md-input-container class="md-block" flex-gt-sm>
                     <label>Relationship</label>
                     <md-select ng-model="DefaultItemCtrl.attributes.relationship.type">
-                      <md-option ng-repeat="rel in DefaultItemCtrl.attributes.relationship.values" value="{{rel}}" 
+                      <md-option ng-repeat="rel in DefaultItemCtrl.attributes.relationship.values" value="{{rel}}"
                                     ng-click="DefaultItemCtrl.set(rel)">
                         {{rel}}
                       </md-option>
@@ -82,7 +82,6 @@
                     <md-input-container nx-model-attribute="EmergencyContact:number" flex="25" class="md-block">
                         <input aria-label="number" type="number" placeholder="{{DefaultItemCtrl.item.address.number}}" ng-model="DefaultItemCtrl.item.address.number">
                     </md-input-container>
-
                 </div>
                 <div layout="row">
                     <md-input-container nx-model-attribute="EmergencyContact:complement" flex="50" class="md-block">

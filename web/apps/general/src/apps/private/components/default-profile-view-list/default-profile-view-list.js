@@ -65,7 +65,6 @@
                     .then(function(result) {
                         if (result.count) {
                             self.items = NxtUtility.bulkInstantiate(ModelName, result.rows);
-                            console.log(self.items);
                         } else {
                             enableCreate();
                         }

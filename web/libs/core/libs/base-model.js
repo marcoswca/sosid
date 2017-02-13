@@ -114,12 +114,11 @@
 
             NxtModel.prototype.create = function() {
                 var self = this;
-                console.log(this);
-                console.log(modelConfig);
+
                 return modelConfig.api
                     .create(this)
                     .then(function(createdDoctor) {
-                      console.log(createdDoctor);
+                        console.log(createdDoctor);
                         self.id = createdDoctor.id || createdDoctor.data.id;
                         self._syncCommitValues();
                     });
@@ -130,6 +129,9 @@
 
 
                 var changedValues = self._getChangedValues();
+                if (self.address) {
+                    changedValues.address = self.address;
+                }
 
                 return modelConfig.api
                     .update(self.id, changedValues)
