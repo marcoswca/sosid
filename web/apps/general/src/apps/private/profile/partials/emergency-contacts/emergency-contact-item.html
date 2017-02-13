@@ -67,18 +67,9 @@
                         </md-optgroup>
                     </md-select>
                 </md-input-container>
-                <!-- <md-input-container class="md-block" flex-gt-sm>
-                    <label>Relationship</label>
-                    <md-select ng-model="DefaultItemCtrl.item.relationship.type">
-                        <md-option ng-repeat="rel in DefaultItemCtrl.item.relationship.values" value="{{rel.type}}">
-                            {{rel.type}}
-                        </md-option>
-                    </md-select>
-                </md-input-container> -->
             </div>
             <div layout="row" layout-xs="column">
                 <md-input-container nx-model-attribute="EmergencyContact:mobileNumber  " flex-gt-xs="33" flex="none" class="md-block">
-                    <!-- <md-input-container nx-model-attribute="EmergencyContact:mobileNumber" flex-gt-xs="33" flex="none" class="md-block"> -->
                     <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
                 </md-input-container>
                 <md-input-container nx-model-attribute="EmergencyContact:phoneNumber" flex-gt-xs="33" flex="none" class="md-block">
@@ -103,9 +94,6 @@
                     <md-input-container nx-model-attribute="EmergencyContact:complement" flex="50" class="md-block">
                         <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.complement}}" ng-model="DefaultItemCtrl.item.address.complement">
                     </md-input-container>
-                    <!-- <md-input-container nx-model-attribute="EmergencyContact:type" flex="20" class="md-block">
-                      <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.type}}" ng-model="DefaultItemCtrl.item.address.type">
-                  </md-input-container> -->
                     <md-input-container nx-model-attribute="EmergencyContact:postalCode" flex="30" class="md-block">
                         <input placeholder="{{DefaultItemCtrl.item.address.postalCode}}" aria-label="Postal Code" ng-model="DefaultItemCtrl.item.address.postalCode">
                     </md-input-container>
