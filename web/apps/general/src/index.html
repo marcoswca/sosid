@@ -41,9 +41,9 @@
     <link rel="stylesheet" type="text/css" href="<%= file %>?v=<%= version %>" /><% }); %>
 
 </head>
-<body style="height:100%;">
 
-<ui-view name="layout"></ui-view>
+<body layout="column">
+    <ui-view  name="layout"></ui-view>
 
 <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
 <script type="text/javascript" src="./<%= file %>?v=<%= version %>"></script><% }); %>

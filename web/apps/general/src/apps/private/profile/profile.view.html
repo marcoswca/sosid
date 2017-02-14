@@ -60,7 +60,7 @@
                 </li>
                 <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                    <a ui-sref="profile.organDonation">
+                    <a ui-sref="profile.organCard">
                         <md-icon md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
                         <span>Organ Donon Card</span>
                     </a>
@@ -72,11 +72,10 @@
                         <span>Glasses Pass</span>
                     </a>
                 </li>
-
             </ul>
         </div>
     </md-sidenav>
-    <div layout="row" layout-align="center stretch" class="topbar" hide-sm="true" hide-xs="true">
+    <div layout="row" layout-align="center stretch" class="topbar" hide-xs="true">
         <div layout="row" layout-align="space-between start" class="topbar__container">
             <div layout="row" layout-align="start center" class="topbar__profile-resume">
                 <div class="personal-data__avatar" style="background-color:transparent" layout="column" flex="none" layout-align="center center">
@@ -103,7 +102,7 @@
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('address')">
                             <div class="profile-resume__data-field">address</div>
                             <div class="profile-resume__data-value">
-                            {{{{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}</div>
+                                {{{{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}</div>
                         </div>
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')">
                             <div class="profile-resume__data-field">Blood Type</div>
@@ -137,8 +136,7 @@
     </div>
     <div layout="row" layout-align="center stretch" class="content profile-content">
         <div layout="row" layout-align="space-between start" class="profile-content__container">
-            <div layout="column" class="profile-sidebar" hide-xs="true" hide-sm="true">
-                <div class="profile__menu md-whiteframe-1dp">
+            <div layout="column" class="profile-sidebar profile__menu" flex-gt-md="5" flex-sm="35" hide-xs="true">
                     <div layout="row" layout-align="start center" class="categories-resume">
                         <div layout="row" class="categories-resume__icon">
                             <md-icon md-svg-icon="action:done_all" style="width:32px;height:32px;" aria-label="User"></md-icon>
@@ -231,7 +229,6 @@
                             </li>
                         </ul>
                     </div>
-                </div>
                 <div class="data-storage__container" layout="column">
                     <div class="data-storage__header" layout="row" layout-align="space-between center">
                         <span class="data-storage__title">Data Storage</span>
@@ -247,7 +244,7 @@
                     </div>
                 </div>
             </div>
-            <div class="partial-content" layout="column">
+            <div class="partial-content" flex="100" layout="column">
                 <div class="profile-content__header" flex="100" layout="row" layout-align="space-between center">
                     <div>
                         <span>

@@ -4,7 +4,7 @@
     padding: 50px 20px;
     box-sizing: border-box;
     background-color: #F2F2F2;
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 600px) {
         width: 90%;
     }
     background-color: #FFFFFF;
@@ -63,7 +63,7 @@
     cursor: pointer;
     margin: 0 30px;
     display: inline-block;
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 600px) {
         margin: 0 10px;
     }
 }
@@ -88,7 +88,7 @@
     &:nth-child(5n + 1) {
         margin-left: 0;
     }
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 600px) {
         margin-left: 0;
         margin-right: 25px;
     }

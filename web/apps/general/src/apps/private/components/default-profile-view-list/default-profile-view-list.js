@@ -35,7 +35,6 @@
             self.cancelCreate = cancelCreate;
             self.createSuccess = createSuccess;
             self.removeSuccess = removeSuccess;
-            self.getAttributes = getAttributes;
 
             // Private methods
             self.$onInit = function() {
@@ -98,11 +97,6 @@
                 self.allowCreate = false;
                 self.items.shift();
             }
-
-            function getAttributes() {
-                return Model.attributes || {};
-            }
         }
-
     }
 })();

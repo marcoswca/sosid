@@ -34,8 +34,7 @@
                 <md-input-container nx-model-attribute="Medication:dosage" flex-gt-xs="33" flex="none">
                     <input ng-model="DefaultItemCtrl.item.dosage">
                 </md-input-container>
-                
-                <md-input-container  flex-gt-xs="33" flex="none" nx-model-attribute="Medication:unitOfMeasurement" flex="100" class="md-block">
+                <md-input-container flex-gt-xs="33" flex="none" nx-model-attribute="Medication:unitOfMeasurement" flex="100" class="md-block">
                     <md-select ng-model="DefaultItemCtrl.item.unitOfMeasurement">
                         <md-option ng-value="''"><em>{{ 'OPTIONS.UNDEFINED' | translate }}</em></md-option>
                         <md-optgroup label="Unit of Measurement">

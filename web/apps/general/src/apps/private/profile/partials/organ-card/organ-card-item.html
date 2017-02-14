@@ -1,17 +1,11 @@
 <content-item-box>
     <form name="form">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column" layout-align-xs="center stretch">
-            <div>
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="row" layout-align-xs="center stretch">
+            <div flex>
                 <h3>{{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE' | translate }}</h3>
             </div>
-            <div ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
+            <div flex="20" ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="end end">
                 <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate }}
-                </md-button>
-            </div>
-            <div ng-hide="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
-                </md-button>
-                <md-button ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()" skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
                 </md-button>
             </div>
         </div>
@@ -63,7 +57,6 @@
                         </md-input-container>
                     </div>
                     <div layout="column">
-
                         <div layout="row">
                             <md-input-container nx-model-attribute="OrganCard:street" flex="75" class="md-block">
                                 <input aria-label="Street" placeholder="{{DefaultItemCtrl.item.address.street}}" ng-model="DefaultItemCtrl.item.address.street">
@@ -71,7 +64,6 @@
                             <md-input-container nx-model-attribute="OrganCard:number" flex="25" class="md-block">
                                 <input aria-label="number" type="number" placeholder="{{DefaultItemCtrl.item.address.number}}" ng-model="DefaultItemCtrl.item.address.number">
                             </md-input-container>
-
                         </div>
                         <div layout="row">
                             <md-input-container nx-model-attribute="OrganCard:complement" flex="50" class="md-block">
@@ -96,16 +88,13 @@
                             <md-input-container nx-model-attribute="OrganCard:city" flex="40" class="md-block">
                                 <input aria-label="City" placeholder="{{DefaultItemCtrl.item.address.city}}" ng-model="DefaultItemCtrl.item.address.city">
                             </md-input-container>
-
                             <md-input-container nx-model-attribute="OrganCard:provincy" flex="30" class="md-block">
                                 <input aria-label="Provincy" placeholder="{{DefaultItemCtrl.item.address.provincy}}" ng-model="DefaultItemCtrl.item.address.provincy">
                             </md-input-container>
                             <md-input-container nx-model-attribute="OrganCard:country" flex="30" class="md-block">
                                 <input aria-label="Country" placeholder="{{DefaultItemCtrl.item.address.country}}" ng-model="DefaultItemCtrl.item.address.country">
                             </md-input-container>
-
                         </div>
-
                     </div>
                     <!-- <div layout="row">
                         <md-input-container nx-model-attribute="OrganCard:address" flex="100" class="md-block">
@@ -119,8 +108,7 @@
                         <div class="profile-content__upload-files__title">Resource</div>
                         <div class="profile-content__upload-files__hint">({{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.UPLOAD_TIP' | translate }})</div>
                     </div>
-                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
-                        class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
+                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                         <div class="profile-content__upload-dnd-area__icon">
                             <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
                             <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
@@ -132,9 +120,15 @@
                         <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
                             {{DefaultItemCtrl.item.file.name}}
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div ng-hide="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
+            <md-button flex="50" ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+            </md-button>
+            <md-button flex="50" ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()" skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
+            </md-button>
         </div>
     </form>
 </content-item-box>

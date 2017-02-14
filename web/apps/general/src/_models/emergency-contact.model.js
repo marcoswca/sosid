@@ -37,7 +37,8 @@
                     }
                 },
                 relationship: {
-                    label: true,
+                    label: true
+                    ,
                     validate: {
                         required: {
                             message: true
@@ -46,21 +47,13 @@
                 },
                 mobileNumber: {
                     label: true,
-                    phoneNumber: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
+                    phoneNumber: true
+                  
                 },
                 phoneNumber: {
                     label: true,
-                    phoneNumber: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
+                    phoneNumber: true
+                  
                 },
                 email: {
                     label: true,
