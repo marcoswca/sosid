@@ -117,17 +117,9 @@
                 self.disableFields = false;
             }
 
-            this.openMenu = function($mdMenu, ev) {
-                originatorEv = ev;
-                $mdMenu.open(ev);
-            };
-
-            this.set = function(rel) {
-                self.item.relationship = rel;
-
-                console.log(self.item.relationship);
-                console.log(rel);
-            };
+            function getAttributes() {
+                return Model.getAttributes
+            }
         }
     }
 })();

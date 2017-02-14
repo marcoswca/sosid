@@ -1,24 +1,26 @@
 <form class="personal-data__basic-informations profile-content__box" name="userProfileForm">
-    <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column" layout-align-xs="center stretch">
-        <div>
+    <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="row" layout-align-xs="center stretch">
+        <div flex>
             <h3>{{ 'PRIVATE.PROFILE.PERSONAL_DATA.BASIC_INFO' | translate }}</h3>
         </div>
-        <div ng-show="!UserBasicInfoCtrl.allowEdit" layout-xs="row" layout-align-xs="center center">
+        <div flex="20" ng-show="!UserBasicInfoCtrl.allowEdit" layout="column" layout-xs="row" layout-align="end end">
             <md-button class="md-raised" ng-click="UserBasicInfoCtrl.enableEdit()"> {{ 'ACTIONS.EDIT' | translate }}
             </md-button>
         </div>
-        <div ng-show="UserBasicInfoCtrl.allowEdit" layout-xs="row" layout-align-xs="center center">
-            <md-button class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()" ng-disabled="userProfileForm.$invalid || userProfileForm.$pristine"> {{ 'ACTIONS.SAVE' | translate }}
-            </md-button>
-            <md-button class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate }}
-            </md-button>
-            <md-input-container>
-                <md-button ng-click="UserBasicInfoCtrl.addAddress()" class="md-raised">New Address</md-button>
-            </md-input-container>
-        </div>
     </div>
-    <div layout="row" layout-align="space-around none" layout-xs="column">
-        <div layout="column" flex="none" flex-gt-xs="70" nx-disable-all="!UserBasicInfoCtrl.allowEdit">
+    <div layout="column" layout-align="space-around none" layout-gt-sm="row">
+        <div layout="column" flex="50" flex-xs="100" nx-disable-all="!UserBasicInfoCtrl.allowEdit">
+            <div class="personal-data__avatar" hide-gt-sm="true" style="padding: 10px" layout="column" layout-align="center center">
+                <div layout="column">
+                    <div style="margin:auto" class="personal-data__avatar__img-container">
+                        <progress-circle></progress-circle>
+                    </div>
+                    <div class="personal-data__avatar__text">
+                        <p>Complete your profile
+                            <br>it's at {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</p>
+                    </div>
+                </div>
+            </div>
             <div layout="row">
                 <div layout="row" flex="50">
                     <md-input-container nx-model-attribute="UserProfile:firstName" flex="100" class="md-block">
@@ -73,23 +75,12 @@
             </div>
             <div ng-repeat="address in UserBasicInfoCtrl.user.profile.address track by $index">
                 <div layout="row">
-                    <md-input-container nx-model-attribute="UserProfile:street" flex="75" class="md-block">
-                        <input aria-label="Street" placeholder="{{address.street}}" ng-model="address.street">
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="UserProfile:number" flex="25" class="md-block">
-                        <input aria-label="number" type="number" placeholder="{{address.number}}" ng-model="address.number">
-                    </md-input-container>
+                    <h4 flex class="profile-content__box__title" style="color: #1ABADE !important;">Address</h4>
+                    <md-button ng-show="UserBasicInfoCtrl.allowEdit" flex="5" ng-click="UserBasicInfoCtrl.removeAddress(address)">
+                        <md-icon class="buttonClose" md-svg-icon="navigation:close" aria-label="close "></md-icon>
+                    </md-button>
                 </div>
                 <div layout="row">
-                    <md-input-container nx-model-attribute="UserProfile:complement" flex="50" class="md-block">
-                        <input aria-label="Type" placeholder="{{address.complement}}" ng-model="address.complement">
-                    </md-input-container>
-                    <!-- <md-input-container nx-model-attribute="UserProfile:type" flex="20" class="md-block">
-                        <input aria-label="Type" placeholder="{{address.type}}" ng-model="address.type">
-                    </md-input-container> -->
-                    <md-input-container nx-model-attribute="UserProfile:postalCode" flex="30" class="md-block">
-                        <input placeholder="{{address.postalCode}}" aria-label="Postal Code" ng-model="address.postalCode">
-                    </md-input-container>
                     <md-input-container nx-model-attribute="UserProfile:type" flex="20" class="md-block">
                         <md-select ng-model="address.type" aria-label="type">
                             <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.LABEL' | translate }}">
@@ -98,6 +89,24 @@
                             </md-optgroup>
                         </md-select>
                     </md-input-container>
+                    <md-input-container nx-model-attribute="UserProfile:street" flex="60" class="md-block">
+                        <input aria-label="Street" placeholder="{{address.street}}" ng-model="address.street">
+                    </md-input-container>
+                    <md-input-container nx-model-attribute="UserProfile:number" flex="20" class="md-block">
+                        <input aria-label="number" type="number" placeholder="{{address.number}}" ng-model="address.number">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="UserProfile:complement" flex="50" class="md-block">
+                        <input aria-label="complement" placeholder="{{address.complement}}" ng-model="address.complement">
+                    </md-input-container>
+                    <!-- <md-input-container nx-model-attribute="UserProfile:type" flex="20" class="md-block">
+                        <input aria-label="Type" placeholder="{{address.type}}" ng-model="address.type">
+                    </md-input-container> -->
+                    <md-input-container nx-model-attribute="UserProfile:postalCode" flex="50" class="md-block">
+                        <input placeholder="{{address.postalCode}}" type="number" aria-label="Postal Code" ng-model="address.postalCode">
+                    </md-input-container>
+
                 </div>
                 <div layout="row">
                     <md-input-container nx-model-attribute="UserProfile:city" flex="40" class="md-block">
@@ -110,14 +119,9 @@
                         <input aria-label="Country" placeholder="{{address.country}}" ng-model="address.country">
                     </md-input-container>
                 </div>
-                <div layout="row">
-                    <md-input-container flex="50">
-                        <md-button ng-click="UserBasicInfoCtrl.removeAddress(address)" class="md-raised">Remove Address</md-button>
-                    </md-input-container>
-                </div>
             </div>
         </div>
-        <div class="personal-data__avatar" layout="column" flex-gt-xs="30" flex="none" layout-align="center center">
+        <div class="personal-data__avatar" hide-sm="true" hide-xs="true" style="padding: 10px" layout="column" layout-align="center center">
             <div layout="column">
                 <div style="margin:auto" class="personal-data__avatar__img-container">
                     <progress-circle></progress-circle>
@@ -127,6 +131,15 @@
                         <br>it's at {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</p>
                 </div>
             </div>
+        </div>
+    </div>
+    <div ng-show="UserBasicInfoCtrl.allowEdit" layout-xs="column" layout-align-xs="center center">
+        <div layout="row" flex="100">
+            <md-button flex-xs="33" style="text-overflow:ellipsis" ng-click="UserBasicInfoCtrl.addAddress()" class="md-raised">New Address</md-button>
+            <md-button flex-xs="33" class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()" ng-disabled="userProfileForm.$invalid || userProfileForm.$pristine"> {{ 'ACTIONS.SAVE' | translate }}
+            </md-button>
+            <md-button flex-xs="33" class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate }}
+            </md-button>
         </div>
     </div>
 </form>

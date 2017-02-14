@@ -26,10 +26,10 @@
     <div layout="row" flex="100">
         <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
             <div layout="row" layout-xs="column">
-                <md-input-container nx-model-attribute="HealthCondition:condition" flex-gt-xs="33" flex="none">
+                <md-input-container nx-model-attribute="HealthCondition:condition" flex-gt-xs="50" flex="none">
                     <input ng-model="DefaultItemCtrl.item.condition">
                 </md-input-container>
-                <md-input-container nx-model-attribute="HealthCondition:severity" flex-gt-xs="33" flex="none">
+                <md-input-container nx-model-attribute="HealthCondition:severity" flex-gt-xs="50" flex="none">
                     <input ng-model="DefaultItemCtrl.item.severity">
                 </md-input-container>
             </div>
@@ -54,9 +54,9 @@
                 </div>
             </div>
             <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+                <md-button flex="50" ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
                 </md-button>
-                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
+                <md-button  flex="50" class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
                 </md-button>
             </div>
         </form>

@@ -25,6 +25,7 @@
                 fn: angular.noop
             }
         };
+        console.log(self.contentHeader);
         self.isLoading = false;
 
         self.planStorageSpace = 0;

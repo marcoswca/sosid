@@ -46,21 +46,13 @@
                 },
                 mobileNumber: {
                     label: true,
-                    phoneNumber: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
+                    phoneNumber: true
+
                 },
                 phoneNumber: {
                     label: true,
-                    phoneNumber: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
+                    phoneNumber: true
+
                 },
                 email: {
                     label: true,
@@ -74,28 +66,63 @@
                     }
                 },
                 street: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 city: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 provincy: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 country: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 postalCode: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 type: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 file: {
                     label: true
                 },
                 number: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 complement: {
                     label: true

@@ -81,25 +81,60 @@
                     }
                 },
                 street: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 city: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 provincy: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 country: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 postalCode: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 type: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 number: {
-                    label: true
+                    label: true,
+                    validate: {
+                        required: {
+                            message: true
+                        }
+                    }
                 },
                 complement: {
                     label: true

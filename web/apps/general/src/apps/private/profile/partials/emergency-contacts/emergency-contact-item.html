@@ -1,9 +1,9 @@
 <content-item-box>
-    <div layout="row" layout-align="space-between center" class="profile-content__box__title">
-        <div flex-xs="90" ng-hide="DefaultItemCtrl.isCreate" flex>
+    <div layout="row" flex layout-align="space-between center" class="profile-content__box__title">
+        <div ng-hide="DefaultItemCtrl.isCreate" flex>
             <h3>{{DefaultItemCtrl.item.firstName + ' ' + item.lastName}} <span ng-show="DefaultItemCtrl.item.speciality"> - {{DefaultItemCtrl.item.speciality}}</span></h3>
         </div>
-        <div flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
+        <div flex="100" flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
             <h3>{{ 'PRIVATE.PROFILE.EMERGENCY CONTACTS.ADD_NEW' | translate }}</h3>
         </div>
         <div ng-hide="DefaultItemCtrl.isCreate">
@@ -26,13 +26,13 @@
     <div layout="row" flex="100">
         <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
             <div layout="row" layout-xs="column">
-                <md-input-container nx-model-attribute="EmergencyContact:firstName  " flex-gt-xs="33" flex="none" class="md-block">
+                <md-input-container nx-model-attribute="EmergencyContact:firstName  " flex-gt-xs="40" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.firstName">
                 </md-input-container>
-                <md-input-container nx-model-attribute="EmergencyContact:lastName" flex-gt-xs="33" flex="none" class="md-block">
+                <md-input-container nx-model-attribute="EmergencyContact:lastName" flex-gt-xs="40" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.lastName">
                 </md-input-container>
-                <md-input-container nx-model-attribute="EmergencyContact:relationship" flex="20" class="md-block">
+                <md-input-container nx-model-attribute="EmergencyContact:relationship" flex="20" flex-xs="100" class="md-block">
                     <md-select ng-model="DefaultItemCtrl.item.relationship" aria-label="type">
                         <md-optgroup label="{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.LABEL' | translate }}">
                             <md-option value="SINGLE PARENT">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SINGLE PARENT' | translate }}</md-option>
@@ -67,62 +67,73 @@
                     </md-select>
                 </md-input-container>
             </div>
-            <div layout="row" layout-xs="column">
-                <md-input-container nx-model-attribute="EmergencyContact:mobileNumber  " flex-gt-xs="33" flex="none" class="md-block">
-                    <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
-                </md-input-container>
-                <md-input-container nx-model-attribute="EmergencyContact:phoneNumber" flex-gt-xs="33" flex="none" class="md-block">
-                    <input intl-tel-input ng-model="DefaultItemCtrl.item.phoneNumber">
-                </md-input-container>
-            </div>
-            <div layout="row">
-                <md-input-container nx-model-attribute="EmergencyContact:email" flex-gt-xs="50" flex="100" class="md-block">
-                    <input ng-model="DefaultItemCtrl.item.email">
-                </md-input-container>
-            </div>
-            <div layout="column">
-                <div layout="row">
-                    <md-input-container nx-model-attribute="EmergencyContact:street" flex="75" class="md-block">
-                        <input aria-label="Street" placeholder="{{DefaultItemCtrl.item.address.street}}" ng-model="DefaultItemCtrl.item.address.street">
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="EmergencyContact:number" flex="25" class="md-block">
-                        <input aria-label="number" type="number" placeholder="{{DefaultItemCtrl.item.address.number}}" ng-model="DefaultItemCtrl.item.address.number">
+            <div layout="row" flex>
+                <div flex="100" layout="column">
+                    <md-input-container nx-model-attribute="EmergencyContact:mobileNumber" class="md-block">
+                        <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
                     </md-input-container>
                 </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="EmergencyContact:complement" flex="50" class="md-block">
-                        <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.complement}}" ng-model="DefaultItemCtrl.item.address.complement">
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="EmergencyContact:postalCode" flex="30" class="md-block">
-                        <input placeholder="{{DefaultItemCtrl.item.address.postalCode}}" aria-label="Postal Code" ng-model="DefaultItemCtrl.item.address.postalCode">
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="EmergencyContact:type" flex="20" class="md-block">
-                        <md-select ng-model="DefaultItemCtrl.item.address.type" aria-label="type">
-                            <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.LABEL' | translate }}">
-                                <md-option value="HOME">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.HOME' | translate }}</md-option>
-                                <md-option value="OFFICE">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.OFFICE' | translate }}</md-option>
-                            </md-optgroup>
-                        </md-select>
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="EmergencyContact:city" flex="40" class="md-block">
-                        <input aria-label="City" placeholder="{{DefaultItemCtrl.item.address.city}}" ng-model="DefaultItemCtrl.item.address.city">
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="EmergencyContact:provincy" flex="30" class="md-block">
-                        <input aria-label="Provincy" placeholder="{{DefaultItemCtrl.item.address.provincy}}" ng-model="DefaultItemCtrl.item.address.provincy">
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="EmergencyContact:country" flex="30" class="md-block">
-                        <input aria-label="Country" placeholder="{{DefaultItemCtrl.item.address.country}}" ng-model="DefaultItemCtrl.item.address.country">
+                <div flex="100" layout="column">
+                    <md-input-container nx-model-attribute="EmergencyContact:phoneNumber" class="md-block">
+                        <input intl-tel-input ng-model="DefaultItemCtrl.item.phoneNumber">
                     </md-input-container>
                 </div>
             </div>
-            <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary md-block">{{ 'ACTIONS.SAVE' | translate}}
-                </md-button>
-                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
-                </md-button>
-            </div>
-        </form>
+    </div>
+    <div layout="row" flex>
+        <div layout="column" flex>
+            <md-input-container nx-model-attribute="EmergencyContact:email" flex-gt-xs="50" flex="100" class="md-block">
+                <input ng-model="DefaultItemCtrl.item.email">
+            </md-input-container>
+        </div>
+    </div>
+    <div layout="column">
+        <div layout="row">
+            <h4 flex class="profile-content__box__title" style="color: #1ABADE !important;">Address</h4>
+        </div>
+        <div layout="row">
+            <md-input-container nx-model-attribute="EmergencyContact:type" flex="20" class="md-block">
+                <md-select ng-model="DefaultItemCtrl.item.address.type" aria-label="type">
+                    <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.LABEL' | translate }}">
+                        <md-option value="HOME">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.HOME' | translate }}</md-option>
+                        <md-option value="OFFICE">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.OFFICE' | translate }}</md-option>
+                    </md-optgroup>
+                </md-select>
+            </md-input-container>
+            <md-input-container nx-model-attribute="EmergencyContact:street" flex="60" class="md-block">
+                <input aria-label="Street" placeholder="{{DefaultItemCtrl.item.address.street}}" ng-model="DefaultItemCtrl.item.address.street">
+            </md-input-container>
+            <md-input-container nx-model-attribute="EmergencyContact:number" flex="20" class="md-block">
+                <input aria-label="number" type="number" placeholder="{{DefaultItemCtrl.item.address.number}}" ng-model="DefaultItemCtrl.item.address.number">
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-input-container nx-model-attribute="EmergencyContact:complement" flex="50" class="md-block">
+                <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.complement}}" ng-model="DefaultItemCtrl.item.address.complement">
+            </md-input-container>
+            <md-input-container nx-model-attribute="EmergencyContact:postalCode" flex="50" class="md-block">
+                <input placeholder="{{DefaultItemCtrl.item.address.postalCode}}" aria-label="Postal Code" ng-model="DefaultItemCtrl.item.address.postalCode">
+            </md-input-container>
+
+        </div>
+        <div layout="row">
+            <md-input-container nx-model-attribute="EmergencyContact:city" flex="40" class="md-block">
+                <input aria-label="City" placeholder="{{DefaultItemCtrl.item.address.city}}" ng-model="DefaultItemCtrl.item.address.city">
+            </md-input-container>
+            <md-input-container nx-model-attribute="EmergencyContact:provincy" flex="30" class="md-block">
+                <input aria-label="Provincy" placeholder="{{DefaultItemCtrl.item.address.provincy}}" ng-model="DefaultItemCtrl.item.address.provincy">
+            </md-input-container>
+            <md-input-container nx-model-attribute="EmergencyContact:country" flex="30" class="md-block">
+                <input aria-label="Country" placeholder="{{DefaultItemCtrl.item.address.country}}" ng-model="DefaultItemCtrl.item.address.country">
+            </md-input-container>
+        </div>
+    </div>
+    <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
+        <md-button flex ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary md-block">{{ 'ACTIONS.SAVE' | translate}}
+        </md-button>
+        <md-button flex class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
+        </md-button>
+    </div>
+    </form>
     </div>
 </content-item-box>

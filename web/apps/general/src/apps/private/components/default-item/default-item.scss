@@ -8,6 +8,14 @@ default-item {
 
 .buttonAdd {
     background-color: white;
+}
+
+.buttonClose:focus {
+    background: transparent;
+}
+
+.buttonAdd,
+.buttonClose {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
     border-radius: 50%;
     color: #aaa;

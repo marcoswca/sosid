@@ -3,7 +3,7 @@
         <div flex-xs="90" ng-hide="DefaultItemCtrl.isCreate" flex>
             <h3>{{ DefaultItemCtrl.item.name}} - <span>{{DefaultItemCtrl.item.dosage + " " + DefaultItemCtrl.item.unit + " " + DefaultItemCtrl.item.frequency}}</span></h3>
         </div>
-        <div flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
+        <div ng-show="DefaultItemCtrl.isCreate" flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
             <h3>{{ 'PRIVATE.PROFILE.MEDICATIONS.ADD_NEW' | translate }}</h3>
         </div>
         <div ng-hide="DefaultItemCtrl.isCreate">
@@ -26,7 +26,7 @@
     <div layout="row" flex="100">
         <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
             <div layout="row">
-                <md-input-container nx-model-attribute="Medication:name" flex="50" flex-xs="100" class="md-block">
+                <md-input-container nx-model-attribute="Medication:name" flex="100"  class="md-block">
                     <input ng-model="DefaultItemCtrl.item.name">
                 </md-input-container>
             </div>
@@ -34,8 +34,7 @@
                 <md-input-container nx-model-attribute="Medication:dosage" flex-gt-xs="33" flex="none">
                     <input ng-model="DefaultItemCtrl.item.dosage">
                 </md-input-container>
-                
-                <md-input-container  flex-gt-xs="33" flex="none" nx-model-attribute="Medication:unitOfMeasurement" flex="100" class="md-block">
+                <md-input-container flex-gt-xs="33" nx-model-attribute="Medication:unitOfMeasurement" flex="100" class="md-block">
                     <md-select ng-model="DefaultItemCtrl.item.unitOfMeasurement">
                         <md-option ng-value="''"><em>{{ 'OPTIONS.UNDEFINED' | translate }}</em></md-option>
                         <md-optgroup label="Unit of Measurement">
@@ -63,7 +62,8 @@
                     <div class="profile-content__upload-files__title">Resources</div>
                     <div class="profile-content__upload-files__hint">(Example: X-Ray, Biopsy, Medical Exam...)</div>
                 </div>
-                <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
+                <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
+                    class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                     <div class="profile-content__upload-dnd-area__icon">
                         <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
                         <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
@@ -75,14 +75,14 @@
                     <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
                         {{DefaultItemCtrl.item.file.name}}
                     </div>
-                </div>
             </div>
-            <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
-                </md-button>
-                <md-button class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
-                </md-button>
-            </div>
-        </form>
+    </div>
+    <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
+        <md-button flex ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+        </md-button>
+        <md-button flex class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}
+        </md-button>
+    </div>
+    </form>
     </div>
 </content-item-box>

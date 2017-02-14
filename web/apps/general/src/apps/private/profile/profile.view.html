@@ -1,4 +1,4 @@
-<md-content class="profile-view">
+<md-content class="profile-view" layout="column" flex>
     <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
         <div layout="column" class="profile__menu">
             <ul>
@@ -60,7 +60,7 @@
                 </li>
                 <li ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                    <a ui-sref="profile.organDonation">
+                    <a ui-sref="profile.organCard">
                         <md-icon md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
                         <span>Organ Donon Card</span>
                     </a>
@@ -72,11 +72,10 @@
                         <span>Glasses Pass</span>
                     </a>
                 </li>
-
             </ul>
         </div>
     </md-sidenav>
-    <div layout="row" layout-align="center stretch" class="topbar" hide-sm="true" hide-xs="true">
+    <div layout="row" layout-align="center stretch" class="topbar" hide-xs="true">
         <div layout="row" layout-align="space-between start" class="topbar__container">
             <div layout="row" layout-align="start center" class="topbar__profile-resume">
                 <div class="personal-data__avatar" style="background-color:transparent" layout="column" flex="none" layout-align="center center">
@@ -138,100 +137,98 @@
     </div>
     <div layout="row" layout-align="center stretch" class="content profile-content">
         <div layout="row" layout-align="space-between start" class="profile-content__container">
-            <div layout="column" class="profile-sidebar" hide-xs="true" hide-sm="true">
-                <div class="profile__menu md-whiteframe-1dp">
-                    <div layout="row" layout-align="start center" class="categories-resume">
-                        <div layout="row" class="categories-resume__icon">
-                            <md-icon md-svg-icon="action:done_all" style="width:32px;height:32px;" aria-label="User"></md-icon>
+            <div layout="column" flex="20" class="profile-sidebar profile__menu" hide-xs="true">
+                <div layout="row" layout-align="start center" class="categories-resume">
+                    <div layout="row" class="categories-resume__icon">
+                        <md-icon md-svg-icon="action:done_all" style="width:32px;height:32px;" aria-label="User"></md-icon>
+                    </div>
+                    <div layout="column" flex="75">
+                        <div class="categories-resume__detailed">
+                            <span>{{ProfileViewCtrl.Session.user.profile.categoriesFilled}} of {{ProfileViewCtrl.Session.user.profile.plan.plans.categories.length}} completed</span>
                         </div>
-                        <div layout="column" flex="75">
-                            <div class="categories-resume__detailed">
-                                <span>{{ProfileViewCtrl.Session.user.profile.categoriesFilled}} of {{ProfileViewCtrl.Session.user.profile.plan.plans.categories.length}} completed</span>
-                            </div>
-                            <div>
-                                <div class="categories-resume__bar">
-                                    <div class="categories-resume__bar__percent" style="width: {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%;"></div>
-                                </div>
+                        <div>
+                            <div class="categories-resume__bar">
+                                <div class="categories-resume__bar__percent" style="width: {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%;"></div>
                             </div>
                         </div>
-                        <div layout="row">
-                            <span class="categories-resume__percent">{{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</span>
-                        </div>
                     </div>
-                    <div layout="column">
-                        <ul>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                                <a ui-sref="profile.personalData">
-                                    <md-icon md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
-                                    <span>Personal Data</span>
-                                </a>
-                            </li>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                                <a ui-sref="profile.emergencyContacts">
-                                    <md-icon md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                    <span>Emergency Contacts</span>
-                                </a>
-                            </li>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                                <a ui-sref="profile.doctors">
-                                    <md-icon md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                    <span>Doctors</span>
-                                </a>
-                            </li>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                                <a ui-sref="profile.allergies">
-                                    <md-icon md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                    <span>Allergies</span>
-                                </a>
-                            </li>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                                <a ui-sref="profile.medications">
-                                    <md-icon md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                    <span>Medications</span>
-                                </a>
-                            </li>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                                <a ui-sref="profile.healthInsurance">
-                                    <md-icon md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                    <span>Health Insurance</span>
-                                </a>
-                            </li>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                                <a ui-sref="profile.healthConditions">
-                                    <md-icon md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                    <span>Health Conditions</span>
-                                </a>
-                            </li>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                                <a ui-sref="profile.livingWill">
-                                    <md-icon md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                    <span>Living Will</span>
-                                </a>
-                            </li>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                                <a ui-sref="profile.organCard">
-                                    <md-icon md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                    <span>Organ Donor Card</span>
-                                </a>
-                            </li>
-                            <li ui-sref-active="active">
-                                <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                                <a ui-sref="profile.glassesPass">
-                                    <md-icon md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                    <span>Glasses Pass</span>
-                                </a>
-                            </li>
-                        </ul>
+                    <div layout="row">
+                        <span class="categories-resume__percent">{{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</span>
                     </div>
+                </div>
+                <div layout="column">
+                    <ul>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                            <a ui-sref="profile.personalData">
+                                <md-icon md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
+                                <span>Personal Data</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                            <a ui-sref="profile.emergencyContacts">
+                                <md-icon md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                <span>Emergency Contacts</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                            <a ui-sref="profile.doctors">
+                                <md-icon md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                <span>Doctors</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                            <a ui-sref="profile.allergies">
+                                <md-icon md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                <span>Allergies</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+                            <a ui-sref="profile.medications">
+                                <md-icon md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                <span>Medications</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                            <a ui-sref="profile.healthInsurance">
+                                <md-icon md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                                <span>Health Insurance</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                            <a ui-sref="profile.healthConditions">
+                                <md-icon md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                <span>Health Conditions</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                            <a ui-sref="profile.livingWill">
+                                <md-icon md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                                <span>Living Will</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                            <a ui-sref="profile.organCard">
+                                <md-icon md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                                <span>Organ Donor Card</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+                            <a ui-sref="profile.glassesPass">
+                                <md-icon md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                                <span>Glasses Pass</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="data-storage__container" layout="column">
                     <div class="data-storage__header" layout="row" layout-align="space-between center">
@@ -248,8 +245,8 @@
                     </div>
                 </div>
             </div>
-            <div class="partial-content" layout="column">
-                <div class="profile-content__header" flex="100" layout="row" layout-align="space-between center">
+            <div class="partial-content" flex layout="column">
+                <div class="profile-content__header" layout="row" layout-align="space-between center">
                     <div>
                         <span>
                             <toggle-menu-mobile></toggle-menu-mobile>
@@ -261,14 +258,14 @@
                     <div class="profile-content__header__button" ng-if="ProfileViewCtrl.contentHeader.button.show()">
                         <md-button class="md-raised" ng-click="ProfileViewCtrl.contentHeader.button.fn()">
                             <md-icon md-svg-icon="content:add" aria-label="Plus signal"></md-icon>
-                            <span translate="{{ProfileViewCtrl.contentHeader.button.name}}"></span>
+                            <span hide-sm translate="{{ProfileViewCtrl.contentHeader.button.name}}"></span>
                         </md-button>
                     </div>
                 </div>
                 <div layout="column" layout-align="center center" class="profile-content__loader" ng-show="ProfileViewCtrl.isLoading">
                     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
                 </div>
-                <ui-view layout="column" flex ng-hide="ProfileViewCtrl.isLoading"></ui-view>
+                <ui-view ng-hide="ProfileViewCtrl.isLoading"></ui-view>
             </div>
         </div>
     </div>

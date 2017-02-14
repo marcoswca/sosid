@@ -1,17 +1,11 @@
 <content-item-box>
     <form name="form">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="column" layout-align-xs="center stretch">
-            <div>
+        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="row" layout-align-xs="center stretch">
+            <div flex>
                 <h3>{{ 'PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE' | translate }}</h3>
             </div>
-            <div ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
+            <div flex="20" ng-show="DefaultItemCtrl.disableFields" layout="column" layout-xs="row" layout-align="end end">
                 <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate }}
-                </md-button>
-            </div>
-            <div ng-hide="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
-                <md-button ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
-                </md-button>
-                <md-button ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()" skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
                 </md-button>
             </div>
         </div>
@@ -29,55 +23,18 @@
                     </md-input-container>
                 </div>
                 <div layout="row" layout-xs="column">
-                    <md-input-container nx-model-attribute="LivingWill:mobileNumber" flex-gt-xs="33" flex="none">
+                    <md-input-container nx-model-attribute="LivingWill:mobileNumber" flex-gt-xs="50" flex="none">
                         <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
                     </md-input-container>
-
-                    <md-input-container nx-model-attribute="LivingWill:phoneNumber" flex-gt-xs="33" flex="none">
+                    <md-input-container nx-model-attribute="LivingWill:phoneNumber" flex-gt-xs="50" flex="none">
                         <input intl-tel-input ng-model="DefaultItemCtrl.item.phoneNumber">
                     </md-input-container>
                 </div>
                 <div layout="row">
-                    <md-input-container nx-model-attribute="LivingWill:email" flex="50" flex-xs="100" class="md-block">
+                    <md-input-container nx-model-attribute="LivingWill:email" flex="100" flex-xs="100" class="md-block">
                         <input ng-model="DefaultItemCtrl.item.email">
                     </md-input-container>
                 </div>
-                <!--  <div layout="row" ng-repeat="address in LivingWillViewController.user.profile.address">
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="LivingWill:street" flex="50" class="md-block">
-                            <input ng-model="address.street">
-                        </md-input-container>
-                        <md-input-container nx-model-attribute="LivingWill:city" flex="50" class="md-block">
-                            <input ng-model="address.city">
-                        </md-input-container>
-                    </div>
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="LivingWill:country" flex="50" class="md-block">
-                            <input ng-model="address.country">
-                        </md-input-container>
-                        <md-input-container nx-model-attribute="LivingWill:provincy" flex="50" class="md-block">
-                            <input ng-model="address.provincy">
-                        </md-input-container>
-                    </div>
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="LivingWill:type" flex="50" class="md-block">
-                            <input ng-model="address.type">
-                        </md-input-container>
-                        <md-input-container nx-model-attribute="LivingWill:postalCode" flex="50" class="md-block">
-                            <input ng-model="address.postalCode">
-                        </md-input-container>
-                    </div>
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="User:plan" flex="100">
-                            <input ng-model="UserBasicInfoCtrl.user.profile.plan.name" skip-disable="true" disabled>
-                        </md-input-container>
-                    </div>
-                    <div layout="row">
-                        <md-input-container nx-model-attribute="User:period" flex="100" class="md-block">
-                            <input ng-model="UserBasicInfoCtrl.user.period" skip-disable="true" disabled>
-                        </md-input-container>
-                    </div>
-                </div> -->
                 <div layout="column" class="profile-content__upload-files">
                     <div layout="row" class="profile-content__upload-files__header">
                         <!--Todo: Mapear tradução-->
@@ -100,6 +57,12 @@
                 </div>
             </div>
         </div>
+        </div>
+        <div ng-hide="DefaultItemCtrl.disableFields" layout="row" layout-align-xs="center center">
+            <md-button flex="50" ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
+            </md-button>
+            <md-button flex="50" ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()" skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
+            </md-button>
         </div>
     </form>
 </content-item-box>
