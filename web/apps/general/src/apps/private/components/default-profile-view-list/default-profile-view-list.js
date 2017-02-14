@@ -98,11 +98,6 @@
                 self.allowCreate = false;
                 self.items.shift();
             }
-
-            function getAttributes() {
-                return Model.attributes || {};
-            }
         }
-
     }
 })();

@@ -103,7 +103,8 @@
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('address')">
                             <div class="profile-resume__data-field">address</div>
                             <div class="profile-resume__data-value">
-                            {{{{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}</div>
+                                {{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}
+                            </div>
                         </div>
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')">
                             <div class="profile-resume__data-field">Blood Type</div>
@@ -267,7 +268,7 @@
                 <div layout="column" layout-align="center center" class="profile-content__loader" ng-show="ProfileViewCtrl.isLoading">
                     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
                 </div>
-                <ui-view ng-hide="ProfileViewCtrl.isLoading"></ui-view>
+                <ui-view layout="column" flex ng-hide="ProfileViewCtrl.isLoading"></ui-view>
             </div>
         </div>
     </div>
