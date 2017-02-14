@@ -81,7 +81,7 @@
                     </md-button>
                 </div>
                 <div layout="row">
-                    <md-input-container nx-model-attribute="UserProfile:type" flex="20" class="md-block">
+                    <md-input-container nx-model-attribute="UserProfile:type" flex="100" class="md-block">
                         <md-select ng-model="address.type" aria-label="type">
                             <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.LABEL' | translate }}">
                                 <md-option value="HOME">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.HOME' | translate }}</md-option>
@@ -89,10 +89,12 @@
                             </md-optgroup>
                         </md-select>
                     </md-input-container>
-                    <md-input-container nx-model-attribute="UserProfile:street" flex="60" class="md-block">
+                </div>
+                <div layout="row">
+                    <md-input-container nx-model-attribute="UserProfile:street" flex="50" class="md-block">
                         <input aria-label="Street" placeholder="{{address.street}}" ng-model="address.street">
                     </md-input-container>
-                    <md-input-container nx-model-attribute="UserProfile:number" flex="20" class="md-block">
+                    <md-input-container nx-model-attribute="UserProfile:number" flex="50" class="md-block">
                         <input aria-label="number" type="number" placeholder="{{address.number}}" ng-model="address.number">
                     </md-input-container>
                 </div>
