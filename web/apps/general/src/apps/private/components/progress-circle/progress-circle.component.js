@@ -30,7 +30,7 @@
                     file: file
                 };
                 LivingWill.UpdateImageProfile(object).then(function successCallback(data) {
-                    Session.user.profile.File = data.data.File;
+                    Session.user.profile.File = data.data.file;
                 }, function errorCallback(reason) {
                     console.log(reason);
                 });

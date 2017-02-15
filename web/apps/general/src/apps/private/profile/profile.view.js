@@ -72,6 +72,7 @@
                 controllerAs: '$PrivacyController',
                 templateUrl: 'templates/privacy.view.html',
                 parent: angular.element(document.body),
+                fullscreen: true,
                 targetEvent: $event,
                 clickOutsideToClose: true
             });
@@ -83,6 +84,7 @@
                 controllerAs: '$PrintCardController',
                 templateUrl: 'templates/print-card.view.html',
                 parent: angular.element(document.body),
+                fullscreen: true,
                 targetEvent: $event,
                 clickOutsideToClose: true
             });
@@ -95,6 +97,7 @@
                 templateUrl: 'templates/welcome.view.html',
                 parent: angular.element(document.body),
                 targetEvent: $event,
+                fullscreen: true,
                 clickOutsideToClose: true
             });
         }

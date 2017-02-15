@@ -1,58 +1,68 @@
-<md-dialog class="sosid-modal print-card">
-    <div class="modal__header">
-        <h1 class="modal__title">{{ 'PRIVATE.PROFILE.PRINT CARD.PAGE_TITLE' | translate }}</h1>
-        <h2 class="modal__subtitle">{{ 'PRIVATE.PROFILE.PRINT CARD.PAGE_SUBTITLE' | translate }}</h2>
-    </div>
+<div layout="row" flex="100">
+    <div layout="column" flex>
+        <md-dialog flex="100" layout="column" class="sosid-modal print-card" style="position:fixed;top:0;height:100vh">
+            <div class="modal__header">
+                <h1 class="modal__title">{{ 'PRIVATE.PROFILE.PRINT CARD.PAGE_TITLE' | translate }}</h1>
+                <h2 class="modal__subtitle">{{ 'PRIVATE.PROFILE.PRINT CARD.PAGE_SUBTITLE' | translate }}</h2>
+            </div>
 
-    <div class="modal__content">
-        <div class="print-card__container" layout="row" layout-xs="column" flex-gt-xs="100" flex="none" layout-align="space-around center">
-            <div class="print-card__front">
-                <div layout="row" flex>
-                    <div flex="50">
-                        <div class="print-card__front__logo">
-                            <img src="./assets/images/logo.png" alt="">
+            <div class="modal__content" style="max-width:800px; margin:auto">
+                <div class="print-card__container" layout="row" layout-xs="column" flex-gt-xs="100" layout-align="center center">
+
+                    <div class="print-card__front" layout="column" flex style="width: 300px; height:275px">
+
+                        <div class="print-card__front__logo" layout="row" flex>
+                            <div style="width:100px" layout="column">
+                                <img src="./assets/images/logo.png" alt="">
+                            </div>
                         </div>
-                        <div class="print-card__front__left">
-                            <div class="print-card__label">Personal Data</div>
-                            <div class="print-card__data">Paulo Régis de Medeiros Cavalcante</div>
-                            <div class="print-card__data">Group AB+</div>
+
+                        <div layout="row" flex layout-align="center center">
+                            <div class="print-card__info" style="font-size:15px">Access <b>sosid.com</b> with this <b>ID 8765378946</b> and see my register</div>
                         </div>
+
+                        <div flex>
+                            <div class="print-card__front__left">
+                                <div class="print-card__label">Personal Data</div>
+                                <div class="print-card__data">Paulo Régis de Medeiros Cavalcante</div>
+                                <div class="print-card__data">Group AB+</div>
+                            </div>
+                        </div>
+
+                        <div flex>
+                            <div class="print-card__front__left">
+                                <div class="print-card__label">Emergency Contact</div>
+                                <div class="print-card__data">Samara Zaida Fernandes da Silva</div>
+                                <div class="print-card__data">+49 251 74849741</div>
+                                <div class="print-card__data">+49 251 74849741</div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div flex="50">
-                        <div class="print-card__front__right">
-                            <div class="print-card__label">Emergency Contact</div>
-                            <div class="print-card__data">Samara Zaida Fernandes da Silva</div>
-                            <div class="print-card__data">+49 251 74849741</div>
-                            <div class="print-card__data">+49 251 74849741</div>
+
+                    <div class="print-card__front" flex style="width: 300px; height:275px; margin:15px" layout="column">
+                        <div layout="row" flex layout-align="center center">
+                            <div class="print-card__info" style="font-size:15px">Access <b>sosid.com</b> with this <b>ID 8765378946</b> and see my register</div>
                         </div>
+                        <div flex>
+                            <div class="print-card__back__left">
+                                <div class="print-card__label">Medical Insurance Details</div>
+                                <div class="print-card__data">American Income Life Insurance Company</div>
+                                <div class="print-card__data">HU762847362348932473</div>
+                                <div class="print-card__data">+49 251 74849741</div>
+                                <div class="print-card__data">GOLD PREMIUM</div>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-                <div layout="row" flex>
-                    <div class="print-card__info">Access <b>sosid.com</b> with this <b>ID 8765378946</b> and see my register</div>
                 </div>
             </div>
-            <div class="print-card__back">
-                <div layout="row" flex>
-                    <div>
-                        <div class="print-card__back__left">
-                            <div class="print-card__label">Medical Insurance Details</div>
-                            <div class="print-card__data">American Income Life Insurance Company</div>
-                            <div class="print-card__data">HU762847362348932473</div>
-                            <div class="print-card__data">+49 251 74849741</div>
-                            <div class="print-card__data">GOLD PREMIUM</div>
-                        </div>
-                    </div>
-                </div>
-                <div layout="row" flex>
-                    <div class="print-card__info">Access <b>sosid.com</b> with this <b>ID 8765378946</b> and see my register</div>
-                </div>
+
+            <div class="modal__footer">
+                <md-button class="md-primary md-raised">Print my card</md-button>
+                <div layout="row" layout-align="center start">something is wrong? <a ui-sref="profile">return to your record</a></div>
             </div>
-        </div>
-    </div>
 
-    <div class="modal__footer">
-        <md-button class="md-primary md-raised">Print my card</md-button>
-        <div layout="row" layout-align="center start">something is wrong? <a ui-sref="profile">return to your record</a></div>
+        </md-dialog>
     </div>
-
-</md-dialog>
+</div>

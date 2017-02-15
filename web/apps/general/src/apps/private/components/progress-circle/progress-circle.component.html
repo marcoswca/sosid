@@ -3,7 +3,7 @@
         <div ngf-pattern="'image/*'" ngf-max-size="20MB" ngf-change="ProgressCircleCtrl.UpdateImageProfile($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="overlay">
             <div class="progress-circle__avatar" layout="row" layout-align="center center">
                 <md-icon ng-show="!ProgressCircleCtrl.hasAvatar()" md-svg-icon="sosid:personal_data" aria-label="Avatar"></md-icon>
-                <img ng-show="ProgressCircleCtrl.hasAvatar()" ng-src="https://s3.eu-central-1.amazonaws.com/sosid/{{ProgressCircleCtrl.getFilePath()}}" />
+                <img  ng-show="ProgressCircleCtrl.hasAvatar()" ng-src="https://s3.eu-central-1.amazonaws.com/sosid/{{ProgressCircleCtrl.getFilePath()}}" />
             </div>
         </div>
     </div>
