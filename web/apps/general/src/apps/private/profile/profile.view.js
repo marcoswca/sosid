@@ -25,7 +25,7 @@
                 fn: angular.noop
             }
         };
-        console.log(self.contentHeader);
+
         self.isLoading = false;
 
         self.planStorageSpace = 0;
@@ -43,6 +43,12 @@
         self.showPrivacySettings = showPrivacySettings;
         self.showPrintCard = showPrintCard;
         self.showWelcome = showWelcome;
+        self.isEnabled = isEnabled;
+        self.categoriesEnabled = {};
+        self.Session.user.profile.plan.plans.categories.forEach(function(category) {
+            self.categoriesEnabled[category.name] = true;
+        });
+
         // Private methods
         return (function init() {
             $rootScope.$on('$stateChangeStart', function() {
@@ -100,6 +106,15 @@
                 fullscreen: true,
                 clickOutsideToClose: true
             });
+        }
+
+        function isEnabled(category) {
+            for (var i = 0; i < self.Session.user.profile.plan.plans.categories.length; i++) {
+                if (self.Session.user.profile.plan.plans.categories[i].name.toLowerCase() === 'category') {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 })();
