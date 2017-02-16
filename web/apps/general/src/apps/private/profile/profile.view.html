@@ -232,12 +232,16 @@
                 </div>
                 <div class="data-storage__container" layout="column">
                     <div class="data-storage__header" layout="row" layout-align="space-between center">
-                        <span class="data-storage__title">Data Storage</span>
-                        <md-button ui-sref="settings.subscriptionUpgrade" class="upgrade-button">Upgrade</md-button>
+                        <div layout="column">
+                            <span class="data-storage__title">Data Storage</span>
+                        </div>
+                        <div layout="column" flex="50" ui-sref="settings.subscriptionUpgrade">
+                            <md-button class="upgrade-button">Upgrade</md-button>
+                        </div>
                     </div>
                     <div layout="column" class="data-storage__content">
                         <div layout="row"><span class="data-storage__data-text">{{ProfileViewCtrl.usedStorage}}MB of {{ProfileViewCtrl.planStorageSpace}}MB Used</span></div>
-                        <div class="data-storage__data-chart">
+                        <div layout="row" class="data-storage__data-chart">
                             <div class="data-storage__bar">
                                 <div class="data-storage__bar__percent" style="width: {{ProfileViewCtrl.percentUsedStorage}}%;"></div>
                             </div>

@@ -3,19 +3,16 @@
         <div>
             <h3>Plan</h3>
         </div>
-        <div>
-            <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-        </div>
     </div>
     <div layout="column" layout-align="space-around none" layout-gt-sm="row">
         <div layout="column" flex="60" flex-xs="100">
 
             <div layout="row">
-                <md-input-container flex="100" class="md-block">
+                <md-input-container flex="100" layout="column" class="md-block" >
                     <label>Current Plan</label>
-                    <input style="margin-top: 6px;" ng-class="{ basic : UserPlanCtrl.plan.name.toLowerCase() === 'basic',
-                  standard : UserPlanCtrl.plan.name.toLowerCase() === 'standard',
-                  premium : UserPlanCtrl.plan.name.toLowerCase() === 'premium' }" class="md-ink-ripple" ng-model="UserPlanCtrl.plan.name" disabled>
+                    <input  style="margin-top: 6px; border-radius:3px;" ng-class="{ basic : UserPlanCtrl.plan.name.toLowerCase().trim() === 'basic',
+                  standard : UserPlanCtrl.plan.name.toLowerCase().trim() === 'standard',
+                  premium : UserPlanCtrl.plan.name.toLowerCase().trim() === 'premium' }" class="md-ink-ripple" ng-model="UserPlanCtrl.plan.name" disabled>
                 </md-input-container>
             </div>
 

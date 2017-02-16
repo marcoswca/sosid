@@ -4,8 +4,14 @@
             <h3>Products</h3>
         </div>
     </div>
+
     <div layout="row">
         <div layout="column" flex="100" class="products-list">
+            <div ng-if="ProductCtrl.products.length === 0">
+                <p style="font-style:italic">
+                    Please buy your products. Go to the store.
+                </p>
+            </div>
             <div layout="row" layout-align="space-between center" class="products-list__item" ng-repeat="product in ProductCtrl.products">
                 <div layout="row">
                     <div layout="row" class="products-list__image-container"> <img width="100px" height="75px" class="image-preview" ng-src="https://s3.eu-central-1.amazonaws.com/sosid/{{product.file_path}}" />
@@ -16,7 +22,7 @@
                     </div>
                 </div>
                 <div layout="row">
-                    <button  ng-class="{'products-list__toggle-privacy-block': !product.active, 'products-list__toggle-privacy-unblock': product.active}"  ng-click="ProductCtrl.togglePrivacy(product)">
+                    <button ng-class="{'products-list__toggle-privacy-block': !product.active, 'products-list__toggle-privacy-unblock': product.active}" ng-click="ProductCtrl.togglePrivacy(product)">
                         <md-icon  ng-class="{red: !product.active, green: product.active}"  md-svg-icon="action:lock_{{!product.active ? 'outline' : 'open'}}" style="color: #00A2D3;width:8px;height:8px; min-width: 18px; min-height: 18px;" aria-label="Cake Icon"></md-icon>
                         <span hide-xs="true">{{product.active ? 'Unblock PIN' : 'Block PIN'}}</span>
                     </button>

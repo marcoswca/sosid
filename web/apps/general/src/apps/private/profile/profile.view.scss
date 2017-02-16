@@ -5,79 +5,91 @@ body {
 .profile-view {
     background-color: #F2F2F2;
     padding-bottom: 50px;
+
     .active {
         a {
             color: red;
         }
     }
+
     a {
         color: blue;
     }
+
     .content {
         width: 100%;
+
         .menu {
             li {
                 white-space: nowrap;
             }
         }
+
         .partial-content {
             width: 100%;
         }
     }
 }
 
-.disabled{
-  pointer-events: none;
-  color: gray !important;
+.disabled {
+    pointer-events: none;
+    color: rgb(189,189,189) !important;
+    background-color: rgba(238,238,238,0.31) !important;
 }
 
 .drop-box.dragover {
-   background-color: rgba(0, 0, 0, 0.2)!important;
+    background-color: rgba(0, 0, 0, 0.2)!important;
 }
-
 
 .profile-content {
     margin-top: -65px;
-
     min-height: calc(100vh - 308px);
-
     @media screen and (max-width: 600px) {
         min-height: calc(100vh - 134px);
         margin-top: 0;
     }
+
     .profile-content__container {
         max-width: 1180px;
         width: 100%;
     }
+
     .profile-content__loader {
         margin: 20px 0;
     }
+
     .profile-sidebar {
         margin-right: 20px;
         width: 393px;
     }
+
     .data-storage__container {
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         border: 1px solid #dfdfdf;
         margin-top: 20px;
         padding: 10px 15px;
+
         .data-storage__header {
             padding-bottom: 5px;
             border-bottom: 1px solid #dfdfdf;
         }
+
         .data-storage__title {
             font-size: 13px;
             font-weight: 500;
             color: rgba(0, 0, 0, 0.75);
         }
+
         .data-storage__content {
             padding: 12px 0;
         }
+
         .data-storage__data-text {
             font-style: italic;
             font-size: 13px;
             color: rgba(0, 0, 0, 0.55);
         }
+
         .data-storage__bar {
             margin-top: 5px;
             position: relative;
@@ -85,12 +97,14 @@ body {
             height: 4px;
             border-radius: 2px;
             background-color: #DCDDDE;
+
             .data-storage__bar__percent {
                 background-color: #00E300;
                 border-radius: 2px;
                 height: 4px;
             }
         }
+
         .categories-resume__percent {
             margin-left: 10px;
             font-size: 22px;
@@ -102,13 +116,16 @@ body {
 .profile__menu {
     background-color: white;
     min-width: 290px;
+
     ul {
         padding: 0;
+
         li {
             position: relative;
             display: block;
         }
     }
+
     .profile-menu__is-completed {
         visibility: hidden;
         position: absolute;
@@ -119,6 +136,7 @@ body {
         height: 20px;
         width: 20px;
         border-radius: 50%;
+
         md-icon {
             min-width: 14px;
             min-height: 14px;
@@ -132,11 +150,14 @@ body {
             margin: auto;
             color: white;
         }
+
         &.profile-menu__is-completed__done {
             background-color: #00E300;
         }
+
         &.profile-menu__is-completed__undone {
             background-color: #FF7070;
+
             md-icon {
                 min-width: 10px;
                 min-height: 10px;
@@ -145,14 +166,17 @@ body {
             }
         }
     }
+
     .active a {
         color: white;
         background-color: #00A2D3;
         font-weight: 500;
+
         md-icon {
             color: white!important;
         }
     }
+
     a {
         text-decoration: none;
         font-weight: 400;
@@ -161,12 +185,14 @@ body {
         height: 44px;
         padding-left: 15px;
         overflow: hidden;
+
         md-icon {
             float: left;
             margin-right: 10px;
             margin-top: 5px;
             margin-left: -3px;
         }
+
         span {
             line-height: 48px;
             float: left;
@@ -181,36 +207,43 @@ body {
 .profile-content__upload-files {
     margin-top: 20px;
     margin-bottom: 20px;
+
     .profile-content__upload-files__header {
         font-size: 15px;
         font-weight: 500;
         color: rgba(0, 0, 0, 0.55);
         margin-bottom: 15px;
     }
+
     .profile-content__upload-files__hint {
         font-weight: 300;
         font-style: italic;
         margin-left: 5px;
         color: rgba(0, 0, 0, 0.55);
     }
+
     .profile-content__upload-files__dnd-area {
         background-color: #F2F2F2;
         border-top: 1px solid rgba(0, 0, 0, 0.15);
         padding: 30px 0;
     }
+
     .profile-content__upload-dnd-area__icon md-icon {
         width: 56px;
         height: 56px;
         color: rgba(0, 0, 0, 0.3);
     }
+
     .profile-content__upload-files__dnd-area__title {
         color: rgba(0, 22, 33, 0.75);
         font-size: 26px;
     }
+
     .profile-content__upload-files__dnd-area__hint {
         font-weight: 300;
         color: rgba(0, 0, 0, 0.55);
         margin-top: 5px;
+
         span {
             color: #00A2D3;
             text-decoration: underline;
@@ -222,14 +255,17 @@ body {
 .categories-resume {
     background-color: #1ABADE;
     color: #fff;
-    padding: 17px 15px 16px 15px;
+    padding: 17px 15px 16px;
     font-weight: 500;
+
     .categories-resume__icon {
         margin-right: 10px;
+
         md-icon {
             color: #fff;
         }
     }
+
     .categories-resume__bar {
         margin-top: 5px;
         position: relative;
@@ -237,11 +273,13 @@ body {
         height: 4px;
         border-radius: 2px;
         background-color: #DCDDDE;
+
         .categories-resume__bar__percent {
             background-color: #00E300;
             height: 4px;
         }
     }
+
     .categories-resume__percent {
         margin-left: 10px;
         font-size: 22px;
@@ -261,24 +299,29 @@ body {
         padding-left: 10px;
         font-weight: 500;
     }
+
     .profile-content__header__toggle-menu-mobile {
         min-width: 36px !important;
         margin: 0;
+
         md-icon {
             color: #fff;
             width: 36px;
             height: 36px;
         }
     }
+
     .profile-content__header__title {
         font-weight: 500;
     }
+
     .profile-content__header__button {
         .md-button {
             box-shadow: none;
             color: #00A2D3;
             padding: 0 22px 0 15px;
             margin: 0;
+
             md-icon {
                 color: #00A2D3;
             }
@@ -286,6 +329,7 @@ body {
                 padding: 0;
                 min-width: 36px;
             }
+
             span {
                 @media screen and (max-width: 600px) {
                     display: none;
@@ -308,6 +352,7 @@ body {
         margin-right: auto;
         box-sizing: border-box;
     }
+
     .profile-content__box-loader {
         position: absolute;
         top: 0;
@@ -317,118 +362,145 @@ body {
         z-index: 10;
         background-color: rgba(255, 255, 255, 0.5);
     }
+
     &.profile-content__box-edit {
         box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+
         .profile-content__box__title {
             margin-bottom: 10px;
         }
+
         button.md-primary {
             margin-left: 0;
             padding-left: 30px;
             padding-right: 30px;
             box-shadow: none;
         }
+
         button {
             padding-top: 3px;
             padding-bottom: 3px;
         }
     }
+
     .profile-content__box__title {
         margin-bottom: 20px;
         border-bottom: 1px solid #ededed;
+
         h3 {
             color: rgba(0, 22, 33, 0.65);
             font-size: 18px;
             font-weight: 600;
             margin: 15px 0;
+
             span {
                 color: rgba(0, 0, 0, 0.45);
                 font-weight: 300;
             }
         }
     }
+
     label {
         font-size: 15px;
     }
+
     md-input-container:not(.md-input-invalid).md-input-has-value label {
         color: #00A2D3;
     }
+
     input,
     textarea {
         font-size: 17px;
         font-weight: 400;
         color: #888;
+
         &[disabled] {
             border: 0;
             color: #888;
         }
     }
+
     md-select {
         ._md-select-value {
             font-size: 17px;
         }
+
         ._md-select-icon {
             display: inline-block;
         }
+
         &[disabled] {
             ._md-select-value {
                 background-image: none;
                 color: #888;
             }
+
             ._md-select-icon {
                 display: none;
             }
         }
     }
+
     .md-errors-spacer {
         min-height: 0;
     }
 }
 
 .topbar {
-
     background-color: #00A2D3;
+
     .topbar__container {
         max-width: 1180px;
         width: 100%;
         height: 245px;
     }
+
     .topbar__profile-resume {
         height: 182px;
     }
+
     .profile-resume__avatar {
         margin-right: 10px;
+
         img {
             border-radius: 50%;
         }
     }
+
     .profile-resume__data {
         color: #fff;
     }
+
     .profile-resume__data__name {
         font-size: 25px;
         margin-bottom: 10px;
     }
+
     .profile-resume__data__name_first-name {
         text-transform: capitalize;
     }
+
     .profile-resume__data__name--last-name {
         text-transform: capitalize;
         font-weight: 300;
         color: rgba(255, 255, 255, 0.55);
     }
+
     .profile-resume__data-item {
         margin-right: 30px;
     }
+
     .profile-resume__data-field {
         text-transform: uppercase;
         font-size: 12px;
         color: rgba(255, 255, 255, 0.55);
         margin-bottom: 5px;
     }
+
     .topbar__profile-nav {
         height: 182px;
     }
+
     .topbar__profile-nav__link {
         width: 100px;
         text-align: center;
@@ -437,17 +509,20 @@ body {
         line-height: 20px;
         text-decoration: none;
     }
+
     .topbar__profile-nav {
         button {
             width: 72px;
             height: 72px;
             background-color: #C4E8F4;
             margin-bottom: 5px;
+
             &:hover {
                 background-color: #C4E8F4!important;
             }
         }
     }
+
     .topbar__profile-nav__link__text {
         color: #fff;
         min-height: 40px;
@@ -456,6 +531,7 @@ body {
 
 .hot-button__container {
     margin-top: 20px;
+
     .hot-button {
         &:first-of-type {
             margin-right: 20px;
@@ -467,8 +543,8 @@ body {
     }
 }
 
-.hot-button:hover{
-  background-color: #00E300;
+.hot-button:hover {
+    background-color: #00E300;
 }
 
 .hot-button {
@@ -477,37 +553,44 @@ body {
     @media screen and (max-width: 600px) {
         width: 95%;
         box-sizing: border-box;
-        margin-left: auto;
-        margin-right: auto!important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
+
     .hot-button__icon-left {
         border-radius: 50%;
         background-color: rgba(255, 255, 255, 0.85);
         padding: 8px;
         margin-right: 15px;
+
         md-icon {
             width: 72px;
             height: 72px;
         }
     }
+
     .hot-button__title__container {
         line-height: 18px;
         margin-bottom: 5px;
     }
+
     .hot-button__title {
         color: rgba(255, 255, 255, 0.85);
         font-size: 20px;
         font-weight: 400;
     }
+
     .hot-button__description__container {
         line-height: 16px;
     }
+
     .hot-button__description {
         font-size: 15px;
         color: rgba(255, 255, 255, 0.85);
         line-height: 16px;
         font-weight: 300;
     }
+
     .hot-button__icon-right {
         md-icon {
             color: #fff;
@@ -520,16 +603,18 @@ body {
 .md-button.upgrade-button {
     background-color: #EDB142;
     box-shadow: none !important;
-    color: rgba(black, 0.35);
+    color: rgba(black, 0.45);
     height: 20px;
     min-height: 20px;
     line-height: 20px;
     font-size: 12px;
     font-weight: 400;
     min-width: 74px;
+
     &:hover {
         background-color: lighten(#EDB142, 10%);
     }
+
     &:focus {
         background-color: #EDB142;
     }
