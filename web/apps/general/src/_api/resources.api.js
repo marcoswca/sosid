@@ -18,7 +18,14 @@
             options = options || {};
             options.url = url;
             options.params = params || {};
+            console.log(options);
+            return ApiService.Get(options);
+        };
 
+        this.getFile = function(fileUrl) {
+            var options = {};
+            options.url = fileUrl;
+            options.responseType = "arraybuffer";
             return ApiService.Get(options);
         };
 

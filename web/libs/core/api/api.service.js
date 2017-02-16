@@ -18,6 +18,7 @@
     /** @ngInject */
     function config($httpProvider) {
         $httpProvider.defaults.withCredentials = false;
+        console.log($httpProvider);
         $httpProvider.interceptors.push('NegativeStatusHandler');
     }
 
@@ -27,7 +28,9 @@
         return {
             request: function(config) {
                 var token = $cookies.get('sessionToken');
-                if (token) {
+                if (config.url.indexOf('https://s3.eu-central-1.amazonaws.com') !== -1) {
+                    config.headers.Authorization = " ";
+                } else if (token && config.url.indexOf('https://s3.eu-central-1.amazonaws.com') === -1) {
                     config.headers.Authorization = 'Bearer ' + token;
                 }
 

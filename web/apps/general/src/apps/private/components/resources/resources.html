@@ -12,7 +12,7 @@
                         <md-icon md-svg-icon="editor:attach_file" style="color: rgba(0, 22, 33, 0.75);width:44px;height:44px;" aria-label="Cake Icon"></md-icon>
                     </div>
                     <div layout="column" layout-align="center start">
-                        <a href="{{file.url}}">
+                        <a ng-click="UserResourcesCtrl.openFile(file)">
                             <div layout="row" class="products-list__title">{{file.fileName}}</div>
                             <div layout="row" class="products-list__more-info">{{UserResourcesCtrl.byteToMbyte(file.sizeInBytes)}}MB</div>
                         </a>

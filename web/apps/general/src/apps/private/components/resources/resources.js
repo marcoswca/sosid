@@ -28,6 +28,22 @@
 
             });
 
+            self.openFile = function(file) {
+
+                UserResources.getFile(file.url).then(function successCallback(data) {
+                  console.log(file);
+                    var toOpen = new Blob([data], {
+                        type:  file.mimeType
+                    });
+
+                    var fileURL = URL.createObjectURL(toOpen);
+                    window.open(fileURL);
+
+                }, function errorCallback(reason) {
+                    console.log(reason);
+                });
+            };
+
             self.byteToMbyte = function(syzeInBytes) {
                 return (syzeInBytes / (1024 * 1024)).toFixed(2);
             };
