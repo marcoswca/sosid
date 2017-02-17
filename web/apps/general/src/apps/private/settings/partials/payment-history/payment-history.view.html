@@ -1,4 +1,3 @@
-<div ng-init="PaymentHistoryViewCtrl.initData()" class="personal-data-view" layout="column" layout-align="space-between stretch">
     <div class="profile-content__header" layout="row" layout-align="space-between center">
         <div>
             <a ui-sref="profile.personalData">
@@ -13,33 +12,33 @@
             <span class="profile-content__header__title">{{PaymentHistoryViewCtrl.viewName}}</span>
         </div>
     </div>
-    <div layout="column" layout-align="start center" class="history-payment__container">
-        <div layout="column" flex="100" class="history-payment__list">
+<div ng-init="PaymentHistoryViewCtrl.initData()" class="personal-data-view" layout="row" flex>
+        <div layout="column"  class="history-payment__list">
             <div layout="row" layout-align="space-between center" class="history-payment__list__item">
-                <div layout="row" flex="85">
-                    <div layout="column" flex="20" flex-xs="40">
+                <div layout="row" flex="100">
+                    <div layout="column" flex="20">
                         Date
                     </div>
-                    <div layout="column" flex="20" flex-xs="60" layout-align="center end">
+                    <div layout="column" flex="20" layout-align="center end">
                         Amount (€)
                     </div>
-                    <div layout="column" flex="20" flex-xs="60" layout-align="center end">
+                    <div layout="column" flex="20" layout-align="center end">
                         Products
                     </div>
-                    <div layout="column" flex="20" flex-xs="60" layout-align="center end">
+                    <div layout="column" flex="20" layout-align="center end">
                         Status
                     </div>
-                    <div layout="column" flex="20" flex-xs="60" layout-align="center end">
+                    <div layout="column" flex="20" layout-align="center end">
                         Invoice
                     </div>
                 </div>
             </div>
             <div layout="row" layout-align="space-between center" ng-repeat="payment in PaymentHistoryViewCtrl.payments" class="history-payment__list__item">
-                <div layout="row" flex="85">
-                    <div layout="column" flex="20" flex-xs="40">
+                <div layout="row" flex="100">
+                    <div layout="column" flex="20" flex-xs="20">
                         {{PaymentHistoryViewCtrl.getLocaleDate(payment.createdAt)}}
                     </div>
-                    <div layout="column" flex="20" flex-xs="60" layout-align="center end" layout-align-xs="center start">
+                    <div layout="column" flex="20" flex-xs="20" layout-align="center end" layout-align-xs="center start">
                         {{payment.amount}}
                     </div>
                     <div layout="column" flex="20" layout-align="center end">
@@ -55,5 +54,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
