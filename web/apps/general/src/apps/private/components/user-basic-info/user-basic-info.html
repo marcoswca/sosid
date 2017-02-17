@@ -8,11 +8,11 @@
             </md-button>
         </div>
     </div>
-    <div layout="column" layout-align="space-around none" layout-gt-sm="row">
-        <div layout="column" flex="50" flex-xs="100" nx-disable-all="!UserBasicInfoCtrl.allowEdit">
+    <div layout="row" layout-align="space-around none">
+        <div layout="column" flex="100" nx-disable-all="!UserBasicInfoCtrl.allowEdit">
             <div class="personal-data__avatar" hide-gt-sm="true" style="padding: 10px" layout="column" layout-align="center center">
-                <div layout="column">
-                    <div style="margin:auto" class="personal-data__avatar__img-container">
+                <div layout="column" layout-align="center center">
+                    <div class="personal-data__avatar__img-container">
                         <progress-circle></progress-circle>
                     </div>
                     <div class="personal-data__avatar__text">
@@ -73,53 +73,55 @@
                     </md-input-container>
                 </div>
             </div>
-            <div ng-repeat="address in UserBasicInfoCtrl.user.profile.address track by $index">
-                <div layout="row">
-                    <h4 flex class="profile-content__box__title" style="color: #1ABADE !important;">Address</h4>
-                    <md-button ng-show="UserBasicInfoCtrl.allowEdit" flex="5" ng-click="UserBasicInfoCtrl.removeAddress(address)">
-                        <md-icon class="buttonClose" md-svg-icon="navigation:close" aria-label="close "></md-icon>
-                    </md-button>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="UserProfile:type" flex="100" class="md-block">
-                        <md-select ng-model="address.type" aria-label="type">
-                            <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.LABEL' | translate }}">
-                                <md-option value="HOME">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.HOME' | translate }}</md-option>
-                                <md-option value="OFFICE">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.OFFICE' | translate }}</md-option>
-                            </md-optgroup>
-                        </md-select>
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="UserProfile:street" flex="50" class="md-block">
-                        <input aria-label="Street" placeholder="{{address.street}}" ng-model="address.street">
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="UserProfile:number" flex="50" class="md-block">
-                        <input aria-label="number" type="number" placeholder="{{address.number}}" ng-model="address.number">
-                    </md-input-container>
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="UserProfile:complement" flex="50" class="md-block">
-                        <input aria-label="complement" placeholder="{{address.complement}}" ng-model="address.complement">
-                    </md-input-container>
-                    <!-- <md-input-container nx-model-attribute="UserProfile:type" flex="20" class="md-block">
+            <div layout="row" ng-repeat="address in UserBasicInfoCtrl.user.profile.address track by $index">
+                <div layout="column">
+                    <div layout="row">
+                        <h4 flex class="profile-content__box__title" style="color: #1ABADE !important;">Address</h4>
+                        <md-button ng-show="UserBasicInfoCtrl.allowEdit" flex="5" ng-click="UserBasicInfoCtrl.removeAddress(address)">
+                            <md-icon class="buttonClose" md-svg-icon="navigation:close" aria-label="close "></md-icon>
+                        </md-button>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="UserProfile:type" flex="100" class="md-block">
+                            <md-select ng-model="address.type" aria-label="type">
+                                <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.LABEL' | translate }}">
+                                    <md-option value="HOME">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.HOME' | translate }}</md-option>
+                                    <md-option value="OFFICE">{{ 'MODELS.USER PROFILE.ATTRIBUTES.TYPE.OPTIONS.OFFICE' | translate }}</md-option>
+                                </md-optgroup>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="UserProfile:street" flex="50" class="md-block">
+                            <input aria-label="Street" placeholder="{{address.street}}" ng-model="address.street">
+                        </md-input-container>
+                        <md-input-container nx-model-attribute="UserProfile:number" flex="50" class="md-block">
+                            <input aria-label="number" type="number" placeholder="{{address.number}}" ng-model="address.number">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="UserProfile:complement" flex="50" class="md-block">
+                            <input aria-label="complement" placeholder="{{address.complement}}" ng-model="address.complement">
+                        </md-input-container>
+                        <!-- <md-input-container nx-model-attribute="UserProfile:type" flex="20" class="md-block">
                         <input aria-label="Type" placeholder="{{address.type}}" ng-model="address.type">
                     </md-input-container> -->
-                    <md-input-container nx-model-attribute="UserProfile:postalCode" flex="50" class="md-block">
-                        <input placeholder="{{address.postalCode}}" type="number" aria-label="Postal Code" ng-model="address.postalCode">
-                    </md-input-container>
+                        <md-input-container nx-model-attribute="UserProfile:postalCode" flex="50" class="md-block">
+                            <input placeholder="{{address.postalCode}}" type="number" aria-label="Postal Code" ng-model="address.postalCode">
+                        </md-input-container>
 
-                </div>
-                <div layout="row">
-                    <md-input-container nx-model-attribute="UserProfile:city" flex="40" class="md-block">
-                        <input aria-label="City" placeholder="{{address.city}}" ng-model="address.city">
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="UserProfile:provincy" flex="30" class="md-block">
-                        <input aria-label="Provincy" placeholder="{{address.provincy}}" ng-model="address.provincy">
-                    </md-input-container>
-                    <md-input-container nx-model-attribute="UserProfile:country" flex="30" class="md-block">
-                        <input aria-label="Country" placeholder="{{address.country}}" ng-model="address.country">
-                    </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container nx-model-attribute="UserProfile:city" flex="40" class="md-block">
+                            <input aria-label="City" placeholder="{{address.city}}" ng-model="address.city">
+                        </md-input-container>
+                        <md-input-container nx-model-attribute="UserProfile:provincy" flex="30" class="md-block">
+                            <input aria-label="Provincy" placeholder="{{address.provincy}}" ng-model="address.provincy">
+                        </md-input-container>
+                        <md-input-container nx-model-attribute="UserProfile:country" flex="30" class="md-block">
+                            <input aria-label="Country" placeholder="{{address.country}}" ng-model="address.country">
+                        </md-input-container>
+                    </div>
                 </div>
             </div>
         </div>
