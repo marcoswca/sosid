@@ -2,49 +2,49 @@
     <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
         <div layout="column" class="profile__menu">
             <ul>
-                <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                     <a ui-sref="profile.personalData">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
                         <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}">Personal Data</span>
                     </a>
                 </li>
-                <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                     <a ui-sref="profile.emergencyContacts">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
                         <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}">Emergency Contacts</span>
                     </a>
                 </li>
-                <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                     <a ui-sref="profile.doctors">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
                         <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}">Doctors</span>
                     </a>
                 </li>
-                <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                     <a ui-sref="profile.healthConditions">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
                         <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}">Health Conditions</span>
                     </a>
                 </li>
-                <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                     <a ui-sref="profile.allergies">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
                         <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}">Allergies</span>
                     </a>
                 </li>
-                <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                     <a ui-sref="profile.medications">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
                         <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}">Medications</span>
                     </a>
                 </li>
-                <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                     <a ui-sref="profile.healthInsurance">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
@@ -52,21 +52,21 @@
                     </a>
                 </li>
 
-                <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                     <a ui-sref="profile.livingWill">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
                         <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}">Living Will</span>
                     </a>
                 </li>
-                <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+                <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                     <a ui-sref="profile.organCard">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
                         <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}">Organ Donon Card</span>
                     </a>
                 </li>
-                <li ui-sref-active="active" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" ng-click="MasterViewCtrl.close()">
+                <li class="background" ui-sref-active="active" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                     <a ui-sref="profile.glassesPass">
                         <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
@@ -80,13 +80,13 @@
         <div layout="row" layout-align="space-between start" class="topbar__container">
             <div layout="row" layout-align="start center" class="topbar__profile-resume">
                 <div class="personal-data__avatar" style="background-color:transparent" layout="column" flex="none" layout-align="center center">
-                    <div layout="column">
+                    <div layout="column" style="margin:10px">
                         <div class="personal-data__avatar__img-container">
                             <progress-circle></progress-circle>
                         </div>
                     </div>
                 </div>
-                <div style="padding:15px" layout="column" layout-align="center stretch" class="profile-resume__data">
+                <div layout="column" layout-align="center stretch" class="profile-resume__data">
                     <div class="profile-resume__data__name">
                         <span class="profile-resume__data__name_first-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('firstName')}}</span>
                         <span class="profile-resume__data__name_first-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('lastName')}}</span>
@@ -159,75 +159,75 @@
                 </div>
                 <div layout="column">
                     <ul>
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                             <a ui-sref="profile.personalData">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
-                                <span>Personal Data</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}">Personal Data</span>
                             </a>
                         </li>
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                             <a ui-sref="profile.emergencyContacts">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Emergency Contacts</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}">Emergency Contacts</span>
                             </a>
                         </li>
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                             <a ui-sref="profile.doctors">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Doctors</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}">Doctors</span>
                             </a>
                         </li>
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                             <a ui-sref="profile.healthConditions">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Health Conditions</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}">Health Conditions</span>
                             </a>
                         </li>
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                             <a ui-sref="profile.allergies">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Allergies</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}">Allergies</span>
                             </a>
                         </li>
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
                             <a ui-sref="profile.medications">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Medications</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}">Medications</span>
                             </a>
                         </li>
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                             <a ui-sref="profile.healthInsurance">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                <span>Health Insurance</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}">Health Insurance</span>
                             </a>
                         </li>
 
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                             <a ui-sref="profile.livingWill">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                <span>Living Will</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}">Living Will</span>
                             </a>
                         </li>
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                             <a ui-sref="profile.organCard">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                <span>Organ Donor Card</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}">Organ Donor Card</span>
                             </a>
                         </li>
-                        <li ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" ui-sref-active="active">
+                        <li class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                             <a ui-sref="profile.glassesPass">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span>Glasses Pass</span>
+                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}">Glasses Pass</span>
                             </a>
                         </li>
                     </ul>

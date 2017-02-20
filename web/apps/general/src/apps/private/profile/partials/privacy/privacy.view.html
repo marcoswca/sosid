@@ -1,4 +1,9 @@
 <md-dialog layout="column" flex="100" style="top:0; height:100%" class="sosid-modal privacy-view">
+    <div layout="row" style="margin-top:-50px" layout-align="end start" flex>
+        <md-button layout-align="end end" layout="column" flex="5" ng-click="$PrivacyController.hide()">
+            <md-icon class="buttonClose" md-svg-icon="navigation:close" aria-label="close "></md-icon>
+        </md-button>
+    </div>
     <div layout="row" layout-align="center center" flex>
         <div class="modal__header">
             <h1 class="modal__title">{{ 'PRIVATE.PROFILE.PRIVACY.PAGE_TITLE' | translate }}</h1>

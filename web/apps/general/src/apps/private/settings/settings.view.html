@@ -2,9 +2,15 @@
     <div layout="row" layout-align="center stretch" class="topbar topbar-settings" hide-xs="true">
         <div layout="row" layout-align="space-between start" class="topbar__container">
             <div layout="row" layout-align="start center" class="topbar__profile-resume">
-                <div layout="row" class="profile-resume__avatar">
-                    <progress-circle></progress-circle>
+          
+                <div class="personal-data__avatar" style="background-color:transparent" layout="column" flex="none" layout-align="center center">
+                    <div layout="column" style="margin:10px" >
+                        <div class="personal-data__avatar__img-container">
+                            <progress-circle></progress-circle>
+                        </div>
+                    </div>
                 </div>
+
                 <div layout="column" layout-align="center stretch" class="profile-resume__data">
                     <div class="profile-resume__data__name">
                         <span class="profile-resume__data__name_first-name">{{SettingsViewCtrl.Session.user.profile._getCommittedField('firstName')}}</span>

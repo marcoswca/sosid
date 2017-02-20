@@ -1,4 +1,9 @@
 <md-dialog  layout="column"  flex="100" class="sosid-modal print-card" style="top:0; height:100%">
+  <div layout="row" style="margin-top:-50px" layout-align="end start" flex>
+      <md-button layout-align="end end" layout="column" flex="5" ng-click="PrintCardController.hide()">
+          <md-icon class="buttonClose" md-svg-icon="navigation:close" aria-label="close "></md-icon>
+      </md-button>
+  </div>
     <div class="modal__header">
         <h1 class="modal__title">{{ 'PRIVATE.PROFILE.PRINT CARD.PAGE_TITLE' | translate }}</h1>
         <h2 class="modal__subtitle">{{ 'PRIVATE.PROFILE.PRINT CARD.PAGE_SUBTITLE' | translate }}</h2>

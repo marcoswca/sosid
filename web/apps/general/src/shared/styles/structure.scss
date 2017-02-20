@@ -1,9 +1,8 @@
 body, html {
   -webkit-font-smoothing: subpixel-antialiased;
-
 }
 
 md-select.md-default-theme[disabled] .md-select-value, md-select[disabled] .md-select-value {
-  color: gray;
+  color: black;
   background-image: none !important;
 }

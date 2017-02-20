@@ -1,4 +1,4 @@
-(function () {
+(function() {
 
     'use strict';
 
@@ -9,10 +9,13 @@
         .controller('PrintCardController', PrintCardController);
 
     /** @ngInject */
-    function PrintCardController() {
+    function PrintCardController($mdDialog) {
 
         var self = this;
 
+        self.hide = function() {
+            $mdDialog.hide();
+        };
     }
 
 })();
