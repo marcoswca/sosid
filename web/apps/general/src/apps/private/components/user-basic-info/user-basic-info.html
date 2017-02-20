@@ -137,13 +137,11 @@
             </div>
         </div>
     </div>
-    <div ng-show="UserBasicInfoCtrl.allowEdit" layout-xs="column" layout-align-xs="center center">
-        <div layout="row" flex="100">
+    <div ng-show="UserBasicInfoCtrl.allowEdit" layout="row" layout-align="start center">
             <md-button flex-xs="33" style="text-overflow:ellipsis" ng-click="UserBasicInfoCtrl.addAddress()" class="md-raised">New Address</md-button>
             <md-button flex-xs="33" class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()" ng-disabled="userProfileForm.$invalid || userProfileForm.$pristine"> {{ 'ACTIONS.SAVE' | translate }}
             </md-button>
             <md-button flex-xs="33" class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate }}
             </md-button>
-        </div>
     </div>
 </form>

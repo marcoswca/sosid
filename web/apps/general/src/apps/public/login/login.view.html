@@ -18,7 +18,7 @@
                     <md-button type="submit" class="md-raised md-primary submit-button" ng-click="LoginCtrl.submit()" ng-disabled="loginForm.$invalid || LoginCtrl.isLoading" translate="PUBLIC.LOGIN.SUBMIT_BUTTON" aria-label="login">
                     </md-button>
 
-                    <p class="error" ng-show="LoginCtrl.invalidEmailOrPassword">{{ 'PUBLIC.LOGIN.INVALID_EMAIL_PASSWORD_TEXT' | translate }}</p>
+                    <p class="error" ng-show="LoginCtrl.err">{{ LoginCtrl.message | translate }}</p>
                     <p class="error" ng-show="LoginCtrl.sendEmail">{{ 'PUBLIC.LOGIN.SENT_REGISTRATION_LINK' | translate }}</p>
                 </div>
             </form>

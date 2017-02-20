@@ -3,7 +3,6 @@
         <div flex-xs="90" ng-hide="DefaultItemCtrl.isCreate" flex>
             <h3>{{DefaultItemCtrl.item.firstName + ' ' + item.lastName}} <span ng-show="DefaultItemCtrl.item.speciality"> - {{DefaultItemCtrl.item.speciality}}</span></h3>
         </div>
-
         <div flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
             <h3>{{ 'PRIVATE.PROFILE.DOCTORS.ADD_NEW' | translate }}</h3>
         </div>
@@ -30,16 +29,13 @@
                 <md-input-container nx-model-attribute="Doctor:firstName" flex-gt-xs="33" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.firstName">
                 </md-input-container>
-
                 <md-input-container nx-model-attribute="Doctor:lastName" flex-gt-xs="33" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.lastName">
                 </md-input-container>
-
                 <md-input-container nx-model-attribute="Doctor:speciality" flex-gt-xs="33" flex="none">
                     <input ng-model="DefaultItemCtrl.item.speciality">
                 </md-input-container>
             </div>
-
             <div layout="row">
                 <div flex="100" layout="column">
                     <md-input-container nx-model-attribute="Doctor:email" flex-gt-xs="50" flex="100" class="md-block">
@@ -47,20 +43,14 @@
                     </md-input-container>
                 </div>
             </div>
-
             <div layout="row" layout-xs="column">
-                <div flex="100" layout="column">
-                    <md-input-container nx-model-attribute="Doctor:mobileNumber">
-                        <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
-                    </md-input-container>
-                </div>
-                <div flex="100" layout="column">
-                    <md-input-container nx-model-attribute="Doctor:phoneNumber" flex-gt-xs="50">
-                        <input intl-tel-input ng-model="DefaultItemCtrl.item.phoneNumber">
-                    </md-input-container>
-                </div>
+                <md-input-container flex-gt-xs="50" nx-model-attribute="Doctor:mobileNumber">
+                    <input intl-tel-input ng-model="DefaultItemCtrl.item.mobileNumber">
+                </md-input-container>
+                <md-input-container flex-gt-xs="50" nx-model-attribute="Doctor:phoneNumber" flex-gt-xs="50">
+                    <input intl-tel-input ng-model="DefaultItemCtrl.item.phoneNumber">
+                </md-input-container>
             </div>
-
             <div layout="column">
                 <div layout="row">
                     <h4 flex class="profile-content__box__title" style="color: #1ABADE !important;">Address</h4>
@@ -76,7 +66,6 @@
                     </md-input-container>
                 </div>
                 <div layout="row">
-
                     <md-input-container nx-model-attribute="Doctor:street" flex="50" class="md-block">
                         <input aria-label="Street" placeholder="{{DefaultItemCtrl.item.address.street}}" ng-model="DefaultItemCtrl.item.address.street">
                     </md-input-container>
@@ -88,26 +77,21 @@
                     <md-input-container nx-model-attribute="Doctor:complement" flex="50" class="md-block">
                         <input aria-label="Type" placeholder="{{DefaultItemCtrl.item.address.complement}}" ng-model="DefaultItemCtrl.item.address.complement">
                     </md-input-container>
-
                     <md-input-container nx-model-attribute="Doctor:postalCode" flex="50" class="md-block">
                         <input placeholder="{{DefaultItemCtrl.item.address.postalCode}}" aria-label="Postal Code" ng-model="DefaultItemCtrl.item.address.postalCode">
                     </md-input-container>
-
                 </div>
                 <div layout="row">
                     <md-input-container nx-model-attribute="Doctor:city" flex="40" class="md-block">
                         <input aria-label="City" placeholder="{{DefaultItemCtrl.item.address.city}}" ng-model="DefaultItemCtrl.item.address.city">
                     </md-input-container>
-
                     <md-input-container nx-model-attribute="Doctor:provincy" flex="30" class="md-block">
                         <input aria-label="Provincy" placeholder="{{DefaultItemCtrl.item.address.provincy}}" ng-model="DefaultItemCtrl.item.address.provincy">
                     </md-input-container>
                     <md-input-container nx-model-attribute="Doctor:country" flex="30" class="md-block">
                         <input aria-label="Country" placeholder="{{DefaultItemCtrl.item.address.country}}" ng-model="DefaultItemCtrl.item.address.country">
                     </md-input-container>
-
                 </div>
-
             </div>
             <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
                 <md-button flex="50" ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}

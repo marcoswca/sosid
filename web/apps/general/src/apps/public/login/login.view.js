@@ -17,7 +17,7 @@
 
         self.credentials = {};
         self.isLoading = false;
-        self.invalidEmailOrPassword = false;
+        self.err = false;
 
         // Public methods
         self.submit = submit;
@@ -27,7 +27,7 @@
 
             self.isLoading = true;
             self.sendEmail = false;
-            self.invalidEmailOrPassword = false;
+            self.err = false;
 
             SessionApi
                 .login(self.credentials)
@@ -39,8 +39,9 @@
                     console.log(e);
                     if (e.data && e.data.code === 2) {
                         self.sendEmail = true;
-                    } else {
-                        self.invalidEmailOrPassword = true;
+                    } else  {
+                        self.err = true;
+                        self.message = e.data.message;
                     }
 
                 })
