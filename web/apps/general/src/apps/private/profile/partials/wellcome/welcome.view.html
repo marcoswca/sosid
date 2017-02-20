@@ -1,4 +1,9 @@
 <md-dialog layout="column" flex="100" class="sosid-modal welcome" style="top;0; height:100%; background-color: #00A2D3; opacity: 0.92; ">
+    <div layout="row" style="margin-top:-50px; " layout-align="end start" flex>
+        <md-button style="background: transparent !important" layout-align="end end" layout="column" flex="5" ng-controller="PrivacyController as vm" ng-click="vm.hide()">
+            <md-icon style="background-color:white" class="buttonClose" md-svg-icon="navigation:close" aria-label="close "></md-icon>
+        </md-button>
+    </div>
     <div class="modal__header">
         <h1 class="modal__title" style="color:#ffffff">Welcome to SOS-ID Edit Profile</h1>
         <h2 class="modal__subtitle" style="color:rgb(23.59,69)">It does not have a plan and is on trial version. Choose between the two options below to proceed:</h2>
