@@ -14,6 +14,14 @@
     margin-top: 0;
     text-align: center;
 }
+// .animate-show-hide.ng-hide {
+//   opacity: 0;
+// }
+//
+// .animate-show-hide.ng-hide-add,
+// .animate-show-hide.ng-hide-remove {
+//   transition: all linear 0.6s;
+// }
 
 .plans__subtitle {
     color: rgba(#001621, 0.35);
@@ -182,33 +190,55 @@ md-tooltip.plans__tooltip {
     }
 }
 
+.plans__highlight__header__subtitle {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-style: italic;
+}
+
 .plans__item {
     &.plans__item__standard {
+        border: 2px solid;
+        border-color: transparent;
+        border-radius: 5px;
+
         .plans__highlight__footer__txt-bold,
         .plans__highlight__footer__txt-normal,
         .plans__highlight__footer__txt-normal md-icon,
         .plans__highlight__header__price,
         .plans__highlight__header__title,
         .plans__includes__header,
+        .plans__highlight__header__subtitle,
         .plans__includes__header md-icon,
         .plans__includes__header__title {
-            color: #FF9D00;
+            color: #00A2D3;
+        }
+
+        &.plans__actual {
+            border: 2px solid;
+            border-color: #00A2D3;
+            border-radius: 5px;
         }
     }
 
     &.plans__item__standard {
         .md-button.md-primary {
-            background-color: #FF9D00;
+            background-color: #00A2D3;
         }
     }
 
     &.plans__item__premium {
+        border: 2px solid;
+        border-color: transparent;
+        border-radius: 5px;
+
         .plans__highlight__footer__txt-bold,
         .plans__highlight__footer__txt-normal,
         .plans__highlight__footer__txt-normal md-icon,
         .plans__highlight__header__price,
         .plans__highlight__header__title,
         .plans__includes__header,
+        .plans__highlight__header__subtitle,
         .plans__includes__header md-icon,
         .plans__includes__header__title {
             color: #00C26F;
@@ -218,7 +248,6 @@ md-tooltip.plans__tooltip {
             border: 2px solid;
             border-color: #00C26F;
             border-radius: 5px;
-            padding: 10px;
         }
     }
 
@@ -229,10 +258,15 @@ md-tooltip.plans__tooltip {
     }
 
     &.plans__item__basic {
+        border: 2px solid;
+        border-color: transparent;
+        border-radius: 5px;
+
         .plans__highlight__footer__txt-bold,
         .plans__highlight__footer__txt-normal,
         .plans__highlight__footer__txt-normal md-icon,
         .plans__highlight__header__price,
+        .plans__highlight__header__subtitle,
         .plans__highlight__header__title,
         .plans__includes__header,
         .plans__includes__header md-icon,
@@ -244,39 +278,12 @@ md-tooltip.plans__tooltip {
             border: 2px solid;
             border-color: #f69c0d;
             border-radius: 5px;
-            padding: 10px;
         }
     }
 
     &.plans__item__basic {
         .md-button.md-primary {
             background-color: #f69c0d;
-        }
-    }
-
-    &.plans__item__intermediary {
-        .plans__highlight__footer__txt-bold,
-        .plans__highlight__footer__txt-normal,
-        .plans__highlight__footer__txt-normal md-icon,
-        .plans__highlight__header__price,
-        .plans__highlight__header__title,
-        .plans__includes__header,
-        .plans__includes__header md-icon,
-        .plans__includes__header__title {
-            color: #00A2D3;
-        }
-
-        &.plans__actual {
-            border: 2px solid;
-            border-color: #00A2D3;
-            border-radius: 5px;
-            padding: 10px;
-        }
-    }
-
-    &.plans__item__intermediary {
-        .md-button.md-primary {
-            background-color: #00A2D3;
         }
     }
 }
@@ -295,7 +302,7 @@ md-tooltip.plans__tooltip {
     text-align: center;
     width: 80px !important;
     radius: 10px;
-    color: #f69c0d  !important;
+    color: #f69c0d !important;
 }
 
 .standard {

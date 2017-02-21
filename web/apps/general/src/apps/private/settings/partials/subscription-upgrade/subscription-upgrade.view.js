@@ -14,33 +14,8 @@
 
         // Public variables
         self.viewName = 'Subscription Upgrade';
-        console.log(Session);
+
         self.actual = Session.user.profile.plan.name;
-
-
-
-        //BASIC
-        self.personalData = false;
-        self.emergencyContact = false;
-        self.cardPrint = false;
-        //STANDARD
-        self.personalDataS = false;
-        self.emergencyContactS = false;
-        self.doctorsS = false;
-        self.healthConditionS = false;
-        //PREMIUM
-        self.personalDataP = false;
-        self.emergencyContactP = false;
-        self.doctorsP = false;
-        self.allergies = false;
-        self.medications = false;
-        self.healthInsurance = false;
-        self.healthConditionP = false;
-        self.livingWill = false;
-        self.organDononCard = false;
-        self.glassesPass = false;
-
-        // Public methods
 
         self.changeExibition = function(type, number) {
             if (type == 'basic') {
@@ -58,8 +33,10 @@
                     self.emergencyContactS = !self.emergencyContactS;
                 } else if (number == '3') {
                     self.doctorsS = !self.doctorsS;
-                } else {
+                } else if (number == '4') {
                     self.healthConditionS = !self.healthConditionS;
+                } else {
+                    self.cardPrintStd = !self.cardPrintStd;
                 }
             } else {
                 if (number == '1') {
@@ -80,8 +57,10 @@
                     self.livingWill = !self.livingWill;
                 } else if (number == '9') {
                     self.organDononCard = !self.organDononCard;
-                } else {
+                } else if (number == '10') {
                     self.glassesPass = !self.glassesPass;
+                } else {
+                    self.cardPrintPr = !self.cardPrintPr;
                 }
             }
         };

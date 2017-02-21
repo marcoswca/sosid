@@ -28,15 +28,24 @@
             $mdDialog.hide();
         };
 
+        self.hasPlan = function() {
+          console.log(Session.user.profile.plan.plans);
+          return Session.user.profile.plan && Session.user.profile.plan.plans;
+        };
+
         self.blockAll = function() {
             self.categories.forEach(function(category, index) {
-                self.updatePrivacy(category, { private: true });
+                self.updatePrivacy(category, {
+                    private: true
+                });
             });
         };
 
         self.unBlockAll = function() {
             self.categories.forEach(function(category, index) {
-                self.updatePrivacy(category, { private: false });
+                self.updatePrivacy(category, {
+                    private: false
+                });
             });
         };
 
@@ -45,7 +54,9 @@
             if (allCategories) {
                 data = allCategories;
             } else {
-                data = { private: !category.private };
+                data = {
+                    private: !category.private
+                };
             }
             PrivacyApi.update(category.id, data).then(function successCallback(success) {
                 category.private = data.private;
