@@ -178,7 +178,7 @@
                 <div class="plans__highlight">
                     <div class="plans__highlight__header">
                       <div ng-show="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__highlight__header__subtitle">Your current plan</div>
-                      <div ng-show="!SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__highlight__header__subtitle">Available</div>
+                      <div ng-hide="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__highlight__header__subtitle">Available</div>
 
                         <div class="plans__highlight__header__title">Premium</div>
                         <div class="plans__highlight__header__price">
