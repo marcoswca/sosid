@@ -237,6 +237,17 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur doloremque ducimus eos esse impedit, maiores, maxime mollitia provident.
                             </div>
                         </div>
+                        <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.healthConditionP }">
+                            <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.healthConditionP }" layout="row" layout-align="space-between center">
+                                <span>Health Condition</span>
+                                <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','7')">
+                                    <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
+                                </md-button>
+                            </div>
+                            <div class="plans__includes__header__subtitle" ng-show="SubUpCtrl.healthConditionP">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur doloremque ducimus eos esse impedit, maiores, maxime mollitia provident.
+                            </div>
+                        </div>
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.allergies }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.allergies }" layout="row" layout-align="space-between center">
                                 <span>Allergies</span>
@@ -270,17 +281,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur doloremque ducimus eos esse impedit, maiores, maxime mollitia provident.
                             </div>
                         </div>
-                        <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.healthConditionP }">
-                            <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.healthConditionP }" layout="row" layout-align="space-between center">
-                                <span>Health Condition</span>
-                                <md-button flex="15" class="md-icon-button" ng-click="SubUpCtrl.changeExibition('premium','7')">
-                                    <md-icon style="color:gray" md-svg-icon="sosid:arrow_down_drop_circle_outline"></md-icon>
-                                </md-button>
-                            </div>
-                            <div class="plans__includes__header__subtitle" ng-show="SubUpCtrl.healthConditionP">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur doloremque ducimus eos esse impedit, maiores, maxime mollitia provident.
-                            </div>
-                        </div>
+
                         <div style="margin-top: 10px" ng-class="{'plans__includes__header' : SubUpCtrl.livingWill }">
                             <div ng-class="{'plans__includes__list__item' : !SubUpCtrl.livingWill }" layout="row" layout-align="space-between center">
                                 <span>Living Will</span>

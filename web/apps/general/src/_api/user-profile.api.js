@@ -33,5 +33,12 @@
             return ApiService.Delete(options);
         };
 
+        this.getSosCardPrint = function(options) {
+            options = options || {};
+            options.url = APP_CONFIG.URL.API_URL + '/user' + '/sosidcard';
+            options.responseType = "arraybuffer";
+            options.params = {};
+            return ApiService.Get(options);
+        };
     }
 })();
