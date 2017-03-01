@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="plans__button-container">
-                    <button ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'basic'" class="plans__button plans__button_basic md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Basic Plan</button>
+                    <button ng-click="SubUpCtrl.upgradePlan('basic')" ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'basic'" class="plans__button plans__button_basic md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Basic Plan</button>
                 </div>
                 <div class="plans__includes">
                     <div class="plans__includes__header">
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <div class="plans__button-container">
-                    <button ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'standard'" class="plans__button md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Standard Plan</button>
+                    <button ng-click="SubUpCtrl.upgradePlan('standard')" ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'standard'" class="plans__button md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Standard Plan</button>
                 </div>
                 <div class="plans__includes">
                     <div class="plans__includes__header">
@@ -196,7 +196,7 @@
                     </div>
                 </div>
                 <div class="plans__button-container">
-                    <button ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__button plans__button_premium md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Premium Plan</button>
+                    <button ng-click="SubUpCtrl.upgradePlan('premium')"  ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__button plans__button_premium md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Premium Plan</button>
                 </div>
                 <div class="plans__includes">
                     <div class="plans__includes__header">

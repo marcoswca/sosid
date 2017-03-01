@@ -1,21 +1,68 @@
 (function() {
     'use strict';
 
-    var dependencies = [];
+    var dependencies = ['model.plan', 'ngCookies'];
 
     angular
         .module('private.views.subscriptionUpgrade', dependencies)
         .controller('SubscriptionUpgradeViewController', SubscriptionUpgradeViewController);
 
     /** @ngInject */
-    function SubscriptionUpgradeViewController(Session) {
+    function SubscriptionUpgradeViewController(Session, Plan, $cookies) {
         // Private variables
         var self = this;
 
         // Public variables
         self.viewName = 'Subscription Upgrade';
 
-        self.actual = Session.user.profile.plan.name;
+        if (Session.user.profile.plan) {
+            self.actual = Session.user.profile.plan.name;
+        }
+        
+        self.getPlans = function() {
+            Plan.getAll().then(function successCallback(data) {
+                self.plans = data;
+            }, function errorCallback(reason) {
+                // body... 
+            });
+        };
+
+        self.getPlans();
+
+        self.upgradePlan = function(planName) {
+            self.plans.forEach(function(planInstance, index) {
+                if (planInstance.name.trim().toLowerCase() === planName) {
+                    mountCart(planInstance);
+                }
+            });
+        };
+
+        function mountCart(planInstance) {
+
+            var object = {
+                description: planInstance.name,
+                quantity: 1,
+                price: planInstance.plans.price,
+                isPlan: true
+            };
+
+            if ($cookies.get('cart')) {
+                var cartObject = JSON.parse($cookies.get('cart'));
+                cartObject.items.push(object);
+                $cookies.putObject('cart', cartObject);
+                window.open("http://localhost:3003/#/commerce/cart", '_blank');
+
+            } else {
+                self.shoppingCart = {
+                    cartId: 1,
+                    amount: planInstance.plans.price,
+                    items: [object]
+                };
+                $cookies.putObject('cart', self.shoppingCart)
+                window.location.replace("http://localhost:3003/#/commerce/cart/");
+
+            }
+        }
 
         self.changeExibition = function(type, number) {
             if (type == 'basic') {
