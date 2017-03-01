@@ -18,12 +18,12 @@
         if (Session.user.profile.plan) {
             self.actual = Session.user.profile.plan.name;
         }
-        
+
         self.getPlans = function() {
             Plan.getAll().then(function successCallback(data) {
                 self.plans = data;
             }, function errorCallback(reason) {
-                // body... 
+                // body...
             });
         };
 
@@ -38,30 +38,26 @@
         };
 
         function mountCart(planInstance) {
-
             var object = {
                 description: planInstance.name,
                 quantity: 1,
                 price: planInstance.plans.price,
-                isPlan: true
+                isPlan: true,
+                id: planInstance.id
             };
 
-            if ($cookies.get('cart')) {
-                var cartObject = JSON.parse($cookies.get('cart'));
-                cartObject.items.push(object);
-                $cookies.putObject('cart', cartObject);
-                window.open("http://localhost:3003/#/commerce/cart", '_blank');
+            self.shoppingCart = {
+                cartId: 1,
+                amount: planInstance.plans.price,
+                items: [object],
+                token: $cookies.get('sessionToken'),
+                cartBlock: true
+            };
+            $cookies.putObject('cart', self.shoppingCart);
+            window.open("http://localhost:3003/#/commerce/cart/", "_blank");
 
-            } else {
-                self.shoppingCart = {
-                    cartId: 1,
-                    amount: planInstance.plans.price,
-                    items: [object]
-                };
-                $cookies.putObject('cart', self.shoppingCart)
-                window.location.replace("http://localhost:3003/#/commerce/cart/");
 
-            }
+            console.log(self.shoppingCart);
         }
 
         self.changeExibition = function(type, number) {
