@@ -54,10 +54,8 @@
                 cartBlock: true
             };
             $cookies.putObject('cart', self.shoppingCart);
-            window.open("http://localhost:3003/#/commerce/cart/", "_blank");
+            window.open("http://35.156.122.23/store/#/commerce/cart/", "_blank");
 
-
-            console.log(self.shoppingCart);
         }
 
         self.changeExibition = function(type, number) {

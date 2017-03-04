@@ -1,11 +1,15 @@
 <div class="personal-data__resources profile-content__box">
     <div layout="row" layout-align="space-between center" class="profile-content__box__title">
         <div>
-            <h3>Resources</h3>
+            <h3>{{"RESOURCES.TITLE" | translate}}</h3>
         </div>
     </div>
     <div layout="row">
         <div layout="column" flex="100" class="products-list">
+            <div ng-if="UserResourcesCtrl.files.length === 0">
+                <p style="font-style:italic">
+                    {{"RESOURCES.MESSAGE" | translate}} </p>
+            </div>
             <div layout="row" layout-align="space-between center" class="products-list__item" ng-repeat="file in UserResourcesCtrl.files">
                 <div layout="row">
                     <div layout="row" class="products-list__image-container">

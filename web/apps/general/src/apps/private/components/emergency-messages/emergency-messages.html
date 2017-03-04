@@ -1,7 +1,7 @@
 <div class="personal-data__messages profile-content__box">
     <div layout="row" layout-align="space-between center" class="profile-content__box__title" flex="100">
         <div>
-            <h3>Emergency Messages</h3>
+            <h3>{{"EMERGENCY_MESSAGES.TITLE" | translate}}</h3>
         </div>
         <div>
             <md-icon class="buttonAdd" ng-click="EmergencyMessagesCtrl.addEmergencyMessage()" md-svg-icon="content:add" aria-label="add"></md-icon>
@@ -10,7 +10,7 @@
     <div class="emergency-messages__list">
         <div ng-if="EmergencyMessagesCtrl.user.messages.length === 0">
             <p style="font-style:italic">
-                Please insert your emergency messages.
+                {{"EMERGENCY_MESSAGES.TEXT" | translate}}
             </p>
         </div>
         <div class="emergency-messages__list__item" ng-repeat="message in EmergencyMessagesCtrl.user.messages">

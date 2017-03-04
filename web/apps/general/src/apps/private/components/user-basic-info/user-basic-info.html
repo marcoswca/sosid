@@ -10,7 +10,7 @@
     </div>
     <div layout="row" layout-align="space-around none">
         <div layout="column" flex="100" nx-disable-all="!UserBasicInfoCtrl.allowEdit">
-            <div class="personal-data__avatar" hide-gt-sm="true" style="padding: 10px" layout="column" layout-align="center center">
+            <div hide-gt-sm="true" class="personal-data__avatar" style="padding: 10px" layout="row" layout-align="center center">
                 <div layout="column" layout-align="center center">
                     <div class="personal-data__avatar__img-container">
                         <progress-circle></progress-circle>
@@ -22,30 +22,43 @@
                 </div>
             </div>
             <div layout="row">
-                <div layout="row" flex="50">
+                <div flex="50">
                     <md-input-container nx-model-attribute="UserProfile:firstName" flex="100" class="md-block">
                         <input ng-model="UserBasicInfoCtrl.user.profile.firstName">
                     </md-input-container>
                 </div>
-                <div layout="row" flex="50">
+                <div flex="50">
                     <md-input-container nx-model-attribute="UserProfile:lastName" flex="100" class="md-block">
                         <input ng-model="UserBasicInfoCtrl.user.profile.lastName">
                     </md-input-container>
                 </div>
             </div>
-            <div layout="row">
-                <div layout="row" flex="grow">
+            <div layout="row" layout-xs="column">
+                <div flex>
                     <md-input-container nx-model-attribute="UserProfile:gender" flex="100" class="md-block">
                         <md-select ng-model="UserBasicInfoCtrl.user.profile.gender" aria-label="gender">
                             <md-option ng-value="''"><em>{{ 'OPTIONS.UNDEFINED' | translate }}</em></md-option>
                             <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.LABEL' | translate }}">
                                 <md-option value="F">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.OPTIONS.F' | translate }}</md-option>
-                                <md-option value="M">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.OPTIONS.M' | translate }}</md-option>
+                                <md-option value="M"> {{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.OPTIONS.M' | translate }}</md-option>
                             </md-optgroup>
                         </md-select>
                     </md-input-container>
                 </div>
-                <div layout="row" flex="grow">
+
+                <div flex ng-show="UserBasicInfoCtrl.allowEdit">
+                    <md-input-container flex="100" nx-model-attribute="UserProfile:birthDate">
+                        <md-datepicker ng-model="UserBasicInfoCtrl.user.profile.birthDate"></md-datepicker>
+                    </md-input-container>
+                </div>
+                <div flex ng-show="UserBasicInfoCtrl.user.profile.age" ng-hide="UserBasicInfoCtrl.allowEdit">
+                    <md-input-container nx-model-attribute="UserProfile:age" flex="100" class="md-block">
+                        <input ng-model="UserBasicInfoCtrl.user.profile.age">
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row" layout-xs="column">
+                <div flex>
                     <md-input-container nx-model-attribute="UserProfile:bloodType" flex="100" class="md-block">
                         <md-select ng-model="UserBasicInfoCtrl.user.profile.bloodType" aria-label="blood type">
                             <md-option ng-value="''"><em>{{ 'OPTIONS.UNDEFINED' | translate }}</em></md-option>
@@ -62,22 +75,12 @@
                         </md-select>
                     </md-input-container>
                 </div>
-                <div layout="row" flex="noshrink" ng-show="UserBasicInfoCtrl.allowEdit">
-                    <md-input-container nx-model-attribute="UserProfile:birthDate">
-                        <md-datepicker ng-model="UserBasicInfoCtrl.user.profile.birthDate"></md-datepicker>
-                    </md-input-container>
-                </div>
-                <div layout="row" flex="grow" ng-show="UserBasicInfoCtrl.user.profile.age" ng-hide="UserBasicInfoCtrl.allowEdit">
-                    <md-input-container nx-model-attribute="UserProfile:age" flex="100" class="md-block">
-                        <input ng-model="UserBasicInfoCtrl.user.profile.age">
-                    </md-input-container>
-                </div>
             </div>
-            <div layout="row" ng-repeat="address in UserBasicInfoCtrl.user.profile.address track by $index">
-                <div layout="column">
+            <div layout="row" flex ng-repeat="address in UserBasicInfoCtrl.user.profile.address track by $index">
+                <div layout="column" flex>
                     <div layout="row">
                         <h4 flex class="profile-content__box__title" style="color: #1ABADE !important;">Address</h4>
-                        <md-button ng-show="UserBasicInfoCtrl.allowEdit" flex="5" ng-click="UserBasicInfoCtrl.removeAddress(address)">
+                        <md-button style="text-align:right" ng-show="UserBasicInfoCtrl.allowEdit" flex="5" ng-click="UserBasicInfoCtrl.removeAddress(address)">
                             <md-icon class="buttonClose" md-svg-icon="navigation:close" aria-label="close "></md-icon>
                         </md-button>
                     </div>
@@ -137,11 +140,13 @@
             </div>
         </div>
     </div>
-    <div ng-show="UserBasicInfoCtrl.allowEdit" layout="row" layout-align="start center">
-            <md-button flex-xs="33" style="text-overflow:ellipsis" ng-click="UserBasicInfoCtrl.addAddress()" class="md-raised">New Address</md-button>
-            <md-button flex-xs="33" class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()" ng-disabled="userProfileForm.$invalid || userProfileForm.$pristine"> {{ 'ACTIONS.SAVE' | translate }}
-            </md-button>
-            <md-button flex-xs="33" class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate }}
-            </md-button>
+    <div ng-show="UserBasicInfoCtrl.allowEdit" layout="row" flex layout-align="start center">
+        <md-button flex style="text-overflow:ellipsis" ng-click="UserBasicInfoCtrl.addAddress()" class="md-raised">New Address</md-button>
+    </div>
+    <div ng-show="UserBasicInfoCtrl.allowEdit" layout="row" flex layout-align="start center">
+        <md-button flex class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()" ng-disabled="userProfileForm.$invalid || userProfileForm.$pristine"> {{ 'ACTIONS.SAVE' | translate }}
+        </md-button>
+        <md-button flex class="md-raised" ng-click="UserBasicInfoCtrl.cancelUpdate()"> {{ 'ACTIONS.CANCEL' | translate }}
+        </md-button>
     </div>
 </form>

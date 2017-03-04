@@ -1,7 +1,7 @@
 <div class="personal-data__products profile-content__box">
     <div layout="row" layout-align="space-between center" class="profile-content__box__title">
         <div>
-            <h3>Products</h3>
+            <h3>{{"PRODUCTS.TITLE" | translate}}</h3>
         </div>
     </div>
 
@@ -9,8 +9,7 @@
         <div layout="column" flex="100" class="products-list">
             <div ng-if="ProductCtrl.products.length === 0">
                 <p style="font-style:italic">
-                    Please buy your products. Go to the store.
-                </p>
+                    {{"PRODUCTS.MESSAGE" | translate}} </p>
             </div>
             <div layout="row" layout-align="space-between center" class="products-list__item" ng-repeat="product in ProductCtrl.products">
                 <div layout="row">

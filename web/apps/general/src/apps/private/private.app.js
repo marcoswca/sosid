@@ -87,16 +87,13 @@
         }];
         NxtRouterHelper.configureStates(states, '/profile');
 
-        console.log(Session);
-
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 
-            console.log(Session);
-
             if (toState.name !== 'settings.subscriptionUpgrade' && toState.data.rolePlans) {
-                // || Session.user.profile.plan.moreInformations.isExpired
+                console.log(Session.user.profile.plan);
                 if (!Session.user.profile.plan) {
-                    showWelcome();
+                    $state.go('settings.subscriptionUpgrade');
+                    event.preventDefault();
                 } else {
                     var planName = Session.user.profile.plan.name;
                     var statePlanRoles = toState.data.rolePlans;

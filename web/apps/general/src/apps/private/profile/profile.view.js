@@ -45,11 +45,11 @@
         self.showWelcome = showWelcome;
         self.isEnabled = isEnabled;
         self.categoriesEnabled = {};
-	if(self.Session.user.profile.plan){
-           self.Session.user.profile.plan.plans.categories.forEach(function(category) {
-       	      self.categoriesEnabled[category.name] = true;
-       	   });
-	}
+        if (self.Session.user.profile.plan) {
+            self.Session.user.profile.plan.plans.categories.forEach(function(category) {
+                self.categoriesEnabled[category.name] = true;
+            });
+        }
 
         // Private methods
         return (function init() {

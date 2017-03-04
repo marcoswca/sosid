@@ -1,4 +1,31 @@
 {
+
+    "PLAN": {
+        "UPGRADE": "Upgrade your plan",
+        "SAVE": "Upgrade now and save",
+        "UPGRADETEXTBUTTON": "Upgrade Plan",
+        "START": "Start",
+        "END": "End",
+        "USED": "Used",
+        "REMAINING": "Remainig Months",
+        "CURRENT": "Current Plan",
+        "TITLE": "Plan"
+    },
+    "PRODUCTS": {
+        "TITLE": "Products",
+        "MESSAGE": "Please buy your products. Go to the store."
+    },
+    "RESOURCES": {
+        "TITLE": "Files",
+        "MESSAGE": "You have no files."
+    },
+    "EMERGENCY_MESSAGES": {
+        "TITLE": "Emergency Messages",
+        "TEXT": "Please insert your emergency messages."
+    },
+    "FAMILY_DOCTOR": {
+        "TITLE": "Family Doctor"
+    },
     "OPTIONS": {
         "UNDEFINED": "uninformed"
     },
@@ -137,36 +164,36 @@
                         "REQUIRED": "Relationship is required"
                     },
                     "OPTIONS": {
-                        
+
                         "SINGLE PARENT": "Single parent",
                         "SPOUSE": "Spouse",
-                        "HUSBAND":"Husband",
-                        "WIFE":"Wife",
-                        "PARENT":"Parent",
-                        "FATHER":"Father",
-                        "MOTHER":"Mother",
-                        "CHILD":"Child",
-                        "SON":"Son",
-                        "DAUGTHER":"Daughter",
-                        "SIBLING":"Sibling",
-                        "BROTHER":"Brother",
-                        "SISTER":"Sister",
-                        "EXTENDED FAMILY":"Extended family",
-                        "GRANDPARENT":"Grandparent",
-                        "GRANDFATHER":"Grandfather",
-                        "GRANDMOTHER":"Grandmother",
-                        "GRANDSON":"Grandson",
-                        "GRANDDAUGHTER":"Granddaughter",
-                        "UNCLE":"Uncle",
-                        "AUNT":"Aunt",
-                        "COUSIN":"Cousin",
-                        "NEPHEW":"Nephew",
-                        "NIECE":"Niece",
-                        "BOYFRIEND":"Boyfriend",
-                        "GIRLFRIEND":"Girlfriend",
-                        "FRIEND":"Friend",
-                        "KNOW":"know",
-                        "WORKING COLLEAGUE":"Working colleague"
+                        "HUSBAND": "Husband",
+                        "WIFE": "Wife",
+                        "PARENT": "Parent",
+                        "FATHER": "Father",
+                        "MOTHER": "Mother",
+                        "CHILD": "Child",
+                        "SON": "Son",
+                        "DAUGTHER": "Daughter",
+                        "SIBLING": "Sibling",
+                        "BROTHER": "Brother",
+                        "SISTER": "Sister",
+                        "EXTENDED FAMILY": "Extended family",
+                        "GRANDPARENT": "Grandparent",
+                        "GRANDFATHER": "Grandfather",
+                        "GRANDMOTHER": "Grandmother",
+                        "GRANDSON": "Grandson",
+                        "GRANDDAUGHTER": "Granddaughter",
+                        "UNCLE": "Uncle",
+                        "AUNT": "Aunt",
+                        "COUSIN": "Cousin",
+                        "NEPHEW": "Nephew",
+                        "NIECE": "Niece",
+                        "BOYFRIEND": "Boyfriend",
+                        "GIRLFRIEND": "Girlfriend",
+                        "FRIEND": "Friend",
+                        "KNOW": "know",
+                        "WORKING COLLEAGUE": "Working colleague"
 
                     }
                 },
@@ -778,6 +805,7 @@
                 }
             },
             "PRIVACY": {
+                "SETTINGS": "PRIVACY SETTINGS",
                 "PAGE_TITLE": "Edit the privacy of your data",
                 "PAGE_SUBTITLE": "Not all things need to be exposed to the public. Manage privacy bellow",
                 "BLOCK_ALL": "Block All",
@@ -785,6 +813,7 @@
                 "RESET": "Reset"
             },
             "PRINT CARD": {
+                "PRINT": "PRINT YOUR CARD",
                 "PAGE_TITLE": "We are almost there! We will print your card!",
                 "PAGE_SUBTITLE": "First, please check your data so that it is all rigth, if you find an error, return to your record and correct what is wrong."
             },

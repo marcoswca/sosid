@@ -2,7 +2,7 @@
     'use strict';
 
     var dependencies = [
-        'private.components.userBasicInfo', 'private.components.emergencyMessages', 'private.components.familyDoctor','private.components.userPlan', 'private.components.userResources', 'private.components.product'
+        'private.components.userBasicInfo', 'private.components.emergencyMessages', 'private.components.familyDoctor', 'private.components.userPlan', 'private.components.userResources', 'private.components.product'
     ];
 
     angular
@@ -10,39 +10,29 @@
         .controller('PersonalDataViewController', PersonalDataViewController);
 
     /** @ngInject */
-    function PersonalDataViewController() {
+    function PersonalDataViewController($mdDialog) {
         // Private variables
         var self = this;
 
         // Public variables
         self.isPrivate = false;
 
-        self.user = {
-            // firstName: 'Paulo Régis',
-            // lastName: 'de Medeiros Cavalcante',
-            // age: '26',
-            // sex: 'male',
-            // bloodType: 'Group AB',
-            // address: 'Düesbergweg 10, 48153 Münster',
-            // plan: 'Lorem Ipsum sit dolor amet plan',
-            // period: 'Good from 25 July, 2016 to 31 March, 2017',
-            // messages: [
-            //     { text: 'lorem ipsum sit dolor amet consectuor, lorem ipsum sit dolor amet consectuor arrent meqnet ralen, lorem ipsum sit dolor amet consectuor'},
-            //     { text: 'lorem ipsum sit dolor amet consectuor, lorem ipsum sit dolor amet consectuor arrent meqnet ralen, lorem ipsum sit dolor amet consectuor'},
-            //     { text: 'lorem ipsum sit dolor amet consectuor, lorem ipsum sit dolor amet consectuor arrent meqnet ralen, lorem ipsum sit dolor amet consectuor'}
-            // ]
-
-        };
-
-        self.userFullname = self.user.firstName + " " + self.user.lastName;
-
-        // Public methods
-
         self.togglePrivacy = function() {
             self.isPrivate = !self.isPrivate;
             console.log(self.isPrivate);
         };
 
+        self.showPrintCard = function($event) {
+            return $mdDialog.show({
+                controller: 'PrintCardController',
+                controllerAs: '$PrintCardController',
+                templateUrl: 'templates/print-card.view.html',
+                parent: angular.element(document.body),
+                fullscreen: true,
+                targetEvent: $event,
+                clickOutsideToClose: true
+            });
+        };
         // Private methods
         return (function init() {})();
     }

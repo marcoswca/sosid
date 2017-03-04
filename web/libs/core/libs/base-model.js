@@ -63,8 +63,6 @@
             NxtModel.attributesNamesUpdatable = _.keysIn(_.omitBy(modelConfig.attributes, {
                 updateDisabled: true
             }));
-            console.log(NxtModel.attributesNamesUpdatable);
-
 
             NxtModel.prototype.toJSON = function() {
                 return _.omit(this, ['__commitedValues', '__enabledUpdateAttributes']);
@@ -118,7 +116,6 @@
                 return modelConfig.api
                     .create(this)
                     .then(function(createdDoctor) {
-                        console.log(createdDoctor);
                         self.id = createdDoctor.id || createdDoctor.data.id;
                         self._syncCommitValues();
                     });

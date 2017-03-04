@@ -18,7 +18,6 @@
     /** @ngInject */
     function config($httpProvider) {
         $httpProvider.defaults.withCredentials = false;
-        console.log($httpProvider);
         $httpProvider.interceptors.push('NegativeStatusHandler');
     }
 

@@ -29,7 +29,6 @@
         };
 
         self.hasPlan = function() {
-          console.log(Session.user.profile.plan.plans);
           return Session.user.profile.plan && Session.user.profile.plan.plans;
         };
 

@@ -11,9 +11,10 @@
                 <div class="hot-button__icon-left">
                     <md-icon md-svg-icon="sosid:print_card" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
                 </div>
-                <div layout="column" layout-align="center start">
-                    <div class="hot-button__title__container"><span class="hot-button__title">Print Your Card</span></div>
-                    <div class="hot-button__description__container"><span class="hot-button__description">Lorem ipsum sit dolor amet consectuor beneties</span></div>
+                <div layout="column" layout-align="center start" ng-click="PersonalDataViewCtrl.showPrintCard($event)">
+                    <div class="hot-button__title__container"><span  class="hot-button__title">
+                      {{"PRIVATE.PROFILE.PRINT CARD.PRINT" | translate }}</span></div>
+                    <!-- <div class="hot-button__description__container"><span class="hot-button__description">Lorem ipsum sit dolor amet consectuor beneties</span></div> -->
                 </div>
             </div>
             <div class="hot-button__icon-right">
@@ -30,7 +31,7 @@
                 <a style="color: white; text-decoration:none;  " href="http://35.156.40.94/store">
                     <div layout="column" layout-align="center start">
                         <div class="hot-button__title__container"><span class="hot-button__title">Buy SOS-ID Products</span></div>
-                        <div class="hot-button__description__container"><span class="hot-button__description">Lorem ipsum sit dolor amet consectuor beneties</span></div>
+                        <!-- <div class="hot-button__description__container"><span class="hot-button__description">Lorem ipsum sit dolor amet consectuor beneties</span></div> -->
                     </div>
                 </a>
             </div>
