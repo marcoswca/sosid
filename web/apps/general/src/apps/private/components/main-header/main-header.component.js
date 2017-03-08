@@ -37,7 +37,8 @@
             self.logout = Session.destroy;
             self.showPrivacySettings = showPrivacySettings;
             self.showPrintCard = showPrintCard;
-
+            self.blockDropdown = !!Session.user.profile.plan && !Session.user.profile.plan.moreInformations.isExpired
+            console.log(self.blockDropdown);
             return init();
 
             function init() {}

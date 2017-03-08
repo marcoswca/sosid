@@ -1,5 +1,10 @@
 {
-
+    "WELCOME": {
+        "BUTTON": {
+            "PRODUCT": "Zum Shop",
+            "SUBSCRIPTION": "Plan Upgrade"
+        }
+    },
     "PLAN": {
         "UPGRADE": "Aktualisieren Sie Ihren Plan",
         "SAVE": "Jetzt aktualisieren und 8 € sparen",

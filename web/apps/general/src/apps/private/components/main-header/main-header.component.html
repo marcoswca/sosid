@@ -5,7 +5,7 @@
         </div>
         <nav class="main-header__menu" hide-xs="true">
             <ul>
-                <li><a href="https://sosid.pimentagroup.de/land/">Home</a></li>
+                <li><a href="https://sosid.pimentagroup.de/land/">Website</a></li>
                 <li><a href="#profile">My Record</a></li>
                 <li><a href="https://sosid.pimentagroup.de/store/" target="_blank">Shop</a></li>
             </ul>
@@ -22,44 +22,34 @@
             </div>
         </md-button>
         <md-menu-content width="4" class="main-header__menu-user">
-            <a ui-sref="settings.changePassword">
-                <md-menu-item>
-                    <md-button>
-                        <md-icon md-svg-icon="sosid:key" aria-label="Key"></md-icon>
-                        Change Password
-                    </md-button>
-                </md-menu-item>
-            </a>
-            <a ui-sref="settings.paymentHistory">
-                <md-menu-item>
-                    <md-button>
-                        <md-icon md-svg-icon="sosid:euro" aria-label="Euro Simbol"></md-icon>
-                        Payment History
-                    </md-button>
-                </md-menu-item>
-            </a>
-            <a ui-sref="settings.subscriptionUpgrade">
-                <md-menu-item>
-                    <md-button>
-                        <md-icon md-svg-icon="sosid:upgrade" aria-label="Euro Simbol"></md-icon>
-                        {{"PLAN.UPGRADE" | translate}} </md-button>
-                </md-menu-item>
-            </a>
+            <md-menu-item ui-sref="settings.changePassword">
+                <md-button>
+                    <md-icon md-svg-icon="sosid:key" aria-label="Key"></md-icon>
+                    Change Password
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ui-sref="settings.paymentHistory">
+                <md-button>
+                    <md-icon md-svg-icon="sosid:euro" aria-label="Euro Simbol"></md-icon>
+                    Payment History
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ui-sref="settings.subscriptionUpgrade">
+                <md-button>
+                    <md-icon md-svg-icon="sosid:upgrade" aria-label="Euro Simbol"></md-icon>
+                    {{"PLAN.UPGRADE" | translate}} </md-button>
+            </md-menu-item>
             <md-menu-divider></md-menu-divider>
-            <a ng-click="MainHeaderCtrl.showPrivacySettings($event)">
-                <md-menu-item>
-                    <md-button>
-                        <md-icon md-svg-icon="sosid:settings_privacy" aria-label="Euro Simbol"></md-icon>
-                        {{"PRIVATE.PROFILE.PRIVACY.SETTINGS" | translate}} </md-button>
-                </md-menu-item>
-            </a>
-            <a ng-click="MainHeaderCtrl.showPrintCard($event)">
-                <md-menu-item>
-                    <md-button>
-                        <md-icon md-svg-icon="sosid:print_card" aria-label="Euro Simbol"></md-icon>
-                        {{"PRIVATE.PROFILE.PRINT CARD.PRINT" | translate}} </md-button>
-                </md-menu-item>
-            </a>
+            <md-menu-item ng-click="MainHeaderCtrl.showPrivacySettings($event)">
+                <md-button>
+                    <md-icon md-svg-icon="sosid:settings_privacy" aria-label="Euro Simbol"></md-icon>
+                    {{"PRIVATE.PROFILE.PRIVACY.SETTINGS" | translate}} </md-button>
+            </md-menu-item>
+            <md-menu-item ng-click="MainHeaderCtrl.showPrintCard($event)">
+                <md-button>
+                    <md-icon md-svg-icon="sosid:print_card" aria-label="Euro Simbol"></md-icon>
+                    {{"PRIVATE.PROFILE.PRINT CARD.PRINT" | translate}} </md-button>
+            </md-menu-item>
             <md-menu-divider></md-menu-divider>
             <md-menu-item>
                 <md-button ng-click="MainHeaderCtrl.logout()">

@@ -1,5 +1,10 @@
 {
-
+    "WELCOME": {
+        "BUTTON": {
+            "PRODUCT": "Zum Shop",
+            "SUBSCRIPTION": "Plan Upgrade"
+        }
+    },
     "PLAN": {
         "UPGRADE": "Upgrade your plan",
         "SAVE": "Upgrade now and save",

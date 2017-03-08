@@ -38,12 +38,17 @@
             };
 
             self.deleteMessage = function(emergencyMessage) {
-                EmergencyMessages.remove(emergencyMessage.id).then(function successCallback(data) {
+                if (emergencyMessage.id) {
+                    EmergencyMessages.remove(emergencyMessage.id).then(function successCallback(data) {
+                        var index = self.user.messages.indexOf(emergencyMessage);
+                        self.user.messages.splice(index, 1);
+                    }, function errorCallback(reason) {
+                        console.log(reason);
+                    });
+                } else {
                     var index = self.user.messages.indexOf(emergencyMessage);
                     self.user.messages.splice(index, 1);
-                }, function errorCallback(reason) {
-                    console.log(reason);
-                });
+                }
             };
 
             self.changeStatus = function(emergencyMessage) {

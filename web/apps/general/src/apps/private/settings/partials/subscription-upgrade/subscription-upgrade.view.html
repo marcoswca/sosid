@@ -14,6 +14,26 @@
         </div>
     </div>
     <div layout="column" class="plans">
+        <div class="plans__header" layout="column">
+            <div layout="column" layout-align="center center" class="plans__title">Test the SOS-ID platform for 30 days free</div>
+            <div layout="column" layout-align="center center" ng-controller="WelcomeController as WelcomeController">
+                <button ng-click="WelcomeController.startTrial()" layout-a style="width:30%" class="plans__button md-primary md-raised md-button"> START NOW 30 DAY FOR FREE </button>
+            </div>
+        </div>
+
+        <div layout="row" flex>
+            <div flex>
+                <md-divider layout="column" style="width:90%; border-width:2px; border-color:silver; margin:auto"> </md-divider>
+            </div>
+            <div style="margin-top:-8px; color:silver">
+                or
+            </div>
+            <div flex>
+                <md-divider layout="column" style="width:90%; border-width:2px; border-color:silver;  margin:auto"></md-divider>
+            </div>
+
+        </div>
+
         <div class="plans__header">
             <div class="plans__title">Way to go! You're ready for an upgrade!</div>
             <div class="plans__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias distinctio ducimus, enim eum libero odit quae quia reiciendis saepe. Accusamus assumenda autem consequatur ex exercitationem explicabo hic nostrum tempore vel!</div>
@@ -90,8 +110,8 @@
             <div class="plans__item plans__item__standard" style="margin:2px; padding: 10px" ng-class="{'plans__actual': SubUpCtrl.actual.trim().toLowerCase() === 'standard' }" flex-gt-xs="33">
                 <div class="plans__highlight">
                     <div class="plans__highlight__header">
-                      <div ng-show="SubUpCtrl.actual.trim().toLowerCase() === 'standard'" class="plans__highlight__header__subtitle">Your current plan</div>
-                      <div ng-hide="SubUpCtrl.actual.trim().toLowerCase() === 'standard'" class="plans__highlight__header__subtitle">Available</div>
+                        <div ng-show="SubUpCtrl.actual.trim().toLowerCase() === 'standard'" class="plans__highlight__header__subtitle">Your current plan</div>
+                        <div ng-hide="SubUpCtrl.actual.trim().toLowerCase() === 'standard'" class="plans__highlight__header__subtitle">Available</div>
                         <div class="plans__highlight__header__title">Standard</div>
                         <div class="plans__highlight__header__price">
                             <span class="plans__highlight__header__price__value">12</span>
@@ -177,8 +197,8 @@
             <div style="margin:2px; padding: 10px" class="plans__item plans__item__premium" ng-class="{'plans__actual': SubUpCtrl.actual.trim().toLowerCase() === 'premium' }" flex-gt-xs="33">
                 <div class="plans__highlight">
                     <div class="plans__highlight__header">
-                      <div ng-show="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__highlight__header__subtitle">Your current plan</div>
-                      <div ng-hide="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__highlight__header__subtitle">Available</div>
+                        <div ng-show="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__highlight__header__subtitle">Your current plan</div>
+                        <div ng-hide="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__highlight__header__subtitle">Available</div>
 
                         <div class="plans__highlight__header__title">Premium</div>
                         <div class="plans__highlight__header__price">
@@ -196,7 +216,7 @@
                     </div>
                 </div>
                 <div class="plans__button-container">
-                    <button ng-click="SubUpCtrl.upgradePlan('premium')"  ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__button plans__button_premium md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Premium Plan</button>
+                    <button ng-click="SubUpCtrl.upgradePlan('premium')" ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__button plans__button_premium md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Premium Plan</button>
                 </div>
                 <div class="plans__includes">
                     <div class="plans__includes__header">

@@ -23,7 +23,9 @@
                     </div>
                 </div>
                 <div layout="row">
-                    <!-- <md-icon md-svg-icon="editor:mode_edit" style="color: #999;width:20px;height:20px;min-height: 20px; min-width: 20px; margin-right: 20px;" aria-label="Cake Icon"></md-icon> -->
+                    <a style="color: #999;width:20px;height:20px;min-height: 20px; min-width: 20px; margin-right: 20px;" href="{{file.url}}">
+                        <md-icon md-svg-icon="file:file_download" aria-label="Cake Icon"><i class="material-icons">file_download</i></md-icon>
+                    </a>
                     <md-icon ng-click="UserResourcesCtrl.removeFile(file)" md-svg-icon="action:delete" style="color: #999;width:20px;height:20px;min-height: 20px; min-width: 20px;" aria-label="Cake Icon"></md-icon>
                 </div>
             </div>
