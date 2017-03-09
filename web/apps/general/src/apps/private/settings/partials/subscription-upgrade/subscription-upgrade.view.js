@@ -53,7 +53,9 @@
                 token: $cookies.get('sessionToken'),
                 cartBlock: true
             };
-            $cookies.putObject('cart', self.shoppingCart);
+            $cookies.putObject('cart', self.shoppingCart, {
+                path: '/store'
+            });
             window.open("http://35.156.122.23/store/#/commerce/cart/", "_blank");
 
         }
