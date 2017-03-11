@@ -57,7 +57,6 @@
                 path: '/store'
             });
             window.open("http://35.156.122.23/store/#/commerce/cart/", "_blank");
-
         }
 
         self.changeExibition = function(type, number) {
