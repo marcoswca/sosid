@@ -1,41 +1,44 @@
 {
     "WELCOME": {
         "BUTTON": {
-            "PRODUCT": "Zum Shop",
-            "SUBSCRIPTION": "Plan Upgrade"
+            "PRODUCT": "Einkaufen",
+            "SUBSCRIPTION": "Mitgliedschaft upgraden"
         }
     },
     "PLAN": {
-        "UPGRADE": "Aktualisieren Sie Ihren Plan",
-        "SAVE": "Jetzt aktualisieren und 8 € sparen",
-        "UPGRADETEXTBUTTON": "Aktualisierung",
-        "START": "Anfang",
+        "UPGRADE": "Mitgliedschaft upgraden",
+        "SAVE": "Jetzt upgraden und Geld sparen",
+        "UPGRADETEXTBUTTON": "Mitgliedschaft upgraden",
+        "START": "Start",
         "END": "Ende",
-        "USED": "Used",
+        "USED": "Genutzt",
         "REMAINING": "Verbleibende Monate",
-        "CURRENT": "Derzeitiger Plan",
-        "TITLE": "Planen"
+        "CURRENT": "Deine Mitgliedschaft",
+        "TITLE": "Mitgliedschaft"
     },
     "PRODUCTS": {
         "TITLE": "Produkte",
-        "MESSAGE": "Bitte kaufen Sie Ihre Produkte."
+        "MESSAGE": "Hier geht es zum Shop"
     },
     "RESOURCES": {
         "TITLE": "Dateien",
-        "MESSAGE": "Du hast keine Akten."
+        "MESSAGE": "Du hast keine Dateien hochgeladen"
     },
     "EMERGENCY_MESSAGES": {
-        "TITLE": "Notfallmeldungen",
-        "TEXT": "Bitte fügen Sie Ihre Notfallmeldungen ein."
+        "TITLE": "Notfall Botschaft",
+        "TEXT": "Hier kannst Du Deine Notfall Botschaft eingeben."
+    },
+    "FAMILY_DOCTOR": {
+        "TITLE": "Hausarzt"
     },
     "OPTIONS": {
-        "UNDEFINED": "uninformiert"
+        "UNDEFINED": "unbekannt"
     },
     "ACTIONS": {
         "DELETE": "Löschen",
         "EDIT": "Bearbeiten",
         "SAVE": "Speichern",
-        "CANCEL": "Abbrechen"
+        "CANCEL": "Abbruch"
     },
     "MODELS": {
         "DOCTOR": {
@@ -43,23 +46,23 @@
                 "FIRST NAME": {
                     "LABEL": "Vorname",
                     "VALIDATE": {
-                        "REQUIRED": "Vorname ist erforderlich"
+                        "REQUIRED": "Vorname erforderlich"
                     }
                 },
                 "LAST NAME": {
                     "LABEL": "Nachname",
                     "VALIDATE": {
-                        "REQUIRED": "Nachname ist erforderlich"
+                        "REQUIRED": "Nachname erforderlich"
                     }
                 },
                 "SPECIALITY": {
-                    "LABEL": "Spezialität",
+                    "LABEL": "Spezialisierung",
                     "VALIDATE": {
-                        "REQUIRED": "Spezialität ist erforderlich"
+                        "REQUIRED": "Spezialisierung erforderlich"
                     }
                 },
                 "MOBILE NUMBER": {
-                    "LABEL": "Mobilnummer"
+                    "LABEL": "Handynummer"
                 },
                 "PHONE NUMBER": {
                     "LABEL": "Telefonnummer"
@@ -67,66 +70,66 @@
                 "EMAIL": {
                     "LABEL": "E-Mail",
                     "VALIDATE": {
-                        "EMAIL": "Bitte informieren Sie eine gültige E-Mail."
+                        "EMAIL": "Bitte eine gültige Email Adresse eingeben"
                     }
                 },
                 "STREET": {
                     "LABEL": "Straße",
                     "VALIDATE": {
-                        "REQUIRED": "Straße ist erforderlich"
+                        "REQUIRED": "Straße erforderlich"
                     }
                 },
                 "CITY": {
                     "LABEL": "Stadt",
                     "VALIDATE": {
-                        "REQUIRED": "Stadt ist erforderlich"
+                        "REQUIRED": "Stadt erforderlich"
                     }
                 },
                 "PROVINCY": {
-                    "LABEL": "Provincy",
+                    "LABEL": "Bundesland",
                     "VALIDATE": {
-                        "REQUIRED": "Provincy ist erforderlich"
+                        "REQUIRED": "Bundesland erforderlich"
                     }
                 },
                 "COUNTRY": {
                     "LABEL": "Land",
                     "VALIDATE": {
-                        "REQUIRED": "Land ist erforderlich"
+                        "REQUIRED": "Land erforderlich"
                     }
                 },
                 "POSTAL CODE": {
                     "LABEL": "Postleitzahl",
                     "VALIDATE": {
-                        "REQUIRED": "Postleitzahl ist erforderlich"
+                        "REQUIRED": "Postleitzahl erforderlich"
                     }
                 },
                 "TYPE": {
-                    "LABEL": "Typ",
+                    "LABEL": "Type",
                     "VALIDATE": {
-                        "REQUIRED": "Typ ist erforderlich"
+                        "REQUIRED": "Type erforderlich"
                     },
                     "OPTIONS": {
-                        "HOME": "Zu Hause",
-                        "OFFICE": "Büro"
+                        "HOME": "Privat",
+                        "OFFICE": "Geschäftlich"
                     }
                 },
                 "NUMBER": {
-                    "LABEL": "Zahl",
+                    "LABEL": "Nummer",
                     "VALIDATE": {
-                        "REQUIRED": "Anzahl ist erforderlich"
+                        "REQUIRED": "Nummer erforderlich"
                     }
                 },
                 "COMPLEMENT": {
-                    "LABEL": "Ergänzung"
+                    "LABEL": "Complement"
                 }
             }
         },
         "MEDICATION": {
             "ATTRIBUTES": {
                 "NAME": {
-                    "LABEL": "Markenname",
+                    "LABEL": "Bezeichnung",
                     "VALIDATE": {
-                        "REQUIRED": "Name ist erforderlich"
+                        "REQUIRED": "Bezeichnung erforderlich"
                     }
                 },
                 "DOSAGE": {
@@ -136,10 +139,10 @@
                     "LABEL": "Maßeinheit"
                 },
                 "FREQUENCY": {
-                    "LABEL": "Frequenz"
+                    "LABEL": "Häufigkeit"
                 },
                 "REASON FOR TAKING": {
-                    "LABEL": "Grund für das Nehmen"
+                    "LABEL": "Warum nimmst Du dieses Medikament ein?"
                 },
                 "NOTES": {
                     "LABEL": "Notizen"
@@ -151,27 +154,27 @@
                 "FIRST NAME": {
                     "LABEL": "Vorname",
                     "VALIDATE": {
-                        "REQUIRED": "Vorname ist erforderlich"
+                        "REQUIRED": "Vorname erforderlich"
                     }
                 },
                 "LAST NAME": {
                     "LABEL": "Nachname",
                     "VALIDATE": {
-                        "REQUIRED": "Nachname ist erforderlich"
+                        "REQUIRED": "Nachname erorderlich"
                     }
                 },
                 "RELATIONSHIP": {
-                    "LABEL": "Beziehung",
+                    "LABEL": "Beziehung zu dieser Person",
                     "VALIDATE": {
-                        "REQUIRED": "Beziehung ist erforderlich"
+                        "REQUIRED": "Beziehung erforderlich"
                     },
                     "OPTIONS": {
 
-                        "SINGLE PARENT": "Alleinerziehende",
-                        "SPOUSE": "Ehepartner",
+                        "SINGLE PARENT": "Eltern",
+                        "SPOUSE": "Partner",
                         "HUSBAND": "Ehemann",
-                        "WIFE": "Frau",
-                        "PARENT": "Elternteil",
+                        "WIFE": "Ehefrau",
+                        "PARENT": "Eltern",
                         "FATHER": "Vater",
                         "MOTHER": "Mutter",
                         "CHILD": "Kind",
@@ -184,10 +187,10 @@
                         "GRANDPARENT": "Großeltern",
                         "GRANDFATHER": "Großvater",
                         "GRANDMOTHER": "Großmutter",
-                        "GRANDSON": "Grandson",
+                        "GRANDSON": "Enkel",
                         "GRANDDAUGHTER": "Enkelin",
                         "UNCLE": "Onkel",
-                        "AUNT": "Tante",
+                        "AUNT": "Tanke",
                         "COUSIN": "Cousin",
                         "NEPHEW": "Neffe",
                         "NIECE": "Nichte",
@@ -200,73 +203,73 @@
                     }
                 },
                 "MOBILE NUMBER": {
-                    "LABEL": "Mobilnummer",
+                    "LABEL": "Handynummer",
                     "VALIDATE": {
-                        "REQUIRED": "Mobilnummer ist erforderlich"
+                        "REQUIRED": "Handynummer erforderlich"
                     }
                 },
                 "PHONE NUMBER": {
                     "LABEL": "Telefonnummer",
                     "VALIDATE": {
-                        "REQUIRED": "Telefonnummer ist erforderlich"
+                        "REQUIRED": "Telefonnummer erforderlich"
                     }
                 },
                 "EMAIL": {
                     "LABEL": "Email",
                     "VALIDATE": {
-                        "REQUIRED": "E-Mail ist erforderlich",
-                        "EMAIL": "Bitte geben Sie mit einer gültigen E-Mail"
+                        "REQUIRED": "Email erforderlich",
+                        "EMAIL": "Please, enter with a valid e-mail"
                     }
                 },
                 "STREET": {
                     "LABEL": "Straße",
                     "VALIDATE": {
-                        "REQUIRED": "Straße ist erforderlich"
+                        "REQUIRED": "Straße erforderlich"
                     }
                 },
                 "CITY": {
                     "LABEL": "Stadt",
                     "VALIDATE": {
-                        "REQUIRED": "Stadt ist erforderlich"
+                        "REQUIRED": "Stadt erforderlich"
                     }
                 },
                 "PROVINCY": {
-                    "LABEL": "Provincy",
+                    "LABEL": "Bundesland",
                     "VALIDATE": {
-                        "REQUIRED": "Provincy ist erforderlich"
+                        "REQUIRED": "Bundesland erforderlich"
                     }
                 },
                 "COUNTRY": {
                     "LABEL": "Land",
                     "VALIDATE": {
-                        "REQUIRED": "Land ist erforderlich"
+                        "REQUIRED": "Land erforderlich"
                     }
                 },
                 "POSTAL CODE": {
                     "LABEL": "Postleitzahl",
                     "VALIDATE": {
-                        "REQUIRED": "Postleitzahl ist erforderlich"
+                        "REQUIRED": "Postleitzahl erforderlich"
                     }
                 },
                 "TYPE": {
-                    "LABEL": "Typ",
+                    "LABEL": "Type",
                     "VALIDATE": {
-                        "REQUIRED": "Typ ist erforderlich"
+                        "REQUIRED": "Type erforderlich"
                     },
                     "OPTIONS": {
-                        "HOME": "Zu Hause",
-                        "OFFICE": "Büro"
+                        "HOME": "Privat",
+                        "OFFICE": "Geschäftlich"
                     }
                 },
 
                 "NUMBER": {
-                    "LABEL": "Zahl",
+                    "LABEL": "Nummer",
                     "VALIDATE": {
-                        "REQUIRED": "Anzahl ist erforderlich"
+                        "REQUIRED": "Nummer erforderlich"
                     }
                 },
                 "COMPLEMENT": {
-                    "LABEL": "Ergänzung"
+                    "LABEL": "Complement"
                 }
             }
         },
@@ -275,108 +278,108 @@
                 "FIRST NAME": {
                     "LABEL": "Vorname",
                     "VALIDATE": {
-                        "REQUIRED": "Vorname ist erforderlich"
+                        "REQUIRED": "Vorname erforderlich"
                     }
                 },
                 "LAST NAME": {
                     "LABEL": "Nachname",
                     "VALIDATE": {
-                        "REQUIRED": "Nachname ist erforderlich"
+                        "REQUIRED": "Nachname erforderlich"
                     }
                 },
                 "RELATIONSHIP": {
                     "LABEL": "Beziehung",
                     "VALIDATE": {
-                        "REQUIRED": "Beziehung ist erforderlich"
+                        "REQUIRED": "Beziehung erforderlich"
                     }
                 },
                 "MOBILE NUMBER": {
-                    "LABEL": "Mobilnummer"
+                    "LABEL": "Handynummer"
                 },
                 "PHONE NUMBER": {
                     "LABEL": "Telefonnummer"
                 },
                 "EMAIL": {
-                    "LABEL": "E-mail",
+                    "LABEL": "Email",
                     "VALIDATE": {
-                        "EMAIL": "Bitte geben Sie mit einer gültigen E-Mail"
+                        "EMAIL": "Bitte eine gültige Email Adresse eingeben"
                     }
                 },
                 "STREET": {
                     "LABEL": "Straße",
                     "VALIDATE": {
-                        "REQUIRED": "Straße ist erforderlich"
+                        "REQUIRED": "Straße erforderlich"
                     }
                 },
                 "CITY": {
                     "LABEL": "Stadt",
                     "VALIDATE": {
-                        "REQUIRED": "Stadt ist erforderlich"
+                        "REQUIRED": "Stadt erforderlich"
                     }
                 },
                 "PROVINCY": {
-                    "LABEL": "Provincy",
+                    "LABEL": "Bundesland",
                     "VALIDATE": {
-                        "REQUIRED": "Provincy ist erforderlich"
+                        "REQUIRED": "Bundesland erforderlich"
                     }
                 },
                 "COUNTRY": {
                     "LABEL": "Land",
                     "VALIDATE": {
-                        "REQUIRED": "Land ist erforderlich"
+                        "REQUIRED": "Land erforderlich"
                     }
                 },
                 "POSTAL CODE": {
                     "LABEL": "Postleitzahl",
                     "VALIDATE": {
-                        "REQUIRED": "Postleitzahl ist erforderlich"
+                        "REQUIRED": "Postleitzahl erforderlich"
                     }
                 },
                 "TYPE": {
-                    "LABEL": "Typ",
+                    "LABEL": "Type",
                     "VALIDATE": {
-                        "REQUIRED": "Typ ist erforderlich"
+                        "REQUIRED": "Type erforderlich"
                     }
                 },
                 "NUMBER": {
-                    "LABEL": "Zahl",
+                    "LABEL": "Nummer",
                     "VALIDATE": {
-                        "REQUIRED": "Zahl ist erforderlich"
+                        "REQUIRED": "Nummer erforderlich"
                     }
                 },
                 "COMPLEMENT": {
-                    "LABEL": "Ergänzung"
+                    "LABEL": "Complement"
                 }
             }
         },
         "HEALTH CONDITION": {
             "ATTRIBUTES": {
                 "CONDITION": {
-                    "LABEL": "Bedingung",
+                    "LABEL": "Gesundheitszustand",
                     "VALIDATE": {
-                        "REQUIRED": "Bedingung ist erforderlich"
+                        "REQUIRED": "Gesundheitszustand erforderlich"
                     }
                 },
                 "SEVERITY": {
                     "LABEL": "Schweregrad"
                 },
                 "FILE": {
-                    "LABEL": "DATEI"
+                    "LABEL": "Datei"
                 }
             }
         },
         "ALLERGY": {
             "ATTRIBUTES": {
                 "NAME": {
-                    "LABEL": "Allergie-Name"
+                    "LABEL": "Allergie Bezeichnung"
                 },
                 "DESCRIPTION": {
                     "LABEL": "Notizen",
                     "VALIDATE": {
-                        "REQUIRED": "Notizen ist erforderlich"
+                        "REQUIRED": "Notizen erforderlich"
                     }
                 },
-                "Schweregrad": {
+                "SEVERITY": {
                     "LABEL": "Schweregrad"
                 }
             }
@@ -386,17 +389,17 @@
                 "COMPANY NAME": {
                     "LABEL": "Firmenname",
                     "VALIDATE": {
-                        "REQUIRED": "Firmenname ist erforderlich"
+                        "REQUIRED": "Firmenname erforderlich"
                     }
                 },
                 "POLICY NUMBER": {
-                    "LABEL": "Versicherung Telefon"
+                    "LABEL": "Versicherungsnummer"
                 },
                 "PHONE INSURANCE": {
-                    "LABEL": "Versicherung Telefon"
+                    "LABEL": "Telefonnummer der Versicherung"
                 },
                 "MEDICAL PLAN TYPE": {
-                    "LABEL": "Medizinischer Plan"
+                    "LABEL": "Versicherungsart"
                 }
             }
         },
@@ -433,10 +436,10 @@
                     "LABEL": "A"
                 },
                 "LEFT ADD": {
-                    "LABEL": "Hinzufügen"
+                    "LABEL": "Add"
                 },
                 "GLASS": {
-                    "LABEL": "Glas"
+                    "LABEL": "Gläser"
                 },
                 "FASSUNG": {
                     "LABEL": "Fassung"
@@ -455,99 +458,99 @@
         "ORGAN CARD": {
             "ATTRIBUTES": {
                 "ALLOW ONLY FOLLOWING QUESTION": {
-                    "LABEL": "Die Organe, die erlaubt sind, sind:",
+                    "LABEL": "Diese Organe spende ich:",
                     "VALIDATE": {
-                        "REQUIRED": "Bitte geben Sie mit mindestens einer Orgel"
+                        "REQUIRED": "Bitte mindestens ein Organ eingeben"
                     }
                 },
                 "ALLOW EXCEPT QUESTION": {
-                    "LABEL": "Die Organe, die Ausnahme sind:",
+                    "LABEL": "Diese Organe spende ich nicht:",
                     "VALIDATE": {
-                        "REQUIRED": "Bitte geben Sie mit mindestens einer Orgel"
+                        "REQUIRED": "Bitte mindestens ein Organ eingeben"
                     }
                 },
                 "FIRST NAME": {
                     "LABEL": "Vorname",
-                    "PLACEHOLDER": "mit deinem Vornamen eintragen",
+                    "PLACEHOLDER": "Gib Deinen Vornamen ein",
                     "VALIDATE": {
-                        "REQUIRED": "Ihr Vorname ist erforderlich",
-                        "LEN": "Dein Vorname sollte 3-80 Zeichen haben"
+                        "REQUIRED": "Dein Vorname ist erforderlich",
+                        "LEN": "Dein Vorname muss zwischen 3 und 80 Zeichen haben"
                     }
                 },
                 "LAST NAME": {
                     "LABEL": "Nachname",
-                    "PLACEHOLDER": "mit deinem Nachnamen eingeben",
+                    "PLACEHOLDER": "Gib Deinen Nachnamen ein",
                     "VALIDATE": {
-                        "REQUIRED": "Ihr Nachname ist erforderlich",
-                        "LEN": "Dein Nachname sollte 3-80 Zeichen haben"
+                        "REQUIRED": "Dein Nachname ist erforderlich",
+                        "LEN": "Dein Vorname muss zwischen 3 und 80 Zeichen haben"
                     }
                 },
-                "Beziehung": {
+                "RELATIONSHIP": {
                     "LABEL": "Beziehung",
                     "VALIDATE": {
-                        "REQUIRED": "Beziehung ist erforderlich"
+                        "REQUIRED": "Beziehung erforderlich"
                     }
                 },
                 "MOBILE NUMBER": {
-                    "LABEL": "Mobilnummer"
+                    "LABEL": "Handynummer"
                 },
                 "PHONE NUMBER": {
                     "LABEL": "Telefonnummer"
                 },
                 "EMAIL": {
-                    "LABEL": "E-Mail",
+                    "LABEL": "Email",
                     "VALIDATE": {
-                        "EMAIL": "Bitte geben Sie mit einer gültigen E-Mail"
+                        "EMAIL": "Bitte eine gültige Email Adresse eingeben"
                     }
                 },
                 "STREET": {
                     "LABEL": "Straße",
                     "VALIDATE": {
-                        "REQUIRED": "Straße ist erforderlich"
+                        "REQUIRED": "Straße erforderlich"
                     }
                 },
                 "CITY": {
                     "LABEL": "Stadt",
                     "VALIDATE": {
-                        "REQUIRED": "Stadt ist erforderlich"
+                        "REQUIRED": "Stadt erforderlich"
                     }
                 },
                 "PROVINCY": {
-                    "LABEL": "Provincy",
+                    "LABEL": "Bundesland",
                     "VALIDATE": {
-                        "REQUIRED": "Provincy ist erforderlich"
+                        "REQUIRED": "Bundesland erforderlich"
                     }
                 },
                 "COUNTRY": {
                     "LABEL": "Land",
                     "VALIDATE": {
-                        "REQUIRED": "Land ist erforderlich"
+                        "REQUIRED": "Land erforderlich"
                     }
                 },
                 "POSTAL CODE": {
                     "LABEL": "Postleitzahl",
                     "VALIDATE": {
-                        "REQUIRED": "Postleitzahl ist erforderlich"
+                        "REQUIRED": "Postleitzahl erforderlich"
                     }
                 },
                 "TYPE": {
-                    "LABEL": "Typ",
+                    "LABEL": "Type",
                     "VALIDATE": {
-                        "REQUIRED": "Typ ist erforderlich"
+                        "REQUIRED": "Type erforderlich"
                     },
                     "OPTIONS": {
-                        "HOME": "Zu Hause",
-                        "OFFICE": "Büro"
+                        "HOME": "Privat",
+                        "OFFICE": "Geschäftlich"
                     }
                 },
                 "NUMBER": {
-                    "LABEL": "Zahl",
+                    "LABEL": "Nummer",
                     "VALIDATE": {
-                        "REQUIRED": "Anzahl ist erforderlich"
+                        "REQUIRED": "Nummer erforderlich"
                     }
                 },
                 "COMPLEMENT": {
-                    "LABEL": "Ergänzung"
+                    "LABEL": "Complement"
                 }
             }
         },
@@ -555,18 +558,18 @@
             "ATTRIBUTES": {
                 "FIRST NAME": {
                     "LABEL": "Vorname",
-                    "PLACEHOLDER": "mit deinem Vornamen eintragen",
+                    "PLACEHOLDER": "Gib Deinen Vornamen ein",
                     "VALIDATE": {
-                        "REQUIRED": "Ihr Vorname ist erforderlich",
-                        "LEN": "Dein Vorname sollte 3-80 Zeichen haben"
+                        "REQUIRED": "Dein Vorname ist erforderlich",
+                        "LEN": "Dein Vorname muss zwischen 3 und 80 Zeichen haben"
                     }
                 },
                 "LAST NAME": {
-                    "LABEL": "Nachnamen",
-                    "PLACEHOLDER": "mit deinem Nachnamen eingeben",
+                    "LABEL": "Nachname",
+                    "PLACEHOLDER": "Gib Deinen Nachnamen ein",
                     "VALIDATE": {
-                        "REQUIRED": "Ihr Nachname ist erforderlich",
-                        "LEN": "Dein Nachname sollte 3-80 Zeichen haben"
+                        "REQUIRED": "Dein Nachname ist erforderlich",
+                        "LEN": "Dein Nachname muss zwischen 3 und 80 Zeichen haben"
                     }
                 },
                 "AGE": {
@@ -578,251 +581,256 @@
                 "GENDER": {
                     "LABEL": "Geschlecht",
                     "OPTIONS": {
-                        "F": "Weiblich",
-                        "M": "Männlich"
+                        "F": "weiblich",
+                        "M": "männlich"
                     }
                 },
                 "BLOOD TYPE": {
-                    "LABEL": "Blutart"
+                    "LABEL": "Blutgruppe"
                 },
                 "STREET": {
                     "LABEL": "Straße",
                     "VALIDATE": {
-                        "REQUIRED": "Straße ist erforderlich"
+                        "REQUIRED": "Straße erforderlich"
                     }
                 },
                 "CITY": {
                     "LABEL": "Stadt",
                     "VALIDATE": {
-                        "REQUIRED": "Stadt ist erforderlich"
+                        "REQUIRED": "Stadt erforderlich"
                     }
                 },
                 "PROVINCY": {
-                    "LABEL": "Provincy",
+                    "LABEL": "Bundesland",
                     "VALIDATE": {
-                        "REQUIRED": "Provincy ist erforderlich"
+                        "REQUIRED": "Bundesland erforderlich"
                     }
                 },
                 "COUNTRY": {
                     "LABEL": "Land",
                     "VALIDATE": {
-                        "REQUIRED": "Land ist erforderlich"
+                        "REQUIRED": "Land erforderlich"
                     }
                 },
                 "POSTAL CODE": {
                     "LABEL": "Postleitzahl",
                     "VALIDATE": {
-                        "REQUIRED": "Postleitzahl ist erforderlich"
+                        "REQUIRED": "Postleitzahl erforderlich"
                     }
                 },
                 "TYPE": {
-                    "LABEL": "Typ",
+                    "LABEL": "Type",
                     "VALIDATE": {
-                        "REQUIRED": "Typ ist erforderlich"
+                        "REQUIRED": "Type erforderlich"
                     },
                     "OPTIONS": {
-                        "HOME": "Zu Hause",
-                        "OFFICE": "Büro"
+                        "HOME": "Privat",
+                        "OFFICE": "Geschäftlich"
                     }
                 },
                 "PLAN": {
                     "LABEL": "Plan"
                 },
                 "NUMBER": {
-                    "LABEL": "Zahl",
+                    "LABEL": "Nummer",
                     "VALIDATE": {
-                        "REQUIRED": "Anzahl ist erforderlich"
+                        "REQUIRED": "Nummer erforderlich"
                     }
                 },
                 "COMPLEMENT": {
-                    "LABEL": "Ergänzung"
+                    "LABEL": "Complement"
                 }
             }
         },
         "USER": {
             "ATTRIBUTES": {
                 "EMAIL": {
-                    "LABEL": "Deine E-Mail",
-                    "PLACEHOLDER": "mit deiner E-Mail eingeben",
+                    "LABEL": "Deine e-mail Adresse",
+                    "PLACEHOLDER": "Gib Deine e-mail Adresse ein",
                     "VALIDATE": {
-                        "REQUIRED": "E-Mail ist erforderlich",
-                        "EMAIL": "Bitte geben Sie eine gültige E-Mail ein",
-                        "REGISTERED": "E-Mail bereits registriert"
+                        "REQUIRED": "E-mail erforderlich",
+                        "EMAIL": "Bitte gib eine gültige Email Adresse ein",
+                        "REGISTERED": "E-mail Adresse bereits registriert"
                     }
                 },
 
                 "PASSWORD": {
                     "LABEL": "Passwort",
-                    "PLACEHOLDER": "mit deinem Passwort eingeben",
+                    "PLACEHOLDER": "Gib Dein Passwort ein",
                     "VALIDATE": {
-                        "REQUIRED": "Passwort ist erforderlich",
-                        "LEN": "Ihr Passwort darf nicht weniger als 8 Zeichen oder mehr als 60 enthalten",
-                        "PASSWORD": "Ihr Passwort muss Buchstaben und Zahlen enthalten"
+                        "REQUIRED": "Passwort erforderlich",
+                        "LEN": "Dein Passwort muss zwischen 8 und 60 Zeichen haben",
+                        "PASSWORD": "Dein Passwort muss aus Buchstaben und Ziffern bestehen"
                     }
                 }
             }
         }
     },
-    "LOGOUT_BUTTON": "Abmelden",
-    "CANCEL": "Abbrechen",
+    "LOGOUT_BUTTON": "Logout",
+    "CANCEL": "Abbruch",
     "SAVE": "Speichern",
     "YES": "Ja",
-    "ALERT": "Alert",
-    "404_TEXT": "Der Inhalt, den Sie gesucht haben, existiert nicht.",
+    "ALERT": "Alarm",
+    "404_TEXT": "Dieser Inhalt besteht nicht.",
+
 
     "SESSION": {
         "LOGOUT": {
             "CONFIRM": {
-                "TITLE": "Wir werden dich vermissen",
-                "CONTENT": "Bist du sicher, dass du dich abmelden willst?"
+                "TITLE": "Wir werden Dich vermissen",
+                "CONTENT": "Möchtest Du Dich abmelden?"
             }
         }
     },
 
+
     "OFFLINE": {
-        "TITLE": "Etwas ging schief",
-        "SUB_TITLE": "Keine Verbindung zum Server, bitte überprüfen Sie Ihre Netzwerkeinstellungen",
-        "FOOTER_TEXT": "Um es erneut zu versuchen, bitte hier klicken"
+        "TITLE": "Etwas ist schief gegangen",
+        "SUB_TITLE": "Kein Verbindung zum Server. Bitte überprüfe Deine Verbindung.",
+        "FOOTER_TEXT": "Versuch es nochmal und klicke hier"
     },
+
     "PUBLIC": {
         "ATTRIBUTES": {
             "CONFIRM_PASSWORD": {
                 "LABEL": "Passwort bestätigen*",
-                "PLACEHOLDER": "Ihr Passwort erneut eingeben",
+                "PLACEHOLDER": "Gib Dein Passwort nochmal ein",
                 "VALIDATE": {
-                    "REQUIRED": "Bitte bestätigen Sie Ihr Passwort.",
-                    "MATCH": "Passwörter stimmen nicht überein"
+                    "REQUIRED": "Bitte bestätige Dein Passwort",
+                    "MATCH": "Deine Eingaben stimmen nicht überein"
                 }
             }
         },
+
         "LOGIN": {
-            "TITLE": "Bearbeiten Sie Ihr SOS-ID-Konto",
-            "SUB_TITLE": "Eingabe mit Ihren Anmeldeinformationen",
+            "TITLE": "Bearbeite Deine SOS-ID Eingaben",
+            "SUB_TITLE": "Zugang mit Deinen Log-in Daten",
             "FORGOT_PASSWORD_LINK": "Passwort vergessen?",
-            "FOOTER_TEXT": "Du hast noch kein Konto?",
-            "CREATE_NEW_ACCOUNT_LINK": "Neues Konto erstellen",
+            "FOOTER_TEXT": "Du bist noch kein Mitglied?",
+            "CREATE_NEW_ACCOUNT_LINK": "Werde Mitglied",
             "SUBMIT_BUTTON": "LOGIN",
-            "INVALID_EMAIL_PASSWORD_TEXT": "Ungültige E-Mail oder Passwort",
-            "SENT_REGISTRATION_LINK": "Wir haben festgestellt, dass Ihre E-Mail nicht in unserem System ist. Wir haben Ihnen eine E-Mail mit einem Registrierungslink geschickt."
+            "INVALID_EMAIL_PASSWORD_TEXT": "Email oder Passwort ungültig.",
+            "SENT_REGISTRATION_LINK": "Deine Email Adresse ist nicht bei uns registriert. Wir haben Dir ein Link geschickt um Mitglied bei SOS-ID zu werden."
         },
         "CREATE_ACCOUNT": {
-            "TITLE": "Willkommen bei <span class = 'light'> SOS-ID </ span>",
-            "SUB_TITLE": "Beginnen wir mit der Eingabe Ihres Firmennamens unten, E-Mail und Passwort.",
-            "HAS_ACCOUNT_TEXT": "Wenn du schon ein Konto hast?",
-            "LOGIN_HERE_LINK": "Melden Sie sich hier an",
-            "SUBMIT_BUTTON": "SIGN UP",
+            "TITLE": "Willkommen bei <span class='light'> SOS-ID </span>",
+            "SUB_TITLE": "Hier kannst Du Dich mit Deiner Email Adresse und Deinem Passwort einloggen.",
+            "HAS_ACCOUNT_TEXT": "Du bist bereits Mitglied?",
+            "LOGIN_HERE_LINK": "Log-in hier",
+            "SUBMIT_BUTTON": "Mitglied werden",
             "SUCCESS": {
-                "TITLE": "Danke für die Anmeldung bis <span class = 'light'> SOS-ID </span>!",
-                "SUB_TITLE": "Bitte melden Sie sich mit Ihrer E-Mail an:",
-                "FOOTER_TEXT": "Jetzt hast du ein Konto"
+                "TITLE": "Vielen Dank für Deine Mitgleidschaft bei <span class='light'> SOS-ID </span>!",
+                "SUB_TITLE": "Log-in mit Deiner Email Adresse:",
+                "FOOTER_TEXT": "Jetzt bist Du Mitglied!"
             }
         },
         "FORGOT_PASSWORD": {
             "TITLE": "Passwort vergessen?",
-            "SUB_TITLE": "Wir schicken Ihnen eine Anleitung zum Zurücksetzen Ihres Passworts",
+            "SUB_TITLE": "Wir haben Dir eine Email geschickt um Dein Passwort zurückzusetzen.",
             "SUBMIT_BUTTON": "Passwort zurücksetzen",
-            "REMEMBER_PASSWORD_TEXT": "Wenn Sie sich an Ihr Passwort erinnern.",
-            "LOGIN_HERE_LINK": "Melden Sie sich hier an",
-            "SUCCESS_TEXT": "Wenn wir ein Konto mit der E-Mail-Adresse <strong> {{email}} </ strong> im System gefunden haben, erhalten Sie eine E-Mail von uns in Kürze"
+            "REMEMBER_PASSWORD_TEXT": "Kennst Du Dein Passwort?",
+            "LOGIN_HERE_LINK": "Log-in hier",
+            "SUCCESS_TEXT": "Wir haben ein Mitglied mit dieser Email Adresse gefunden <strong>{{email}}</strong> Du bekommst eine Email von uns"
         },
         "RESET_PASSWORD": {
             "TITLE": "Passwort ändern",
-            "SUB_TITLE": "Bitte füllen Sie die untenstehenden Felder aus, um Ihr Passwort zu ändern.",
-            "SUBMIT_BUTTON": "Passwort ändern",
-            "FOOTER_TEXT": "Du erinnerst dich an dein Passwort?",
-            "LOGIN_HERE_LINK": "Melden Sie sich hier an",
+            "SUB_TITLE": "Um Dein Passwort zu ändern must Du die folgenden Felder ausfüllen",
+            "SUBMIT_BUTTON": " Passwort ändern",
+            "FOOTER_TEXT": "Kennst Du Dein Passwort?",
+            "LOGIN_HERE_LINK": "Log-in hier",
             "SUCCESS": {
                 "TITLE": "Passwort geändert",
-                "SUB_TITLE": "Bitte klicken Sie hier, um sich anzumelden."
+                "SUB_TITLE": "Klicke hier zum Log-in."
             }
         }
     },
     "PRIVATE": {
         "PROFILE": {
-            "MY_RECORDS": "Meine Aufzeichnungen",
+            "MY_RECORDS": "Meine Daten",
             "PERSONAL_DATA": {
                 "PAGE_TITLE": "Persönliche Daten",
-                "BASIC_INFO": "Grundlegende Informationen"
+                "BASIC_INFO": "Basisinformationen"
             },
             "DOCTORS": {
                 "PAGE_TITLE": "Ärzte",
-                "ADD_NEW": "Neuen Arzt hinzufügen"
+                "ADD_NEW": "Arzt hinzufügen"
             },
             "MEDICATIONS": {
                 "PAGE_TITLE": "Medikamente",
-                "ADD_NEW": "Neue Medikamente hinzufügen"
+                "ADD_NEW": "Medikamente hinzufügen"
             },
             "EMERGENCY CONTACTS": {
                 "PAGE_TITLE": "Notfallkontakte",
-                "ADD_NEW": "Neuen Notfall-Kontakt hinzufügen"
+                "ADD_NEW": "Notfallkontakte hinzufügen"
             },
             "HEALTH CONDITIONS": {
-                "PAGE_TITLE": "Gesundheitsbedingungen",
-                "ADD_NEW": "Neuen Zustand hinzufügen"
+                "PAGE_TITLE": "Krankheiten",
+                "ADD_NEW": "Krankheit hinzufügen"
             },
             "HEALTH INSURANCES": {
-                "PAGE_TITLE": "Krankenversicherungen",
-                "ADD_NEW": "Neue Versicherung hinzufügen"
+                "PAGE_TITLE": "Krankenversicherung",
+                "ADD_NEW": "Krankenversicherung hinzufügen"
             },
             "ALLERGIES": {
                 "PAGE_TITLE": "Allergien",
                 "DRUG": {
-                    "TYPE": "Drogen",
-                    "TITLE": "Hast du irgendwelche <strong> Drogen </ strong> Allergien?",
-                    "ADD_NEW_TEXT": "Drogen-Allergie hinzufügen"
+                    "TYPE": "Medikamente",
+                    "TITLE": "Leidest Du unter Allergien gegen Medikamente?",
+                    "ADD_NEW_TEXT": "Allergien gegen Medikamente hinzufügen"
                 },
                 "FOOD": {
-                    "TYPE": "Essen",
-                    "TITLE": "Hast du irgendwelche <strong> Nahrung </ strong> Allergien?",
-                    "ADD_NEW_TEXT": "Nahrungsallergie hinzufügen"
+                    "TYPE": "Nahrungsmittelallergien",
+                    "TITLE": "Leidest Du unter Nahrungsmittelallergien?",
+                    "ADD_NEW_TEXT": "Nahrungsmittelallergie hinzufügen"
                 },
                 "INSECT": {
-                    "TYPE": "Insekt",
-                    "TITLE": "Hast du irgendwelche <strong> Insekten </ strong> Allergien?",
-                    "ADD_NEW_TEXT": "Insektenallergie hinzufügen"
+                    "TYPE": "Tierallergien",
+                    "TITLE": "Leidest Du an Tierallergien?",
+                    "ADD_NEW_TEXT": "Tierallergie hinzufügen"
                 },
                 "OTHER": {
-                    "TYPE": "Andere",
-                    "TITLE": "Hast du irgendwelche <strong> Andere </ strong> Allergien?",
-                    "ADD_NEW_TEXT": "Hinzufügen anderer Allergie"
+                    "TYPE": "Andere Allergien",
+                    "TITLE": "Leidest Du unter anderen Allergien?",
+                    "ADD_NEW_TEXT": "Allergie hinzufügen"
                 }
             },
             "GLASSES PASS": {
-                "PAGE_TITLE": "Gläser Pass",
-                "LEFT EYE": "L - Left Eye",
-                "RIGHT EYE": "R - Richtiges Auge"
+                "PAGE_TITLE": "Brillenpass",
+                "LEFT EYE": "L – Linkes Auge",
+                "RIGHT EYE": "R – Rechtes Auge"
             },
             "LIVING WILL": {
-                "PAGE_TITLE": "Wohnen"
+                "PAGE_TITLE": "Testament"
             },
             "ORGAN DONOR CARD": {
-                "PAGE_TITLE": "Organspenderkarte",
-                "UPLOAD_TIP": "Hochladen Sie Ihre Organspenderkarte",
+                "PAGE_TITLE": "Organspenderausweis",
+                "UPLOAD_TIP": "Organspenderausweis hochladen ",
                 "QUESTIONS": {
-                    "ALLOW_AFTER_DEATH": "Ja, ich erlaube nach der medizinischen Suche nach meinem Tod meine Körper Organe und Gewebe entfernt werden",
-                    "ALLOW_EXCEPT": "Ja, ich erlaube dies, außer für folgende Organe / Gewebe:",
-                    "ALLOW_ONLY_FOLLOWING": "Ja, das erlaube ich, aber nur für die folgenden Organe / Gewebe:",
-                    "NOT_ALLOW": "Nein, ich widerspreche einer Entfernung von Organen oder Geweben.",
-                    "PERSON_SHOULD_DECIDE": "Über Ja oder Nein, dann sollte die folgende Person entscheiden:"
+                    "ALLOW_AFTER_DEATH": "Ja, ich bin damit einverstanden, dass meine Organe nach meinem Tod gespendet warden.",
+                    "ALLOW_EXCEPT": "Ja, ich willige der Organspende nach meinem Tod ein mit folgenden Ausnahmen:",
+                    "ALLOW_ONLY_FOLLOWING": "Ja, ich willige der Organspende nach meinem Tod ein. Dies aber nur für folgende Organe:",
+                    "NOT_ALLOW": "Nein, ich willige der Organspende nach meinem Tod nicht ein.",
+                    "PERSON_SHOULD_DECIDE": "Die folgende Person soll darüber entscheiden ob meine Organe gespendet warden:"
                 }
             },
             "PRIVACY": {
-                "SETTINGS": "PRIVACY SETTINGS",
-                "PAGE_TITLE": "Bearbeiten Sie die Privatsphäre Ihrer Daten",
-                "PAGE_SUBTITLE": "Nicht alle Dinge müssen der Öffentlichkeit ausgesetzt sein.",
-                "BLOCK_ALL": "Alle blockieren",
-                "UNBLOCK_ALL": "Unblock All",
-                "RESET": "Reset"
+                "SETTINGS": "Privatsphäre",
+                "PAGE_TITLE": "Sichtbarkeit Deine Daten bearbeiten",
+                "PAGE_SUBTITLE": "Nicht alle Deine Eingaben und Dokumente müssen sichtbar sein. Hier kannst Du Einstellungen zu Deine Privatsphäre vornehmen",
+                "BLOCK_ALL": "Alle Daten sind nicht sichtbar",
+                "UNBLOCK_ALL": "Alle Daten sind sichtbar",
+                "RESET": "zurücksetzen"
             },
             "PRINT CARD": {
-                "PRINT": "DRUCKEN SIE IHRE KARTE",
-                "PAGE_TITLE": "Wir sind fast da, wir drucken deine Karte!",
-                "PAGE_SUBTITLE": "Zuerst bitte überprüfen Sie Ihre Daten, so dass es alles ist, wenn Sie einen Fehler finden, kehren Sie zu Ihrem Datensatz und korrigieren, was falsch ist."
+                "PRINT": "Hier kannst Du Deine SOS-ID Karte drucken",
+                "PAGE_TITLE": "Du hast es fast geschafft. Wir erstellen Deine SOS-ID Karte!",
+                "PAGE_SUBTITLE": "Bitte überprüfe Deine Daten auf Korrektheit. Wenn Du einen Fehler findest, gehe zurück und korrigiere Deine Eingaben."
             },
             "WELCOME": {
-                "PAGE_TITLE": "Willkommen bei SOS-ID Profil bearbeiten",
-                "PAGE_SUBTITLE": "Es hat keinen Plan und ist auf Testversion. Wählen Sie zwischen den beiden unten stehenden Optionen aus:"
+                "PAGE_TITLE": "Willkommen bei SOS-ID. Hier kannst Du Dein Profil bearbeiten.",
+                "PAGE_SUBTITLE": "Du bist in der kostenlosen Testphase. Bitte wähle eine der folgenden Optionen:"
             }
+
         }
     }
 }
