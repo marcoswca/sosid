@@ -218,7 +218,7 @@
                     "LABEL": "Email",
                     "VALIDATE": {
                         "REQUIRED": "Email erforderlich",
-                        "EMAIL": "Please, enter with a valid e-mail"
+                        "EMAIL": "Bitte eine gültige Email Adresse eingeben"
                     }
                 },
                 "STREET": {
