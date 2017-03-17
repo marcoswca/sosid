@@ -22,6 +22,18 @@
             console.log(self.isPrivate);
         };
 
+         if (window.location.href.indexOf('updated=true') >= 0) {
+            return $mdDialog.show({
+                controller: 'SubscriptionUpgradeViewController',
+                controllerAs: 'SubsCtrl',
+                templateUrl: 'templates/subscription-upgrade-successful.view.html',
+                parent: angular.element(document.body),
+                fullscreen: true,
+                // targetEvent: $event,
+                clickOutsideToClose: true
+            });
+        };
+
         self.showPrintCard = function($event) {
             return $mdDialog.show({
                 controller: 'PrintCardController',

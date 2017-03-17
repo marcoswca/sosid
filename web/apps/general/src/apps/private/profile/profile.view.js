@@ -26,6 +26,7 @@
             }
         };
 
+
         self.isLoading = false;
 
         self.planStorageSpace = 0;
@@ -35,16 +36,17 @@
         self.Session = Session;
         self.setLoading = setLoading;
         self.usedStorage = self.Session.user.profile.useDataStorage;
-        if (self.Session.user.profile.plan && self.Session.user.profile.plan.plans) {
-            self.planStorageSpace = self.Session.user.profile.plan.plans.storageSpace;
-            self.percentUsedStorage = (self.usedStorage / self.planStorageSpace) * 100;
-        }
-
         self.showPrivacySettings = showPrivacySettings;
         self.showPrintCard = showPrintCard;
         self.showWelcome = showWelcome;
         self.isEnabled = isEnabled;
         self.categoriesEnabled = {};
+        
+        if (self.Session.user.profile.plan && self.Session.user.profile.plan.plans) {
+            self.planStorageSpace = self.Session.user.profile.plan.plans.storageSpace;
+            self.percentUsedStorage = (self.usedStorage / self.planStorageSpace) * 100;
+        }
+
         if (self.Session.user.profile.plan) {
             self.Session.user.profile.plan.plans.categories.forEach(function(category) {
                 self.categoriesEnabled[category.name] = true;
@@ -60,6 +62,8 @@
                 self.pageTitle = $state.current.data.pageTitle;
             });
         })();
+
+       
 
         function setLoading(status) {
             if (__loadingDebouce) {
