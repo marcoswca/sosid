@@ -26,6 +26,7 @@
             }
         };
 
+
         self.isLoading = false;
 
         self.planStorageSpace = 0;
@@ -51,6 +52,19 @@
             });
         }
 
+         if (window.location.href.indexOf('updated=true') >= 0) {
+            return $mdDialog.show({
+                controller: 'SubscriptionUpgradeViewController',
+                controllerAs: 'SubsCtrl',
+                templateUrl: 'templates/subscription-upgrade-successful.view.html',
+                parent: angular.element(document.body),
+                fullscreen: true,
+                // targetEvent: $event,
+                clickOutsideToClose: true
+            });
+        };
+
+
         // Private methods
         return (function init() {
             $rootScope.$on('$stateChangeStart', function() {
@@ -60,6 +74,8 @@
                 self.pageTitle = $state.current.data.pageTitle;
             });
         })();
+
+       
 
         function setLoading(status) {
             if (__loadingDebouce) {
