@@ -11,7 +11,8 @@
         'public.routes.login',
         'public.routes.forgotPassword',
         'public.routes.createAccount',
-        'public.routes.passwordReset'
+        'public.routes.passwordReset',
+        'public.routes.userInformations'
     ];
 
     angular

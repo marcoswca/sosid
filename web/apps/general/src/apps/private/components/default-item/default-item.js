@@ -69,6 +69,7 @@
                 return self.item
                     .save()
                     .then(function(data) {
+                      console.log(data);
                         self.disableFields = true;
 
                         if (self.isCreate) {
