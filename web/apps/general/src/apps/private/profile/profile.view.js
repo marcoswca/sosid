@@ -36,34 +36,22 @@
         self.Session = Session;
         self.setLoading = setLoading;
         self.usedStorage = self.Session.user.profile.useDataStorage;
-        if (self.Session.user.profile.plan && self.Session.user.profile.plan.plans) {
-            self.planStorageSpace = self.Session.user.profile.plan.plans.storageSpace;
-            self.percentUsedStorage = (self.usedStorage / self.planStorageSpace) * 100;
-        }
-
         self.showPrivacySettings = showPrivacySettings;
         self.showPrintCard = showPrintCard;
         self.showWelcome = showWelcome;
         self.isEnabled = isEnabled;
         self.categoriesEnabled = {};
+        
+        if (self.Session.user.profile.plan && self.Session.user.profile.plan.plans) {
+            self.planStorageSpace = self.Session.user.profile.plan.plans.storageSpace;
+            self.percentUsedStorage = (self.usedStorage / self.planStorageSpace) * 100;
+        }
+
         if (self.Session.user.profile.plan) {
             self.Session.user.profile.plan.plans.categories.forEach(function(category) {
                 self.categoriesEnabled[category.name] = true;
             });
         }
-
-         if (window.location.href.indexOf('updated=true') >= 0) {
-            return $mdDialog.show({
-                controller: 'SubscriptionUpgradeViewController',
-                controllerAs: 'SubsCtrl',
-                templateUrl: 'templates/subscription-upgrade-successful.view.html',
-                parent: angular.element(document.body),
-                fullscreen: true,
-                // targetEvent: $event,
-                clickOutsideToClose: true
-            });
-        };
-
 
         // Private methods
         return (function init() {
