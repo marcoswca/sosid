@@ -14,7 +14,7 @@
 
         var url = APP_CONFIG.URL.API_URL + '/user-living-will';
 
-        this.get = function (params, options) {
+        this.getAll = function (params, options) {
             options = options || {};
             options.url = url;
             options.params = params || {};

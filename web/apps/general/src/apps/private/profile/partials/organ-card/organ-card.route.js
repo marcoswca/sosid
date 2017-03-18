@@ -16,13 +16,12 @@
             state: 'profile.organCard',
             config: {
                 url: '/organ-card',
-                controller: 'OrganCardViewController',
-                controllerAs: 'OrganCardViewCtrl',
-                templateUrl: 'templates/organ-card.view.html',
+                template: '<default-profile-view-list></default-profile-view-list>',
                 data: {
                     pageTitle: 'PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE',
-                    rolePlans: ['premium']
-
+                    rolePlans: ['premium'],
+                    itemTemplate: 'organ-card-item.html',
+                    modelName: 'OrganCard'
                 }
             }
         }];

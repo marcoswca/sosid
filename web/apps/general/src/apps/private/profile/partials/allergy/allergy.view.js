@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     var dependencies = [];
@@ -8,7 +8,7 @@
         .controller('AllergyViewCtrl', AllergyViewCtrl);
 
     /** ngInject */
-    function AllergyViewCtrl($scope, Allergy, $filter, NxtUtility) {
+    function AllergyViewCtrl($scope, Allergy, $filter, NxtUtility, Session) {
         // Private variables
         var _loadedItems = [],
             ProfileViewCtrl = $scope.$parent.ProfileViewCtrl,
@@ -22,13 +22,13 @@
 
         // Private Methods
 
-        return (function () {
+        return (function() {
             getItems();
         })();
 
         function configureTypes() {
-            self.allergyTypes = _.map(ALLERGY_TYPES, function (value, key) {
-                var items = angular.copy($filter('filter')(_loadedItems, {allergyType: value}));
+            self.allergyTypes = _.map(ALLERGY_TYPES, function(value, key) {
+                var items = angular.copy($filter('filter')(_loadedItems, { allergyType: value }));
                 var total = _.size(items);
                 var hideCreateButton = false;
 
@@ -50,9 +50,27 @@
                         hideCreateButton = false;
                         items.shift();
                         items.unshift(item);
+                        var acumulator = 0;
+
+                        self.allergyTypes.forEach(function(allergy, index) {
+                            acumulator += allergy.items.length;
+                        });
+
+                        if (acumulator === 1) {
+                            Session.user.profile.categoriesFilled++;
+                        }
                     },
-                    removeSuccess: function (index) {
+                    removeSuccess: function(index) {
                         items.splice(index, 1);
+                        var acumulator = 0;
+
+                        self.allergyTypes.forEach(function(allergy, index) {
+                            acumulator += allergy.items.length;
+                        });
+
+                        if (acumulator === 0) {
+                            Session.user.profile.categoriesFilled--;
+                        }
                     }
                 };
             });
@@ -62,11 +80,11 @@
             ProfileViewCtrl.setLoading(true);
             return Allergy
                 .getAll()
-                .then(function (result) {
+                .then(function(result) {
                     _loadedItems = NxtUtility.bulkInstantiate('Allergy', result.rows);
                     configureTypes();
                 })
-                .finally(function () {
+                .finally(function() {
                     ProfileViewCtrl.setLoading(false);
                 });
         }

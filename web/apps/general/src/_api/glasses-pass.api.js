@@ -14,7 +14,7 @@
 
         var url = APP_CONFIG.URL.API_URL + '/user-glasses-pass';
 
-        this.get = function (params, options) {
+        this.getAll = function (params, options) {
             options = options || {};
             options.url = url;
             return ApiService.Get(options);

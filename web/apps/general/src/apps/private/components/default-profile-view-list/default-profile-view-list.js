@@ -27,6 +27,7 @@
                 Model,
                 self = this;
 
+
             // Public variables
             self.allowCreate = false;
             self.items = [];

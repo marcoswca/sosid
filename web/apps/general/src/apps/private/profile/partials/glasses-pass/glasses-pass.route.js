@@ -16,12 +16,12 @@
             state: 'profile.glassesPass',
             config: {
                 url: '/glasses-pass',
-                controller: 'GlassesPassViewController',
-                controllerAs: 'GlassesPassViewCtrl',
-                templateUrl: 'templates/glasses-pass.view.html',
+                template: '<default-profile-view-list></default-profile-view-list>',
                 data: {
                     pageTitle: 'PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE',
-                    rolePlans: ['premium']
+                    rolePlans: ['premium'],
+                    itemTemplate: 'glasses-pass-item.html',
+                    modelName: 'GlassesPass'
                 }
             }
         }];
