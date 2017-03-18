@@ -2,7 +2,6 @@
     'use strict';
 
     var dependencies = [
-        'private.views.glassesPass',
         'private.routes.profile'
     ];
 
