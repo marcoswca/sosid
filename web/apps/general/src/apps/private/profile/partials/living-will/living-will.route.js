@@ -2,7 +2,6 @@
     'use strict';
 
     var dependencies = [
-        'private.views.livingWill',
         'private.routes.profile'
     ];
 
