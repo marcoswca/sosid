@@ -119,7 +119,7 @@
             }
 
             function getAttributes() {
-                return Model.getAttributes
+                return Model.getAttributes;
             }
         }
     }

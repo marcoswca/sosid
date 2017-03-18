@@ -32,7 +32,7 @@
                 // targetEvent: $event,
                 clickOutsideToClose: true
             });
-        };
+        }
 
         self.showPrintCard = function($event) {
             return $mdDialog.show({

@@ -2,7 +2,8 @@
     'use strict';
 
     var dependencies = [
-        'private.routes.profile'
+        'private.routes.profile',
+        'model.glassesPass'
     ];
 
     angular

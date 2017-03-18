@@ -18,15 +18,14 @@
         };
 
         self.printCard = function() {
-          console.log(UserProfile);
-            UserProfile.getSosCardPrint().then((card) => {
+            UserProfile.getSosCardPrint().then(function successCallback(card) {
                 var file = new Blob([card], {
                     type: 'application/pdf'
                 });
                 var fileURL = URL.createObjectURL(file);
                 window.open(fileURL);
             });
-        }
+        };
     }
 
 })();
