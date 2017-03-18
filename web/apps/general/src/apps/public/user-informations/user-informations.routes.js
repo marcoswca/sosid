@@ -19,13 +19,12 @@
                     parent: 'public',
                     url: '/user/informations',
                     controller: 'UserInformationsController',
-                    controllerAs: 'UserInformationsController',
+                    controllerAs: 'UserInfoCtrl',
                     templateUrl: 'templates/user-informations.view.html'
                 }
             }
         ];
 
-        console.log("teste");
         NxtRouterHelper.configureStates(states);
 
     }

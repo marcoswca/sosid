@@ -688,6 +688,28 @@
         "FOOTER_TEXT": "To try again please click here"
     },
     "PUBLIC": {
+         "INFORMATIONS": {
+            "id": "ID",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "age": "Age",
+            "bloodType": "Blood Type",
+            "gender": "Gender",
+            "birthDate": "Birth Date",
+            "userId": "User ID",
+            "avatarFileId": "Avatar ID",
+            "created_at": "Created",
+            "update_at": "Updated",
+            "relationship": "Relationship",
+            "mobileNumber": "Mobile Number",
+            "phoneNumber": "Phone Number",
+            "email": "E-mail",
+            "isEmergencyContact": "Emergency Contact ?",
+            "addressId": "Address Id",
+            "private": "Private",
+            "speciality": "Speciality",
+            "isFamilyDoctor": "Is family doctor"
+        },
         "ATTRIBUTES": {
             "CONFIRM_PASSWORD": {
                 "LABEL": "Confirm password*",
