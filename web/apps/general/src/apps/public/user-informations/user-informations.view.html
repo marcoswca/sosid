@@ -7,7 +7,7 @@
     <div ng-repeat="category in UserInfoCtrl.keys" class="modal__content" layout="row" flex>
         <div ng-if="UserInfoCtrl.userInformations[category].length" flex layout-align="start start" class="welcome__options__item">
             <div class="title" style="text-align: left; font-size: 25px; color: silver">{{category}}</div>
-            <ul flex style="padding:23px; background-color: #fafafa" flex layout="row">
+            <ul flex style="padding:23px; background-color: #fafafa" flex layout="row" layout-xs="column">
                 <li style="text-align: left" flex ng-repeat="key in UserInfoCtrl.getKeys(UserInfoCtrl.userInformations[category])">
                     <div ng-repeat="field in UserInfoCtrl.getKeys(UserInfoCtrl.userInformations[category][key])">
                         <strong translate="PUBLIC.INFORMATIONS.{{field}}"></strong> : {{ UserInfoCtrl.userInformations[category][key][field] }}

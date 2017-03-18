@@ -26,8 +26,8 @@
 
 
         } else {
-            
-            self.userInformations = JSON.parse(localStorage.getItem("userInformations"));
+
+            self.userInformations = JSON.parse(window.localStorage.getItem("userInformations"));
             self.keys = self.getKeys(self.userInformations);
 
         }
