@@ -76,7 +76,7 @@
 
             var methodsAllowed = ['get', 'post', 'put', 'delete'];
 
-            var responseType = undefined;
+            var responseType;
 
             if (methodsAllowed.indexOf(methodName) === -1) {
                 deferred.reject(new Error('ApiService: not a valid http method'));
