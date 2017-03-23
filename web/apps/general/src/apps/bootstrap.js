@@ -8,6 +8,7 @@
             'ng',
             'ngAnimate',
             'ngCookies',
+            'angular-jwt',
             'app.shared',
             'templates-app',
             'core.config',
@@ -57,6 +58,7 @@
         return SessionApi
             .get()
             .then(function(session) {
+              console.log(session);
                 self.session.user = session.user;
                 return UserProfileApi.get();
             })

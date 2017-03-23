@@ -26,7 +26,7 @@
     <div layout="row" flex="100">
         <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
             <div layout="row">
-                <md-input-container nx-model-attribute="Medication:name" flex="100"  class="md-block">
+                <md-input-container nx-model-attribute="Medication:name" flex="100" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.name">
                 </md-input-container>
             </div>
@@ -62,7 +62,7 @@
                     <div class="profile-content__upload-files__title">Resources</div>
                     <div class="profile-content__upload-files__hint">(Example: X-Ray, Biopsy, Medical Exam...)</div>
                 </div>
-                <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
+                <div ng-if="!ProfileViewCtrl.isOutSide()" ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
                     class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                     <div class="profile-content__upload-dnd-area__icon">
                         <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
@@ -77,7 +77,7 @@
                     </div>
             </div>
     </div>
-    <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
+    <div ng-if="!ProfileViewCtrl.isOutSide()" layout="row" ng-hide="DefaultItemCtrl.disableFields">
         <md-button flex ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
         </md-button>
         <md-button flex class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}

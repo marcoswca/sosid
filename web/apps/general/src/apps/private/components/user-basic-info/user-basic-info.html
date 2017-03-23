@@ -3,14 +3,14 @@
         <div flex>
             <h3>{{ 'PRIVATE.PROFILE.PERSONAL_DATA.BASIC_INFO' | translate }}</h3>
         </div>
-        <div flex="20" ng-show="!UserBasicInfoCtrl.allowEdit" layout="column" layout-xs="row" layout-align="end end">
+        <div ng-if="!ProfileViewCtrl.isOutSide()" flex="20" ng-show="!UserBasicInfoCtrl.allowEdit" layout="column" layout-xs="row" layout-align="end end">
             <md-button class="md-raised" ng-click="UserBasicInfoCtrl.enableEdit()"> {{ 'ACTIONS.EDIT' | translate }}
             </md-button>
         </div>
     </div>
     <div layout="row" layout-align="space-around none">
         <div layout="column" flex="100" nx-disable-all="!UserBasicInfoCtrl.allowEdit">
-            <div hide-gt-sm="true" class="personal-data__avatar" style="padding: 10px" layout="row" layout-align="center center">
+            <div ng-if="!ProfileViewCtrl.isOutSide()" hide-gt-sm="true" class="personal-data__avatar" style="padding: 10px" layout="row" layout-align="center center">
                 <div layout="column" layout-align="center center">
                     <div class="personal-data__avatar__img-container">
                         <progress-circle></progress-circle>

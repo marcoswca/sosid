@@ -14,24 +14,26 @@
         </div>
     </div>
     <div layout="column" class="plans">
-        <div class="plans__header" layout="column">
-            <div layout="column" layout-align="center center" class="plans__title">Test the SOS-ID platform for 30 days free</div>
-            <div layout="column" layout-align="center center" ng-controller="WelcomeController as WelcomeController">
-                <button ng-click="WelcomeController.startTrial()" layout-a style="width:30%" class="plans__button md-primary md-raised md-button"> START NOW 30 DAY FOR FREE </button>
-            </div>
-        </div>
-
-        <div layout="row" flex>
-            <div flex>
-                <md-divider layout="column" style="width:90%; border-width:2px; border-color:silver; margin:auto"> </md-divider>
-            </div>
-            <div style="margin-top:-8px; color:silver">
-                or
-            </div>
-            <div flex>
-                <md-divider layout="column" style="width:90%; border-width:2px; border-color:silver;  margin:auto"></md-divider>
+        <div ng-if="!SubUpCtrl.hasPlan()">
+            <div class="plans__header" layout="column">
+                <div layout="column" layout-align="center center" class="plans__title">Test the SOS-ID platform for 30 days free</div>
+                <div layout="column" layout-align="center center" ng-controller="WelcomeController as WelcomeController">
+                    <button ng-click="WelcomeController.startTrial()" layout-a style="width:30%" class="plans__button md-primary md-raised md-button"> START NOW 30 DAY FOR FREE </button>
+                </div>
             </div>
 
+            <div layout="row" flex>
+                <div flex>
+                    <md-divider layout="column" style="width:90%; border-width:2px; border-color:silver; margin:auto"> </md-divider>
+                </div>
+                <div style="margin-top:-8px; color:silver">
+                    or
+                </div>
+                <div flex>
+                    <md-divider layout="column" style="width:90%; border-width:2px; border-color:silver;  margin:auto"></md-divider>
+                </div>
+
+            </div>
         </div>
 
         <div class="plans__header">

@@ -4,10 +4,10 @@
             <h3>{{DefaultItemCtrl.item.companyName}} <span ng-show="DefaultItemCtrl.item.policyNumber"> - {{DefaultItemCtrl.item.policyNumber}}</span></h3>
         </div>
 
-        <div flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
+        <div ng-if="!ProfileViewCtrl.isOutSide()" flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
             <h3>{{ 'PRIVATE.PROFILE.HEALTH INSURANCES.ADD_NEW' | translate }}</h3>
         </div>
-        <div ng-hide="DefaultItemCtrl.isCreate">
+        <div ng-if="!ProfileViewCtrl.isOutSide()" ng-hide="DefaultItemCtrl.isCreate">
             <md-menu md-offset="-50 50">
                 <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
                     <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
@@ -48,7 +48,7 @@
                     <div class="profile-content__upload-files__title">Resources</div>
                     <div class="profile-content__upload-files__hint">(Example: X-Ray, Biopsy, Medical Exam...)</div>
                 </div>
-                <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
+                <div ng-if="!ProfileViewCtrl.isOutSide()" ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
                     class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                     <div class="profile-content__upload-dnd-area__icon">
                         <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
@@ -63,7 +63,7 @@
                     </div>
             </div>
     </div>
-    <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
+    <div ng-if="!ProfileViewCtrl.isOutSide()" layout="row" ng-hide="DefaultItemCtrl.disableFields">
         <md-button flex ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
         </md-button>
         <md-button flex class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}

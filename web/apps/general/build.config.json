@@ -107,6 +107,9 @@
             }, {
                 "development": "vendor/intl-tel-input/build/js/utils.js",
                 "production": "vendor/intl-tel-input/build/js/utils.js"
+            }, {
+                "development": "vendor/angular-jwt/dist/angular-jwt.js",
+                "production": "vendor/angular-jwt/dist/angular-jwt.min.js"
             }
         ],
         "maps": [

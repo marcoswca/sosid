@@ -4,14 +4,14 @@
             <div flex>
                 <h3>{{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE' | translate }}</h3>
             </div>
-            <div flex="20" layout="column" ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align="end end">
+            <div ng-if="!ProfileViewCtrl.isOutSide()"  flex="20" layout="column" ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align="end end">
                 <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate }}
                 </md-button>
             </div>
         </div>
         <div layout="row" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading">
             <div layout="column" flex="100">
-                <div layout="column">
+                <div  layout="column">
                     <md-radio-group ng-model="DefaultItemCtrl.item.allowType">
                         <!-- allowAfterDeath -->
                         <md-radio-button value="allowAfterDeath" class="md-primary" layout="row" layout-align="start center"><span> {{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.QUESTIONS.ALLOW_AFTER_DEATH' | translate }} </span></md-radio-button>
@@ -110,7 +110,7 @@
                         <div class="profile-content__upload-files__title">Resource</div>
                         <div class="profile-content__upload-files__hint">({{ 'PRIVATE.PROFILE.ORGAN DONOR CARD.UPLOAD_TIP' | translate }})</div>
                     </div>
-                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
+                    <div ng-if="!ProfileViewCtrl.isOutSide()" ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
                         class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                         <div class="profile-content__upload-dnd-area__icon">
                             <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
@@ -127,7 +127,7 @@
             </div>
         </div>
         </div>
-        <div ng-hide="DefaultItemCtrl.disableFields" layout="row" layout-align-xs="center center">
+        <div  ng-hide="DefaultItemCtrl.disableFields" layout="row" layout-align-xs="center center">
             <md-button flex="50" ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
             </md-button>
             <md-button flex="50" ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()" skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}

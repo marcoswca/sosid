@@ -1,10 +1,10 @@
 <content-item-box>
     <form name="form">
-        <div layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="row" layout-align-xs="center stretch">
+        <div  layout="row" layout-align="space-between center" class="profile-content__box__title" layout-xs="row" layout-align-xs="center stretch">
             <div flex>
                 <h3>{{ 'PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE' | translate }}</h3>
             </div>
-            <div flex="20" layout="column" ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align="end end">
+            <div ng-if="!ProfileViewCtrl.isOutSide()" flex="20" layout="column" ng-show="DefaultItemCtrl.disableFields" layout-xs="row" layout-align="end end">
                 <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate }}</md-button>
             </div>
         </div>
@@ -96,7 +96,7 @@
                         <div class="profile-content__upload-files__title">Resource</div>
                         <div class="profile-content__upload-files__hint">(Upload your living will card)</div>
                     </div>
-                    <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
+                    <div ng-if="!ProfileViewCtrl.isOutSide()" ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                         <div class="profile-content__upload-dnd-area__icon">
                             <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
                             <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
@@ -112,7 +112,7 @@
                 </div>
             </div>
         </div>
-        <div ng-hide="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
+        <div ng-if="!ProfileViewCtrl.isOutSide()" ng-hide="DefaultItemCtrl.disableFields" layout-xs="row" layout-align-xs="center center">
             <md-button flex ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
             </md-button>
             <md-button flex ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()" skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}

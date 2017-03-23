@@ -6,7 +6,8 @@
         'private.components.toggleMenuMobile',
         'private.views.privacy',
         'printCard.views.privacy',
-        'welcome.views.privacy'
+        'welcome.views.privacy',
+        'private.service'
     ];
 
     angular
@@ -14,7 +15,7 @@
         .controller('ProfileViewController', ProfileViewController);
 
     /** @ngInject */
-    function ProfileViewController($rootScope, $mdDialog, Session, $state, $timeout) {
+    function ProfileViewController($rootScope, $mdDialog, Session, $state, $timeout, PrivacyCategoriesService) {
         // Private variables
         var __loadingDebouce,
             self = this;
@@ -41,7 +42,7 @@
         self.showWelcome = showWelcome;
         self.isEnabled = isEnabled;
         self.categoriesEnabled = {};
-        
+
         if (self.Session.user.profile.plan && self.Session.user.profile.plan.plans) {
             self.planStorageSpace = self.Session.user.profile.plan.plans.storageSpace;
             self.percentUsedStorage = (self.usedStorage / self.planStorageSpace) * 100;
@@ -53,6 +54,15 @@
             });
         }
 
+
+        self.categoryIsFree = function(category) {
+            return !!PrivacyCategoriesService.categoryIsFree(category);
+        };
+
+        self.isOutSide = function() {
+            return PrivacyCategoriesService.isOutSide();
+        };
+
         // Private methods
         return (function init() {
             $rootScope.$on('$stateChangeStart', function() {
@@ -63,7 +73,7 @@
             });
         })();
 
-       
+
 
         function setLoading(status) {
             if (__loadingDebouce) {

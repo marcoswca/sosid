@@ -1,13 +1,13 @@
 <content-item-box style="background-color: red">
     {{DefaultItemCtrl.item.___removed}}
-    <div layout="row" class="profile-content__box__title">
+    <div  layout="row" class="profile-content__box__title">
         <div flex-xs="90" ng-hide="DefaultItemCtrl.isCreate" flex>
             <h3>{{'PRIVATE.PROFILE.ALLERGIES.' + allergyType.key + '.TYPE' | translate}} <span ng-show="DefaultItemCtrl.item.description"></span></h3>
         </div>
         <div flex-xs="90" ng-show="DefaultItemCtrl.isCreate">
             <h3>{{ 'PRIVATE.PROFILE.ALLERGIES.'  + allergyType.key +  '.ADD_NEW_TEXT' | translate }}</h3>
         </div>
-        <div ng-hide="DefaultItemCtrl.isCreate">
+        <div ng-if="!ProfileViewCtrl.isOutSide()" ng-hide="DefaultItemCtrl.isCreate">
             <md-menu md-offset="-50 50">
                 <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
                     <md-icon md-svg-icon="navigation:more_vert" style="color: #ccc;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
@@ -39,7 +39,7 @@
                     <input ng-model="DefaultItemCtrl.item.description">
                 </md-input-container>
             </div>
-            <div layout="column" class="profile-content__upload-files">
+            <div ng-if="!ProfileViewCtrl.isOutSide()" layout="column" class="profile-content__upload-files">
                 <div layout="column" class="profile-content__upload-files">
                     <div layout="row" class="profile-content__upload-files__header">
                         <!--Todo: Mapear tradução-->
@@ -61,7 +61,7 @@
                     </div>
                 </div>
             </div>
-            <div layout="row" ng-hide="DefaultItemCtrl.disableFields">
+            <div ng-if="!ProfileViewCtrl.isOutSide()" layout="row" ng-hide="DefaultItemCtrl.disableFields">
                 <md-button flex ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid " class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
                 </md-button>
                 <md-button flex class="me-raised" ng-click="DefaultItemCtrl.cancel()">{{ 'ACTIONS.CANCEL' | translate}}

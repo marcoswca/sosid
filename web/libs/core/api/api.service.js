@@ -38,17 +38,17 @@
             responseError: function(response) {
 
                 if (response.status === HTTP_STATUS_NOT_FOUND) {
-                    // do something
+                    console.log("not found");
                 }
 
                 if (response.status === HTTP_STATUS_UNAUTHORIZED) {
                     if ($window.location.pathname !== '/login') {
-                        // $window.location = APP_CONFIG.URL.APP_URL + '/login';
+                        console.log("unauthorized");
                     }
                 }
 
                 if (response.status === HTTP_STATUS_FORBIDDEN) {
-                    // do something
+                    console.log("HTTP_STATUS_FORBIDDEN");
                 }
 
                 if (response.status === NO_HTTP_STATUS) {

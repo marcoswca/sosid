@@ -19,6 +19,11 @@
             self.actual = Session.user.profile.plan.name;
         }
 
+        self.hasPlan = function() {
+          console.log(Session.user.profile.plan);
+            return !!Session.user.profile.plan;
+        }
+
         self.getPlans = function() {
             Plan.getAll().then(function successCallback(data) {
                 self.plans = data;

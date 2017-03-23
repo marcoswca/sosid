@@ -1,11 +1,11 @@
 <div class="personal-data-view" layout="column" flex="100" layout-align="space-between stretch">
     <user-basic-info></user-basic-info>
-    <user-plan></user-plan>
-    <emergency-messages></emergency-messages>
-    <family-doctor></family-doctor>
-    <product></product>
-    <user-resources></user-resources>
-    <div layout="row" layout-xs="column" class="hot-button__container">
+    <user-plan  ng-if="!ProfileViewCtrl.isOutSide()"></user-plan>
+    <emergency-messages ng-if="!ProfileViewCtrl.isOutSide()"></emergency-messages>
+    <family-doctor ng-if="!ProfileViewCtrl.isOutSide()"></family-doctor>
+    <product ng-if="!ProfileViewCtrl.isOutSide()"></product>
+    <user-resources ng-if="!ProfileViewCtrl.isOutSide()"></user-resources>
+    <div ng-if="!ProfileViewCtrl.isOutSide()" layout="row" layout-xs="column" class="hot-button__container">
         <div layout="row" flex="none" flex-gt-xs="50" layout-align="space-between center" class="hot-button">
             <div layout="row" layout-align="start center">
                 <div class="hot-button__icon-left">
