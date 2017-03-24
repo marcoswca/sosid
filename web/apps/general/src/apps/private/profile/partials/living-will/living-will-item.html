@@ -4,7 +4,7 @@
             <div flex>
                 <h3>{{ 'PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE' | translate }}</h3>
             </div>
-            <div flex="20" ng-show="DefaultItemCtrl.disableFields" layout="column" layout-xs="row" layout-align="end end">
+            <div ng-if="!ProfileViewCtrl.isOutSide()" flex="20" ng-show="DefaultItemCtrl.disableFields" layout="column" layout-xs="row" layout-align="end end">
                 <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate }}
                 </md-button>
             </div>
