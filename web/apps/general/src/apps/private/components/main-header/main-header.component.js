@@ -22,7 +22,7 @@
             templateUrl: 'templates/main-header.component.html'
         };
 
-        function MainHeaderCtrl(Session, $mdDialog) {
+        function MainHeaderCtrl(Session, $mdDialog, PrivacyCategoriesService) {
             var self = this;
             var originatorEv;
 
@@ -38,7 +38,11 @@
             self.showPrivacySettings = showPrivacySettings;
             self.showPrintCard = showPrintCard;
             self.blockDropdown = !!Session.user.profile.plan && !Session.user.profile.plan.moreInformations.isExpired;
-            console.log(self.blockDropdown);
+
+            self.isOutSide = function() {
+                return PrivacyCategoriesService.isOutSide();
+            };
+
             return init();
 
             function init() {}
