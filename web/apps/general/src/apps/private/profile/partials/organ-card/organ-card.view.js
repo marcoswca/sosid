@@ -31,8 +31,6 @@
                 .get()
                 .then(function(data) {
                     self.item = new OrganCard(data);
-                    console.log(self.item);
-
                 })
                 .catch(function(result) {
                     if (result.status === 404) {

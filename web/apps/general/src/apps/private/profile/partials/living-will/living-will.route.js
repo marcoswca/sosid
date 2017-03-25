@@ -19,11 +19,11 @@
                 url: '/living-will',
                 template: '<default-profile-view-list></default-profile-view-list>',
                 data: {
+                    hiddenAddButton: true,
                     pageTitle: 'PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE',
                     rolePlans: ['premium'],
                     itemTemplate: 'living-will-item.html',
                     modelName: 'LivingWill'
-
                 }
             }
         }];

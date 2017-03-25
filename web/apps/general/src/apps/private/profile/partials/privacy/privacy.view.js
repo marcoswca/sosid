@@ -19,7 +19,6 @@
 
         PrivacyApi.get().then(function successCallback(data) {
             self.categories = data;
-            console.log(data);
         }, function errorCallback(reason) {
             console.log(reason);
         });

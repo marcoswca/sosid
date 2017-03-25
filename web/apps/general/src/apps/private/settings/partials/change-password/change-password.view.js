@@ -18,10 +18,8 @@
 
         self.passwordChange = function(object){
             UserApi.passwordChange(object).then(function successCallback(data){
-                console.log(object);
             }, function errorCallback(reason){
                 console.log(reason);
-
             });
         };
 

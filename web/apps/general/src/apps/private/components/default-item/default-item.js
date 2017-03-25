@@ -55,7 +55,6 @@
                     if (self.getAttributes) {
                         self.attributes = self.getAttributes();
                     }
-                    console.log(self.item);
                     enableFields();
                 }
             };
@@ -69,7 +68,6 @@
                 return self.item
                     .save()
                     .then(function(data) {
-                      console.log(data);
                         self.disableFields = true;
 
                         if (self.isCreate) {

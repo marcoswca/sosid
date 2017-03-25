@@ -16,7 +16,7 @@
 
     /** @ngInject */
     function ProfileViewController($rootScope, $mdDialog, Session, $state, $timeout, PrivacyCategoriesService) {
-        // Private variables
+
         var __loadingDebouce,
             self = this;
         self.contentHeader = {
@@ -63,7 +63,6 @@
             return PrivacyCategoriesService.isOutSide();
         };
 
-        // Private methods
         return (function init() {
             $rootScope.$on('$stateChangeStart', function() {
                 self.contentHeader.button.show = angular.noop;

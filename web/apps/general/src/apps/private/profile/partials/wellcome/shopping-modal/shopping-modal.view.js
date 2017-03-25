@@ -13,10 +13,6 @@
 
         var self = this;
 
-        console.log(self);
-
-        //self.tab = 1;
-
         self.setTab = function(newTab){
             self.tab = newTab;
         };

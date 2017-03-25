@@ -31,7 +31,6 @@
             self.openFile = function(file) {
 
                 UserResources.getFile(file.url).then(function successCallback(data) {
-                  console.log(file);
                     var toOpen = new Blob([data], {
                         type:  file.mimeType
                     });

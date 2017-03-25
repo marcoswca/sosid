@@ -4,52 +4,44 @@
             <md-icon class="buttonClose" md-svg-icon="navigation:close" aria-label="close "></md-icon>
         </md-button>
     </div>
-    <div class="modal__header" layout="row" >
+    <div class="modal__header" layout="row">
         <div layout="column">
             <h1 class="modal__title">{{ 'PRIVATE.PROFILE.PRINT CARD.PAGE_TITLE' | translate }}</h1>
             <h2 class="modal__subtitle">{{ 'PRIVATE.PROFILE.PRINT CARD.PAGE_SUBTITLE' | translate }}</h2>
         </div>
     </div>
-
     <div class="modal__content" style="max-width:800px; margin:auto">
         <div class="print-card__container" layout="row" layout-xs="column" flex-gt-xs="100" layout-align="center center">
-
             <div class="print-card__front" layout="column" flex style="width: 300px; height:275px">
-
                 <div class="print-card__front__logo" layout="row" flex>
                     <div style="width:100px" layout="column">
                         <img src="./assets/images/logo.png" alt="">
                     </div>
                 </div>
-
                 <div layout="row" flex layout-align="center center">
                     <div class="print-card__info" style="font-size:15px">Access <b>sosid.com</b> with this <b>ID 8765378946</b> and see my register</div>
                 </div>
-
                 <div flex>
                     <div class="print-card__front__left">
                         <div class="print-card__label">Personal Data</div>
-                        <div class="print-card__data">Paulo Régis de Medeiros Cavalcante</div>
-                        <div class="print-card__data">Group AB+</div>
+                        <div class="print-card__data">{{$PrintCardController.user.firstName}} {{$PrintCardController.user.lastName}}</div>
+                        <div class="print-card__data">Group {{$PrintCardController.user.bloodType}}</div>
                     </div>
                 </div>
-
-                <div flex>
+                <div ng-if="$PrintCardController.emergencyContact" flex>
                     <div class="print-card__front__left">
                         <div class="print-card__label">Emergency Contact</div>
-                        <div class="print-card__data">Samara Zaida Fernandes da Silva</div>
-                        <div class="print-card__data">+49 251 74849741</div>
-                        <div class="print-card__data">+49 251 74849741</div>
+                        <div class="print-card__data">{{$PrintCardController.emergencyContact.firstName}} {{$PrintCardController.emergencyContact.lastName}}</div>
+                        <div class="print-card__data">{{$PrintCardController.emergencyContact.mobileNumber}}</div>
+                        <div class="print-card__data">{{$PrintCardController.emergencyContact.phoneNumber}}</div>
                     </div>
                 </div>
-
             </div>
-
             <div class="print-card__front" flex style="width: 300px; height:275px; margin:15px" layout="column">
-                <div layout="row" flex layout-align="center center">
+                <div layout="row" flex layout-align="start start">
                     <div class="print-card__info" style="font-size:15px">Access <b>sosid.com</b> with this <b>ID 8765378946</b> and see my register</div>
                 </div>
-                <div flex>
+                <!--  <div flex>
                     <div class="print-card__back__left">
                         <div class="print-card__label">Medical Insurance Details</div>
                         <div class="print-card__data">American Income Life Insurance Company</div>
@@ -57,15 +49,12 @@
                         <div class="print-card__data">+49 251 74849741</div>
                         <div class="print-card__data">GOLD PREMIUM</div>
                     </div>
-                </div>
-
+                </div> -->
             </div>
         </div>
     </div>
-
     <div class="modal__footer">
         <md-button class="md-primary md-raised" ng-click="$PrintCardController.printCard()">Print my card</md-button>
-        <div layout="row" layout-align="center start">something is wrong? <a ui-sref="profile">return to your record</a></div>
+        <div layout="row" ng-click="$PrintCardController.hide()" layout-align="center start">something is wrong? <a ui-sref="profile.personalData">return to your record</a></div>
     </div>
-
 </md-dialog>

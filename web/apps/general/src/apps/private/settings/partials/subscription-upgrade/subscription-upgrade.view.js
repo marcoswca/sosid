@@ -20,7 +20,6 @@
         }
 
         self.hasPlan = function() {
-          console.log(Session.user.profile.plan);
             return !!Session.user.profile.plan;
         }
 

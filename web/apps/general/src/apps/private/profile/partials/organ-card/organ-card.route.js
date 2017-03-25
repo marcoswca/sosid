@@ -18,6 +18,7 @@
                 url: '/organ-card',
                 template: '<default-profile-view-list></default-profile-view-list>',
                 data: {
+                    hiddenAddButton: true,
                     pageTitle: 'PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE',
                     rolePlans: ['premium'],
                     itemTemplate: 'organ-card-item.html',

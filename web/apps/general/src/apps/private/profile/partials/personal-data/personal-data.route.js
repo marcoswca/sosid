@@ -17,7 +17,6 @@
             state: 'profile.personalData',
             config: {
                 url: '/',
-                //parent: 'profile',
                 controller: 'PersonalDataViewController',
                 controllerAs: 'PersonalDataViewCtrl',
                 templateUrl: 'templates/personal-data.view.html',

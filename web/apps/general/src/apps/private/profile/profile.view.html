@@ -261,7 +261,7 @@
                         <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
                         <span class="profile-content__header__title" translate="{{ProfileViewCtrl.pageTitle}}"></span>
                     </div>
-                    <div ng-if="!ProfileViewCtrl.isOutSide()" class="profile-content__header__button" ng-if="ProfileViewCtrl.contentHeader.button.show()">
+                    <div class="profile-content__header__button" ng-if="ProfileViewCtrl.contentHeader.button.show() && !ProfileViewCtrl.isOutSide()">
                         <md-button class="md-raised" ng-click="ProfileViewCtrl.contentHeader.button.fn()">
                             <md-icon md-svg-icon="content:add" aria-label="Plus signal"></md-icon>
                             <span hide-sm translate="{{ProfileViewCtrl.contentHeader.button.name}}"></span>

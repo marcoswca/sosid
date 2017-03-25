@@ -29,7 +29,7 @@
 
 
             // Public variables
-            self.allowCreate = false;
+            self.allowCreate = $state.current.data.hiddenAddButton;
             self.items = [];
             // Public methods
             self.enableCreate = enableCreate;

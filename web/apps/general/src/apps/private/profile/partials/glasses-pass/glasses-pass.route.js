@@ -18,6 +18,7 @@
                 url: '/glasses-pass',
                 template: '<default-profile-view-list></default-profile-view-list>',
                 data: {
+                    hiddenAddButton: true,
                     pageTitle: 'PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE',
                     rolePlans: ['premium'],
                     itemTemplate: 'glasses-pass-item.html',
