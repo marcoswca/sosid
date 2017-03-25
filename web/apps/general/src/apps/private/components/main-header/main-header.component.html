@@ -5,15 +5,15 @@
         </div>
         <nav class="main-header__menu" hide-xs="true">
             <ul>
-                <li><a href="http://35.156.122.23/land/">
+                <li ng-if="!MainHeaderCtrl.isOutSide()"><a href="http://35.156.122.23/land/">
                 Website</a></li>
-                <li><a href="#profile">My Record</a></li>
-                <li><a href="http://35.156.122.23/store/" target="_blank">Shop</a></li>
+                <li ng-if="!MainHeaderCtrl.isOutSide()"><a href="#profile">My Record</a></li>
+                <li ng-if="!MainHeaderCtrl.isOutSide()"><a href="http://35.156.122.23/store/" target="_blank">Shop</a></li>
             </ul>
         </nav>
     </div>
 
-    <md-menu ng-if="!MainHeaderCtrl.isOutSide()" md-position-mode="target-right target">
+    <md-menu  md-position-mode="target-right target">
         <md-button  aria-label="Open phone interactions menu" class="md-icon-button" ng-click="MainHeaderCtrl.openMenu($mdOpenMenu, $event)">
             <div layout="row" layout-align="end center" class="main-header__menu-buttom">
                 <div class="main-header__avatar">
@@ -23,35 +23,35 @@
             </div>
         </md-button>
         <md-menu-content  width="4" class="main-header__menu-user">
-            <md-menu-item ui-sref="settings.changePassword">
+            <md-menu-item ng-if="!MainHeaderCtrl.isOutSide()" ui-sref="settings.changePassword">
                 <md-button>
                     <md-icon md-svg-icon="sosid:key" aria-label="Key"></md-icon>
                     Change Password
                 </md-button>
             </md-menu-item>
-            <md-menu-item ui-sref="settings.paymentHistory">
+            <md-menu-item ng-if="!MainHeaderCtrl.isOutSide()" ui-sref="settings.paymentHistory">
                 <md-button>
                     <md-icon md-svg-icon="sosid:euro" aria-label="Euro Simbol"></md-icon>
                     Payment History
                 </md-button>
             </md-menu-item>
-            <md-menu-item ui-sref="settings.subscriptionUpgrade">
+            <md-menu-item ng-if="!MainHeaderCtrl.isOutSide()" ui-sref="settings.subscriptionUpgrade">
                 <md-button>
                     <md-icon md-svg-icon="sosid:upgrade" aria-label="Euro Simbol"></md-icon>
                     {{"PLAN.UPGRADE" | translate}} </md-button>
             </md-menu-item>
-            <md-menu-divider></md-menu-divider>
-            <md-menu-item ng-click="MainHeaderCtrl.showPrivacySettings($event)">
+            <md-menu-divider ng-if="!MainHeaderCtrl.isOutSide()"></md-menu-divider>
+            <md-menu-item ng-if="!MainHeaderCtrl.isOutSide()" ng-click="MainHeaderCtrl.showPrivacySettings($event)">
                 <md-button>
                     <md-icon md-svg-icon="sosid:settings_privacy" aria-label="Euro Simbol"></md-icon>
                     {{"PRIVATE.PROFILE.PRIVACY.SETTINGS" | translate}} </md-button>
             </md-menu-item>
-            <md-menu-item ng-click="MainHeaderCtrl.showPrintCard($event)">
+            <md-menu-item  ng-if="!MainHeaderCtrl.isOutSide()" ng-click="MainHeaderCtrl.showPrintCard($event)">
                 <md-button>
                     <md-icon md-svg-icon="sosid:print_card" aria-label="Euro Simbol"></md-icon>
                     {{"PRIVATE.PROFILE.PRINT CARD.PRINT" | translate}} </md-button>
             </md-menu-item>
-            <md-menu-divider></md-menu-divider>
+            <md-menu-divider ng-if="!MainHeaderCtrl.isOutSide()"></md-menu-divider>
             <md-menu-item>
                 <md-button ng-click="MainHeaderCtrl.logout()">
                     <md-icon md-svg-icon="navigation:cancel"></md-icon>

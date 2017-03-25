@@ -24,7 +24,7 @@
         </div>
     </div>
     <div layout="row" flex="100">
-        <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading" name="form">
+        <form layout="column" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading || ProfileViewCtrl.isOutSide()" name="form">
             <div layout="row" layout-xs="column">
                 <md-input-container nx-model-attribute="EmergencyContact:firstName  " flex-gt-xs="40" flex="none" class="md-block">
                     <input ng-model="DefaultItemCtrl.item.firstName">

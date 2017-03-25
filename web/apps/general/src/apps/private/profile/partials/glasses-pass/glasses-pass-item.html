@@ -8,7 +8,7 @@
                 <md-button class="md-raised" ng-click="DefaultItemCtrl.enableFields()"> {{ 'ACTIONS.EDIT' | translate }}</md-button>
             </div>
         </div>
-        <div layout="row" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading">
+        <div layout="row" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading || ProfileViewCtrl.isOutSide()">
             <div layout="column" flex="100">
                 <div layout="row">
                     <md-input-container nx-model-attribute="GlassesPass:optiker" flex="100" class="md-block">

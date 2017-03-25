@@ -9,7 +9,7 @@
                 </md-button>
             </div>
         </div>
-        <div layout="row" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading">
+        <div layout="row" flex="100" nx-disable-all="DefaultItemCtrl.disableFields || DefaultItemCtrl.isLoading || ProfileViewCtrl.isOutSide()">
             <div layout="column" flex="100">
                 <div layout="row" layout-xs="column">
                     <md-input-container nx-model-attribute="LivingWill:firstName" flex-gt-xs="33" flex="none" class="md-block">
@@ -58,7 +58,7 @@
             </div>
         </div>
         </div>
-        <div ng-hide="DefaultItemCtrl.disableFields" layout="row" layout-align-xs="center center">
+        <div ng-if="!ProfileViewCtrl.isOutSide()" ng-hide="DefaultItemCtrl.disableFields" layout="row" layout-align-xs="center center">
             <md-button flex="50" ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}
             </md-button>
             <md-button flex="50" ng-hide="DefaultItemCtrl.isCreate" class="me-raised" ng-click="DefaultItemCtrl.cancel()" skip-disable="">{{ 'ACTIONS.CANCEL' | translate}}
