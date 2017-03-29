@@ -27,6 +27,7 @@
             self.initData = function() {
                 Product.getAll().then(function successCallback(data) {
                     self.products = data;
+                    console.log(data);
                 }, function errorCallback(reason) {
                     console.log(reason);
                     // body...

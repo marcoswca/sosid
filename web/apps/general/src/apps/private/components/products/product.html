@@ -4,25 +4,25 @@
             <h3>{{"PRODUCTS.TITLE" | translate}}</h3>
         </div>
     </div>
-
     <div layout="row">
         <div layout="column" flex="100" class="products-list">
             <div ng-if="ProductCtrl.products.length === 0">
                 <p style="font-style:italic">
                     {{"PRODUCTS.MESSAGE" | translate}} </p>
             </div>
-            <div layout="row" layout-align="space-between center" class="products-list__item" ng-repeat="product in ProductCtrl.products">
-                <div layout="row">
+            <div layout="row" flex layout-align="space-between center" class="products-list__item" ng-repeat="product in ProductCtrl.products">
+                <div layout="column" flex="33" layout-align="center start"  >
                     <div layout="row" class="products-list__image-container"> <img width="100px" height="75px" class="image-preview" ng-src="https://s3.eu-central-1.amazonaws.com/sosid/{{product.file_path}}" />
                     </div>
-                    <div layout="column" layout-align="center start">
-                        <div layout="row" class="products-list__title">{{product.name}}</div>
-                        <div layout="row" class="products-list__more-info">{{ProductCtrl.getLocaleDate(product.created_at)}}</div>
-                    </div>
+                    <div layout="row" class="products-list__title">{{product.name}}</div>
+                    <div layout="row" class="products-list__more-info">{{ProductCtrl.getLocaleDate(product.created_at)}}</div>
                 </div>
-                <div layout="row">
+                <div style="font-style: italic" layout="column" flex="33" layout-align="center center" flex="10">
+                    PIN: {{product.product_pin}}
+                </div>
+                <div layout="column" flex="33" layout-align="center end"  >
                     <button ng-class="{'products-list__toggle-privacy-block': !product.active, 'products-list__toggle-privacy-unblock': product.active}" ng-click="ProductCtrl.togglePrivacy(product)">
-                        <md-icon  ng-class="{red: !product.active, green: product.active}"  md-svg-icon="action:lock_{{!product.active ? 'outline' : 'open'}}" style="color: #00A2D3;width:8px;height:8px; min-width: 18px; min-height: 18px;" aria-label="Cake Icon"></md-icon>
+                        <md-icon ng-class="{red: !product.active, green: product.active}" md-svg-icon="action:lock_{{!product.active ? 'outline' : 'open'}}" style="color: #00A2D3;width:8px;height:8px; min-width: 18px; min-height: 18px;" aria-label="Cake Icon"></md-icon>
                         <span hide-xs="true">{{product.active ? 'Unblock PIN' : 'Block PIN'}}</span>
                     </button>
                 </div>
