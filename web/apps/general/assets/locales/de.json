@@ -650,7 +650,8 @@
                     "VALIDATE": {
                         "REQUIRED": "E-mail erforderlich",
                         "EMAIL": "Bitte gib eine gültige Email Adresse ein",
-                        "REGISTERED": "E-mail Adresse bereits registriert"
+                        "REGISTERED": "E-mail Adresse bereits registriert",
+                        "UNIQUE": "Die e-email adresse ist bereits registriert"
                     }
                 },
 

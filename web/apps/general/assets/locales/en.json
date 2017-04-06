@@ -642,6 +642,7 @@
                 }
             }
         },
+
         "USER": {
             "ATTRIBUTES": {
                 "EMAIL": {
@@ -650,7 +651,8 @@
                     "VALIDATE": {
                         "REQUIRED": "E-mail is required",
                         "EMAIL": "Please, enter a valid e-mail",
-                        "REGISTERED": "E-mail already registered"
+                        "REGISTERED": "E-mail already registered",
+                        "UNIQUE": "Email address already registered"
                     }
                 },
 
