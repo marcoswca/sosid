@@ -62,4 +62,4 @@ pmt-node.box
 # installed by bower
 web/libs/vendor
 
-web/libs/core/config.js
+#web/libs/core/config.js
