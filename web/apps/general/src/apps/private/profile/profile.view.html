@@ -140,10 +140,10 @@
         <div layout="row" layout-align="space-between start" class="profile-content__container">
             <div  layout="column" flex="20" class="profile-sidebar profile__menu" hide-xs="true">
                 <div layout="row" layout-align="start center" class="categories-resume">
-                    <div layout="row" class="categories-resume__icon">
-                        <md-icon md-svg-icon="action:done_all" style="width:32px;height:32px;" aria-label="User"></md-icon>
+                    <div style="width:32px;height:32px;" layout="row" class="categories-resume__icon">
+                        <md-icon ng-if="!ProfileViewCtrl.isOutSide()" md-svg-icon="action:done_all"  aria-label="User"></md-icon>
                     </div>
-                    <div  layout="column" flex="75">
+                    <div ng-if="!ProfileViewCtrl.isOutSide()" layout="column" flex="75">
                         <div class="categories-resume__detailed">
                             <span>{{ProfileViewCtrl.Session.user.profile.categoriesFilled}} of {{ProfileViewCtrl.Session.user.profile.plan.plans.categories.length}} completed</span>
                         </div>
@@ -153,7 +153,7 @@
                             </div>
                         </div>
                     </div>
-                    <div layout="row">
+                    <div ng-if="!ProfileViewCtrl.isOutSide()" layout="row">
                         <span class="categories-resume__percent">{{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</span>
                     </div>
                 </div>
