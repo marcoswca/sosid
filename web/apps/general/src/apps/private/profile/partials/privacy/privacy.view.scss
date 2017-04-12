@@ -11,12 +11,17 @@
     opacity: 0.95;
 }
 
-
 .modal__header {
     text-align: center;
     padding: 0 0 30px;
     display: table;
     margin: 0 auto;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .modal__footer {

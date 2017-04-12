@@ -122,8 +122,8 @@
                 "COMPLEMENT": {
                     "LABEL": "Complement"
                 },
-                "NOATTRIBUTES":{
-                  "LABEL": "Bitte fügen Sie Ihre Familienärzte ein."
+                "NOATTRIBUTES": {
+                    "LABEL": "Bitte fügen Sie Ihre Familienärzte ein."
                 }
             }
         },
@@ -678,7 +678,16 @@
     "YES": "Ja",
     "ALERT": "Alarm",
     "404_TEXT": "Dieser Inhalt besteht nicht.",
-
+    "DOCTOR": "Ärzte",
+    "ORGAN DONATOR CARD": "Organspenderausweis",
+    "GLASSES PASS": "Brillenpass",
+    "LIVING WILL": "Testament",
+    "ALLERGIES": "Allergien",
+    "HEALTH INSURANCE": "Krankenversicherung",
+    "MEDICATIONS": "Medikamente",
+    "EMERGENCY CONTACT": "Notfallkontakte",
+    "HEALTH CONDITIONS": "Krankheiten",
+    "PERSONAL DATA": "Persönliche Daten",
 
     "SESSION": {
         "LOGOUT": {
@@ -807,7 +816,9 @@
             }
         }
     },
+
     "PRIVATE": {
+
         "PROFILE": {
             "MY_RECORDS": "Meine Daten",
             "PERSONAL_DATA": {
@@ -893,7 +904,6 @@
                 "PAGE_TITLE": "Willkommen bei SOS-ID. Hier kannst Du Dein Profil bearbeiten.",
                 "PAGE_SUBTITLE": "Du bist in der kostenlosen Testphase. Bitte wähle eine der folgenden Optionen:"
             }
-
         }
     }
 }

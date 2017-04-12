@@ -18,7 +18,8 @@
             <li class="privacy-list__item" ng-click="$PrivacyController.updatePrivacy(instance)" ng-repeat="instance in $PrivacyController.categories">
                 <md-icon ng-class="{'privacy-list__item__toggle-privacy_lock' : instance.private, 'privacy-list__item__toggle-privacy_unlock' : !instance.private}" md-svg-icon="action:lock_{{ instance.private ? 'outline' : 'open'}}"></md-icon>
                 <md-icon class="privacy-list__item__category-icon" md-svg-icon="sosid:personal_data"></md-icon>
-                <div class="privacy-list__item__category-title">{{ instance.Category.name | translate }}</div>
+
+                <div class="privacy-list__item__category-title truncate">{{ instance.Category.name.toUpperCase() | translate }}</div>
             </li>
         </ul>
     </div>
