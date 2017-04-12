@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: application
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: nginx
+spec:
+  tls:
+  - hosts:
+    - sosid.pimentagroup.de
+    secretName: lp-tls
+  rules:
+  - host: sosid.pimentagroup.de
+    http:
+      paths:
+      - path: /app/
+        backend:
+          serviceName: application
+          servicePort: 80
