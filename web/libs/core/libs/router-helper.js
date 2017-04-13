@@ -12,7 +12,7 @@
 
         this.$get = NxtRouter;
 
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(false);
 
         /** @ngInject */
         function NxtRouter($state) {
