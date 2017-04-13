@@ -43,9 +43,9 @@
                 }
 
                 if (response.status === HTTP_STATUS_UNAUTHORIZED) {
-                    if ($window.location.pathname !== '/login') {
-                        $window.location.replace('/#/login');
-                    }
+                    // if ($window.location.pathname !== '/login') {
+                    //     $window.location.replace('/#/login');
+                    // }
                 }
 
                 if (response.status === HTTP_STATUS_FORBIDDEN) {
