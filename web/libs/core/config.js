@@ -13,7 +13,7 @@
             URL: {
                 APP_URL: 'https://sosid.pimentagroup.de/app',
                 API_URL: 'https://api.sosid.pimentagroup.de'
-            }
+             }
         })
         .config(config);
 
