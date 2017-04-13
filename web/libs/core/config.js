@@ -11,7 +11,7 @@
         .module('core.config', dependencies)
         .constant('APP_CONFIG', {
             URL: {
-                APP_URL: 'https://sosid.pimentagroup.de/app',
+                APP_URL: 'https://sosid.pimentagroup.de/app/',
                 API_URL: 'https://api.sosid.pimentagroup.de'
              }
         })
