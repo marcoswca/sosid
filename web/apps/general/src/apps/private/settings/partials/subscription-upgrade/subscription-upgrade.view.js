@@ -58,9 +58,9 @@
                 cartBlock: true
             };
             $cookies.putObject('cart', self.shoppingCart, {
-              path: '/store'
+              path: '/shop'
             });
-            window.open("http://35.156.122.23/store/#/commerce/cart/", "_blank");
+            window.open("https://sosid.pimentagroup.de/shop/#/commerce/cart/", "_blank");
         }
 
         self.changeExibition = function(type, number) {
