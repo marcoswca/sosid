@@ -9,7 +9,7 @@
     </div>
     <div ng-if="FamilyDoctorCtrl.user.familyDoctors.length === 0">
         <p style="font-style:italic">
-            Please insert your family doctors.
+            {{"MODELS.DOCTOR.ATTRIBUTES.NOATTRIBUTES.LABEL" | translate}}
         </p>
     </div>
     <div ng-repeat="fmDoctor in FamilyDoctorCtrl.user.familyDoctors " layout="row" flex="100">
