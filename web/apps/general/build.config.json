@@ -2,9 +2,9 @@
     "version": "0.10",
     "build_dir": "../.bin",
     "html5Location": {
-        "test": "/app",
-        "production": "/app",
-        "development": "/app"
+        "test": "/web/",
+        "production": "/",
+        "development": "/"
     },
     "app_files": {
         "js": [
