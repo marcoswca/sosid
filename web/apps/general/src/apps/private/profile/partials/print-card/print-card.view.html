@@ -19,13 +19,13 @@
                     </div>
                 </div>
                 <div layout="row" flex layout-align="center center">
-                    <div class="print-card__info" style="font-size:15px">Access <b>sosid.com</b> with this <b>ID 8765378946</b> and see my register</div>
+                    <div class="print-card__info" style="font-size:15px">Access <b>sosid.com</b> with this <b>ID {{$PrintCardController.user.serial}}</b> and see my register</div>
                 </div>
                 <div flex>
                     <div class="print-card__front__left">
                         <div class="print-card__label">Personal Data</div>
-                        <div class="print-card__data">{{$PrintCardController.user.firstName}} {{$PrintCardController.user.lastName}}</div>
-                        <div class="print-card__data">Group {{$PrintCardController.user.bloodType}}</div>
+                        <div class="print-card__data">{{$PrintCardController.user.profile.firstName}} {{$PrintCardController.user.profile.lastName}}</div>
+                        <div class="print-card__data">Group {{$PrintCardController.user.profile.bloodType}}</div>
                     </div>
                 </div>
                 <div ng-if="$PrintCardController.emergencyContact" flex>
@@ -39,7 +39,7 @@
             </div>
             <div class="print-card__front" flex style="width: 300px; height:275px; margin:15px" layout="column">
                 <div layout="row" flex layout-align="start start">
-                    <div class="print-card__info" style="font-size:15px">Access <b>sosid.com</b> with this <b>ID 8765378946</b> and see my register</div>
+                    <div class="print-card__info" style="font-size:15px">Access <b>sosid.com</b> with this <b>ID {{$PrintCardController.user.serial}}</b> and see my register</div>
                 </div>
                 <!--  <div flex>
                     <div class="print-card__back__left">

@@ -9,7 +9,7 @@
         .controller('PrintCardController', PrintCardController);
 
     /** @ngInject */
-    function PrintCardController($mdDialog, UserProfile, EmergencyContact) {
+    function PrintCardController($mdDialog, UserProfile, EmergencyContact, Session) {
 
         var self = this;
 
@@ -17,9 +17,11 @@
             $mdDialog.hide();
         };
 
-        UserProfile.get().then((result) => {
-            self.user = result;
-        });
+        self.user = Session.user;
+
+        // UserProfile.get().then((result) => {
+        //     self.user = result;
+        // });
 
         EmergencyContact.getAll().then((result) => {
             self.emergencyContact = result.rows[result.rows.length-1];
