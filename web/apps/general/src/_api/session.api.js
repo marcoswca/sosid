@@ -21,15 +21,17 @@
             return UserApi
                 .login(credentials)
                 .then(function(result) {
-                    $cookies.put('sessionToken', result.token);
+                    $cookies.put('sessionToken', result.token, {
+                        path: '/'
+                    });
                 });
         };
 
         this.destroy = function() {
-                return $q
-                    .resolve()
+            return $q
+                .resolve()
                 .then(function() {
-	             $cookies.remove('sessionToken');
+                    $cookies.remove('sessionToken');
                 });
         };
     }

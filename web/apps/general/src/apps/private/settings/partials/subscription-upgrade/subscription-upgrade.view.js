@@ -57,9 +57,11 @@
                 token: $cookies.get('sessionToken'),
                 cartBlock: true
             };
+
             $cookies.putObject('cart', self.shoppingCart, {
-              path: '/shop'
+              path: '/'
             });
+
             window.open("https://sosid.pimentagroup.de/shop/#/commerce/cart/", "_blank");
         }
 
