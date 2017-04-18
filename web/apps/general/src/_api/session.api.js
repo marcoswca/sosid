@@ -31,7 +31,9 @@
             return $q
                 .resolve()
                 .then(function() {
-                    $cookies.remove('sessionToken');
+                    $cookies.remove('sessionToken', {
+                        path: '/'
+                    });
                 });
         };
     }
