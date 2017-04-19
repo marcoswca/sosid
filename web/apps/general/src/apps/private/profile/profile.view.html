@@ -93,21 +93,21 @@
                     </div>
                     <div class="profile-resume__data-list" layout="row">
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('age')">
-                            <div class="profile-resume__data-field">Age</div>
+                            <div class="profile-resume__data-field">{{ 'MODELS.USER PROFILE.ATTRIBUTES.AGE.LABEL' | translate }}</div>
                             <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('age')}}</div>
                         </div>
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('gender')">
-                            <div class="profile-resume__data-field">Gender</div>
+                            <div class="profile-resume__data-field">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.LABEL' | translate }}</div>
                             <div class="profile-resume__data-value">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.OPTIONS.' + ProfileViewCtrl.Session.user.profile._getCommittedField('gender') | translate }}</div>
                         </div>
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('address')">
-                            <div class="profile-resume__data-field">address</div>
+                            <div class="profile-resume__data-field">Adresse</div>
                             <div class="profile-resume__data-value">
                                 {{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}
                             </div>
                         </div>
                         <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')">
-                            <div class="profile-resume__data-field">Blood Type</div>
+                            <div class="profile-resume__data-field">{{ 'MODELS.USER PROFILE.ATTRIBUTES.BLOOD TYPE.LABEL' | translate }}</div>
                             <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')}}</div>
                         </div>
                     </div>
