@@ -45,7 +45,6 @@
                         </md-select>
                     </md-input-container>
                 </div>
-
                 <div flex ng-show="UserBasicInfoCtrl.allowEdit">
                     <md-input-container flex="100" nx-model-attribute="UserProfile:birthDate">
                         <md-datepicker ng-model="UserBasicInfoCtrl.user.profile.birthDate"></md-datepicker>
@@ -60,6 +59,9 @@
             <div layout="row" layout-xs="column">
                 <div flex>
                     <md-input-container nx-model-attribute="UserProfile:bloodType" flex="100" class="md-block">
+                       <!--  <md-select-header>
+                            <span> {{ 'MODELS.USER PROFILE.ATTRIBUTES.BLOOD TYPE.LABEL' | translate }} </span>
+                        </md-select-header> -->
                         <md-select ng-model="UserBasicInfoCtrl.user.profile.bloodType" aria-label="blood type">
                             <md-option ng-value="''"><em>{{ 'OPTIONS.UNDEFINED' | translate }}</em></md-option>
                             <md-optgroup label="{{ 'MODELS.USER PROFILE.ATTRIBUTES.BLOOD TYPE.LABEL' | translate }}">
@@ -73,6 +75,11 @@
                                 <md-option value="AB-">AB-</md-option>
                             </md-optgroup>
                         </md-select>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container nx-model-attribute="Doctor:email" flex class="md-block">
+                        <input ng-model="UserBasicInfoCtrl.user.email">
                     </md-input-container>
                 </div>
             </div>
@@ -95,7 +102,7 @@
                         </md-input-container>
                     </div>
                     <div layout="row">
-                        <md-input-container  nx-model-attribute="UserProfile:street" flex="50" class="md-block">
+                        <md-input-container nx-model-attribute="UserProfile:street" flex="50" class="md-block">
                             <input required="true" aria-label="Street" placeholder="{{address.street}}" ng-model="address.street">
                         </md-input-container>
                         <md-input-container nx-model-attribute="UserProfile:number" flex="50" class="md-block">
@@ -109,7 +116,6 @@
                         <md-input-container nx-model-attribute="UserProfile:postalCode" flex="50" class="md-block">
                             <input required="true" placeholder="{{address.postalCode}}" aria-label="Postal Code" ng-model="address.postalCode">
                         </md-input-container>
-
                     </div>
                     <div layout="row">
                         <md-input-container nx-model-attribute="UserProfile:city" flex="40" class="md-block">
