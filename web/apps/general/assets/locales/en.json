@@ -5,6 +5,16 @@
             "SUBSCRIPTION": "Plan Upgrade"
         }
     },
+    "STORAGE": {
+        "DATA": {
+            "TITLE": "Data storage",
+            "USED": "Used"
+        }
+    },
+    "HEADER": {
+        "MY RECORDS": "My Records",
+        "SHOP": "Shop"
+    },
     "PLAN": {
         "UPGRADE": "Upgrade your plan",
         "SAVE": "Upgrade now and save",
@@ -122,8 +132,8 @@
                 "COMPLEMENT": {
                     "LABEL": "Complement"
                 },
-                "NOATTRIBUTES":{
-                  "LABEL": "Please insert your family doctors."
+                "NOATTRIBUTES": {
+                    "LABEL": "Please insert your family doctors."
                 }
             }
         },
@@ -693,7 +703,7 @@
         "FOOTER_TEXT": "To try again please click here"
     },
     "PUBLIC": {
-         "INFORMATIONS": {
+        "INFORMATIONS": {
             "id": "ID",
             "firstName": "First Name",
             "lastName": "Last Name",
@@ -803,6 +813,21 @@
         }
     },
     "PRIVATE": {
+        "SETTINGS": {
+            "PAYMENTHISTORY": {
+                "DATE": "Date",
+                "AMOUNT": "Amount",
+                "PRODUCT": "Product",
+                "INVOICE": "Invoice",
+                "TITLE": "Payment History"
+            },
+            "CHANGEPASSWORD": {
+                "TITLE": "Change Password",
+                "OLDPASSWORD": "Old Password",
+                "NEWPASSWORD": "New password",
+                "CONFIRMPASSWORD": "Confirm Password"
+            }
+        },
         "PROFILE": {
             "MY_RECORDS": "My Records",
             "PERSONAL_DATA": {
@@ -871,6 +896,9 @@
                     "PERSON_SHOULD_DECIDE": "About Yes or No then the following person should decide:"
                 }
             },
+            "BUY PRODUCTS": {
+                "BUTTON": "Buy SOS-ID products"
+            },
             "PRIVACY": {
                 "SETTINGS": "PRIVACY SETTINGS",
                 "PAGE_TITLE": "Edit the privacy of your data",
@@ -881,7 +909,13 @@
             },
             "PRINT CARD": {
                 "PRINT": "PRINT YOUR CARD",
+                "BUTTON": "Print SOS-ID card",
+                "TEXT BACK": "Access sos-id.de with this SOS-ID:",
+                "TEXT CARD2": "Access sos-id.de with this SOS-ID:",
+                "TEXT CARD1": "See my register",
                 "PAGE_TITLE": "We are almost there! We will print your card!",
+                "FOOTER1": "something is wrong?",
+                "FOOTER2": "return to your record",
                 "PAGE_SUBTITLE": "First, please check your data so that it is all rigth, if you find an error, return to your record and correct what is wrong."
             },
             "WELCOME": {

@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div layout="row" flex layout-align="center center">
-                    <div class="print-card__info" style="font-size:15px">Access <b>sos-id.de</b> with this <b>SOS-ID {{$PrintCardController.user.serial}}</b> and see my register</div>
+                    <div class="print-card__info" style="font-size:15px">{{"PRIVATE.PROFILE.PRINT CARD.TEXT CARD1" | translate}} <br> {{"PRIVATE.PROFILE.PRINT CARD.TEXT CARD2" | translate}} {{$PrintCardController.user.serial}}</div>
                 </div>
                 <div layout="row">
                     <div flex>
@@ -42,29 +42,22 @@
                     <div flex>
                         <div class="print-card__front__left" ng-if="$PrintCardController.user.profile.address.length">
                             <div class="print-card__label">Adresse</div>
-                            <div class="print-card__data">{{$PrintCardController.user.profile.address[0].street}}, {{$PrintCardController.user.profile.address[0].number}}<br> {{$PrintCardController.user.profile.address[0].city}} - {{$PrintCardController.user.profile.address[0].country}} </div>
+                            <div class="print-card__data">{{$PrintCardController.user.profile.address[0].street}}. {{$PrintCardController.user.profile.address[0].number}}<br> 
+                            {{$PrintCardController.user.profile.address[0].postalCode}}
+                            {{$PrintCardController.user.profile.address[0].city}}<br> {{$PrintCardController.user.profile.address[0].country}} </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="print-card__front" flex style="width: 300px; height:275px; margin:15px" layout="column">
                 <div layout="row" flex layout-align="start start">
-                    <div class="print-card__info" style="font-size:15px">Access <b>sos-id.de</b> with this <b>SOS-ID {{$PrintCardController.user.serial}}</b> and see my register</div>
+                    <div class="print-card__info" style="font-size:15px">{{"PRIVATE.PROFILE.PRINT CARD.TEXT BACK" | translate}} {{$PrintCardController.user.serial}}</div>
                 </div>
-                <!--  <div flex>
-                    <div class="print-card__back__left">
-                        <div class="print-card__label">Medical Insurance Details</div>
-                        <div class="print-card__data">American Income Life Insurance Company</div>
-                        <div class="print-card__data">HU762847362348932473</div>
-                        <div class="print-card__data">+49 251 74849741</div>
-                        <div class="print-card__data">GOLD PREMIUM</div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
     <div class="modal__footer">
-        <md-button class="md-primary md-raised" ng-click="$PrintCardController.printCard()">Print my card</md-button>
-        <div layout="row" ng-click="$PrintCardController.hide()" layout-align="center start">something is wrong? <a ui-sref="profile.personalData">return to your record</a></div>
+        <md-button class="md-primary md-raised" ng-click="$PrintCardController.printCard()">{{"PRIVATE.PROFILE.PRINT CARD.BUTTON" | translate}}</md-button>
+        <div layout="row" ng-click="$PrintCardController.hide()" layout-align="center start">{{"PRIVATE.PROFILE.PRINT CARD.FOOTER1" | translate}} <a ui-sref="profile.personalData">{{"PRIVATE.PROFILE.PRINT CARD.FOOTER2" | translate}}</a></div>
     </div>
 </md-dialog>

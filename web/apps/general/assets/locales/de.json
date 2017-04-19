@@ -5,6 +5,16 @@
             "SUBSCRIPTION": "Mitgliedschaft upgraden"
         }
     },
+    "STORAGE": {
+        "DATA": {
+            "TITLE": "Datenspeicher",
+            "USED": "Genutzt"
+        }
+    },
+    "HEADER": {
+        "MY RECORDS": "Meine Daten",
+        "SHOP": "Shop"
+    },
     "PLAN": {
         "UPGRADE": "Mitgliedschaft upgraden",
         "SAVE": "Jetzt upgraden und Geld sparen",
@@ -818,7 +828,21 @@
     },
 
     "PRIVATE": {
-
+        "SETTINGS": {
+            "PAYMENTHISTORY": {
+                "DATE": "DATUM",
+                "AMOUNT": "Betrag",
+                "PRODUCT": "Produkt",
+                "INVOICE": "Rechnung",
+                "TITLE": "Zahlungshistorie"
+            },
+            "CHANGEPASSWORD": {
+                "TITLE": "Passwort ändern",
+                "OLDPASSWORD": "Altes Passwort",
+                "NEWPASSWORD": "Neues Kennwort",
+                "CONFIRMPASSWORD": "Passwort bestätigen"
+            }
+        },
         "PROFILE": {
             "MY_RECORDS": "Meine Daten",
             "PERSONAL_DATA": {
@@ -887,6 +911,9 @@
                     "PERSON_SHOULD_DECIDE": "Die folgende Person soll darüber entscheiden ob mein(e) Organ(e) gespendet wird(werden):"
                 }
             },
+            "BUY PRODUCTS": {
+                "BUTTON": "Zum SOS-ID Shop"
+            },
             "PRIVACY": {
                 "SETTINGS": "Privatsphäre",
                 "PAGE_TITLE": "Sichtbarkeit Ihrer Daten",
@@ -897,7 +924,13 @@
             },
             "PRINT CARD": {
                 "PRINT": "SOS-ID Card",
+                "BUTTON": "SOS-ID Card ausdrucken",
+                "TEXT CARD1": "Notfallsituation: https://sos-id.de",
+                "TEXT CARD2": "SOS-ID:",
+                "TEXT BACK": "Bei einer Notfallsituation in Zusammenhang mit meiner Person bitte ich Sie, folgende Internetseite abzurufen, um meine Gesundheitsinformationen zu sehen. Web-Adresse: https://sos-id.de SOS-ID eingeben:",
                 "PAGE_TITLE": "Sie haben es fast geschafft. Wir erstellen Ihre SOS-ID-Card.",
+                "FOOTER1": "Vorgang abbrechen?",
+                "FOOTER2": "Zurück zur Ihre Daten",
                 "PAGE_SUBTITLE": "Bitte überprüfen Sie Ihre Daten auf Korrektheit. Wenn Sie einen Fehler finden, gehen Sie zu dem entsprechenden Feld zurück und korrigieren Ihre Eingaben."
             },
             "WELCOME": {

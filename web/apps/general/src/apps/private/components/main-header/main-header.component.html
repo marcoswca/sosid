@@ -7,14 +7,13 @@
             <ul>
                 <li ng-if="!MainHeaderCtrl.isOutSide()"><a href="https://sosid.pimentagroup.de">
                 Website</a></li>
-                <li ng-if="!MainHeaderCtrl.isOutSide()"><a href="#profile">My Record</a></li>
+                <li ng-if="!MainHeaderCtrl.isOutSide()"><a href="#profile">{{"HEADER.MY RECORDS" | translate}}</a></li>
                 <li ng-if="!MainHeaderCtrl.isOutSide()"><a href="https://sosid.pimentagroup.de/shop/" target="_blank">Shop</a></li>
             </ul>
         </nav>
     </div>
-
-    <md-menu  md-position-mode="target-right target">
-        <md-button  aria-label="Open phone interactions menu" class="md-icon-button" ng-click="MainHeaderCtrl.openMenu($mdOpenMenu, $event)">
+    <md-menu md-position-mode="target-right target">
+        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="MainHeaderCtrl.openMenu($mdOpenMenu, $event)">
             <div layout="row" layout-align="end center" class="main-header__menu-buttom">
                 <div class="main-header__avatar">
                     <md-icon md-svg-icon="sosid:personal_data" aria-label="Avatar"></md-icon>
@@ -22,18 +21,16 @@
                 <md-icon md-svg-icon="hardware:keyboard_arrow_down" style="color: #00A2D3;width:8px;height:8px;" aria-label="Cake Icon"></md-icon>
             </div>
         </md-button>
-        <md-menu-content  width="4" class="main-header__menu-user">
+        <md-menu-content width="4" class="main-header__menu-user">
             <md-menu-item ng-if="!MainHeaderCtrl.isOutSide()" ui-sref="settings.changePassword">
                 <md-button>
                     <md-icon md-svg-icon="sosid:key" aria-label="Key"></md-icon>
-                    Change Password
-                </md-button>
+                    {{"PRIVATE.SETTINGS.CHANGEPASSWORD.TITLE" | translate}} </md-button>
             </md-menu-item>
             <md-menu-item ng-if="!MainHeaderCtrl.isOutSide()" ui-sref="settings.paymentHistory">
                 <md-button>
                     <md-icon md-svg-icon="sosid:euro" aria-label="Euro Simbol"></md-icon>
-                    Payment History
-                </md-button>
+                    {{"PRIVATE.SETTINGS.PAYMENTHISTORY.TITLE" | translate}} </md-button>
             </md-menu-item>
             <md-menu-item ng-if="!MainHeaderCtrl.isOutSide()" ui-sref="settings.subscriptionUpgrade">
                 <md-button>
@@ -46,7 +43,7 @@
                     <md-icon md-svg-icon="sosid:settings_privacy" aria-label="Euro Simbol"></md-icon>
                     {{"PRIVATE.PROFILE.PRIVACY.SETTINGS" | translate}} </md-button>
             </md-menu-item>
-            <md-menu-item  ng-if="!MainHeaderCtrl.isOutSide()" ng-click="MainHeaderCtrl.showPrintCard($event)">
+            <md-menu-item ng-if="!MainHeaderCtrl.isOutSide()" ng-click="MainHeaderCtrl.showPrintCard($event)">
                 <md-button>
                     <md-icon md-svg-icon="sosid:print_card" aria-label="Euro Simbol"></md-icon>
                     {{"PRIVATE.PROFILE.PRINT CARD.PRINT" | translate}} </md-button>
@@ -55,10 +52,9 @@
             <md-menu-item>
                 <md-button ng-click="MainHeaderCtrl.logout()">
                     <md-icon md-svg-icon="navigation:cancel"></md-icon>
-                    logout
+                    Logout
                 </md-button>
             </md-menu-item>
         </md-menu-content>
     </md-menu>
-
 </div>
