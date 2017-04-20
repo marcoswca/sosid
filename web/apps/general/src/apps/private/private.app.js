@@ -37,7 +37,7 @@
         .run(run);
 
     /** @ngInject */
-    function config($mdIconProvider, $mdThemingProvider, $urlRouterProvider, intlTelInputOptions) {
+    function config($mdIconProvider, $mdThemingProvider, $urlRouterProvider, intlTelInputOptions, $mdDateLocaleProvider) {
         //$urlRouterProvider.when('/', '/profile/');
         angular.extend(intlTelInputOptions, {
             nationalMode: false,
@@ -48,6 +48,11 @@
             autoPlaceholder: false
         });
 
+        $mdDateLocaleProvider.formatDate = function(date) {
+            var m = moment(date);
+            return m.isValid() ? m.format('L') : '';
+        };
+        
         $mdIconProvider
             .iconSet('action', 'assets/material-icons/action-icons.svg', 24)
             .iconSet('alert', 'assets/material-icons/alert-icons.svg', 24)
