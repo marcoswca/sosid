@@ -690,6 +690,9 @@
     "YES": "yes",
     "ALERT": "Alert",
     "404_TEXT": "The content you were looking for doesn't exist.",
+    "of": "of",
+    "completed": "completed",
+
 
     "SESSION": {
         "LOGOUT": {

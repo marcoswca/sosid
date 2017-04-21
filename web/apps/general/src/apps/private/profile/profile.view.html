@@ -51,7 +51,6 @@
                         <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}">{{ "PRIVATE.PROFILE.HEALTH INSURANCES.PAGE_TITLE" | translate}}</span>
                     </a>
                 </li>
-
                 <li ng-if="ProfileViewCtrl.categoryIsFree('Living Will')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
                     <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                     <a ui-sref="profile.livingWill">
@@ -130,22 +129,22 @@
                     <md-button aria-label="Eat cake" class="md-icon-button">
                         <md-icon md-svg-icon="sosid:buy_products" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
                     </md-button>
-                    <div class="topbar__profile-nav__link__text">Buy
-                        <br>Products</div>
+                    <div class="topbar__profile-nav__link__text">{{"WELCOME.BUTTON.PRODUCT" | translate}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div layout="row" layout-align="center stretch" class="content profile-content">
         <div layout="row" layout-align="space-between start" class="profile-content__container">
-            <div  layout="column" flex="20" class="profile-sidebar profile__menu" hide-xs="true">
+            <div layout="column" flex="20" class="profile-sidebar profile__menu" hide-xs="true">
                 <div layout="row" layout-align="start center" class="categories-resume">
                     <div style="width:32px;height:32px;" layout="row" class="categories-resume__icon">
-                        <md-icon ng-if="!ProfileViewCtrl.isOutSide()" md-svg-icon="action:done_all"  aria-label="User"></md-icon>
+                        <md-icon ng-if="!ProfileViewCtrl.isOutSide()" md-svg-icon="action:done_all" aria-label="User"></md-icon>
                     </div>
                     <div ng-if="!ProfileViewCtrl.isOutSide()" layout="column" flex="75">
                         <div class="categories-resume__detailed">
-                            <span>{{ProfileViewCtrl.Session.user.profile.categoriesFilled}} of {{ProfileViewCtrl.Session.user.profile.plan.plans.categories.length}} completed</span>
+                            <span>{{ProfileViewCtrl.Session.user.profile.categoriesFilled}} {{"of" | translate}} {{ProfileViewCtrl.Session.user.profile.plan.plans.categories.length}} {{"completed" | translate}}</span>
                         </div>
                         <div>
                             <div class="categories-resume__bar">
@@ -208,8 +207,7 @@
                                 <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}">{{ "PRIVATE.PROFILE.HEALTH INSURANCES.PAGE_TITLE" | translate}}</span>
                             </a>
                         </li>
-
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Living Will')"  class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active">
+                        <li ng-if="ProfileViewCtrl.categoryIsFree('Living Will')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active">
                             <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
                             <a ui-sref="profile.livingWill">
                                 <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
@@ -242,7 +240,7 @@
                         </div>
                     </div>
                     <div layout="column" class="data-storage__content">
-                        <div layout="row"><span class="data-storage__data-text">{{ProfileViewCtrl.usedStorage}}MB of {{ProfileViewCtrl.planStorageSpace}}MB {{"STORAGE.DATA.USED" | translate}}</span></div>
+                        <div layout="row"><span class="data-storage__data-text">{{ProfileViewCtrl.usedStorage}}MB {{"of" | translate}} {{ProfileViewCtrl.planStorageSpace}}MB {{"STORAGE.DATA.USED" | translate}}</span></div>
                         <div layout="row" class="data-storage__data-chart">
                             <div class="data-storage__bar">
                                 <div class="data-storage__bar__percent" style="width: {{ProfileViewCtrl.percentUsedStorage}}%;"></div>
