@@ -683,6 +683,7 @@
 
 
     "settled": "Bezahlt",
+    "settling": "Verarbeitung",
     "gateway_rejected": "Gateway abgelehnt",
     "LOGOUT_BUTTON": "Logout",
     "CANCEL": "Abbrechen",

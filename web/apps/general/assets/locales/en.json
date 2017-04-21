@@ -683,6 +683,7 @@
     },
 
     "settled": "SETTLED",
+    "settling": "SETTLING",
     "gateway_rejected": "GATEWAY REJECTED",
     "LOGOUT_BUTTON": "Logout",
     "CANCEL": "cancel",
