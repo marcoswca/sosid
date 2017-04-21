@@ -42,7 +42,8 @@
         };
 
         self.getLocaleDate = function(date) {
-            return new Date(date).toLocaleString();
+             var m = moment(date);
+            return m.isValid() ? m.format('L') : '';
         };
 
         // Private methods

@@ -23,7 +23,7 @@
     }
 
     /** @ngInject */
-    function NegativeStatusHandler($q, $window, APP_CONFIG, $cookies) {
+    function NegativeStatusHandler($q, $window, APP_CONFIG, $cookies,jwtHelper) {
 
         return {
             request: function(config) {
@@ -43,10 +43,15 @@
                 }
 
                 if (response.status === HTTP_STATUS_UNAUTHORIZED) {
-                   
+
                 }
 
                 if (response.status === HTTP_STATUS_FORBIDDEN) {
+                    var decoded = jwtHelper.decodeToken($cookies.get("sessionToken"));
+                    console.log(decoded);
+                    if (decoded.scope.indexOf('admin') > -1) {
+                        window.location.replace("https://sosid.pimentagroup.de/dashboard");
+                    }
                     console.log("HTTP_STATUS_FORBIDDEN");
                 }
 

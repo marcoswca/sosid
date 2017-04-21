@@ -681,6 +681,9 @@
             }
         }
     },
+
+    "settled": "SETTLED",
+    "gateway_rejected": "GATEWAY REJECTED",
     "LOGOUT_BUTTON": "Logout",
     "CANCEL": "cancel",
     "SAVE": "save",

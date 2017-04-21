@@ -37,12 +37,7 @@
                     }
                 },
                 relationship: {
-                    label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
+                    label: true
                 },
                 mobileNumber: {
                     label: true,
@@ -56,14 +51,6 @@
                 },
                 email: {
                     label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        },
-                        email: {
-                            message: true
-                        }
-                    }
                 },
                 street: {
                     label: true,

@@ -682,6 +682,8 @@
     },
 
 
+    "settled": "Bezahlt",
+    "gateway_rejected": "Gateway abgelehnt",
     "LOGOUT_BUTTON": "Logout",
     "CANCEL": "Abbrechen",
     "SAVE": "Speichern",
