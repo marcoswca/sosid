@@ -724,8 +724,8 @@
     "SESSION": {
         "LOGOUT": {
             "CONFIRM": {
-                "TITLE": "SOS-ID sorgt für Ihre Daten.",
-                "CONTENT": "Möchtest Du Dich abmelden?"
+                "TITLE": "SOS-ID schutzt Ihre Daten.",
+                "CONTENT": "Möchten Sie sich abmelden?"
             }
         }
     },
