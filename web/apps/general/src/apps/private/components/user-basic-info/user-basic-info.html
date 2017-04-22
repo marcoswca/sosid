@@ -78,10 +78,18 @@
                     </md-input-container>
                 </div>
                 <div flex>
-                    <md-input-container nx-model-attribute="Doctor:email" flex class="md-block">
+                    <md-input-container nx-model-attribute="UserProfile:email" flex class="md-block">
                         <input ng-model="UserBasicInfoCtrl.user.email">
                     </md-input-container>
                 </div>
+            </div>
+             <div layout="row" layout-xs="column">
+                <md-input-container flex-gt-xs="50" nx-model-attribute="UserProfile:mobileNumber">
+                    <input intl-tel-input ng-model="UserBasicInfoCtrl.user.profile.mobileNumber">
+                </md-input-container>
+                <md-input-container flex-gt-xs="50" nx-model-attribute="UserProfile:phoneNumber" flex-gt-xs="50">
+                    <input intl-tel-input ng-model="UserBasicInfoCtrl.user.profile.phoneNumber">
+                </md-input-container>
             </div>
             <div layout="row" flex ng-repeat="address in UserBasicInfoCtrl.user.profile.address track by $index">
                 <div layout="column" flex>
@@ -122,7 +130,7 @@
                             <input required="true" aria-label="City" placeholder="{{address.city}}" ng-model="address.city">
                         </md-input-container>
                         <md-input-container nx-model-attribute="UserProfile:provincy" flex="30" class="md-block">
-                            <input required="true" aria-label="Provincy" placeholder="{{address.provincy}}" ng-model="address.provincy">
+                            <input aria-label="Provincy" placeholder="{{address.provincy}}" ng-model="address.provincy">
                         </md-input-container>
                         <md-input-container nx-model-attribute="UserProfile:country" flex="30" class="md-block">
                             <input required="true" aria-label="Country" placeholder="{{address.country}}" ng-model="address.country">

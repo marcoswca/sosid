@@ -1,6 +1,6 @@
 <content-item-box style="background-color: red">
     {{DefaultItemCtrl.item.___removed}}
-    <div  layout="row" class="profile-content__box__title">
+    <div layout="row" class="profile-content__box__title">
         <div flex-xs="90" ng-hide="DefaultItemCtrl.isCreate" flex>
             <h3>{{'PRIVATE.PROFILE.ALLERGIES.' + allergyType.key + '.TYPE' | translate}} <span ng-show="DefaultItemCtrl.item.description"></span></h3>
         </div>
@@ -43,17 +43,16 @@
                 <div layout="column" class="profile-content__upload-files">
                     <div layout="row" class="profile-content__upload-files__header">
                         <!--Todo: Mapear tradução-->
-                        <div class="profile-content__upload-files__title">Resources</div>
-                        <div class="profile-content__upload-files__hint">(Example: X-Ray, Biopsy, Medical Exam...)</div>
+                        <div class="profile-content__upload-files__title">{{"Resources" | translate}}</div>
+                        <div class="profile-content__upload-files__hint">({{"Example" | translate}}: {{"X-Ray" | translate}}, {{"Biopsy" | translate}}, {{"Medical Exam" | translate}}...)</div>
                     </div>
                     <div ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                         <div class="profile-content__upload-dnd-area__icon">
                             <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
                             <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
                         </div>
-                        <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
-                        <div ng-if="!DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">Your files here or
-                            <span>browse</span>
+                        <div class="profile-content__upload-files__dnd-area__title">{{"Drag and Drop" | translate}}</div>
+                        <div ng-if="!DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">{{"Your files here or browse" | translate}}
                         </div>
                         <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
                             {{DefaultItemCtrl.item.file.name}}

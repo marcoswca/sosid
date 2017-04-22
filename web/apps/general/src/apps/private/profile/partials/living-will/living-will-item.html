@@ -18,8 +18,39 @@
                     <md-input-container nx-model-attribute="LivingWill:lastName" flex-gt-xs="33" flex="none" class="md-block">
                         <input ng-model="DefaultItemCtrl.item.lastName">
                     </md-input-container>
-                    <md-input-container nx-model-attribute="LivingWill:relationship" flex-gt-xs="33" flex="none">
-                        <input ng-model="DefaultItemCtrl.item.relationship">
+                    <md-input-container nx-model-attribute="LivingWill:relationship" flex="20" flex-xs="100" class="md-block">
+                        <md-select ng-model="DefaultItemCtrl.item.relationship" aria-label="type">
+                            <md-optgroup label="{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.LABEL' | translate }}">
+                                <md-option value="SINGLE PARENT">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SINGLE PARENT' | translate }}</md-option>
+                                <md-option value="SPOUSE">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SPOUSE' | translate }}</md-option>
+                                <md-option value="HUSBAND">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.HUSBAND' | translate }}</md-option>
+                                <md-option value="WIFE">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.WIFE' | translate }}</md-option>
+                                <md-option value="PARENT">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.PARENT' | translate }}</md-option>
+                                <md-option value="FATHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.FATHER' | translate }}</md-option>
+                                <md-option value="MOTHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.MOTHER' | translate }}</md-option>
+                                <md-option value="CHILD">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.CHILD' | translate }}</md-option>
+                                <md-option value="SON">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SON' | translate }}</md-option>
+                                <md-option value="DAUGTHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.DAUGTHER' | translate }}</md-option>
+                                <md-option value="SIBLING">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SIBLING' | translate }}</md-option>
+                                <md-option value="BROTHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.BROTHER' | translate }}</md-option>
+                                <md-option value="SISTER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.SISTER' | translate }}</md-option>
+                                <md-option value="EXTENDED FAMILY">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.EXTENDED FAMILY' | translate }}</md-option>
+                                <md-option value="GRANDPARENT">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDPARENT' | translate }}</md-option>
+                                <md-option value="GRANDFATHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDFATHER' | translate }}</md-option>
+                                <md-option value="GRANDMOTHER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDMOTHER' | translate }}</md-option>
+                                <md-option value="GRANDSON">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDSON' | translate }}</md-option>
+                                <md-option value="GRANDDAUGHTER">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GRANDDAUGHTER' | translate }}</md-option>
+                                <md-option value="UNCLE">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.UNCLE' | translate }}</md-option>
+                                <md-option value="AUNT">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.AUNT' | translate }}</md-option>
+                                <md-option value="COUSIN">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.COUSIN' | translate }}</md-option>
+                                <md-option value="NEPHEW">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.NEPHEW' | translate }}</md-option>
+                                <md-option value="BOYFRIEND">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.BOYFRIEND' | translate }}</md-option>
+                                <md-option value="GIRLFRIEND">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.GIRLFRIEND' | translate }}</md-option>
+                                <md-option value="FRIEND">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.FRIEND' | translate }}</md-option>
+                                <md-option value="KNOW">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.KNOW' | translate }}</md-option>
+                                <md-option value="WORKING COLLEAGUE">{{ 'MODELS.EMERGENCY CONTACT.ATTRIBUTES.RELATIONSHIP.OPTIONS.WORKING COLLEAGUE' | translate }}</md-option>
+                            </md-optgroup>
+                        </md-select>
                     </md-input-container>
                 </div>
                 <div layout="row" layout-xs="column">
@@ -38,25 +69,23 @@
                 <div layout="column" class="profile-content__upload-files">
                     <div layout="row" class="profile-content__upload-files__header">
                         <!--Todo: Mapear tradução-->
-                        <div class="profile-content__upload-files__title">Resource</div>
-                        <div class="profile-content__upload-files__hint">(Upload your living will card)</div>
+                      <div class="profile-content__upload-files__title">{{"Resources" | translate}}</div>
+                    <div class="profile-content__upload-files__hint">({{"Example" | translate}}: {{"X-Ray" | translate}}, {{"Biopsy" | translate}}, {{"Medical Exam" | translate}}...)</div>
                     </div>
-                    <div ng-if="!ProfileViewCtrl.isOutSide()" ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover"
-                        class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
+                    <div ng-if="!ProfileViewCtrl.isOutSide()" ngf-multiple="true" name="file" ngf-pattern="'image/*,application/pdf'" ngf-max-size="20MB" ng-model="DefaultItemCtrl.item.file" ngf-change="DefaultItemCtrl.change($file)" ngf-select ngf-drop ngf-drag="drag($isDragging, $class, $event)" ngf-drag-over-class="dragover" class="profile-content__upload-files__dnd-area drop-box" layout="column" layout-align="center center">
                         <div class="profile-content__upload-dnd-area__icon">
                             <md-icon ng-if="!DefaultItemCtrl.item.file" md-svg-icon="sosid:upload" aria-label="Upload"></md-icon>
                             <md-icon style="color:green" ng-if="DefaultItemCtrl.item.file" md-svg-icon="sosid:uploaded" aria-label="Upload"></md-icon>
                         </div>
-                        <div class="profile-content__upload-files__dnd-area__title">Drag and Drop</div>
-                        <div ng-if="!DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">Your files here or
-                            <span>browse</span>
+                        <div class="profile-content__upload-files__dnd-area__title">{{"Drag and Drop" | translate}}</div>
+                        <div ng-if="!DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">{{"Your files here or browse" | translate}}
                         </div>
                         <div ng-if="DefaultItemCtrl.item.file" class="profile-content__upload-files__dnd-area__hint">
                             {{DefaultItemCtrl.item.file.name}}
                         </div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
         <div ng-if="!ProfileViewCtrl.isOutSide()" ng-hide="DefaultItemCtrl.disableFields" layout="row" layout-align-xs="center center">
             <md-button flex="50" ng-click="DefaultItemCtrl.save()" ng-disabled="form.$invalid || form.$pristine" class="md-raised md-primary">{{ 'ACTIONS.SAVE' | translate}}

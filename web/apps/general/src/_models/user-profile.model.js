@@ -104,12 +104,7 @@
                     }
                 },
                 provincy: {
-                    label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
+                    label: true
                 },
                 country: {
                     label: true,
@@ -155,6 +150,22 @@
                 familyDoctor: {
                     firstName: {
                         label: true
+                    }
+                },
+                mobileNumber: {
+                    phoneNumber: true,
+                    label: true
+                },
+                phoneNumber: {
+                    phoneNumber: true,
+                    label: true
+                },
+                email: {
+                    label: true,
+                    validate: {
+                        email: {
+                            message: true
+                        }
                     }
                 }
             };

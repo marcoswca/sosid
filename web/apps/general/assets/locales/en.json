@@ -598,6 +598,19 @@
                         "M": "Male"
                     }
                 },
+                "MOBILE NUMBER": {
+                    "LABEL": "Mobile Number"
+                },
+                "PHONE NUMBER": {
+                    "LABEL": "Phone Number"
+                },
+                "EMAIL": {
+                    "LABEL": "Email",
+                    "VALIDATE": {
+                        "EMAIL": "Please, enter with a valid e-mail"
+                    }
+                },
+
                 "BLOOD TYPE": {
                     "LABEL": "Blood Type"
                 },

@@ -598,6 +598,18 @@
                         "M": "männlich"
                     }
                 },
+                "MOBILE NUMBER": {
+                    "LABEL": "Handynummer"
+                },
+                "PHONE NUMBER": {
+                    "LABEL": "Festnetznummer"
+                },
+                "EMAIL": {
+                    "LABEL": "E-Mail",
+                    "VALIDATE": {
+                        "EMAIL": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+                    }
+                },
                 "BLOOD TYPE": {
                     "LABEL": "Blutgruppe"
                 },
@@ -681,7 +693,13 @@
         }
     },
 
-
+    "Resources": "Ressourcen",
+    "Example": "Beispiel",
+    "X-Ray": "Röntgen",
+    "Biopsy": "Biopsie",
+    "Medical Exam": "Ärztliche Untersuchung",
+    "Drag and Drop": "Bild hierher ziehen",
+    "Your files here or browse": "oder Bild zum hochladen auswählen",
     "settled": "Bezahlt",
     "settling": "Verarbeitung",
     "gateway_rejected": "Gateway abgelehnt",
