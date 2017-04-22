@@ -714,7 +714,7 @@
     "GLASSES PASS": "Brillenpass",
     "LIVING WILL": "Testament",
     "ALLERGIES": "Allergien",
-    "HEALTH INSURANCE": "Krankenversicherung",
+    "HEALTH INSURANCE": "Versicherung",
     "MEDICATIONS": "Medikamente",
     "EMERGENCY CONTACT": "Notfallkontakte",
     "HEALTH CONDITIONS": "Krankheiten",
@@ -888,8 +888,8 @@
                 "ADD_NEW": "Krankheit hinzufügen"
             },
             "HEALTH INSURANCES": {
-                "PAGE_TITLE": "Krankenversicherung",
-                "ADD_NEW": "Krankenversicherung hinzufügen"
+                "PAGE_TITLE": "Versicherungen",
+                "ADD_NEW": "Versicherung hinzufügen"
             },
             "ALLERGIES": {
                 "PAGE_TITLE": "Allergien",

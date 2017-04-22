@@ -1,4 +1,4 @@
-(function(){
+(function() {
     'use strict';
 
     var dependencies = [
@@ -29,16 +29,20 @@
                     }
                 },
                 policyNumber: {
-                    label: true
+                    label: true,
+                    phoneNumber: true
+
                 },
                 phoneInsurance: {
-                    label: true
+                    label: true,
+                    phoneNumber: true
+
                 },
                 medicalPlanType: {
                     label: true
                 },
                 file: {
-                  label: true
+                    label: true
                 }
             };
         }

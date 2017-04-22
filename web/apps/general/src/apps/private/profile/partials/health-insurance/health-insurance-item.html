@@ -30,12 +30,12 @@
                     <input ng-model="DefaultItemCtrl.item.companyName">
                 </md-input-container>
                 <md-input-container nx-model-attribute="HealthInsurance:policyNumber" flex-gt-xs="50" flex="none">
-                    <input ng-model="DefaultItemCtrl.item.policyNumber">
+                    <input intl-tel-input ng-model="DefaultItemCtrl.item.policyNumber">
                 </md-input-container>
             </div>
             <div layout="row" layout-xs="column">
                 <md-input-container nx-model-attribute="HealthInsurance:phoneInsurance" flex-gt-xs="50" flex="none">
-                    <input ng-model="DefaultItemCtrl.item.phoneInsurance">
+                    <input intl-tel-input ng-model="DefaultItemCtrl.item.phoneInsurance">
                 </md-input-container>
                 <md-input-container nx-model-attribute="HealthInsurance:medicalPlanType" flex-gt-xs="50" flex="none">
                     <input ng-model="DefaultItemCtrl.item.medicalPlanType">
