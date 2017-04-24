@@ -58,7 +58,8 @@
                     </div> -->
                 </div>
                 <div class="plans__button-container">
-                    <button style="color:gray" ng-click="SubUpCtrl.upgradePlan('basic')" ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'basic'" class="plans__button plans__button_basic md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Basic Plan</button>
+                    <button ng-class="{'gray' : SubUpCtrl.actual.trim().toLowerCase() === 'basic'}" ng-click="SubUpCtrl.upgradePlan('basic')" ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'basic'" class="plans__button plans__button_basic md-primary md-raised md-button"
+                        style="margin-left:0px; color:white !important">Buy Anual Basic Plan</button>
                 </div>
                 <div class="plans__includes">
                     <div class="plans__includes__header">
@@ -123,7 +124,7 @@
                     </div> -->
                 </div>
                 <div class="plans__button-container">
-                    <button ng-click="SubUpCtrl.upgradePlan('standard')" ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'standard'" class="plans__button md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Standard Plan</button>
+                    <button ng-class="{'gray' : SubUpCtrl.actual.trim().toLowerCase() === 'standard'}" ng-click="SubUpCtrl.upgradePlan('standard')" ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'standard'" class="plans__button md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Standard Plan</button>
                 </div>
                 <div class="plans__includes">
                     <div class="plans__includes__header">
@@ -202,16 +203,10 @@
                         </div>
                         <div class="plans__highlight__header__hint">pro Jahr</div>
                     </div>
-                    <!--    <div class="plans__highlight__footer">
-                        <div class="plans__highlight__footer__txt-normal">
-                            <md-icon md-svg-icon="action:add_shopping_cart" aria-label="shopping cart"></md-icon>
-                            <span>more or equal than 19,99€</span>
-                        </div>
-                        <div class="plans__highlight__footer__txt-bold">First year with 50%</div>
-                    </div> -->
                 </div>
                 <div class="plans__button-container">
-                    <button ng-click="SubUpCtrl.upgradePlan('premium')" ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__button plans__button_premium md-primary md-raised md-button" style="margin-left:0px; color:white !important">Buy Anual Premium Plan</button>
+                    <button ng-class="{'gray' : SubUpCtrl.actual.trim().toLowerCase() === 'premium'}" ng-click="SubUpCtrl.upgradePlan('premium')" ng-disabled="SubUpCtrl.actual.trim().toLowerCase() === 'premium'" class="plans__button plans__button_premium md-primary md-raised md-button"
+                        style="margin-left:0px; color:white !important">Buy Anual Premium Plan</button>
                 </div>
                 <div class="plans__includes">
                     <div class="plans__includes__header">
