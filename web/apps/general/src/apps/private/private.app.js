@@ -48,11 +48,18 @@
             autoPlaceholder: false
         });
 
+        $mdDateLocaleProvider.parseDate = function(dateString) {
+            moment.locale('de');
+            var m = moment(dateString, 'L', true);
+            return m.isValid() ? m.toDate() : new Date(NaN);
+        };
+
         $mdDateLocaleProvider.formatDate = function(date) {
+            moment.locale('de');
             var m = moment(date);
             return m.isValid() ? m.format('L') : '';
         };
-        
+
         $mdIconProvider
             .iconSet('action', 'assets/material-icons/action-icons.svg', 24)
             .iconSet('alert', 'assets/material-icons/alert-icons.svg', 24)
