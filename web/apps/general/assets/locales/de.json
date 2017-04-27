@@ -947,9 +947,9 @@
             "PRINT CARD": {
                 "PRINT": "SOS-ID Card",
                 "BUTTON": "SOS-ID Card ausdrucken",
-                "TEXT CARD1": "Notfallsituation: https://sos-id.de",
+                "TEXT CARD1": "Notfallsituation:",
                 "TEXT CARD2": "SOS-ID:",
-                "TEXT BACK": "Bei einer Notfallsituation in Zusammenhang mit meiner Person bitte ich Sie, folgende Internetseite abzurufen, um meine Gesundheitsinformationen zu sehen. Web-Adresse: https://sos-id.de SOS-ID eingeben:",
+                "TEXT BACK": "Bei einer Notfallsituation in Zusammenhang mit meiner Person bitte ich Sie, folgende Internetseite abzurufen, um meine Gesundheitsinformationen zu sehen. Web-Adresse:",
                 "PAGE_TITLE": "Sie haben es fast geschafft. Wir erstellen Ihre SOS-ID-Card.",
                 "FOOTER1": "Vorgang abbrechen?",
                 "FOOTER2": "Zurück zur Ihre Daten",
