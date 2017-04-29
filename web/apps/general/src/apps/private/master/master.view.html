@@ -1,6 +1,12 @@
 <section layout="column" class="master-view">
     <div class="master-loading" ng-show="MasterViewCtrl.isLoading">Carregando</div>
+    <div ng-if="MasterViewCtrl.days" flex layout="row" style="background-color: #f69c0d; min-height: 50px" layout-align="center center">
+        <!-- <div flex layout-align="center center"> -->
+            <p>Der Testzeitraum für die SOSID-Plattform läuft in&nbsp<b>{{MasterViewCtrl.days}} Tagen</b>&nbspab. Bitte wählen Sie einen gewünschten Plan, um SOS-ID danach weiter zu verwenden. Plan wählen.
+            </p>
+        <!-- </div> -->
+    </div>
     <main-header layout="row" layout-align="center center"></main-header>
-    <ui-view layout="row" ></ui-view>
+    <ui-view layout="row"></ui-view>
     <main-footer layout="row" layout-align="center center"></main-footer>
 </section>

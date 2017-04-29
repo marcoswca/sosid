@@ -12,7 +12,22 @@
         .controller('MasterViewController', MasterViewController);
 
     /** @ngInject */
-    function MasterViewController($mdSidenav, $log) {
+    function MasterViewController($mdSidenav, $log, Session) {
+        
+        Date.dateDiff = function(datepart, fromdate, todate) {
+            datepart = datepart.toLowerCase();
+            var diff = todate - fromdate;
+            var divideBy = {
+                w: 604800000,
+                d: 86400000,
+                h: 3600000,
+                n: 60000,
+                s: 1000
+            };
+
+            return Math.floor(diff / divideBy[datepart]);
+        };
+        
         // Private variables
         var self = this;
 
@@ -23,6 +38,9 @@
         self.setLoading = setLoading;
         self.close = close;
 
+        if (Session.user.profile.plan && Session.user.profile.plan.moreInformations.isTrial) {
+            self.days = Date.dateDiff('d', new Date(), new Date(Session.user.profile.plan.moreInformations.expiration));
+        }
         // Private methods
         return (function init() {
 
