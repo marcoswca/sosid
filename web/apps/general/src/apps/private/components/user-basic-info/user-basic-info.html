@@ -152,7 +152,7 @@
         </div>
     </div>
     <div ng-show="UserBasicInfoCtrl.allowEdit" layout="row" flex layout-align="start center">
-        <md-button flex style="text-overflow:ellipsis" ng-click="UserBasicInfoCtrl.addAddress()" class="md-raised">New Address</md-button>
+        <md-button flex style="text-overflow:ellipsis" ng-click="UserBasicInfoCtrl.addAddress()" class="md-raised">{{"New Address" | translate}}</md-button>
     </div>
     <div ng-show="UserBasicInfoCtrl.allowEdit" layout="row" flex layout-align="start center">
         <md-button flex class="md-raised md-primary" ng-click="UserBasicInfoCtrl.updateProfile()" ng-disabled="userProfileForm.$invalid || userProfileForm.$pristine"> {{ 'ACTIONS.SAVE' | translate }}
