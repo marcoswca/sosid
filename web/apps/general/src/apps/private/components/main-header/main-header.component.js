@@ -43,6 +43,18 @@
                 return PrivacyCategoriesService.isOutSide();
             };
 
+            self.hasAvatar = function() {
+                return !!Session.user.profile.File;
+            };
+
+            self.getFilePath = function() {
+                if (Session.user.profile.File) {
+                    return Session.user.profile.File.filePath;
+                } else {
+                    return undefined;
+                }
+            };
+
             return init();
 
             function init() {}

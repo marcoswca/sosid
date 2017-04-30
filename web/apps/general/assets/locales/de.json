@@ -731,7 +731,6 @@
         }
     },
 
-
     "OFFLINE": {
         "TITLE": "Es ist etwas schiefgegangen",
         "SUB_TITLE": " Es besteht keine Verbindung zum Server. Bitte überprüfen Sie nochmal Ihre Verbindung.",
@@ -951,7 +950,7 @@
                 "TEXT CARD1": "Notfallsituation:",
                 "TEXT CARD2": "SOS-ID:",
                 "TEXT BACK": "Bei einer Notfallsituation in Zusammenhang mit meiner Person bitte ich Sie, folgende Internetseite abzurufen, um meine Gesundheitsinformationen zu sehen. Web-Adresse:",
-                "PAGE_TITLE": "Sie haben es fast geschafft. Wir erstellen Ihre SOS-ID-Card.",
+                "PAGE_TITLE": "Wir Erstellen Ihre SOS-ID-Card.",
                 "FOOTER1": "Vorgang abbrechen?",
                 "FOOTER2": "Zurück zur Ihre Daten",
                 "PAGE_SUBTITLE": "Bitte überprüfen Sie Ihre Daten auf Korrektheit. Wenn Sie einen Fehler finden, gehen Sie zu dem entsprechenden Feld zurück und korrigieren Ihre Eingaben."
