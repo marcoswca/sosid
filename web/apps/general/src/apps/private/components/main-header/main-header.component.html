@@ -16,7 +16,7 @@
         <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="MainHeaderCtrl.openMenu($mdOpenMenu, $event)">
             <div layout="row" layout-align="end center" class="main-header__menu-buttom overlay">
                 <div style="background-color:#E0E3E3; border-radius:50%; width: 35px; height: 35px;" class="progress-circle__avatar" layout="row" layout-align="center center">
-                    <md-icon ng-show="!MainHeaderCtrl.hasAvatar()" md-svg-icon="sosid:personal_data" aria-label="Avatar"></md-icon>
+                    <md-icon style="color:#00a2d3" ng-show="!MainHeaderCtrl.hasAvatar()" md-svg-icon="sosid:personal_data" aria-label="Avatar"></md-icon>
                     <img ng-show="MainHeaderCtrl.hasAvatar()" ng-src="https://s3.eu-central-1.amazonaws.com/sosid/{{MainHeaderCtrl.getFilePath()}}" />
                 </div>
                 <md-icon md-svg-icon="hardware:keyboard_arrow_down" style="color: #00A2D3;width:8px;height:8px;" aria-label="Cake Icon"></md-icon>
