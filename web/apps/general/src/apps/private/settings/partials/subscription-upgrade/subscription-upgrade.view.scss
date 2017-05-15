@@ -74,7 +74,8 @@
 
 .plans__highlight__header__price__unit {
     font-size: 42px;
-    position: absolute;
+    position: static;
+    float: right;
     top: 15px;
     left: 0;
 }

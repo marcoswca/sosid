@@ -69,12 +69,7 @@
                     }
                 },
                 provincy: {
-                    label: true,
-                    validate: {
-                        required: {
-                            message: true
-                        }
-                    }
+                    label: true
                 },
                 country: {
                     label: true,

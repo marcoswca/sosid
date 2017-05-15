@@ -1,276 +1,278 @@
 <md-content style="overflow-x:hidden" class="profile-view" layout="column" flex>
-    <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
-        <div layout="column" class="profile__menu">
-            <ul>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Personal Data')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                    <a ui-sref="profile.personalData">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}">{{ "PRIVATE.PROFILE.PERSONAL_DATA.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Emergency Contact')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                    <a ui-sref="profile.emergencyContacts">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}">{{ "PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Doctor')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                    <a ui-sref="profile.doctors">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}">{{ "PRIVATE.PROFILE.DOCTORS.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Health Conditions')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                    <a ui-sref="profile.healthConditions">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}">{{ "PRIVATE.PROFILE.HEALTH CONDITIONS.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Allergies')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                    <a ui-sref="profile.allergies">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}">{{ "PRIVATE.PROFILE.ALLERGIES.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Medications')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                    <a ui-sref="profile.medications">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}">{{ "PRIVATE.PROFILE.MEDICATIONS.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Health Insurance')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                    <a ui-sref="profile.healthInsurance">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}">{{ "PRIVATE.PROFILE.HEALTH INSURANCES.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Living Will')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                    <a ui-sref="profile.livingWill">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}">{{ "PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Organ Donator Card')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                    <a ui-sref="profile.organCard">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}">{{ "PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-                <li ng-if="ProfileViewCtrl.categoryIsFree('Glasses Pass')" class="background" ui-sref-active="active" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" ng-click="MasterViewCtrl.close()">
-                    <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                    <a ui-sref="profile.glassesPass">
-                        <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                        <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}">{{ "PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE" | translate}}</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </md-sidenav>
-    <div layout="row" layout-align="center stretch" class="topbar" hide-xs="true">
-        <div layout="row" layout-align="space-between start" class="topbar__container">
-            <div layout="row" layout-align="start center" class="topbar__profile-resume">
-                <div class="personal-data__avatar" style="background-color:transparent" layout="column" flex="none" layout-align="center center">
-                    <div layout="column" style="margin:10px">
-                        <div class="personal-data__avatar__img-container">
-                            <progress-circle></progress-circle>
-                        </div>
-                    </div>
-                </div>
-                <div layout="column" layout-align="center stretch" class="profile-resume__data">
-                    <div class="profile-resume__data__name">
-                        <span class="profile-resume__data__name_first-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('firstName')}}</span>
-                        <span class="profile-resume__data__name_first-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('lastName')}}</span>
-                    </div>
-                    <div class="profile-resume__data-list" layout="row">
-                        <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('age')">
-                            <div class="profile-resume__data-field">{{ 'MODELS.USER PROFILE.ATTRIBUTES.AGE.LABEL' | translate }}</div>
-                            <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('age')}}</div>
-                        </div>
-                        <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('gender')">
-                            <div class="profile-resume__data-field">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.LABEL' | translate }}</div>
-                            <div class="profile-resume__data-value">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.OPTIONS.' + ProfileViewCtrl.Session.user.profile._getCommittedField('gender') | translate }}</div>
-                        </div>
-                        <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('address')">
-                            <div class="profile-resume__data-field">Adresse</div>
-                            <div class="profile-resume__data-value">
-                                {{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}
-                            </div>
-                        </div>
-                        <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')">
-                            <div class="profile-resume__data-field">{{ 'MODELS.USER PROFILE.ATTRIBUTES.BLOOD TYPE.LABEL' | translate }}</div>
-                            <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')}}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div ng-if="!ProfileViewCtrl.isOutSide()" layout="row" layout-align="start center" class="topbar__profile-nav">
-                <div class="topbar__profile-nav__link" layout="column" layout-align="center center" ng-click="ProfileViewCtrl.showPrivacySettings($event)">
-                    <md-button aria-label="Eat cake" class="md-icon-button">
-                        <md-icon md-svg-icon="sosid:settings_privacy" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
-                    </md-button>
-                    <div class="topbar__profile-nav__link__text">{{"PRIVATE.PROFILE.PRIVACY.SETTINGS" | translate}}</div>
-                </div>
-                <div class="topbar__profile-nav__link" layout="column" layout-align="center center" ng-click="ProfileViewCtrl.showPrintCard($event)">
-                    <md-button aria-label="Eat cake" class="md-icon-button">
-                        <md-icon md-svg-icon="sosid:print_card" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
-                    </md-button>
-                    <div style="height:40px;text-overflow:ellipsis; overflow:hidden" class="topbar__profile-nav__link__text">{{"PRIVATE.PROFILE.PRINT CARD.PRINT" | translate}}</div>
-                </div>
-                <div class="topbar__profile-nav__link" layout="column" layout-align="center center" ng-click="ProfileViewCtrl.showWelcome($event)">
-                    <md-button aria-label="Eat cake" class="md-icon-button">
-                        <md-icon md-svg-icon="sosid:buy_products" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
-                    </md-button>
-                    <div class="topbar__profile-nav__link__text">{{"WELCOME.BUTTON.PRODUCT" | translate}}
-                    </div>
-                </div>
-            </div>
-        </div>
+  <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+    <div layout="column" class="profile__menu">
+      <ul>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Personal Data')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+          <a ui-sref="profile.personalData">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}">{{ "PRIVATE.PROFILE.PERSONAL_DATA.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Emergency Contact')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+          <a ui-sref="profile.emergencyContacts">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}">{{ "PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Doctor')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+          <a ui-sref="profile.doctors">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}">{{ "PRIVATE.PROFILE.DOCTORS.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Health Conditions')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+          <a ui-sref="profile.healthConditions">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}">{{ "PRIVATE.PROFILE.HEALTH CONDITIONS.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Allergies')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+          <a ui-sref="profile.allergies">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}">{{ "PRIVATE.PROFILE.ALLERGIES.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Medications')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+          <a ui-sref="profile.medications">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}">{{ "PRIVATE.PROFILE.MEDICATIONS.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Health Insurance')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+          <a ui-sref="profile.healthInsurance">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}">{{ "PRIVATE.PROFILE.HEALTH INSURANCES.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Living Will')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+          <a ui-sref="profile.livingWill">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}">{{ "PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Organ Donator Card')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" ui-sref-active="active" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+          <a ui-sref="profile.organCard">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}">{{ "PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+        <li ng-if="ProfileViewCtrl.categoryIsFree('Glasses Pass')" class="background" ui-sref-active="active" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" ng-click="MasterViewCtrl.close()">
+          <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+          <a ui-sref="profile.glassesPass">
+            <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+            <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}">{{ "PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE" | translate}}</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <div layout="row" layout-align="center stretch" class="content profile-content">
-        <div layout="row" layout-align="space-between start" class="profile-content__container">
-            <div layout="column" flex="20" class="profile-sidebar profile__menu" hide-xs="true">
-                <div layout="row" layout-align="start center" class="categories-resume">
-                    <div style="width:32px;height:32px;" layout="row" class="categories-resume__icon">
-                        <md-icon ng-if="!ProfileViewCtrl.isOutSide()" md-svg-icon="action:done_all" aria-label="User"></md-icon>
-                    </div>
-                    <div ng-if="!ProfileViewCtrl.isOutSide()" layout="column" flex="75">
-                        <div class="categories-resume__detailed">
-                            <span style="font-size: 15px">{{ProfileViewCtrl.Session.user.profile.categoriesFilled}} {{"of" | translate}} {{ProfileViewCtrl.Session.user.profile.plan.plans.categories.length}} {{"completed" | translate}}</span>
-                        </div>
-                        <div>
-                            <div class="categories-resume__bar">
-                                <div class="categories-resume__bar__percent" style="width: {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div ng-if="!ProfileViewCtrl.isOutSide()" layout="row">
-                        <span class="categories-resume__percent">{{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</span>
-                    </div>
-                </div>
-                <div layout="column">
-                    <ul>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Personal Data')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.personalData">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}">{{ "PRIVATE.PROFILE.PERSONAL_DATA.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Emergency Contact')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.emergencyContacts">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}">{{ "PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Doctor')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.doctors">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}">{{ "PRIVATE.PROFILE.DOCTORS.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Health Conditions')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.healthConditions">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}">{{ "PRIVATE.PROFILE.HEALTH CONDITIONS.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Allergies')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.allergies">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}">{{ "PRIVATE.PROFILE.ALLERGIES.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Medications')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
-                            <a ui-sref="profile.medications">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}">{{ "PRIVATE.PROFILE.MEDICATIONS.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Health Insurance')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.healthInsurance">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}">{{ "PRIVATE.PROFILE.HEALTH INSURANCES.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Living Will')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.livingWill">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}">{{ "PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Organ Donator Card')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.organCard">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}">{{ "PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                        <li ng-if="ProfileViewCtrl.categoryIsFree('Glasses Pass')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" ui-sref-active="active">
-                            <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
-                            <a ui-sref="profile.glassesPass">
-                                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
-                                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}">{{ "PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE" | translate}}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div ng-if="!ProfileViewCtrl.isOutSide()" class="data-storage__container" layout="column">
-                    <div class="data-storage__header" layout="row" layout-align="space-between center">
-                        <div layout="column">
-                            <span class="data-storage__title">{{"STORAGE.DATA.TITLE" | translate}}</span>
-                        </div>
-                        <div layout="column" flex="50" ui-sref="settings.subscriptionUpgrade">
-                            <md-button class="upgrade-button">Upgrade</md-button>
-                        </div>
-                    </div>
-                    <div layout="column" class="data-storage__content">
-                        <div layout="row"><span class="data-storage__data-text">{{ProfileViewCtrl.usedStorage}}MB {{"of" | translate}} {{ProfileViewCtrl.planStorageSpace}}MB {{"STORAGE.DATA.USED" | translate}}</span></div>
-                        <div layout="row" class="data-storage__data-chart">
-                            <div class="data-storage__bar">
-                                <div class="data-storage__bar__percent" style="width: {{ProfileViewCtrl.percentUsedStorage}}%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  </md-sidenav>
+  <div layout="row" layout-align="center stretch" class="topbar" hide-xs="true">
+    <div layout="row" layout-align="space-between start" class="topbar__container">
+      <div layout="row" layout-align="start center" class="topbar__profile-resume">
+        <div class="personal-data__avatar" style="background-color:transparent" layout="column" flex="none" layout-align="center center">
+          <div layout="column" style="margin:10px">
+            <div class="personal-data__avatar__img-container">
+              <progress-circle></progress-circle>
             </div>
-            <div class="partial-content" flex layout="column">
-                <div class="profile-content__header" layout="row" layout-align="space-between center">
-                    <div>
-                        <span>
+          </div>
+        </div>
+        <div layout="column" layout-align="center stretch" class="profile-resume__data">
+          <div class="profile-resume__data__name">
+            <span class="profile-resume__data__name_first-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('firstName')}}</span>
+            <span class="profile-resume__data__name_first-name">{{ProfileViewCtrl.Session.user.profile._getCommittedField('lastName')}}</span>
+          </div>
+          <div class="profile-resume__data-list" layout="row">
+            <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('age')">
+              <div class="profile-resume__data-field">{{ 'MODELS.USER PROFILE.ATTRIBUTES.AGE.LABEL' | translate }}</div>
+              <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('age')}}</div>
+            </div>
+            <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('gender')">
+              <div class="profile-resume__data-field">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.LABEL' | translate }}</div>
+              <div class="profile-resume__data-value">{{ 'MODELS.USER PROFILE.ATTRIBUTES.GENDER.OPTIONS.' + ProfileViewCtrl.Session.user.profile._getCommittedField('gender') | translate }}</div>
+            </div>
+            <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('address')">
+              <div class="profile-resume__data-field">Adresse</div>
+              <div class="profile-resume__data-value">
+                {{ProfileViewCtrl.Session.user.profile._getCommittedField('address')}}
+              </div>
+            </div>
+            <div class="profile-resume__data-item" layout="column" ng-if="ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')">
+              <div class="profile-resume__data-field">{{ 'MODELS.USER PROFILE.ATTRIBUTES.BLOOD TYPE.LABEL' | translate }}</div>
+              <div class="profile-resume__data-value">{{ProfileViewCtrl.Session.user.profile._getCommittedField('bloodType')}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-if="!ProfileViewCtrl.isOutSide()" layout="row" layout-align="start center" class="topbar__profile-nav">
+        <div class="topbar__profile-nav__link" layout="column" layout-align="center center" ng-click="ProfileViewCtrl.showPrivacySettings($event)">
+          <md-button aria-label="Eat cake" class="md-icon-button">
+            <md-icon md-svg-icon="sosid:settings_privacy" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
+          </md-button>
+          <div class="topbar__profile-nav__link__text">{{"PRIVATE.PROFILE.PRIVACY.SETTINGS" | translate}}</div>
+        </div>
+        <div class="topbar__profile-nav__link" layout="column" layout-align="center center" ng-click="ProfileViewCtrl.showPrintCard($event)">
+          <md-button aria-label="Eat cake" class="md-icon-button">
+            <md-icon md-svg-icon="sosid:print_card" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
+          </md-button>
+          <div style="height:40px;text-overflow:ellipsis; overflow:hidden" class="topbar__profile-nav__link__text">{{"PRIVATE.PROFILE.PRINT CARD.PRINT" | translate}}</div>
+        </div>
+        <div class="topbar__profile-nav__link" layout="column" layout-align="center center">
+          <a style="text-decoration:none" href="https://sosid.pimentagroup.de/shop/#/commerce/products_grid">
+            <md-button aria-label="Eat cake" class="md-icon-button">
+              <md-icon md-svg-icon="sosid:buy_products" style="color: #00A2D3;width:56px;height:56px;" aria-label="Cake Icon"></md-icon>
+            </md-button>
+            <div class="topbar__profile-nav__link__text">{{"WELCOME.BUTTON.PRODUCT" | translate}}
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div layout="row" layout-align="center stretch" class="content profile-content">
+    <div layout="row" layout-align="space-between start" class="profile-content__container">
+      <div layout="column" flex="20" class="profile-sidebar profile__menu" hide-xs="true">
+        <div layout="row" layout-align="start center" class="categories-resume">
+          <div style="width:32px;height:32px;" layout="row" class="categories-resume__icon">
+            <md-icon ng-if="!ProfileViewCtrl.isOutSide()" md-svg-icon="action:done_all" aria-label="User"></md-icon>
+          </div>
+          <div ng-if="!ProfileViewCtrl.isOutSide()" layout="column" flex="75">
+            <div class="categories-resume__detailed">
+              <span style="font-size: 15px">{{ProfileViewCtrl.Session.user.profile.categoriesFilled}} {{"of" | translate}} {{ProfileViewCtrl.Session.user.profile.plan.plans.categories.length}} {{"completed" | translate}}</span>
+            </div>
+            <div>
+              <div class="categories-resume__bar">
+                <div class="categories-resume__bar__percent" style="width: {{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%;"></div>
+              </div>
+            </div>
+          </div>
+          <div ng-if="!ProfileViewCtrl.isOutSide()" layout="row">
+            <span class="categories-resume__percent">{{ProfileViewCtrl.Session.user.profile.categoriesFilled/ProfileViewCtrl.Session.user.profile.plan.plans.categories.length * 100}}%</span>
+          </div>
+        </div>
+        <div layout="column">
+          <ul>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Personal Data')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+              <a ui-sref="profile.personalData">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}" md-svg-icon="sosid:personal_data" style="color: #00A2D3;width:32px;height:32px;" aria-label="User"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Personal Data']}">{{ "PRIVATE.PROFILE.PERSONAL_DATA.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Emergency Contact')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+              <a ui-sref="profile.emergencyContacts">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}" md-svg-icon="sosid:emergency_contacts" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Emergency Contact']}">{{ "PRIVATE.PROFILE.EMERGENCY CONTACTS.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Doctor')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+              <a ui-sref="profile.doctors">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}" md-svg-icon="sosid:doctors" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Doctor']}">{{ "PRIVATE.PROFILE.DOCTORS.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Health Conditions')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+              <a ui-sref="profile.healthConditions">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}" md-svg-icon="sosid:health_conditions" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Conditions']}">{{ "PRIVATE.PROFILE.HEALTH CONDITIONS.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Allergies')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+              <a ui-sref="profile.allergies">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}" md-svg-icon="sosid:allergies" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Allergies']}">{{ "PRIVATE.PROFILE.ALLERGIES.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Medications')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__done"><md-icon md-svg-icon="sosid:is_completed_done" aria-label="completed"></md-icon></span>
+              <a ui-sref="profile.medications">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}" md-svg-icon="sosid:medications" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Medications']}">{{ "PRIVATE.PROFILE.MEDICATIONS.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Health Insurance')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+              <a ui-sref="profile.healthInsurance">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}" md-svg-icon="sosid:health_insurance" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Health Insurance']}">{{ "PRIVATE.PROFILE.HEALTH INSURANCES.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Living Will')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+              <a ui-sref="profile.livingWill">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}" md-svg-icon="sosid:living_will" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Living Will']}">{{ "PRIVATE.PROFILE.LIVING WILL.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Organ Donator Card')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+              <a ui-sref="profile.organCard">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}" md-svg-icon="sosid:organ_donon_card" style="color: #00A2D3;width:32px;height:32px;" aria-label="Hearth Organ"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Organ Donator Card']}">{{ "PRIVATE.PROFILE.ORGAN DONOR CARD.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+            <li ng-if="ProfileViewCtrl.categoryIsFree('Glasses Pass')" class="background" ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" ui-sref-active="active">
+              <span class="profile-menu__is-completed profile-menu__is-completed__undone"><md-icon md-svg-icon="sosid:is_completed_undone" aria-label="incompleted"></md-icon></span>
+              <a ui-sref="profile.glassesPass">
+                <md-icon ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}" md-svg-icon="sosid:glasses_pass" style="color: #00A2D3;width:32px;height:32px;" aria-label="Doctors"></md-icon>
+                <span ng-class="{disabled: !ProfileViewCtrl.categoriesEnabled['Glasses Pass']}">{{ "PRIVATE.PROFILE.GLASSES PASS.PAGE_TITLE" | translate}}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div ng-if="!ProfileViewCtrl.isOutSide()" class="data-storage__container" layout="column">
+          <div class="data-storage__header" layout="row" layout-align="space-between center">
+            <div layout="column">
+              <span class="data-storage__title">{{"STORAGE.DATA.TITLE" | translate}}</span>
+            </div>
+            <div layout="column" flex="50" ui-sref="settings.subscriptionUpgrade">
+              <md-button class="upgrade-button">Upgrade</md-button>
+            </div>
+          </div>
+          <div layout="column" class="data-storage__content">
+            <div layout="row"><span class="data-storage__data-text">{{ProfileViewCtrl.usedStorage}}MB {{"of" | translate}} {{ProfileViewCtrl.planStorageSpace}}MB {{"STORAGE.DATA.USED" | translate}}</span></div>
+            <div layout="row" class="data-storage__data-chart">
+              <div class="data-storage__bar">
+                <div class="data-storage__bar__percent" style="width: {{ProfileViewCtrl.percentUsedStorage}}%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="partial-content" flex layout="column">
+        <div class="profile-content__header" layout="row" layout-align="space-between center">
+          <div>
+            <span>
                             <toggle-menu-mobile></toggle-menu-mobile>
                         </span>
-                        <span>{{ 'PRIVATE.PROFILE.MY_RECORDS' | translate }}</span>
-                        <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
-                        <span class="profile-content__header__title" translate="{{ProfileViewCtrl.pageTitle}}"></span>
-                    </div>
-                    <div class="profile-content__header__button" ng-if="ProfileViewCtrl.contentHeader.button.show() && !ProfileViewCtrl.isOutSide()">
-                        <md-button class="md-raised" ng-click="ProfileViewCtrl.contentHeader.button.fn()">
-                            <md-icon md-svg-icon="content:add" aria-label="Plus signal"></md-icon>
-                            <span hide-sm translate="{{ProfileViewCtrl.contentHeader.button.name}}"></span>
-                        </md-button>
-                    </div>
-                </div>
-                <div layout="column" layout-align="center center" class="profile-content__loader" ng-show="ProfileViewCtrl.isLoading">
-                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-                </div>
-                <ui-view ng-hide="ProfileViewCtrl.isLoading"></ui-view>
-            </div>
+            <span>{{ 'PRIVATE.PROFILE.MY_RECORDS' | translate }}</span>
+            <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
+            <span class="profile-content__header__title" translate="{{ProfileViewCtrl.pageTitle}}"></span>
+          </div>
+          <div class="profile-content__header__button" ng-if="ProfileViewCtrl.contentHeader.button.show() && !ProfileViewCtrl.isOutSide()">
+            <md-button class="md-raised" ng-click="ProfileViewCtrl.contentHeader.button.fn()">
+              <md-icon md-svg-icon="content:add" aria-label="Plus signal"></md-icon>
+              <span hide-sm translate="{{ProfileViewCtrl.contentHeader.button.name}}"></span>
+            </md-button>
+          </div>
         </div>
+        <div layout="column" layout-align="center center" class="profile-content__loader" ng-show="ProfileViewCtrl.isLoading">
+          <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <ui-view ng-hide="ProfileViewCtrl.isLoading"></ui-view>
+      </div>
     </div>
+  </div>
 </md-content>

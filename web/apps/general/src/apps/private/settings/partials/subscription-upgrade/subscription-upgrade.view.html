@@ -12,8 +12,8 @@
                     <md-icon md-svg-icon="navigation:arrow_back" aria-label="Arrow Back"></md-icon>
                 </md-button>
             </a>
-            <a href="profile.personalData" style="color: #fff;">
-                <span class="profile-content__header__title" ui-sref="profile.personalData">Home</span>
+            <a href="profile.personalData" style="color: #fff;text-decoration:none">
+                <span class="profile-content__header__title" ui-sref="profile.personalData">{{"HEADER.MY RECORDS" | translate}}</span>
             </a>
             <md-icon md-svg-icon="hardware:keyboard_arrow_right" style="color: #fff;width:12px;height:12px;" aria-label="Cake Icon"></md-icon>
             <span class="profile-content__header__title">Upgrade Plan</span>
@@ -23,8 +23,8 @@
         <div ng-if="!SubUpCtrl.hasPlan()">
             <div class="plans__header" layout="column">
                 <div layout="column" layout-align="center center" class="plans__title">Testen Sie die SOS-ID-Plattform für 30 Tage kostenlos</div>
-                <div layout="column" layout-align="center center" ng-controller="WelcomeController as WelcomeController">
-                    <button ng-click="WelcomeController.startTrial()" layout-a style="width:30%" class="plans__button md-primary md-raised md-button"> START JETZT 30 TAGE KOSTENLOS </button>
+                <div layout="column" class="plans__button-container" layout-align="center center" ng-controller="WelcomeController as WelcomeController">
+                    <button ng-click="WelcomeController.startTrial()" layout-a style="width:30%; background-color:#f69c0d; color:white" class="plans__button plans__button_basic  md-raised md-button"> START JETZT 30 TAGE KOSTENLOS </button>
                 </div>
             </div>
             <div layout="row" flex>
@@ -32,7 +32,7 @@
                     <md-divider layout="column" style="width:90%; border-width:2px; border-color:silver; margin:auto"> </md-divider>
                 </div>
                 <div style="margin-top:-8px; color:silver">
-                    or
+                    {{"or" | translate}}
                 </div>
                 <div flex>
                     <md-divider layout="column" style="width:90%; border-width:2px; border-color:silver;  margin:auto"></md-divider>
