@@ -29,7 +29,7 @@
                 .user
                 .startTrial()
                 .then(function() {
-                    return $window.location.reload();
+                    return $window.location.replace("https://sosid.pimentagroup.de/app");
                 });
         }
 
